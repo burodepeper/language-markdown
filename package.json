@@ -13,6 +13,5 @@
   "private": true
   "engines": {
     "atom": "*"
-  },
-  "devDependencies": {}
+  }
 }
