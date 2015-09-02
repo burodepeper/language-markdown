@@ -1,0 +1,13 @@
+'name': 'Markdown'
+'scopeName': 'source.md'
+'fileTypes': [
+  # temporary file-type, to co-exist with other packages
+  'emdee'
+  # 'markdown'
+  # 'md'
+  # 'mdown'
+  # 'mkd'
+  # 'mkdown'
+  # 'rmd'
+  # 'ron'
+]
