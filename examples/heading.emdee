@@ -6,6 +6,12 @@
 
    #### Heading 4; a maximum of three spaces is allowed at the start of the line
 
+    # This is not a heading, because it is indented 4 spaces
+
 ##### Heading 5
 
 ###### Heading 6 with _emphasis_ and stuff
+
+####### This is not a heading, because it has too many #'s
+
+#This is not a heading, because a space is required after the #

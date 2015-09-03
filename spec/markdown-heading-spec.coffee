@@ -1,4 +1,4 @@
-describe "Markdown (headings) grammar", ->
+describe "Markdown/heading grammar", ->
   grammar = null
 
   beforeEach ->
