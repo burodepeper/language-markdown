@@ -2,10 +2,10 @@
 
 ## Heading 2
 
-### Heading 3
+### Hashmarks after the heading should be marked as punctuation ####
 
-#### Heading 4
+   #### Heading 4; a maximum of three spaces is allowed at the start of the line
 
 ##### Heading 5
 
-###### Heading 6 with **emphasis** and stuff
+###### Heading 6 with _emphasis_ and stuff

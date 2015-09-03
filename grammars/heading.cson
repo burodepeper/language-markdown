@@ -3,82 +3,90 @@
 'fileTypes': []
 'patterns': [
   {
-    'match': '^(#{6})( +)(.+)$'
-    'name': 'heading-6.md'
+    'match': '^((?: {0,3})(?:#{1,6})(?: +)(?:.+))$'
+    'name': 'heading.md'
     'captures':
       '1':
-        'name': 'punctuation.heading.md'
-      '3':
         'patterns': [
           {
-            'include': '#inline'
+            'match': '(#{6})( +)(.+)$'
+            'name': 'heading-6.md'
+            'captures':
+              '1':
+                'name': 'punctuation.md'
+              '3':
+                'patterns': [
+                  {
+                    'include': '#inline'
+                  }
+                ]
           }
-        ]
-  }
-  {
-    'match': '^(#{5})( +)(.+)$'
-    'name': 'heading-5.md'
-    'captures':
-      '1':
-        'name': 'punctuation.heading.md'
-      '3':
-        'patterns': [
           {
-            'include': '#inline'
+            'match': '(#{5})( +)(.+)$'
+            'name': 'heading-5.md'
+            'captures':
+              '1':
+                'name': 'punctuation.md'
+              '3':
+                'patterns': [
+                  {
+                    'include': '#inline'
+                  }
+                ]
           }
-        ]
-  }
-  {
-    'match': '^(#{4})( +)(.+)$'
-    'name': 'heading-4.md'
-    'captures':
-      '1':
-        'name': 'punctuation.heading.md'
-      '3':
-        'patterns': [
           {
-            'include': '#inline'
+            'match': '(#{4})( +)(.+)$'
+            'name': 'heading-4.md'
+            'captures':
+              '1':
+                'name': 'punctuation.md'
+              '3':
+                'patterns': [
+                  {
+                    'include': '#inline'
+                  }
+                ]
           }
-        ]
-  }
-  {
-    'match': '^(#{3})( +)(.+)$'
-    'name': 'heading-3.md'
-    'captures':
-      '1':
-        'name': 'punctuation.heading.md'
-      '3':
-        'patterns': [
           {
-            'include': '#inline'
+            'match': '(#{3})( +)(.+)$'
+            'name': 'heading-3.md'
+            'captures':
+              '1':
+                'name': 'punctuation.md'
+              '3':
+                'patterns': [
+                  {
+                    'include': '#inline'
+                  }
+                ]
           }
-        ]
-  }
-  {
-    'match': '^(#{2})( +)(.+)$'
-    'name': 'heading-2.md'
-    'captures':
-      '1':
-        'name': 'punctuation.heading.md'
-      '3':
-        'patterns': [
           {
-            'include': '#inline'
+            'match': '(#{2})( +)(.+)$'
+            'name': 'heading-2.md'
+            'captures':
+              '1':
+                'name': 'punctuation.md'
+              '3':
+                'patterns': [
+                  {
+                    'include': '#inline'
+                  }
+                ]
           }
-        ]
-  }
-  {
-    'match': '^(#{1})( +)(.+)$'
-    'name': 'heading-1.md'
-    'captures':
-      '1':
-        'name': 'punctuation.heading.md'
-      '3':
-        'patterns': [
           {
-            'include': '#inline'
+            'match': '(#{1})( +)(.+)$'
+            'name': 'heading-1.md'
+            'captures':
+              '1':
+                'name': 'punctuation.md'
+              '3':
+                'patterns': [
+                  {
+                    'include': '#inline'
+                  }
+                ]
           }
-        ]
+    ]
   }
 ]
 
