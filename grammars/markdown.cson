@@ -11,3 +11,47 @@
   # 'rmd'
   # 'ron'
 ]
+
+'patterns': [
+  {
+    'include': '#blocks'
+  }
+  {
+    'include': '#inline'
+  }
+]
+
+'repository':
+  'blocks':
+    'patterns': [
+      {
+        'include': 'heading.source.md'
+      }
+      # {
+      #   'include': '#dividers'
+      # }
+      # {
+      #   'include': '#lists'
+      # }
+      # {
+      #   'include': '#quote'
+      # }
+      # {
+      #   'include': '#table'
+      # }
+      # {
+      #   'include': '#comment'
+      # }
+    ]
+  'inline':
+    'patterns': [
+      {
+        'include': 'emphasis.source.md'
+      }
+      # {
+      #   'include': '#links'
+      # }
+      # {
+      #   'include': '#inline-code'
+      # }
+    ]
