@@ -3,6 +3,10 @@
 'fileTypes': []
 'patterns': [
   {
+    # NOTE
+    # Does it make sense to first do a general check to determine if there is a
+    # match for a heading? It seems more logical to test against one match, than
+    # to go through all six of them every iteration.
     'match': '^((?: {0,3})(?:#{1,6})(?: +)(?:.+))$'
     'name': 'heading.md'
     'captures':
