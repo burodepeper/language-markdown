@@ -75,6 +75,9 @@ describe 'Markdown grammar', ->
     # expect(tokens[3]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-2.md']
     # expect(tokens[4]).toEqual value: '##', scopes: ['source.md', 'heading.md', 'heading-2.md', 'punctuation.md']
 
+    # for token, i in tokens
+    #   console.log "#36-"+i+": '"+token.value+"' ("+token.value.length+")"
+
     # FIXME @burodepeper
     # Variant of #36
     {tokens} = grammar.tokenizeLine('  ###   bar    ###')
