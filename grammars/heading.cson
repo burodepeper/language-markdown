@@ -1,6 +1,5 @@
-'name': 'Markdown headers'
+'name': 'Markdown ATX headers'
 'scopeName': 'heading.source.md'
-'fileTypes': []
 'patterns': [
   {
     # NOTE

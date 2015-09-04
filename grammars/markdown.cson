@@ -13,20 +13,15 @@
 ]
 
 'patterns': [
-  {
-    'include': '#blocks'
-  }
-  {
-    'include': '#inline'
-  }
+  { include: '#blocks' }
+  { include: '#inline' }
 ]
 
 'repository':
   'blocks':
     'patterns': [
-      {
-        'include': 'heading.source.md'
-      }
+      { include: 'comment.source.md' }
+      { include: 'heading.source.md' }
       # {
       #   'include': '#dividers'
       # }
@@ -45,9 +40,7 @@
     ]
   'inline':
     'patterns': [
-      {
-        'include': 'emphasis.source.md'
-      }
+      { include: 'emphasis.source.md' }
       # {
       #   'include': '#links'
       # }
