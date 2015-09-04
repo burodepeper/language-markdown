@@ -1,3 +1,5 @@
+# NOTE
+# Copy-and-paste from language-gfm package. Needs some work I think.
 'name': 'Markdown emphasis (inline)'
 'scopeName': 'emphasis.source.md'
 'fileTypes': []
