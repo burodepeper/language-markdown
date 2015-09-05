@@ -9,7 +9,7 @@ See: http://spec.commonmark.org/0.22/
 
 ### Leaf blocks
 
-Leaf blocks are blocks that can _not_ container other blocks.
+Leaf blocks are blocks that can _not_ contain other blocks.
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
@@ -25,7 +25,7 @@ Leaf blocks are blocks that can _not_ container other blocks.
 
 ### Container blocks
 
-Container blocks are blocks that _can_ container other blocks.
+Container blocks are blocks that _can_ contain other blocks.
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
