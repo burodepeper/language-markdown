@@ -11,45 +11,49 @@ describe 'Markdown grammar', ->
   # http://spec.commonmark.org/0.22/#horizontal-rule
   it 'tokenizes horitontal rules', ->
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-8
     {tokens} = grammar.tokenizeLine('***')
+    expect(tokens[0]).toEqual value: '***', scopes: ['source.md', 'hr.md']
 
     {tokens} = grammar.tokenizeLine('---')
+    expect(tokens[0]).toEqual value: '---', scopes: ['source.md', 'hr.md']
 
     {tokens} = grammar.tokenizeLine('___')
+    expect(tokens[0]).toEqual value: '___', scopes: ['source.md', 'hr.md']
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-9
     {tokens} = grammar.tokenizeLine('+++')
+    expect(tokens[0]).toEqual value: '+++', scopes: ['source.md']
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-10
     {tokens} = grammar.tokenizeLine('===')
+    expect(tokens[0]).toEqual value: '===', scopes: ['source.md']
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-11
     {tokens} = grammar.tokenizeLine('--')
+    expect(tokens[0]).toEqual value: '--', scopes: ['source.md']
 
     {tokens} = grammar.tokenizeLine('**')
+    expect(tokens[0]).toEqual value: '**', scopes: ['source.md']
 
     {tokens} = grammar.tokenizeLine('__')
+    expect(tokens[0]).toEqual value: '__', scopes: ['source.md']
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-12
     {tokens} = grammar.tokenizeLine('  ***')
+    expect(tokens[0]).toEqual value: '  ***', scopes: ['source.md', 'hr.md']
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-13
     {tokens} = grammar.tokenizeLine('    ***')
+    expect(tokens[0]).toEqual value: '    ***', scopes: ['source.md']
 
     # TODO
     # http://spec.commonmark.org/0.22/#example-14
     {tokens} = grammar.tokenizeLine('Foo\n    ***')
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-15
     {tokens} = grammar.tokenizeLine('_____________________________________')
+    expect(tokens[0]).toEqual value: '_____________________________________', scopes: ['source.md', 'hr.md']
 
     # TODO
     # http://spec.commonmark.org/0.22/#example-16
@@ -67,17 +71,23 @@ describe 'Markdown grammar', ->
     # http://spec.commonmark.org/0.22/#example-19
     {tokens} = grammar.tokenizeLine('- - - -    ')
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-20
     {tokens} = grammar.tokenizeLine('_ _ _ _ a')
+    expect(tokens[0]).toEqual value: '_ _ _ _ a', scopes: ['source.md']
 
     {tokens} = grammar.tokenizeLine('a------')
+    expect(tokens[0]).toEqual value: 'a------', scopes: ['source.md']
 
     {tokens} = grammar.tokenizeLine('---a---')
+    expect(tokens[0]).toEqual value: '---a---', scopes: ['source.md']
 
-    # TODO
+    # FIXME
     # http://spec.commonmark.org/0.22/#example-21
     {tokens} = grammar.tokenizeLine(' *-*')
+    # expect(tokens[0]).toEqual value: ' ', scopes: ['source.md']
+    # expect(tokens[1]).toEqual value: '*', scopes: ['source.md', 'emphasis.md']
+    # expect(tokens[2]).toEqual value: '-', scopes: ['source.md', 'emphasis.md']
+    # expect(tokens[3]).toEqual value: '*', scopes: ['source.md', 'emphasis.md']
 
     # TODO
     # http://spec.commonmark.org/0.22/#example-22
@@ -86,6 +96,9 @@ describe 'Markdown grammar', ->
     # TODO
     # http://spec.commonmark.org/0.22/#example-23
     {tokens} = grammar.tokenizeLine('Foo\n***\nbar')
+
+    # for token, i in tokens
+    #   console.log "#23["+i+"]: '"+token.value+"' ("+token.value.length+")"
 
     # TODO
     # http://spec.commonmark.org/0.22/#example-24

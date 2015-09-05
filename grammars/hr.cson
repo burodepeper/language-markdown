@@ -1,0 +1,16 @@
+name: 'Markdown horizontal rules'
+scopeName: 'hr.source.md'
+patterns: [
+  {
+    name: 'hr.md'
+    match: '^[ ]{0,3}[-]{3,}$'
+  }
+  {
+    name: 'hr.md'
+    match: '^[ ]{0,3}[*]{3,}$'
+  }
+  {
+    name: 'hr.md'
+    match: '^[ ]{0,3}[_]{3,}$'
+  }
+]

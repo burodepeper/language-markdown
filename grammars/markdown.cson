@@ -21,6 +21,7 @@
   'blocks':
     'patterns': [
       { include: 'comment.source.md' }
+      { include: 'hr.source.md' }
       { include: 'heading.source.md' }
       # {
       #   'include': '#dividers'
