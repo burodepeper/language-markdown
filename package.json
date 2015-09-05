@@ -15,6 +15,7 @@
   "dependencies": {
     "first-mate": "^5.0.0",
     "glob": "^5.0.14",
+    "js-yaml": "^3.4.1",
     "lodash": "^3.10.1",
     "season": "^5.3.0"
   }

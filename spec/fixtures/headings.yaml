@@ -1,0 +1,47 @@
+name: 'ATX Headings'
+tests:
+  # Single line example
+
+  # http://spec.commonmark.org/0.22/#example-27
+  - name: Level 1 Headline
+    md: "# Heading"
+    result:
+      # Multiple tokens can be written as one key separated by pipes
+      - text.md|heading.md|heading-1.md:
+        - punctuation.md: '#'
+        - ' '
+        - Heading
+
+  # The style that you write is really up to you:
+
+  # http://spec.commonmark.org/0.22/#example-32
+  - name: Level 1 Headline with a lot of spaces
+    md: "#                  foo"
+    result:
+      - text.md|heading.md|heading-1.md|punctuation.md: '#'
+      - text.md|heading.md|heading-1.md: '                  '
+      - text.md|heading.md|heading-1.md: 'foo'
+
+  # Multiline example
+
+  # http://spec.commonmark.org/0.22/#example-42
+  - name: Headline between <hr>'s
+    md: |-
+      ****
+      ## foo
+      ****
+    result:
+      - text.md:
+        - hr.md: '****'
+        # Multiple lines are broken by break: true
+        - break: true
+        - heading.md|heading-2.md:
+          - punctuation.md: '##'
+          - ' '
+          - foo
+        - break: true
+        - hr.md: '****'
+
+  # Example: TODO
+  - name: TODO test
+    todo: true
