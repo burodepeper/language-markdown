@@ -1,5 +1,5 @@
 name: 'Markdown'
-scopeName: 'text'
+scopeName: 'text.md'
 fileTypes: [
   'emdee' # temporary file-type, to co-exist with other packages
   # 'markdown'
