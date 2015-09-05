@@ -29,10 +29,9 @@ describe 'Markdown grammar', ->
     {tokens} = grammar.tokenizeLine('#foobar')
     expect(tokens[0]).toEqual value: '#foobar', scopes: ['source.md']
 
-    # FIXME @burodepeper
     # http://spec.commonmark.org/0.22/#example-30
-    # {tokens} = grammar.tokenizeLine('\## foo')
-    # expect(tokens[0]).toEqual value: '\## foo', scopes: ['source.md']
+    {tokens} = grammar.tokenizeLine('\\## foo')
+    expect(tokens[0]).toEqual value: '\\## foo', scopes: ['source.md']
 
     # FIXME
     # http://spec.commonmark.org/0.22/#example-31
@@ -66,57 +65,47 @@ describe 'Markdown grammar', ->
     # http://spec.commonmark.org/0.22/#example-35
     {tokens} = grammar.tokenizeLine('foo\n    # bar')
 
-    # FIXME @burodepeper
-    # This spec fails because the space after 'foo' is scoped together with the closing '##'
     # http://spec.commonmark.org/0.22/#example-36
     {tokens} = grammar.tokenizeLine('## foo ##')
-    # expect(tokens[0]).toEqual value: '##', scopes: ['source.md', 'heading.md', 'heading-2.md', 'punctuation.md']
-    # expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-2.md']
-    # expect(tokens[2]).toEqual value: 'foo', scopes: ['source.md', 'heading.md', 'heading-2.md']
-    # expect(tokens[3]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-2.md']
-    # expect(tokens[4]).toEqual value: '##', scopes: ['source.md', 'heading.md', 'heading-2.md', 'punctuation.md']
+    expect(tokens[0]).toEqual value: '##', scopes: ['source.md', 'heading.md', 'heading-2.md', 'punctuation.md']
+    expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-2.md']
+    expect(tokens[2]).toEqual value: 'foo', scopes: ['source.md', 'heading.md', 'heading-2.md']
+    expect(tokens[3]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-2.md']
+    expect(tokens[4]).toEqual value: '##', scopes: ['source.md', 'heading.md', 'heading-2.md', 'punctuation.md']
 
-    # FIXME @burodepeper
-    # This spec fails because the space after 'bar' is scoped together with the closing '###'
     # Variant of #36
     {tokens} = grammar.tokenizeLine('  ###   bar    ###')
-    # expect(tokens[0]).toEqual value: '  ', scopes: ['source.md', 'heading.md', 'heading-3.md']
-    # expect(tokens[1]).toEqual value: '###', scopes: ['source.md', 'heading.md', 'heading-3.md', 'punctuation.md']
-    # expect(tokens[2]).toEqual value: '   ', scopes: ['source.md', 'heading.md', 'heading-3.md']
-    # expect(tokens[3]).toEqual value: 'bar   ', scopes: ['source.md', 'heading.md', 'heading-3.md']
-    # expect(tokens[4]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-3.md']
-    # expect(tokens[5]).toEqual value: '###', scopes: ['source.md', 'heading.md', 'heading-3.md', 'punctuation.md']
+    expect(tokens[0]).toEqual value: '  ', scopes: ['source.md', 'heading.md', 'heading-3.md']
+    expect(tokens[1]).toEqual value: '###', scopes: ['source.md', 'heading.md', 'heading-3.md', 'punctuation.md']
+    expect(tokens[2]).toEqual value: '   ', scopes: ['source.md', 'heading.md', 'heading-3.md']
+    expect(tokens[3]).toEqual value: 'bar   ', scopes: ['source.md', 'heading.md', 'heading-3.md']
+    expect(tokens[4]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-3.md']
+    expect(tokens[5]).toEqual value: '###', scopes: ['source.md', 'heading.md', 'heading-3.md', 'punctuation.md']
 
-    # FIXME @burodepeper
-    # http://spec.commonmark.org/0.22/#example-37
     # This spec fails because the space after 'foo' is scoped together with the closing '###'s
     {tokens} = grammar.tokenizeLine('# foo ##################################')
-    # expect(tokens[0]).toEqual value: '#', scopes: ['source.md', 'heading.md', 'heading-1.md', 'punctuation.md']
-    # expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-1.md']
-    # expect(tokens[2]).toEqual value: 'foo', scopes: ['source.md', 'heading.md', 'heading-1.md']
-    # expect(tokens[3]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-1.md']
-    # expect(tokens[4]).toEqual value: '##################################', scopes: ['source.md', 'heading.md', 'heading-1.md', 'punctuation.md']
+    expect(tokens[0]).toEqual value: '#', scopes: ['source.md', 'heading.md', 'heading-1.md', 'punctuation.md']
+    expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-1.md']
+    expect(tokens[2]).toEqual value: 'foo', scopes: ['source.md', 'heading.md', 'heading-1.md']
+    expect(tokens[3]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-1.md']
+    expect(tokens[4]).toEqual value: '##################################', scopes: ['source.md', 'heading.md', 'heading-1.md', 'punctuation.md']
 
-    # FIXME @burodepeper
-    # Variant of #37
     # This spec fails because the space after 'foo' is scoped together with the closing '##'
     {tokens} = grammar.tokenizeLine('##### foo ##')
-    # expect(tokens[0]).toEqual value: '#####', scopes: ['source.md', 'heading.md', 'heading-5.md', 'punctuation.md']
-    # expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-5.md']
-    # expect(tokens[2]).toEqual value: 'foo', scopes: ['source.md', 'heading.md', 'heading-5.md']
-    # expect(tokens[3]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-5.md']
-    # expect(tokens[4]).toEqual value: '##', scopes: ['source.md', 'heading.md', 'heading-5.md', 'punctuation.md']
+    expect(tokens[0]).toEqual value: '#####', scopes: ['source.md', 'heading.md', 'heading-5.md', 'punctuation.md']
+    expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-5.md']
+    expect(tokens[2]).toEqual value: 'foo', scopes: ['source.md', 'heading.md', 'heading-5.md']
+    expect(tokens[3]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-5.md']
+    expect(tokens[4]).toEqual value: '##', scopes: ['source.md', 'heading.md', 'heading-5.md', 'punctuation.md']
 
-    # FIXME @burodepeper
-    # http://spec.commonmark.org/0.22/#example-38
     # This spec fails because the space after 'foo' is scoped together with the closing '###'
     {tokens} = grammar.tokenizeLine('### foo ###     ')
-    # expect(tokens[0]).toEqual value: '###', scopes: ['source.md', 'heading.md', 'heading-3.md', 'punctuation.md']
-    # expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-3.md']
-    # expect(tokens[2]).toEqual value: 'foo', scopes: ['source.md', 'heading.md', 'heading-3.md']
-    # expect(tokens[3]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-3.md']
-    # expect(tokens[4]).toEqual value: '###', scopes: ['source.md', 'heading.md', 'heading-3.md', 'punctuation.md']
-    # expect(tokens[5]).toEqual value: '     ', scopes: ['source.md', 'heading.md', 'heading-3.md']
+    expect(tokens[0]).toEqual value: '###', scopes: ['source.md', 'heading.md', 'heading-3.md', 'punctuation.md']
+    expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-3.md']
+    expect(tokens[2]).toEqual value: 'foo', scopes: ['source.md', 'heading.md', 'heading-3.md']
+    expect(tokens[3]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-3.md']
+    expect(tokens[4]).toEqual value: '###', scopes: ['source.md', 'heading.md', 'heading-3.md', 'punctuation.md']
+    expect(tokens[5]).toEqual value: '     ', scopes: ['source.md', 'heading.md', 'heading-3.md']
 
     # http://spec.commonmark.org/0.22/#example-39
     {tokens} = grammar.tokenizeLine('### foo ### b')
