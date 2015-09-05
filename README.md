@@ -53,6 +53,11 @@ Container blocks are blocks that _can_ container other blocks.
 
 TODO Add description of intention
 
+| Section | Specs | Progress | Contact |
+| ------- | ----- | -------: | ------- |
+| Dynamic grammar selection | | | @leipert |
+| Less verbose specs | | | @leipert |
+
 ### Github flavored Markdown
 
 See: https://help.github.com/articles/github-flavored-markdown/
