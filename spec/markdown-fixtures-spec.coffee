@@ -4,24 +4,10 @@ yaml = require 'js-yaml'
 path = require 'path'
 _ = require 'lodash'
 fs = require 'fs'
-specHelper = require './spec-helper.coffee'
+specHelper = require './spec-helper'
 
 # Get filenames of each fixture file
 fixtures = glob.sync(path.join(__dirname, 'fixtures', '**', '*.yaml'))
-
-grammar = null
-
-# Activate Grammar for before each test
-beforeEach ->
-  waitsForPromise ->
-    atom.packages.activatePackage("language-markdown")
-
-  runs ->
-    grammar = atom.grammars.grammarForScopeName("text.md")
-
-# Cleanup after each test
-afterEach ->
-  grammar = null
 
 describe "Run all fixtures", ->
 
@@ -39,12 +25,26 @@ describe "Run all fixtures", ->
     it "Loading fixtures in #{path} should not fail", ->
       expect(fixture).not.toEqual(null)
 
+    it "#{path} should at least define one test", ->
+      expect(fixture.tests.length > 0).toEqual(true)
+
     # Fixture file loaded successfully, let's run it:
 
     describe fixture.name, ->
 
-      it "should at least define one test", ->
-        expect(fixture.tests.length > 0).toEqual(true)
+      grammar = null
+
+      # Activate Grammar for before each test
+      beforeEach ->
+        waitsForPromise ->
+          atom.packages.activatePackage("language-markdown")
+
+        runs ->
+          grammar = atom.grammars.grammarForScopeName("text.md")
+
+      # Cleanup after each test
+      afterEach ->
+        grammar = null
 
       _.forEach fixture.tests, (test) ->
 
