@@ -31,16 +31,15 @@ tests:
       ## foo
       ****
     result:
-      - text.md:
-        - hr.md: '****'
-        # Multiple lines are broken by break: true
-        - break: true
-        - heading.md|heading-2.md:
-          - punctuation.md: '##'
-          - ' '
-          - foo
-        - break: true
-        - hr.md: '****'
+      - text.md|hr.md: '****'
+      # Multiple lines are broken by break: true
+      - break: true
+      - text.md|heading.md|heading-2.md:
+        - punctuation.md: '##'
+        - ' '
+        - foo
+      - break: true
+      - text.md|hr.md: '****'
 
   # Example: TODO
   - name: TODO test
