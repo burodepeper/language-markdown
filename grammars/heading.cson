@@ -1,5 +1,5 @@
 name: 'Markdown: ATX headers'
-scopeName: 'heading.source.md'
+scopeName: 'heading.md'
 
 patterns: [
   # Empty headings
@@ -130,7 +130,7 @@ patterns: [
 repository:
   inline:
     patterns: [
-      { include: 'emphasis.source.md' }
-      # { include: 'links.source.md' }
-      # { include: 'inline-code.source.md' }
+      { include: 'emphasis.md' }
+      # { include: 'links.md' }
+      # { include: 'inline-code.md' }
     ]

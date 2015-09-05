@@ -1,7 +1,6 @@
 # http://spec.commonmark.org/0.22/#horizontal-rule
-
-name: 'Markdown horizontal rules'
-scopeName: 'hr.source.md'
+name: 'Markdown: horizontal rules'
+scopeName: 'hr.md'
 patterns: [
   {
     name: 'hr.md'

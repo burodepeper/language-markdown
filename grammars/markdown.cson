@@ -1,8 +1,7 @@
-'name': 'Markdown'
-'scopeName': 'source.md'
-'fileTypes': [
-  # temporary file-type, to co-exist with other packages
-  'emdee'
+name: 'Markdown'
+scopeName: 'text'
+fileTypes: [
+  'emdee' # temporary file-type, to co-exist with other packages
   # 'markdown'
   # 'md'
   # 'mdown'
@@ -12,40 +11,27 @@
   # 'ron'
 ]
 
-'patterns': [
+patterns: [
   { include: '#blocks' }
   { include: '#inline' }
 ]
 
-'repository':
-  'blocks':
-    'patterns': [
-      { include: 'comment.source.md' }
-      { include: 'hr.source.md' }
-      { include: 'heading.source.md' }
-      # {
-      #   'include': '#dividers'
-      # }
-      # {
-      #   'include': '#lists'
-      # }
-      # {
-      #   'include': '#quote'
-      # }
-      # {
-      #   'include': '#table'
-      # }
-      # {
-      #   'include': '#comment'
-      # }
+repository:
+
+  blocks:
+    patterns: [
+      { include: 'comment.md' }
+      { include: 'hr.md' }
+      { include: 'heading.md' }
+      # { include: 'dividers.md' }
+      # { include: 'lists.md' }
+      # { include: 'quote.md' }
+      # { include: 'table.md' }
     ]
-  'inline':
-    'patterns': [
-      { include: 'emphasis.source.md' }
-      # {
-      #   'include': '#links'
-      # }
-      # {
-      #   'include': '#inline-code'
-      # }
+
+  inline:
+    patterns: [
+      { include: 'emphasis.md' }
+      # { include: 'links.md' }
+      # { include: 'inline-code.md' }
     ]

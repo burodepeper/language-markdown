@@ -1,14 +1,12 @@
-'name': 'Markdown comments'
-'scopeName': 'comment.source.md'
-'patterns': [
+name: 'Markdown: comments'
+scopeName: 'comment.md'
+patterns: [
   {
-    'name': 'comment.block.md'
-    'begin': '(<!--)'
-    'end': '(-->)'
-    'captures':
-      '1':
-        'name': 'punctuation.md'
-      '3':
-        'name': 'punctuation.md'
+    name: 'comment.block.md'
+    begin: '(<!--)'
+    end: '(-->)'
+    captures:
+      1: { name: 'punctuation.md' }
+      3: { name: 'punctuation.md' }
   }
 ]
