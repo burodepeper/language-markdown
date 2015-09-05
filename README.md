@@ -64,10 +64,18 @@ See: https://help.github.com/articles/github-flavored-markdown/
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
-| TODO | | | |
+| TODO @burodepeper | | | |
 
 ### Pandoc flavored Markdown
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
-| TODO | | | |
+| TODO @leipert | | | |
+
+### CriticMarkup
+
+See: https://github.com/CriticMarkup/CriticMarkup-toolkit/
+
+| Section | Specs | Progress | Contact |
+| ------- | ----- | -------: | ------- |
+| TODO | | | @burodepeper |
