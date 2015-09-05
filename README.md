@@ -1,6 +1,7 @@
 # Markdown
 
-Work in progress...
+TODO Work in progress
+TODO Add description of intention
 
 ## Commonmark implementation
 
@@ -8,9 +9,11 @@ See: http://spec.commonmark.org/0.22/
 
 ### Leaf blocks
 
-| Section | Tests | Progress | Assignee |
-| ------- | ----- | -------- | -------- |
-| Horizontal rules | | | |
+Leaf blocks are blocks that can _not_ container other blocks.
+
+| Section | Specs | Progress | Contact |
+| ------- | ----- | -------: | ------- |
+| Horizontal rules | 0 of 25 | 0% | @burodepeper |
 | ATX headings | 8 of 25 | 32% | @burodepeper |
 | Setext headers | | | |
 | Indented code blocks | | | |
@@ -22,16 +25,18 @@ See: http://spec.commonmark.org/0.22/
 
 ### Container blocks
 
-| Section | Tests | Progress | Assignee |
-| ------- | ----- | -------- | -------- |
+Container blocks are blocks that _can_ container other blocks.
+
+| Section | Specs | Progress | Contact |
+| ------- | ----- | -------: | ------- |
 | Block quotes | | | |
 | List items | | | |
 | Lists | | | |
 
 ### Inlines
 
-| Section | Tests | Progress | Assignee |
-| ------- | ----- | -------- | -------- |
+| Section | Specs | Progress | Contact |
+| ------- | ----- | -------: | ------- |
 | Backslash escapes | | | |
 | Entities | | | |
 | Code spans | | | |
@@ -48,6 +53,16 @@ See: http://spec.commonmark.org/0.22/
 
 TODO Add description of intention
 
-- Github
-- Pandoc
-- ...
+### Github flavored Markdown
+
+See: https://help.github.com/articles/github-flavored-markdown/
+
+| Section | Specs | Progress | Contact |
+| ------- | ----- | -------: | ------- |
+| TODO | | | |
+
+### Pandoc flavored Markdown
+
+| Section | Specs | Progress | Contact |
+| ------- | ----- | -------: | ------- |
+| TODO | | | |
