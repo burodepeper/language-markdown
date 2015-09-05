@@ -12,46 +12,58 @@ patterns: [
       1:
         patterns: [
           {
-            match: '(#{6})( +)(.+)$'
-            name: 'heading-6.md'
-            captures:
-              1: { name: 'punctuation.md' }
-              3: patterns: [{ include: '#inline' }]
-          }
-          {
-            match: '(#{5})( +)(.+)$'
-            name: 'heading-5.md'
-            captures:
-              1: { name: 'punctuation.md' }
-              3: patterns: [{ include: '#inline' }]
-          }
-          {
-            match: '(#{4})( +)(.+)$'
-            name: 'heading-4.md'
-            captures:
-              1: { name: 'punctuation.md' }
-              3: patterns: [{ include: '#inline' }]
-          }
-          {
-            match: '(#{3})( +)(.+)$'
-            name: 'heading-3.md'
-            captures:
-              1: { name: 'punctuation.md' }
-              3: patterns: [{ include: '#inline' }]
-          }
-          {
-            match: '(#{2})( +)(.+)$'
-            name: 'heading-2.md'
-            captures:
-              1: { name: 'punctuation.md' }
-              3: patterns: [{ include: '#inline' }]
-          }
-          {
-            match: '(#{1})( +)(.+)$'
+            begin: '^(?: {0,3})(#{1})(?: +)'
+            end: '(( ){1}#*)(?: *)$'
             name: 'heading-1.md'
             captures:
               1: { name: 'punctuation.md' }
-              3: patterns: [{ include: '#inline' }]
+              2: patterns: [{ include: '#inline' }]
+              3: { name: 'punctuation.md' }
+          }
+          {
+            begin: '^(?: {0,3})(#{2})(?: +)'
+            end: '(( ){1}#*)(?: *)$'
+            name: 'heading-2.md'
+            captures:
+              1: { name: 'punctuation.md' }
+              2: patterns: [{ include: '#inline' }]
+              3: { name: 'punctuation.md' }
+          }
+          {
+            begin: '^(?: {0,3})(#{3})(?: +)'
+            end: '(( ){1}#*)(?: *)$'
+            name: 'heading-3.md'
+            captures:
+              1: { name: 'punctuation.md' }
+              2: patterns: [{ include: '#inline' }]
+              3: { name: 'punctuation.md' }
+          }
+          {
+            begin: '^(?: {0,3})(#{4})(?: +)'
+            end: '(( ){1}#*)(?: *)$'
+            name: 'heading-4.md'
+            captures:
+              1: { name: 'punctuation.md' }
+              2: patterns: [{ include: '#inline' }]
+              3: { name: 'punctuation.md' }
+          }
+          {
+            begin: '^(?: {0,3})(#{5})(?: +)'
+            end: '(( ){1}#*)(?: *)$'
+            name: 'heading-5.md'
+            captures:
+              1: { name: 'punctuation.md' }
+              2: patterns: [{ include: '#inline' }]
+              3: { name: 'punctuation.md' }
+          }
+          {
+            begin: '^(?: {0,3})(#{6})(?: +)'
+            end: '(( ){1}#*)(?: *)$'
+            name: 'heading-6.md'
+            captures:
+              1: { name: 'punctuation.md' }
+              2: patterns: [{ include: '#inline' }]
+              3: { name: 'punctuation.md' }
           }
     ]
   }

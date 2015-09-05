@@ -48,6 +48,7 @@ foo
 
 <!-- http://spec.commonmark.org/0.22/#example-39 -->
 ### foo ### b
+# foo ## bar
 
 <!-- http://spec.commonmark.org/0.22/#example-40 -->
 # foo#
