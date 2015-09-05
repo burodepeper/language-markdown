@@ -14,7 +14,7 @@ Leaf blocks are blocks that can _not_ container other blocks.
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
 | Horizontal rules | 20 of 25 | 80% | @burodepeper |
-| ATX headings | 16 of 25 | 64% | @burodepeper |
+| ATX headings | 22 of 25 | 88% | @burodepeper |
 | Setext headers | | | |
 | Indented code blocks | | | |
 | Fenced code blocks | | | |
