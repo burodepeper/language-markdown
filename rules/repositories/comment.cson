@@ -1,0 +1,13 @@
+key: 'comment'
+patterns: [
+  {
+    name: 'comment.block.md'
+    begin: '(<!--)'
+    end: '(-->)'
+    captures:
+      1:
+        name: 'punctuation.md'
+      3:
+        name: 'punctuation.md'
+  }
+]

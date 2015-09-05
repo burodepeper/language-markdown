@@ -1,6 +1,4 @@
-name: 'Markdown: ATX headers'
-scopeName: 'heading.md'
-
+key: 'heading'
 patterns: [
   # Empty headings
   {
@@ -126,11 +124,3 @@ patterns: [
     ]
   }
 ]
-
-repository:
-  inline:
-    patterns: [
-      { include: 'emphasis.md' }
-      # { include: 'links.md' }
-      # { include: 'inline-code.md' }
-    ]

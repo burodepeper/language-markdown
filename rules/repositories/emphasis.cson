@@ -1,38 +1,40 @@
 # NOTE
 # Copy-and-paste from language-gfm package. Needs some work I think.
 
-name: 'Markdown: emphasis (inline)'
-scopeName: 'emphasis.md'
+# TODO
+# 'italic' and 'bold' should be renamed to 'emphasis' and 'strong.emphasis'
+
+key: 'emphasis'
 patterns: [
   {
     begin: '(?<=^|[^\\w\\d\\*])\\*\\*\\*(?!$|\\*|\\s)'
     end: '(?<!^|\\s)\\*\\*\\**\\*(?=$|[^\\w|\\d])'
-    name: 'strong.emphasis.md'
+    name: 'bold.italic.md'
   }
   {
     begin: '(?<=^|[^\\w\\d_])___(?!$|_|\\s)'
     end: '(?<!^|\\s)___*_(?=$|[^\\w|\\d])'
-    name: 'strong.emphasis.md'
+    name: 'bold.italic.md'
   }
   {
     begin: '(?<=^|[^\\w\\d\\*])\\*\\*(?!$|\\*|\\s)'
     end: '(?<!^|\\s)\\*\\**\\*(?=$|[^\\w|\\d])'
-    name: 'strong.md'
+    name: 'bold.md'
   }
   {
     begin: '(?<=^|[^\\w\\d_])__(?!$|_|\\s)'
     end: '(?<!^|\\s)__*_(?=$|[^\\w|\\d])'
-    name: 'strong.md'
+    name: 'bold.md'
   }
   {
     begin: '(?<=^|[^\\w\\d\\*])\\*(?!$|\\*|\\s)'
     end: '(?<!^|\\s)\\**\\*(?=$|[^\\w|\\d])'
-    name: 'emphasis.md'
+    name: 'italic.md'
   }
   {
     begin: '(?<=^|[^\\w\\d_\\{\\}])_(?!$|_|\\s)'
     end: '(?<!^|\\s)_*_(?=$|[^\\w|\\d])'
-    name: 'emphasis.md'
+    name: 'italic.md'
   }
   {
     begin: '(?<=^|[^\\w\\d~])~~(?!$|~|\\s)'
