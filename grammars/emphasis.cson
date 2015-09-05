@@ -1,5 +1,8 @@
 # NOTE
 # Copy-and-paste from language-gfm package. Needs some work I think.
+
+# TODO
+# 'italic' and 'bold' should be renamed to 'emphasis' and 'strong.emphasis'
 'name': 'Markdown emphasis (inline)'
 'scopeName': 'emphasis.source.md'
 'fileTypes': []
