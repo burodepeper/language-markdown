@@ -31,8 +31,6 @@ loadGrammar = () ->
                         .value()
 
 
-  console.warn(options)
-
   options
 
 module.exports =
