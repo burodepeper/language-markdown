@@ -55,21 +55,21 @@ describe 'Markdown grammar', ->
     {tokens} = grammar.tokenizeLine('_____________________________________')
     expect(tokens[0]).toEqual value: '_____________________________________', scopes: ['source.md', 'hr.md']
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-16
     {tokens} = grammar.tokenizeLine(' - - -')
+    expect(tokens[0]).toEqual value: ' - - -', scopes: ['source.md', 'hr.md']
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-17
     {tokens} = grammar.tokenizeLine(' **  * ** * ** * **')
+    expect(tokens[0]).toEqual value: ' **  * ** * ** * **', scopes: ['source.md', 'hr.md']
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-18
     {tokens} = grammar.tokenizeLine('-     -      -      -')
+    expect(tokens[0]).toEqual value: '-     -      -      -', scopes: ['source.md', 'hr.md']
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-19
     {tokens} = grammar.tokenizeLine('- - - -    ')
+    expect(tokens[0]).toEqual value: '- - - -    ', scopes: ['source.md', 'hr.md']
 
     # http://spec.commonmark.org/0.22/#example-20
     {tokens} = grammar.tokenizeLine('_ _ _ _ a')
