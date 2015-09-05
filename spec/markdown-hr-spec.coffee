@@ -47,9 +47,10 @@ describe 'Markdown grammar', ->
     {tokens} = grammar.tokenizeLine('    ***')
     expect(tokens[0]).toEqual value: '    ***', scopes: ['source.md']
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-14
-    {tokens} = grammar.tokenizeLine('Foo\n    ***')
+    [firstLineTokens, secondLineTokens] = grammar.tokenizeLines("Foo\n    ***")
+    expect(firstLineTokens[0]).toEqual value: 'Foo', scopes: ['source.md']
+    expect(secondLineTokens[0]).toEqual value: '    ***', scopes: ['source.md']
 
     # http://spec.commonmark.org/0.22/#example-15
     {tokens} = grammar.tokenizeLine('_____________________________________')
@@ -81,7 +82,7 @@ describe 'Markdown grammar', ->
     {tokens} = grammar.tokenizeLine('---a---')
     expect(tokens[0]).toEqual value: '---a---', scopes: ['source.md']
 
-    # FIXME
+    # FIXME naming in 'emphasis'
     # http://spec.commonmark.org/0.22/#example-21
     {tokens} = grammar.tokenizeLine(' *-*')
     # expect(tokens[0]).toEqual value: ' ', scopes: ['source.md']
@@ -89,25 +90,38 @@ describe 'Markdown grammar', ->
     # expect(tokens[2]).toEqual value: '-', scopes: ['source.md', 'emphasis.md']
     # expect(tokens[3]).toEqual value: '*', scopes: ['source.md', 'emphasis.md']
 
-    # TODO
+    # TODO impliment 'list-items'
     # http://spec.commonmark.org/0.22/#example-22
-    {tokens} = grammar.tokenizeLine('- foo\n***\n- bar')
+    [firstLineTokens, secondLineTokens, thirdLineTokens] = grammar.tokenizeLines("- foo\n***\n- bar")
+    # expect(firstLineTokens[0]).toEqual value: '-', scopes: ['source.md', "unordered.list.md", "punctuation.md"]
+    # expect(firstLineTokens[1]).toEqual value: ' foo', scopes: ['source.md', "unordered.list.md"]
+    # expect(secondLineTokens[0]).toEqual value: '***', scopes: ['source.md', 'hr.md']
+    # expect(thirdLineTokens[0]).toEqual value: '-', scopes: ['source.md', "unordered.list.md", "punctuation.md"]
+    # expect(thirdLineTokens[1]).toEqual value: ' bar', scopes: ['source.md', "unordered.list.md"]
 
-    # TODO
     # http://spec.commonmark.org/0.22/#example-23
-    {tokens} = grammar.tokenizeLine('Foo\n***\nbar')
+    [firstLineTokens, secondLineTokens, thirdLineTokens] = grammar.tokenizeLines("Foo\n***\nbar")
+    expect(firstLineTokens[0]).toEqual value: 'Foo', scopes: ['source.md']
+    expect(secondLineTokens[0]).toEqual value: '***', scopes: ['source.md', 'hr.md']
+    expect(thirdLineTokens[0]).toEqual value: 'bar', scopes: ['source.md']
 
-    # for token, i in tokens
-    #   console.log "#23["+i+"]: '"+token.value+"' ("+token.value.length+")"
-
-    # TODO
+    # TODO 'setext header'
     # http://spec.commonmark.org/0.22/#example-24
     {tokens} = grammar.tokenizeLine('Foo\n---\nbar')
 
-    # TODO
+    # TODO impliment 'list-items'
     # http://spec.commonmark.org/0.22/#example-25
-    {tokens} = grammar.tokenizeLine('* Foo\n* * *\n* Bar')
+    [firstLineTokens, secondLineTokens, thirdLineTokens] = grammar.tokenizeLines("- foo\n***\n- bar")
+    # expect(firstLineTokens[0]).toEqual value: '*', scopes: ['source.md', "unordered.list.md", "punctuation.md"]
+    # expect(firstLineTokens[1]).toEqual value: ' Foo', scopes: ['source.md', "unordered.list.md"]
+    # expect(secondLineTokens[0]).toEqual value: '* * *', scopes: ['source.md', 'hr.md']
+    # expect(thirdLineTokens[0]).toEqual value: '*', scopes: ['source.md', "unordered.list.md", "punctuation.md"]
+    # expect(thirdLineTokens[1]).toEqual value: ' Bar', scopes: ['source.md', "unordered.list.md"]
 
-    # TODO
+    # TODO impliment 'list-items'
     # http://spec.commonmark.org/0.22/#example-26
-    {tokens} = grammar.tokenizeLine('- Foo\n- * * *')
+    [firstLineTokens, secondLineTokens] = grammar.tokenizeLines("- Foo\n- * * *")
+    # expect(firstLineTokens[0]).toEqual value: '-', scopes: ['source.md', "unordered.list.md", "punctuation.md"]
+    # expect(firstLineTokens[1]).toEqual value: ' Foo', scopes: ['source.md', "unordered.list.md"]
+    # expect(secondLineTokens[0]).toEqual value: '-', scopes: ['source.md', "unordered.list.md", "punctuation.md"]
+    # expect(secondLineTokens[1]).toEqual value: ' * * *', scopes: ['source.md', "unordered.list.md", "hr.md"]
