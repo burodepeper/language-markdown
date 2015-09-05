@@ -7,7 +7,7 @@ fs = require 'fs'
 specHelper = require './spec-helper.coffee'
 
 # Get filenames of each fixture file
-fixtures = glob.sync(path.join(__dirname, 'fixtures', '*.yaml'))
+fixtures = glob.sync(path.join(__dirname, 'fixtures', '**', '*.yaml'))
 
 grammar = null
 
