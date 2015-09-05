@@ -1,4 +1,4 @@
-name: 'Markdown ATX headers'
+name: 'Markdown: ATX headers'
 scopeName: 'heading.source.md'
 patterns: [
   {
