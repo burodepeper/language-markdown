@@ -1,0 +1,8 @@
+key: 'disabled'
+patterns: [
+  {
+    disable: true
+    match: 'FOOBAR'
+    name: 'foobar'
+  }
+]

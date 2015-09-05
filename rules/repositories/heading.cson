@@ -1,5 +1,4 @@
-name: 'Markdown: ATX headers'
-scopeName: 'heading.source.md'
+key: 'heading'
 patterns: [
   {
     # NOTE
@@ -68,11 +67,3 @@ patterns: [
     ]
   }
 ]
-
-repository:
-  inline:
-    patterns: [
-      { include: 'emphasis.source.md' }
-      # { include: 'links.source.md' }
-      # { include: 'inline-code.source.md' }
-    ]

@@ -1,0 +1,54 @@
+name: 'Markdown'
+scopeName: 'source.md'
+fileTypes: [
+  # temporary file-type, to co-exist with other packages
+  'emdee'
+  # 'markdown'
+  # 'md'
+  # 'mdown'
+  # 'mkd'
+  # 'mkdown'
+  # 'rmd'
+  # 'ron'
+]
+
+maxTokensPerLine: 100
+
+patterns: [
+  { include: '#blocks' }
+  { include: '#inline' }
+]
+
+repository:
+  blocks:
+    patterns: [
+      { include: '#comment' }
+      { include: '#horizontal-rule' }
+      { include: '#heading' }
+      { include: '#disabled' }
+      # {
+      #   include: '#dividers'
+      # }
+      # {
+      #   include: '#lists'
+      # }
+      # {
+      #   include: '#quote'
+      # }
+      # {
+      #   include: '#table'
+      # }
+      # {
+      #   include: '#comment'
+      # }
+    ]
+  inline:
+    patterns: [
+      { include: '#emphasis' }
+      # {
+      #   include: '#links'
+      # }
+      # {
+      #   include: '#inline-code'
+      # }
+    ]
