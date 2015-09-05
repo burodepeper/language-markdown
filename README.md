@@ -9,12 +9,12 @@ See: http://spec.commonmark.org/0.22/
 
 ### Leaf blocks
 
-Leaf blocks are blocks that can _not_ container other blocks.
+Leaf blocks are blocks that can _not_ contain other blocks.
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
 | Horizontal rules | 20 of 25 | 80% | @burodepeper |
-| ATX headings | 10 of 40 | 32% | @burodepeper |
+| ATX headings | 22 of 25 | 88% | @burodepeper |
 | Setext headers | | | |
 | Indented code blocks | | | |
 | Fenced code blocks | | | |
@@ -25,7 +25,7 @@ Leaf blocks are blocks that can _not_ container other blocks.
 
 ### Container blocks
 
-Container blocks are blocks that _can_ container other blocks.
+Container blocks are blocks that _can_ contain other blocks.
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
@@ -64,10 +64,18 @@ See: https://help.github.com/articles/github-flavored-markdown/
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
-| TODO | | | |
+| TODO @burodepeper | | | |
 
 ### Pandoc flavored Markdown
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
-| TODO | | | |
+| TODO @leipert | | | |
+
+### CriticMarkup
+
+See: https://github.com/CriticMarkup/CriticMarkup-toolkit/
+
+| Section | Specs | Progress | Contact |
+| ------- | ----- | -------: | ------- |
+| TODO | | | @burodepeper |

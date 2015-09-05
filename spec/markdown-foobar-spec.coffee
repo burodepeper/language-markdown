@@ -6,11 +6,12 @@ describe "Markdown foobar spec", ->
       atom.packages.activatePackage("language-markdown")
 
     runs ->
-      grammar = atom.grammars.grammarForScopeName("source.md")
+      grammar = atom.grammars.grammarForScopeName("text.md")
 
   it "parses the grammar", ->
     expect(grammar).toBeDefined()
-    expect(grammar.scopeName).toBe "source.md"
+    expect(grammar.scopeName).toBe "text.md"
 
   it "tokenizes spaces", ->
-    expect(tokens[0]).toEqual value: "FOOBAR", scopes: ["source.md"]
+    {tokens} = grammar.tokenizeLine('FOOBAR')
+    expect(tokens[0]).toEqual value: "FOOBAR", scopes: ["text.md"]
