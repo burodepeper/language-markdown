@@ -1,10 +1,11 @@
 name: 'Markdown: ATX headers'
 scopeName: 'heading.source.md'
+
 patterns: [
   # Empty headings
   {
     match: '^(?: {0,3})((?:#{1,6})\\s*(?:#*)\\s*)$'
-    name: 'heading.md'
+    name: 'empty.heading.md'
     captures:
       1:
         patterns: [
@@ -43,7 +44,10 @@ patterns: [
           {
             match: '^(#{2})\\s*(#*)\\s*$'
             name: 'heading-2.md'
-            captures: { 1: { name: 'punctuation.md' } }
+            captures: {
+              1: { name: 'punctuation.md' }
+              2: { name: 'punctuation.md' }
+            }
           }
           {
             match: '^(#{1})\\s*(#*)\\s*$'

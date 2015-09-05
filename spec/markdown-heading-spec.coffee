@@ -155,15 +155,15 @@ describe 'Markdown grammar', ->
 
     # http://spec.commonmark.org/0.22/#example-44
     {tokens} = grammar.tokenizeLine('## ')
-    expect(tokens[0]).toEqual value: '##', scopes: ['source.md', 'heading.md', 'heading-2.md', 'punctuation.md']
-    expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-2.md']
+    expect(tokens[0]).toEqual value: '##', scopes: ['source.md', 'empty.heading.md', 'heading-2.md', 'punctuation.md']
+    expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'empty.heading.md', 'heading-2.md']
 
     # Variant of #44
     {tokens} = grammar.tokenizeLine('#')
-    expect(tokens[0]).toEqual value: '#', scopes: ['source.md', 'heading.md', 'heading-1.md', 'punctuation.md']
+    expect(tokens[0]).toEqual value: '#', scopes: ['source.md', 'empty.heading.md', 'heading-1.md', 'punctuation.md']
 
     # Variant of #44
     {tokens} = grammar.tokenizeLine('### ###')
-    expect(tokens[0]).toEqual value: '###', scopes: ['source.md', 'heading.md', 'heading-3.md', 'punctuation.md']
-    expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'heading.md', 'heading-3.md']
-    expect(tokens[2]).toEqual value: '###', scopes: ['source.md', 'heading.md', 'heading-3.md', 'punctuation.md']
+    expect(tokens[0]).toEqual value: '###', scopes: ['source.md', 'empty.heading.md', 'heading-3.md', 'punctuation.md']
+    expect(tokens[1]).toEqual value: ' ', scopes: ['source.md', 'empty.heading.md', 'heading-3.md']
+    expect(tokens[2]).toEqual value: '###', scopes: ['source.md', 'empty.heading.md', 'heading-3.md', 'punctuation.md']
