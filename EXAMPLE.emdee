@@ -26,4 +26,6 @@ This is just a quick sample document to give you an example of the Markdown elem
 
 ---
 
-And possibly other stuff...
+And possibly other stuff, like...
+
+Escape ch\arac\ters
