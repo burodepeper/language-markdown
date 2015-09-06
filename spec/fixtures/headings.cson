@@ -204,6 +204,14 @@ output:
     2: 'foo'
   2: '****': 'text.md hr.md'
 
+# v6a => jasmine
+tokens = grammar.tokenizeLines('****\n## foo\n****')
+expect(tokens[0][0]).toEqual value: '****', tokens: ['text.md', 'hr.md']
+expect(tokens[1][0]).toEqual value: '##', tokens: ['text.md', 'heading.md', 'heading-2.md', 'punctuation.md']
+expect(tokens[1][1]).toEqual value: ' ', tokens: ['text.md', 'heading.md', 'heading-2.md']
+expect(tokens[1][2]).toEqual value: 'foo', tokens: ['text.md', 'heading.md', 'heading-2.md']
+expect(tokens[2][0]).toEqual value: '****', tokens: ['text.md', 'hr.md']
+
 
 
 # v6b
@@ -214,6 +222,12 @@ output:
     0: '#': 'punctuation.md'
     1: ' '
     2: 'Heading'
+
+# v6b => jasmine
+{tokens} = grammar.tokenizeLine('# Heading')
+expect(tokens[0]).toEqual value: '#', tokens: ['text.md', 'heading.md', 'heading-1.md', 'punctuation.md']
+expect(tokens[1]).toEqual value: ' ', tokens: ['text.md', 'heading.md', 'heading-1.md']
+expect(tokens[2]).toEqual value: 'Heading', tokens: ['text.md', 'heading.md', 'heading-1.md']
 
 
 
