@@ -1,8 +1,7 @@
 name: 'Markdown'
 scopeName: 'text.md'
 fileTypes: [
-  # temporary file-type, to co-exist with other packages
-  'emdee'
+  'emdee' # temporary file-type, to co-exist with other packages
   # 'markdown'
   # 'md'
   # 'mdown'
@@ -26,29 +25,15 @@ repository:
       { include: '#horizontal-rule' }
       { include: '#heading' }
       { include: '#disabled' }
-      # {
-      #   include: '#dividers'
-      # }
-      # {
-      #   include: '#lists'
-      # }
-      # {
-      #   include: '#quote'
-      # }
-      # {
-      #   include: '#table'
-      # }
-      # {
-      #   include: '#comment'
-      # }
+      # { include: '#dividers' }
+      { include: '#lists' }
+      { include: '#indented-code' }
+      { include: '#quote' }
+      # { include: '#table' }
     ]
   inline:
     patterns: [
       { include: '#emphasis' }
-      # {
-      #   include: '#links'
-      # }
-      # {
-      #   include: '#inline-code'
-      # }
+      # { include: '#links' }
+      # { include: '#inline-code' }
     ]

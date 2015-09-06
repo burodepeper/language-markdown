@@ -1,0 +1,9 @@
+key: 'indented-code'
+patterns: [
+  {
+    match: '^(?: {4,})(.*?)$'
+    name: 'indented-code.md'
+    captures:
+      1: { name: 'code.md' }
+  }
+]

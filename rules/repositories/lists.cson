@@ -1,0 +1,23 @@
+key: 'lists'
+patterns: [
+  {
+    match: '^(?: *)([-+\\*]){1}(?: )(.*)$'
+    name: 'unordered.list.md'
+    captures:
+      1: { name: 'punctuation.md' }
+      2:
+        patterns: [
+          include: '#blocks'
+        ]
+  }
+  {
+    match: '^(?: *)([0-9]{1,9}[\\.\\)])(?: )(.*)$'
+    name: 'ordered.list.md'
+    captures:
+      1: { name: 'punctuation.md' }
+      2:
+        patterns: [
+          include: '#blocks'
+        ]
+  }
+]
