@@ -15,7 +15,7 @@ maxTokensPerLine: 100
 
 patterns: [
   { include: '#blocks' }
-  { include: '#inline' }
+  { include: '#inlines' }
 ]
 
 repository:
@@ -25,15 +25,12 @@ repository:
       { include: '#horizontal-rule' }
       { include: '#heading' }
       { include: '#disabled' }
-      # { include: '#dividers' }
       { include: '#lists' }
       { include: '#indented-code' }
       { include: '#quote' }
-      # { include: '#table' }
     ]
-  inline:
+  inlines:
     patterns: [
+      { include: '#escapes' }
       { include: '#emphasis' }
-      # { include: '#links' }
-      # { include: '#inline-code' }
     ]
