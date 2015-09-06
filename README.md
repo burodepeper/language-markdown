@@ -32,7 +32,7 @@ Container blocks are blocks that _can_ contain other blocks.
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
 | Block quotes | - | - | @burodepeper |
-| Lists | - | - | @burodepeper |
+| Lists | 19 of 19 | 100% | @burodepeper |
 
 ### Inlines
 
