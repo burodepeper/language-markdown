@@ -16,13 +16,13 @@ Leaf blocks are blocks that can _not_ contain other blocks.
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
-| Horizontal rules | 20 of 25 | 80% | @burodepeper |
+| Horizontal rules | 23 of 25 | 92% | @burodepeper |
 | ATX headings | 24 of 25 | 96% | @burodepeper |
 | Setext headers | - | - | - |
 | Indented code blocks | - | - | @burodepeper |
-| Fenced code blocks | - | - | - |
-| HTML blocks | - | - | - |
-| Links reference definitions | - | - | - |
+| Fenced code blocks | - | - | @burodepeper |
+| HTML blocks | - | - | @burodepeper |
+| Links reference definitions | - | - | @burodepeper |
 
 ### Container blocks
 
@@ -37,16 +37,16 @@ Container blocks are blocks that _can_ contain other blocks.
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
-| Backslash escapes | - | - | @burodepeper |
-| Entities | - | - | - |
-| Code spans | - | - | - |
-| Emphasis and strong emphasis | - | - | - |
-| Links | - | - | - |
-| Images | - | - | - |
-| Autolinks | - | - | - |
-| Raw HTML | - | - | - |
-| Hard line breaks | - | - | - |
-| Soft line breaks | - | - | - |
+| Backslash escapes | 0 of 21 | - | @burodepeper |
+| Entities | 0 of 33 | - | @burodepeper |
+| Code spans | 0 of 15 | - | @burodepeper |
+| Emphasis and strong emphasis | - | - | @burodepeper |
+| Links | - | - | @burodepeper |
+| Images | - | - | @burodepeper |
+| Autolinks | - | - | @burodepeper |
+| Raw HTML | - | - | @burodepeper |
+| Hard line breaks | - | - | @burodepeper |
+| Soft line breaks | - | - | @burodepeper |
 
 ---
 

@@ -31,7 +31,8 @@ describe 'Markdown grammar', ->
 
     # http://spec.commonmark.org/0.22/#example-30
     {tokens} = grammar.tokenizeLine('\\## foo')
-    expect(tokens[0]).toEqual value: '\\## foo', scopes: ['text.md']
+    expect(tokens[0]).toEqual value: '\\#', scopes: ['text.md', 'escape.constant.md']
+    expect(tokens[1]).toEqual value: '# foo', scopes: ['text.md']
 
     # FIXME
     # http://spec.commonmark.org/0.22/#example-31
