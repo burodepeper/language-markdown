@@ -1,0 +1,29 @@
+# Markdown #
+
+This is just a quick sample document to give you an example of the Markdown elements that this package parses. There is an `examples/` directory which contains the _literally_ hundreds upon hundreds of specific examples that have been put to the test.
+
+> I am, for example, a quote by a famous author.
+
+1. I am a list of things
+2. you need to do in a
+  1. Get out of bed
+  2. Do hygiene stuff
+  3. Put on fresh clothes
+  4. Save the world
+3. specific order.
+
+---
+
+- I am just a list,
+- but I am awesome
+- nonetheless.
+
+    var test = {
+      isComplete: true
+    }
+
+<!-- And of course comments work! -->
+
+---
+
+And possibly other stuff...
