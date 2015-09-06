@@ -1,11 +1,15 @@
-# Markdown
+# Markdown grammar
 
-TODO Work in progress
-TODO Add description of intention
+Our intention with this package is to _follow the specifications_ as they are defined in the [latest version (0.22)](http://spec.commonmark.org/0.22/) of [CommonMark](http://www.commonmark.org/), and to allow the user to dynamically **add flavor(s)** of their own choosing; `Github` or `Pandoc` for example.
 
-## Commonmark implementation
+{== Rewrite this paragraph ==}
+Unfortunately however, because (as far as @burodepeper knows) the Atom grammar tokenizer thing doesn't allow situational awareness, every line is parsed just as it is; _all alone_. This could result in unexpected syntax highlighting in situations where nesting of elements occurs spread out over several lines. Please don't be angry with us.
 
-See: http://spec.commonmark.org/0.22/
+In the summaries below you can get an idea of the progress of our work.
+
+---
+
+## CommonMark
 
 ### Leaf blocks
 
@@ -16,12 +20,10 @@ Leaf blocks are blocks that can _not_ contain other blocks.
 | Horizontal rules | 20 of 25 | 80% | @burodepeper |
 | ATX headings | 22 of 25 | 88% | @burodepeper |
 | Setext headers | | | |
-| Indented code blocks | | | @burodepeper |
+| Indented code blocks | - | - | @burodepeper |
 | Fenced code blocks | | | |
 | HTML blocks | | | |
 | Links reference definitions | | | |
-| (Paragraphs) | | | |
-| (Blank lines) | | | |
 
 ### Container blocks
 
@@ -29,9 +31,8 @@ Container blocks are blocks that _can_ contain other blocks.
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
-| Block quotes | | | @burodepeper |
-| List items | | | @burodepeper |
-| (Lists) | | | |
+| Block quotes | - | - | @burodepeper |
+| Lists | - | - | @burodepeper |
 
 ### Inlines
 
@@ -47,7 +48,8 @@ Container blocks are blocks that _can_ contain other blocks.
 | Raw HTML | | | |
 | Hard line breaks | | | |
 | Soft line breaks | | | |
-| (Textual content) | | | |
+
+---
 
 ## Flavors
 
@@ -55,8 +57,8 @@ TODO Add description of intention
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
-| Dynamic grammar selection | | | @leipert |
-| Less verbose specs | | | @leipert |
+| Dynamic grammar selection | - | - | @leipert |
+| Less verbose specs | - | - | @leipert |
 
 ### Github flavored Markdown
 
@@ -78,4 +80,4 @@ See: https://github.com/CriticMarkup/CriticMarkup-toolkit/
 
 | Section | Specs | Progress | Contact |
 | ------- | ----- | -------: | ------- |
-| TODO | | | @burodepeper |
+| TODO @burodepeper | | | |
