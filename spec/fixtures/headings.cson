@@ -232,3 +232,26 @@ expect(tokens[2]).toEqual value: 'Heading', tokens: ['text.md', 'heading.md', 'h
 
 
 # ----------
+#
+
+# v7b Single line
+input: '# Heading'
+output:
+  0: 'text.md heading.md heading-1.md': # line 0
+    0: '#': 'punctuation.md'            # l0:token0
+    1: ' '                              # l0:t1
+    2: 'Heading'                        # l0:t2
+
+# v7a Multi Line
+input: """
+ ****
+ ## foo
+ ****
+"""
+output:
+  0: '****': 'text.md hr.md'            # l0:t0
+  1: 'text.md heading.md heading-2.md': # l1
+    0: '##': 'punctuation.md'           # l1:t0
+    1: ' '                              # l1:t1
+    2: 'foo'                            # l1:t2
+  2: '****': 'text.md hr.md'            # l0:t0
