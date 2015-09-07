@@ -8,9 +8,11 @@
 ` `` `
 
 <!-- http://spec.commonmark.org/0.22/#example-301 -->
+<!--
 ``
 foo
 ``
+ -->
 
 <!-- http://spec.commonmark.org/0.22/#example-302 -->
 `foo   bar
