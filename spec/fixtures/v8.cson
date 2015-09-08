@@ -9,7 +9,7 @@ tests: [
         2: 'Heading'
   }
   {
-    comment: 'Verify results with @tpoisot'
+    comment: 'Verify results with @tpoisot, see issue#7'
     debug: true
     input:
       0: '# An _annoying_ header ###'
@@ -27,14 +27,14 @@ tests: [
     output:
       0: 'text.md heading.md heading-1.md':
         0: '#': 'interpunction.md'
-        1: ' '
-        2: 'An '
+        # 1: ' '
+        # 2: 'An '
         3: 'emphasis.md':
           0: '_': 'interpunction.md'
           1: 'annoying'
           2: '_': 'interpunction.md'
         4: ' header'
-        5: ' '
+        # 5: ' '
         6: '###': 'interpunction.md'
       2: 'text.md quote.md':
         0: '>': 'punctuation.md'
@@ -42,7 +42,7 @@ tests: [
         2: 'I am an important quote'
       10: 'text.md unordered.list.md':
         0: '-': 'interpunction.md'
-        1: ' '
+        # 1: ' '
         2: 'strong.emphasis.md':
           0: '**': 'interpunction.md'
           1: 'Chocolate'
