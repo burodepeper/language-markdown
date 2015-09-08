@@ -14,39 +14,39 @@ In the summaries below you can get an idea of the progress of our work.
 
 Leaf blocks are blocks that can _not_ contain other blocks.
 
-| Section | Specs | Progress | Contact |
-| ------- | ----- | -------: | ------- |
-| Horizontal rules | 23 of 25 | 92% | @burodepeper |
-| ATX headings | 24 of 25 | 96% | @burodepeper |
-| Setext headers | - | - | - |
-| Indented code blocks | - | - | @burodepeper |
-| Fenced code blocks | - | - | @burodepeper |
-| HTML blocks | - | - | @burodepeper |
-| Links reference definitions | - | - | @burodepeper |
+| Section | Specs | Contact |
+| ------- | ----- | ------- |
+| Horizontal rules | 23 of 25 | @burodepeper |
+| ATX headings | 24 of 25 | @burodepeper |
+| Setext headers | - | - |
+| Indented code blocks | - | @burodepeper |
+| Fenced code blocks | - | @burodepeper |
+| HTML blocks | - | @burodepeper |
+| Links reference definitions | - | @burodepeper |
 
 ### Container blocks
 
 Container blocks are blocks that _can_ contain other blocks.
 
-| Section | Specs | Progress | Contact |
-| ------- | ----- | -------: | ------- |
-| Block quotes | - | - | @burodepeper |
-| Lists | 19 of 19 | 100% | @burodepeper |
+| Section | Specs | Contact |
+| ------- | ----- | ------- |
+| Block quotes | - | @burodepeper |
+| Lists | 19 of 19 | @burodepeper |
 
 ### Inlines
 
-| Section | Specs | Progress | Contact |
-| ------- | ----- | -------: | ------- |
-| Backslash escapes | 14 of 22 | 64% | @burodepeper |
-| Entities | 27 of 33 | 82% | @burodepeper |
-| Code spans | 6 of 15 | 40% | @burodepeper |
-| Emphasis and strong emphasis | - | - | @burodepeper |
-| Links | - | - | @burodepeper |
-| Images | - | - | @burodepeper |
-| Autolinks | - | - | @burodepeper |
-| Raw HTML | - | - | @burodepeper |
-| Hard line breaks | - | - | @burodepeper |
-| Soft line breaks | - | - | @burodepeper |
+| Section | Specs | Contact |
+| ------- | ----- | ------- |
+| Backslash escapes | 14 of 22 | @burodepeper |
+| Entities | 27 of 33 | @burodepeper |
+| Code spans | 6 of 15 | @burodepeper |
+| Emphasis and strong emphasis | - | @burodepeper |
+| Links | - | @burodepeper |
+| Images | - | @burodepeper |
+| Autolinks | - | @burodepeper |
+| Raw HTML | - | @burodepeper |
+| Hard line breaks | - | @burodepeper |
+| Soft line breaks | - | @burodepeper |
 
 ---
 
@@ -54,29 +54,30 @@ Container blocks are blocks that _can_ contain other blocks.
 
 TODO Add description of intention
 
-| Section | Specs | Progress | Contact |
-| ------- | ----- | -------: | ------- |
-| Dynamic grammar selection | - | - | @leipert |
-| Less verbose specs | - | - | @leipert |
+| Section | Status | Contact |
+| ------- | ----- | ------- |
+| Dynamic grammar selection | - | @leipert |
+| Less verbose specs | - | @leipert |
 
 ### Github flavored Markdown
 
 See: https://help.github.com/articles/github-flavored-markdown/
 
-| Section | Specs | Progress | Contact |
-| ------- | ----- | -------: | ------- |
-| TODO @burodepeper | - | - | - |
+| Section | Specs | Contact |
+| ------- | ----- | ------- |
+| Strikethrough | - | @burodepeper |
+| Tables | - | @burodepeper |
 
 ### Pandoc flavored Markdown
 
-| Section | Specs | Progress | Contact |
-| ------- | ----- | -------: | ------- |
-| TODO @leipert | - | - | - |
+| Section | Specs | Contact |
+| ------- | ----- | ------- |
+| TODO @leipert | - | - |
 
 ### CriticMarkup
 
 See: https://github.com/CriticMarkup/CriticMarkup-toolkit/
 
-| Section | Specs | Progress | Contact |
-| ------- | ----- | -------: | ------- |
-| TODO @burodepeper | - | - | - |
+| Section | Specs | Contact |
+| ------- | ----- | ------- |
+| TODO @burodepeper | - | - |
