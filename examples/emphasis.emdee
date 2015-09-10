@@ -84,12 +84,6 @@ _foo_bar_baz_
 <!-- http://spec.commonmark.org/0.22/#example-339 -->
 _(bar)_.
 
-
-
-# ----- CURRENT POSITION ----- #
-
-
-
 <!-- http://spec.commonmark.org/0.22/#example-340 -->
 **foo bar**
 
@@ -132,11 +126,9 @@ foo-__(bar)__
 
 <!-- http://spec.commonmark.org/0.22/#example-353 -->
 **foo bar **
-baz** <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-354 -->
 **(**foo)
-bar** <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-355 -->
 *(**foo**)*
@@ -150,32 +142,33 @@ bar** <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-358 -->
 **foo**bar
-baz** <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-359 -->
 __foo bar __
-baz__ <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-360 -->
 __(__foo)
-bar__ <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-361 -->
 _(__foo__)_
 
 <!-- http://spec.commonmark.org/0.22/#example-362 -->
 __foo__bar
-baz__ <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-363 -->
 __пристаням__стремятся
-baz__ <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-364 -->
 __foo__bar__baz__
 
 <!-- http://spec.commonmark.org/0.22/#example-365 -->
 __(bar)__.
+
+
+
+# ---------- CURRENT POSITION ----------
+
+
 
 <!-- http://spec.commonmark.org/0.22/#example-366 -->
 *foo [bar](/url)*
@@ -192,7 +185,6 @@ _foo _bar_ baz_
 
 <!-- http://spec.commonmark.org/0.22/#example-370 -->
 __foo_ bar_
-baz__ <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-371 -->
 *foo *bar**
@@ -205,7 +197,6 @@ baz__ <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-374 -->
 ***foo** bar*
-baz*** <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-375 -->
 *foo **bar***
@@ -252,7 +243,6 @@ ____foo__ bar__
 
 <!-- http://spec.commonmark.org/0.22/#example-389 -->
 ***foo* bar**
-baz*** <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-390 -->
 **foo *bar***
@@ -290,14 +280,12 @@ foo **_**
 
 <!-- http://spec.commonmark.org/0.22/#example-401 -->
 **foo*
-baz** <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-402 -->
 *foo**
 
 <!-- http://spec.commonmark.org/0.22/#example-403 -->
 ***foo**
-baz*** <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-404 -->
 ****foo*
@@ -328,14 +316,12 @@ foo __*__
 
 <!-- http://spec.commonmark.org/0.22/#example-413 -->
 __foo_
-bar__ <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-414 -->
 _foo__
 
 <!-- http://spec.commonmark.org/0.22/#example-415 -->
 ___foo__
-bar___ <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-416 -->
 ____foo_
@@ -405,11 +391,9 @@ __<a href="__">
 
 <!-- http://spec.commonmark.org/0.22/#example-438 -->
 *a `*`*
-b` <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-439 -->
 _a `_`_
-b` <!-- NOTE neutralize! -->
 
 <!-- http://spec.commonmark.org/0.22/#example-440 -->
 **a<http://foo.bar/?q=**>
