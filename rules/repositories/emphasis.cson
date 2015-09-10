@@ -1,44 +1,31 @@
-# NOTE
-# Copy-and-paste from language-gfm package. Needs some work I think.
-
-# TODO
-# 'italic' and 'bold' should be renamed to 'emphasis' and 'strong.emphasis'
-
 key: 'emphasis'
 patterns: [
+
+  # Regular begin and end _ or *
   {
-    begin: '(?<=^|[^\\w\\d\\*])\\*\\*\\*(?!$|\\*|\\s)'
-    end: '(?<!^|\\s)\\*\\*\\**\\*(?=$|[^\\w|\\d])'
-    name: 'bold.italic.md'
+    match: '(?<!\\w)([_|\*])(?!\\s)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+    name: 'emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      2: patterns: [{ include: '#emphasis' }]
+      3: name: 'punctuation.md'
   }
+
+  # Interword * is allowed
   {
-    begin: '(?<=^|[^\\w\\d_])___(?!$|_|\\s)'
-    end: '(?<!^|\\s)___*_(?=$|[^\\w|\\d])'
-    name: 'bold.italic.md'
+    match: '(?<=\\w)([\*])(?m:(.+))(\\1)'
+    name: 'emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
   }
+
   {
-    begin: '(?<=^|[^\\w\\d\\*])\\*\\*(?!$|\\*|\\s)'
-    end: '(?<!^|\\s)\\*\\**\\*(?=$|[^\\w|\\d])'
-    name: 'bold.md'
+    match: '(?<=\\s|^)([\*])(?m:(.+))(\\1)(?=\\w)'
+    name: 'emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
   }
-  {
-    begin: '(?<=^|[^\\w\\d_])__(?!$|_|\\s)'
-    end: '(?<!^|\\s)__*_(?=$|[^\\w|\\d])'
-    name: 'bold.md'
-  }
-  {
-    begin: '(?<=^|[^\\w\\d\\*])\\*(?!$|\\*|\\s)'
-    end: '(?<!^|\\s)\\**\\*(?=$|[^\\w|\\d])'
-    name: 'italic.md'
-  }
-  {
-    begin: '(?<=^|[^\\w\\d_\\{\\}])_(?!$|_|\\s)'
-    end: '(?<!^|\\s)_*_(?=$|[^\\w|\\d])'
-    name: 'italic.md'
-  }
-  {
-    begin: '(?<=^|[^\\w\\d~])~~(?!$|~|\\s)'
-    end: '(?<!^|\\s)~~*~(?=$|[^\\w|\\d])'
-    name: 'strike.md'
-  }
+
 ]

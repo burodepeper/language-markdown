@@ -38,59 +38,57 @@ foo_bar_
 
 <!-- http://spec.commonmark.org/0.22/#example-325 -->
 aa_"bb"_cc
-dd_ <!-- NOTE neutralize previous line -->
 
 <!-- http://spec.commonmark.org/0.22/#example-326 -->
 foo-_(bar)_
 
 <!-- http://spec.commonmark.org/0.22/#example-327 -->
 _foo*
-bar_ <!-- NOTE neutralize previous line -->
 
 <!-- http://spec.commonmark.org/0.22/#example-328 -->
 *foo bar *
-baz* <!-- NOTE neutralize previous line -->
 
 <!-- http://spec.commonmark.org/0.22/#example-329 -->
 *foo bar
 *
-baz* <!-- NOTE neutralize previous line -->
 
 <!-- http://spec.commonmark.org/0.22/#example-330 -->
 *(*foo)
-bar* <!-- NOTE neutralize previous line -->
 
 <!-- http://spec.commonmark.org/0.22/#example-331 -->
 *(*foo*)*
 
 <!-- http://spec.commonmark.org/0.22/#example-332 -->
+foo*bar*
+5*6*78
 *foo*bar
-baz* <!-- NOTE neutralize previous line -->
 
 <!-- http://spec.commonmark.org/0.22/#example-333 -->
 _foo bar _
-baz_ <!-- NOTE neutralize previous line -->
 
 <!-- http://spec.commonmark.org/0.22/#example-334 -->
 _(_foo)
-baz_ <!-- NOTE neutralize previous line -->
 
 <!-- http://spec.commonmark.org/0.22/#example-335 -->
 _(_foo_)_
 
 <!-- http://spec.commonmark.org/0.22/#example-336 -->
 _foo_bar
-baz_ <!-- NOTE neutralize previous line -->
 
 <!-- http://spec.commonmark.org/0.22/#example-337 -->
 _пристаням_стремятся
-baz_ <!-- NOTE neutralize previous line -->
 
 <!-- http://spec.commonmark.org/0.22/#example-338 -->
 _foo_bar_baz_
 
 <!-- http://spec.commonmark.org/0.22/#example-339 -->
 _(bar)_.
+
+
+
+# ----- CURRENT POSITION ----- #
+
+
 
 <!-- http://spec.commonmark.org/0.22/#example-340 -->
 **foo bar**
