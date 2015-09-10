@@ -137,6 +137,12 @@ foo-__(bar)__
 **Gomphocarpus (*Gomphocarpus physocarpus*, syn.
 *Asclepias physocarpa*)**
 
+__Gomphocarpus (_Gomphocarpus physocarpus_, syn.
+_Asclepias physocarpa_)__
+
+**Gomphocarpus (_Gomphocarpus physocarpus_, syn.
+_Asclepias physocarpa_)**
+
 <!-- http://spec.commonmark.org/0.22/#example-357 -->
 **foo "*bar*" foo**
 
@@ -163,12 +169,6 @@ __foo__bar__baz__
 
 <!-- http://spec.commonmark.org/0.22/#example-365 -->
 __(bar)__.
-
-
-
-# ---------- CURRENT POSITION ----------
-
-
 
 <!-- http://spec.commonmark.org/0.22/#example-366 -->
 *foo [bar](/url)*

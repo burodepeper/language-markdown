@@ -4,33 +4,29 @@
 key: 'emphasis'
 patterns: [
 
-  # TODO 342
-  # TODO 356
+  # 316...
+  # TODO 356 multiline
   # TODO 364
-  # TODO 366
-  # TODO 367
+  # TODO 366 links
+  # TODO 367 multiline
   # TODO 370
   # TODO 373
   # TODO 374
   # TODO 376
-  # TODO 378
-  # TODO 381
-  # TODO 382
+  # TODO 378 links
+  # TODO 381 links
+  # TODO 382 multiline
   # TODO 388
-  # TODO 391
-  # TODO 392
-  # TODO 396 escapes
+  # TODO 391 multiline
+  # TODO 392 links
   # TODO 398
-  # TODO 399 escapes
   # TODO 401
   # TODO 402
   # TODO 403
   # TODO 404
   # TODO 405
   # TODO 406
-  # TODO 408 escapes
   # TODO 410
-  # TODO 411 escapes
   # TODO 413
   # TODO 414
   # TODO 415
@@ -40,15 +36,13 @@ patterns: [
   # TODO 429
   # TODO 431
   # TODO 432
-  # TODO 433
-  # TODO 434
-  # TODO 435
-  # TODO 436
-  # TODO 437
-  # TODO 438
-  # TODO 439
-  # TODO 440
-  # TODO 441
+  # TODO 433 links
+  # TODO 434 links
+  # TODO 435 html
+  # TODO 436 html
+  # TODO 437 html
+  # TODO 440 html
+  # TODO 441 html
 
   # Strong emphasis, __ or **
   # {
@@ -65,7 +59,11 @@ patterns: [
     name: 'strong.emphasis.md'
     captures:
       1: name: 'punctuation.md'
-      2: patterns: [{ include: '#emphasis' }]
+      2: patterns: [
+        { include: '#escapes' }
+        { include: '#inline-code' }
+        { include: '#emphasis' }
+      ]
       3: name: 'punctuation.md'
   }
 
@@ -74,30 +72,34 @@ patterns: [
     name: 'strong.emphasis.md'
     captures:
       1: name: 'punctuation.md'
-      2: patterns: [{ include: '#emphasis' }]
+      2: patterns: [
+        { include: '#escapes' }
+        { include: '#inline-code' }
+        { include: '#emphasis' }
+      ]
       3: name: 'punctuation.md'
   }
 
   # Interword ** is permitted
   {
-    match: '(?<=\\w)([\*]{2})(?m:(.+))(?<!\\W)(\\1)'
+    match: '(?<=\\w)([\*]{2})(?:.+)(?<!\\W)(\\1)'
     name: 'strong.interword-1.emphasis.md'
     captures:
       1: name: 'punctuation.md'
-      3: name: 'punctuation.md'
+      2: name: 'punctuation.md'
   }
 
   {
-    match: '(?<=\\s|^)([\*]{2})(?=\\w)(?m:(.+))(\\1)(?=\\w)'
+    match: '(?<=\\s|^)([\*]{2})(?=\\w)(?:.+)(\\1)(?=\\w)'
     name: 'strong.interword-2.emphasis.md'
     captures:
       1: name: 'punctuation.md'
-      3: name: 'punctuation.md'
+      2: name: 'punctuation.md'
   }
 
   # ----------------------------------------
 
-  # Emphasis, _ or *
+  # Emphasis, _ or *, conveniently combined
   # {
   #   # match: '(?<!\\w)([_|\*])(?!\\s)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
   #   match: '(?<!\\w)([_|\*])(?!\\s|\\1)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
@@ -107,13 +109,20 @@ patterns: [
   #     2: patterns: [{ include: '#emphasis' }]
   #     3: name: 'punctuation.md'
   # }
+  #
+  # NOTE
+  # The matches for _ and * are separated though pretty similar, because the negative look-back at the beginning couldn't reference to \\1 as used in the example above
 
   {
     match: '(?<![\\w|_])([_])(?!\\s|\\1)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
     name: 'emphasis.md'
     captures:
       1: name: 'punctuation.md'
-      2: patterns: [{ include: '#emphasis' }]
+      2: patterns: [
+        { include: '#escapes' }
+        { include: '#inline-code' }
+        { include: '#emphasis' }
+      ]
       3: name: 'punctuation.md'
   }
 
@@ -122,26 +131,32 @@ patterns: [
     name: 'emphasis.md'
     captures:
       1: name: 'punctuation.md'
-      2: patterns: [{ include: '#emphasis' }]
+      2: patterns: [
+        { include: '#escapes' }
+        { include: '#inline-code' }
+        { include: '#emphasis' }
+      ]
       3: name: 'punctuation.md'
   }
 
 
   # Interword * is permitted
   {
-    match: '(?<=\\w)([\*])(?m:(.+))(?<!\\W)(\\1)'
+    # match: '(?<=\\w)([\*])(?m:(.+))(?<!\\W)(\\1)'
+    match: '(?<=\\w)([\*])(?:.+)(?<!\\W)(\\1)'
     name: 'interword-1.emphasis.md'
     captures:
       1: name: 'punctuation.md'
-      3: name: 'punctuation.md'
+      2: name: 'punctuation.md'
   }
 
   {
-    match: '(?<=\\s|^)([\*])(?=\\w)(?m:(.+))(\\1)(?=\\w)'
+    # match: '(?<=\\s|^)([\*])(?=\\w)(?m:(.+))(\\1)(?=\\w)'
+    match: '(?<=\\s|^)([\*])(?=\\w)(?:.+)(\\1)(?=\\w)'
     name: 'interword-2.emphasis.md'
     captures:
       1: name: 'punctuation.md'
-      3: name: 'punctuation.md'
+      2: name: 'punctuation.md'
   }
 
 ]
