@@ -1,44 +1,147 @@
-# NOTE
-# Copy-and-paste from language-gfm package. Needs some work I think.
-
-# TODO
-# 'italic' and 'bold' should be renamed to 'emphasis' and 'strong.emphasis'
+# TODO remove 'interword' class when done
+# TODO interword doesn't need multiline?
 
 key: 'emphasis'
 patterns: [
+
+  # TODO 342
+  # TODO 356
+  # TODO 364
+  # TODO 366
+  # TODO 367
+  # TODO 370
+  # TODO 373
+  # TODO 374
+  # TODO 376
+  # TODO 378
+  # TODO 381
+  # TODO 382
+  # TODO 388
+  # TODO 391
+  # TODO 392
+  # TODO 396 escapes
+  # TODO 398
+  # TODO 399 escapes
+  # TODO 401
+  # TODO 402
+  # TODO 403
+  # TODO 404
+  # TODO 405
+  # TODO 406
+  # TODO 408 escapes
+  # TODO 410
+  # TODO 411 escapes
+  # TODO 413
+  # TODO 414
+  # TODO 415
+  # TODO 416
+  # TODO 417
+  # TODO 418
+  # TODO 429
+  # TODO 431
+  # TODO 432
+  # TODO 433
+  # TODO 434
+  # TODO 435
+  # TODO 436
+  # TODO 437
+  # TODO 438
+  # TODO 439
+  # TODO 440
+  # TODO 441
+
+  # Strong emphasis, __ or **
+  # {
+  #   match: '(?<!\\w)([_|\*]{2})(?!\\s)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+  #   name: 'strong.emphasis.md'
+  #   captures:
+  #     1: name: 'punctuation.md'
+  #     2: patterns: [{ include: '#emphasis' }]
+  #     3: name: 'punctuation.md'
+  # }
+
   {
-    begin: '(?<=^|[^\\w\\d\\*])\\*\\*\\*(?!$|\\*|\\s)'
-    end: '(?<!^|\\s)\\*\\*\\**\\*(?=$|[^\\w|\\d])'
-    name: 'bold.italic.md'
+    match: '(?<!\\w)([_]{2})(?!\\s)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+    name: 'strong.emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      2: patterns: [{ include: '#emphasis' }]
+      3: name: 'punctuation.md'
   }
+
   {
-    begin: '(?<=^|[^\\w\\d_])___(?!$|_|\\s)'
-    end: '(?<!^|\\s)___*_(?=$|[^\\w|\\d])'
-    name: 'bold.italic.md'
+    match: '(?<!\\w)([\*]{2})(?!\\s)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+    name: 'strong.emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      2: patterns: [{ include: '#emphasis' }]
+      3: name: 'punctuation.md'
   }
+
+  # Interword ** is permitted
   {
-    begin: '(?<=^|[^\\w\\d\\*])\\*\\*(?!$|\\*|\\s)'
-    end: '(?<!^|\\s)\\*\\**\\*(?=$|[^\\w|\\d])'
-    name: 'bold.md'
+    match: '(?<=\\w)([\*]{2})(?m:(.+))(?<!\\W)(\\1)'
+    name: 'strong.interword-1.emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
   }
+
   {
-    begin: '(?<=^|[^\\w\\d_])__(?!$|_|\\s)'
-    end: '(?<!^|\\s)__*_(?=$|[^\\w|\\d])'
-    name: 'bold.md'
+    match: '(?<=\\s|^)([\*]{2})(?=\\w)(?m:(.+))(\\1)(?=\\w)'
+    name: 'strong.interword-2.emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
   }
+
+  # ----------------------------------------
+
+  # Emphasis, _ or *
+  # {
+  #   # match: '(?<!\\w)([_|\*])(?!\\s)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+  #   match: '(?<!\\w)([_|\*])(?!\\s|\\1)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+  #   name: 'emphasis.md'
+  #   captures:
+  #     1: name: 'punctuation.md'
+  #     2: patterns: [{ include: '#emphasis' }]
+  #     3: name: 'punctuation.md'
+  # }
+
   {
-    begin: '(?<=^|[^\\w\\d\\*])\\*(?!$|\\*|\\s)'
-    end: '(?<!^|\\s)\\**\\*(?=$|[^\\w|\\d])'
-    name: 'italic.md'
+    match: '(?<![\\w|_])([_])(?!\\s|\\1)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+    name: 'emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      2: patterns: [{ include: '#emphasis' }]
+      3: name: 'punctuation.md'
   }
+
   {
-    begin: '(?<=^|[^\\w\\d_\\{\\}])_(?!$|_|\\s)'
-    end: '(?<!^|\\s)_*_(?=$|[^\\w|\\d])'
-    name: 'italic.md'
+    match: '(?<![\\w|\*])([\*])(?!\\s|\\1)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+    name: 'emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      2: patterns: [{ include: '#emphasis' }]
+      3: name: 'punctuation.md'
   }
+
+
+  # Interword * is permitted
   {
-    begin: '(?<=^|[^\\w\\d~])~~(?!$|~|\\s)'
-    end: '(?<!^|\\s)~~*~(?=$|[^\\w|\\d])'
-    name: 'strike.md'
+    match: '(?<=\\w)([\*])(?m:(.+))(?<!\\W)(\\1)'
+    name: 'interword-1.emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
   }
+
+  {
+    match: '(?<=\\s|^)([\*])(?=\\w)(?m:(.+))(\\1)(?=\\w)'
+    name: 'interword-2.emphasis.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+  }
+
 ]

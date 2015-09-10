@@ -33,6 +33,6 @@ repository:
     patterns: [
       { include: '#escapes' }
       { include: '#entities' }
-      { include: '#emphasis' }
       { include: '#inline-code' }
+      { include: '#emphasis' }
     ]
