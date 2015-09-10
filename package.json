@@ -19,8 +19,9 @@
     "season": "^5.3.0"
   },
   "coffeelintConfig": {
-    "max_line_length": "ignore",
-    "no_empty_param_list": "error",
-    "no_stand_alone_at": "error"
+    "max_line_length": {
+      "level": "ignore",
+      "value": 80
+    }
   }
 }
