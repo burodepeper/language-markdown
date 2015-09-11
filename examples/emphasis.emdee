@@ -10,7 +10,8 @@ a * foo bar*
 a*"foo"*
 
 <!-- http://spec.commonmark.org/0.22/#example-316 -->
-* a *
+* a *
+<!-- NOTE: non-breaking white space, therefor not a list -->
 
 <!-- http://spec.commonmark.org/0.22/#example-317 -->
 foo*bar*
