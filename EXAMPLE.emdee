@@ -10,13 +10,15 @@ This is just a quick sample document to give you an example of the Markdown elem
   2. Do hygiene stuff
   3. Put on fresh clothes
   4. Save the world
-  5. TODO Add better examples
+  5. TODO Add better `examples`
+  6.
+  7. Empty list-items look slightly different
 3. specific order.
 
 ---
 
 - I am just a list,
-- but I am awesome
+- but I am **awesome**
 - nonetheless.
 
     var test = {

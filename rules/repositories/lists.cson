@@ -1,37 +1,39 @@
 key: 'lists'
 patterns: [
   {
-    match: '^(?: *)([-+\\*]){1}(?: )(.*)$'
+    match: '^(?:\\s*)([-+\\*]){1}(?: )(.*)$'
     name: 'unordered.list.md'
     captures:
       1: { name: 'punctuation.md' }
       2:
         patterns: [
-          include: '#blocks'
+          { include: '#blocks' }
+          { include: '#inlines' }
         ]
   }
   {
-    match: '^(?: *)([0-9]{1,9}[\\.\\)])(?: )(.*)$'
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)])(?: )(.*)$'
     name: 'ordered.list.md'
     captures:
       1: { name: 'punctuation.md' }
       2:
         patterns: [
-          include: '#blocks'
+          { include: '#blocks' }
+          { include: '#inlines' }
         ]
   }
 
   # Empty lists
 
   {
-    match: '^(?: *)([-+\\*]){1}$'
+    match: '^(?:\\s*)([-+\\*]){1}$'
     name: 'empty.unordered.list.md'
     captures:
       1: { name: 'punctuation.md' }
   }
 
   {
-    match: '^(?: *)([0-9]{1,9}[\\.\\)])$'
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)])$'
     name: 'empty.ordered.list.md'
     captures:
       1: { name: 'punctuation.md' }

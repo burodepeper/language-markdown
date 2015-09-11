@@ -36,14 +36,20 @@ describe 'Markdown grammar', ->
 
     # FIXME
     # http://spec.commonmark.org/0.22/#example-31
-    # {tokens} = grammar.tokenizeLine('# foo *bar* \*baz\*')
+    {tokens} = grammar.tokenizeLine('# foo *bar* \\*baz\\*')
     # expect(tokens[0]).toEqual value: '#', scopes: ['text.md', 'heading.md', 'heading-1.md', 'punctuation.md']
     # expect(tokens[1]).toEqual value: ' ', scopes: ['text.md', 'heading.md', 'heading-1.md']
     # expect(tokens[2]).toEqual value: 'foo ', scopes: ['text.md', 'heading.md', 'heading-1.md']
-    # expect(tokens[3]).toEqual value: '*', scopes: ['text.md', 'heading.md', 'heading-1.md', 'italic.md', 'punctuation.md']
-    # expect(tokens[4]).toEqual value: 'bar', scopes: ['text.md', 'heading.md', 'heading-1.md', 'italic.md']
-    # expect(tokens[5]).toEqual value: '*', scopes: ['text.md', 'heading.md', 'heading-1.md', 'italic.md', 'punctuation.md']
-    # expect(tokens[6]).toEqual value: ' \*baz\*', scopes: ['text.md', 'heading.md', 'heading-1.md']
+    # expect(tokens[3]).toEqual value: '*', scopes: ['text.md', 'heading.md', 'heading-1.md', 'emphasis.md', 'punctuation.md']
+    # expect(tokens[4]).toEqual value: 'bar', scopes: ['text.md', 'heading.md', 'heading-1.md', 'emphasis.md']
+    # expect(tokens[5]).toEqual value: '*', scopes: ['text.md', 'heading.md', 'heading-1.md', 'emphasis.md', 'punctuation.md']
+    # expect(tokens[6]).toEqual value: ' ', scopes: ['text.md', 'heading.md', 'heading-1.md']
+    # expect(tokens[7]).toEqual value: '\*', scopes: ['text.md', 'heading.md', 'heading-1.md', 'escape.constant.md']
+    # expect(tokens[8]).toEqual value: 'baz', scopes: ['text.md', 'heading.md', 'heading-1.md']
+    # expect(tokens[9]).toEqual value: '\*', scopes: ['text.md', 'heading.md', 'heading-1.md', 'escape.constant.md']
+
+    # for token, i in tokens
+    #   console.log i+":'"+token.value+"'"
 
     # http://spec.commonmark.org/0.22/#example-32
     {tokens} = grammar.tokenizeLine('#                  foo')

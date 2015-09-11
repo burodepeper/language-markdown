@@ -84,13 +84,12 @@ describe 'Markdown grammar', ->
     {tokens} = grammar.tokenizeLine('---a---')
     expect(tokens[0]).toEqual value: '---a---', scopes: ['text.md']
 
-    # FIXME naming in 'emphasis'
     # http://spec.commonmark.org/0.22/#example-21
     {tokens} = grammar.tokenizeLine(' *-*')
-    # expect(tokens[0]).toEqual value: ' ', scopes: ['text.md']
-    # expect(tokens[1]).toEqual value: '*', scopes: ['text.md', 'emphasis.md']
-    # expect(tokens[2]).toEqual value: '-', scopes: ['text.md', 'emphasis.md']
-    # expect(tokens[3]).toEqual value: '*', scopes: ['text.md', 'emphasis.md']
+    expect(tokens[0]).toEqual value: ' ', scopes: ['text.md']
+    expect(tokens[1]).toEqual value: '*', scopes: ['text.md', 'emphasis.md', 'punctuation.md']
+    expect(tokens[2]).toEqual value: '-', scopes: ['text.md', 'emphasis.md']
+    expect(tokens[3]).toEqual value: '*', scopes: ['text.md', 'emphasis.md', 'punctuation.md']
 
     # http://spec.commonmark.org/0.22/#example-22
     tokens = grammar.tokenizeLines("- foo\n***\n- bar")
