@@ -35,4 +35,5 @@ repository:
       { include: '#entities' }
       { include: '#inline-code' }
       { include: '#emphasis' }
+      { include: '#links' }
     ]
