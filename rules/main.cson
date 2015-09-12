@@ -36,4 +36,5 @@ repository:
       { include: '#inline-code' }
       { include: '#emphasis' }
       { include: '#links' }
+      { include: '#html' }
     ]

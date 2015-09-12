@@ -32,3 +32,7 @@ This is just a quick sample document to give you an example of the Markdown elem
 And possibly other stuff, like...
 
 Escape ch\arac\ters
+
+Would html-tags work? <strong class="test" id='andere test' data-id='item-14'>maybe?</strong>
+
+<script type="text/javascript"></script>
