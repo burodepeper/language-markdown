@@ -1,12 +1,21 @@
 # Markdown grammar
 
-Our intention with this package is to _follow the specifications_ as they are defined in the [latest version (0.22)](http://spec.commonmark.org/0.22/) of [CommonMark](http://www.commonmark.org/), and to allow the user to dynamically **add flavor(s)** of their own choosing; `Github` or `Pandoc` for example.
+Our intention is to _follow the specifications_ as they are defined in the [latest version (0.22)](http://spec.commonmark.org/0.22/) of [CommonMark](http://www.commonmark.org/), and to allow the user to dynamically **add flavor(s)** of their own choosing; `Github` or `Pandoc` for example.
+
+---
+
+### Limitations
 
 Unfortunately however, because of how Atom parses grammar, certain things are simply impossible or unrealistic to detect/support. If you experience any issues above a reasonable level of annoyancy, please [create an issue](issues/new/) (or contact us directly) and supply as much relevant information as possible.
 
-In the summaries below you can get an idea of the progress of our work.
+The list below gives an overview of what's _not_ in this package, and where possible a summary of what lead to that decision.
+
+- __Setext headers__ are simply impossible to detect.
+- __Indented code blocks__ have been implemented but are disabled. We can't detect if indentation belongs to a code block or a list, and _fenced code blocks_ are a good alternative.
 
 ---
+
+In the summaries below you can get an idea of the progress of our work.
 
 ## CommonMark
 
@@ -18,10 +27,8 @@ Leaf blocks are blocks that can _not_ contain other blocks.
 | ------- | ----- | ------- |
 | Horizontal rules | 24 of 25 | @burodepeper |
 | ATX headings | 24 of 25 | @burodepeper |
-| Setext headers | - | - |
-| Indented code blocks | - | @burodepeper |
 | Fenced code blocks | - | @burodepeper |
-| HTML blocks | - | @burodepeper |
+| HTML blocks | _in progress_ | @burodepeper |
 | Links reference definitions | - | @burodepeper |
 
 ### Container blocks
@@ -30,7 +37,7 @@ Container blocks are blocks that _can_ contain other blocks.
 
 | Section | Specs | Contact |
 | ------- | ----- | ------- |
-| Block quotes | - | @burodepeper |
+| Block quotes | in progress | @burodepeper |
 | Lists | 19 of 19 | @burodepeper |
 
 ### Inlines
@@ -41,10 +48,10 @@ Container blocks are blocks that _can_ contain other blocks.
 | Entities | 27 of 33 | @burodepeper |
 | Code spans | 6 of 15 | @burodepeper |
 | Emphasis and strong emphasis | 92 of 129 | @burodepeper |
-| Links | - | @burodepeper |
+| Links | _in progress_ | @burodepeper |
 | Images | - | @burodepeper |
 | Autolinks | - | @burodepeper |
-| Raw HTML | - | @burodepeper |
+| Raw HTML | in progress | @burodepeper |
 | Hard line breaks | - | @burodepeper |
 | Soft line breaks | - | @burodepeper |
 
@@ -52,12 +59,11 @@ Container blocks are blocks that _can_ contain other blocks.
 
 ## Flavors
 
-TODO Add description of intention
-
 | Section | Status | Contact |
 | ------- | ----- | ------- |
 | Dynamic grammar selection | - | @leipert |
-| Less verbose specs | - | @leipert |
+| Less verbose specs | _in progress_ | @leipert |
+| Improved fenced code blocks | - | @leipert |
 
 ### Github flavored Markdown
 
