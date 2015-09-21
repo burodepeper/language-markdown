@@ -1,5 +1,16 @@
 key: 'comment'
 patterns: [
+
+  # {
+  #   name: 'comment.block.md'
+  #   match: '(<!--)(?m:(.*))(-->)'
+  #   captures:
+  #     1:
+  #       name: 'punctuation.md'
+  #     3:
+  #       name: 'punctuation.md'
+  # }
+
   {
     name: 'comment.block.md'
     begin: '(<!--)'
@@ -10,4 +21,5 @@ patterns: [
       3:
         name: 'punctuation.md'
   }
+
 ]

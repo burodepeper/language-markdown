@@ -32,6 +32,9 @@ var test = {
 - [x] Accomplished task
 
 <!-- And of course comments work! -->
+<!--
+Also multiline comments, because that's the whole point.
+-->
 
 ---
 
@@ -42,3 +45,16 @@ Escape ch\arac\ters
 Would html-tags work? <strong class="test" id='andere test' data-id='item-14'>maybe?</strong>
 
 <script type="text/javascript"></script>
+
+---
+
+## Github flavoured markdown
+
+Usernames: @burodepeper and @leipert are awesome
+Issues: #11 is issue number eleven, but #abc is nothing
+
+---
+
+## Some CriticMark styles
+
+Lorem ipsum dolor sit amet, {++consectetur adipisicing elit++}, sed do eiusmod tempor incididunt ut labore et dolore {--magna--} aliqua. Ut enim ad minim veniam, quis nostrud{==hmm==} exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in{>> Some comment <<} reprehenderit in voluptate velit esse {~~cillum~>sillum~~} dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

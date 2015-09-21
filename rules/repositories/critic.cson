@@ -1,0 +1,54 @@
+key: 'critic'
+patterns: [
+  {
+    name: 'addition.critic.md'
+    begin: '({\\+\\+)'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    end: '(\\+\\+})'
+    endCaptures:
+      1: name: 'punctuation.md'
+  }
+  {
+    name: 'deletion.critic.md'
+    begin: '({--)'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    end: '(--})'
+    endCaptures:
+      1: name: 'punctuation.md'
+  }
+  {
+    name: 'highlight.critic.md'
+    begin: '({==)'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    end: '(==})'
+    endCaptures:
+      1: name: 'punctuation.md'
+  }
+  {
+    name: 'comment.critic.md'
+    begin: '({>>)'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    end: '(<<})'
+    endCaptures:
+      1: name: 'punctuation.md'
+  }
+  {
+    name: 'substitution.critic.md'
+    begin: '({~~)'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    end: '(~~})'
+    endCaptures:
+      1: name: 'punctuation.md'
+    patterns: [
+      {
+        match: '~>'
+        name: 'punctuation.md'
+      }
+    ]
+  }
+]

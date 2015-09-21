@@ -37,4 +37,6 @@ repository:
       { include: '#emphasis' }
       { include: '#links' }
       { include: '#html' }
+      { include: '#github' }
+      { include: '#critic' }
     ]
