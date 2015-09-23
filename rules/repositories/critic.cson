@@ -8,6 +8,9 @@ patterns: [
     end: '(\\+\\+})'
     endCaptures:
       1: name: 'punctuation.md'
+    patterns: [
+      { include: '#emphasis' }
+    ]
   }
   {
     name: 'deletion.critic.md'
@@ -17,6 +20,9 @@ patterns: [
     end: '(--})'
     endCaptures:
       1: name: 'punctuation.md'
+    patterns: [
+      { include: '#emphasis' }
+    ]
   }
   {
     name: 'highlight.critic.md'
@@ -26,12 +32,24 @@ patterns: [
     end: '(==})'
     endCaptures:
       1: name: 'punctuation.md'
+    patterns: [
+      { include: '#emphasis' }
+    ]
   }
   {
     name: 'comment.critic.md'
     begin: '({>>)'
     beginCaptures:
       1: name: 'punctuation.md'
+    patterns: [
+      {
+        match: '(?<=[\\s|>])((@)(\\w[-\\w:]*))(?=\\s)'
+        captures:
+          1: name: 'username.reference.md'
+          2: name: 'punctuation.md'
+      }
+      { include: '#emphasis' }
+    ]
     end: '(<<})'
     endCaptures:
       1: name: 'punctuation.md'
@@ -49,6 +67,7 @@ patterns: [
         match: '~>'
         name: 'punctuation.md'
       }
+      { include: '#emphasis' }
     ]
   }
 ]
