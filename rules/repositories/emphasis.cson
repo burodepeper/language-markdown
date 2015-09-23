@@ -4,21 +4,14 @@
 key: 'emphasis'
 patterns: [
 
-  # 316...
   # TODO 356 multiline
-  # TODO 364
-  # TODO 366 links
   # TODO 367 multiline
-  # TODO 370
-  # TODO 373
+  # TODO 370 (ignore?)
+  # TODO 373 (ignore?)
   # TODO 374
-  # TODO 376
-  # TODO 378 links
-  # TODO 381 links
   # TODO 382 multiline
-  # TODO 388
+  # TODO 388 (ignore?)
   # TODO 391 multiline
-  # TODO 392 links
   # TODO 398
   # TODO 401
   # TODO 402
@@ -33,16 +26,16 @@ patterns: [
   # TODO 416
   # TODO 417
   # TODO 418
-  # TODO 429
-  # TODO 431
+  # TODO 429 (ignore, don't even agree)
+  # TODO 431 (ignore?)
   # TODO 432
-  # TODO 433 links
-  # TODO 434 links
-  # TODO 435 html
-  # TODO 436 html
-  # TODO 437 html
-  # TODO 440 html
-  # TODO 441 html
+  # TODO 433 links (order of rules?)
+  # TODO 434 links (order of rules?)
+  # TODO 435 html (order of rules?)
+  # TODO 436 html (order of rules?)
+  # TODO 437 html (order of rules?)
+  # TODO 440 html (order of rules?)
+  # TODO 441 html (order of rules?)
 
   # Strong emphasis, __ or **
   # {
@@ -62,6 +55,7 @@ patterns: [
       2: patterns: [
         { include: '#escapes' }
         { include: '#inline-code' }
+        { include: '#links' }
         { include: '#emphasis' }
       ]
       3: name: 'punctuation.md'
@@ -75,6 +69,7 @@ patterns: [
       2: patterns: [
         { include: '#escapes' }
         { include: '#inline-code' }
+        { include: '#links' }
         { include: '#emphasis' }
       ]
       3: name: 'punctuation.md'
@@ -121,6 +116,7 @@ patterns: [
       2: patterns: [
         { include: '#escapes' }
         { include: '#inline-code' }
+        { include: '#links' }
         { include: '#emphasis' }
       ]
       3: name: 'punctuation.md'
@@ -134,6 +130,7 @@ patterns: [
       2: patterns: [
         { include: '#escapes' }
         { include: '#inline-code' }
+        { include: '#links' }
         { include: '#emphasis' }
       ]
       3: name: 'punctuation.md'

@@ -34,9 +34,9 @@ repository:
       { include: '#escapes' }
       { include: '#entities' }
       { include: '#inline-code' }
-      { include: '#emphasis' }
       { include: '#links' }
       { include: '#html' }
+      { include: '#emphasis' }
       { include: '#github' }
       { include: '#critic' }
     ]
