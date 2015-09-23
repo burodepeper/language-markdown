@@ -76,7 +76,7 @@ See: https://help.github.com/articles/github-flavored-markdown/
 | Issue numbers | _beta_ | @burodepeper |
 | Emojis | - | - |
 | Strikethrough | - | @burodepeper |
-| Tables | - | @burodepeper |
+| Tables | _beta_ | @burodepeper |
 
 ### Pandoc flavored Markdown
 

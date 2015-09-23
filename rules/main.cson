@@ -28,6 +28,7 @@ repository:
       { include: '#lists' }
       { include: '#indented-code' }
       { include: '#quote' }
+      { include: '#tables' }
     ]
   inlines:
     patterns: [
