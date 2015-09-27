@@ -73,8 +73,8 @@ patterns: [
             name: 'heading-1.md'
             captures:
               1: { name: 'punctuation.md' }
-              2: patterns: [{ include: '#inlines' }]
               3: { name: 'punctuation.md' }
+            patterns: [{ include: '#inlines'}]
           }
           {
             begin: '^(?: {0,3})(#{2})(?: +)'
@@ -82,8 +82,8 @@ patterns: [
             name: 'heading-2.md'
             captures:
               1: { name: 'punctuation.md' }
-              2: patterns: [{ include: '#inlines' }]
               3: { name: 'punctuation.md' }
+            patterns: [{ include: '#inlines'}]
           }
           {
             begin: '^(?: {0,3})(#{3})(?: +)'
@@ -91,8 +91,8 @@ patterns: [
             name: 'heading-3.md'
             captures:
               1: { name: 'punctuation.md' }
-              2: patterns: [{ include: '#inlines' }]
               3: { name: 'punctuation.md' }
+            patterns: [{ include: '#inlines'}]
           }
           {
             begin: '^(?: {0,3})(#{4})(?: +)'
@@ -100,8 +100,8 @@ patterns: [
             name: 'heading-4.md'
             captures:
               1: { name: 'punctuation.md' }
-              2: patterns: [{ include: '#inlines' }]
               3: { name: 'punctuation.md' }
+            patterns: [{ include: '#inlines'}]
           }
           {
             begin: '^(?: {0,3})(#{5})(?: +)'
@@ -109,8 +109,8 @@ patterns: [
             name: 'heading-5.md'
             captures:
               1: { name: 'punctuation.md' }
-              2: patterns: [{ include: '#inlines' }]
               3: { name: 'punctuation.md' }
+            patterns: [{ include: '#inlines'}]
           }
           {
             begin: '^(?: {0,3})(#{6})(?: +)'
@@ -118,8 +118,8 @@ patterns: [
             name: 'heading-6.md'
             captures:
               1: { name: 'punctuation.md' }
-              2: patterns: [{ include: '#inlines' }]
               3: { name: 'punctuation.md' }
+            patterns: [{ include: '#inlines'}]
           }
     ]
   }

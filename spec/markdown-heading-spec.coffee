@@ -135,19 +135,24 @@ describe 'Markdown grammar', ->
     {tokens} = grammar.tokenizeLine('### foo \\###')
     expect(tokens[0]).toEqual value: '###', scopes: ['text.md', 'heading.md', 'heading-3.md', 'punctuation.md']
     expect(tokens[1]).toEqual value: ' ', scopes: ['text.md', 'heading.md', 'heading-3.md']
-    expect(tokens[2]).toEqual value: 'foo \\###', scopes: ['text.md', 'heading.md', 'heading-3.md']
+    expect(tokens[2]).toEqual value: 'foo ', scopes: ['text.md', 'heading.md', 'heading-3.md']
+    expect(tokens[3]).toEqual value: '\\#', scopes: ['text.md', 'heading.md', 'heading-3.md', 'escape.constant.md']
+    expect(tokens[4]).toEqual value: '##', scopes: ['text.md', 'heading.md', 'heading-3.md']
 
     # Variant of #41
     {tokens} = grammar.tokenizeLine('## foo #\\##')
     expect(tokens[0]).toEqual value: '##', scopes: ['text.md', 'heading.md', 'heading-2.md', 'punctuation.md']
     expect(tokens[1]).toEqual value: ' ', scopes: ['text.md', 'heading.md', 'heading-2.md']
-    expect(tokens[2]).toEqual value: 'foo #\\##', scopes: ['text.md', 'heading.md', 'heading-2.md']
+    expect(tokens[2]).toEqual value: 'foo #', scopes: ['text.md', 'heading.md', 'heading-2.md']
+    expect(tokens[3]).toEqual value: '\\#', scopes: ['text.md', 'heading.md', 'heading-2.md', 'escape.constant.md']
+    expect(tokens[4]).toEqual value: '#', scopes: ['text.md', 'heading.md', 'heading-2.md']
 
     # Variant of #41
     {tokens} = grammar.tokenizeLine('# foo \\#')
     expect(tokens[0]).toEqual value: '#', scopes: ['text.md', 'heading.md', 'heading-1.md', 'punctuation.md']
     expect(tokens[1]).toEqual value: ' ', scopes: ['text.md', 'heading.md', 'heading-1.md']
-    expect(tokens[2]).toEqual value: 'foo \\#', scopes: ['text.md', 'heading.md', 'heading-1.md']
+    expect(tokens[2]).toEqual value: 'foo ', scopes: ['text.md', 'heading.md', 'heading-1.md']
+    expect(tokens[3]).toEqual value: '\\#', scopes: ['text.md', 'heading.md', 'heading-1.md', 'escape.constant.md']
 
     # http://spec.commonmark.org/0.22/#example-42
     [firstLineTokens, secondLineTokens, thirdLineTokens] = grammar.tokenizeLines('****\n## foo\n****')
