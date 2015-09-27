@@ -106,10 +106,11 @@ describe 'Markdown grammar', ->
     expect(tokens[1]).toEqual value: ' \\[\\` ', scopes: ['text.md', 'code.md']
     expect(tokens[2]).toEqual value: '``', scopes: ['text.md', 'code.md', 'punctuation.md']
 
+    # NOTE indented-code is disabled
     # http://spec.commonmark.org/0.22/#example-279
-    {tokens} = grammar.tokenizeLine('    \\[\\]')
-    expect(tokens[0]).toEqual value: '    ', scopes: ['text.md', 'indented-code.md']
-    expect(tokens[1]).toEqual value: '\\[\\]', scopes: ['text.md', 'indented-code.md', 'code.md']
+    # {tokens} = grammar.tokenizeLine('    \\[\\]')
+    # expect(tokens[0]).toEqual value: '    ', scopes: ['text.md', 'indented-code.md']
+    # expect(tokens[1]).toEqual value: '\\[\\]', scopes: ['text.md', 'indented-code.md', 'code.md']
 
     # TODO
     # http://spec.commonmark.org/0.22/#example-280

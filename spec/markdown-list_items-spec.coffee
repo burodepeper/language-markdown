@@ -48,17 +48,18 @@ describe 'Markdown grammar', ->
   # http://spec.commonmark.org/0.22/#list-items
   it 'tokenizes list items', ->
 
+    # NOTE indented-code is disabled
     # http://spec.commonmark.org/0.22/#example-203
-    tokens = grammar.tokenizeLines('A paragraph\nwith two lines.\n\n    indented code\n\n> A block quote.')
-    expect(tokens[0][0]).toEqual value: 'A paragraph', scopes: ['text.md']
-    expect(tokens[1][0]).toEqual value: 'with two lines.', scopes: ['text.md']
-    expect(tokens[2][0]).toEqual value: '', scopes: ['text.md']
-    expect(tokens[3][0]).toEqual value: '    ', scopes: ['text.md', 'indented-code.md']
-    expect(tokens[3][1]).toEqual value: 'indented code', scopes: ['text.md', 'indented-code.md', 'code.md']
-    expect(tokens[4][0]).toEqual value: '', scopes: ['text.md']
-    expect(tokens[5][0]).toEqual value: '>', scopes: ['text.md', 'quote.md', 'punctuation.md']
-    expect(tokens[5][1]).toEqual value: ' ', scopes: ['text.md', 'quote.md']
-    expect(tokens[5][2]).toEqual value: 'A block quote.', scopes: ['text.md', 'quote.md']
+    # tokens = grammar.tokenizeLines('A paragraph\nwith two lines.\n\n    indented code\n\n> A block quote.')
+    # expect(tokens[0][0]).toEqual value: 'A paragraph', scopes: ['text.md']
+    # expect(tokens[1][0]).toEqual value: 'with two lines.', scopes: ['text.md']
+    # expect(tokens[2][0]).toEqual value: '', scopes: ['text.md']
+    # expect(tokens[3][0]).toEqual value: '    ', scopes: ['text.md', 'indented-code.md']
+    # expect(tokens[3][1]).toEqual value: 'indented code', scopes: ['text.md', 'indented-code.md', 'code.md']
+    # expect(tokens[4][0]).toEqual value: '', scopes: ['text.md']
+    # expect(tokens[5][0]).toEqual value: '>', scopes: ['text.md', 'quote.md', 'punctuation.md']
+    # expect(tokens[5][1]).toEqual value: ' ', scopes: ['text.md', 'quote.md']
+    # expect(tokens[5][2]).toEqual value: 'A block quote.', scopes: ['text.md', 'quote.md']
 
     # http://spec.commonmark.org/0.22/#example-211
     {tokens} = grammar.tokenizeLine('-one')

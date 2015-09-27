@@ -66,16 +66,18 @@ describe 'Markdown grammar', ->
     expect(tokens[2]).toEqual value: ' ', scopes: ['text.md', 'heading.md', 'heading-2.md']
     expect(tokens[3]).toEqual value: 'Heading', scopes: ['text.md', 'heading.md', 'heading-2.md']
 
+    # NOTE indented-code is disabled
     # http://spec.commonmark.org/0.22/#example-34
-    {tokens} = grammar.tokenizeLine('    # foo')
-    expect(tokens[0]).toEqual value: '    ', scopes: ['text.md', 'indented-code.md']
-    expect(tokens[1]).toEqual value: '# foo', scopes: ['text.md', 'indented-code.md', 'code.md']
+    # {tokens} = grammar.tokenizeLine('    # foo')
+    # expect(tokens[0]).toEqual value: '    ', scopes: ['text.md', 'indented-code.md']
+    # expect(tokens[1]).toEqual value: '# foo', scopes: ['text.md', 'indented-code.md', 'code.md']
 
+    # NOTE indented-code is disabled
     # http://spec.commonmark.org/0.22/#example-35
-    tokens = grammar.tokenizeLines('foo\n    # bar')
-    expect(tokens[0][0]).toEqual value: 'foo', scopes: ['text.md']
-    expect(tokens[1][0]).toEqual value: '    ', scopes: ['text.md', 'indented-code.md']
-    expect(tokens[1][1]).toEqual value: '# bar', scopes: ['text.md', 'indented-code.md', 'code.md']
+    # tokens = grammar.tokenizeLines('foo\n    # bar')
+    # expect(tokens[0][0]).toEqual value: 'foo', scopes: ['text.md']
+    # expect(tokens[1][0]).toEqual value: '    ', scopes: ['text.md', 'indented-code.md']
+    # expect(tokens[1][1]).toEqual value: '# bar', scopes: ['text.md', 'indented-code.md', 'code.md']
 
     # http://spec.commonmark.org/0.22/#example-36
     {tokens} = grammar.tokenizeLine('## foo ##')

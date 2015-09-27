@@ -156,7 +156,8 @@ describe 'Markdown grammar', ->
     expect(tokens[1]).toEqual value: 'f&ouml;&ouml;', scopes: ['text.md', 'code.md']
     expect(tokens[2]).toEqual value: '`', scopes: ['text.md', 'code.md', 'punctuation.md']
 
+    # NOTE indented-code is disabled
     # http://spec.commonmark.org/0.22/#example-297
-    {tokens} = grammar.tokenizeLine('    f&ouml;f&ouml;')
-    expect(tokens[0]).toEqual value: '    ', scopes: ['text.md', 'indented-code.md']
-    expect(tokens[1]).toEqual value: 'f&ouml;f&ouml;', scopes: ['text.md', 'indented-code.md', 'code.md']
+    # {tokens} = grammar.tokenizeLine('    f&ouml;f&ouml;')
+    # expect(tokens[0]).toEqual value: '    ', scopes: ['text.md', 'indented-code.md']
+    # expect(tokens[1]).toEqual value: 'f&ouml;f&ouml;', scopes: ['text.md', 'indented-code.md', 'code.md']
