@@ -25,6 +25,7 @@ repository:
       { include: '#horizontal-rule' }
       { include: '#heading' }
       { include: '#disabled' }
+      { include: '#fenced-code' }
       { include: '#lists' }
       { include: '#indented-code' }
       { include: '#quote' }
