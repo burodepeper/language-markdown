@@ -1,0 +1,52 @@
+it: 'tokenizes ATX headings'
+tests: [
+  {
+    input: '# Heading'
+    output:
+      0: 'text.md heading.md heading-1.md':
+        0: '#': 'punctuation.md'
+        1: ' '
+        2: 'Heading'
+  }
+  {
+    input: '####### foo'
+    output: '####### foo': 'text.md'
+  }
+  {
+    input: '#5 bolt'
+    output:
+      0: 'text.md':
+        0: 'issue.reference.gfm.md':
+          0: '#': 'punctuation.md'
+          1: '5'
+        1: ' bolt'
+  }
+  {
+    input: '#foobar'
+    output: '#foobar': 'text.md'
+  }
+  {
+    input: '\\## foo'
+    output:
+      0: 'text.md':
+        0: '\\#': 'escape.constant.md'
+        1: '# foo'
+  }
+  {
+    input: '# foo *bar* \\*baz\\*'
+    output:
+      0: 'text.md heading.md heading-1.md':
+        0: '#': 'punctuation.md'
+        1: ' '
+        2: 'foo '
+        3: 'emphasis.md':
+          0: '*': 'punctuation.md'
+          1: 'bar'
+          2: '*': 'punctuation.md'
+        4: ' '
+        5: '\\*': 'punctuation.md'
+        6: 'baz'
+        7: '\\*': 'punctuation.md'
+
+  }
+]
