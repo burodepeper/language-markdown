@@ -46,6 +46,8 @@ baz
 > ```
 foo
 ```
+```
+<!-- negate ``` -->
 
 <!-- http://spec.commonmark.org/0.22/#example-188 -->
 > foo

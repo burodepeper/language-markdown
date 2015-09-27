@@ -38,7 +38,7 @@ Container blocks are blocks that _can_ contain other blocks.
 
 | Section | Specs | Contact |
 | ------- | ----- | ------- |
-| Block quotes | _in progress_ | @burodepeper |
+| Block quotes | 25 of 25 | @burodepeper |
 | Lists | 19 of 19 | @burodepeper |
 
 ### Inlines
