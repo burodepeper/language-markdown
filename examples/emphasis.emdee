@@ -1,3 +1,10 @@
+<!-- Issues -->
+
+<!-- https://github.com/atom/language-gfm/issues/117 -->
+<!-- expected outcome: only emphasize first letters of words -->
+*f*oo *b*ar baz
+**f**oo **b**ar baz
+
 <!-- http://spec.commonmark.org/0.22/#emphasis-and-strong-emphasis -->
 
 <!-- http://spec.commonmark.org/0.22/#example-313 -->
