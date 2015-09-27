@@ -23,7 +23,9 @@ describe 'Markdown grammar', ->
 
     # http://spec.commonmark.org/0.22/#example-29
     {tokens} = grammar.tokenizeLine('#5 bolt')
-    expect(tokens[0]).toEqual value: '#5 bolt', scopes: ['text.md']
+    expect(tokens[0]).toEqual value: '#', scopes: ['text.md', 'issue.reference.gfm.md', 'punctuation.md']
+    expect(tokens[1]).toEqual value: '5', scopes: ['text.md', 'issue.reference.gfm.md']
+    expect(tokens[2]).toEqual value: ' bolt', scopes: ['text.md']
 
     # Variant of #29
     {tokens} = grammar.tokenizeLine('#foobar')
