@@ -28,6 +28,18 @@ var test = {
 };
 ```
 
+``` php
+function test ($var) {
+  echo "string";
+}
+```
+
+```
+var test = {
+  isComplete: true
+};
+```
+
 - [ ] Something to be done
 - [x] Accomplished task
 
