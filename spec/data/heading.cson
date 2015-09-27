@@ -50,3 +50,52 @@ tests: [
 
   }
 ]
+
+text.md {
+  heading.md {
+    heading-1.md {
+      punctuation.md {'#'}
+      ' '
+      'foo '
+      emphasis.md {
+        punctuation.md {'*'}
+        'bar'
+        punctuation.md {'*'}
+      }
+      ' '
+      escape.constant.md {'\\*'}
+      'baz'
+      escape.constant.md {'\\*'}
+    }
+  }
+}
+
+text.md
+  heading.md
+    heading-1.md
+      punctuation.md '#'
+      ' '
+      'foo '
+      emphasis.md
+        punctuation.md '*'
+        'bar'
+        punctuation.md '*'
+      ' '
+      escape.constant.md '\\*'
+      'baz'
+      escape.constant.md '\\*'
+
+text.md
+  heading.md
+    heading-1.md
+      '#': punctuation.md
+      ' '
+      'foo '
+      emphasis.md
+        '*': punctuation.md
+        'bar'
+        '*': punctuation.md
+      ' '
+      '\\*': escape.constant.md
+      'baz'
+      '\\*': escape.constant.md
