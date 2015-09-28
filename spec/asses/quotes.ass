@@ -1,5 +1,5 @@
 # http://spec.commonmark.org/0.22/#example-178
-'> # Foo\n> bar\n> baz' {
+"> # Foo\n> bar\n> baz" {
   text.md {
     quote.md {
       '>': punctuation.md

@@ -5,7 +5,6 @@ class ASStest
   input: null
   tokens: null
   currentScope: null
-  multiline: false
 
   constructor: (@nr, @lines) ->
     @parseData()
@@ -14,7 +13,6 @@ class ASStest
     @input = @lines.shift()
     @input = @input.substring(0, @input.length - 1).trim()
     @input = @input.substring(1, @input.length - 1)
-    @multiline = true if @input.indexOf('\n')
 
     # gather tokens and scopes
     @tokens = []

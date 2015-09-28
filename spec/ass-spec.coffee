@@ -1,6 +1,7 @@
 path = require 'path'
 ASS = require '../lib/ass'
 fs = require 'fs'
+# _ = require 'lodash'
 
 fixtures = [
   # "lists"
@@ -39,32 +40,28 @@ describe "Markdown grammar", ->
         runs ->
           grammar = atom.grammars.grammarForScopeName('text.md')
 
-      afterEach ->
-        grammar = null
+      it "parses the grammar", ->
+        expect(grammar).toBeDefined()
+        expect(grammar.scopeName).toBe "text.md"
 
-      # Cycle through tests
+      it "tokenizes spaces", ->
+        {tokens} = grammar.tokenizeLine(" ")
+        expect(tokens[0]).toEqual value: " ", scopes: ["text.md"]
+
+      # Cycle through the tests we've created in ASS
       for test, t in tests
+      # _.forEach tests, (test) ->
 
+        # TODO The line below causes the test to be skipped...
         # it "should parse '#{test.input}'", ->
         it "should parse test '#{t}'", ->
-
-          i = 0
-
-          # if test.multiline
-
           console.log "input = '#{test.input}'"
-          console.log "multiline = #{test.multiline}"
+          i = 0
           tokens = grammar.tokenizeLines(test.input)
           for line, a in tokens
             for token, b in line
-              console.log "[#{a}][#{b}].value = '#{tokens[a][b].value}'"
+              console.log "[#{a}][#{b}].value = '#{tokens[a][b].value}' = #{i}"
               expectation = test.tokens[i]
               expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes.split(' ')
               i++
-
-          # else
-          #   {tokens} = grammar.tokenizeLine(test.input)
-          #   for token in tokens
-          #     expectation = test.tokens[i]
-          #     expect(token).toEqual value: expectation.value, scopes: expectation.scopes.split(' ')
-          #     i++
+          return
