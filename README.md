@@ -64,7 +64,7 @@ Container blocks are blocks that _can_ contain other blocks.
 | ------- | ----- | ------- |
 | Dynamic grammar selection | - | @leipert |
 | Less verbose specs, variant A | _in progress_ | @leipert |
-| Less verbose specs, variant B | _beta_ [#5](https://github.com/burodepeper/language-markdown/pull/15) | @burodepeper |
+| Less verbose specs, variant B | _beta_ [#15](https://github.com/burodepeper/language-markdown/pull/15) | @burodepeper |
 | Improved fenced code blocks | - | @leipert |
 
 ### Github flavored Markdown
