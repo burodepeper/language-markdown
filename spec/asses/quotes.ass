@@ -26,24 +26,24 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-178
-# '> # Foo\n> bar\n> baz' {
-#   text.md {
-#     quote.md {
-#       '>': punctuation.md
-#       ' '
-#       heading.md {
-#         heading-1.md {
-#           '#': punctuation.md
-#           ' '
-#           'Foo'
-#         }
-#       }
-#       '>': punctuation.md
-#       ' '
-#       'baar'
-#       '>': punctuation.md
-#       ' '
-#       'baz'
-#     }
-#   }
-# }
+'> # Foo\n> bar\n> baz' {
+  text.md {
+    quote.md {
+      '>': punctuation.md
+      ' '
+      heading.md {
+        heading-1.md {
+          '#': punctuation.md
+          ' '
+          'Foo'
+        }
+      }
+      '>': punctuation.md
+      ' '
+      'bar'
+      '>': punctuation.md
+      ' '
+      'baz'
+    }
+  }
+}
