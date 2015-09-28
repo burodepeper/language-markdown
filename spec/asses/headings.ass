@@ -39,3 +39,72 @@
     '# foo'
   }
 }
+
+# FIXME
+# http://spec.commonmark.org/0.22/#example-31
+# '# foo *bar* \*baz\*' {
+#   text.md {
+#     heading.md {
+#       heading-1.md {
+#         '#': punctuation.md
+#         ' '
+#         'foo '
+#         emphasis.md {
+#           '*': punctuation.md
+#           'bar'
+#           '*': punctuation.md
+#         }
+#         ' '
+#         '\*': escape.constant.md
+#         'baz'
+#         '\*': escape.constant.md
+#       }
+#     }
+#   }
+# }
+
+# http://spec.commonmark.org/0.22/#example-32
+'#                  foo' {
+  text.md {
+    heading.md {
+      heading-1.md {
+        '#': punctuation.md
+        '                  '
+        'foo'
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-33
+'  ## Heading' {
+  text.md {
+    heading.md {
+      heading-2.md {
+        '  '
+        '##': punctuation.md
+        ' '
+        'Heading'
+      }
+    }
+  }
+}
+
+# NOTE indented-code is disabled
+# http://spec.commonmark.org/0.22/#example-34
+# http://spec.commonmark.org/0.22/#example-35
+
+# http://spec.commonmark.org/0.22/#example-36
+'## foo ##' {
+  text.md {
+    heading.md {
+      heading-2.md {
+        '##': punctuation.md
+        ' '
+        'foo'
+        ' '
+        '##': punctuation.md
+      }
+    }
+  }
+}
