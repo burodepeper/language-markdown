@@ -13,7 +13,6 @@ class ASS
     @splitDataIntoLines()
     @removeEmptyLinesAndComments()
     @splitLinesIntoTests()
-    # console.log "Number of tests: #{@tests.length}"
 
   splitDataIntoLines: ->
     @lines = @rawData.split("\n")

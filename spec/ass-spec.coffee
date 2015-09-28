@@ -4,8 +4,8 @@ fs = require 'fs'
 # _ = require 'lodash'
 
 fixtures = [
-  # "lists"
-  # "headings"
+  "lists"
+  "headings"
   "quotes"
 ]
 
@@ -55,12 +55,10 @@ describe "Markdown grammar", ->
         # TODO The line below causes the test to be skipped...
         # it "should parse '#{test.input}'", ->
         it "should parse test '#{t}'", ->
-          console.log "input = '#{test.input}'"
           i = 0
           tokens = grammar.tokenizeLines(test.input)
           for line, a in tokens
             for token, b in line
-              console.log "[#{a}][#{b}].value = '#{tokens[a][b].value}' = #{i}"
               expectation = test.tokens[i]
               expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes.split(' ')
               i++
