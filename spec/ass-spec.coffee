@@ -1,7 +1,7 @@
 path = require 'path'
 ASS = require '../lib/ass'
 fs = require 'fs'
-# _ = require 'lodash'
+_ = require 'lodash'
 
 fixtures = [
   "lists"
@@ -49,17 +49,20 @@ describe "Markdown grammar", ->
         expect(tokens[0]).toEqual value: " ", scopes: ["text.md"]
 
       # Cycle through the tests we've created in ASS
-      for test, t in tests
-      # _.forEach tests, (test) ->
+      # and we need to do it in a closure apparently
+      _.forEach tests, (test) ->
 
         # TODO The line below causes the test to be skipped...
         # it "should parse '#{test.input}'", ->
-        it "should parse test '#{t}'", ->
+        # it "should parse test '#{t}'", ->
+        it "should parse test '#{test.input.length}'", ->
+          # console.log "- input:'#{test.input}'"
           i = 0
           tokens = grammar.tokenizeLines(test.input)
           for line, a in tokens
             for token, b in line
               expectation = test.tokens[i]
+              # console.log "  - [#{a}][#{b}] = '#{tokens[a][b].value}' > '#{expectation.value}'"
               expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes.split(' ')
               i++
           return
