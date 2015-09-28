@@ -30,7 +30,8 @@ describe "Markdown grammar", ->
       expect(tests.length > 0).toEqual(true)
 
     # Everything seems to be okay, let's run the tests
-    describe "Fixture: #{fixture}", ->
+    # describe "Fixture: #{fixture}", ->
+    describe fixture, ->
       grammar = null
 
       beforeEach ->
@@ -52,17 +53,17 @@ describe "Markdown grammar", ->
       # and we need to do it in a closure apparently
       _.forEach tests, (test) ->
 
-        # TODO The line below causes the test to be skipped...
-        # it "should parse '#{test.input}'", ->
-        # it "should parse test '#{t}'", ->
-        it "should parse test '#{test.input.length}'", ->
+        # NOTE
+        # A lot of `it`s are created, and I believe that that causes a lot of unnecessary loading/activating of a package/grammar, and thus a lot of extra time spent rendering.
+        it "should pass test: #{fixture}/nr.#{test.nr}", ->
+
           # console.log "- input:'#{test.input}'"
           i = 0
           tokens = grammar.tokenizeLines(test.input)
           for line, a in tokens
             for token, b in line
               expectation = test.tokens[i]
-              # console.log "  - [#{a}][#{b}] = '#{tokens[a][b].value}' > '#{expectation.value}'"
+              # console.log "  - [#{a}][#{b}]: '#{tokens[a][b].value}' = '#{expectation.value}'"
               expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes.split(' ')
               i++
           return

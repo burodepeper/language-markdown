@@ -7,7 +7,10 @@ class ASS
   tests: null
 
   constructor: (@rawData) ->
+    start = new Date().getTime()
     @parseData()
+    stop = new Date().getTime()
+    # console.log "ASS.parseData() "+(stop - start)+"ms"
 
   parseData: ->
     @splitDataIntoLines()
