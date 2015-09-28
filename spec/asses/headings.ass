@@ -1,0 +1,41 @@
+# http://spec.commonmark.org/0.22/#example-27
+'# Heading' {
+  text.md {
+    heading.md {
+      heading-1.md {
+        '#': punctuation.md
+        ' '
+        'Heading'
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-28
+'####### foo' {
+  '####### foo': text.md
+}
+
+# http://spec.commonmark.org/0.22/#example-29
+'#5 bolt' {
+  text.md {
+    issue.reference.gfm.md {
+      '#': punctuation.md
+      '5'
+    }
+    ' bolt'
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-29
+'#foobar' {
+  '#foobar': text.md
+}
+
+# http://spec.commonmark.org/0.22/#example-30
+'\## foo' {
+  text.md {
+    '\#': escape.constant.md
+    '# foo'
+  }
+}
