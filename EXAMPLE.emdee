@@ -40,6 +40,12 @@ var test = {
 };
 ```
 
+~~~
+$(function(){
+  app.init();
+});
+~~~
+
 - [ ] Something to be done
 - [x] Accomplished task
 
