@@ -15,7 +15,7 @@ describe "Markdown grammar", ->
 
     # Try to load the fixture
     try
-      absolutePath = path.join(__dirname, "asses/#{fixture}.ass")
+      absolutePath = path.join(__dirname, "fixtures/#{fixture}.ass")
       fileContents = fs.readFileSync(absolutePath, 'utf8')
       ass = new ASS(fileContents)
       tests = ass.getTests()
