@@ -9,8 +9,7 @@ class ASS
   constructor: (@rawData) ->
     start = new Date().getTime()
     @parseData()
-    stop = new Date().getTime()
-    # console.log "ASS.parseData() "+(stop - start)+"ms"
+    # console.log "ASS.parseData() "+(new Date().getTime() - start)+"ms"
 
   parseData: ->
     @splitDataIntoLines()
@@ -23,7 +22,7 @@ class ASS
   removeEmptyLinesAndComments: ->
     lines = []
     for line in @lines
-      if line.length and line[0] isnt "#"
+      if line.length and (line[0] isnt "#")
         lines.push(line)
     @lines = lines
 
