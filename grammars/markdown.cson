@@ -32,8 +32,8 @@ repository:
   inlines:
     patterns: [
       { include: '#escapes' }
-      { include: '#entities' }
       { include: '#code' }
+      { include: '#entities' }
       { include: '#links' }
       { include: '#html' }
       { include: '#emphasis' }
@@ -51,7 +51,8 @@ repository:
       {
         # begin: '(`+)(?!$)'
         # end: '(?<!`)(\\1)(?!`)'
-        match: '(`)[^`]+(`)'
+        # match: '(?<!`)(`+)[^`]+(\\1)(?!`)'
+        match: '(?<!`)(`{1,2})(?!`).+?(?<!`)(\\1)(?!`)'
         name: 'code.md'
         captures:
           1: name: 'punctuation.md'
@@ -550,7 +551,8 @@ repository:
         patterns: [
           {
             name: 'attribute.md'
-            match: '([a-zA-Z\\-]+)(=)(([\'"])(?:[a-zA-Z0-9\\-/ ]*)(\\4))'
+            # match: '([a-zA-Z\\-]+)(=)(([\'"])(?:[a-zA-Z0-9\\-/ ]*)(\\4))'
+            match: '([a-zA-Z\\-]+)(=)(([\'"])(?:[^\\4]*)(\\4))'
             captures:
               1: name: 'name.md'
               2: name: 'punctuation.md'

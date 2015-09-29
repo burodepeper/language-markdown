@@ -8,13 +8,13 @@
 ` `` `
 
 <!-- http://spec.commonmark.org/0.22/#example-301 -->
-<!--
+<!-- NOTE use fenced-code blocks for multiline -->
 ``
 foo
 ``
- -->
 
 <!-- http://spec.commonmark.org/0.22/#example-302 -->
+<!-- NOTE use fenced-code blocks for multiline -->
 `foo   bar
   baz`
 

@@ -47,7 +47,7 @@ Container blocks are blocks that _can_ contain other blocks.
 | ------- | ----- | ------- |
 | Backslash escapes | 14 of 22 | @burodepeper |
 | Entities | 27 of 33 | @burodepeper |
-| Code spans | 6 of 15 | @burodepeper |
+| Code spans | 12 of 15 | @burodepeper |
 | Emphasis and strong emphasis | 98 of 129 | @burodepeper |
 | Links | _in progress_ | @burodepeper |
 | Images | - | @burodepeper |

@@ -7,6 +7,7 @@ fixtures = [
   "lists"
   "headings"
   "quotes"
+  "code"
 ]
 
 describe "Markdown grammar", ->
