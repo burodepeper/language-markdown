@@ -389,7 +389,7 @@ repository:
     patterns: [
       {
         # Empty headings
-        match: '^(?: {0,3})((?:#{1,6})\\s*(?:#*)\\s*)$'
+        match: '^(?:[ ]{0,3})((?:#{1,6})\\s*(?:#*)\\s*)$'
         name: 'empty.heading.md'
         captures:
           1:
