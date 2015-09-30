@@ -32,7 +32,10 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-301
-"``\nfoo\n``" {
+# "``\nfoo\n``" {
+"``"+
+"foo"+
+"``" {
   text.md {
     '``'
     'foo'
@@ -41,7 +44,9 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-302
-"`foo   bar\n  baz`" {
+# "`foo   bar\n  baz`" {
+"`foo   bar"+
+"  baz`" {
   text.md {
     '`foo   bar'
     '  baz`'

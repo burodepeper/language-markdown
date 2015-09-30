@@ -10,10 +10,23 @@ class ASStest
     @parseData()
 
   parseData: ->
-    @input = @lines.shift()
-    @input = @input.substring(0, @input.length - 1).trim()
-    @input = @input.substring(1, @input.length - 1)
-    @input = @input.replace(/\\n/g, '\n')
+    # @input = @lines.shift()
+    # @input = @input.substring(0, @input.length - 1).trim()
+    # @input = @input.substring(1, @input.length - 1)
+    # @input = @input.replace(/\\n/g, '\n')
+
+    @input = ""
+    while (@lines[0][0] is '"') or (@lines[0][0] is "'")
+      input = @lines.shift()
+      # remove last character (either { or +) and trim whitespace
+      input = input.substring(0, input.length - 1).trim()
+      # remove encasing quotes
+      input = input.substring(1, input.length - 1)
+      # transform \n into proper new lines
+      input = input.replace(/\\n/g, '\n')
+      # insert a new line when concatenating multiple input lines
+      if @input then @input += '\n'
+      @input += input
 
     # gather tokens and scopes
     @tokens = []
