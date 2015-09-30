@@ -64,7 +64,14 @@ describe "Markdown grammar", ->
           for line, a in tokens
             for token, b in line
               expectation = test.tokens[i]
-              # console.log "  - [#{a}][#{b}]: '#{tokens[a][b].value}' = '#{expectation.value}'"
-              expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes.split(' ')
+              # if expectation? and expectation.value?
+              if tokens[a][b].value.length
+                expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes.split(' ')
+              else
+                # NOTE
+                # A token.value without a length has been created, and is ignored.
+                console.log "=== expectation[#{i}] for tokens[#{a}][#{b}] doesn't exist"
+                console.log "--- value:'#{tokens[a][b].value}'"
+                console.log "--- scopes:'#{tokens[a][b].scopes}'"
               i++
           return
