@@ -129,7 +129,7 @@ repository:
           {
             match: '(?<=[\\s|>])((@)(\\w[-\\w:]*))(?=\\s)'
             captures:
-              1: name: 'username.reference.md'
+              1: name: 'username.reference.variable.md'
               2: name: 'punctuation.md'
           }
           { include: '#emphasis' }
