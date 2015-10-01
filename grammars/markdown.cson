@@ -210,7 +210,7 @@ repository:
       # }
 
       {
-        match: '(?<!\\w)([_]{2})(?!\\s)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+        match: '(?<![\\w|\\\\])([_]{2})(?!\\s)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
         name: 'strong.emphasis.md'
         captures:
           1: name: 'punctuation.md'
@@ -223,7 +223,7 @@ repository:
           3: name: 'punctuation.md'
       }
       {
-        match: '(?<!\\w)([\\*]{2})(?!\\s)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+        match: '(?<![\\w|\\\\])([\\*]{2})(?!\\s)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
         name: 'strong.emphasis.md'
         captures:
           1: name: 'punctuation.md'
@@ -268,7 +268,7 @@ repository:
       # The matches for _ and * are separated though pretty similar, because the negative look-back at the beginning couldn't reference to \\1 as used in the example above
 
       {
-        match: '(?<![\\w|_])([_])(?!\\s|\\1)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+        match: '(?<![\\w|_|\\\\])([_])(?!\\s|\\1)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
         name: 'emphasis.md'
         captures:
           1: name: 'punctuation.md'
@@ -281,7 +281,7 @@ repository:
           3: name: 'punctuation.md'
       }
       {
-        match: '(?<![\\w|\\*])([\\*])(?!\\s|\\1)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+        match: '(?<![\\w|\\*|\\\\])([\\*])(?!\\s|\\1)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
         name: 'emphasis.md'
         captures:
           1: name: 'punctuation.md'
