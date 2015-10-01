@@ -1,12 +1,12 @@
 module.exports =
 class ASStest
-  nr: null
+  id: null
   lines: null
   input: null
   tokens: null
   currentScope: null
 
-  constructor: (@nr, @lines) ->
+  constructor: (@id, @lines) ->
     @parseData()
 
   parseData: ->
@@ -14,6 +14,9 @@ class ASStest
     # @input = @input.substring(0, @input.length - 1).trim()
     # @input = @input.substring(1, @input.length - 1)
     # @input = @input.replace(/\\n/g, '\n')
+
+    if (@lines[0][0] is '@')
+      @id = @lines.shift().substring(1)
 
     @input = ""
     while (@lines[0][0] is '"') or (@lines[0][0] is "'")

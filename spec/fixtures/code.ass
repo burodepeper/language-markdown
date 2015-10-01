@@ -1,4 +1,5 @@
 # http://spec.commonmark.org/0.22/#example-298
+@298
 "`foo`" {
   text.md {
     code.md {
@@ -10,6 +11,7 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-299
+@299
 "`` foo ` bar  ``" {
   text.md {
     code.md {
@@ -21,6 +23,7 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-300
+@300
 "` `` `" {
   text.md {
     code.md {

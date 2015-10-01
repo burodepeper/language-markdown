@@ -56,7 +56,7 @@ describe "Markdown grammar", ->
 
         # NOTE
         # A lot of `it`s are created, and I believe that that causes a lot of unnecessary loading/activating of a package/grammar, and thus a lot of extra time spent rendering.
-        it "should pass test: #{fixture}/nr.#{test.nr}", ->
+        it "should pass test: #{fixture}/#{test.id}", ->
 
           # console.log "- input:'#{test.input}'"
           i = 0
