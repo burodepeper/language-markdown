@@ -11,12 +11,6 @@ describe 'Markdown grammar', ->
   # http://spec.commonmark.org/0.22/#atx-header
   it 'tokenizes ATX headings', ->
 
-    # http://spec.commonmark.org/0.22/#example-27
-    {tokens} = grammar.tokenizeLine('# Heading')
-    expect(tokens[0]).toEqual value: '#', scopes: ['text.md', 'heading.md', 'heading-1.md', 'punctuation.md']
-    expect(tokens[1]).toEqual value: ' ', scopes: ['text.md', 'heading.md', 'heading-1.md']
-    expect(tokens[2]).toEqual value: 'Heading', scopes: ['text.md', 'heading.md', 'heading-1.md']
-
     # http://spec.commonmark.org/0.22/#example-28
     {tokens} = grammar.tokenizeLine('####### foo')
     expect(tokens[0]).toEqual value: '####### foo', scopes: ['text.md']
@@ -52,12 +46,6 @@ describe 'Markdown grammar', ->
 
     # for token, i in tokens
     #   console.log i+":'"+token.value+"'"
-
-    # http://spec.commonmark.org/0.22/#example-32
-    {tokens} = grammar.tokenizeLine('#                  foo')
-    expect(tokens[0]).toEqual value: '#', scopes: ['text.md', 'heading.md', 'heading-1.md', 'punctuation.md']
-    expect(tokens[1]).toEqual value: '                  ', scopes: ['text.md', 'heading.md', 'heading-1.md']
-    expect(tokens[2]).toEqual value: 'foo', scopes: ['text.md', 'heading.md', 'heading-1.md']
 
     # http://spec.commonmark.org/0.22/#example-33
     {tokens} = grammar.tokenizeLine('  ## Heading')
@@ -155,14 +143,6 @@ describe 'Markdown grammar', ->
     expect(tokens[1]).toEqual value: ' ', scopes: ['text.md', 'heading.md', 'heading-1.md']
     expect(tokens[2]).toEqual value: 'foo ', scopes: ['text.md', 'heading.md', 'heading-1.md']
     expect(tokens[3]).toEqual value: '\\#', scopes: ['text.md', 'heading.md', 'heading-1.md', 'escape.constant.md']
-
-    # http://spec.commonmark.org/0.22/#example-42
-    [firstLineTokens, secondLineTokens, thirdLineTokens] = grammar.tokenizeLines('****\n## foo\n****')
-    expect(firstLineTokens[0]).toEqual value: '****', scopes: ['text.md', 'hr.md']
-    expect(secondLineTokens[0]).toEqual value: '##', scopes: ['text.md', 'heading.md', 'heading-2.md', 'punctuation.md']
-    expect(secondLineTokens[1]).toEqual value: ' ', scopes: ['text.md', 'heading.md', 'heading-2.md']
-    expect(secondLineTokens[2]).toEqual value: 'foo', scopes: ['text.md', 'heading.md', 'heading-2.md']
-    expect(thirdLineTokens[0]).toEqual value: '****', scopes: ['text.md', 'hr.md']
 
     # http://spec.commonmark.org/0.22/#example-43
     [firstLineTokens, secondLineTokens, thirdLineTokens] = grammar.tokenizeLines('Foo bar\n# baz\nBar foo')

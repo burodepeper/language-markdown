@@ -1,0 +1,51 @@
+it: 'tokenizes complex Markdown examples'
+tests: [
+  {
+    input: '# Heading'
+    output:
+      0: 'text.md heading.md heading-1.md':
+        0: '#': 'punctuation.md'
+        1: ' '
+        2: 'Heading'
+  }
+  {
+    comment: 'Verify results with @tpoisot, see issue#7'
+    debug: true
+    input:
+      0: '# An _annoying_ header ###'
+      1: ''
+      2: '> I am an important quote'
+      3: '>   - <important@person.com>'
+      4: ''
+      5: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      6: ''
+      7: '## Groceries'
+      8: '- Apples'
+      9: '- Bananas'
+      10: '- **Chocolate**'
+      11: '- Diapers'
+    output:
+      0: 'text.md heading.md heading-1.md':
+        0: '#': 'interpunction.md'
+        # 1: ' '
+        # 2: 'An '
+        3: 'emphasis.md':
+          0: '_': 'interpunction.md'
+          1: 'annoying'
+          2: '_': 'interpunction.md'
+        4: ' header'
+        # 5: ' '
+        6: '###': 'interpunction.md'
+      2: 'text.md quote.md':
+        0: '>': 'punctuation.md'
+        1: ' '
+        2: 'I am an important quote'
+      10: 'text.md unordered.list.md':
+        0: '-': 'interpunction.md'
+        # 1: ' '
+        2: 'strong.emphasis.md':
+          0: '**': 'interpunction.md'
+          1: 'Chocolate'
+          2: '**': 'interpunction.md'
+  }
+]

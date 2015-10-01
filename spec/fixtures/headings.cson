@@ -1,0 +1,257 @@
+# v1
+input: '# Heading'
+output: [
+  { content: '#', scopes: ['text.md', 'heading.md', 'heading-1.md', 'punctuation.md'] }
+  { content: ' ', scopes: ['text.md', 'heading.md', 'heading-1.md'] }
+  { content: 'Heading', scopes: ['text.md', 'heading.md', 'heading-1.md'] }
+]
+
+
+
+# v2
+input: '# Heading'
+output:
+  scopes: ['text.md', 'heading.md', 'heading-1.md']
+  output:
+    0: { scopes: ['punctuation.md'], output: '#' }
+    1: { output: ' ' }
+    2: { output: 'Heading' }
+
+
+
+# v3
+input: '# Heading'
+output:
+  scopes: ['text.md', 'heading.md', 'heading-1.md']
+  output:
+    0: { scopes: ['punctuation.md'], output: '#' }
+    1: ' '
+    2: 'Heading'
+
+
+
+# v3 variant
+input: '****\n## foo\n****'
+output:
+  0: { scopes: ['text.md', 'hr.md'], output: '****' }
+  1:
+    scopes: ['text.md', 'heading.md', 'heading-2.md']
+    output:
+      0: { scopes: ['punctuation.md'], output: '##' }
+      1: ' '
+      2: 'foo'
+  2: { scopes: ['text.md', 'hr.md'], output: '****' }
+
+
+
+# v3 variant (unfolded)
+input: '****\n## foo\n****'
+output:
+  0:
+    scopes: ['text.md', 'hr.md']
+    output: '****'
+  1:
+    scopes: ['text.md', 'heading.md', 'heading-2.md']
+    output:
+      0:
+        scopes: ['punctuation.md']
+        output: '##'
+      1: ' '
+      2: 'foo'
+  2:
+    scopes: ['text.md', 'hr.md']
+    output: '****'
+
+
+
+# v4 variant (unfolded)
+input: '****\n## foo\n****'
+output:
+  scopes: ['text.md']
+  output:
+    0:
+      scopes: ['hr.md']
+      output: '****'
+    1:
+      scopes: ['heading.md', 'heading-2.md']
+      output:
+        0:
+          scopes: ['punctuation.md']
+          output: '##'
+        1: ' '
+        2: 'foo'
+    2:
+      scopes: ['hr.md']
+      output: '****'
+
+
+
+# v4 variant (simplified)
+input: '****\n## foo\n****'
+output:
+  scopes: 'text.md'
+  output:
+    0:
+      scopes: 'hr.md'
+      output: '****'
+    1:
+      scopes: ['heading.md', 'heading-2.md']
+      output:
+        0:
+          scopes: 'punctuation.md'
+          output: '##'
+        1: ' '
+        2: 'foo'
+    2:
+      scopes: 'hr.md'
+      output: '****'
+
+
+
+# v4 variant (simplified and minimized)
+input: '****\n## foo\n****'
+output:
+  scopes: 'text.md'
+  output:
+    0: { scopes: 'hr.md', output: '****' }
+    1:
+      scopes: ['heading.md', 'heading-2.md']
+      output:
+        0: { scopes: 'punctuation.md', output: '##' }
+        1: ' '
+        2: 'foo'
+    2: { scopes: 'hr.md', output: '****' }
+
+
+
+# v5
+input: '****\n## foo\n****'
+output:
+  'text.md':
+    0:
+      'hr.md': '****'
+    1:
+      'heading.md heading-2.md':
+        0:
+          'punctuation.md': '##'
+        1: ' '
+        2: 'foo'
+    2:
+      'hr.md': '****'
+
+
+
+# v5 (minified)
+input: '****\n## foo\n****'
+output:
+  'text.md':
+    0: { 'hr.md': '****' }
+    1:
+      'heading.md heading-2.md':
+        0: { 'punctuation.md': '##' }
+        1: ' '
+        2: 'foo'
+    2: { 'hr.md': '****' }
+
+
+
+# v5 (multiple lines alternate)
+input:
+  0: '****'
+  1: '## foo'
+  2: '****'
+output:
+  'text.md':
+    0: { 'hr.md': '****' }
+    1:
+      'heading.md heading-2.md':
+        0: { 'punctuation.md': '##' }
+        1: ' '
+        2: 'foo'
+    2: { 'hr.md': '****' }
+
+
+
+# v5 (foolproof)
+input:
+  0: '****'
+  1: '## foo'
+  2: '****'
+output:
+  0: '****': 'text.md hr.md'
+  1: '## foo':
+    0: '##': 'text.md heading.md heading-2.md punctuation.md'
+    1: ' ': 'text.md heading.md heading-2.md'
+    2: 'foo': 'text.md heading.md heading-2.md'
+  2: '****': 'text.md hr.md'
+
+
+
+# ----------
+
+
+
+# v6a
+input:
+  0: '****'
+  1: '## foo'
+  2: '****'
+output:
+  0: '****': 'text.md hr.md'
+  1: 'text.md heading.md heading-2.md': # <-- this colon is important
+    0: '##': 'punctuation.md'
+    1: ' '
+    2: 'foo'
+  2: '****': 'text.md hr.md'
+
+# v6a => jasmine
+tokens = grammar.tokenizeLines('****\n## foo\n****')
+expect(tokens[0][0]).toEqual value: '****', tokens: ['text.md', 'hr.md']
+expect(tokens[1][0]).toEqual value: '##', tokens: ['text.md', 'heading.md', 'heading-2.md', 'punctuation.md']
+expect(tokens[1][1]).toEqual value: ' ', tokens: ['text.md', 'heading.md', 'heading-2.md']
+expect(tokens[1][2]).toEqual value: 'foo', tokens: ['text.md', 'heading.md', 'heading-2.md']
+expect(tokens[2][0]).toEqual value: '****', tokens: ['text.md', 'hr.md']
+
+
+
+# v6b
+input:
+  0: '# Heading'
+output:
+  0: 'text.md heading.md heading-1.md': # <-- this colon is important
+    0: '#': 'punctuation.md'
+    1: ' '
+    2: 'Heading'
+
+# v6b => jasmine
+{tokens} = grammar.tokenizeLine('# Heading')
+expect(tokens[0]).toEqual value: '#', tokens: ['text.md', 'heading.md', 'heading-1.md', 'punctuation.md']
+expect(tokens[1]).toEqual value: ' ', tokens: ['text.md', 'heading.md', 'heading-1.md']
+expect(tokens[2]).toEqual value: 'Heading', tokens: ['text.md', 'heading.md', 'heading-1.md']
+
+
+
+# ----------
+#
+
+# v7b Single line
+input: '# Heading'
+output:
+  0: 'text.md heading.md heading-1.md': # line 0
+    0: '#': 'punctuation.md'            # l0:token0
+    1: ' '                              # l0:t1
+    2: 'Heading'                        # l0:t2
+
+# v7a Multi Line
+input: """
+ ****
+ ## foo
+ ****
+"""
+output:
+  0: '****': 'text.md hr.md'            # l0:t0
+  1: 'text.md heading.md heading-2.md': # l1
+    0: '##': 'punctuation.md'           # l1:t0
+    1: ' '                              # l1:t1
+    2: 'foo'                            # l1:t2
+  2: '****': 'text.md hr.md'            # l0:t0
