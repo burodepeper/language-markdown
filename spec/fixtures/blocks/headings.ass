@@ -1,0 +1,327 @@
+# http://spec.commonmark.org/0.22/#example-27
+@commonmark-27
+'# Heading' {
+  text.md {
+    heading.md {
+      heading-1.md {
+        '#': punctuation.md
+        ' '
+        'Heading'
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-28
+@commonmark-28
+'####### foo' {
+  '####### foo': text.md
+}
+
+# http://spec.commonmark.org/0.22/#example-29
+@commonmark-29a
+'#5 bolt' {
+  text.md {
+    issue.reference.gfm.md {
+      '#': punctuation.md
+      '5'
+    }
+    ' bolt'
+  }
+}
+
+@commonmark-29b
+'#foobar' {
+  '#foobar': text.md
+}
+
+# http://spec.commonmark.org/0.22/#example-30
+@commonmark-30
+'\## foo' {
+  text.md {
+    '\#': escape.constant.md
+    '# foo'
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-31
+@commonmark-31
+'# foo *bar* \*baz\*' {
+  text.md {
+    heading.md {
+      heading-1.md {
+        '#': punctuation.md
+        ' '
+        'foo '
+        emphasis.md {
+          '*': punctuation.md
+          'bar'
+          '*': punctuation.md
+        }
+        ' '
+        '\*': escape.constant.md
+        'baz'
+        '\*': escape.constant.md
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-32
+@commonmark-32
+'#                  foo' {
+  text.md {
+    heading.md {
+      heading-1.md {
+        '#': punctuation.md
+        '                  '
+        'foo'
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-33
+@commonmark-33
+'  ## Heading' {
+  text.md {
+    heading.md {
+      heading-2.md {
+        '  '
+        '##': punctuation.md
+        ' '
+        'Heading'
+      }
+    }
+  }
+}
+
+# NOTE indented-code is disabled
+# http://spec.commonmark.org/0.22/#example-34
+# http://spec.commonmark.org/0.22/#example-35
+
+# http://spec.commonmark.org/0.22/#example-36
+@commonmark-36a
+'## foo ##' {
+  text.md {
+    heading.md {
+      heading-2.md {
+        '##': punctuation.md
+        ' '
+        'foo'
+        ' '
+        '##': punctuation.md
+      }
+    }
+  }
+}
+
+@commonmark-36b
+'  ###   bar    ###' {
+  text.md {
+    heading.md {
+      heading-3.md {
+        '  '
+        '###': punctuation.md
+        '   '
+        'bar   '
+        ' '
+        '###': punctuation.md
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-37
+@commonmark-37a
+'# foo ##################################' {
+  text.md {
+    heading.md {
+      heading-1.md {
+        '#': punctuation.md
+        ' '
+        'foo'
+        ' '
+        '##################################': punctuation.md
+      }
+    }
+  }
+}
+
+@commonmark-37b
+'##### foo ##' {
+  text.md {
+    heading.md {
+      heading-5.md {
+        '#####': punctuation.md
+        ' '
+        'foo'
+        ' '
+        '##': punctuation.md
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-38
+@commonmark-38
+'### foo ###     ' {
+  text.md {
+    heading.md {
+      heading-3.md {
+        '###': punctuation.md
+        ' '
+        'foo'
+        ' '
+        '###': punctuation.md
+        '     '
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-39
+@commonmark-39
+'### foo ### b' {
+  text.md {
+    heading.md {
+      heading-3.md {
+        '###': punctuation.md
+        ' '
+        'foo ### b'
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-40
+@commonmark-40
+'# foo#' {
+  text.md {
+    heading.md {
+      heading-1.md {
+        '#': punctuation.md
+        ' '
+        'foo#'
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-41
+@commonmark-41a
+'### foo \###' {
+  text.md {
+    heading.md {
+      heading-3.md {
+        '###': punctuation.md
+        ' '
+        'foo '
+        '\#': escape.constant.md
+        '##'
+      }
+    }
+  }
+}
+
+@commonmark-41b
+'## foo #\##' {
+  text.md {
+    heading.md {
+      heading-2.md {
+        '##': punctuation.md
+        ' '
+        'foo #'
+        '\#': escape.constant.md
+        '#'
+      }
+    }
+  }
+}
+
+@commonmark-41c
+'# foo \#' {
+  text.md {
+    heading.md {
+      heading-1.md {
+        '#': punctuation.md
+        ' '
+        'foo '
+        '\#': escape.constant.md
+      }
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-42
+@commonmark-42
+'****'+
+'## foo'+
+'****' {
+  text.md {
+    '****': hr.md
+    heading.md {
+      heading-2.md {
+        '##': punctuation.md
+        ' '
+        'foo'
+      }
+    }
+    '****': hr.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-43
+@commonmark-43
+'Foo bar'+
+'# baz'+
+'Bar foo' {
+  text.md {
+    'Foo bar'
+    heading.md {
+      heading-1.md {
+        '#': punctuation.md
+        ' '
+        'baz'
+      }
+    }
+    'Bar foo'
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-44
+@commonmark-44a
+'## ' {
+  text.md {
+    empty.heading.md {
+      heading-2.md {
+        '##': punctuation.md
+        ' '
+      }
+    }
+  }
+}
+
+@commonmark-44b
+'#' {
+  text.md {
+    empty.heading.md {
+      heading-1.md {
+        '#': punctuation.md
+      }
+    }
+  }
+}
+
+@commonmark-44c
+'### ###' {
+  text.md {
+    empty.heading.md {
+      heading-3.md {
+        '###': punctuation.md
+        ' '
+        '###': punctuation.md
+      }
+    }
+  }
+}

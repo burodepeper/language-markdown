@@ -1,4 +1,6 @@
-key: 'fenced-code'
+name: "Markdown: fenced code"
+scopeName: 'fenced-code.md'
+
 patterns: [
 
   {

@@ -1,0 +1,758 @@
+name: 'Markdown'
+scopeName: 'text.md'
+fileTypes: [
+  'emdee' # temporary file-type, to co-exist with other packages
+  # 'markdown'
+  # 'md'
+  # 'mdown'
+  # 'mkd'
+  # 'mkdown'
+  # 'rmd'
+  # 'ron'
+]
+
+maxTokensPerLine: 100
+
+patterns: [
+  { include: '#blocks' }
+  { include: '#inlines' }
+]
+
+repository:
+  blocks:
+    patterns: [
+      { include: '#comments' }
+      { include: '#hr' }
+      { include: '#headings' }
+      { include: '#lists' }
+      { include: '#quotes' }
+      { include: '#tables' }
+      { include: 'fenced-code.md' }
+    ]
+  inlines:
+    patterns: [
+      { include: '#escapes' }
+      { include: '#code' }
+      { include: '#entities' }
+      { include: '#links' }
+      { include: '#html' }
+      { include: '#emphasis' }
+      { include: '#github' }
+      { include: '#criticmark' }
+    ]
+
+  #
+  # inline
+  # CODE
+  #
+
+  code:
+    patterns: [
+      {
+        # begin: '(`+)(?!$)'
+        # end: '(?<!`)(\\1)(?!`)'
+        # match: '(?<!`)(`+)[^`]+(\\1)(?!`)'
+        match: '(?<!`)(`{1,2})(?!`).+?(?<!`)(\\1)(?!`)'
+        name: 'code.md'
+        captures:
+          1: name: 'punctuation.md'
+          2: name: 'punctuation.md'
+      }
+    ]
+
+  #
+  # inline
+  # COMMENTS
+  #
+
+  comments:
+    patterns: [
+      {
+        name: 'comment.block.md'
+        begin: '(<!--)'
+        end: '(-->)'
+        captures:
+          1: name: 'punctuation.md'
+          3: name: 'punctuation.md'
+      }
+    ]
+
+  #
+  # inline
+  # CRITICMARK
+  #
+
+  criticmark:
+    patterns: [
+      {
+        name: 'addition.critic.md'
+        begin: '({\\+\\+)'
+        beginCaptures:
+          1: name: 'punctuation.md'
+        end: '(\\+\\+})'
+        endCaptures:
+          1: name: 'punctuation.md'
+        patterns: [
+          { include: '#emphasis' }
+        ]
+      }
+      {
+        name: 'deletion.critic.md'
+        begin: '({--)'
+        beginCaptures:
+          1: name: 'punctuation.md'
+        end: '(--})'
+        endCaptures:
+          1: name: 'punctuation.md'
+        patterns: [
+          { include: '#emphasis' }
+        ]
+      }
+      {
+        name: 'highlight.critic.md'
+        begin: '({==)'
+        beginCaptures:
+          1: name: 'punctuation.md'
+        end: '(==})'
+        endCaptures:
+          1: name: 'punctuation.md'
+        patterns: [
+          { include: '#emphasis' }
+        ]
+      }
+      {
+        name: 'comment.critic.md'
+        begin: '({>>)'
+        beginCaptures:
+          1: name: 'punctuation.md'
+        patterns: [
+          {
+            match: '(?<=[\\s|>])((@)(\\w[-\\w:]*))(?=\\s)'
+            captures:
+              1: name: 'username.reference.md'
+              2: name: 'punctuation.md'
+          }
+          { include: '#emphasis' }
+        ]
+        end: '(<<})'
+        endCaptures:
+          1: name: 'punctuation.md'
+      }
+      {
+        name: 'substitution.critic.md'
+        begin: '({~~)'
+        beginCaptures:
+          1: name: 'punctuation.md'
+        end: '(~~})'
+        endCaptures:
+          1: name: 'punctuation.md'
+        patterns: [
+          {
+            match: '~>'
+            name: 'punctuation.md'
+          }
+          { include: '#emphasis' }
+        ]
+      }
+    ]
+
+  #
+  # inline
+  # EMPHASIS
+  #
+
+  emphasis:
+    patterns: [
+      # TODO remove 'interword' class when done
+      # TODO interword doesn't need multiline?
+      #
+      # TODO 356 multiline
+      # TODO 367 multiline
+      # TODO 370 (ignore?)
+      # TODO 373 (ignore?)
+      # TODO 374
+      # TODO 382 multiline
+      # TODO 388 (ignore?)
+      # TODO 391 multiline
+      # TODO 398
+      # TODO 401
+      # TODO 402
+      # TODO 403
+      # TODO 404
+      # TODO 405
+      # TODO 406
+      # TODO 410
+      # TODO 413
+      # TODO 414
+      # TODO 415
+      # TODO 416
+      # TODO 417
+      # TODO 418
+      # TODO 429 (ignore, don't even agree)
+      # TODO 431 (ignore?)
+      # TODO 432
+      # TODO 433 links (order of rules?)
+      # TODO 434 links (order of rules?)
+      # TODO 435 html (order of rules?)
+      # TODO 436 html (order of rules?)
+      # TODO 437 html (order of rules?)
+      # TODO 440 html (order of rules?)
+      # TODO 441 html (order of rules?)
+
+      # Strong emphasis, __ or **
+      # {
+      #   match: '(?<!\\w)([_|\*]{2})(?!\\s)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+      #   name: 'strong.emphasis.md'
+      #   captures:
+      #     1: name: 'punctuation.md'
+      #     2: patterns: [{ include: '#emphasis' }]
+      #     3: name: 'punctuation.md'
+      # }
+
+      {
+        match: '(?<![\\w|\\\\])([_]{2})(?!\\s)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
+        name: 'strong.emphasis.md'
+        captures:
+          1: name: 'punctuation.md'
+          2: patterns: [
+            { include: '#escapes' }
+            { include: '#code' }
+            { include: '#links' }
+            { include: '#emphasis' }
+          ]
+          3: name: 'punctuation.md'
+      }
+      {
+        match: '(?<![\\w|\\\\])([\\*]{2})(?!\\s)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
+        name: 'strong.emphasis.md'
+        captures:
+          1: name: 'punctuation.md'
+          2: patterns: [
+            { include: '#escapes' }
+            { include: '#inline-code' }
+            { include: '#links' }
+            { include: '#emphasis' }
+          ]
+          3: name: 'punctuation.md'
+      }
+      {
+        # Interword ** is permitted
+        match: '(?<=\\w)([\\*]{2})(?:.+)(?<!\\W)(\\1)'
+        name: 'strong.interword-1.emphasis.md'
+        captures:
+          1: name: 'punctuation.md'
+          2: name: 'punctuation.md'
+      }
+      {
+        match: '(?<=\\s|^)([\\*]{2})(?=\\w)(?:.+)(\\1)(?=\\w)'
+        name: 'strong.interword-2.emphasis.md'
+        captures:
+          1: name: 'punctuation.md'
+          2: name: 'punctuation.md'
+      }
+
+      # ----------------------------------------
+
+      # Emphasis, _ or *, conveniently combined
+      # {
+      #   # match: '(?<!\\w)([_|\*])(?!\\s)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+      #   match: '(?<!\\w)([_|\*])(?!\\s|\\1)(?m:(.+))(?<!\\s)(\\1)(?!\\w)'
+      #   name: 'emphasis.md'
+      #   captures:
+      #     1: name: 'punctuation.md'
+      #     2: patterns: [{ include: '#emphasis' }]
+      #     3: name: 'punctuation.md'
+      # }
+      #
+      # NOTE
+      # The matches for _ and * are separated though pretty similar, because the negative look-back at the beginning couldn't reference to \\1 as used in the example above
+
+      {
+        match: '(?<![\\w|_|\\\\])([_])(?!\\s|\\1)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
+        name: 'emphasis.md'
+        captures:
+          1: name: 'punctuation.md'
+          2: patterns: [
+            { include: '#escapes' }
+            { include: '#code' }
+            { include: '#links' }
+            { include: '#emphasis' }
+          ]
+          3: name: 'punctuation.md'
+      }
+      {
+        match: '(?<![\\w|\\*|\\\\])([\\*])(?!\\s|\\1)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
+        name: 'emphasis.md'
+        captures:
+          1: name: 'punctuation.md'
+          2: patterns: [
+            { include: '#escapes' }
+            { include: '#code' }
+            { include: '#links' }
+            { include: '#emphasis' }
+          ]
+          3: name: 'punctuation.md'
+      }
+      {
+        # Interword * is permitted
+        # match: '(?<=\\w)([\*])(?m:(.+))(?<!\\W)(\\1)'
+        match: '(?<=\\w)([\\*])(?:.+)(?<!\\W)(\\1)'
+        name: 'interword-1.emphasis.md'
+        captures:
+          1: name: 'punctuation.md'
+          2: name: 'punctuation.md'
+      }
+      {
+        # match: '(?<=\\s|^)([\*])(?=\\w)(?m:(.+))(\\1)(?=\\w)'
+        match: '(?<=\\s|^)([\\*])(?=\\w)(?:.+)(\\1)(?=\\w)'
+        name: 'interword-2.emphasis.md'
+        captures:
+          1: name: 'punctuation.md'
+          2: name: 'punctuation.md'
+      }
+    ]
+
+  #
+  # inline
+  # ENTITIES
+  #
+
+  entities:
+    patterns: [
+      {
+        # TODO
+        # Whoever wants to extract the full list of valid entity names from
+        # https://html.spec.whatwg.org/multipage/entities.json
+        # instead of using this insanely lazy alphanumeric match; be my guest.
+        match: '(&)([a-zA-Z0-9]{2,32})(;)'
+        name: 'entity.constant.md'
+        captures:
+          1: { name: 'punctuation.md' }
+          3: { name: 'punctuation.md' }
+      }
+      {
+        match: '(&#)([0-9]{1,8})(;)'
+        name: 'entity.constant.md'
+        captures:
+          1: { name: 'punctuation.md' }
+          3: { name: 'punctuation.md' }
+      }
+      {
+        match: '(&#[x|X])([0-9a-fA-F]{1,8})(;)'
+        name: 'entity.constant.md'
+        captures:
+          1: { name: 'punctuation.md' }
+          3: { name: 'punctuation.md' }
+      }
+    ]
+
+  #
+  # inline
+  # ESCAPES
+  #
+
+  escapes:
+    patterns: [
+      {
+        match: '\\\\.'
+        name: 'escape.constant.md'
+      }
+    ]
+
+  #
+  # inline
+  # GITHUB ELEMENTS
+  #
+
+  github:
+    patterns: [
+      {
+        match: '(?<=^|\\s|"|\'|\\(|\\[)((@)(\\w[-\\w:]*))(?=[\\s"\'.,;\\)\\]])'
+        captures:
+          1: name: 'username.reference.gfm.md'
+          2: name: 'punctuation.md'
+      }
+      {
+        match: '(?<=^|\\s|"|\'|\\(|\\[)((#)(\\d+))(?=[\\s"\'\\.,;\\)\\]])'
+        captures:
+          1: name: 'issue.reference.gfm.md'
+          2: name: 'punctuation.md'
+      }
+    ]
+
+  #
+  # block
+  # HEADINGS
+  #
+
+  headings:
+    patterns: [
+      {
+        # Empty headings
+        match: '^(?:[ ]{0,3})((?:#{1,6})\\s*(?:#*)\\s*)$'
+        name: 'empty.heading.md'
+        captures:
+          1:
+            patterns: [
+              {
+                match: '^(#{6})\\s*(#*)\\s*$'
+                name: 'heading-6.md'
+                captures: {
+                  1: { name: 'punctuation.md' }
+                  2: { name: 'punctuation.md' }
+                }
+              }
+              {
+                match: '^(#{5})\\s*(#*)\\s*$'
+                name: 'heading-5.md'
+                captures: {
+                  1: { name: 'punctuation.md' }
+                  2: { name: 'punctuation.md' }
+                }
+              }
+              {
+                match: '^(#{4})\\s*(#*)\\s*$'
+                name: 'heading-4.md'
+                captures: {
+                  1: { name: 'punctuation.md' }
+                  2: { name: 'punctuation.md' }
+                }
+              }
+              {
+                match: '^(#{3})\\s*(#*)\\s*$'
+                name: 'heading-3.md'
+                captures: {
+                  1: { name: 'punctuation.md' }
+                  2: { name: 'punctuation.md' }
+                }
+              }
+              {
+                match: '^(#{2})\\s*(#*)\\s*$'
+                name: 'heading-2.md'
+                captures: {
+                  1: { name: 'punctuation.md' }
+                  2: { name: 'punctuation.md' }
+                }
+              }
+              {
+                match: '^(#{1})\\s*(#*)\\s*$'
+                name: 'heading-1.md'
+                captures: {
+                  1: { name: 'punctuation.md' }
+                  2: { name: 'punctuation.md' }
+                }
+              }
+            ]
+      }
+      {
+        # NOTE
+        # Does it make sense to first do a general check to determine if there is a
+        # match for a heading? It seems more logical to test against one match, than
+        # to go through all six of them every iteration.
+        match: '^((?: {0,3})(?:#{1,6})(?: +)(?:.+))$'
+        name: 'heading.md'
+        captures:
+          1:
+            patterns: [
+              {
+                begin: '^(?: {0,3})(#{1})(?: +)'
+                end: '(?: ){1}(#*)(?: *)$'
+                name: 'heading-1.md'
+                captures:
+                  1: { name: 'punctuation.md' }
+                  3: { name: 'punctuation.md' }
+                patterns: [{ include: '#inlines'}]
+              }
+              {
+                begin: '^(?: {0,3})(#{2})(?: +)'
+                end: '(?: ){1}(#*)(?: *)$'
+                name: 'heading-2.md'
+                captures:
+                  1: { name: 'punctuation.md' }
+                  3: { name: 'punctuation.md' }
+                patterns: [{ include: '#inlines'}]
+              }
+              {
+                begin: '^(?: {0,3})(#{3})(?: +)'
+                end: '(?: ){1}(#*)(?: *)$'
+                name: 'heading-3.md'
+                captures:
+                  1: { name: 'punctuation.md' }
+                  3: { name: 'punctuation.md' }
+                patterns: [{ include: '#inlines'}]
+              }
+              {
+                begin: '^(?: {0,3})(#{4})(?: +)'
+                end: '(?: ){1}(#*)(?: *)$'
+                name: 'heading-4.md'
+                captures:
+                  1: { name: 'punctuation.md' }
+                  3: { name: 'punctuation.md' }
+                patterns: [{ include: '#inlines'}]
+              }
+              {
+                begin: '^(?: {0,3})(#{5})(?: +)'
+                end: '(?: ){1}(#*)(?: *)$'
+                name: 'heading-5.md'
+                captures:
+                  1: { name: 'punctuation.md' }
+                  3: { name: 'punctuation.md' }
+                patterns: [{ include: '#inlines'}]
+              }
+              {
+                begin: '^(?: {0,3})(#{6})(?: +)'
+                end: '(?: ){1}(#*)(?: *)$'
+                name: 'heading-6.md'
+                captures:
+                  1: { name: 'punctuation.md' }
+                  3: { name: 'punctuation.md' }
+                patterns: [{ include: '#inlines'}]
+              }
+        ]
+      }
+    ]
+
+  #
+  # block
+  # HORIZONTAL RULES
+  #
+
+  hr:
+    patterns: [
+      {
+        name: 'hr.md'
+        match: '^[ ]{0,3}[-]{1,} *[-]{1,} *[-]{1,}[ -]*$'
+      }
+      {
+        name: 'hr.md'
+        match: '^[ ]{0,3}[*]{1,} *[*]{1,} *[*]{1,}[ \*]*$'
+      }
+      {
+        name: 'hr.md'
+        match: '^[ ]{0,3}[_]{1,} *[_]{1,} *[_]{1,}[ _]*$'
+      }
+    ]
+
+  #
+  # inline
+  # HTML
+  #
+
+  html:
+    patterns: [
+      {
+        name: 'html.md'
+        begin: '(</?)(?=\\w)'
+        beginCaptures:
+          1: name: 'punctuation.md'
+        end: '(/?>)'
+        endCaptures:
+          1: name: 'punctuation.md'
+        patterns: [
+          {
+            name: 'attribute.md'
+            # match: '([a-zA-Z\\-]+)(=)(([\'"])(?:[a-zA-Z0-9\\-/ ]*)(\\4))'
+            match: '([a-zA-Z\\-]+)(=)(([\'"])(?:[^\\4]*)(\\4))'
+            captures:
+              1: name: 'name.md'
+              2: name: 'punctuation.md'
+              3: name: 'value.md'
+              4: name: 'punctuation.md'
+              5: name: 'punctuation.md'
+          }
+          {
+            name: 'tag.md'
+            match: '([a-zA-Z\\-]+)'
+          }
+        ]
+      }
+    ]
+
+  #
+  # inline
+  # LINKS
+  #
+
+  links:
+    patterns: [
+      {
+        # (link)[</space uri>]
+        name: 'link.3.md'
+        match: '((\\[)([^\\]]*?)(\\]))((\\()(<)(.*)(>)(\\)))'
+        captures:
+          1: name: 'text.link.md'
+          2: name: 'punctuation.md'
+          3:
+            patterns: [
+              { include: '#inlines' }
+            ]
+          4: name: 'punctuation.md'
+          5: name: 'destination.link.md'
+          6: name: 'punctuation.md'
+          7: name: 'punctuation.md'
+          8: name: 'uri.md'
+          9: name: 'punctuation.md'
+          10: name: 'punctuation.md'
+      }
+      {
+        # (link)[/uri "title"] or (link)[/uri 'title']
+        #
+        # NOTE title in parentheses not supported
+        name: 'link.2.md'
+        match: '((\\[)([^\\]]*?)(\\]))((\\()([^ ]*) ((["\'])(?:.+)(\\9))(\\)))'
+        captures:
+          1: name: 'text.link.md'
+          2: name: 'punctuation.md'
+          3:
+            patterns: [
+              { include: '#inlines' }
+            ]
+          4: name: 'punctuation.md'
+          5: name: 'destination.link.md'
+          6: name: 'punctuation.md'
+          7: name: 'uri.md'
+          8: name: 'title.link.md'
+          9: name: 'punctuation.md'
+          10: name: 'punctuation.md'
+          11: name: 'punctuation.md'
+      }
+      {
+        # (link)[/uri]
+        name: 'link.1.md'
+        match: '((\\[)([^\\]]*?)(\\]))((\\()(?!<)([^ ]*)(\\)))'
+        captures:
+          1: name: 'text.link.md'
+          2: name: 'punctuation.md'
+          3:
+            patterns: [
+              { include: '#inlines' }
+            ]
+          4: name: 'punctuation.md'
+          5: name: 'destination.link.md'
+          6: name: 'punctuation.md'
+          7: name: 'uri.md'
+          8: name: 'punctuation.md'
+      }
+    ]
+
+  #
+  # block
+  # LISTS
+  #
+
+  lists:
+    patterns: [
+      {
+        # Task list item
+        match: '^(?:\\s*)(- \\[ \\])(?: )(.*)$'
+        name: 'task.unordered.list.md'
+        captures:
+          1: { name: 'punctuation.md' }
+          2:
+            patterns: [
+              { include: '#blocks' }
+              { include: '#inlines' }
+            ]
+      }
+      {
+        # Completed task list item
+        match: '^(?:\\s*)(- \\[x\\])(?: )(.*)$'
+        name: 'completed.task.unordered.list.md'
+        captures:
+          1: { name: 'punctuation.md' }
+          2:
+            patterns: [
+              { include: '#blocks' }
+              { include: '#inlines' }
+            ]
+      }
+      {
+        # Unordered list
+        match: '^(?:\\s*)([-+\\*]){1}(?: )(.*)$'
+        name: 'unordered.list.md'
+        captures:
+          1: { name: 'punctuation.md' }
+          2:
+            patterns: [
+              { include: '#blocks' }
+              { include: '#inlines' }
+            ]
+      }
+      {
+        # Ordered list
+        match: '^(?:\\s*)([0-9]{1,9}[\\.\\)])(?: )(.*)$'
+        name: 'ordered.list.md'
+        captures:
+          1: { name: 'punctuation.md' }
+          2:
+            patterns: [
+              { include: '#blocks' }
+              { include: '#inlines' }
+            ]
+      }
+      {
+        # Empty unordered lists, for styling purposes
+        match: '^(?:\\s*)([-+\\*]){1}$'
+        name: 'empty.unordered.list.md'
+        captures:
+          1: { name: 'punctuation.md' }
+      }
+      {
+        # Empty ordered lists, for styling purposes
+        match: '^(?:\\s*)([0-9]{1,9}[\\.\\)])$'
+        name: 'empty.ordered.list.md'
+        captures:
+          1: { name: 'punctuation.md' }
+      }
+    ]
+
+  #
+  # block
+  # QUOTES
+  #
+
+  quotes:
+    patterns: [
+      {
+        match: '^(?: {0,3})(>){1}(?: ){0,1}(.*)$'
+        name: 'quote.md'
+        captures:
+          1: { name: 'punctuation.md' }
+          2:
+            patterns: [
+              include: '#blocks'
+            ]
+      }
+    ]
+
+  #
+  # block
+  # TABLES
+  #
+
+  tables:
+    patterns: [
+      name: 'table.md'
+      begin: '^\\|'
+      beginCaptures:
+        0: name: 'punctuation.md'
+      end: '(\\|)?\\s*$'
+      endCaptures:
+        1: name: 'punctuation.md'
+      patterns: [
+        {
+          match: '(?<= )\\|(?= )'
+          name: 'punctuation.md'
+        }
+        {
+          match: '(:?)(-+)(:?)'
+          captures:
+            1: name: 'alignment.punctuation.md'
+            2: name: 'punctuation.md'
+            3: name: 'alignment.punctuation.md'
+        }
+        {
+          include: '#inlines'
+        }
+      ]
+    ]
