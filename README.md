@@ -1,96 +1,92 @@
 # Markdown grammar package [![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
 
-Our intention is to _reasonably follow the specifications_ as they are defined in the [latest version (0.22)](http://spec.commonmark.org/0.22/) of [CommonMark](http://www.commonmark.org/), and to allow the user to dynamically **add flavor(s)** of their own choosing; `Github` or `Pandoc` for example.
+The intention of this package is to provide an alternative to [language-gfm]() by providing an implementation that intends to follow the [CommonMark](http://www.commonmark.org/) specifications as reasonable as possible.
+
+An additional aim is to provide support for _additional flavors_ (such as Github, Pandoc, CriticMark, etc.) and to allow the user to dynamically select which to use, and which not.
 
 ---
 
 ### Limitations
 
-Unfortunately however, because of the way Atom parses grammar, certain things are simply impossible or unrealistic to detect/support. If you experience any issues above a reasonable level of annoyancy, please [create an issue](issues/new/) (or contact us directly) and supply as much relevant information as possible.
+Unfortunately however, because of the way Atom handles/parses grammar, it is impossible or simply unrealistic to fully and consistently implement the specs as provided. This has forced us to make a few decisions in certain areas. Our _focus_ is to support **actual real-life use-cases** instead of blindly following overly specific rules. The _aim_ of this language-pack therefor is to support the user in writing Markdown files, and _not_ to be a perfect representation of them.
 
-The list below gives an overview of what's _not_ in this package, and where possible a summary of what lead to that decision.
+Following is list of areas that are limited in their implementation/support. A more detailed explanation can be found further down in this document.
 
-- __Setext headers__ are simply impossible to detect.
-- __Indented code blocks__ have been implemented but are disabled. We can't detect if indentation belongs to a code block or a list, and _fenced code blocks_ are a good alternative.
-- __Complex nested emphasis__ proves to be a female dog. Please provide real life examples where our solution fails.
-- __Multiline inlines__ are a bit of a problem wrapped in a paradox. Therefor, especially in the case of emphasis, it has been decided that the limitation of singleline emphasis triumphs over unexpected behaviour when enabling multiline. As mentioned above, please provide a real life examples, and we'll see what we can do about it.
+- **Setext headers** are not implemented.
+- **Indented code blocks** are implemented, but disabled.
+- **Complex nested emphasis** is a female dog.
+- **Multiline inlines** have been partially disabled.
 
----
-
-In the summaries below you can get an idea of the progress of our work.
-
-## CommonMark
-
-### Leaf blocks
-
-Leaf blocks are blocks that can _not_ contain other blocks.
-
-| Section | Specs | Contact |
-| ------- | ----- | ------- |
-| Horizontal rules | 24 of 25 | @burodepeper |
-| ATX headings | **complete** | @burodepeper |
-| Fenced code blocks | _in progress_ | @burodepeper |
-| HTML blocks | _in progress_ | @burodepeper |
-| Links reference definitions | - | @burodepeper |
-
-### Container blocks
-
-Container blocks are blocks that _can_ contain other blocks.
-
-| Section | Specs | Contact |
-| ------- | ----- | ------- |
-| Block quotes | 25 of 25 | @burodepeper |
-| Lists | 19 of 19 | @burodepeper |
-
-### Inlines
-
-| Section | Specs | Contact |
-| ------- | ----- | ------- |
-| Backslash escapes | 14 of 22 | @burodepeper |
-| Entities | 27 of 33 | @burodepeper |
-| Code spans | 12 of 15 | @burodepeper |
-| Emphasis and strong emphasis | 98 of 129 | @burodepeper |
-| Links | _in progress_ | @burodepeper |
-| Images | - | @burodepeper |
-| Autolinks | - | @burodepeper |
-| Raw HTML | _in progress_ | @burodepeper |
-| Hard line breaks | - | @burodepeper |
-| Soft line breaks | - | @burodepeper |
+If you experience any issue that is above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/) or contact us directly.
 
 ---
 
-## Flavors
+### Current status
 
-| Section | Status | Contact |
-| ------- | ----- | ------- |
-| Dynamic grammar selection | - | @leipert |
-| Less verbose specs, variant A | _in progress_ | @leipert |
-| Less verbose specs, variant B | _beta_ [#15](https://github.com/burodepeper/language-markdown/pull/15) | @burodepeper |
-| Improved fenced code blocks | - | @leipert |
+**Usable**, but with some caveats.
 
-### Github flavored Markdown
+Our scope-names are still purely semantic, so there's a good chance that your syntax theme won't fully support this package. If you don't mind a light syntax theme, give [minimal-syntax](https://atom.io/packages/minimal-syntax) a try. It is updated parallel to development to support all of our development scopes.
 
-See: <https://help.github.com/articles/github-flavored-markdown/>
+#### Detailed status
 
-| Section | Specs | Contact |
-| ------- | ----- | ------- |
-| Usernames | _beta_ | @burodepeper |
-| Issue numbers | _beta_ | @burodepeper |
-| Emojis | - | - |
-| Strikethrough | - | @burodepeper |
-| Tables | _beta_ | @burodepeper |
+| Flavor | Section | Grammar | Specs | Usable? |
+| ------ | ------- | ------- | ----- | ------- |
+| Core | Horizontal rules | complete | 27 of 27 | Excellent |
+| Core | (ATX) Headings | complete | 23 of 23 | Excellent |
+| Core | Fenced code blocks | _in progress_ | - | Okay |
+| Core | HTML blocks | - | - | - |
+| Core | Links reference definitions | - | - | - |
+| Core | Block quotes | _beta_ | - | Good |
+| Core | Lists | _beta_ | - | Excellent |
+| Core | Backslash escapes | _beta_ | - | Good |
+| Core | Entities | _beta_ | - | Good |
+| Core | Code spans | _beta_ | - | Good |
+| Core | Emphasis | _beta_ | - | Okay |
+| Core | Links | _alpha_ | - | Okay |
+| Core | Images | - | - | - |
+| Core | Auto-links | - | - | - |
+| Core | Raw HTML | _in progress_ | - | Okay |
+| Core | Hard line-breaks | - | - | - |
+| Core | Soft line-breaks | - | - | - |
+| Github | Usernames | _beta_ | - | Good |
+| Github | Issues | _beta_ | - | Good |
+| Github | Emojis | - | - | - |
+| Github | Strikethrough | - | - | - |
+| Github | Tables | _beta_ | - | Good |
+| CriticMark | Annotation | _beta_ | - | Good |
 
-### Pandoc flavored Markdown
+##### Notes
 
-| Section | Specs | Contact |
-| ------- | ----- | ------- |
-| TODO @leipert | - | - |
+- The Github task-lists are implemented together with normal lists
 
-### CriticMarkup
+##### References
 
-See: <https://github.com/CriticMarkup/CriticMarkup-toolkit/>
+- http://spec.commonmark.org/0.22/
+- https://help.github.com/articles/github-flavored-markdown/
+- https://github.com/CriticMarkup/CriticMarkup-toolkit/
 
-| Section | Specs | Contact |
-| ------- | ----- | ------- |
-| CriticMarkup | _beta_ | @burodepeper |
-| Inline emphasis | _shitty_ | @burodepeper |
+#### Additional features
+
+| Feature | Status |
+| ------- | ------ |
+| Dynamic grammar selection | _on hold_ |
+| Less verbose specs | _in beta_ |
+| Improved fenced code blocks | _on hold_ |
+
+---
+
+### Reasoning behind limitations
+
+This language-pack is merely a tool. Its function is to add semantic markup to text, so that a syntax-theme is able to style it. Unfortunately, as mentioned earlier, we have to do this in an environment and with tools that aren't completely in our control. So the best we can achieve is a representation that is as close to _the real thing_ as possible.
+
+Markdown is a tool to add semantics to text (without having to code) and not to design that text. It is a productivity tool, and as such, the tool itself _shouldn't be in the way_ of what you want to do with it. As an example, you don't want a single * in a line of text to mark the entire document after it as emphasized, until it finds a matching partner. That would be a bit silly, wouldn't it?
+
+**Setext headers** are simply impossible to detect. But a heading followed by a horizontal rule is a good alternative. At least it doesn't break anything.
+
+**Indented code blocks** are implemented, but have been disabled. The CommonMark specs define certain kinds of blocks, or groups of lines. Atom allows us to parse the content line by line, and as such, we don't know whether two list-items are part of the same list. Because of that, we can't separate text that just happens to be indented by four spaces (as part of a nested list) from text that is intentionally indented to represent a code block. The good thing is that there is an excellent alternative in _fenced code blocks_ so we don't feel bad about disabling indented code blocks.
+
+**Complex nested emphasis** is amongst the worst things in existence. On one hand the regular expressions together to make it work, but on the other hand, the idea that anybody would want to use nested emphasis. In my more than ten thousands days I've lived on this planet, I have never come across something that needed nested emphasis. Prove me wrong, but I think that when you are nesting emphasis, you are designing your document. Please leave that to a designer, and limit your emphasis to _emphasis_ and **strong emphasis**.
+
+**Multiline inlines** are another interesting paradox, and it partly overlaps with nested emphasis. Why? If you have five paragraphs of text, and you want to strike through from halfway the first to halfway the fifth, perhaps striking through isn't the solution. The _CriticMark_ styles have been allowed to be weird like this btw, because they have such a specific purpose.
+
+If you don't agree with any of the reasoning above, feel free to convince us of your obviously better perspective. ;)

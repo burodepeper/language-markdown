@@ -1,14 +1,14 @@
 name: 'Markdown'
 scopeName: 'text.md'
 fileTypes: [
-  'emdee' # temporary file-type, to co-exist with other packages
-  # 'markdown'
-  # 'md'
-  # 'mdown'
-  # 'mkd'
-  # 'mkdown'
-  # 'rmd'
-  # 'ron'
+  'markdown'
+  'md'
+  'mdown'
+  'mkd'
+  'mkdown'
+  'rmd'
+  'ron'
+  'emdee'
 ]
 
 maxTokensPerLine: 100
