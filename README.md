@@ -12,7 +12,8 @@ The list below gives an overview of what's _not_ in this package, and where poss
 
 - __Setext headers__ are simply impossible to detect.
 - __Indented code blocks__ have been implemented but are disabled. We can't detect if indentation belongs to a code block or a list, and _fenced code blocks_ are a good alternative.
-- __Complex nested emphasis__ proves to be a female dog. Please provide real world examples where our solution fails.
+- __Complex nested emphasis__ proves to be a female dog. Please provide real life examples where our solution fails.
+- __Multiline inlines__ are a bit of a problem wrapped in a paradox. Therefor, especially in the case of emphasis, it has been decided that the limitation of singleline emphasis triumphs over unexpected behaviour when enabling multiline. As mentioned above, please provide a real life examples, and we'll see what we can do about it.
 
 ---
 
@@ -27,7 +28,7 @@ Leaf blocks are blocks that can _not_ contain other blocks.
 | Section | Specs | Contact |
 | ------- | ----- | ------- |
 | Horizontal rules | 24 of 25 | @burodepeper |
-| ATX headings | 24 of 25 | @burodepeper |
+| ATX headings | **complete** | @burodepeper |
 | Fenced code blocks | _in progress_ | @burodepeper |
 | HTML blocks | _in progress_ | @burodepeper |
 | Links reference definitions | - | @burodepeper |
@@ -68,7 +69,7 @@ Container blocks are blocks that _can_ contain other blocks.
 
 ### Github flavored Markdown
 
-See: https://help.github.com/articles/github-flavored-markdown/
+See: <https://help.github.com/articles/github-flavored-markdown/>
 
 | Section | Specs | Contact |
 | ------- | ----- | ------- |
@@ -86,7 +87,7 @@ See: https://help.github.com/articles/github-flavored-markdown/
 
 ### CriticMarkup
 
-See: https://github.com/CriticMarkup/CriticMarkup-toolkit/
+See: <https://github.com/CriticMarkup/CriticMarkup-toolkit/>
 
 | Section | Specs | Contact |
 | ------- | ----- | ------- |

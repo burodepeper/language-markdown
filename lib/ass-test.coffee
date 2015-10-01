@@ -11,11 +11,7 @@ class ASStest
     @parseData()
 
   parseData: ->
-    # @input = @lines.shift()
-    # @input = @input.substring(0, @input.length - 1).trim()
-    # @input = @input.substring(1, @input.length - 1)
-    # @input = @input.replace(/\\n/g, '\n')
-
+    # set @id if specified as first-line
     if (@lines[0][0] is '@')
       @id = @lines.shift().substring(1)
 
