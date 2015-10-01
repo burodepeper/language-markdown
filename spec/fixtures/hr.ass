@@ -1,0 +1,238 @@
+# http://spec.commonmark.org/0.22/#example-8
+@commonmark-8a
+"***" {
+  text.md {
+    '***': hr.md
+  }
+}
+
+@commonmark-8b
+"---" {
+  text.md {
+    '---': hr.md
+  }
+}
+
+@commonmark-8c
+"___" {
+  text.md {
+    '___': hr.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-9
+@commonmark-9
+"+++" {
+  "+++": text.md
+}
+
+# http://spec.commonmark.org/0.22/#example-10
+@commonmark-10
+"===" {
+  "===": text.md
+}
+
+# http://spec.commonmark.org/0.22/#example-11
+@commonmark-11a
+"--" {
+  "--": text.md
+}
+
+@commonmark-11b
+"**" {
+  "**": text.md
+}
+
+@commonmark-11c
+"__" {
+  "__": text.md
+}
+
+# http://spec.commonmark.org/0.22/#example-12
+@commonmark-12a
+" ***" {
+  text.md {
+    ' ***': hr.md
+  }
+}
+
+@commonmark-12b
+"  ***" {
+  text.md {
+    '  ***': hr.md
+  }
+}
+
+@commonmark-12c
+"   ***" {
+  text.md {
+    '   ***': hr.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-13
+@commonmark-13
+"    ***" {
+  "    ***": text.md
+}
+
+# http://spec.commonmark.org/0.22/#example-14
+@commonmark-14
+"Foo"+
+"    ***" {
+  text.md {
+    "Foo"
+    "    ***"
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-15
+@commonmark-15
+"_____________________________________" {
+  text.md {
+    "_____________________________________": hr.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-16
+@commonmark-16
+" - - -" {
+  text.md {
+    " - - -": hr.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-17
+@commonmark-17
+" **  * ** * ** * **" {
+  text.md {
+    " **  * ** * ** * **": hr.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-18
+@commonmark-18
+"-     -      -      -" {
+  text.md {
+    "-     -      -      -": hr.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-19
+@commonmark-19
+"- - - -    " {
+  text.md {
+    "- - - -    ": hr.md
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-20
+@commonmark-20a
+"_ _ _ _ a" {
+  "_ _ _ _ a": text.md
+}
+
+@commonmark-20b
+"a------" {
+  "a------": text.md
+}
+
+@commonmark-20c
+"---a---" {
+  "---a---": text.md
+}
+
+# http://spec.commonmark.org/0.22/#example-21
+@commonmark-21
+" *-*" {
+  text.md {
+    " "
+    emphasis.md {
+      "*": punctuation.md
+      "-"
+      "*": punctuation.md
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-22
+@commonmark-22
+"- foo"+
+"***"+
+"- bar" {
+  text.md {
+    unordered.list.md {
+      "-": punctuation.md
+      " "
+      "foo"
+    }
+    "***": hr.md
+    unordered.list.md {
+      "-": punctuation.md
+      " "
+      "bar"
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-23
+@commonmark-23
+"Foo"+
+"***"+
+"bar" {
+  text.md {
+    "Foo"
+    "***": hr.md
+    "bar"
+  }
+}
+
+# NOTE
+# According to the spec, this should be converted to a setext header, but they are not supported.
+# http://spec.commonmark.org/0.22/#example-24
+@commonmark-24
+"Foo"+
+"---"+
+"bar" {
+  text.md {
+    "Foo"
+    "---": hr.md
+    "bar"
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-25
+@commonmark-25
+"* Foo"+
+"* * *"+
+"* Bar" {
+  text.md {
+    unordered.list.md {
+      "*": punctuation.md
+      " "
+      "Foo"
+    }
+    "* * *": hr.md
+    unordered.list.md {
+      "*": punctuation.md
+      " "
+      "Bar"
+    }
+  }
+}
+
+# http://spec.commonmark.org/0.22/#example-26
+@commonmark-26
+"- Foo"+
+"- * * *" {
+  text.md {
+    unordered.list.md {
+      "-": punctuation.md
+      " "
+      "Foo"
+      "-": punctuation.md
+      " "
+      "* * *": hr.md
+    }
+  }
+}

@@ -5,6 +5,7 @@ class ASStest
   input: null
   tokens: null
   currentScope: null
+  isValid: false
 
   constructor: (@id, @lines) ->
     @parseData()
@@ -30,6 +31,10 @@ class ASStest
       # insert a new line when concatenating multiple input lines
       if @input then @input += '\n'
       @input += input
+
+      # NOTE
+      # If @input.length is 0 then test is empty, and thus can be skipped
+      @isValid = true if @input.length
 
     # gather tokens and scopes
     @tokens = []
