@@ -66,7 +66,7 @@ describe "Markdown grammar", ->
               expectation = test.tokens[i]
               # if expectation? and expectation.value?
               if tokens[a][b].value.length
-                expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes.split(' ')
+                expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes
               else
                 # NOTE
                 # A token.value without a length has been created, and is ignored.

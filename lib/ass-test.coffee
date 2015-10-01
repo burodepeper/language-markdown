@@ -76,4 +76,4 @@ class ASStest
     # NOTE
     # Returns currentScope as a string
     # "return @currentScope" doesn't work. I think because it is stored as a reference, and therefor, at the end of the run, the currentScope is reset to zero.
-    return @currentScope.join(" ")
+    return @currentScope.join(" ").split(" ")
