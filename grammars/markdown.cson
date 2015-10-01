@@ -53,7 +53,7 @@ repository:
         # end: '(?<!`)(\\1)(?!`)'
         # match: '(?<!`)(`+)[^`]+(\\1)(?!`)'
         match: '(?<!`)(`{1,2})(?!`).+?(?<!`)(\\1)(?!`)'
-        name: 'code.md'
+        name: 'code.raw.markup.md'
         captures:
           1: name: 'punctuation.md'
           2: name: 'punctuation.md'
@@ -68,7 +68,7 @@ repository:
   comments:
     patterns: [
       {
-        name: 'comment.block.md'
+        name: 'comment.md'
         begin: '(<!--)'
         end: '(-->)'
         captures:
@@ -85,7 +85,7 @@ repository:
   criticmark:
     patterns: [
       {
-        name: 'addition.critic.md'
+        name: 'addition.critic.inserted.markup.md'
         begin: '({\\+\\+)'
         beginCaptures:
           1: name: 'punctuation.md'
@@ -97,7 +97,7 @@ repository:
         ]
       }
       {
-        name: 'deletion.critic.md'
+        name: 'deletion.critic.deleted.markup.md'
         begin: '({--)'
         beginCaptures:
           1: name: 'punctuation.md'
@@ -109,7 +109,7 @@ repository:
         ]
       }
       {
-        name: 'highlight.critic.md'
+        name: 'highlight.critic.changed.markup.md'
         begin: '({==)'
         beginCaptures:
           1: name: 'punctuation.md'
@@ -121,7 +121,7 @@ repository:
         ]
       }
       {
-        name: 'comment.critic.md'
+        name: 'comment.critic.markup.md'
         begin: '({>>)'
         beginCaptures:
           1: name: 'punctuation.md'
@@ -139,7 +139,7 @@ repository:
           1: name: 'punctuation.md'
       }
       {
-        name: 'substitution.critic.md'
+        name: 'substitution.critic.inserted.markup.md'
         begin: '({~~)'
         beginCaptures:
           1: name: 'punctuation.md'
@@ -211,7 +211,7 @@ repository:
 
       {
         match: '(?<![\\w|\\\\])([_]{2})(?!\\s)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
-        name: 'strong.emphasis.md'
+        name: 'strong.emphasis.bold.markup.md'
         captures:
           1: name: 'punctuation.md'
           2: patterns: [
@@ -224,7 +224,7 @@ repository:
       }
       {
         match: '(?<![\\w|\\\\])([\\*]{2})(?!\\s)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
-        name: 'strong.emphasis.md'
+        name: 'strong.emphasis.bold.markup.md'
         captures:
           1: name: 'punctuation.md'
           2: patterns: [
@@ -238,14 +238,14 @@ repository:
       {
         # Interword ** is permitted
         match: '(?<=\\w)([\\*]{2})(?:.+)(?<!\\W)(\\1)'
-        name: 'strong.interword-1.emphasis.md'
+        name: 'strong.emphasis.bold.markup.md'
         captures:
           1: name: 'punctuation.md'
           2: name: 'punctuation.md'
       }
       {
         match: '(?<=\\s|^)([\\*]{2})(?=\\w)(?:.+)(\\1)(?=\\w)'
-        name: 'strong.interword-2.emphasis.md'
+        name: 'strong.emphasis.bold.markup.md'
         captures:
           1: name: 'punctuation.md'
           2: name: 'punctuation.md'
@@ -269,7 +269,7 @@ repository:
 
       {
         match: '(?<![\\w|_|\\\\])([_])(?!\\s|\\1)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
-        name: 'emphasis.md'
+        name: 'emphasis.italic.markup.md'
         captures:
           1: name: 'punctuation.md'
           2: patterns: [
@@ -282,7 +282,7 @@ repository:
       }
       {
         match: '(?<![\\w|\\*|\\\\])([\\*])(?!\\s|\\1)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
-        name: 'emphasis.md'
+        name: 'emphasis.italic.markup.md'
         captures:
           1: name: 'punctuation.md'
           2: patterns: [
@@ -297,7 +297,7 @@ repository:
         # Interword * is permitted
         # match: '(?<=\\w)([\*])(?m:(.+))(?<!\\W)(\\1)'
         match: '(?<=\\w)([\\*])(?:.+)(?<!\\W)(\\1)'
-        name: 'interword-1.emphasis.md'
+        name: 'emphasis.italic.markup.md'
         captures:
           1: name: 'punctuation.md'
           2: name: 'punctuation.md'
@@ -305,7 +305,7 @@ repository:
       {
         # match: '(?<=\\s|^)([\*])(?=\\w)(?m:(.+))(\\1)(?=\\w)'
         match: '(?<=\\s|^)([\\*])(?=\\w)(?:.+)(\\1)(?=\\w)'
-        name: 'interword-2.emphasis.md'
+        name: 'emphasis.italic.markup.md'
         captures:
           1: name: 'punctuation.md'
           2: name: 'punctuation.md'
@@ -369,13 +369,13 @@ repository:
       {
         match: '(?<=^|\\s|"|\'|\\(|\\[)((@)(\\w[-\\w:]*))(?=[\\s"\'.,;\\)\\]])'
         captures:
-          1: name: 'username.reference.gfm.md'
+          1: name: 'username.reference.gfm.variable.md'
           2: name: 'punctuation.md'
       }
       {
         match: '(?<=^|\\s|"|\'|\\(|\\[)((#)(\\d+))(?=[\\s"\'\\.,;\\)\\]])'
         captures:
-          1: name: 'issue.reference.gfm.md'
+          1: name: 'issue.reference.gfm.variable.md'
           2: name: 'punctuation.md'
       }
     ]
@@ -390,7 +390,7 @@ repository:
       {
         # Empty headings
         match: '^(?:[ ]{0,3})((?:#{1,6})\\s*(?:#*)\\s*)$'
-        name: 'empty.heading.md'
+        name: 'empty.heading.markup.md'
         captures:
           1:
             patterns: [
@@ -450,7 +450,7 @@ repository:
         # match for a heading? It seems more logical to test against one match, than
         # to go through all six of them every iteration.
         match: '^((?: {0,3})(?:#{1,6})(?: +)(?:.+))$'
-        name: 'heading.md'
+        name: 'heading.markup.md'
         captures:
           1:
             patterns: [
@@ -580,7 +580,7 @@ repository:
         name: 'link.3.md'
         match: '((\\[)([^\\]]*?)(\\]))((\\()(<)(.*)(>)(\\)))'
         captures:
-          1: name: 'text.link.md'
+          1: name: 'text.link.string.md'
           2: name: 'punctuation.md'
           3:
             patterns: [
@@ -590,7 +590,7 @@ repository:
           5: name: 'destination.link.md'
           6: name: 'punctuation.md'
           7: name: 'punctuation.md'
-          8: name: 'uri.md'
+          8: name: 'uri.underline.markup.md'
           9: name: 'punctuation.md'
           10: name: 'punctuation.md'
       }
@@ -601,7 +601,7 @@ repository:
         name: 'link.2.md'
         match: '((\\[)([^\\]]*?)(\\]))((\\()([^ ]*) ((["\'])(?:.+)(\\9))(\\)))'
         captures:
-          1: name: 'text.link.md'
+          1: name: 'text.link.string.md'
           2: name: 'punctuation.md'
           3:
             patterns: [
@@ -610,8 +610,8 @@ repository:
           4: name: 'punctuation.md'
           5: name: 'destination.link.md'
           6: name: 'punctuation.md'
-          7: name: 'uri.md'
-          8: name: 'title.link.md'
+          7: name: 'uri.underline.markup.md'
+          8: name: 'title.link.heading.markup.md'
           9: name: 'punctuation.md'
           10: name: 'punctuation.md'
           11: name: 'punctuation.md'
@@ -621,7 +621,7 @@ repository:
         name: 'link.1.md'
         match: '((\\[)([^\\]]*?)(\\]))((\\()(?!<)([^ ]*)(\\)))'
         captures:
-          1: name: 'text.link.md'
+          1: name: 'text.link.string.md'
           2: name: 'punctuation.md'
           3:
             patterns: [
@@ -630,7 +630,7 @@ repository:
           4: name: 'punctuation.md'
           5: name: 'destination.link.md'
           6: name: 'punctuation.md'
-          7: name: 'uri.md'
+          7: name: 'uri.underline.markup.md'
           8: name: 'punctuation.md'
       }
     ]
@@ -645,7 +645,7 @@ repository:
       {
         # Task list item
         match: '^(?:\\s*)(- \\[ \\])(?: )(.*)$'
-        name: 'task.unordered.list.md'
+        name: 'task.unordered.list.markup.md'
         captures:
           1: { name: 'punctuation.md' }
           2:
@@ -657,7 +657,7 @@ repository:
       {
         # Completed task list item
         match: '^(?:\\s*)(- \\[x\\])(?: )(.*)$'
-        name: 'completed.task.unordered.list.md'
+        name: 'completed.task.unordered.list.markup.md'
         captures:
           1: { name: 'punctuation.md' }
           2:
@@ -669,7 +669,7 @@ repository:
       {
         # Unordered list
         match: '^(?:\\s*)([-+\\*]){1}(?: )(.*)$'
-        name: 'unordered.list.md'
+        name: 'unordered.list.markup.md'
         captures:
           1: { name: 'punctuation.md' }
           2:
@@ -681,7 +681,7 @@ repository:
       {
         # Ordered list
         match: '^(?:\\s*)([0-9]{1,9}[\\.\\)])(?: )(.*)$'
-        name: 'ordered.list.md'
+        name: 'ordered.list.markup.md'
         captures:
           1: { name: 'punctuation.md' }
           2:
@@ -693,14 +693,14 @@ repository:
       {
         # Empty unordered lists, for styling purposes
         match: '^(?:\\s*)([-+\\*]){1}$'
-        name: 'empty.unordered.list.md'
+        name: 'empty.unordered.list.markup.md'
         captures:
           1: { name: 'punctuation.md' }
       }
       {
         # Empty ordered lists, for styling purposes
         match: '^(?:\\s*)([0-9]{1,9}[\\.\\)])$'
-        name: 'empty.ordered.list.md'
+        name: 'empty.ordered.list.markup.md'
         captures:
           1: { name: 'punctuation.md' }
       }
@@ -715,7 +715,7 @@ repository:
     patterns: [
       {
         match: '^(?: {0,3})(>){1}(?: ){0,1}(.*)$'
-        name: 'quote.md'
+        name: 'quote.markup.md'
         captures:
           1: { name: 'punctuation.md' }
           2:
@@ -732,7 +732,7 @@ repository:
 
   tables:
     patterns: [
-      name: 'table.md'
+      name: 'table.storage.md'
       begin: '^\\|'
       beginCaptures:
         0: name: 'punctuation.md'
