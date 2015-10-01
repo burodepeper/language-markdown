@@ -147,7 +147,7 @@
 " *-*" {
   text.md {
     " "
-    emphasis.md {
+    emphasis.italic.markup.md {
       "*": punctuation.md
       "-"
       "*": punctuation.md
@@ -161,13 +161,13 @@
 "***"+
 "- bar" {
   text.md {
-    unordered.list.md {
+    unordered.list.markup.md {
       "-": punctuation.md
       " "
       "foo"
     }
     "***": hr.md
-    unordered.list.md {
+    unordered.list.markup.md {
       "-": punctuation.md
       " "
       "bar"
@@ -207,13 +207,13 @@
 "* * *"+
 "* Bar" {
   text.md {
-    unordered.list.md {
+    unordered.list.markup.md {
       "*": punctuation.md
       " "
       "Foo"
     }
     "* * *": hr.md
-    unordered.list.md {
+    unordered.list.markup.md {
       "*": punctuation.md
       " "
       "Bar"
@@ -226,7 +226,7 @@
 "- Foo"+
 "- * * *" {
   text.md {
-    unordered.list.md {
+    unordered.list.markup.md {
       "-": punctuation.md
       " "
       "Foo"

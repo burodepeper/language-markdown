@@ -1,10 +1,10 @@
 # http://spec.commonmark.org/0.22/#example-178
 "> # Foo\n> bar\n> baz" {
   text.md {
-    quote.md {
+    quote.markup.md {
       '>': punctuation.md
       ' '
-      heading.md {
+      heading.markup.md {
         heading-1.md {
           '#': punctuation.md
           ' '
@@ -12,12 +12,12 @@
         }
       }
     }
-    quote.md {
+    quote.markup.md {
       '>': punctuation.md
       ' '
       'bar'
     }
-    quote.md {
+    quote.markup.md {
       '>': punctuation.md
       ' '
       'baz'
@@ -28,10 +28,10 @@
 # http://spec.commonmark.org/0.22/#example-178
 '> # Foo\n> bar\n> baz' {
   text.md {
-    quote.md {
+    quote.markup.md {
       '>': punctuation.md
       ' '
-      heading.md {
+      heading.markup.md {
         heading-1.md {
           '#': punctuation.md
           ' '

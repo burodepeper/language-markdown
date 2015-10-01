@@ -1,7 +1,7 @@
 # http://spec.commonmark.org/0.22/#example-214
 '123456789. ok' {
   text.md {
-    ordered.list.md {
+    ordered.list.markup.md {
       '123456789.': punctuation.md
       ' '
       'ok'
@@ -17,7 +17,7 @@
 # http://spec.commonmark.org/0.22/#example-216
 '0. ok' {
   text.md {
-    ordered.list.md {
+    ordered.list.markup.md {
       '0.': punctuation.md
       ' '
       'ok'

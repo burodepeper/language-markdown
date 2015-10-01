@@ -2,7 +2,7 @@
 @commonmark-27
 '# Heading' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
@@ -22,7 +22,7 @@
 @commonmark-29a
 '#5 bolt' {
   text.md {
-    issue.reference.gfm.md {
+    issue.reference.gfm.variable.md {
       '#': punctuation.md
       '5'
     }
@@ -48,12 +48,12 @@
 @commonmark-31
 '# foo *bar* \*baz\*' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
         'foo '
-        emphasis.md {
+        emphasis.italic.markup.md {
           '*': punctuation.md
           'bar'
           '*': punctuation.md
@@ -71,7 +71,7 @@
 @commonmark-32
 '#                  foo' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-1.md {
         '#': punctuation.md
         '                  '
@@ -85,7 +85,7 @@
 @commonmark-33
 '  ## Heading' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-2.md {
         '  '
         '##': punctuation.md
@@ -104,7 +104,7 @@
 @commonmark-36a
 '## foo ##' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-2.md {
         '##': punctuation.md
         ' '
@@ -119,7 +119,7 @@
 @commonmark-36b
 '  ###   bar    ###' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-3.md {
         '  '
         '###': punctuation.md
@@ -136,7 +136,7 @@
 @commonmark-37a
 '# foo ##################################' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
@@ -151,7 +151,7 @@
 @commonmark-37b
 '##### foo ##' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-5.md {
         '#####': punctuation.md
         ' '
@@ -167,7 +167,7 @@
 @commonmark-38
 '### foo ###     ' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-3.md {
         '###': punctuation.md
         ' '
@@ -184,7 +184,7 @@
 @commonmark-39
 '### foo ### b' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-3.md {
         '###': punctuation.md
         ' '
@@ -198,7 +198,7 @@
 @commonmark-40
 '# foo#' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
@@ -212,7 +212,7 @@
 @commonmark-41a
 '### foo \###' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-3.md {
         '###': punctuation.md
         ' '
@@ -227,7 +227,7 @@
 @commonmark-41b
 '## foo #\##' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-2.md {
         '##': punctuation.md
         ' '
@@ -242,7 +242,7 @@
 @commonmark-41c
 '# foo \#' {
   text.md {
-    heading.md {
+    heading.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
@@ -260,7 +260,7 @@
 '****' {
   text.md {
     '****': hr.md
-    heading.md {
+    heading.markup.md {
       heading-2.md {
         '##': punctuation.md
         ' '
@@ -278,7 +278,7 @@
 'Bar foo' {
   text.md {
     'Foo bar'
-    heading.md {
+    heading.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
@@ -293,7 +293,7 @@
 @commonmark-44a
 '## ' {
   text.md {
-    empty.heading.md {
+    empty.heading.markup.md {
       heading-2.md {
         '##': punctuation.md
         ' '
@@ -305,7 +305,7 @@
 @commonmark-44b
 '#' {
   text.md {
-    empty.heading.md {
+    empty.heading.markup.md {
       heading-1.md {
         '#': punctuation.md
       }
@@ -316,7 +316,7 @@
 @commonmark-44c
 '### ###' {
   text.md {
-    empty.heading.md {
+    empty.heading.markup.md {
       heading-3.md {
         '###': punctuation.md
         ' '

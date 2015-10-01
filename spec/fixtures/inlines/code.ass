@@ -2,7 +2,7 @@
 @298
 "`foo`" {
   text.md {
-    code.md {
+    code.raw.markup.md {
       '`': punctuation.md
       'foo'
       '`': punctuation.md
@@ -14,7 +14,7 @@
 @299
 "`` foo ` bar  ``" {
   text.md {
-    code.md {
+    code.raw.markup.md {
       '``': punctuation.md
       ' foo ` bar  '
       '``': punctuation.md
@@ -26,7 +26,7 @@
 @300
 "` `` `" {
   text.md {
-    code.md {
+    code.raw.markup.md {
       '`': punctuation.md
       ' `` '
       '`': punctuation.md
@@ -59,7 +59,7 @@
 # http://spec.commonmark.org/0.22/#example-303
 "`foo `` bar`" {
   text.md {
-    code.md {
+    code.raw.markup.md {
       '`': punctuation.md
       'foo `` bar'
       '`': punctuation.md
@@ -70,7 +70,7 @@
 # http://spec.commonmark.org/0.22/#example-304
 "`foo\`bar`" {
   text.md {
-    code.md {
+    code.raw.markup.md {
       '`': punctuation.md
       'foo\'
       '`': punctuation.md
@@ -84,7 +84,7 @@
 # "*foo`*`" {
 #   text.md {
 #     '*foo'
-#     code.md {
+#     code.raw.markup.md {
 #       '`': punctuation.md
 #       '*'
 #       '`': punctuation.md
@@ -97,7 +97,7 @@
 # "[not a `link](/foo`)" {
 #   text.md {
 #     '[not a'
-#     code.md {
+#     code.raw.markup.md {
 #       '`': punctuation.md
 #       'link](/foo'
 #       '`': punctuation.md
@@ -109,7 +109,7 @@
 # http://spec.commonmark.org/0.22/#example-307
 "`<a href="`">`" {
   text.md {
-    code.md {
+    code.raw.markup.md {
       '`': punctuation.md
       '<a href="'
       '`': punctuation.md
@@ -143,7 +143,7 @@
 # http://spec.commonmark.org/0.22/#example-309
 "`<http://foo.bar.`baz>`" {
   text.md {
-    code.md {
+    code.raw.markup.md {
       '`': punctuation.md
       '<http://foo.bar.'
       '`': punctuation.md
