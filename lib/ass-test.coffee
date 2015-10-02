@@ -28,10 +28,6 @@ class ASStest
       if @input then @input += '\n'
       @input += input
 
-      # NOTE
-      # If @input.length is 0 then test is empty, and thus can be skipped
-      @isValid = true if @input.length
-
     # gather tokens and scopes
     @tokens = []
     @currentScope = []
@@ -69,6 +65,10 @@ class ASStest
               scopes: @getScope()
             @removeScope()
             @tokens.push(token)
+
+    # NOTE
+    # If @input.length or @tokens.length is 0, then the test is invalid and can be skipped
+    @isValid = true if @input.length and @tokens.length
 
   addScope: (scope) ->
     @currentScope.push(scope)
