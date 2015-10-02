@@ -1,9 +1,17 @@
 <!-- Issues -->
 
+<!-- https://github.com/burodepeper/language-markdown/issues/17 -->
+A line with *italics* and **bold** fails.
+Even _mixing_ the **type** of *markers* is __not enough__.
+
 <!-- https://github.com/atom/language-gfm/issues/117 -->
 <!-- expected outcome: only emphasize first letters of words -->
 *f*oo *b*ar baz
 **f**oo **b**ar baz
+<!-- expected outcome: ignore single underscores -->
+Blah blah _ blah
+blah blah blah foo bar
+fooooo _ oh hi
 
 <!-- http://spec.commonmark.org/0.22/#emphasis-and-strong-emphasis -->
 
@@ -150,6 +158,8 @@ _Asclepias physocarpa_)__
 
 **Gomphocarpus (_Gomphocarpus physocarpus_, syn.
 _Asclepias physocarpa_)**
+
+**Gomphocarpus (_Gomphocarpus physocarpus_, syn. _Asclepias physocarpa_)**
 
 <!-- http://spec.commonmark.org/0.22/#example-357 -->
 **foo "*bar*" foo**
