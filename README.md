@@ -41,7 +41,7 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | Core | Backslash escapes | _beta_ | - | Good |
 | Core | Entities | _beta_ | - | Good |
 | Core | Code spans | _beta_ | - | Good |
-| Core | Emphasis | _beta_ | - | Okay |
+| Core | Emphasis | _alpha_ | 77 of 130 | Okay, but buggy |
 | Core | Links | _alpha_ | - | Okay |
 | Core | Images | - | - | - |
 | Core | Auto-links | - | - | - |

@@ -1,0 +1,88 @@
+# https://github.com/atom/language-gfm/issues/117
+# NOTE expected outcome: only emphasize first letters of words
+@issue-gfm-117a
+"*f*oo *b*ar baz" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "f"
+      "*": punctuation.md
+    }
+    "oo "
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "b"
+      "*": punctuation.md
+    }
+    "ar baz"
+  }
+}
+
+@issue-gfm-117b
+"**f**oo **b**ar baz" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "f"
+      "**": punctuation.md
+    }
+    "oo "
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "b"
+      "**": punctuation.md
+    }
+    "ar baz"
+  }
+}
+
+# https://github.com/burodepeper/language-markdown/issues/17
+@issue-17a
+"A line with *italics* and **bold** fails." {
+  text.md {
+    "A line with "
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "italics"
+      "*": punctuation.md
+    }
+    " and "
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "bold"
+      "**": punctuation.md
+    }
+    " fails."
+  }
+}
+
+@issue-17b
+"Even _mixing_ the **type** of *markers* is __not enough__." {
+  text.md {
+    "Even "
+    emphasis.italic.markup.md {
+      "_": punctuation.md
+      "mixing"
+      "_": punctuation.md
+    }
+    " the "
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "type"
+      "**": punctuation.md
+    }
+    " of "
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "markers"
+      "*": punctuation.md
+    }
+    " is "
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      "not enough"
+      "__": punctuation.md
+    }
+    "."
+  }
+}

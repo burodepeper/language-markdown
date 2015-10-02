@@ -210,7 +210,7 @@ repository:
       # }
 
       {
-        match: '(?<![\\w|\\\\])([_]{2})(?!\\s)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
+        match: '(?<![\\w|\\\\])([_]{2})(?!\\s)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)'
         name: 'strong.emphasis.bold.markup.md'
         captures:
           1: name: 'punctuation.md'
@@ -223,7 +223,7 @@ repository:
           3: name: 'punctuation.md'
       }
       {
-        match: '(?<![\\w|\\\\])([\\*]{2})(?!\\s)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
+        match: '(?<![\\w|\\\\])([\\*]{2})(?!\\s)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)'
         name: 'strong.emphasis.bold.markup.md'
         captures:
           1: name: 'punctuation.md'
@@ -237,14 +237,14 @@ repository:
       }
       {
         # Interword ** is permitted
-        match: '(?<=\\w)([\\*]{2})(?:.+)(?<!\\W)(\\1)'
+        match: '(?<=\\w)([\\*]{2})(?:.+?)(?<!\\W)(\\1)'
         name: 'strong.emphasis.bold.markup.md'
         captures:
           1: name: 'punctuation.md'
           2: name: 'punctuation.md'
       }
       {
-        match: '(?<=\\s|^)([\\*]{2})(?=\\w)(?:.+)(\\1)(?=\\w)'
+        match: '(?<=\\s|^)([\\*]{2})(?=\\w)(?:.+?)(\\1)(?=\\w)'
         name: 'strong.emphasis.bold.markup.md'
         captures:
           1: name: 'punctuation.md'
@@ -268,7 +268,7 @@ repository:
       # The matches for _ and * are separated though pretty similar, because the negative look-back at the beginning couldn't reference to \\1 as used in the example above
 
       {
-        match: '(?<![\\w|_|\\\\])([_])(?!\\s|\\1)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
+        match: '(?<![\\w|_|\\\\])([_])(?!\\s|\\1)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)'
         name: 'emphasis.italic.markup.md'
         captures:
           1: name: 'punctuation.md'
@@ -281,7 +281,7 @@ repository:
           3: name: 'punctuation.md'
       }
       {
-        match: '(?<![\\w|\\*|\\\\])([\\*])(?!\\s|\\1)(?m:(.+))(?<![\\s|\\\\])(\\1)(?!\\w)'
+        match: '(?<![\\w|\\*|\\\\])([\\*])(?!\\s|\\1)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)'
         name: 'emphasis.italic.markup.md'
         captures:
           1: name: 'punctuation.md'
@@ -296,7 +296,7 @@ repository:
       {
         # Interword * is permitted
         # match: '(?<=\\w)([\*])(?m:(.+))(?<!\\W)(\\1)'
-        match: '(?<=\\w)([\\*])(?:.+)(?<!\\W)(\\1)'
+        match: '(?<=\\w)([\\*])(?:.+?)(?<!\\W)(\\1)'
         name: 'emphasis.italic.markup.md'
         captures:
           1: name: 'punctuation.md'
@@ -304,7 +304,7 @@ repository:
       }
       {
         # match: '(?<=\\s|^)([\*])(?=\\w)(?m:(.+))(\\1)(?=\\w)'
-        match: '(?<=\\s|^)([\\*])(?=\\w)(?:.+)(\\1)(?=\\w)'
+        match: '(?<=\\s|^)([\\*])(?=\\w)(?:.+?)(\\1)(?=\\w)'
         name: 'emphasis.italic.markup.md'
         captures:
           1: name: 'punctuation.md'
@@ -577,7 +577,7 @@ repository:
     patterns: [
       {
         # (link)[</space uri>]
-        name: 'link.3.md'
+        name: 'link.md'
         match: '((\\[)([^\\]]*?)(\\]))((\\()(<)(.*)(>)(\\)))'
         captures:
           1: name: 'text.link.string.md'
@@ -598,7 +598,7 @@ repository:
         # (link)[/uri "title"] or (link)[/uri 'title']
         #
         # NOTE title in parentheses not supported
-        name: 'link.2.md'
+        name: 'link.md'
         match: '((\\[)([^\\]]*?)(\\]))((\\()([^ ]*) ((["\'])(?:.+)(\\9))(\\)))'
         captures:
           1: name: 'text.link.string.md'
@@ -618,7 +618,7 @@ repository:
       }
       {
         # (link)[/uri]
-        name: 'link.1.md'
+        name: 'link.md'
         match: '((\\[)([^\\]]*?)(\\]))((\\()(?!<)([^ ]*)(\\)))'
         captures:
           1: name: 'text.link.string.md'

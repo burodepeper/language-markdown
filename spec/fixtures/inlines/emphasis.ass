@@ -1,0 +1,1521 @@
+# http://spec.commonmark.org/0.22/#emphasis-and-strong-emphasis
+
+@313
+"*foo bar*" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "foo bar"
+      "*": punctuation.md
+    }
+  }
+}
+
+@314
+"a * foo bar*" {
+  "a * foo bar*": text.md
+}
+
+@315
+"a*"foo"*" {
+  "a*"foo"*": text.md
+}
+
+@316
+"* a *" {
+  "* a *": text.md
+}
+
+@317
+"foo*bar*" {
+  text.md {
+    "foo"
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "bar"
+      "*": punctuation.md
+    }
+  }
+}
+
+@318
+"5*6*78" {
+  text.md {
+    "5"
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "6"
+      "*": punctuation.md
+    }
+    "78"
+  }
+}
+
+@319
+"_foo bar_" {
+  text.md {
+    emphasis.italic.markup.md {
+      "_": punctuation.md
+      "foo bar"
+      "_": punctuation.md
+    }
+  }
+}
+
+@320
+"_ foo bar_" {
+  "_ foo bar_": text.md
+}
+
+@321
+"a_"foo"_" {
+  "a_"foo"_": text.md
+}
+
+@322
+"foo_bar_" {
+  "foo_bar_": text.md
+}
+
+@323
+"5_6_78" {
+  "5_6_78": text.md
+}
+
+@324
+"пристаням_стремятся_" {
+  "пристаням_стремятся_": text.md
+}
+
+@325
+"aa_"bb"_cc" {
+  "aa_"bb"_cc": text.md
+}
+
+@326
+"foo-_(bar)_" {
+  text.md {
+    "foo-"
+    emphasis.italic.markup.md {
+      "_": punctuation.md
+      "(bar)"
+      "_": punctuation.md
+    }
+  }
+}
+
+@327
+"_foo*" {
+  "_foo*": text.md
+}
+
+@328
+"*foo bar *" {
+  "*foo bar *": text.md
+}
+
+@329
+"*foo bar\n*" {
+  text.md {
+    "*foo bar"
+    empty.unordered.list.markup.md {
+      "*": punctuation.md
+    }
+  }
+}
+
+@330
+"*(*foo)" {
+  "*(*foo)": text.md
+}
+
+# FIXME
+# @331
+# "*(*foo*)*" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       "("
+#       emphasis.italic.markup.md {
+#         "*": punctuation.md
+#         "foo"
+#         "*": punctuation.md
+#       }
+#       ")"
+#       "*": punctuation.md
+#     }
+#   }
+# }
+
+@332
+"*foo*bar" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "foo"
+      "*": punctuation.md
+    }
+    "bar"
+  }
+}
+
+@333
+"_foo bar _" {
+  "_foo bar _": text.md
+}
+
+@334
+"_(_foo)" {
+  "_(_foo)": text.md
+}
+
+# FIXME
+# @335
+# "_(_foo_)_" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "_": punctuation.md
+#       "("
+#       emphasis.italic.markup.md {
+#         "_": punctuation.md
+#         "foo"
+#         "_": punctuation.md
+#       }
+#       ")"
+#       "_": punctuation.md
+#     }
+#   }
+# }
+
+@336
+"_foo_bar" {
+  "_foo_bar": text.md
+}
+
+@337
+"_пристаням_стремятся" {
+  "_пристаням_стремятся": text.md
+}
+
+@338
+"_foo_bar_baz_" {
+  text.md {
+    emphasis.italic.markup.md {
+      "_": punctuation.md
+      "foo_bar_baz"
+      "_": punctuation.md
+    }
+  }
+}
+
+@339
+"_(bar)_." {
+  text.md {
+    emphasis.italic.markup.md {
+      "_": punctuation.md
+      "(bar)"
+      "_": punctuation.md
+    }
+    "."
+  }
+}
+
+@340
+"**foo bar**" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "foo bar"
+      "**": punctuation.md
+    }
+  }
+}
+
+@341
+"** foo bar**" {
+  "** foo bar**": text.md
+}
+
+@342
+"a**"foo"**" {
+  "a**"foo"**": text.md
+}
+
+@343
+"foo**bar**" {
+  text.md {
+    "foo"
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "bar"
+      "**": punctuation.md
+    }
+  }
+}
+
+@344
+"__foo bar__" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      "foo bar"
+      "__": punctuation.md
+    }
+  }
+}
+
+@345
+"__ foo bar__" {
+  "__ foo bar__": text.md
+}
+
+@346
+"__\nfoo bar__" {
+  text.md {
+    "__"
+    "foo bar__"
+  }
+}
+
+@347
+"a__"foo"__" {
+  "a__"foo"__": text.md
+}
+
+@348
+"foo__bar__" {
+  "foo__bar__": text.md
+}
+
+@349
+"5__6__78" {
+  "5__6__78": text.md
+}
+
+@350
+"пристаням__стремятся__" {
+  "пристаням__стремятся__": text.md
+}
+
+# FIXME
+# @351
+# "__foo, __bar__, baz__" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "__": punctuation.md
+#       "foo, "
+#       strong.emphasis.bold.markup.md {
+#         "__": punctuation.md
+#         "bar"
+#         "__": punctuation.md
+#       }
+#       ", baz"
+#       "__": punctuation.md
+#     }
+#   }
+# }
+
+@352
+"foo-__(bar)__" {
+  text.md {
+    "foo-"
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      "(bar)"
+      "__": punctuation.md
+    }
+  }
+}
+
+@353
+"**foo bar **" {
+  "**foo bar **": text.md
+}
+
+@354
+"**(**foo)" {
+  "**(**foo)": text.md
+}
+
+# FIXME
+# @355
+# "*(**foo**)*" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       "("
+#       strong.emphasis.bold.markup.md {
+#         "**": punctuation.md
+#         "foo"
+#         "**": punctuation.md
+#       }
+#       ")"
+#       "*": punctuation.md
+#     }
+#   }
+# }
+
+# TODO multiline not supported
+# @356a
+# "**Gomphocarpus (*Gomphocarpus physocarpus*, syn."+
+# "*Asclepias physocarpa*)**" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "**": punctuation.md
+#       "Gomphocarpus ("
+#       emphasis.italic.markup.md {
+#         "*": punctuation.md
+#         "Gomphocarpus physocarpus"
+#         "*": punctuation.md
+#       }
+#       ", syn."
+#       emphasis.italic.markup.md {
+#         "*": punctuation.md
+#         "Asclepias physocarpa"
+#         "*": punctuation.md
+#       }
+#       ")"
+#       "**": punctuation.md
+#     }
+#   }
+# }
+
+@356b
+"**Gomphocarpus (*Gomphocarpus physocarpus*, syn. *Asclepias physocarpa*)**" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "Gomphocarpus ("
+      emphasis.italic.markup.md {
+        "*": punctuation.md
+        "Gomphocarpus physocarpus"
+        "*": punctuation.md
+      }
+      ", syn. "
+      emphasis.italic.markup.md {
+        "*": punctuation.md
+        "Asclepias physocarpa"
+        "*": punctuation.md
+      }
+      ")"
+      "**": punctuation.md
+    }
+  }
+}
+
+@357
+"**foo "*bar*" foo**" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      'foo "'
+      emphasis.italic.markup.md {
+        "*": punctuation.md
+        "bar"
+        "*": punctuation.md
+      }
+      '" foo'
+      "**": punctuation.md
+    }
+  }
+}
+
+@358
+"**foo**bar" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      'foo'
+      "**": punctuation.md
+    }
+    "bar"
+  }
+}
+
+@359
+"__foo bar __" {
+  "__foo bar __": text.md
+}
+
+@360
+"__(__foo)" {
+  "__(__foo)": text.md
+}
+
+# FIXME
+# @361
+# "_(__foo__)_" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "_": punctuation.md
+#       '('
+#       strong.emphasis.bold.markup.md {
+#         "__": punctuation.md
+#         'foo'
+#         "__": punctuation.md
+#       }
+#       ')'
+#       "_": punctuation.md
+#     }
+#   }
+# }
+
+@362
+"__foo__bar" {
+  "__foo__bar": text.md
+}
+
+@363
+"__пристаням__стремятся" {
+  "__пристаням__стремятся": text.md
+}
+
+# FIXME
+# @364
+# "__foo__bar__baz__" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "__": punctuation.md
+#       'foo__bar_baz'
+#       "__": punctuation.md
+#     }
+#   }
+# }
+
+@365
+"__(bar)__." {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      '(bar)'
+      "__": punctuation.md
+    }
+    .
+  }
+}
+
+@366
+"*foo [bar](/url)*" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      'foo '
+      link.md {
+        text.link.string.md {
+          "[": punctuation.md
+          "bar"
+          "]": punctuation.md
+        }
+        destination.link.md {
+          "(": punctuation.md
+          "/url": uri.underline.markup.md
+          ")": punctuation.md
+        }
+      }
+      "*": punctuation.md
+    }
+  }
+}
+
+# TODO multiline
+# @367
+# "*foo\nbar*" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       'foo'
+#       'bar'
+#       "*": punctuation.md
+#     }
+#     .
+#   }
+# }
+
+# FIXME
+# @368
+# "_foo __bar__ baz_" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       '_': punctuation.md
+#       'foo '
+#       strong.emphasis.bold.markup.md {
+#         '__': punctuation.md
+#         'bar'
+#         '__': punctuation.md
+#       }
+#       ' baz'
+#       '_': punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @369
+# "_foo _bar_ baz_" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       '_': punctuation.md
+#       'foo '
+#       emphasis.italic.markup.md {
+#         '_': punctuation.md
+#         'bar'
+#         '_': punctuation.md
+#       }
+#       ' baz'
+#       '_': punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @370
+# "__foo_ bar_" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       '_': punctuation.md
+#       emphasis.italic.markup.md {
+#         '_': punctuation.md
+#         'foo'
+#         '_': punctuation.md
+#       }
+#       ' bar'
+#       '_': punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @371
+# "*foo *bar**" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       '*': punctuation.md
+#       'foo '
+#       emphasis.italic.markup.md {
+#         '*': punctuation.md
+#         'bar'
+#         '*': punctuation.md
+#       }
+#       '*': punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @372
+# "*foo **bar** baz*" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       '*': punctuation.md
+#       'foo '
+#       strong.emphasis.bold.markup.md {
+#         '**': punctuation.md
+#         'bar'
+#         '**': punctuation.md
+#       }
+#       ' baz'
+#       '*': punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @373
+# "*foo**bar**baz*" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       '*': punctuation.md
+#       'foo'
+#       '*': punctuation.md
+#       '*': punctuation.md
+#       'bar'
+#       '*': punctuation.md
+#       '*': punctuation.md
+#       'baz'
+#       '*': punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @374
+# "***foo** bar*" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       strong.emphasis.bold.markup.md {
+#         "**": punctuation.md
+#         "foo"
+#         "**": punctuation.md
+#       }
+#       " bar"
+#       "*": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @375
+# "*foo **bar***" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       "foo "
+#       strong.emphasis.bold.markup.md {
+#         "**": punctuation.md
+#         "bar"
+#         "**": punctuation.md
+#       }
+#       "*": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @376
+# "*foo**bar***" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       "foo"
+#       "*": punctuation.md
+#       "*": punctuation.md
+#       "bar"
+#       "*": punctuation.md
+#     }
+#     "**"
+#   }
+# }
+
+# FIXME
+# @377
+# "*foo **bar *baz* bim** bop*" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       "foo "
+#       strong.emphasis.bold.markup.md {
+#         "**": punctuation.md
+#         "bar "
+#         emphasis.italic.markup.md {
+#           "*": punctuation.md
+#           "baz"
+#           "*": punctuation.md
+#         }
+#         " bim"
+#         "**": punctuation.md
+#       }
+#       " bop"
+#       "*": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @378
+# "*foo [*bar*](/url)*" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       'foo '
+#       link.md {
+#         text.link.string.md {
+#           "[": punctuation.md
+#           emphasis.italic.markup.md {
+#             "*": punctuation.md
+#             "bar"
+#             "*": punctuation.md
+#           }
+#           "]": punctuation.md
+#         }
+#         destination.link.md {
+#           "(": punctuation.md
+#           "/url": uri.underline.markup.md
+#           ")": punctuation.md
+#         }
+#       }
+#       "*": punctuation.md
+#     }
+#   }
+# }
+
+@379
+"** is not an empty emphasis" {
+  "** is not an empty emphasis": text.md
+}
+
+@380
+"**** is not an empty strong emphasis" {
+  "**** is not an empty strong emphasis": text.md
+}
+
+@381
+"**foo [bar](/url)**" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      'foo '
+      link.md {
+        text.link.string.md {
+          "[": punctuation.md
+          "bar"
+          "]": punctuation.md
+        }
+        destination.link.md {
+          "(": punctuation.md
+          "/url": uri.underline.markup.md
+          ")": punctuation.md
+        }
+      }
+      "**": punctuation.md
+    }
+  }
+}
+
+# FIXME multiline
+# @382
+# "**foo\nbar**" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "**": punctuation.md
+#       'foo'
+#       'bar'
+#       "**": punctuation.md
+#     }
+#   }
+# }
+
+@383
+"__foo _bar_ baz__" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      'foo '
+      emphasis.italic.markup.md {
+        "_": punctuation.md
+        "bar"
+        "_": punctuation.md
+      }
+      ' baz'
+      "__": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @384
+# "__foo __bar__ baz__" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "__": punctuation.md
+#       'foo '
+#       strong.emphasis.bold.markup.md {
+#         "__": punctuation.md
+#         "bar"
+#         "__": punctuation.md
+#       }
+#       ' baz'
+#       "__": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @385
+# "____foo__ bar__" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "__": punctuation.md
+#       strong.emphasis.bold.markup.md {
+#         "__": punctuation.md
+#         "foo"
+#         "__": punctuation.md
+#       }
+#       ' bar'
+#       "__": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @386
+# "**foo **bar****" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "**": punctuation.md
+#       "foo "
+#       strong.emphasis.bold.markup.md {
+#         "**": punctuation.md
+#         "bar"
+#         "**": punctuation.md
+#       }
+#       "**": punctuation.md
+#     }
+#   }
+# }
+
+@387
+"**foo *bar* baz**" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "foo "
+      emphasis.italic.markup.md {
+        "*": punctuation.md
+        "bar"
+        "*": punctuation.md
+      }
+      " baz"
+      "**": punctuation.md
+    }
+  }
+}
+
+# NOTE fuck off
+# FIXME
+# @388
+# "**foo*bar*baz**" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       emphasis.italic.markup.md {
+#         "*": punctuation.md
+#         "foo"
+#         "*": punctuation.md
+#       }
+#       "bar"
+#       "*": punctuation.md
+#     }
+#     "baz**"
+#   }
+# }
+
+@389
+"***foo* bar**" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      emphasis.italic.markup.md {
+        "*": punctuation.md
+        "foo"
+        "*": punctuation.md
+      }
+      " bar"
+      "**": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @390
+# "**foo *bar***" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "**": punctuation.md
+#       "foo "
+#       emphasis.italic.markup.md {
+#         "*": punctuation.md
+#         "bar"
+#         "*": punctuation.md
+#       }
+#       "**": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME multiline
+# @391
+# "**foo *bar **baz**"+
+# "bim* bop**" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "**": punctuation.md
+#       "foo "
+#       emphasis.italic.markup.md {
+#         "*": punctuation.md
+#         "bar "
+#         strong.emphasis.bold.markup.md {
+#           "**": punctuation.md
+#           "baz"
+#           "**": punctuation.md
+#         }
+#         " bim"
+#         "*": punctuation.md
+#       }
+#       " bop"
+#       "**": punctuation.md
+#     }
+#   }
+# }
+
+@392
+"**foo [*bar*](/url)**" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      'foo '
+      link.md {
+        text.link.string.md {
+          "[": punctuation.md
+          emphasis.italic.markup.md {
+            "*": punctuation.md
+            "bar"
+            "*": punctuation.md
+          }
+          "]": punctuation.md
+        }
+        destination.link.md {
+          "(": punctuation.md
+          "/url": uri.underline.markup.md
+          ")": punctuation.md
+        }
+      }
+      "**": punctuation.md
+    }
+  }
+}
+
+@393
+"__ is not an empty emphasis" {
+  "__ is not an empty emphasis": text.md
+}
+
+@394
+"____ is not an empty strong emphasis" {
+  "____ is not an empty strong emphasis": text.md
+}
+
+@395
+"foo ***" {
+  "foo ***": text.md
+}
+
+@396
+"foo *\**" {
+  text.md {
+    "foo "
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "\*": escape.constant.md
+      "*": punctuation.md
+    }
+  }
+}
+
+@397
+"foo *_*" {
+  text.md {
+    "foo "
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "_"
+      "*": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @398
+# "foo *****" {
+#   "foo *****": text.md
+# }
+
+@399
+"foo **\***" {
+  text.md {
+    "foo "
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "\*": escape.constant.md
+      "**": punctuation.md
+    }
+  }
+}
+
+@400
+"foo **_**" {
+  text.md {
+    "foo "
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "_"
+      "**": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @401
+# "**foo*" {
+#   text.md {
+#     "*"
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       "foo"
+#       "*": punctuation.md
+#     }
+#   }
+# }
+
+@402
+"*foo**" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "foo"
+      "*": punctuation.md
+    }
+    "*"
+  }
+}
+
+# FIXME
+# @403
+# "***foo**" {
+#   text.md {
+#     "*"
+#     strong.emphasis.bold.markup.md {
+#       "**": punctuation.md
+#       "foo"
+#       "**": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @404
+# "****foo*" {
+#   text.md {
+#     "***"
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       "foo"
+#       "*": punctuation.md
+#     }
+#   }
+# }
+
+@405
+"**foo***" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "foo"
+      "**": punctuation.md
+    }
+    "*"
+  }
+}
+
+@406
+"*foo****" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "foo"
+      "*": punctuation.md
+    }
+    "***"
+  }
+}
+
+@407
+"foo ___" {
+  "foo ___": text.md
+}
+
+@408
+"foo _\__" {
+  text.md {
+    "foo "
+    emphasis.italic.markup.md {
+      "_": punctuation.md
+      "\_": escape.constant.md
+      "_": punctuation.md
+    }
+  }
+}
+
+@409
+"foo _*_" {
+  text.md {
+    "foo "
+    emphasis.italic.markup.md {
+      "_": punctuation.md
+      "*"
+      "_": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @410
+# "foo _____" {
+#   "foo _____": text.md
+# }
+
+@411
+"foo __\___" {
+  text.md {
+    "foo "
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      "\_": escape.constant.md
+      "__": punctuation.md
+    }
+  }
+}
+
+@412
+"foo __*__" {
+  text.md {
+    "foo "
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      "*"
+      "__": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @413
+# "__foo_" {
+#   text.md {
+#     "_"
+#     emphasis.italic.markup.md {
+#       "_": punctuation.md
+#       "foo"
+#       "_": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @414
+# "_foo__" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "_": punctuation.md
+#       "foo"
+#       "_": punctuation.md
+#     }
+#     "_"
+#   }
+# }
+
+# FIXME
+# @415
+# "___foo__" {
+#   text.md {
+#     "_"
+#     strong.emphasis.bold.markup.md {
+#       "__": punctuation.md
+#       "foo"
+#       "__": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @416
+# "____foo_" {
+#   text.md {
+#     "___"
+#     emphasis.italic.markup.md {
+#       "_": punctuation.md
+#       "foo"
+#       "_": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @417
+# "__foo___" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "__": punctuation.md
+#       "foo"
+#       "__": punctuation.md
+#     }
+#     "_"
+#   }
+# }
+
+# FIXME
+# @418
+# "_foo____" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "_": punctuation.md
+#       "foo"
+#       "_": punctuation.md
+#     }
+#     "___"
+#   }
+# }
+
+@419
+"**foo**" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "foo"
+      "**": punctuation.md
+    }
+  }
+}
+
+@420
+"*_foo_*" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      emphasis.italic.markup.md {
+        "_": punctuation.md
+        "foo"
+        "_": punctuation.md
+      }
+      "*": punctuation.md
+    }
+  }
+}
+
+@421
+"__foo__" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      "foo"
+      "__": punctuation.md
+    }
+  }
+}
+
+@422
+"_*foo*_" {
+  text.md {
+    emphasis.italic.markup.md {
+      "_": punctuation.md
+      emphasis.italic.markup.md {
+        "*": punctuation.md
+        "foo"
+        "*": punctuation.md
+      }
+      "_": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @423
+# "****foo****" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "**": punctuation.md
+#       strong.emphasis.bold.markup.md {
+#         "**": punctuation.md
+#         "foo"
+#         "**": punctuation.md
+#       }
+#       "**": punctuation.md
+#     }
+#   }
+# }
+
+@424
+"____foo____" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      strong.emphasis.bold.markup.md {
+        "__": punctuation.md
+        "foo"
+        "__": punctuation.md
+      }
+      "__": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @425
+# "******foo******" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "**": punctuation.md
+#       strong.emphasis.bold.markup.md {
+#         "**": punctuation.md
+#         strong.emphasis.bold.markup.md {
+#           "**": punctuation.md
+#           "foo"
+#           "**": punctuation.md
+#         }
+#         "**": punctuation.md
+#       }
+#       "**": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @426
+# "***foo***" {
+#   text.md {
+#     strong.emphasis.bold.markup.md {
+#       "**": punctuation.md
+#       emphasis.italic.markup.md {
+#         "*": punctuation.md
+#         "foo"
+#         "*": punctuation.md
+#       }
+#       "**": punctuation.md
+#     }
+#   }
+# }
+
+@427
+"_____foo_____" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "__": punctuation.md
+      strong.emphasis.bold.markup.md {
+        "__": punctuation.md
+        emphasis.italic.markup.md {
+          "_": punctuation.md
+          "foo"
+          "_": punctuation.md
+        }
+        "__": punctuation.md
+      }
+      "__": punctuation.md
+    }
+  }
+}
+
+@428
+"*foo _bar* baz_" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "foo _bar"
+      "*": punctuation.md
+    }
+    " baz_"
+  }
+}
+
+# FIXME
+# @429
+# "**foo*bar**" {
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       emphasis.italic.markup.md {
+#         "*": punctuation.md
+#         "foo"
+#         "*": punctuation.md
+#       }
+#       "*": punctuation.md
+#     }
+#     "*"
+#   }
+# }
+
+@430
+"*foo __bar *baz bim__ bam*" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "foo "
+      strong.emphasis.bold.markup.md {
+        "__": punctuation.md
+        "bar *baz bim"
+        "__": punctuation.md
+      }
+      " bam"
+      "*": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @431
+# "**foo **bar baz**" {
+#   text.md {
+#     "**foo "
+#     strong.emphasis.bold.markup.md {
+#       "**": punctuation.md
+#       "bar baz"
+#       "**": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @432
+# "*foo *bar baz*" {
+#   text.md {
+#     "*foo "
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       "bar baz"
+#       "*": punctuation.md
+#     }
+#   }
+# }
+
+# TODO
+# @433
+# "*[bar*](/url)" {
+#
+# }
+
+# TODO
+# @434
+# "_foo [bar_](/url)" {
+#
+# }
+
+# TODO
+# @435
+# "*<img src="foo" title="*"/>" {
+#
+# }
+
+# TODO
+# @436
+# "**<a href="**">" {
+#
+# }
+
+# TODO
+# @437
+# "__<a href="__">" {
+#
+# }
+
+# TODO
+# @438
+# "*a `*`*" {
+#
+# }
+
+# TODO
+# @439
+# "_a `_`_" {
+#
+# }
+
+# TODO
+# @440
+# "**a<http://foo.bar/?q=**>" {
+#
+# }
+
+# TODO
+# @441
+# "__a<http://foo.bar/?q=__>" {
+#
+# }

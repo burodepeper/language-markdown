@@ -4,20 +4,21 @@ fs = require 'fs'
 _ = require 'lodash'
 
 fixtures = [
+  "issues"
   # BLOCKS
   "blocks/hr"
   "blocks/headings"
   # "blocks/fenced-code"
   # "blocks/html-blocks"
   # "blocks/link-references"
-  "blocks/quotes" # work in progress
-  "blocks/lists" # work in progress
+  "blocks/quotes" # WIP
+  "blocks/lists" # WIP
   # INLINES
-  "inlines/code" # work in progress
+  "inlines/code" # WIP
   # "inlines/escapes"
   # "inlines/entities"
   # "inlines/code-spans"
-  # "inlines/emphasis"
+  "inlines/emphasis" # WIP
   # "inlines/links"
   # "inlines/images"
   # "inlines/autolinks"
@@ -27,6 +28,11 @@ fixtures = [
   # "flavors/github"
   # "flavors/criticmark"
 ]
+
+# Cause this is what I'm working on...
+# fixtures = [
+#   "inlines/emphasis"
+# ]
 
 describe "Markdown grammar", ->
 
