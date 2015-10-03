@@ -11,7 +11,7 @@ fixtures = [
   # "blocks/fenced-code"
   # "blocks/html-blocks"
   # "blocks/link-references"
-  "blocks/quotes" # WIP
+  "blocks/quotes"
   "blocks/lists" # WIP
   # INLINES
   "inlines/code" # WIP
@@ -31,7 +31,7 @@ fixtures = [
 
 # Cause this is what I'm working on...
 # fixtures = [
-#   "inlines/emphasis"
+#   "blocks/quotes"
 # ]
 
 describe "Markdown grammar", ->

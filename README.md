@@ -31,23 +31,22 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 
 | Flavor | Section | Grammar | Specs | Usable? |
 | ------ | ------- | ------- | ----- | ------- |
-| Core | Horizontal rules | complete | 27 of 27 | Excellent |
-| Core | (ATX) Headings | complete | 23 of 23 | Excellent |
-| Core | Fenced code blocks | _in progress_ | - | Okay |
-| Core | HTML blocks | - | - | - |
-| Core | Links reference definitions | - | - | - |
-| Core | Block quotes | _beta_ | - | Good |
-| Core | Lists | _beta_ | - | Excellent |
-| Core | Backslash escapes | _beta_ | - | Good |
-| Core | Entities | _beta_ | - | Good |
-| Core | Code spans | _beta_ | - | Good |
-| Core | Emphasis | _alpha_ | 77 of 130 | Okay, but buggy |
-| Core | Links | _alpha_ | - | Okay |
-| Core | Images | - | - | - |
-| Core | Auto-links | - | - | - |
-| Core | Raw HTML | _in progress_ | - | Okay |
-| Core | Hard line-breaks | - | - | - |
-| Core | Soft line-breaks | - | - | - |
+| Core (blocks) | Horizontal rules | complete | 27 of 27 | Excellent |
+| Core (blocks) | (ATX) Headings | complete | 23 of 23 | Excellent |
+| Core (blocks) | Fenced code blocks | _beta_ | - | Okay |
+| Core (blocks) | HTML blocks | - | - | - |
+| Core (blocks) | Links reference definitions | - | - | - |
+| Core (blocks) | Block quotes | complete | 25 of 25 | Excellent |
+| Core (blocks) | Lists | _beta_ | - | Excellent |
+| Core (inlines) | Backslash escapes | _beta_ | - | Good |
+| Core (inlines) | Entities | _beta_ | - | Good |
+| Core (inlines) | Code spans | _beta_ | - | Good |
+| Core (inlines) | Emphasis | _alpha_ | 77 of 130 | Okay, but buggy |
+| Core (inlines) | Links | _alpha_ | - | Okay |
+| Core (inlines) | Images | - | - | - |
+| Core (inlines) | Auto-links | - | - | - |
+| Core (inlines) | Raw HTML | _alpha_ | - | Okay |
+| Core (inlines) | Line-breaks | - | - | - |
 | Github | Usernames | _beta_ | - | Good |
 | Github | Issues | _beta_ | - | Good |
 | Github | Emojis | - | - | - |

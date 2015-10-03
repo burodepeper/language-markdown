@@ -1,5 +1,9 @@
-# http://spec.commonmark.org/0.22/#example-178
-"> # Foo\n> bar\n> baz" {
+# http://spec.commonmark.org/0.22/#block-quotes
+
+@178
+'> # Foo'+
+'> bar'+
+'> baz' {
   text.md {
     quote.markup.md {
       '>': punctuation.md
@@ -11,13 +15,9 @@
           'Foo'
         }
       }
-    }
-    quote.markup.md {
       '>': punctuation.md
       ' '
       'bar'
-    }
-    quote.markup.md {
       '>': punctuation.md
       ' '
       'baz'
@@ -25,8 +25,72 @@
   }
 }
 
-# http://spec.commonmark.org/0.22/#example-178
-'> # Foo\n> bar\n> baz' {
+@179
+"># Foo"+
+">bar"+
+"> baz" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      heading.markup.md {
+        heading-1.md {
+          '#': punctuation.md
+          ' '
+          'Foo'
+        }
+      }
+      '>': punctuation.md
+      'bar'
+      '>': punctuation.md
+      ' '
+      'baz'
+    }
+  }
+}
+
+@180
+"   > # Foo"+
+"   > bar"+
+" > baz" {
+  text.md {
+    quote.markup.md {
+      "   "
+      '>': punctuation.md
+      " "
+      heading.markup.md {
+        heading-1.md {
+          '#': punctuation.md
+          ' '
+          'Foo'
+        }
+      }
+      "   "
+      '>': punctuation.md
+      " "
+      'bar'
+      " "
+      '>': punctuation.md
+      ' '
+      'baz'
+    }
+  }
+}
+
+@181
+"    > # Foo"+
+"    > bar"+
+"    > baz" {
+  text.md {
+    "    > # Foo"
+    "    > bar"
+    "    > baz"
+  }
+}
+
+@182
+"> # Foo"+
+"> bar"+
+"baz" {
   text.md {
     quote.markup.md {
       '>': punctuation.md
@@ -41,9 +105,344 @@
       '>': punctuation.md
       ' '
       'bar'
+    }
+    'baz'
+  }
+}
+
+@183
+"> bar"+
+"baz"+
+"> foo" {
+  text.md {
+    quote.markup.md {
       '>': punctuation.md
       ' '
-      'baz'
+      'bar'
+    }
+    'baz'
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'foo'
+    }
+  }
+}
+
+@184
+"> foo"+
+"---" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'foo'
+    }
+    "---": hr.md
+  }
+}
+
+@185
+"> - foo"+
+"- bar" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      unordered.list.markup.md {
+        '-': punctuation.md
+        ' '
+        'foo'
+      }
+    }
+    unordered.list.markup.md {
+      '-': punctuation.md
+      ' '
+      'bar'
+    }
+  }
+}
+
+@186
+">     foo"+
+"    bar" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      '    foo'
+    }
+    '    bar'
+  }
+}
+
+# NOTE multiline blocks are not supported
+@187
+"> ```"+
+"foo"+
+"```" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      fenced.code.md {
+        '```': punctuation.md
+      }
+    }
+    'foo'
+    fenced.code.md {
+      '```': punctuation.md
+    }
+  }
+}
+
+@188
+"> foo"+
+"    - bar" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'foo'
+    }
+    unordered.list.markup.md {
+      '    '
+      '-': punctuation.md
+      ' '
+      'bar'
+    }
+  }
+}
+
+@189
+">" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+    }
+  }
+}
+
+@190
+">"+
+">  "+
+"> " {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      '>': punctuation.md
+      ' '
+      ' '
+      '>': punctuation.md
+      ' '
+    }
+  }
+}
+
+@191
+">"+
+"> foo"+
+">  " {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      '>': punctuation.md
+      ' '
+      'foo'
+      '>': punctuation.md
+      ' '
+      ' '
+    }
+  }
+}
+
+@192
+"> foo"+
+""+
+"> bar" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'foo'
+      ''
+      '>': punctuation.md
+      ' '
+      'bar'
+    }
+  }
+}
+
+@193
+"> foo"+
+"> bar" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'foo'
+      '>': punctuation.md
+      ' '
+      'bar'
+    }
+  }
+}
+
+@194
+"> foo"+
+">"+
+"> bar" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'foo'
+      '>': punctuation.md
+      '>': punctuation.md
+      ' '
+      'bar'
+    }
+  }
+}
+
+@195
+"foo"+
+"> bar" {
+  text.md {
+    'foo'
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'bar'
+    }
+  }
+}
+
+@196
+"> aaa"+
+"***"+
+"> bbb" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'aaa'
+    }
+    "***": hr.md
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'bbb'
+    }
+  }
+}
+
+@197
+"> bar"+
+"baz" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'bar'
+    }
+    "baz"
+  }
+}
+
+@198
+"> bar"+
+""+
+"baz" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'bar'
+    }
+    ""
+    "baz"
+  }
+}
+
+@199
+"> bar"+
+">"+
+"baz" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      'bar'
+      '>': punctuation.md
+    }
+    "baz"
+  }
+}
+
+@200
+"> > > foo"+
+"bar" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      quote.markup.md {
+        '>': punctuation.md
+        ' '
+        quote.markup.md {
+          '>': punctuation.md
+          ' '
+          'foo'
+        }
+      }
+    }
+    'bar'
+  }
+}
+
+@201
+">>> foo"+
+"> bar"+
+">>baz" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      quote.markup.md {
+        '>': punctuation.md
+        quote.markup.md {
+          '>': punctuation.md
+          ' '
+          'foo'
+        }
+      }
+      '>': punctuation.md
+      ' '
+      'bar'
+      '>': punctuation.md
+      quote.markup.md {
+        '>': punctuation.md
+        "baz"
+      }
+    }
+  }
+}
+
+@202
+">     code"+
+""+
+">    not code" {
+  text.md {
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      '    code'
+    }
+    ""
+    quote.markup.md {
+      '>': punctuation.md
+      ' '
+      '   not code'
     }
   }
 }
