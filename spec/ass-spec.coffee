@@ -1,5 +1,5 @@
 path = require 'path'
-ASS = require '../lib/ass'
+ASS = require 'lib-ass'
 fs = require 'fs'
 _ = require 'lodash'
 
