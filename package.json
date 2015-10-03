@@ -12,10 +12,7 @@
     "atom": "*"
   },
   "dependencies": {
-    "first-mate": "^5.0.0",
-    "glob": "^5.0.14",
     "lodash": "^3.10.1",
-    "season": "^5.3.0",
     "lib-ass": "0.0.2"
   },
   "coffeelintConfig": {
