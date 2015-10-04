@@ -1,4 +1,35 @@
-# http://spec.commonmark.org/0.22/#example-214
+# http://spec.commonmark.org/0.22/#list-items
+#
+# Skipped examples, because of irrelevancy:
+# 203-205, 207-210, 221-228, 233-239, 252-256, 263-264, 266, 269-271
+
+@206
+"- one"+
+""+
+"  two" {
+  text.md {
+    unordered.list.markup.md {
+      '-': punctuation.md
+      ' '
+      'one'
+    }
+    ""
+    "  two"
+  }
+}
+
+@211
+"-one"+
+""+
+"2.two" {
+  text.md {
+    "-one"
+    ""
+    "2.two"
+  }
+}
+
+@214
 '123456789. ok' {
   text.md {
     ordered.list.markup.md {
@@ -9,18 +40,592 @@
   }
 }
 
-# http://spec.commonmark.org/0.22/#example-215
+@215
 '1234567890. not ok' {
   '1234567890. not ok': text.md
 }
 
-# http://spec.commonmark.org/0.22/#example-216
+@216
 '0. ok' {
   text.md {
     ordered.list.markup.md {
       '0.': punctuation.md
       ' '
       'ok'
+    }
+  }
+}
+
+@217
+"003. ok" {
+  text.md {
+    ordered.list.markup.md {
+      '003.': punctuation.md
+      ' '
+      'ok'
+    }
+  }
+}
+
+@218
+"-1. not ok" {
+  "-1. not ok": text.md
+}
+
+@219
+"- foo"+
+""+
+"      bar" {
+  text.md {
+    unordered.list.markup.md {
+      '-': punctuation.md
+      ' '
+      'foo'
+    }
+    ""
+    "      bar"
+  }
+}
+
+@220
+"10.  foo"+
+""+
+"         bar" {
+  text.md {
+    ordered.list.markup.md {
+      '10.': punctuation.md
+      ' '
+      ' foo'
+    }
+    ""
+    "         bar"
+  }
+}
+
+@229
+"- foo"+
+"-"+
+"- bar" {
+  text.md {
+    unordered.list.markup.md {
+      '-': punctuation.md
+      ' '
+      'foo'
+    }
+    empty.unordered.list.markup.md {
+      '-': punctuation.md
+    }
+    unordered.list.markup.md {
+      '-': punctuation.md
+      ' '
+      'bar'
+    }
+  }
+}
+
+@230
+"- foo"+
+"-   "+
+"- bar" {
+  text.md {
+    unordered.list.markup.md {
+      '-': punctuation.md
+      ' '
+      'foo'
+      '-': punctuation.md
+      ' '
+      '  '
+      '-': punctuation.md
+      ' '
+      'bar'
+    }
+  }
+}
+
+@231
+"1. foo"+
+"2."+
+"3. bar" {
+  text.md {
+    ordered.list.markup.md {
+      '1.': punctuation.md
+      ' '
+      'foo'
+    }
+    empty.ordered.list.markup.md {
+      '2.': punctuation.md
+    }
+    ordered.list.markup.md {
+      '3.': punctuation.md
+      ' '
+      'bar'
+    }
+  }
+}
+
+@232
+"*" {
+  text.md {
+    empty.unordered.list.markup.md {
+      '*': punctuation.md
+    }
+  }
+}
+
+@240
+"> 1. > Blockquote"+
+"> continued here." {
+  text.md {
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      ordered.list.markup.md {
+        "1.": punctuation.md
+        " "
+        quote.markup.md {
+          ">": punctuation.md
+          " "
+          "Blockquote"
+        }
+      }
+      ">": punctuation.md
+      " "
+      "continued here."
+    }
+  }
+}
+
+@241
+"- foo"+
+"  - bar"+
+"    - baz" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "foo"
+      "  "
+      "-": punctuation.md
+      " "
+      "bar"
+      "    "
+      "-": punctuation.md
+      " "
+      "baz"
+    }
+  }
+}
+
+@242
+"- foo"+
+" - bar"+
+"  - baz" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "foo"
+      " "
+      "-": punctuation.md
+      " "
+      "bar"
+      "  "
+      "-": punctuation.md
+      " "
+      "baz"
+    }
+  }
+}
+
+@243
+"10) foo"+
+"    - bar" {
+  text.md {
+    ordered.list.markup.md {
+      "10)": punctuation.md
+      " "
+      "foo"
+    }
+    unordered.list.markup.md {
+      "    "
+      "-": punctuation.md
+      " "
+      "bar"
+    }
+  }
+}
+
+@244
+"10) foo"+
+"   - bar" {
+  text.md {
+    ordered.list.markup.md {
+      "10)": punctuation.md
+      " "
+      "foo"
+    }
+    unordered.list.markup.md {
+      "   "
+      "-": punctuation.md
+      " "
+      "bar"
+    }
+  }
+}
+
+@245
+"- - foo" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      unordered.list.markup.md {
+        "-": punctuation.md
+        " "
+        "foo"
+      }
+    }
+  }
+}
+
+@246
+"1. - 2. foo" {
+  text.md {
+    ordered.list.markup.md {
+      "1.": punctuation.md
+      " "
+      unordered.list.markup.md {
+        "-": punctuation.md
+        " "
+        ordered.list.markup.md {
+          "2.": punctuation.md
+          " "
+          "foo"
+        }
+      }
+    }
+  }
+}
+
+@247
+"- # Foo"+
+"- Bar"+
+"  ---"+
+"  baz" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      heading.markup.md {
+        heading-1.md {
+          "#": punctuation.md
+          " "
+          "Foo"
+        }
+      }
+      "-": punctuation.md
+      " "
+      "Bar"
+    }
+    "  ---": hr.md
+    "  baz"
+  }
+}
+
+@248
+"- foo"+
+"- bar"+
+"+ baz" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "foo"
+      "-": punctuation.md
+      " "
+      "bar"
+      "+": punctuation.md
+      " "
+      "baz"
+    }
+  }
+}
+
+@249
+"1. foo"+
+"2. bar"+
+"3) baz" {
+  text.md {
+    ordered.list.markup.md {
+      "1.": punctuation.md
+      " "
+      "foo"
+      "2.": punctuation.md
+      " "
+      "bar"
+      "3)": punctuation.md
+      " "
+      "baz"
+    }
+  }
+}
+
+@250
+"Foo"+
+"- bar"+
+"- baz" {
+  text.md {
+    "Foo"
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "bar"
+      "-": punctuation.md
+      " "
+      "baz"
+    }
+  }
+}
+
+@251
+"The number of windows in my house is"+
+"14.  The number of doors is 6." {
+  text.md {
+    "The number of windows in my house is"
+    ordered.list.markup.md {
+      "14.": punctuation.md
+      " "
+      " The number of doors is 6."
+    }
+  }
+}
+
+@257
+"- a"+
+" - b"+
+"  - c"+
+"   - d"+
+"    - e"+
+"   - f"+
+"  - g"+
+" - h"+
+"- i" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "a"
+      " "
+      "-": punctuation.md
+      " "
+      "b"
+      "  "
+      "-": punctuation.md
+      " "
+      "c"
+      "   "
+      "-": punctuation.md
+      " "
+      "d"
+      "    "
+      "-": punctuation.md
+      " "
+      "e"
+      "   "
+      "-": punctuation.md
+      " "
+      "f"
+      "  "
+      "-": punctuation.md
+      " "
+      "g"
+      " "
+      "-": punctuation.md
+      " "
+      "h"
+      "-": punctuation.md
+      " "
+      "i"
+    }
+  }
+}
+
+@258
+"1. a"+
+""+
+"  2. b"+
+""+
+"    3. c" {
+  text.md {
+    ordered.list.markup.md {
+      "1.": punctuation.md
+      " "
+      "a"
+    }
+    ""
+    ordered.list.markup.md {
+      "  "
+      "2.": punctuation.md
+      " "
+      "b"
+    }
+    ""
+    ordered.list.markup.md {
+      "    "
+      "3.": punctuation.md
+      " "
+      "c"
+    }
+  }
+}
+
+@259
+"- a"+
+"- b"+
+""+
+"- c" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "a"
+      "-": punctuation.md
+      " "
+      "b"
+    }
+    ""
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "c"
+    }
+  }
+}
+
+@260
+"* a"+
+"*"+
+""+
+"* c" {
+  text.md {
+    unordered.list.markup.md {
+      "*": punctuation.md
+      " "
+      "a"
+    }
+    empty.unordered.list.markup.md {
+      "*": punctuation.md
+    }
+    ""
+    unordered.list.markup.md {
+      "*": punctuation.md
+      " "
+      "c"
+    }
+  }
+}
+
+@261
+"- a"+
+"- b"+
+""+
+"  c"+
+"- d" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "a"
+      "-": punctuation.md
+      " "
+      "b"
+    }
+    ""
+    "  c"
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "d"
+    }
+  }
+}
+
+# TODO
+# @262
+# "- a"+
+# "- b"+
+# ""+
+# "  [ref]: /url"+
+# "- d" {
+#   text.md {
+#     unordered.list.markup.md {
+#       "-": punctuation.md
+#       " "
+#       "a"
+#       "-": punctuation.md
+#       " "
+#       "b"
+#     }
+#     ""
+#     "  [ref]: /url"
+#     unordered.list.markup.md {
+#       "-": punctuation.md
+#       " "
+#       "d"
+#     }
+#   }
+# }
+
+@265
+"* a"+
+"  > b"+
+"  >"+
+"* c" {
+  text.md {
+    unordered.list.markup.md {
+      "*": punctuation.md
+      " "
+      "a"
+    }
+    quote.markup.md {
+      "  "
+      ">": punctuation.md
+      " "
+      "b"
+      "  "
+      ">": punctuation.md
+    }
+    unordered.list.markup.md {
+      "*": punctuation.md
+      " "
+      "c"
+    }
+  }
+}
+
+@267
+"- a" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "a"
+    }
+  }
+}
+
+@268
+"- a"+
+"  - b" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "a"
+      "  "
+      "-": punctuation.md
+      " "
+      "b"
     }
   }
 }
