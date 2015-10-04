@@ -82,17 +82,12 @@ describe "Markdown grammar", ->
             return
         else
 
-          # NOTE
-          # A lot of `it`s are created, and I believe that that causes a lot of unnecessary loading/activating of a package/grammar, and thus a lot of extra time spent rendering.
           it "should pass test: #{fixture}/#{test.id}", ->
-
-            # console.log "- input:'#{test.input}'"
             i = 0
             tokens = grammar.tokenizeLines(test.input)
             for line, a in tokens
               for token, b in line
                 expectation = test.tokens[i]
-                # if expectation? and expectation.value?
                 if tokens[a][b].value.length
                   expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes
                 else
