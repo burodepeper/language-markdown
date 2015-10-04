@@ -1,0 +1,189 @@
+# http://spec.commonmark.org/0.22/#backslash-escapes
+
+@273
+"\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~" {
+  text.md {
+    escape.constant.md {
+      "\!"
+      "\""
+      "\#"
+      "\$"
+      "\%"
+      "\&"
+      "\'"
+      "\("
+      "\)"
+      "\*"
+      "\+"
+      "\,"
+      "\-"
+      "\."
+      "\/"
+      "\:"
+      "\;"
+      "\<"
+      "\="
+      "\>"
+      "\?"
+      "\@"
+      "\["
+      "\\"
+      "\]"
+      "\^"
+      "\_"
+      "\`"
+      "\{"
+      "\|"
+      "\}"
+      "\~"
+    }
+  }
+}
+
+# FIXME
+# @274
+# "\→\A\a\ \3\φ\«" {
+#   "\→\A\a\ \3\φ\«": text.md
+# }
+
+@275
+"\*not emphasized*"+
+"\<br/> not a tag"+
+"\[not a link](/foo)"+
+"\`not code`"+
+"1\. not a list"+
+"\* not a list"+
+"\# not a header"+
+"\[foo]: /url "not a reference"" {
+  text.md {
+    "\*": escape.constant.md
+    "not emphasized*"
+    "\<": escape.constant.md
+    "br/> not a tag"
+    "\[": escape.constant.md
+    "not a link](/foo)"
+    "\`": escape.constant.md
+    "not code`"
+    "1"
+    "\.": escape.constant.md
+    " not a list"
+    "\*": escape.constant.md
+    " not a list"
+    "\#": escape.constant.md
+    " not a header"
+    "\[": escape.constant.md
+    "foo]: /url "not a reference""
+  }
+}
+
+# FIXME emphasis not detected
+# @276
+# "\\*emphasis*" {
+#   text.md {
+#     "\\": escape.constant.md
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       "emphasis"
+#       "*": punctuation.md
+#     }
+#   }
+# }
+
+# TODO
+# @277
+# "foo\"+
+# "bar" {
+#
+# }
+
+@278
+"`` \[\` ``" {
+  text.md {
+    code.raw.markup.md {
+      "``": punctuation.md
+      " \[\` "
+      "``": punctuation.md
+    }
+  }
+}
+
+# NOTE no indented-code-blocks
+@279
+"    \[\]" {
+  text.md {
+    "    "
+    "\[": escape.constant.md
+    "\]": escape.constant.md
+  }
+}
+
+@280
+"~~~"+
+"\[\]"+
+"~~~" {
+  text.md {
+    fenced.code.md {
+      "~~~": punctuation.md
+      "\[\]"
+      "~~~": punctuation.md
+    }
+  }
+}
+
+# TODO
+# @281
+# "<http://example.com?find=\*>" {
+#
+# }
+
+# TODO
+# @282
+# "<a href="/bar\/)">" {
+#
+# }
+
+# FIXME escapes should work inside this
+# @283
+# "[foo](/bar\* "ti\*tle")" {
+#   text.md {
+#     link.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "foo"
+#         "]": punctuation.md
+#       }
+#       destination.link.md {
+#         "(": punctuation.md
+#         uri.underline.markup.md {
+#           "/bar"
+#           "\*": escape.constant.md
+#         }
+#         " "
+#         title.link.heading.markup.md {
+#           '"': punctuation.md
+#           "ti"
+#           "\*": escape.constant.md
+#           "tle"
+#           '"': punctuation.md
+#         }
+#         ")": punctuation.md
+#       }
+#     }
+#   }
+# }
+
+# TODO
+# @284
+# '[foo]'+
+# ''+
+# '[foo]: /bar\* "ti\*tle"' {
+#
+# }
+
+# TODO
+# @285
+# "``` foo\+bar"+
+# "foo"+
+# "```" {
+#
+# }

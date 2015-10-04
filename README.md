@@ -38,8 +38,8 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | Core (blocks) | Links reference definitions | - | - | - |
 | Core (blocks) | Block quotes | complete | 25 of 25 | Good |
 | Core (blocks) | Lists | complete | 33 of 34 | Good |
-| Core (inlines) | Backslash escapes | _beta_ | - | Good |
-| Core (inlines) | Entities | _beta_ | - | Good |
+| Core (inlines) | Backslash escapes | _alpha_ | 5 of 13 | Okay |
+| Core (inlines) | Entities | _alpha_ | 7 of 12 | Good |
 | Core (inlines) | Code spans | _beta_ | - | Good |
 | Core (inlines) | Emphasis | _alpha_ | 77 of 130 | Limited |
 | Core (inlines) | Links | _alpha_ | - | Okay |

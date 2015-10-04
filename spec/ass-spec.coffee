@@ -15,8 +15,8 @@ fixtures = [
   "blocks/lists"
   # INLINES
   "inlines/code" # WIP
-  # "inlines/escapes"
-  # "inlines/entities"
+  "inlines/escapes" # WIP
+  "inlines/entities" # WIP
   # "inlines/code-spans"
   "inlines/emphasis" # WIP
   # "inlines/links"
@@ -29,9 +29,9 @@ fixtures = [
   # "flavors/criticmark"
 ]
 
-# Cause this is what I'm working on...
+# Overwrite fixtures, cause this is what I'm working on...
 # fixtures = [
-#   "blocks/lists"
+#   "inlines/entities"
 # ]
 
 describe "Markdown grammar", ->

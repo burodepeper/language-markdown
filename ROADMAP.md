@@ -1,8 +1,8 @@
 # Roadmap to v0.1.0
 
 - [x] specs for `blocks/lists`
-- [ ] specs for `inlines/escapes`
-- [ ] specs for `inlines/entities`
+- [x] specs for `inlines/escapes`
+- [x] specs for `inlines/entities`
 - [ ] specs for `inlines/code-spans`
 - [ ] include grammar for raw html
 - [ ] grammar for `inlines/links`

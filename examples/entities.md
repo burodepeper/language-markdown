@@ -33,6 +33,7 @@
 ``` f&ouml;&ouml;
 foo
 ```
+```
 
 <!-- http://spec.commonmark.org/0.22/#example-296 -->
 `f&ouml;&ouml;`

@@ -1,0 +1,197 @@
+# http://spec.commonmark.org/0.22/#entities
+
+@286
+"&nbsp; &amp; &copy; &AElig; &Dcaron;"+
+"&frac34; &HilbertSpace; &DifferentialD;"+
+"&ClockwiseContourIntegral; &ngE;" {
+  text.md {
+    entity.constant.md {
+      "&": punctuation.md
+      "nbsp"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&": punctuation.md
+      "amp"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&": punctuation.md
+      "copy"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&": punctuation.md
+      "AElig"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&": punctuation.md
+      "Dcaron"
+      ";": punctuation.md
+    }
+    entity.constant.md {
+      "&": punctuation.md
+      "frac34"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&": punctuation.md
+      "HilbertSpace"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&": punctuation.md
+      "DifferentialD"
+      ";": punctuation.md
+    }
+    entity.constant.md {
+      "&": punctuation.md
+      "ClockwiseContourIntegral"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&": punctuation.md
+      "ngE"
+      ";": punctuation.md
+    }
+  }
+}
+
+@287
+"&#35; &#1234; &#992; &#98765432; &#0;" {
+  text.md {
+    entity.constant.md {
+      "&#": punctuation.md
+      "35"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&#": punctuation.md
+      "1234"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&#": punctuation.md
+      "992"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&#": punctuation.md
+      "98765432"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&#": punctuation.md
+      "0"
+      ";": punctuation.md
+    }
+  }
+}
+
+@288
+"&#X22; &#XD06; &#xcab;" {
+  text.md {
+    entity.constant.md {
+      "&#X": punctuation.md
+      "22"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&#X": punctuation.md
+      "D06"
+      ";": punctuation.md
+    }
+    " "
+    entity.constant.md {
+      "&#x": punctuation.md
+      "cab"
+      ";": punctuation.md
+    }
+  }
+}
+
+@289
+"&nbsp &x; &#; &#x; &ThisIsWayTooLongToBeAnEntityIsntIt; &hi?;" {
+  "&nbsp &x; &#; &#x; &ThisIsWayTooLongToBeAnEntityIsntIt; &hi?;": text.md
+}
+
+@290
+"&copy" {
+  "&copy": text.md
+}
+
+# FIXME
+# @291
+# "&MadeUpEntity;" {
+#   "&MadeUpEntity;": text.md
+# }
+
+# TODO
+# @292
+# "<a href="&ouml;&ouml;.html">" {
+#
+# }
+
+# TODO
+# @293
+# "[foo](/f&ouml;&ouml; "f&ouml;&ouml;")" {
+#
+# }
+
+# TODO
+# @294
+# '[foo]'+
+# ''+
+# '[foo]: /f&ouml;&ouml; "f&ouml;&ouml;"' {
+#
+# }
+
+# TODO
+# @295
+# "``` f&ouml;&ouml;"+
+# "foo"+
+# "```" {
+#
+# }
+
+@296
+"`f&ouml;&ouml;`" {
+  text.md {
+    code.raw.markup.md {
+      '`': punctuation.md
+      "f&ouml;&ouml;"
+      '`': punctuation.md
+    }
+  }
+}
+
+@297
+"    f&ouml;f&ouml;" {
+  text.md {
+    "    f"
+    entity.constant.md {
+      "&": punctuation.md
+      "ouml"
+      ";": punctuation.md
+    }
+    "f"
+    entity.constant.md {
+      "&": punctuation.md
+      "ouml"
+      ";": punctuation.md
+    }
+  }
+}
