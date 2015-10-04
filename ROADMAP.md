@@ -1,4 +1,4 @@
-# Roadmap to v0.1.0
+# Roadmap to v0.1
 
 - [x] specs for `blocks/lists`
 - [x] specs for `inlines/escapes`
@@ -10,8 +10,10 @@
 - [ ] grammar for `inlines/auto-links`
 - [ ] grammar for `inlines/line-breaks`
 - [ ] grammar for `blocks/links-references`
+- [ ] finish specs for `inlines/emphasis`
+- [ ] test with default themes
 
-# Roadmap to v0.2.0
+# Roadmap to v0.2
 
 - [ ] specs for `blocks/fenced-code`
 - [ ] specs for `inlines/links`
@@ -28,3 +30,8 @@
 - [ ] specs for `github/strikethrough`
 - [ ] specs for `github/tables`
 - [ ] specs for `criticmark/annotation`
+
+# Roadmap to v0.3
+
+- [ ] import additional specs from language-gfm
+- [ ] import issues from language-gfm
