@@ -4,7 +4,7 @@
 - [x] specs for `inlines/escapes`
 - [x] specs for `inlines/entities`
 - [x] specs for `inlines/code-spans`
-- [ ] include grammar for raw html
+- [x] include grammar for raw html
 - [ ] grammar for `inlines/links`
 - [ ] grammar for `inlines/images`
 - [ ] grammar for `inlines/auto-links`

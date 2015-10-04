@@ -540,32 +540,33 @@ repository:
 
   html:
     patterns: [
-      {
-        name: 'html.md'
-        begin: '(</?)(?=\\w)'
-        beginCaptures:
-          1: name: 'punctuation.md'
-        end: '(/?>)'
-        endCaptures:
-          1: name: 'punctuation.md'
-        patterns: [
-          {
-            name: 'attribute.md'
-            # match: '([a-zA-Z\\-]+)(=)(([\'"])(?:[a-zA-Z0-9\\-/ ]*)(\\4))'
-            match: '([a-zA-Z\\-]+)(=)(([\'"])(?:[^\\4]*)(\\4))'
-            captures:
-              1: name: 'name.md'
-              2: name: 'punctuation.md'
-              3: name: 'value.md'
-              4: name: 'punctuation.md'
-              5: name: 'punctuation.md'
-          }
-          {
-            name: 'tag.md'
-            match: '([a-zA-Z\\-]+)'
-          }
-        ]
-      }
+      { include: 'text.html.basic' }
+      # {
+      #   name: 'html.md'
+      #   begin: '(</?)(?=\\w)'
+      #   beginCaptures:
+      #     1: name: 'punctuation.md'
+      #   end: '(/?>)'
+      #   endCaptures:
+      #     1: name: 'punctuation.md'
+      #   patterns: [
+      #     {
+      #       name: 'attribute.md'
+      #       # match: '([a-zA-Z\\-]+)(=)(([\'"])(?:[a-zA-Z0-9\\-/ ]*)(\\4))'
+      #       match: '([a-zA-Z\\-]+)(=)(([\'"])(?:[^\\4]*)(\\4))'
+      #       captures:
+      #         1: name: 'name.md'
+      #         2: name: 'punctuation.md'
+      #         3: name: 'value.md'
+      #         4: name: 'punctuation.md'
+      #         5: name: 'punctuation.md'
+      #     }
+      #     {
+      #       name: 'tag.md'
+      #       match: '([a-zA-Z\\-]+)'
+      #     }
+      #   ]
+      # }
     ]
 
   #
