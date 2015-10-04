@@ -14,10 +14,9 @@ fixtures = [
   "blocks/quotes"
   "blocks/lists"
   # INLINES
-  "inlines/code" # WIP
+  "inlines/code-spans" # WIP
   "inlines/escapes" # WIP
   "inlines/entities" # WIP
-  # "inlines/code-spans"
   "inlines/emphasis" # WIP
   # "inlines/links"
   # "inlines/images"
