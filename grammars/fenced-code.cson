@@ -57,6 +57,20 @@ patterns: [
   }
 
   {
+    begin: '^\\s*([`~]{3})\\s*(ass)$'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    end: '^\\s*\\1$'
+    endCaptures:
+      0: name: 'punctuation.md'
+    name: 'fenced.code.md'
+    contentName: 'embedded.source.ass'
+    patterns: [
+      { include: 'source.ass' }
+    ]
+  }
+
+  {
     begin: '^\\s*([`~]{3})\\s*(css)$'
     beginCaptures:
       1: name: 'punctuation.md'
