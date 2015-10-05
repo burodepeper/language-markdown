@@ -572,6 +572,7 @@ repository:
   #
   # inline
   # LINKS
+  # LINK REFERENCES
   #
 
   links:
@@ -613,21 +614,36 @@ repository:
           4: name: 'punctuation.md'
       }
 
-    ]
-
-  'link-text':
-    patterns: [
+      # [foo][bar]
       {
-        name: 'text.link.string.md'
-        match: '^(\\[)(.*)(\\])$'
+        name: 'link.md'
+        match: '((?:\\[)(?:[^\\]]*)(?:\\]))((?:\\[)(?:[^\\]]*)(?:\\]))'
         captures:
-          1: name: 'punctuation.md'
-          2: patterns: [
-            { include: '#emphasis' }
-            { include: '#code' }
-          ]
-          3: name: 'punctuation.md'
+          1: patterns: [{ include: '#link-text' }]
+          2: patterns: [{ include: '#link-label' }]
       }
+
+      # [ref]: /uri "title"
+      {
+        name: 'reference.link.md'
+        match: '((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+) ((?:").*?(?:"))'
+        captures:
+          1: patterns: [{ include: '#link-label' }]
+          2: name: 'punctuation.md'
+          3: patterns: [{ include: '#link-destination' }]
+          4: patterns: [{ include: '#link-title' }]
+      }
+
+      # [ref]: /uri
+      {
+        name: 'reference.link.md'
+        match: '((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+)'
+        captures:
+          1: patterns: [{ include: '#link-label' }]
+          2: name: 'punctuation.md'
+          3: patterns: [{ include: '#link-destination' }]
+      }
+
     ]
 
   'link-destination':
@@ -648,6 +664,32 @@ repository:
       }
     ]
 
+  'link-label':
+    patterns: [
+      {
+        name: 'label.link.string.md'
+        match: '^(\\[)(.*)(\\])$'
+        captures:
+          1: name: 'punctuation.md'
+          3: name: 'punctuation.md'
+      }
+    ]
+
+  'link-text':
+    patterns: [
+      {
+        name: 'text.link.string.md'
+        match: '^(\\[)(.*)(\\])$'
+        captures:
+          1: name: 'punctuation.md'
+          2: patterns: [
+            { include: '#emphasis' }
+            { include: '#code' }
+          ]
+          3: name: 'punctuation.md'
+      }
+    ]
+
   'link-title':
     patterns: [
       {
@@ -665,13 +707,6 @@ repository:
           3: name: 'punctuation.md'
       }
     ]
-
-  #
-  # block
-  # LINK REFERENCES
-  #
-
-  # TODO
 
   #
   # block
