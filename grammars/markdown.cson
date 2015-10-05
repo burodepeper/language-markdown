@@ -576,63 +576,93 @@ repository:
 
   links:
     patterns: [
+
+      # [link](/uri "title")
       {
-        # (link)[</space uri>]
         name: 'link.md'
-        match: '((\\[)([^\\]]*?)(\\]))((\\()(<)(.*)(>)(\\)))'
+        match: '((?:\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+) ((?:["\'\\(]).*?(?:["\'\\)]))(\\))'
         captures:
-          1: name: 'text.link.string.md'
+          1: patterns: [{ include: '#link-text' }]
           2: name: 'punctuation.md'
-          3:
-            patterns: [
-              { include: '#inlines' }
-            ]
+          3: patterns: [{ include: '#link-destination' }]
+          4: patterns: [{ include: '#link-title' }]
+          5: name: 'punctuation.md'
+      }
+
+      # [link]()
+      # [link](/uri)
+      {
+        name: 'link.md'
+        match: '((?:\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]*)(\\))'
+        captures:
+          1: patterns: [{ include: '#link-text' }]
+          2: name: 'punctuation.md'
+          3: patterns: [{ include: '#link-destination' }]
           4: name: 'punctuation.md'
-          5: name: 'destination.link.md'
-          6: name: 'punctuation.md'
-          7: name: 'punctuation.md'
-          8: name: 'uri.underline.markup.md'
-          9: name: 'punctuation.md'
-          10: name: 'punctuation.md'
+      }
+
+      # NOTE Spaces in URI are allowed between < and >
+      # [link](<>)
+      {
+        name: 'link.md'
+        match: '((?:\\[)(?:[^\\]]*)(?:\\]))(\\()(<[^[:cntrl:]]*>)(\\))'
+        captures:
+          1: patterns: [{ include: '#link-text' }]
+          2: name: 'punctuation.md'
+          3: patterns: [{ include: '#link-destination' }]
+          4: name: 'punctuation.md'
+      }
+
+    ]
+
+  'link-text':
+    patterns: [
+      {
+        name: 'text.link.string.md'
+        match: '^(\\[)(.*)(\\])$'
+        captures:
+          1: name: 'punctuation.md'
+          2: patterns: [
+            { include: '#emphasis' }
+            { include: '#code' }
+          ]
+          3: name: 'punctuation.md'
+      }
+    ]
+
+  'link-destination':
+    patterns: [
+      {
+        name: 'destination.link.md'
+        match: '^(<)(.*)(>)$'
+        captures:
+          1: name: 'punctuation.md'
+          2: name: 'uri.underline.markup.md'
+          3: name: 'punctuation.md'
       }
       {
-        # (link)[/uri "title"] or (link)[/uri 'title']
-        #
-        # NOTE title in parentheses not supported
-        name: 'link.md'
-        match: '((\\[)([^\\]]*?)(\\]))((\\()([^ ]*) ((["\'])(?:.+)(\\9))(\\)))'
+        name: 'destination.link.md'
+        match: '(.+)'
         captures:
-          1: name: 'text.link.string.md'
-          2: name: 'punctuation.md'
-          3:
-            patterns: [
-              { include: '#inlines' }
-            ]
-          4: name: 'punctuation.md'
-          5: name: 'destination.link.md'
-          6: name: 'punctuation.md'
-          7: name: 'uri.underline.markup.md'
-          8: name: 'title.link.heading.markup.md'
-          9: name: 'punctuation.md'
-          10: name: 'punctuation.md'
-          11: name: 'punctuation.md'
+          1: name: 'uri.underline.markup.md'
+      }
+    ]
+
+  'link-title':
+    patterns: [
+      {
+        name: 'title.link.md'
+        match: '^([\'|"])(.*)(\\1)$'
+        captures:
+          1: name: 'punctuation.md'
+          3: name: 'punctuation.md'
       }
       {
-        # (link)[/uri]
-        name: 'link.md'
-        match: '((\\[)([^\\]]*?)(\\]))((\\()(?!<)([^ ]*)(\\)))'
+        name: 'title.link.md'
+        match: '^(\\()(.*)(\\))$'
         captures:
-          1: name: 'text.link.string.md'
-          2: name: 'punctuation.md'
-          3:
-            patterns: [
-              { include: '#inlines' }
-            ]
-          4: name: 'punctuation.md'
-          5: name: 'destination.link.md'
-          6: name: 'punctuation.md'
-          7: name: 'uri.underline.markup.md'
-          8: name: 'punctuation.md'
+          1: name: 'punctuation.md'
+          3: name: 'punctuation.md'
       }
     ]
 
