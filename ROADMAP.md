@@ -11,7 +11,11 @@
 - [ ] grammar for `inlines/line-breaks`
 - [ ] grammar for `blocks/links-references`
 - [ ] finish specs for `inlines/emphasis`
-- [ ] test with default themes
+- [ ] scope test with default themes
+  - [ ] Atom dark/light
+  - [ ] base16 tomorrow dark/light
+  - [ ] One dark/light
+  - [ ] solarized dark/light
 
 # Roadmap to v0.2
 
