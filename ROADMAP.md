@@ -10,7 +10,7 @@
 - [x] grammar for `inlines/auto-links`
 - [x] grammar for `inlines/line-breaks`
 - [x] grammar for `blocks/links-references`
-- [ ] finish specs for `inlines/emphasis`
+- [x] finish specs for `inlines/emphasis`
 - [ ] visual test of scopes with default themes
   - [ ] Atom dark/light
   - [ ] base16 tomorrow dark/light

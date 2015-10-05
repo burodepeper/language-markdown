@@ -1466,16 +1466,40 @@
 #   }
 # }
 
-# TODO
+# FIXME
 # @433
 # "*[bar*](/url)" {
-#
+#   text.md {
+#     "*"
+#     link.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "bar*"
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       "/url": destination.link.underline.markup.md
+#       ")": punctuation.md
+#     }
+#   }
 # }
 
-# TODO
+# FIXME
 # @434
 # "_foo [bar_](/url)" {
-#
+#   text.md {
+#     "_foo "
+#     link.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "bar_"
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       "/url": destination.link.underline.markup.md
+#       ")": punctuation.md
+#     }
+#   }
 # }
 
 # TODO
@@ -1496,16 +1520,38 @@
 #
 # }
 
-# TODO
+# FIXME
 # @438
 # "*a `*`*" {
-#
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "*": punctuation.md
+#       "a "
+#       code.raw.markup.md {
+#         "`": punctuation.md
+#         "*"
+#         "`": punctuation.md
+#       }
+#       "*": punctuation.md
+#     }
+#   }
 # }
 
-# TODO
+# FIXME
 # @439
 # "_a `_`_" {
-#
+#   text.md {
+#     emphasis.italic.markup.md {
+#       "_": punctuation.md
+#       "a "
+#       code.raw.markup.md {
+#         "`": punctuation.md
+#         "_"
+#         "`": punctuation.md
+#       }
+#       "_": punctuation.md
+#     }
+#   }
 # }
 
 # TODO
