@@ -1,21 +1,9 @@
-# Roadmap to v0.1
+## Notes on compatibility with default themes
 
-- [x] specs for `blocks/lists`
-- [x] specs for `inlines/escapes`
-- [x] specs for `inlines/entities`
-- [x] specs for `inlines/code-spans`
-- [x] include grammar for raw html
-- [x] grammar for `inlines/links`
-- [x] grammar for `inlines/images`
-- [x] grammar for `inlines/auto-links`
-- [x] grammar for `inlines/line-breaks`
-- [x] grammar for `blocks/links-references`
-- [x] finish specs for `inlines/emphasis`
-- [ ] visual test of scopes with default themes
-  - [ ] Atom dark/light
-  - [ ] base16 tomorrow dark/light
-  - [ ] One dark/light
-  - [ ] solarized dark/light
+- `.markup.heading` is not styled?
+- default text color differs
+- only style punctuation in `.markup.list`
+- `.markup.link` is not styled?
 
 # Roadmap to v0.2
 

@@ -34,19 +34,18 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | Core (blocks) | Horizontal rules | complete | 27 of 27 | Good |
 | Core (blocks) | (ATX) Headings | complete | 23 of 23 | Good |
 | Core (blocks) | Fenced code blocks | _beta_ | - | Okay |
-| Core (blocks) | HTML blocks | - | - | - |
-| Core (blocks) | Links reference definitions | - | - | - |
+| Core (blocks) | Links reference definitions | _beta_ | - | Okay |
 | Core (blocks) | Block quotes | complete | 25 of 25 | Good |
 | Core (blocks) | Lists | complete | 33 of 34 | Good |
 | Core (inlines) | Backslash escapes | _alpha_ | 5 of 13 | Okay |
 | Core (inlines) | Entities | _alpha_ | 7 of 12 | Good |
 | Core (inlines) | Code spans | _beta_ | 12 of 15 | Good |
 | Core (inlines) | Emphasis | _alpha_ | 77 of 130 | Limited |
-| Core (inlines) | Links | _alpha_ | - | Okay |
-| Core (inlines) | Images | - | - | - |
-| Core (inlines) | Auto-links | - | - | - |
+| Core (inlines) | Links | _beta_ | - | Okay |
+| Core (inlines) | Images | _beta_ | - | Okay |
+| Core (inlines) | Auto-links | _beta_ | - | Okay |
 | Core (inlines) | Raw HTML | included | - | Good |
-| Core (inlines) | Line-breaks | - | - | - |
+| Core (inlines) | Line-breaks | _alpha_ | - | Okay |
 | Github | Mentions | _beta_ | - | Good |
 | Github | Issues | _beta_ | - | Good |
 | Github | Emojis | - | - | - |

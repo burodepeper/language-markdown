@@ -500,7 +500,7 @@
     emphasis.italic.markup.md {
       "*": punctuation.md
       'foo '
-      link.md {
+      link.markup.md {
         text.link.string.md {
           "[": punctuation.md
           "bar"
@@ -508,7 +508,7 @@
         }
         "(": punctuation.md
           destination.link.md {
-            "/url": uri.underline.markup.md
+            "/url": uri.underline.link.md
           }
         ")": punctuation.md
       }
@@ -755,7 +755,7 @@
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       'foo '
-      link.md {
+      link.markup.md {
         text.link.string.md {
           "[": punctuation.md
           "bar"
@@ -763,7 +763,7 @@
         }
         "(": punctuation.md
         destination.link.md {
-          "/url": uri.underline.markup.md
+          "/url": uri.underline.link.md
         }
         ")": punctuation.md
       }
@@ -954,7 +954,7 @@
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       'foo '
-      link.md {
+      link.markup.md {
         text.link.string.md {
           "[": punctuation.md
           emphasis.italic.markup.md {
@@ -966,7 +966,7 @@
         }
         "(": punctuation.md
         destination.link.md {
-          "/url": uri.underline.markup.md
+          "/url": uri.underline.link.md
         }
         ")": punctuation.md
       }

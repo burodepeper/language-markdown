@@ -617,7 +617,7 @@ repository:
       # [link](/uri "title")
       # ![link](/uri "title")
       {
-        name: 'link.md'
+        name: 'link.markup.md'
         match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+) ((?:["\'\\(]).*?(?:["\'\\)]))(\\))'
         captures:
           1: patterns: [{ include: '#link-text' }]
@@ -632,7 +632,7 @@ repository:
       # ![link]()
       # ![link](/uri)
       {
-        name: 'link.md'
+        name: 'link.markup.md'
         match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]*)(\\))'
         captures:
           1: patterns: [{ include: '#link-text' }]
@@ -645,7 +645,7 @@ repository:
       # [link](<>)
       # ![link](<>)
       {
-        name: 'link.md'
+        name: 'link.markup.md'
         match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()(<[^[:cntrl:]]*>)(\\))'
         captures:
           1: patterns: [{ include: '#link-text' }]
@@ -657,7 +657,7 @@ repository:
       # [foo][bar]
       # ![foo][bar]
       {
-        name: 'link.md'
+        name: 'link.markup.md'
         match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))((?:\\[)(?:[^\\]]*)(?:\\]))'
         captures:
           1: patterns: [{ include: '#link-text' }]
@@ -666,7 +666,7 @@ repository:
 
       # ![image]
       {
-        name: 'link.md'
+        name: 'link.markup.md'
         match: '((?:!\\[)(?:[^\\]]*)(?:\\]))'
         captures:
           1: patterns: [{ include: '#link-text' }]
@@ -674,7 +674,7 @@ repository:
 
       # [ref]: /uri "title"
       {
-        name: 'reference.link.md'
+        name: 'reference.link.markup.md'
         match: '((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+) ((?:").*?(?:"))'
         captures:
           1: patterns: [{ include: '#link-label' }]
@@ -685,7 +685,7 @@ repository:
 
       # [ref]: /uri
       {
-        name: 'reference.link.md'
+        name: 'reference.link.markup.md'
         match: '((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+)'
         captures:
           1: patterns: [{ include: '#link-label' }]
@@ -695,7 +695,7 @@ repository:
 
       # auto-link: absolute uri
       {
-        name: 'auto.link.md'
+        name: 'auto.link.markup.md'
         match: '(?i:(<)((coap|doi|javascript|aaa|aaas|about|acap|cap|cid|crid|data|dav|dict|dns|file|ftp|geo|go|gopher|h323|http|https|iax|icap|im|imap|info|ipp|iris|iris.beep|iris.xpc|iris.xpcs|iris.lwz|ldap|mailto|mid|msrp|msrps|mtqp|mupdate|news|nfs|ni|nih|nntp|opaquelocktoken|pop|pres|rtsp|service|session|shttp|sieve|sip|sips|sms|snmp|soap.beep|soap.beeps|tag|tel|telnet|tftp|thismessage|tn3270|tip|tv|urn|vemmi|ws|wss|xcon|xcon-userid|xmlrpc.beep|xmlrpc.beeps|xmpp|z39.50r|z39.50s|adiumxtra|afp|afs|aim|apt|attachment|aw|beshare|bitcoin|bolo|callto|chrome|chrome-extension|com-eventbrite-attendee|content|cvs|dlna-playsingle|dlna-playcontainer|dtn|dvb|ed2k|facetime|feed|finger|fish|gg|git|gizmoproject|gtalk|hcp|icon|ipn|irc|irc6|ircs|itms|jar|jms|keyparc|lastfm|ldaps|magnet|maps|market|message|mms|ms-help|msnim|mumble|mvn|notes|oid|palm|paparazzi|platform|proxy|psyc|query|res|resource|rmi|rsync|rtmp|secondlife|sftp|sgn|skype|smb|soldat|spotify|ssh|steam|svn|teamspeak|things|udp|unreal|ut2004|ventrilo|view-source|webcal|wtai|wyciwyg|xfire|xri|ymsgr):(?:[^ [:cntrl:]<>]+))(>))'
         captures:
           1: name: 'punctuation.md'
@@ -706,7 +706,7 @@ repository:
 
       # auto-link: email
       {
-        name: 'email.auto.link.md'
+        name: 'email.auto.link.markup.md'
         match: '(<)(([a-zA-Z0-9\\.!#$%&\'\\*\\+/=?^_`{\\|}~-]+)(@)([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*))(>)'
         # match: '(<)([a-zA-Z0-9\\.*\\+_-]+)(@)(>)'
         captures:
@@ -727,14 +727,14 @@ repository:
         match: '^(<)(.*)(>)$'
         captures:
           1: name: 'punctuation.md'
-          2: name: 'uri.underline.markup.md'
+          2: name: 'uri.underline.link.md'
           3: name: 'punctuation.md'
       }
       {
         name: 'destination.link.md'
         match: '(.+)'
         captures:
-          1: name: 'uri.underline.markup.md'
+          1: name: 'uri.underline.link.md'
       }
     ]
 
