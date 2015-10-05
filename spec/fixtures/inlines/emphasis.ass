@@ -506,11 +506,11 @@
           "bar"
           "]": punctuation.md
         }
-        destination.link.md {
-          "(": punctuation.md
-          "/url": uri.underline.markup.md
-          ")": punctuation.md
-        }
+        "(": punctuation.md
+          destination.link.md {
+            "/url": uri.underline.markup.md
+          }
+        ")": punctuation.md
       }
       "*": punctuation.md
     }
@@ -761,11 +761,11 @@
           "bar"
           "]": punctuation.md
         }
+        "(": punctuation.md
         destination.link.md {
-          "(": punctuation.md
           "/url": uri.underline.markup.md
-          ")": punctuation.md
         }
+        ")": punctuation.md
       }
       "**": punctuation.md
     }
@@ -964,11 +964,11 @@
           }
           "]": punctuation.md
         }
+        "(": punctuation.md
         destination.link.md {
-          "(": punctuation.md
           "/url": uri.underline.markup.md
-          ")": punctuation.md
         }
+        ")": punctuation.md
       }
       "**": punctuation.md
     }

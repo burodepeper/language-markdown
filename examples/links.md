@@ -92,6 +92,7 @@ bar>)
 
 <!-- http://spec.commonmark.org/0.22/#example-469 -->
 [link *foo **bar** `#`*](/uri)
+[link _foo **bar** `#`_](/uri)
 
 # ----- BOOKMARK ----- #
 
