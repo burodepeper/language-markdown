@@ -8,7 +8,7 @@
 - [x] grammar for `inlines/links`
 - [x] grammar for `inlines/images`
 - [x] grammar for `inlines/auto-links`
-- [ ] grammar for `inlines/line-breaks`
+- [x] grammar for `inlines/line-breaks`
 - [x] grammar for `blocks/links-references`
 - [ ] finish specs for `inlines/emphasis`
 - [ ] visual test of scopes with default themes
@@ -34,8 +34,5 @@
 - [ ] specs for `github/strikethrough`
 - [ ] specs for `github/tables`
 - [ ] specs for `criticmark/annotation`
-
-# Roadmap to v0.3
-
 - [ ] import additional specs from language-gfm
-- [ ] import issues from language-gfm
+- [ ] import/check issues from language-gfm

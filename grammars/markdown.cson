@@ -35,6 +35,20 @@ repository:
       { include: '#code' }
       { include: '#entities' }
       { include: '#links' }
+      { include: '#html' }
+      { include: '#emphasis' }
+      { include: '#line-breaks' }
+      { include: '#github' }
+      { include: '#criticmark' }
+    ]
+
+  # NOTE line-breaks can't occur in blocks
+  'inlines-in-blocks':
+    patterns: [
+      { include: '#escapes' }
+      { include: '#code' }
+      { include: '#entities' }
+      { include: '#links' }
       # { include: '#html' }
       { include: '#emphasis' }
       { include: '#github' }
@@ -461,7 +475,7 @@ repository:
                 captures:
                   1: { name: 'punctuation.md' }
                   3: { name: 'punctuation.md' }
-                patterns: [{ include: '#inlines'}]
+                patterns: [{ include: '#inlines-in-blocks'}]
               }
               {
                 begin: '^(?: {0,3})(#{2})(?: +)'
@@ -470,7 +484,7 @@ repository:
                 captures:
                   1: { name: 'punctuation.md' }
                   3: { name: 'punctuation.md' }
-                patterns: [{ include: '#inlines'}]
+                patterns: [{ include: '#inlines-in-blocks'}]
               }
               {
                 begin: '^(?: {0,3})(#{3})(?: +)'
@@ -479,7 +493,7 @@ repository:
                 captures:
                   1: { name: 'punctuation.md' }
                   3: { name: 'punctuation.md' }
-                patterns: [{ include: '#inlines'}]
+                patterns: [{ include: '#inlines-in-blocks'}]
               }
               {
                 begin: '^(?: {0,3})(#{4})(?: +)'
@@ -488,7 +502,7 @@ repository:
                 captures:
                   1: { name: 'punctuation.md' }
                   3: { name: 'punctuation.md' }
-                patterns: [{ include: '#inlines'}]
+                patterns: [{ include: '#inlines-in-blocks'}]
               }
               {
                 begin: '^(?: {0,3})(#{5})(?: +)'
@@ -497,7 +511,7 @@ repository:
                 captures:
                   1: { name: 'punctuation.md' }
                   3: { name: 'punctuation.md' }
-                patterns: [{ include: '#inlines'}]
+                patterns: [{ include: '#inlines-in-blocks'}]
               }
               {
                 begin: '^(?: {0,3})(#{6})(?: +)'
@@ -506,7 +520,7 @@ repository:
                 captures:
                   1: { name: 'punctuation.md' }
                   3: { name: 'punctuation.md' }
-                patterns: [{ include: '#inlines'}]
+                patterns: [{ include: '#inlines-in-blocks'}]
               }
         ]
       }
@@ -567,6 +581,28 @@ repository:
       #     }
       #   ]
       # }
+    ]
+
+  #
+  # inline
+  # LINE BREAKS
+  #
+
+  'line-breaks':
+    patterns: [
+
+      # two trailing spaces
+      {
+        match: '(  )$'
+        name: 'line-break.constant.md'
+      }
+
+      # trailing backslash
+      {
+        match: '(\\\\)$'
+        name: 'line-break.constant.md'
+      }
+
     ]
 
   #
@@ -773,7 +809,7 @@ repository:
           2:
             patterns: [
               { include: '#blocks' }
-              { include: '#inlines' }
+              { include: '#inlines-in-blocks' }
             ]
       }
       {
@@ -785,7 +821,7 @@ repository:
           2:
             patterns: [
               { include: '#blocks' }
-              { include: '#inlines' }
+              { include: '#inlines-in-blocks' }
             ]
       }
       {
@@ -797,7 +833,7 @@ repository:
           2:
             patterns: [
               { include: '#blocks' }
-              { include: '#inlines' }
+              { include: '#inlines-in-blocks' }
             ]
       }
       {
@@ -809,7 +845,7 @@ repository:
           2:
             patterns: [
               { include: '#blocks' }
-              { include: '#inlines' }
+              { include: '#inlines-in-blocks' }
             ]
       }
       {
