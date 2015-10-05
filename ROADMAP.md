@@ -7,11 +7,11 @@
 - [x] include grammar for raw html
 - [x] grammar for `inlines/links`
 - [x] grammar for `inlines/images`
-- [ ] grammar for `inlines/auto-links`
+- [x] grammar for `inlines/auto-links`
 - [ ] grammar for `inlines/line-breaks`
 - [x] grammar for `blocks/links-references`
 - [ ] finish specs for `inlines/emphasis`
-- [ ] scope test with default themes
+- [ ] visual test of scopes with default themes
   - [ ] Atom dark/light
   - [ ] base16 tomorrow dark/light
   - [ ] One dark/light
