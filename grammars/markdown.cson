@@ -579,9 +579,10 @@ repository:
     patterns: [
 
       # [link](/uri "title")
+      # ![link](/uri "title")
       {
         name: 'link.md'
-        match: '((?:\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+) ((?:["\'\\(]).*?(?:["\'\\)]))(\\))'
+        match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+) ((?:["\'\\(]).*?(?:["\'\\)]))(\\))'
         captures:
           1: patterns: [{ include: '#link-text' }]
           2: name: 'punctuation.md'
@@ -592,9 +593,11 @@ repository:
 
       # [link]()
       # [link](/uri)
+      # ![link]()
+      # ![link](/uri)
       {
         name: 'link.md'
-        match: '((?:\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]*)(\\))'
+        match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]*)(\\))'
         captures:
           1: patterns: [{ include: '#link-text' }]
           2: name: 'punctuation.md'
@@ -604,9 +607,10 @@ repository:
 
       # NOTE Spaces in URI are allowed between < and >
       # [link](<>)
+      # ![link](<>)
       {
         name: 'link.md'
-        match: '((?:\\[)(?:[^\\]]*)(?:\\]))(\\()(<[^[:cntrl:]]*>)(\\))'
+        match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()(<[^[:cntrl:]]*>)(\\))'
         captures:
           1: patterns: [{ include: '#link-text' }]
           2: name: 'punctuation.md'
@@ -615,12 +619,21 @@ repository:
       }
 
       # [foo][bar]
+      # ![foo][bar]
       {
         name: 'link.md'
-        match: '((?:\\[)(?:[^\\]]*)(?:\\]))((?:\\[)(?:[^\\]]*)(?:\\]))'
+        match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))((?:\\[)(?:[^\\]]*)(?:\\]))'
         captures:
           1: patterns: [{ include: '#link-text' }]
           2: patterns: [{ include: '#link-label' }]
+      }
+
+      # ![image]
+      {
+        name: 'link.md'
+        match: '((?:!\\[)(?:[^\\]]*)(?:\\]))'
+        captures:
+          1: patterns: [{ include: '#link-text' }]
       }
 
       # [ref]: /uri "title"
@@ -677,6 +690,17 @@ repository:
 
   'link-text':
     patterns: [
+      {
+        name: 'image.link.string.md'
+        match: '^(!\\[)(.*)(\\])$'
+        captures:
+          1: name: 'punctuation.md'
+          2: patterns: [
+            { include: '#emphasis' }
+            { include: '#code' }
+          ]
+          3: name: 'punctuation.md'
+      }
       {
         name: 'text.link.string.md'
         match: '^(\\[)(.*)(\\])$'
