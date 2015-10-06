@@ -44,7 +44,7 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | Core (inlines) | Emphasis | _alpha_ | 77 of 130 | Limited |
 | Core (inlines) | Links | _beta_ | - | Okay |
 | Core (inlines) | Images | _beta_ | - | Okay |
-| Core (inlines) | Auto-links | _beta_ | - | Okay |
+| Core (inlines) | Autolinks | complete | 16 of 16 | Good |
 | Core (inlines) | Raw HTML | included | - | Good |
 | Core (inlines) | Line-breaks | _alpha_ | - | Okay |
 | Github | Mentions | _beta_ | - | Good |

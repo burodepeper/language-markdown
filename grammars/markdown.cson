@@ -609,6 +609,7 @@ repository:
   # inline
   # LINKS
   # LINK REFERENCES
+  # AUTOLINKS
   #
 
   links:
@@ -712,9 +713,9 @@ repository:
         captures:
           1: name: 'punctuation.md'
           2: name: 'uri.underline.markup.md'
-          3: name: 'before-at.md'
+          # 3: name: 'before-at.md'
           4: name: 'punctuation.md'
-          5: name: 'after-at.md'
+          # 5: name: 'after-at.md'
           6: name: 'punctuation.md'
       }
 

@@ -20,7 +20,7 @@ fixtures = [
   "inlines/emphasis" # WIP
   # "inlines/links"
   # "inlines/images"
-  # "inlines/autolinks"
+  "inlines/autolinks"
   # "inlines/html"
   # "inlines/line-breaks"
   # FLAVORS
@@ -30,7 +30,7 @@ fixtures = [
 
 # Overwrite fixtures, cause this is what I'm working on...
 # fixtures = [
-#   "blocks/fenced-code"
+#   "inlines/autolinks"
 # ]
 
 describe "Markdown grammar", ->
