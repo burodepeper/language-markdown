@@ -28,6 +28,12 @@ var test = {
 };
 ```
 
+```ass
+"I am awesome" {
+  "I am awesome": text.md
+}
+```
+
 ``` php
 function test ($var) {
   echo "string";

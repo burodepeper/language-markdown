@@ -1,0 +1,25 @@
+name: "Markdown: fenced code"
+scopeName: "fenced-code.md"
+
+list: [
+  {
+    pattern: 'ass'
+    name: 'embedded.source.ass'
+    include: 'source.ass'
+  }
+  {
+    pattern: 'javascript|js'
+    name: 'embedded.source.js'
+    include: 'source.js'
+  }
+  {
+    pattern: 'json'
+    name: 'embedded.source.json'
+    include: 'source.json'
+  }
+  {
+    pattern: 'markdown|mdown|md'
+    name: 'embedded.text.md'
+    include: 'text.md'
+  }
+]

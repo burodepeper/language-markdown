@@ -1,0 +1,77 @@
+version: "0.0.10"
+name: "Markdown: fenced code"
+scopeName: "fenced-code.md"
+patterns: [
+  {
+    begin: "^\\s*([`~]{3})\\s*(ass)$"
+    beginCaptures:
+      "1":
+        name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+    end: "^\\s*(\\1)$"
+    endCaptures:
+      "1":
+        name: "punctuation.md"
+    name: "fenced.code.md"
+    patterns: [
+      {
+        include: "source.ass"
+      }
+    ]
+  }
+  {
+    begin: "^\\s*([`~]{3})\\s*(javascript|js)$"
+    beginCaptures:
+      "1":
+        name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+    end: "^\\s*(\\1)$"
+    endCaptures:
+      "1":
+        name: "punctuation.md"
+    name: "fenced.code.md"
+    patterns: [
+      {
+        include: "source.js"
+      }
+    ]
+  }
+  {
+    begin: "^\\s*([`~]{3})\\s*(json)$"
+    beginCaptures:
+      "1":
+        name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+    end: "^\\s*(\\1)$"
+    endCaptures:
+      "1":
+        name: "punctuation.md"
+    name: "fenced.code.md"
+    patterns: [
+      {
+        include: "source.json"
+      }
+    ]
+  }
+  {
+    begin: "^\\s*([`~]{3})\\s*(markdown|mdown|md)$"
+    beginCaptures:
+      "1":
+        name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+    end: "^\\s*(\\1)$"
+    endCaptures:
+      "1":
+        name: "punctuation.md"
+    name: "fenced.code.md"
+    patterns: [
+      {
+        include: "text.md"
+      }
+    ]
+  }
+]

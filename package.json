@@ -6,6 +6,7 @@
   "bugs": {
     "url": "https://github.com/burodepeper/language-markdown/issues"
   },
+  "main": "lib/main.coffee",
   "license": "MIT",
   "private": true,
   "engines": {
