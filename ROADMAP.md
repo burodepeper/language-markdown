@@ -7,11 +7,12 @@
 
 # Roadmap to v0.2
 
-- [ ] specs for `blocks/fenced-code`: 77-103
+- [x] specs for `blocks/fenced-code`: 77-103
 - [ ] specs for `inlines/links`: 442-520
 - [ ] specs for `inlines/images`: 521-542
 - [ ] specs for `inlines/auto-links`: 543-558
 - [ ] specs for `blocks/links-references`: 146-168
+- [ ] specs for `blocks/html`: 104-145
 - [ ] specs for `inlines/html`: 559-579
 - [ ] specs for `inlines/line-breaks`: 580-594
 

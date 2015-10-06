@@ -1,0 +1,413 @@
+# http://spec.commonmark.org/0.22/#fenced-code-blocks
+
+@77
+"```"+
+"<"+
+" >"+
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "<"
+      " >"
+      "```": punctuation.md
+    }
+  }
+}
+
+@78
+"~~~"+
+"<"+
+" >"+
+"~~~" {
+  text.md {
+    fenced.code.md {
+      "~~~": punctuation.md
+      "<"
+      " >"
+      "~~~": punctuation.md
+    }
+  }
+}
+
+@79
+"```"+
+"aaa"+
+"~~~"+
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "aaa"
+      "~~~"
+      "```": punctuation.md
+    }
+  }
+}
+
+@80
+"~~~"+
+"aaa"+
+"```"+
+"~~~" {
+  text.md {
+    fenced.code.md {
+      "~~~": punctuation.md
+      "aaa"
+      "```"
+      "~~~": punctuation.md
+    }
+  }
+}
+
+@81
+"````"+
+"aaa"+
+"```"+
+"``````" {
+  text.md {
+    fenced.code.md {
+      "````": punctuation.md
+      "aaa"
+      "```"
+      "``````"
+    }
+  }
+}
+
+@82
+"~~~~"+
+"aaa"+
+"~~~"+
+"~~~~" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "aaa"
+      "~~~"
+      "~~~~": punctuation.md
+    }
+  }
+}
+
+@83
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+    }
+  }
+}
+
+@84
+"`````"+
+""+
+"```"+
+"aaa" {
+  text.md {
+    fenced.code.md {
+      "`````": punctuation.md
+      ""
+      "```"
+      "aaa"
+    }
+  }
+}
+
+# NOTE
+# The fenced-code-block is restricted/closed by the quote it is in
+@85
+"> ```"+
+"> aaa"+
+""+
+"bbb" {
+  text.md {
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      fenced.code.md {
+        '```': punctuation.md
+      }
+      ">": punctuation.md
+      " "
+      "aaa"
+    }
+    ""
+    "bbb"
+  }
+}
+
+@86
+"```"+
+""+
+"  "+
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      ""
+      "  "
+      "```": punctuation.md
+    }
+  }
+}
+
+@87
+"```"+
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "```": punctuation.md
+    }
+  }
+}
+
+@88
+" ```"+
+" aaa"+
+"aaa"+
+"```" {
+  text.md {
+    fenced.code.md {
+      " "
+      "```": punctuation.md
+      " aaa"
+      "aaa"
+      "```": punctuation.md
+    }
+  }
+}
+
+@89
+"  ```"+
+"aaa"+
+"  aaa"+
+"aaa"+
+"  ```" {
+  text.md {
+    fenced.code.md {
+      "  "
+      "```": punctuation.md
+      "aaa"
+      "  aaa"
+      "aaa"
+      "  "
+      "```": punctuation.md
+    }
+  }
+}
+
+@90
+"   ```"+
+"   aaa"+
+"    aaa"+
+"  aaa"+
+"   ```" {
+  text.md {
+    fenced.code.md {
+      "   "
+      "```": punctuation.md
+      "   aaa"
+      "    aaa"
+      "  aaa"
+      "   "
+      "```": punctuation.md
+    }
+  }
+}
+
+@91
+"    ```"+
+"    aaa"+
+"    ```" {
+  text.md {
+    "    ```"
+    "    aaa"
+    "    ```"
+  }
+}
+
+@92
+"```"+
+"aaa"+
+"  ```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "aaa"
+      "  "
+      "```": punctuation.md
+    }
+  }
+}
+
+@93
+"   ```"+
+"aaa"+
+"  ```" {
+  text.md {
+    fenced.code.md {
+      "   "
+      "```": punctuation.md
+      "aaa"
+      "  "
+      "```": punctuation.md
+    }
+  }
+}
+
+@94
+"```"+
+"aaa"+
+"    ```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "aaa"
+      "    ```"
+    }
+  }
+}
+
+# NOTE is not implemented according to spec, because our implementation requires begin and end-of-line characters for the markers, so a fenced-code-block can not be on a single line
+@95
+# "``` ```"+
+# "aaa" {
+#   text.md {
+#     fenced.code.md {
+#       "```": punctuation.md
+#       " "
+#       "```": punctuation.md
+#     }
+#     "aaa"
+#   }
+# }
+"``` ```"+
+"aaa" {
+  text.md {
+    "``` ```"
+    "aaa"
+  }
+}
+
+@96
+"~~~~~~"+
+"aaa"+
+"~~~ ~~" {
+  text.md {
+    fenced.code.md {
+      "~~~~~~": punctuation.md
+      "aaa"
+      "~~~ ~~"
+    }
+  }
+}
+
+@97
+"foo"+
+"```"+
+"bar"+
+"```"+
+"baz" {
+  text.md {
+    "foo"
+    fenced.code.md {
+      "```": punctuation.md
+      "bar"
+      "```": punctuation.md
+    }
+    "baz"
+  }
+}
+
+@98
+"foo"+
+"---"+
+"~~~"+
+"bar"+
+"~~~"+
+"# baz" {
+  text.md {
+    "foo"
+    "---": hr.md
+    fenced.code.md {
+      "~~~": punctuation.md
+      "bar"
+      "~~~": punctuation.md
+    }
+    heading.markup.md {
+      heading-1.md {
+        "#": punctuation.md
+        " "
+        "baz"
+      }
+    }
+  }
+}
+
+@99
+"```ruby"+
+"def foo(x)"+
+"  return 3"+
+"end"+
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "ruby"
+      embedded.source.ruby {
+        "def foo(x)"
+        "  return 3"
+        "end"
+      }
+      "```": punctuation.md
+    }
+  }
+}
+
+# TODO added to PR #19
+# @100
+# "~~~~    ruby startline=3 $%@#$"+
+# "def foo(x)"+
+# "  return 3"+
+# "end"+
+# "~~~~~~~" {
+#
+# }
+
+# FIXME
+# @101
+# "````;"+
+# "````" {
+#   text.md {
+#     fenced.code.md {
+#       "````": punctuation.md
+#       ";"
+#       "````": punctuation.md
+#     }
+#   }
+# }
+
+# NOTE see @95
+@102
+"``` aa ```"+
+"foo" {
+  text.md {
+    "``` aa ```"
+    "foo"
+  }
+}
+
+@103
+"```"+
+"``` aaa"+
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "``` aaa"
+      "```": punctuation.md
+    }
+  }
+}

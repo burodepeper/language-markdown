@@ -13,9 +13,10 @@ Unfortunately however, because of the way Atom handles/parses grammar, it is imp
 Following is list of areas that are limited in their implementation/support. A more detailed explanation can be found further down in this document.
 
 - **Setext headers** are not implemented.
-- **Indented code blocks** are implemented, but disabled.
+- **Indented code blocks** are implemented, but disabled in favor of fenced-code-blocks.
 - **Complex nested emphasis** is a female dog.
 - **Multiline inlines** have been partially disabled.
+- **Fenced code blocks** require matching opening and closing markers.
 
 If you experience any issue that is above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/) or contact us directly.
 
@@ -33,7 +34,7 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | ------ | ------- | ------- | ----- | ------- |
 | Core (blocks) | Horizontal rules | complete | 27 of 27 | Good |
 | Core (blocks) | (ATX) Headings | complete | 23 of 23 | Good |
-| Core (blocks) | Fenced code blocks | _beta_ | - | Okay |
+| Core (blocks) | Fenced code blocks | _beta_ | 25 of 27 | Okay |
 | Core (blocks) | Links reference definitions | _beta_ | - | Okay |
 | Core (blocks) | Block quotes | complete | 25 of 25 | Good |
 | Core (blocks) | Lists | complete | 33 of 34 | Good |
