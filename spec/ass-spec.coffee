@@ -34,6 +34,23 @@ fixtures = [
 # ]
 
 describe "Markdown grammar", ->
+  grammar = null
+
+  beforeEach ->
+    waitsForPromise ->
+      atom.packages.activatePackage('language-markdown')
+
+    runs ->
+      grammar = atom.grammars.grammarForScopeName('text.md')
+
+  # Test the grammar
+  it "parses the grammar", ->
+    expect(grammar).toBeDefined()
+    expect(grammar.scopeName).toBe "text.md"
+
+  it "tokenizes spaces", ->
+    {tokens} = grammar.tokenizeLine(" ")
+    expect(tokens[0]).toEqual value: " ", scopes: ["text.md"]
 
   for fixture in fixtures
 
@@ -47,6 +64,7 @@ describe "Markdown grammar", ->
       ass = null
       tests = 0
 
+    # Test the basics of the fixture
     it "should load #{absolutePath}", ->
       expect(ass).not.toEqual(null)
 
@@ -54,7 +72,6 @@ describe "Markdown grammar", ->
       expect(tests.length > 0).toEqual(true)
 
     # Everything seems to be okay, let's run the tests
-    # describe "Fixture: #{fixture}", ->
     describe fixture, ->
       grammar = null
 
@@ -64,14 +81,6 @@ describe "Markdown grammar", ->
 
         runs ->
           grammar = atom.grammars.grammarForScopeName('text.md')
-
-      it "parses the grammar", ->
-        expect(grammar).toBeDefined()
-        expect(grammar.scopeName).toBe "text.md"
-
-      it "tokenizes spaces", ->
-        {tokens} = grammar.tokenizeLine(" ")
-        expect(tokens[0]).toEqual value: " ", scopes: ["text.md"]
 
       # Cycle through the tests we've created in ASS
       # and we need to do it in a closure apparently
