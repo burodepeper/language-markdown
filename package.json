@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "lodash": "^3.10.1",
-    "lib-ass": "0.0.2"
+    "lib-ass": "0.0.5"
   },
   "coffeelintConfig": {
     "max_line_length": {
