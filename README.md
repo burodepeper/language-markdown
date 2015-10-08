@@ -42,7 +42,7 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | Core (inlines) | Entities | _alpha_ | 7 of 12 | Good |
 | Core (inlines) | Code spans | _beta_ | 12 of 15 | Good |
 | Core (inlines) | Emphasis | _alpha_ | 77 of 130 | Limited |
-| Core (inlines) | Links | _beta_ | - | Okay |
+| Core (inlines) | Links | _alpha_ | 26 of 43 | Okay |
 | Core (inlines) | Images | _beta_ | - | Okay |
 | Core (inlines) | Autolinks | complete | 16 of 16 | Good |
 | Core (inlines) | Raw HTML | included | - | Good |
@@ -56,7 +56,7 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 
 ##### Notes
 
-- The Github task-lists are implemented together with normal lists
+- The Github task-lists are implemented as an extention of unordered lists
 
 ##### References
 

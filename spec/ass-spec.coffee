@@ -14,11 +14,11 @@ fixtures = [
   "blocks/quotes"
   "blocks/lists"
   # INLINES
-  "inlines/code-spans" # WIP
-  "inlines/escapes" # WIP
-  "inlines/entities" # WIP
-  "inlines/emphasis" # WIP
-  # "inlines/links"
+  "inlines/code-spans"
+  "inlines/escapes"
+  "inlines/entities"
+  "inlines/emphasis"
+  "inlines/links" # WIP
   # "inlines/images"
   "inlines/autolinks"
   # "inlines/html"
@@ -30,7 +30,7 @@ fixtures = [
 
 # Overwrite fixtures, cause this is what I'm working on...
 # fixtures = [
-#   "inlines/autolinks"
+#   "inlines/links"
 # ]
 
 describe "Markdown grammar", ->

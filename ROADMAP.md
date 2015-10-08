@@ -1,11 +1,4 @@
-## Notes on compatibility with default themes
-
-- `.markup.heading` is not styled?
-- default text color differs
-- only style punctuation in `.markup.list`
-- `.markup.link` is not styled?
-
-# Roadmap to v0.2
+# Current work in progress towards _v0.1_
 
 - [x] specs for `blocks/fenced-code`: 77-103
 - [ ] specs for `inlines/links`: 442-520
@@ -25,5 +18,5 @@
 - [ ] specs for `github/tables`
 - [ ] specs for `criticmark/annotation`
 
-- [ ] import additional specs from language-gfm
-- [ ] import/check issues from language-gfm
+- [ ] import additional specs from `language-gfm`
+- [ ] import/check issues from `language-gfm`
