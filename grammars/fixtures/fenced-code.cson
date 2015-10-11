@@ -1,25 +1,54 @@
 name: "Markdown: fenced code"
 scopeName: "fenced-code.md"
 
+# Objects in list have the following structure:
+#
+# {
+#   pattern:
+#   include:
+#   contentName:
+# }
+#
+# 'pattern' is required; item is ignored if 'pattern' is missing
+# If 'include' is omitted, 'include' will become 'source.'+pattern
+# If 'contentName' is omitted, 'contentName' will become 'embedded.'+pattern
+
+# NOTE
+# Keep this list alphabetized
+
 list: [
-  {
-    pattern: 'ass'
-    name: 'embedded.source.ass'
-    include: 'source.ass'
-  }
-  {
-    pattern: 'javascript|js'
-    name: 'embedded.source.js'
-    include: 'source.js'
-  }
-  {
-    pattern: 'json'
-    name: 'embedded.source.json'
-    include: 'source.json'
-  }
-  {
-    pattern: 'markdown|mdown|md'
-    name: 'embedded.text.md'
-    include: 'text.md'
-  }
+  { pattern:'apib|apiblueprint', include:'text.html.markdown.source.gfm.apib' }
+  { pattern:'ass' }
+  { pattern:'coffee|coffeescript|coffee-script', include:'source.coffee' }
+  { pattern:'c' }
+  { pattern:'clojure' }
+  { pattern:'cpp|c\\+\\+', include:'source.cpp' }
+  { pattern:'cs|csharp', include:'source.cs' }
+  { pattern:'css' }
+  { pattern:'diff|patch|rej', include:'source.diff' }
+  { pattern:'elixir' }
+  { pattern:'elm' }
+  { pattern:'erlang' }
+  { pattern:'go|golang', include:'source.go' }
+  { pattern:'haskell' }
+  { pattern:'html', include:'text.html.basic' }
+  { pattern:'java' }
+  { pattern:'javascript|js', include:'source.js' }
+  { pattern:'json' }
+  { pattern:'julia' }
+  { pattern:'less' }
+  { pattern:'markdown|mdown|md', include:'text.md' }
+  { pattern:'mson', include:'text.html.markdown.source.gfm.mson' }
+  { pattern:'objc|objective-c', include:'source.objc' }
+  { pattern:'php' }
+  { pattern:'py|python', include:'source.python' }
+  { pattern:'r' }
+  { pattern:'ruby' }
+  { pattern:'rust|rs', include:'source.rust' }
+  { pattern:'scss' }
+  { pattern:'sh|bash', include:'source.shell' }
+  { pattern:'sql' }
+  { pattern:'swift' }
+  { pattern:'xml', include:'text.xml' }
+  { pattern:'yaml|yml', include:'source.yaml' }
 ]
