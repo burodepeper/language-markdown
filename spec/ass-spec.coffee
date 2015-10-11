@@ -19,7 +19,7 @@ fixtures = [
   "inlines/entities"
   "inlines/emphasis"
   "inlines/links" # WIP
-  # "inlines/images"
+  "inlines/images"
   "inlines/autolinks"
   # "inlines/html"
   # "inlines/line-breaks"
@@ -30,7 +30,7 @@ fixtures = [
 
 # Overwrite fixtures, cause this is what I'm working on...
 # fixtures = [
-#   "inlines/links"
+#   "inlines/images"
 # ]
 
 describe "Markdown grammar", ->
@@ -99,11 +99,11 @@ describe "Markdown grammar", ->
                 expectation = test.tokens[i]
                 if tokens[a][b].value.length
                   expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes
-                else
+                # else
                   # NOTE
-                  # A token.value without a length has been created, and is ignored.
-                  console.log "=== expectation[#{i}] for tokens[#{a}][#{b}] doesn't exist"
-                  console.log "--- value:'#{tokens[a][b].value}'"
-                  console.log "--- scopes:'#{tokens[a][b].scopes}'"
+                  # A token.value without a length has been created, and is ignored. I believe this happens when an optional capture in the grammar is empty. As far as I can tell, these can be ignored, because you would omit these (unexpected) tokens when writing manual tests.
+                  # console.log "=== expectation[#{i}] for tokens[#{a}][#{b}] doesn't exist"
+                  # console.log "--- value:'#{tokens[a][b].value}'"
+                  # console.log "--- scopes:'#{tokens[a][b].scopes}'"
                 i++
             return
