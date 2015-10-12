@@ -3,25 +3,25 @@ scopeName: 'fenced-code.md'
 
 patterns: [
 
-  {
-    begin: '^\\s{0,3}([`]{3,})$'
-    beginCaptures:
-      1: name: 'punctuation.md'
-    end: '^\\s{0,3}(\\1)$'
-    endCaptures:
-      1: name: 'punctuation.md'
-    name: 'fenced.code.md'
-  }
-
-  {
-    begin: '^\\s{0,3}([~]{3,})$'
-    beginCaptures:
-      1: name: 'punctuation.md'
-    end: '^\\s{0,3}(\\1)$'
-    endCaptures:
-      1: name: 'punctuation.md'
-    name: 'fenced.code.md'
-  }
+  # {
+  #   begin: '^\\s{0,3}([`]{3,})$'
+  #   beginCaptures:
+  #     1: name: 'punctuation.md'
+  #   end: '^\\s{0,3}(\\1)$'
+  #   endCaptures:
+  #     1: name: 'punctuation.md'
+  #   name: 'fenced.code.md'
+  # }
+  #
+  # {
+  #   begin: '^\\s{0,3}([~]{3,})$'
+  #   beginCaptures:
+  #     1: name: 'punctuation.md'
+  #   end: '^\\s{0,3}(\\1)$'
+  #   endCaptures:
+  #     1: name: 'punctuation.md'
+  #   name: 'fenced.code.md'
+  # }
 
   # Custom languages
 

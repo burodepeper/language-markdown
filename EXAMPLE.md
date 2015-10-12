@@ -22,13 +22,13 @@ This is just a quick sample document to give you an example of the Markdown elem
 - but I am **awesome**
 - nonetheless.
 
-``` javascript
+```javascript
 var test = {
   isComplete: true
 };
 ```
 
-``` php
+```php
 function test ($var) {
   echo "string";
 }

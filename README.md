@@ -1,4 +1,4 @@
-# Markdown grammar package [![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
+# Markdown grammar [![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
 
 The intention of this package is to provide an alternative to [language-gfm]() by providing an implementation that intends to follow the [CommonMark](http://www.commonmark.org/) specifications as reasonable as possible.
 
