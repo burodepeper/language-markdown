@@ -124,7 +124,9 @@
   text.md {
     fenced.code.md {
       "~~~": punctuation.md
-      "\[\]"
+      source.md {
+        "\[\]"
+      }
       "~~~": punctuation.md
     }
   }
