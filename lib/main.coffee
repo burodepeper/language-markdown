@@ -34,20 +34,45 @@ module.exports =
       name: @data.name
       scopeName: @data.scopeName
       patterns: @createPatternsFromData()
+      # repository:
+      #   'fenced-code-info-string':
+      #     patterns: [
+      #       {
+      #         match: '([^ ]+)(=)([^ ]+)'
+      #         name: 'info.fenced.code.md'
+      #         captures:
+      #           1: name: 'key.keyword.md'
+      #           2: name: 'punctuation.md'
+      #           3: name: 'value.string.md'
+      #       }
+      #     ]
+
     filepath = path.join(__dirname, @output)
     CSON.writeFileSync filepath, grammar, do ->
       # console.log "language-markdown: Grammar for fenced-blocks updated to #{@inputVersion}"
       console.log "language-markdown: Grammar for fenced-blocks updated via dev-mode"
-      
+
   createPatternsFromData: ->
     patterns = []
     for item in @data.list
       if item = @parseItem(item)
 
         pattern =
-          begin: '^\\s*([`~]{3})\\s*('+item.pattern+')$'
+          begin: '^\\s*([`~]{3})\\s*('+item.pattern+')(?=( |$))\\s*([^`]*)$'
           beginCaptures:
             1: name: 'punctuation.md'
+            2: name: 'language.constant.md'
+            4:
+              name: 'info.fenced.code.md'
+              patterns: [
+                {
+                  match: '([^ ]+)(=)([^ ]+)'
+                  captures:
+                    1: name: 'key.keyword.md'
+                    2: name: 'punctuation.md'
+                    3: name: 'value.string.md'
+                }
+              ]
           end: '^\\s*(\\1)$'
           endCaptures:
             1: name: 'punctuation.md'

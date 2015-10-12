@@ -2,10 +2,26 @@ name: "Markdown: fenced code"
 scopeName: "fenced-code.md"
 patterns: [
   {
-    begin: "^\\s*([`~]{3})\\s*(apib|apiblueprint)$"
+    begin: "^\\s*([`~]{3})\\s*(apib|apiblueprint)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -19,10 +35,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(ass)$"
+    begin: "^\\s*([`~]{3})\\s*(ass)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -36,10 +68,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(coffee|coffeescript|coffee-script)$"
+    begin: "^\\s*([`~]{3})\\s*(coffee|coffeescript|coffee-script)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -53,10 +101,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(c)$"
+    begin: "^\\s*([`~]{3})\\s*(c)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -70,10 +134,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(clojure)$"
+    begin: "^\\s*([`~]{3})\\s*(clojure)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -87,10 +167,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(cpp|c\\+\\+)$"
+    begin: "^\\s*([`~]{3})\\s*(cpp|c\\+\\+)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -104,10 +200,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(cs|csharp)$"
+    begin: "^\\s*([`~]{3})\\s*(cs|csharp)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -121,10 +233,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(css)$"
+    begin: "^\\s*([`~]{3})\\s*(css)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -138,10 +266,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(diff|patch|rej)$"
+    begin: "^\\s*([`~]{3})\\s*(diff|patch|rej)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -155,10 +299,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(elixir)$"
+    begin: "^\\s*([`~]{3})\\s*(elixir)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -172,10 +332,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(elm)$"
+    begin: "^\\s*([`~]{3})\\s*(elm)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -189,10 +365,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(erlang)$"
+    begin: "^\\s*([`~]{3})\\s*(erlang)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -206,10 +398,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(go|golang)$"
+    begin: "^\\s*([`~]{3})\\s*(go|golang)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -223,10 +431,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(haskell)$"
+    begin: "^\\s*([`~]{3})\\s*(haskell)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -240,10 +464,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(html)$"
+    begin: "^\\s*([`~]{3})\\s*(html)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -257,10 +497,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(java)$"
+    begin: "^\\s*([`~]{3})\\s*(java)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -274,10 +530,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(javascript|js)$"
+    begin: "^\\s*([`~]{3})\\s*(javascript|js)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -291,10 +563,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(json)$"
+    begin: "^\\s*([`~]{3})\\s*(json)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -308,10 +596,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(julia)$"
+    begin: "^\\s*([`~]{3})\\s*(julia)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -325,10 +629,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(less)$"
+    begin: "^\\s*([`~]{3})\\s*(less)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -342,10 +662,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(markdown|mdown|md)$"
+    begin: "^\\s*([`~]{3})\\s*(markdown|mdown|md)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -359,10 +695,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(mson)$"
+    begin: "^\\s*([`~]{3})\\s*(mson)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -376,10 +728,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(objc|objective-c)$"
+    begin: "^\\s*([`~]{3})\\s*(objc|objective-c)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -393,10 +761,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(php)$"
+    begin: "^\\s*([`~]{3})\\s*(php)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -410,10 +794,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(py|python)$"
+    begin: "^\\s*([`~]{3})\\s*(py|python)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -427,10 +827,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(r)$"
+    begin: "^\\s*([`~]{3})\\s*(r)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -444,10 +860,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(ruby)$"
+    begin: "^\\s*([`~]{3})\\s*(ruby)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -461,10 +893,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(rust|rs)$"
+    begin: "^\\s*([`~]{3})\\s*(rust|rs)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -478,10 +926,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(scss)$"
+    begin: "^\\s*([`~]{3})\\s*(scss)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -495,10 +959,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(sh|bash)$"
+    begin: "^\\s*([`~]{3})\\s*(sh|bash)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -512,10 +992,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(sql)$"
+    begin: "^\\s*([`~]{3})\\s*(sql)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -529,10 +1025,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(swift)$"
+    begin: "^\\s*([`~]{3})\\s*(swift)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -546,10 +1058,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(xml)$"
+    begin: "^\\s*([`~]{3})\\s*(xml)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":
@@ -563,10 +1091,26 @@ patterns: [
     ]
   }
   {
-    begin: "^\\s*([`~]{3})\\s*(yaml|yml)$"
+    begin: "^\\s*([`~]{3})\\s*(yaml|yml)(?=( |$))\\s*([^`]*)$"
     beginCaptures:
       "1":
         name: "punctuation.md"
+      "2":
+        name: "language.constant.md"
+      "4":
+        name: "info.fenced.code.md"
+        patterns: [
+          {
+            match: "([^ ]+)(=)([^ ]+)"
+            captures:
+              "1":
+                name: "key.keyword.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "value.string.md"
+          }
+        ]
     end: "^\\s*(\\1)$"
     endCaptures:
       "1":

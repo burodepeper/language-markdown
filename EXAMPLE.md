@@ -40,7 +40,20 @@ function test ($var) {
 }
 ```
 
+~~~ julia hide=true
+for i in 1:10
+  println(i)
+end
+~~~
+
+~~~    ruby startline=3 $%@#$
+def foo(x)
+  return 3
+end
+~~~
+
 ```
+# I am plain source
 var test = {
   isComplete: true
 };
