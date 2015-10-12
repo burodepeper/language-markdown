@@ -1,4 +1,3 @@
-version: "0.0.10"
 name: "Markdown: fenced code"
 scopeName: "fenced-code.md"
 patterns: [

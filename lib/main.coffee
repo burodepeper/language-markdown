@@ -8,15 +8,21 @@ module.exports =
   output: '../grammars/fenced-code.compiled.cson'
 
   activate: ->
-    unless @grammarIsUpToDate()
+    # HACK Always (and only) execute in dev-mode. This means that after updating the fixtures list, the package has to be reloaded at least once to regenerate the fenced-code-blocks grammar.
+    if atom.inDevMode()
       if @loadFixture()
         @updateGrammar()
 
-  grammarIsUpToDate: ->
-    filepath = path.join(__dirname, @output)
-    @outputVersion = CSON.readFileSync(filepath).version
-    @inputVersion = atom.packages.loadedPackages["language-markdown"].metadata.version
-    return @inputVersion >= @outputVersion
+    # unless @grammarIsUpToDate()
+    #   if @loadFixture()
+    #     @updateGrammar()
+
+  # NOTE disabled, because we temporarily don't rely on this method of updating
+  # grammarIsUpToDate: ->
+  #   filepath = path.join(__dirname, @output)
+  #   @outputVersion = CSON.readFileSync(filepath).version
+  #   @inputVersion = atom.packages.loadedPackages["language-markdown"].metadata.version
+  #   return @inputVersion >= @outputVersion
 
   loadFixture: ->
     filepath = path.join(__dirname, @input)
@@ -29,13 +35,15 @@ module.exports =
       scopeName: @data.scopeName
       patterns: @createPatternsFromData()
     filepath = path.join(__dirname, @output)
-    CSON.writeFileSync filepath, grammar, do =>
-      console.log "language-markdown: Grammar for fenced-blocks updated to #{@inputVersion}"
-
+    CSON.writeFileSync filepath, grammar, do ->
+      # console.log "language-markdown: Grammar for fenced-blocks updated to #{@inputVersion}"
+      console.log "language-markdown: Grammar for fenced-blocks updated via dev-mode"
+      
   createPatternsFromData: ->
     patterns = []
     for item in @data.list
       if item = @parseItem(item)
+
         pattern =
           begin: '^\\s*([`~]{3})\\s*('+item.pattern+')$'
           beginCaptures:
@@ -46,6 +54,7 @@ module.exports =
           name: 'fenced.code.md'
           contentName: item.contentName
           patterns: [{ include: item.include }]
+
         patterns.push pattern
     return patterns
 
