@@ -27,6 +27,7 @@ repository:
       { include: '#lists' }
       { include: '#quotes' }
       { include: '#tables' }
+      { include: '#fenced-code' }
       { include: 'fenced-code.md' }
     ]
   inlines:
@@ -373,6 +374,29 @@ repository:
       }
     ]
 
+  'fenced-code':
+    patterns: [
+      {
+        begin: '^\\s{0,3}([`]{3,})$'
+        beginCaptures:
+          1: name: 'punctuation.md'
+        end: '^\\s{0,3}(\\1)$'
+        endCaptures:
+          1: name: 'punctuation.md'
+        name: 'fenced.code.md'
+      }
+
+      {
+        begin: '^\\s{0,3}([~]{3,})$'
+        beginCaptures:
+          1: name: 'punctuation.md'
+        end: '^\\s{0,3}(\\1)$'
+        endCaptures:
+          1: name: 'punctuation.md'
+        name: 'fenced.code.md'
+      }
+    ]
+
   #
   # inline
   # GITHUB ELEMENTS
@@ -609,6 +633,7 @@ repository:
   # inline
   # LINKS
   # LINK REFERENCES
+  # AUTOLINKS
   #
 
   links:
@@ -712,9 +737,9 @@ repository:
         captures:
           1: name: 'punctuation.md'
           2: name: 'uri.underline.markup.md'
-          3: name: 'before-at.md'
+          # 3: name: 'before-at.md'
           4: name: 'punctuation.md'
-          5: name: 'after-at.md'
+          # 5: name: 'after-at.md'
           6: name: 'punctuation.md'
       }
 

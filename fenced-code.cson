@@ -3,16 +3,27 @@ scopeName: 'fenced-code.md'
 
 patterns: [
 
-  {
-    begin: '^\\s*([`~]{3})$'
-    beginCaptures:
-      0: name: 'punctuation.md'
-    end: '^\\s*\\1$'
-    endCaptures:
-      0: name: 'punctuation.md'
-    name: 'fenced.code.md'
-    # contentName: 'source.embedded'
-  }
+  # {
+  #   begin: '^\\s{0,3}([`]{3,})$'
+  #   beginCaptures:
+  #     1: name: 'punctuation.md'
+  #   end: '^\\s{0,3}(\\1)$'
+  #   endCaptures:
+  #     1: name: 'punctuation.md'
+  #   name: 'fenced.code.md'
+  # }
+  #
+  # {
+  #   begin: '^\\s{0,3}([~]{3,})$'
+  #   beginCaptures:
+  #     1: name: 'punctuation.md'
+  #   end: '^\\s{0,3}(\\1)$'
+  #   endCaptures:
+  #     1: name: 'punctuation.md'
+  #   name: 'fenced.code.md'
+  # }
+
+  # Custom languages
 
   {
     begin: '^\\s*([`~]{3})\\s*(javascript|js)$'

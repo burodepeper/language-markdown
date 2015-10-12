@@ -1,0 +1,769 @@
+# http://spec.commonmark.org/0.22/#links
+
+@442
+"[link](/uri "title")" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "/uri": uri.underline.link.md
+      }
+      ' '
+      title.link.md {
+        '"': punctuation.md
+        "title"
+        '"': punctuation.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@443
+"[link](/uri)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "/uri": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@444
+"[link]()" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      ")": punctuation.md
+    }
+  }
+}
+
+@445
+"[link](<>)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "<": punctuation.md
+        ">": punctuation.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@446
+# "[link](/my uri)": text.md
+"[link](/my uri)" {
+  "[link](/my uri)": text.md
+}
+
+@447
+"[link](</my uri>)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "<": punctuation.md
+        "/my uri": uri.underline.link.md
+        ">": punctuation.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@448
+"[link](foo"+
+"bar)" {
+  text.md {
+    "[link](foo"
+    "bar)"
+  }
+}
+
+@449
+"[link](<foo"+
+"bar>)" {
+  text.md {
+    "[link](<foo"
+    "bar>)"
+  }
+}
+
+@450
+"[link]((foo)and(bar))" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "(foo)and(bar)": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @451
+# "[link](foo(and(bar)))" {
+#   "[link](foo(and(bar)))": text.md
+# }
+
+# FIXME
+# @452
+# "[link](foo(and\(bar\)))" {
+#   text.md {
+#     link.markup.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "link"
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       destination.link.md {
+#         uri.underline.link.md {
+#           "foo(and"
+#           "\(": escape.constant.md
+#           "bar"
+#           "\)": escape.constant.md
+#           ")"
+#         }
+#       }
+#       ")": punctuation.md
+#     }
+#   }
+# }
+
+@453
+"[link](<foo(and(bar))>)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "<": punctuation.md
+        "foo(and(bar))": uri.underline.link.md
+        ">": punctuation.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+# FIXME
+# @454
+# "[link](foo\)\:)" {
+#   text.md {
+#     link.markup.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "link"
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       destination.link.md {
+#         uri.underline.link.md {
+#           "foo"
+#           "\)": escape.constant.md
+#           "\:": escape.constant.md
+#         }
+#       }
+#       ")": punctuation.md
+#     }
+#   }
+# }
+
+@455a
+"[link](#fragment)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "#fragment": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@455b
+"[link](http://example.com#fragment)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "http://example.com#fragment": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@455c
+"[link](http://example.com?foo=bar&baz#fragment)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "http://example.com?foo=bar&baz#fragment": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@456
+"[link](foo\bar)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "foo\bar": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@457
+"[link](foo%20b&auml;)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "foo%20b&auml;": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@458
+"[link]("title")" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        ""title"": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@459a
+"[link](/uri "title")" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "/uri": uri.underline.link.md
+      }
+      ' '
+      title.link.md {
+        '"': punctuation.md
+        "title"
+        '"': punctuation.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@459b
+"[link](/uri 'title')" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "/uri": uri.underline.link.md
+      }
+      ' '
+      title.link.md {
+        ''': punctuation.md
+        "title"
+        ''': punctuation.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@459b
+"[link](/uri (title))" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "/uri": uri.underline.link.md
+      }
+      ' '
+      title.link.md {
+        '(': punctuation.md
+        "title"
+        ')': punctuation.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+# 19 of 22
+
+# FIXME
+# @460
+# "[link](/url "title \"&quot;")" {
+#   text.md {
+#     link.markup.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "link"
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       destination.link.md {
+#         "/uri": uri.underline.link.md
+#       }
+#       ' '
+#       title.link.md {
+#         '"': punctuation.md
+#         "title "
+#         "\"": escape.constant.md
+#         "&quot;"
+#         '"': punctuation.md
+#       }
+#       ")": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @461
+# "[link](/url "title "and" title")" {
+#   "[link](/url "title "and" title")": text.md
+# }
+
+@462
+"[link](/url 'title "and" title')" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "/url": uri.underline.link.md
+      }
+      ' '
+      title.link.md {
+        ''': punctuation.md
+        "title "and" title"
+        ''': punctuation.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+# FIXME multiline not supported
+# @463
+# "[link](   /uri"+
+# "  "title"  )" {
+#
+# }
+
+@464
+# "[link] (/uri)": text.md
+"[link](/my uri)" {
+  "[link](/my uri)": text.md
+}
+
+# FIXME
+# @465
+# "[link [foo [bar]]](/uri)" {
+#   text.md {
+#     link.markup.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "link [foo [bar]]"
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       destination.link.md {
+#         "/url": uri.underline.link.md
+#       }
+#       ")": punctuation.md
+#     }
+#   }
+# }
+
+@466
+# "[link] bar](/uri)": text.md
+"[link] bar](/uri)" {
+  "[link] bar](/uri)": text.md
+}
+
+# FIXME
+# @467
+# "[link [bar](/uri)" {
+#   text.md {
+#     "[link "
+#     link.markup.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "bar"
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       destination.link.md {
+#         "/uri": uri.underline.link.md
+#       }
+#       ")": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @468
+# "[link \[bar](/uri)" {
+#   text.md {
+#     link.markup.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "link "
+#         "\b": escape.constant.md
+#         "ar"
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       destination.link.md {
+#         "/uri": uri.underline.link.md
+#       }
+#       ")": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @469a
+# "[link *foo **bar** `#`*](/uri)" {
+#   text.md {
+#     link.markup.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "link "
+#         emphasis.italic.markup.md {
+#           "*": punctuation.md
+#           "foo "
+#           strong.emphasis.bold.markup.md {
+#             "**": punctuation.md
+#             "bar"
+#             "**": punctuation.md
+#           }
+#           " "
+#           code.raw.markup.md {
+#             "`": punctuation.md
+#             "#"
+#             "`": punctuation.md
+#           }
+#           "*": punctuation.md
+#         }
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       destination.link.md {
+#         "/uri": uri.underline.link.md
+#       }
+#       ")": punctuation.md
+#     }
+#   }
+# }
+
+@469b
+"[link _foo **bar** `#`_](/uri)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link "
+        emphasis.italic.markup.md {
+          "_": punctuation.md
+          "foo "
+          strong.emphasis.bold.markup.md {
+            "**": punctuation.md
+            "bar"
+            "**": punctuation.md
+          }
+          " "
+          code.raw.markup.md {
+            "`": punctuation.md
+            "#"
+            "`": punctuation.md
+          }
+          "_": punctuation.md
+        }
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "/uri": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+# ---------- 23 of 33 ----------
+
+# FIXME
+# @470
+# "[![moon](moon.jpg)](/uri)" {
+#   text.md {
+#     link.markup.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#
+#         "![moon](moon.jpg)" {
+#           link.markup.md {
+#             image.link.string.md {
+#               "![": punctuation.md
+#               "moon"
+#               "]": punctuation.md
+#             }
+#             "(": punctuation.md
+#             destination.link.md {
+#               "/uri": uri.underline.link.md
+#             }
+#             ")": punctuation.md
+#           }
+#         }
+#
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       destination.link.md {
+#         "/uri": uri.underline.link.md
+#       }
+#       ")": punctuation.md
+#     }
+#   }
+# }
+
+# FIXME
+# @471
+# "[foo [bar](/uri)](/uri)" {
+#   text.md {
+#     "[foo "
+#
+#     "[bar](/uri)" {
+#       link.markup.md {
+#         text.link.string.md {
+#           "[": punctuation.md
+#           "bar"
+#           "]": punctuation.md
+#         }
+#         "(": punctuation.md
+#         destination.link.md {
+#           "/uri": uri.underline.link.md
+#         }
+#         ")": punctuation.md
+#       }
+#     }
+#
+#     "](/uri)"
+#   }
+# }
+
+# @472
+# "[foo *[bar [baz](/uri)](/uri)*](/uri)" {
+#   text.md {
+#     "[foo "
+#     "*[bar [baz](/uri)](/uri)*" {
+#       emphasis.italic.markup.md {
+#         "*": punctuation.md
+#         "[bar "
+#         "[baz](/uri)" {
+#           link.markup.md {
+#             text.link.string.md {
+#               "[": punctuation.md
+#               "baz"
+#               "]": punctuation.md
+#             }
+#             "("
+#             destination.link.md {
+#               "/uri": uri.underline.link.md
+#             }
+#             ")"
+#           }
+#         }
+#         "](/uri)"
+#         "*": punctuation.md
+#       }
+#     }
+#     "](/uri)"
+#   }
+# }
+
+# TODO
+# @473
+# "![[[foo](uri1)](uri2)](uri3)" {
+#
+# }
+
+# FIXME
+# @474
+# "*[foo*](/uri)" {
+#   text.md {
+#     "*"
+#     link.markup.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "foo*"
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       destination.link.md {
+#         "/uri": uri.underline.link.md
+#       }
+#       ")": punctuation.md
+#     }
+#   }
+# }
+
+@475
+"[foo *bar](baz*)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "foo *bar"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "baz*": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@476
+"*foo [bar* baz]" {
+  text.md {
+    emphasis.italic.markup.md {
+      "*": punctuation.md
+      "foo [bar"
+      "*": punctuation.md
+    }
+    " baz]"
+  }
+}
+
+# FIXME
+# @477
+# "[foo <bar attr="](baz)">": text.md
+
+# @478
+# "[foo`](/uri)`" {
+#   text.md {
+#     "[foo"
+#     "`](/uri)`" {
+#       code.raw.markup.md {
+#         "`": punctuation.md
+#         "](/uri)"
+#         "`": punctuation.md
+#       }
+#     }
+#   }
+# }
+
+# FIXME
+# @479
+# "[foo<http://example.com/?search=](uri)>": text.md

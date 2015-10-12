@@ -8,19 +8,19 @@ fixtures = [
   # BLOCKS
   "blocks/hr"
   "blocks/headings"
-  # "blocks/fenced-code"
+  "blocks/fenced-code"
   # "blocks/html-blocks"
   # "blocks/link-references"
   "blocks/quotes"
   "blocks/lists"
   # INLINES
-  "inlines/code-spans" # WIP
-  "inlines/escapes" # WIP
-  "inlines/entities" # WIP
-  "inlines/emphasis" # WIP
-  # "inlines/links"
-  # "inlines/images"
-  # "inlines/autolinks"
+  "inlines/code-spans"
+  "inlines/escapes"
+  "inlines/entities"
+  "inlines/emphasis"
+  "inlines/links" # WIP
+  "inlines/images"
+  "inlines/autolinks"
   # "inlines/html"
   # "inlines/line-breaks"
   # FLAVORS
@@ -30,10 +30,27 @@ fixtures = [
 
 # Overwrite fixtures, cause this is what I'm working on...
 # fixtures = [
-#   "inlines/entities"
+#   "inlines/images"
 # ]
 
 describe "Markdown grammar", ->
+  grammar = null
+
+  beforeEach ->
+    waitsForPromise ->
+      atom.packages.activatePackage('language-markdown')
+
+    runs ->
+      grammar = atom.grammars.grammarForScopeName('text.md')
+
+  # Test the grammar
+  it "parses the grammar", ->
+    expect(grammar).toBeDefined()
+    expect(grammar.scopeName).toBe "text.md"
+
+  it "tokenizes spaces", ->
+    {tokens} = grammar.tokenizeLine(" ")
+    expect(tokens[0]).toEqual value: " ", scopes: ["text.md"]
 
   for fixture in fixtures
 
@@ -47,6 +64,7 @@ describe "Markdown grammar", ->
       ass = null
       tests = 0
 
+    # Test the basics of the fixture
     it "should load #{absolutePath}", ->
       expect(ass).not.toEqual(null)
 
@@ -54,7 +72,6 @@ describe "Markdown grammar", ->
       expect(tests.length > 0).toEqual(true)
 
     # Everything seems to be okay, let's run the tests
-    # describe "Fixture: #{fixture}", ->
     describe fixture, ->
       grammar = null
 
@@ -64,14 +81,6 @@ describe "Markdown grammar", ->
 
         runs ->
           grammar = atom.grammars.grammarForScopeName('text.md')
-
-      it "parses the grammar", ->
-        expect(grammar).toBeDefined()
-        expect(grammar.scopeName).toBe "text.md"
-
-      it "tokenizes spaces", ->
-        {tokens} = grammar.tokenizeLine(" ")
-        expect(tokens[0]).toEqual value: " ", scopes: ["text.md"]
 
       # Cycle through the tests we've created in ASS
       # and we need to do it in a closure apparently
@@ -90,7 +99,7 @@ describe "Markdown grammar", ->
                 expectation = test.tokens[i]
                 if tokens[a][b].value.length
                   expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes
-                else
+                # else
                   # NOTE
                   # A token.value without a length has been created, and is ignored. I believe this happens when an optional capture in the grammar is empty. As far as I can tell, these can be ignored, because you would omit these (unexpected) tokens when writing manual tests.
                   # console.log "=== expectation[#{i}] for tokens[#{a}][#{b}] doesn't exist"

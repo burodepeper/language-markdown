@@ -1,0 +1,150 @@
+# http://spec.commonmark.org/0.22/#autolinks
+
+@543
+"<http://foo.bar.baz>" {
+  text.md {
+    auto.link.markup.md {
+      "<": punctuation.md
+      uri.underline.markup.md {
+        "http": scheme.md
+        "://foo.bar.baz"
+      }
+      ">": punctuation.md
+    }
+  }
+}
+
+@544
+"<http://foo.bar.baz/test?q=hello&id=22&boolean>" {
+  text.md {
+    auto.link.markup.md {
+      "<": punctuation.md
+      uri.underline.markup.md {
+        "http": scheme.md
+        "://foo.bar.baz/test?q=hello&id=22&boolean"
+      }
+      ">": punctuation.md
+    }
+  }
+}
+
+@545
+"<irc://foo.bar:2233/baz>" {
+  text.md {
+    auto.link.markup.md {
+      "<": punctuation.md
+      uri.underline.markup.md {
+        "irc": scheme.md
+        "://foo.bar:2233/baz"
+      }
+      ">": punctuation.md
+    }
+  }
+}
+
+@546
+"<MAILTO:FOO@BAR.BAZ>" {
+  text.md {
+    auto.link.markup.md {
+      "<": punctuation.md
+      uri.underline.markup.md {
+        "MAILTO": scheme.md
+        ":FOO@BAR.BAZ"
+      }
+      ">": punctuation.md
+    }
+  }
+}
+
+@547
+"<http://foo.bar/baz bim>" {
+  "<http://foo.bar/baz bim>": text.md
+}
+
+@548
+"<http://example.com/\[\>" {
+  text.md {
+    auto.link.markup.md {
+      "<": punctuation.md
+      uri.underline.markup.md {
+        "http": scheme.md
+        "://example.com/\[\"
+      }
+      ">": punctuation.md
+    }
+  }
+}
+
+@549
+"<foo@bar.example.com>" {
+  text.md {
+    email.auto.link.markup.md {
+      "<": punctuation.md
+      uri.underline.markup.md {
+        "foo"
+        "@": punctuation.md
+        "bar.example.com"
+      }
+      ">": punctuation.md
+    }
+  }
+}
+
+@550
+"<foo+special@Bar.baz-bar0.com>" {
+  text.md {
+    email.auto.link.markup.md {
+      "<": punctuation.md
+      uri.underline.markup.md {
+        "foo+special"
+        "@": punctuation.md
+        "Bar.baz-bar0.com"
+      }
+      ">": punctuation.md
+    }
+  }
+}
+
+@551
+"<foo\+@bar.example.com>" {
+  text.md {
+    "<foo"
+    "\+": escape.constant.md
+    "@bar.example.com>"
+  }
+}
+
+@552
+"<>" {
+  "<>": text.md
+}
+
+@553
+"<heck://bing.bong>" {
+  "<heck://bing.bong>": text.md
+}
+
+@554
+"< http://foo.bar >" {
+  "< http://foo.bar >": text.md
+}
+
+@555
+"<foo.bar.baz>" {
+  "<foo.bar.baz>": text.md
+}
+
+@556
+"<localhost:5001/foo>" {
+  "<localhost:5001/foo>": text.md
+}
+
+@557
+"http://example.com" {
+  "http://example.com": text.md
+}
+
+@558
+"foo@bar.example.com" {
+  "foo@bar.example.com": text.md
+}

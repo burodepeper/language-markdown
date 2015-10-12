@@ -1,0 +1,83 @@
+@521
+"![foo](/url "title")" {
+  text.md {
+    link.markup.md {
+
+      "![foo]" {
+        image.link.string.md {
+          "![": punctuation.md
+          "foo"
+          "]": punctuation.md
+        }
+      }
+
+      "(/url "title")" {
+        "(": punctuation.md
+        destination.link.md {
+          "/url": uri.underline.link.md
+        }
+        " "
+
+        "title" {
+          title.link.md {
+            """: punctuation.md
+            "title"
+            """: punctuation.md
+          }
+        }
+
+        ")": punctuation.md
+      }
+
+    }
+  }
+}
+
+# FIXME
+# @522
+# "![foo *bar*]"+
+# ""+
+# "[foo *bar*]: train.jpg "train & tracks"" {
+#   text.md {
+#
+#     "![foo *bar*]" {
+#       link.markup.md {
+#         image.link.string.md {
+#           "![": punctuation.md
+#           "foo *bar*"
+#           "]": punctuation.md
+#         }
+#       }
+#     }
+#
+#     ""
+#
+#     "[foo *bar*]: train.jpg "train & tracks"" {
+#       reference.link.markup.md {
+#         "[foo *bar*]" {
+#           text.link.string.md {
+#             "[": punctuation.md
+#             "foo *bar*"
+#             "]": punctuation.md
+#           }
+#         }
+#         ":": punctuation.md
+#         " "
+#         "train.jpg" {
+#           destination.link.md {
+#             "train.jpg": uri.underline.link.md
+#           }
+#         }
+#         " "
+#         ""train & tracks"" {
+#           title.link.md {
+#             """: punctuation.md
+#             "train & tracks"
+#             """: punctuation.md
+#           }
+#         }
+#       }
+#     }
+#
+#   }
+# }

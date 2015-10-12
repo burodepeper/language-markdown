@@ -1,4 +1,4 @@
-# Markdown grammar package [![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
+# Markdown grammar [![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
 
 The intention of this package is to provide an alternative to [language-gfm]() by providing an implementation that intends to follow the [CommonMark](http://www.commonmark.org/) specifications as reasonable as possible.
 
@@ -13,9 +13,10 @@ Unfortunately however, because of the way Atom handles/parses grammar, it is imp
 Following is list of areas that are limited in their implementation/support. A more detailed explanation can be found further down in this document.
 
 - **Setext headers** are not implemented.
-- **Indented code blocks** are implemented, but disabled.
+- **Indented code blocks** are implemented, but disabled in favor of fenced-code-blocks.
 - **Complex nested emphasis** is a female dog.
 - **Multiline inlines** have been partially disabled.
+- **Fenced code blocks** require matching opening and closing markers.
 
 If you experience any issue that is above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/) or contact us directly.
 
@@ -33,7 +34,7 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | ------ | ------- | ------- | ----- | ------- |
 | Core (blocks) | Horizontal rules | complete | 27 of 27 | Good |
 | Core (blocks) | (ATX) Headings | complete | 23 of 23 | Good |
-| Core (blocks) | Fenced code blocks | _beta_ | - | Okay |
+| Core (blocks) | Fenced code blocks | _beta_ | 25 of 27 | Okay |
 | Core (blocks) | Links reference definitions | _beta_ | - | Okay |
 | Core (blocks) | Block quotes | complete | 25 of 25 | Good |
 | Core (blocks) | Lists | complete | 33 of 34 | Good |
@@ -41,9 +42,9 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | Core (inlines) | Entities | _alpha_ | 7 of 12 | Good |
 | Core (inlines) | Code spans | _beta_ | 12 of 15 | Good |
 | Core (inlines) | Emphasis | _alpha_ | 77 of 130 | Limited |
-| Core (inlines) | Links | _beta_ | - | Okay |
+| Core (inlines) | Links | _alpha_ | 26 of 43 | Okay |
 | Core (inlines) | Images | _beta_ | - | Okay |
-| Core (inlines) | Auto-links | _beta_ | - | Okay |
+| Core (inlines) | Autolinks | complete | 16 of 16 | Good |
 | Core (inlines) | Raw HTML | included | - | Good |
 | Core (inlines) | Line-breaks | _alpha_ | - | Okay |
 | Github | Mentions | _beta_ | - | Good |
@@ -55,7 +56,7 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 
 ##### Notes
 
-- The Github task-lists are implemented together with normal lists
+- The Github task-lists are implemented as an extention of unordered lists
 
 ##### References
 
