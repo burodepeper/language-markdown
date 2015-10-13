@@ -22,7 +22,7 @@ if atom.inDevMode()
     # and writes {grammar} to {output}.
     compileFencedCodeGrammar: ->
       input = '../grammars/fixtures/fenced-code.cson'
-      output = '../grammars/fenced-code.compiled.cson'
+      output = '../grammars/fenced-code.compiled.json'
       filepath = path.join(__dirname, input)
       data = CSON.readFileSync(filepath)
 
@@ -69,9 +69,11 @@ if atom.inDevMode()
       # NOTE
       # Write directly to JSON, because JSON requires double quotes around strings.
       # In our case, various #{} patterns in CSON would be interpreted, and as such cause errors when loading the package. This seems to circumvent that.
-      json = JSON.stringify(grammar)
+      # json = JSON.stringify(grammar)
+      # filepath = path.join(__dirname, output)
+      # fs.writeFileSync filepath, json
       filepath = path.join(__dirname, output)
-      fs.writeFileSync filepath, json
+      CSON.writeFileSync filepath, grammar
 
     # Transform an {item} into a {pattern} object,
     # and adds it to the {patterns} array.
