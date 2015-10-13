@@ -2,7 +2,9 @@
 # Only execute this code in dev-mode; no client-side compiling.
 # This means that after updating any of the grammar fixtures, the package
 # has to be reloaded in dev-mode to compile the grammar files.
-if atom.inDevMode()
+
+# if atom.inDevMode()
+if false
 
   CSON = require 'season'
   {Directory} = require 'pathwatcher'
@@ -22,7 +24,7 @@ if atom.inDevMode()
     # and writes {grammar} to {output}.
     compileFencedCodeGrammar: ->
       input = '../grammars/fixtures/fenced-code.cson'
-      output = '../grammars/fenced-code.compiled.json'
+      output = '../grammars/fenced-code.compiled.cson'
       filepath = path.join(__dirname, input)
       data = CSON.readFileSync(filepath)
 
@@ -53,7 +55,7 @@ if atom.inDevMode()
     # and finally writes {grammar} to {output}
     combineGrammarRepositories: ->
       input = '../grammars/repositories/markdown.cson'
-      output = '../grammars/markdown.compiled.json'
+      output = '../grammars/markdown.compiled.cson'
       repositoryDirectories = ['blocks', 'flavors', 'inlines']
       filepath = path.join(__dirname, input)
       grammar = CSON.readFileSync(filepath)
@@ -66,12 +68,10 @@ if atom.inDevMode()
           if key and patterns
             grammar.repository[key] = patterns
 
-      # NOTE
-      # Write directly to JSON, because JSON requires double quotes around strings.
-      # In our case, various #{} patterns in CSON would be interpreted, and as such cause errors when loading the package. This seems to circumvent that.
-      # json = JSON.stringify(grammar)
-      # filepath = path.join(__dirname, output)
-      # fs.writeFileSync filepath, json
+      # FIXME
+      # Either
+      # 1) grammar must be written as JSON (change {output} to .json), but that isn't interpreted;
+      # 2) grammar must be written as CSON, but without double quotes string
       filepath = path.join(__dirname, output)
       CSON.writeFileSync filepath, grammar
 

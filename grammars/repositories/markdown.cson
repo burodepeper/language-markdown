@@ -54,8 +54,10 @@ repository:
       { include: '#criticmark' }
     ]
 
-  html:
-    patterns: [{ include: 'text.html.basic' }]
+  # html:
+  #   patterns: [
+  #     { include: 'text.html.basic' }
+  #   ]
 
   'link-destination':
     patterns: [
