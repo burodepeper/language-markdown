@@ -1,12 +1,14 @@
-name: "Markdown: fenced code"
+# NOTE
+# No 'name' attribute prevents this Grammar file from showing up in the Grammar selection
+
 scopeName: "fenced-code.md"
 
-# Objects in list have the following structure:
+# Objects in {list} have the following structure:
 #
 # {
-#   pattern:
-#   include:
-#   contentName:
+#   pattern: {string}
+#   include: {string}
+#   contentName: {string}
 # }
 #
 # 'pattern' is required; item is ignored if 'pattern' is missing
