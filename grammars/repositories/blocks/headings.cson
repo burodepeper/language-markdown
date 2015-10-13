@@ -2,16 +2,13 @@ key: 'headings'
 patterns: [
   {
     # Empty headings
-    # FIXME
-    # match: '^(?:[ ]{0,3})((?:#{1,6})\\s*(?:#*)\\s*)$'
-    match: '^(?:[ ]{0,3})((?:##?#?#?#?#?)\\s*(?:#*)\\s*)$'
+    match: '^(?:[ ]{0,3})((?:#{1,6})\\s*(?:#*)\\s*)$'
     name: 'empty.heading.markup.md'
     captures:
       1:
         patterns: [
           {
-            # match: '^(#{6})\\s*(#*)\\s*$'
-            match: '^(######)\\s*(#*)\\s*$'
+            match: '^(#{6})\\s*(#*)\\s*$'
             name: 'heading-6.md'
             captures: {
               1: { name: 'punctuation.md' }
@@ -19,8 +16,7 @@ patterns: [
             }
           }
           {
-            # match: '^(#{5})\\s*(#*)\\s*$'
-            match: '^(#####)\\s*(#*)\\s*$'
+            match: '^(#{5})\\s*(#*)\\s*$'
             name: 'heading-5.md'
             captures: {
               1: { name: 'punctuation.md' }
@@ -28,8 +24,7 @@ patterns: [
             }
           }
           {
-            # match: '^(#{4})\\s*(#*)\\s*$'
-            match: '^(####)\\s*(#*)\\s*$'
+            match: '^(#{4})\\s*(#*)\\s*$'
             name: 'heading-4.md'
             captures: {
               1: { name: 'punctuation.md' }
@@ -37,8 +32,7 @@ patterns: [
             }
           }
           {
-            # match: '^(#{3})\\s*(#*)\\s*$'
-            match: '^(###)\\s*(#*)\\s*$'
+            match: '^(#{3})\\s*(#*)\\s*$'
             name: 'heading-3.md'
             captures: {
               1: { name: 'punctuation.md' }
@@ -46,8 +40,7 @@ patterns: [
             }
           }
           {
-            # match: '^(#{2})\\s*(#*)\\s*$'
-            match: '^(##)\\s*(#*)\\s*$'
+            match: '^(#{2})\\s*(#*)\\s*$'
             name: 'heading-2.md'
             captures: {
               1: { name: 'punctuation.md' }
@@ -55,8 +48,7 @@ patterns: [
             }
           }
           {
-            # match: '^(#{1})\\s*(#*)\\s*$'
-            match: '^(#)\\s*(#*)\\s*$'
+            match: '^(#{1})\\s*(#*)\\s*$'
             name: 'heading-1.md'
             captures: {
               1: { name: 'punctuation.md' }
@@ -70,16 +62,13 @@ patterns: [
     # Does it make sense to first do a general check to determine if there is a
     # match for a heading? It seems more logical to test against one match, than
     # to go through all six of them every iteration.
-    # FIXME
-    # match: '^((?: {0,3})(?:#{1,6})(?: +)(?:.+))$'
-    match: '^((?: {0,3})(?:##?#?#?#?#?)(?: +)(?:.+))$'
+    match: '^((?: {0,3})(?:#{1,6})(?: +)(?:.+))$'
     name: 'heading.markup.md'
     captures:
       1:
         patterns: [
           {
-            # begin: '^(?: {0,3})(#{1})(?: +)'
-            begin: '^(?: {0,3})(#)(?: +)'
+            begin: '^(?: {0,3})(#{1})(?: +)'
             end: '(?: ){1}(#*)(?: *)$'
             name: 'heading-1.md'
             captures:
@@ -88,8 +77,7 @@ patterns: [
             patterns: [{ include: '#inlines-in-blocks'}]
           }
           {
-            # begin: '^(?: {0,3})(#{2})(?: +)'
-            begin: '^(?: {0,3})(##)(?: +)'
+            begin: '^(?: {0,3})(#{2})(?: +)'
             end: '(?: ){1}(#*)(?: *)$'
             name: 'heading-2.md'
             captures:
@@ -98,8 +86,7 @@ patterns: [
             patterns: [{ include: '#inlines-in-blocks'}]
           }
           {
-            # begin: '^(?: {0,3})(#{3})(?: +)'
-            begin: '^(?: {0,3})(###)(?: +)'
+            begin: '^(?: {0,3})(#{3})(?: +)'
             end: '(?: ){1}(#*)(?: *)$'
             name: 'heading-3.md'
             captures:
@@ -108,8 +95,7 @@ patterns: [
             patterns: [{ include: '#inlines-in-blocks'}]
           }
           {
-            # begin: '^(?: {0,3})(#{4})(?: +)'
-            begin: '^(?: {0,3})(####)(?: +)'
+            begin: '^(?: {0,3})(#{4})(?: +)'
             end: '(?: ){1}(#*)(?: *)$'
             name: 'heading-4.md'
             captures:
@@ -118,8 +104,7 @@ patterns: [
             patterns: [{ include: '#inlines-in-blocks'}]
           }
           {
-            # begin: '^(?: {0,3})(#{5})(?: +)'
-            begin: '^(?: {0,3})(#####)(?: +)'
+            begin: '^(?: {0,3})(#{5})(?: +)'
             end: '(?: ){1}(#*)(?: *)$'
             name: 'heading-5.md'
             captures:
@@ -128,8 +113,7 @@ patterns: [
             patterns: [{ include: '#inlines-in-blocks'}]
           }
           {
-            # begin: '^(?: {0,3})(#{6})(?: +)'
-            begin: '^(?: {0,3})(######)(?: +)'
+            begin: '^(?: {0,3})(#{6})(?: +)'
             end: '(?: ){1}(#*)(?: *)$'
             name: 'heading-6.md'
             captures:

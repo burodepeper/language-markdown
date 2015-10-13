@@ -12,7 +12,8 @@ if atom.inDevMode()
 
     subscriptions: null
 
-    # Create the {language-markdown:compile-grammar} command, via which the compiler can be executed
+    # Create the {language-markdown:compile-grammar} command,
+    # via which the compiler can be executed
     activate: ->
       @subscriptions = new CompositeDisposable()
       @subscriptions.add atom.commands.add 'atom-workspace', 'language-markdown:compile-grammar': => @compileGrammar()
@@ -33,7 +34,7 @@ if atom.inDevMode()
     # and finally writes {grammar} to {output}
     compileGrammar: ->
       input = '../grammars/repositories/markdown.cson'
-      output = '../grammars/language-markdown.cson'
+      output = '../grammars/language-markdown.json'
       repositoryDirectories = ['blocks', 'flavors', 'inlines']
       filepath = path.join(__dirname, input)
       grammar = CSON.readFileSync(filepath)
@@ -50,14 +51,10 @@ if atom.inDevMode()
       # Compile and add fenced-code-blocks to repository
       grammar.repository['fenced-code-blocks'] = { patterns: @compileFencedCodeGrammar() }
 
-      # FIXME
-      # Either
-      # 1) grammar must be written as JSON (change {output} to .json), but that isn't interpreted;
-      # 2) grammar must be written as CSON, but without double quotes string
-      # because of two FIXME's in /grammars/repositories/blocks/headings.cson
+
       filepath = path.join(__dirname, output)
       CSON.writeFileSync filepath, grammar, do ->
-        console.log "Done!"
+        console.log "[language-markdown] Done!"
 
     # Transform an {item} into a {pattern} object,
     # and adds it to the {patterns} array.
