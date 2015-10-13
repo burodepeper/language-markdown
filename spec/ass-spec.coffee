@@ -30,7 +30,7 @@ fixtures = [
 
 # Overwrite fixtures, cause this is what I'm working on...
 # fixtures = [
-#   "inlines/images"
+#   "blocks/fenced-code"
 # ]
 
 describe "Markdown grammar", ->

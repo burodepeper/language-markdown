@@ -28,13 +28,32 @@ var test = {
 };
 ```
 
-```php
+```ass
+"I am awesome" {
+  "I am awesome": text.md
+}
+```
+
+``` php
 function test ($var) {
   echo "string";
 }
 ```
 
+~~~ julia hide=true
+for i in 1:10
+  println(i)
+end
+~~~
+
+~~~    ruby startline=3 $%@#$
+def foo(x)
+  return 3
+end
+~~~
+
 ```
+# I am plain source
 var test = {
   isComplete: true
 };

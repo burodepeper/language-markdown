@@ -28,7 +28,6 @@ repository:
       { include: '#quotes' }
       { include: '#tables' }
       { include: '#fenced-code' }
-      { include: 'fenced-code.md' }
     ]
   inlines:
     patterns: [
@@ -50,7 +49,6 @@ repository:
       { include: '#code' }
       { include: '#entities' }
       { include: '#links' }
-      # { include: '#html' }
       { include: '#emphasis' }
       { include: '#github' }
       { include: '#criticmark' }
@@ -374,6 +372,11 @@ repository:
       }
     ]
 
+  #
+  # blocks
+  # FENCED CODE BLOCKS (generic)
+  #
+
   'fenced-code':
     patterns: [
       {
@@ -384,6 +387,7 @@ repository:
         endCaptures:
           1: name: 'punctuation.md'
         name: 'fenced.code.md'
+        contentName: 'source.md'
       }
 
       {
@@ -394,7 +398,10 @@ repository:
         endCaptures:
           1: name: 'punctuation.md'
         name: 'fenced.code.md'
+        contentName: 'source.md'
       }
+
+      { include: 'fenced-code.md' }
     ]
 
   #

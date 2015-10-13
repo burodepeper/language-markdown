@@ -8,8 +8,10 @@
   text.md {
     fenced.code.md {
       "```": punctuation.md
-      "<"
-      " >"
+      source.md {
+        "<"
+        " >"
+      }
       "```": punctuation.md
     }
   }
@@ -23,8 +25,10 @@
   text.md {
     fenced.code.md {
       "~~~": punctuation.md
-      "<"
-      " >"
+      source.md {
+        "<"
+        " >"
+      }
       "~~~": punctuation.md
     }
   }
@@ -38,8 +42,10 @@
   text.md {
     fenced.code.md {
       "```": punctuation.md
-      "aaa"
-      "~~~"
+      source.md {
+        "aaa"
+        "~~~"
+      }
       "```": punctuation.md
     }
   }
@@ -53,8 +59,10 @@
   text.md {
     fenced.code.md {
       "~~~": punctuation.md
-      "aaa"
-      "```"
+      source.md {
+        "aaa"
+        "```"
+      }
       "~~~": punctuation.md
     }
   }
@@ -68,9 +76,11 @@
   text.md {
     fenced.code.md {
       "````": punctuation.md
-      "aaa"
-      "```"
-      "``````"
+      source.md {
+        "aaa"
+        "```"
+        "``````"
+      }
     }
   }
 }
@@ -83,8 +93,10 @@
   text.md {
     fenced.code.md {
       "~~~~": punctuation.md
-      "aaa"
-      "~~~"
+      source.md {
+        "aaa"
+        "~~~"
+      }
       "~~~~": punctuation.md
     }
   }
@@ -107,9 +119,11 @@
   text.md {
     fenced.code.md {
       "`````": punctuation.md
-      ""
-      "```"
-      "aaa"
+      source.md {
+        ""
+        "```"
+        "aaa"
+      }
     }
   }
 }
@@ -145,8 +159,10 @@
   text.md {
     fenced.code.md {
       "```": punctuation.md
-      ""
-      "  "
+      source.md {
+        ""
+        "  "
+      }
       "```": punctuation.md
     }
   }
@@ -172,8 +188,10 @@
     fenced.code.md {
       " "
       "```": punctuation.md
-      " aaa"
-      "aaa"
+      source.md {
+        " aaa"
+        "aaa"
+      }
       "```": punctuation.md
     }
   }
@@ -189,9 +207,11 @@
     fenced.code.md {
       "  "
       "```": punctuation.md
-      "aaa"
-      "  aaa"
-      "aaa"
+      source.md {
+        "aaa"
+        "  aaa"
+        "aaa"
+      }
       "  "
       "```": punctuation.md
     }
@@ -208,9 +228,11 @@
     fenced.code.md {
       "   "
       "```": punctuation.md
-      "   aaa"
-      "    aaa"
-      "  aaa"
+      source.md {
+        "   aaa"
+        "    aaa"
+        "  aaa"
+      }
       "   "
       "```": punctuation.md
     }
@@ -235,7 +257,9 @@
   text.md {
     fenced.code.md {
       "```": punctuation.md
-      "aaa"
+      source.md {
+        "aaa"
+      }
       "  "
       "```": punctuation.md
     }
@@ -250,7 +274,9 @@
     fenced.code.md {
       "   "
       "```": punctuation.md
-      "aaa"
+      source.md {
+        "aaa"
+      }
       "  "
       "```": punctuation.md
     }
@@ -264,8 +290,10 @@
   text.md {
     fenced.code.md {
       "```": punctuation.md
-      "aaa"
-      "    ```"
+      source.md {
+        "aaa"
+        "    ```"
+      }
     }
   }
 }
@@ -298,8 +326,10 @@
   text.md {
     fenced.code.md {
       "~~~~~~": punctuation.md
-      "aaa"
-      "~~~ ~~"
+      source.md {
+        "aaa"
+        "~~~ ~~"
+      }
     }
   }
 }
@@ -314,7 +344,9 @@
     "foo"
     fenced.code.md {
       "```": punctuation.md
-      "bar"
+      source.md {
+        "bar"
+      }
       "```": punctuation.md
     }
     "baz"
@@ -333,7 +365,9 @@
     "---": hr.md
     fenced.code.md {
       "~~~": punctuation.md
-      "bar"
+      source.md {
+        "bar"
+      }
       "~~~": punctuation.md
     }
     heading.markup.md {
@@ -355,7 +389,8 @@
   text.md {
     fenced.code.md {
       "```": punctuation.md
-      "ruby"
+      "ruby": language.constant.md
+      ""
       embedded.source.ruby {
         "def foo(x)"
         "  return 3"
@@ -406,7 +441,9 @@
   text.md {
     fenced.code.md {
       "```": punctuation.md
-      "``` aaa"
+      source.md {
+        "``` aaa"
+      }
       "```": punctuation.md
     }
   }
