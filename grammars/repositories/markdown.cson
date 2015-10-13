@@ -54,10 +54,26 @@ repository:
       { include: '#criticmark' }
     ]
 
-  # html:
-  #   patterns: [
-  #     { include: 'text.html.basic' }
-  #   ]
+  # NOTE
+  # Below are a select few special repository entries that I don't feel like
+  # creating separate files for, since they are pretty much only helpers.
+
+  html:
+    patterns: [
+      { include: 'text.html.basic' }
+    ]
+
+  'fenced-code-info':
+    patterns: [
+      {
+        match: '([^ ]+)(=)([^ ]+)'
+        name: 'info.fenced.code.md'
+        captures:
+          1: name: 'key.keyword.md'
+          2: name: 'punctuation.md'
+          3: name: 'value.string.md'
+      }
+    ]
 
   'link-destination':
     patterns: [

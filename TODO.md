@@ -8,5 +8,5 @@
   - [x] Load all grammar repositories
   - [x] Append grammar repositories to the main repository
   - [x] Write combined grammar to disk
-- [ ] Include fenced code blocks as `fenced-code-blocks`, and don't forget its repository
-- [ ] Remove original `markdown.cson` and hope that everything works...
+- [ ] Compile grammar when activated by a command that is only available in dev-mode
+- [x] Include fenced code blocks as `fenced-code-blocks`, and don't forget its repository

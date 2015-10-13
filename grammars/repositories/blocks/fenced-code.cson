@@ -21,6 +21,4 @@ patterns: [
     name: 'fenced.code.md'
     contentName: 'source.md'
   }
-
-  { include: 'fenced-code.md' }
 ]

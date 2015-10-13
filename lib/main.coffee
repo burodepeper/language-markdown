@@ -14,39 +14,16 @@ if false
   module.exports =
 
     activate: ->
-      @compileFencedCodeGrammar()
       @combineGrammarRepositories()
 
     # Reads fixtures from {input},
     # parses {data} to expand shortened syntax,
-    # creates patterns from valid items in {data},
-    # combines everything in to a {grammar} structure,
-    # and writes {grammar} to {output}.
+    # creates and returns patterns from valid items in {data}.
     compileFencedCodeGrammar: ->
       input = '../grammars/fixtures/fenced-code.cson'
-      output = '../grammars/fenced-code.compiled.cson'
       filepath = path.join(__dirname, input)
       data = CSON.readFileSync(filepath)
-
-      grammar =
-        name: data.name
-        scopeName: data.scopeName
-        patterns: @_createPatternsFromData(data)
-        repository:
-          'fenced-code-info':
-            patterns: [
-              {
-                match: '([^ ]+)(=)([^ ]+)'
-                name: 'info.fenced.code.md'
-                captures:
-                  1: name: 'key.keyword.md'
-                  2: name: 'punctuation.md'
-                  3: name: 'value.string.md'
-              }
-            ]
-
-      filepath = path.join(__dirname, output)
-      CSON.writeFileSync filepath, grammar
+      @_createPatternsFromData(data)
 
     # Loads the basic grammar structure,
     # which includes the grouped parts in the repository,
@@ -67,6 +44,9 @@ if false
           {key, patterns} = CSON.readFileSync(entry.path)
           if key and patterns
             grammar.repository[key] = patterns
+
+      # Compile and add fenced-code-blocks to repository
+      grammar.repository['fenced-code-blocks'] = @compileFencedCodeGrammar()
 
       # FIXME
       # Either
