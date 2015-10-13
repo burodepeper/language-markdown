@@ -52,6 +52,7 @@ if false
       # Either
       # 1) grammar must be written as JSON (change {output} to .json), but that isn't interpreted;
       # 2) grammar must be written as CSON, but without double quotes string
+      # because of two FIXME's in /grammars/repositories/blocks/headings.cson
       filepath = path.join(__dirname, output)
       CSON.writeFileSync filepath, grammar
 

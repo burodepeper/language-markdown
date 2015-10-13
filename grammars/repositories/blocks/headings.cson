@@ -2,6 +2,7 @@ key: 'headings'
 patterns: [
   {
     # Empty headings
+    # FIXME
     # match: '^(?:[ ]{0,3})((?:#{1,6})\\s*(?:#*)\\s*)$'
     match: '^(?:[ ]{0,3})((?:#+)\\s*(?:#*)\\s*)$'
     name: 'empty.heading.markup.md'
@@ -63,6 +64,7 @@ patterns: [
     # Does it make sense to first do a general check to determine if there is a
     # match for a heading? It seems more logical to test against one match, than
     # to go through all six of them every iteration.
+    # FIXME
     # match: '^((?: {0,3})(?:#{1,6})(?: +)(?:.+))$'
     match: '^((?: {0,3})(?:#+)(?: +)(?:.+))$'
     name: 'heading.markup.md'
