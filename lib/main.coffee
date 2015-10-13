@@ -3,9 +3,9 @@
 # This means that after updating any of the grammar fixtures, the package
 # has to be reloaded in dev-mode to compile the grammar files.
 
-# if atom.inDevMode()
-if false
+if atom.inDevMode()
 
+  {CompositeDisposable} = require 'atom'
   CSON = require 'season'
   {Directory} = require 'pathwatcher'
   path = require 'path'
@@ -13,8 +13,12 @@ if false
 
   module.exports =
 
+    subscriptions: null
+
+    # Create the {language-markdown:compile-grammar} command, via which the compiler can be executed
     activate: ->
-      @combineGrammarRepositories()
+      @subscriptions = new CompositeDisposable()
+      @subscriptions.add atom.commands.add 'atom-workspace', 'language-markdown:compile-grammar': => @compileGrammar()
 
     # Reads fixtures from {input},
     # parses {data} to expand shortened syntax,
@@ -30,9 +34,9 @@ if false
     # and then loads all grammar subrepositories,
     # and appends them to the main repository,
     # and finally writes {grammar} to {output}
-    combineGrammarRepositories: ->
+    compileGrammar: ->
       input = '../grammars/repositories/markdown.cson'
-      output = '../grammars/markdown.compiled.cson'
+      output = '../grammars/language-markdown.cson'
       repositoryDirectories = ['blocks', 'flavors', 'inlines']
       filepath = path.join(__dirname, input)
       grammar = CSON.readFileSync(filepath)
@@ -43,7 +47,8 @@ if false
         for entry in entries
           {key, patterns} = CSON.readFileSync(entry.path)
           if key and patterns
-            grammar.repository[key] = patterns
+            grammar.repository[key] =
+              patterns: patterns
 
       # Compile and add fenced-code-blocks to repository
       grammar.repository['fenced-code-blocks'] = @compileFencedCodeGrammar()
@@ -54,7 +59,8 @@ if false
       # 2) grammar must be written as CSON, but without double quotes string
       # because of two FIXME's in /grammars/repositories/blocks/headings.cson
       filepath = path.join(__dirname, output)
-      CSON.writeFileSync filepath, grammar
+      CSON.writeFileSync filepath, grammar, do ->
+        console.log "Done!"
 
     # Transform an {item} into a {pattern} object,
     # and adds it to the {patterns} array.

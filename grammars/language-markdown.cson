@@ -211,818 +211,833 @@ repository:
             name: "punctuation.md"
       }
     ]
-  "fenced-code": [
-    {
-      begin: "^\\s{0,3}([`]{3,})$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-      end: "^\\s{0,3}(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "source.md"
-    }
-    {
-      begin: "^\\s{0,3}([~]{3,})$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-      end: "^\\s{0,3}(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "source.md"
-    }
-  ]
-  headings: [
-    {
-      match: "^(?:[ ]{0,3})((?:#+)\\s*(?:#*)\\s*)$"
-      name: "empty.heading.markup.md"
-      captures:
-        "1":
-          patterns: [
-            {
-              match: "^(#{6})\\s*(#*)\\s*$"
-              name: "heading-6.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "2":
-                  name: "punctuation.md"
-            }
-            {
-              match: "^(#{5})\\s*(#*)\\s*$"
-              name: "heading-5.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "2":
-                  name: "punctuation.md"
-            }
-            {
-              match: "^(#{4})\\s*(#*)\\s*$"
-              name: "heading-4.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "2":
-                  name: "punctuation.md"
-            }
-            {
-              match: "^(#{3})\\s*(#*)\\s*$"
-              name: "heading-3.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "2":
-                  name: "punctuation.md"
-            }
-            {
-              match: "^(#{2})\\s*(#*)\\s*$"
-              name: "heading-2.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "2":
-                  name: "punctuation.md"
-            }
-            {
-              match: "^(#{1})\\s*(#*)\\s*$"
-              name: "heading-1.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "2":
-                  name: "punctuation.md"
-            }
-          ]
-    }
-    {
-      match: "^((?: {0,3})(?:#+)(?: +)(?:.+))$"
-      name: "heading.markup.md"
-      captures:
-        "1":
-          patterns: [
-            {
-              begin: "^(?: {0,3})(#{1})(?: +)"
-              end: "(?: ){1}(#*)(?: *)$"
-              name: "heading-1.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "3":
-                  name: "punctuation.md"
-              patterns: [
-                {
-                  include: "#inlines-in-blocks"
-                }
-              ]
-            }
-            {
-              begin: "^(?: {0,3})(#{2})(?: +)"
-              end: "(?: ){1}(#*)(?: *)$"
-              name: "heading-2.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "3":
-                  name: "punctuation.md"
-              patterns: [
-                {
-                  include: "#inlines-in-blocks"
-                }
-              ]
-            }
-            {
-              begin: "^(?: {0,3})(#{3})(?: +)"
-              end: "(?: ){1}(#*)(?: *)$"
-              name: "heading-3.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "3":
-                  name: "punctuation.md"
-              patterns: [
-                {
-                  include: "#inlines-in-blocks"
-                }
-              ]
-            }
-            {
-              begin: "^(?: {0,3})(#{4})(?: +)"
-              end: "(?: ){1}(#*)(?: *)$"
-              name: "heading-4.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "3":
-                  name: "punctuation.md"
-              patterns: [
-                {
-                  include: "#inlines-in-blocks"
-                }
-              ]
-            }
-            {
-              begin: "^(?: {0,3})(#{5})(?: +)"
-              end: "(?: ){1}(#*)(?: *)$"
-              name: "heading-5.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "3":
-                  name: "punctuation.md"
-              patterns: [
-                {
-                  include: "#inlines-in-blocks"
-                }
-              ]
-            }
-            {
-              begin: "^(?: {0,3})(#{6})(?: +)"
-              end: "(?: ){1}(#*)(?: *)$"
-              name: "heading-6.md"
-              captures:
-                "1":
-                  name: "punctuation.md"
-                "3":
-                  name: "punctuation.md"
-              patterns: [
-                {
-                  include: "#inlines-in-blocks"
-                }
-              ]
-            }
-          ]
-    }
-  ]
-  hr: [
-    {
-      name: "hr.md"
-      match: "^[ ]{0,3}[-]{1,} *[-]{1,} *[-]{1,}[ -]*$"
-    }
-    {
-      name: "hr.md"
-      match: "^[ ]{0,3}[*]{1,} *[*]{1,} *[*]{1,}[ *]*$"
-    }
-    {
-      name: "hr.md"
-      match: "^[ ]{0,3}[_]{1,} *[_]{1,} *[_]{1,}[ _]*$"
-    }
-  ]
-  lists: [
-    {
-      match: "^(?:\\s*)(- \\[ \\])(?: )(.*)$"
-      name: "task.unordered.list.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          patterns: [
-            {
-              include: "#blocks"
-            }
-            {
-              include: "#inlines-in-blocks"
-            }
-          ]
-    }
-    {
-      match: "^(?:\\s*)(- \\[x\\])(?: )(.*)$"
-      name: "completed.task.unordered.list.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          patterns: [
-            {
-              include: "#blocks"
-            }
-            {
-              include: "#inlines-in-blocks"
-            }
-          ]
-    }
-    {
-      match: "^(?:\\s*)([-+\\*]){1}(?: )(.*)$"
-      name: "unordered.list.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          patterns: [
-            {
-              include: "#blocks"
-            }
-            {
-              include: "#inlines-in-blocks"
-            }
-          ]
-    }
-    {
-      match: "^(?:\\s*)([0-9]{1,9}[\\.\\)])(?: )(.*)$"
-      name: "ordered.list.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          patterns: [
-            {
-              include: "#blocks"
-            }
-            {
-              include: "#inlines-in-blocks"
-            }
-          ]
-    }
-    {
-      match: "^(?:\\s*)([-+\\*]){1}$"
-      name: "empty.unordered.list.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-    }
-    {
-      match: "^(?:\\s*)([0-9]{1,9}[\\.\\)])$"
-      name: "empty.ordered.list.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-    }
-  ]
-  quotes: [
-    {
-      match: "^(?: {0,3})(>){1}(?: ){0,1}(.*)$"
-      name: "quote.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          patterns: [
-            {
-              include: "#blocks"
-            }
-          ]
-    }
-  ]
-  tables: [
-    {
-      name: "table.storage.md"
-      begin: "^\\|"
-      beginCaptures:
-        "0":
-          name: "punctuation.md"
-      end: "(\\|)?\\s*$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      patterns: [
-        {
-          match: "(?<= )\\|(?= )"
-          name: "punctuation.md"
-        }
-        {
-          match: "(:?)(-+)(:?)"
-          captures:
-            "1":
-              name: "alignment.punctuation.md"
-            "2":
-              name: "punctuation.md"
-            "3":
-              name: "alignment.punctuation.md"
-        }
-        {
-          include: "#inlines"
-        }
-      ]
-    }
-  ]
-  criticmark: [
-    {
-      name: "addition.critic.inserted.markup.md"
-      begin: "({\\+\\+)"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-      end: "(\\+\\+})"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      patterns: [
-        {
-          include: "#emphasis"
-        }
-      ]
-    }
-    {
-      name: "deletion.critic.deleted.markup.md"
-      begin: "({--)"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-      end: "(--})"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      patterns: [
-        {
-          include: "#emphasis"
-        }
-      ]
-    }
-    {
-      name: "highlight.critic.changed.markup.md"
-      begin: "({==)"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-      end: "(==})"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      patterns: [
-        {
-          include: "#emphasis"
-        }
-      ]
-    }
-    {
-      name: "comment.critic.markup.md"
-      begin: "({>>)"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-      patterns: [
-        {
-          match: "(?<=[\\s|>])((@)(\\w[-\\w:]*))(?=\\s)"
-          captures:
-            "1":
-              name: "username.reference.variable.md"
-            "2":
-              name: "punctuation.md"
-        }
-        {
-          include: "#emphasis"
-        }
-      ]
-      end: "(<<})"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-    }
-    {
-      name: "substitution.critic.inserted.markup.md"
-      begin: "({~~)"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-      end: "(~~})"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      patterns: [
-        {
-          match: "~>"
-          name: "punctuation.md"
-        }
-        {
-          include: "#emphasis"
-        }
-      ]
-    }
-  ]
-  github: [
-    {
-      match: "(?<=^|\\s|\"|'|\\(|\\[)((@)(\\w[-\\w:]*))(?=[\\s\"'.,;\\)\\]])"
-      captures:
-        "1":
-          name: "username.reference.gfm.variable.md"
-        "2":
-          name: "punctuation.md"
-    }
-    {
-      match: "(?<=^|\\s|\"|'|\\(|\\[)((#)(\\d+))(?=[\\s\"'\\.,;\\)\\]])"
-      captures:
-        "1":
-          name: "issue.reference.gfm.variable.md"
-        "2":
-          name: "punctuation.md"
-    }
-  ]
-  code: [
-    {
-      match: "(?<!`)(`{1,2})(?!`).+?(?<!`)(\\1)(?!`)"
-      name: "code.raw.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "punctuation.md"
-    }
-  ]
-  comments: [
-    {
-      name: "comment.md"
-      begin: "(<!--)"
-      end: "(-->)"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "3":
-          name: "punctuation.md"
-    }
-  ]
-  emphasis: [
-    {
-      match: "(?<![\\w|\\\\])([_]{2})(?!\\s)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)"
-      name: "strong.emphasis.bold.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          patterns: [
-            {
-              include: "#escapes"
-            }
-            {
-              include: "#code"
-            }
-            {
-              include: "#links"
-            }
-            {
-              include: "#emphasis"
-            }
-          ]
-        "3":
-          name: "punctuation.md"
-    }
-    {
-      match: "(?<![\\w|\\\\])([\\*]{2})(?!\\s)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)"
-      name: "strong.emphasis.bold.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          patterns: [
-            {
-              include: "#escapes"
-            }
-            {
-              include: "#inline-code"
-            }
-            {
-              include: "#links"
-            }
-            {
-              include: "#emphasis"
-            }
-          ]
-        "3":
-          name: "punctuation.md"
-    }
-    {
-      match: "(?<=\\w)([\\*]{2})(?:.+?)(?<!\\W)(\\1)"
-      name: "strong.emphasis.bold.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "punctuation.md"
-    }
-    {
-      match: "(?<=\\s|^)([\\*]{2})(?=\\w)(?:.+?)(\\1)(?=\\w)"
-      name: "strong.emphasis.bold.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "punctuation.md"
-    }
-    {
-      match: "(?<![\\w|_|\\\\])([_])(?!\\s|\\1)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)"
-      name: "emphasis.italic.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          patterns: [
-            {
-              include: "#escapes"
-            }
-            {
-              include: "#code"
-            }
-            {
-              include: "#links"
-            }
-            {
-              include: "#emphasis"
-            }
-          ]
-        "3":
-          name: "punctuation.md"
-    }
-    {
-      match: "(?<![\\w|\\*|\\\\])([\\*])(?!\\s|\\1)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)"
-      name: "emphasis.italic.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          patterns: [
-            {
-              include: "#escapes"
-            }
-            {
-              include: "#code"
-            }
-            {
-              include: "#links"
-            }
-            {
-              include: "#emphasis"
-            }
-          ]
-        "3":
-          name: "punctuation.md"
-    }
-    {
-      match: "(?<=\\w)([\\*])(?:.+?)(?<!\\W)(\\1)"
-      name: "emphasis.italic.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "punctuation.md"
-    }
-    {
-      match: "(?<=\\s|^)([\\*])(?=\\w)(?:.+?)(\\1)(?=\\w)"
-      name: "emphasis.italic.markup.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "punctuation.md"
-    }
-  ]
-  entities: [
-    {
-      match: "(&)([a-zA-Z0-9]{2,32})(;)"
-      name: "entity.constant.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "3":
-          name: "punctuation.md"
-    }
-    {
-      match: "(&#)([0-9]{1,8})(;)"
-      name: "entity.constant.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "3":
-          name: "punctuation.md"
-    }
-    {
-      match: "(&#[x|X])([0-9a-fA-F]{1,8})(;)"
-      name: "entity.constant.md"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "3":
-          name: "punctuation.md"
-    }
-  ]
-  escapes: [
-    {
-      match: "\\\\."
-      name: "escape.constant.md"
-    }
-  ]
-  "line-breaks": [
-    {
-      match: "(  )$"
-      name: "line-break.constant.md"
-    }
-    {
-      match: "(\\\\)$"
-      name: "line-break.constant.md"
-    }
-  ]
-  links: [
-    {
-      name: "link.markup.md"
-      match: "((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+) ((?:[\"'\\(]).*?(?:[\"'\\)]))(\\))"
-      captures:
-        "1":
-          patterns: [
-            {
-              include: "#link-text"
-            }
-          ]
-        "2":
-          name: "punctuation.md"
-        "3":
-          patterns: [
-            {
-              include: "#link-destination"
-            }
-          ]
-        "4":
-          patterns: [
-            {
-              include: "#link-title"
-            }
-          ]
-        "5":
-          name: "punctuation.md"
-    }
-    {
-      name: "link.markup.md"
-      match: "((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]*)(\\))"
-      captures:
-        "1":
-          patterns: [
-            {
-              include: "#link-text"
-            }
-          ]
-        "2":
-          name: "punctuation.md"
-        "3":
-          patterns: [
-            {
-              include: "#link-destination"
-            }
-          ]
-        "4":
-          name: "punctuation.md"
-    }
-    {
-      name: "link.markup.md"
-      match: "((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()(<[^[:cntrl:]]*>)(\\))"
-      captures:
-        "1":
-          patterns: [
-            {
-              include: "#link-text"
-            }
-          ]
-        "2":
-          name: "punctuation.md"
-        "3":
-          patterns: [
-            {
-              include: "#link-destination"
-            }
-          ]
-        "4":
-          name: "punctuation.md"
-    }
-    {
-      name: "link.markup.md"
-      match: "((?:!?\\[)(?:[^\\]]*)(?:\\]))((?:\\[)(?:[^\\]]*)(?:\\]))"
-      captures:
-        "1":
-          patterns: [
-            {
-              include: "#link-text"
-            }
-          ]
-        "2":
-          patterns: [
-            {
-              include: "#link-label"
-            }
-          ]
-    }
-    {
-      name: "link.markup.md"
-      match: "((?:!\\[)(?:[^\\]]*)(?:\\]))"
-      captures:
-        "1":
-          patterns: [
-            {
-              include: "#link-text"
-            }
-          ]
-    }
-    {
-      name: "reference.link.markup.md"
-      match: "((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+) ((?:\").*?(?:\"))"
-      captures:
-        "1":
-          patterns: [
-            {
-              include: "#link-label"
-            }
-          ]
-        "2":
-          name: "punctuation.md"
-        "3":
-          patterns: [
-            {
-              include: "#link-destination"
-            }
-          ]
-        "4":
-          patterns: [
-            {
-              include: "#link-title"
-            }
-          ]
-    }
-    {
-      name: "reference.link.markup.md"
-      match: "((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+)"
-      captures:
-        "1":
-          patterns: [
-            {
-              include: "#link-label"
-            }
-          ]
-        "2":
-          name: "punctuation.md"
-        "3":
-          patterns: [
-            {
-              include: "#link-destination"
-            }
-          ]
-    }
-    {
-      name: "auto.link.markup.md"
-      match: "(?i:(<)((coap|doi|javascript|aaa|aaas|about|acap|cap|cid|crid|data|dav|dict|dns|file|ftp|geo|go|gopher|h323|http|https|iax|icap|im|imap|info|ipp|iris|iris.beep|iris.xpc|iris.xpcs|iris.lwz|ldap|mailto|mid|msrp|msrps|mtqp|mupdate|news|nfs|ni|nih|nntp|opaquelocktoken|pop|pres|rtsp|service|session|shttp|sieve|sip|sips|sms|snmp|soap.beep|soap.beeps|tag|tel|telnet|tftp|thismessage|tn3270|tip|tv|urn|vemmi|ws|wss|xcon|xcon-userid|xmlrpc.beep|xmlrpc.beeps|xmpp|z39.50r|z39.50s|adiumxtra|afp|afs|aim|apt|attachment|aw|beshare|bitcoin|bolo|callto|chrome|chrome-extension|com-eventbrite-attendee|content|cvs|dlna-playsingle|dlna-playcontainer|dtn|dvb|ed2k|facetime|feed|finger|fish|gg|git|gizmoproject|gtalk|hcp|icon|ipn|irc|irc6|ircs|itms|jar|jms|keyparc|lastfm|ldaps|magnet|maps|market|message|mms|ms-help|msnim|mumble|mvn|notes|oid|palm|paparazzi|platform|proxy|psyc|query|res|resource|rmi|rsync|rtmp|secondlife|sftp|sgn|skype|smb|soldat|spotify|ssh|steam|svn|teamspeak|things|udp|unreal|ut2004|ventrilo|view-source|webcal|wtai|wyciwyg|xfire|xri|ymsgr):(?:[^ [:cntrl:]<>]+))(>))"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "uri.underline.markup.md"
-        "3":
-          name: "scheme.md"
-        "4":
-          name: "punctuation.md"
-    }
-    {
-      name: "email.auto.link.markup.md"
-      match: "(<)(([a-zA-Z0-9\\.!#$%&'\\*\\+/=?^_`{\\|}~-]+)(@)([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*))(>)"
-      captures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "uri.underline.markup.md"
-        "4":
-          name: "punctuation.md"
-        "6":
-          name: "punctuation.md"
-    }
-  ]
+  "fenced-code":
+    patterns: [
+      {
+        begin: "^\\s{0,3}([`]{3,})$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+        end: "^\\s{0,3}(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "source.md"
+      }
+      {
+        begin: "^\\s{0,3}([~]{3,})$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+        end: "^\\s{0,3}(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "source.md"
+      }
+    ]
+  headings:
+    patterns: [
+      {
+        match: "^(?:[ ]{0,3})((?:#+)\\s*(?:#*)\\s*)$"
+        name: "empty.heading.markup.md"
+        captures:
+          "1":
+            patterns: [
+              {
+                match: "^(#{6})\\s*(#*)\\s*$"
+                name: "heading-6.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "2":
+                    name: "punctuation.md"
+              }
+              {
+                match: "^(#{5})\\s*(#*)\\s*$"
+                name: "heading-5.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "2":
+                    name: "punctuation.md"
+              }
+              {
+                match: "^(#{4})\\s*(#*)\\s*$"
+                name: "heading-4.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "2":
+                    name: "punctuation.md"
+              }
+              {
+                match: "^(#{3})\\s*(#*)\\s*$"
+                name: "heading-3.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "2":
+                    name: "punctuation.md"
+              }
+              {
+                match: "^(#{2})\\s*(#*)\\s*$"
+                name: "heading-2.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "2":
+                    name: "punctuation.md"
+              }
+              {
+                match: "^(#{1})\\s*(#*)\\s*$"
+                name: "heading-1.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "2":
+                    name: "punctuation.md"
+              }
+            ]
+      }
+      {
+        match: "^((?: {0,3})(?:#+)(?: +)(?:.+))$"
+        name: "heading.markup.md"
+        captures:
+          "1":
+            patterns: [
+              {
+                begin: "^(?: {0,3})(#{1})(?: +)"
+                end: "(?: ){1}(#*)(?: *)$"
+                name: "heading-1.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "3":
+                    name: "punctuation.md"
+                patterns: [
+                  {
+                    include: "#inlines-in-blocks"
+                  }
+                ]
+              }
+              {
+                begin: "^(?: {0,3})(#{2})(?: +)"
+                end: "(?: ){1}(#*)(?: *)$"
+                name: "heading-2.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "3":
+                    name: "punctuation.md"
+                patterns: [
+                  {
+                    include: "#inlines-in-blocks"
+                  }
+                ]
+              }
+              {
+                begin: "^(?: {0,3})(#{3})(?: +)"
+                end: "(?: ){1}(#*)(?: *)$"
+                name: "heading-3.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "3":
+                    name: "punctuation.md"
+                patterns: [
+                  {
+                    include: "#inlines-in-blocks"
+                  }
+                ]
+              }
+              {
+                begin: "^(?: {0,3})(#{4})(?: +)"
+                end: "(?: ){1}(#*)(?: *)$"
+                name: "heading-4.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "3":
+                    name: "punctuation.md"
+                patterns: [
+                  {
+                    include: "#inlines-in-blocks"
+                  }
+                ]
+              }
+              {
+                begin: "^(?: {0,3})(#{5})(?: +)"
+                end: "(?: ){1}(#*)(?: *)$"
+                name: "heading-5.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "3":
+                    name: "punctuation.md"
+                patterns: [
+                  {
+                    include: "#inlines-in-blocks"
+                  }
+                ]
+              }
+              {
+                begin: "^(?: {0,3})(#{6})(?: +)"
+                end: "(?: ){1}(#*)(?: *)$"
+                name: "heading-6.md"
+                captures:
+                  "1":
+                    name: "punctuation.md"
+                  "3":
+                    name: "punctuation.md"
+                patterns: [
+                  {
+                    include: "#inlines-in-blocks"
+                  }
+                ]
+              }
+            ]
+      }
+    ]
+  hr:
+    patterns: [
+      {
+        name: "hr.md"
+        match: "^[ ]{0,3}[-]{1,} *[-]{1,} *[-]{1,}[ -]*$"
+      }
+      {
+        name: "hr.md"
+        match: "^[ ]{0,3}[*]{1,} *[*]{1,} *[*]{1,}[ *]*$"
+      }
+      {
+        name: "hr.md"
+        match: "^[ ]{0,3}[_]{1,} *[_]{1,} *[_]{1,}[ _]*$"
+      }
+    ]
+  lists:
+    patterns: [
+      {
+        match: "^(?:\\s*)(- \\[ \\])(?: )(.*)$"
+        name: "task.unordered.list.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            patterns: [
+              {
+                include: "#blocks"
+              }
+              {
+                include: "#inlines-in-blocks"
+              }
+            ]
+      }
+      {
+        match: "^(?:\\s*)(- \\[x\\])(?: )(.*)$"
+        name: "completed.task.unordered.list.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            patterns: [
+              {
+                include: "#blocks"
+              }
+              {
+                include: "#inlines-in-blocks"
+              }
+            ]
+      }
+      {
+        match: "^(?:\\s*)([-+\\*]){1}(?: )(.*)$"
+        name: "unordered.list.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            patterns: [
+              {
+                include: "#blocks"
+              }
+              {
+                include: "#inlines-in-blocks"
+              }
+            ]
+      }
+      {
+        match: "^(?:\\s*)([0-9]{1,9}[\\.\\)])(?: )(.*)$"
+        name: "ordered.list.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            patterns: [
+              {
+                include: "#blocks"
+              }
+              {
+                include: "#inlines-in-blocks"
+              }
+            ]
+      }
+      {
+        match: "^(?:\\s*)([-+\\*]){1}$"
+        name: "empty.unordered.list.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+      }
+      {
+        match: "^(?:\\s*)([0-9]{1,9}[\\.\\)])$"
+        name: "empty.ordered.list.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+      }
+    ]
+  quotes:
+    patterns: [
+      {
+        match: "^(?: {0,3})(>){1}(?: ){0,1}(.*)$"
+        name: "quote.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            patterns: [
+              {
+                include: "#blocks"
+              }
+            ]
+      }
+    ]
+  tables:
+    patterns: [
+      {
+        name: "table.storage.md"
+        begin: "^\\|"
+        beginCaptures:
+          "0":
+            name: "punctuation.md"
+        end: "(\\|)?\\s*$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        patterns: [
+          {
+            match: "(?<= )\\|(?= )"
+            name: "punctuation.md"
+          }
+          {
+            match: "(:?)(-+)(:?)"
+            captures:
+              "1":
+                name: "alignment.punctuation.md"
+              "2":
+                name: "punctuation.md"
+              "3":
+                name: "alignment.punctuation.md"
+          }
+          {
+            include: "#inlines"
+          }
+        ]
+      }
+    ]
+  criticmark:
+    patterns: [
+      {
+        name: "addition.critic.inserted.markup.md"
+        begin: "({\\+\\+)"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+        end: "(\\+\\+})"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        patterns: [
+          {
+            include: "#emphasis"
+          }
+        ]
+      }
+      {
+        name: "deletion.critic.deleted.markup.md"
+        begin: "({--)"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+        end: "(--})"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        patterns: [
+          {
+            include: "#emphasis"
+          }
+        ]
+      }
+      {
+        name: "highlight.critic.changed.markup.md"
+        begin: "({==)"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+        end: "(==})"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        patterns: [
+          {
+            include: "#emphasis"
+          }
+        ]
+      }
+      {
+        name: "comment.critic.markup.md"
+        begin: "({>>)"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+        patterns: [
+          {
+            match: "(?<=[\\s|>])((@)(\\w[-\\w:]*))(?=\\s)"
+            captures:
+              "1":
+                name: "username.reference.variable.md"
+              "2":
+                name: "punctuation.md"
+          }
+          {
+            include: "#emphasis"
+          }
+        ]
+        end: "(<<})"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+      }
+      {
+        name: "substitution.critic.inserted.markup.md"
+        begin: "({~~)"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+        end: "(~~})"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        patterns: [
+          {
+            match: "~>"
+            name: "punctuation.md"
+          }
+          {
+            include: "#emphasis"
+          }
+        ]
+      }
+    ]
+  github:
+    patterns: [
+      {
+        match: "(?<=^|\\s|\"|'|\\(|\\[)((@)(\\w[-\\w:]*))(?=[\\s\"'.,;\\)\\]])"
+        captures:
+          "1":
+            name: "username.reference.gfm.variable.md"
+          "2":
+            name: "punctuation.md"
+      }
+      {
+        match: "(?<=^|\\s|\"|'|\\(|\\[)((#)(\\d+))(?=[\\s\"'\\.,;\\)\\]])"
+        captures:
+          "1":
+            name: "issue.reference.gfm.variable.md"
+          "2":
+            name: "punctuation.md"
+      }
+    ]
+  code:
+    patterns: [
+      {
+        match: "(?<!`)(`{1,2})(?!`).+?(?<!`)(\\1)(?!`)"
+        name: "code.raw.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "punctuation.md"
+      }
+    ]
+  comments:
+    patterns: [
+      {
+        name: "comment.md"
+        begin: "(<!--)"
+        end: "(-->)"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "3":
+            name: "punctuation.md"
+      }
+    ]
+  emphasis:
+    patterns: [
+      {
+        match: "(?<![\\w|\\\\])([_]{2})(?!\\s)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)"
+        name: "strong.emphasis.bold.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            patterns: [
+              {
+                include: "#escapes"
+              }
+              {
+                include: "#code"
+              }
+              {
+                include: "#links"
+              }
+              {
+                include: "#emphasis"
+              }
+            ]
+          "3":
+            name: "punctuation.md"
+      }
+      {
+        match: "(?<![\\w|\\\\])([\\*]{2})(?!\\s)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)"
+        name: "strong.emphasis.bold.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            patterns: [
+              {
+                include: "#escapes"
+              }
+              {
+                include: "#inline-code"
+              }
+              {
+                include: "#links"
+              }
+              {
+                include: "#emphasis"
+              }
+            ]
+          "3":
+            name: "punctuation.md"
+      }
+      {
+        match: "(?<=\\w)([\\*]{2})(?:.+?)(?<!\\W)(\\1)"
+        name: "strong.emphasis.bold.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "punctuation.md"
+      }
+      {
+        match: "(?<=\\s|^)([\\*]{2})(?=\\w)(?:.+?)(\\1)(?=\\w)"
+        name: "strong.emphasis.bold.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "punctuation.md"
+      }
+      {
+        match: "(?<![\\w|_|\\\\])([_])(?!\\s|\\1)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)"
+        name: "emphasis.italic.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            patterns: [
+              {
+                include: "#escapes"
+              }
+              {
+                include: "#code"
+              }
+              {
+                include: "#links"
+              }
+              {
+                include: "#emphasis"
+              }
+            ]
+          "3":
+            name: "punctuation.md"
+      }
+      {
+        match: "(?<![\\w|\\*|\\\\])([\\*])(?!\\s|\\1)(?m:(.+?))(?<![\\s|\\\\])(\\1)(?!\\w)"
+        name: "emphasis.italic.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            patterns: [
+              {
+                include: "#escapes"
+              }
+              {
+                include: "#code"
+              }
+              {
+                include: "#links"
+              }
+              {
+                include: "#emphasis"
+              }
+            ]
+          "3":
+            name: "punctuation.md"
+      }
+      {
+        match: "(?<=\\w)([\\*])(?:.+?)(?<!\\W)(\\1)"
+        name: "emphasis.italic.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "punctuation.md"
+      }
+      {
+        match: "(?<=\\s|^)([\\*])(?=\\w)(?:.+?)(\\1)(?=\\w)"
+        name: "emphasis.italic.markup.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "punctuation.md"
+      }
+    ]
+  entities:
+    patterns: [
+      {
+        match: "(&)([a-zA-Z0-9]{2,32})(;)"
+        name: "entity.constant.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "3":
+            name: "punctuation.md"
+      }
+      {
+        match: "(&#)([0-9]{1,8})(;)"
+        name: "entity.constant.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "3":
+            name: "punctuation.md"
+      }
+      {
+        match: "(&#[x|X])([0-9a-fA-F]{1,8})(;)"
+        name: "entity.constant.md"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "3":
+            name: "punctuation.md"
+      }
+    ]
+  escapes:
+    patterns: [
+      {
+        match: "\\\\."
+        name: "escape.constant.md"
+      }
+    ]
+  "line-breaks":
+    patterns: [
+      {
+        match: "(  )$"
+        name: "line-break.constant.md"
+      }
+      {
+        match: "(\\\\)$"
+        name: "line-break.constant.md"
+      }
+    ]
+  links:
+    patterns: [
+      {
+        name: "link.markup.md"
+        match: "((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+) ((?:[\"'\\(]).*?(?:[\"'\\)]))(\\))"
+        captures:
+          "1":
+            patterns: [
+              {
+                include: "#link-text"
+              }
+            ]
+          "2":
+            name: "punctuation.md"
+          "3":
+            patterns: [
+              {
+                include: "#link-destination"
+              }
+            ]
+          "4":
+            patterns: [
+              {
+                include: "#link-title"
+              }
+            ]
+          "5":
+            name: "punctuation.md"
+      }
+      {
+        name: "link.markup.md"
+        match: "((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]*)(\\))"
+        captures:
+          "1":
+            patterns: [
+              {
+                include: "#link-text"
+              }
+            ]
+          "2":
+            name: "punctuation.md"
+          "3":
+            patterns: [
+              {
+                include: "#link-destination"
+              }
+            ]
+          "4":
+            name: "punctuation.md"
+      }
+      {
+        name: "link.markup.md"
+        match: "((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()(<[^[:cntrl:]]*>)(\\))"
+        captures:
+          "1":
+            patterns: [
+              {
+                include: "#link-text"
+              }
+            ]
+          "2":
+            name: "punctuation.md"
+          "3":
+            patterns: [
+              {
+                include: "#link-destination"
+              }
+            ]
+          "4":
+            name: "punctuation.md"
+      }
+      {
+        name: "link.markup.md"
+        match: "((?:!?\\[)(?:[^\\]]*)(?:\\]))((?:\\[)(?:[^\\]]*)(?:\\]))"
+        captures:
+          "1":
+            patterns: [
+              {
+                include: "#link-text"
+              }
+            ]
+          "2":
+            patterns: [
+              {
+                include: "#link-label"
+              }
+            ]
+      }
+      {
+        name: "link.markup.md"
+        match: "((?:!\\[)(?:[^\\]]*)(?:\\]))"
+        captures:
+          "1":
+            patterns: [
+              {
+                include: "#link-text"
+              }
+            ]
+      }
+      {
+        name: "reference.link.markup.md"
+        match: "((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+) ((?:\").*?(?:\"))"
+        captures:
+          "1":
+            patterns: [
+              {
+                include: "#link-label"
+              }
+            ]
+          "2":
+            name: "punctuation.md"
+          "3":
+            patterns: [
+              {
+                include: "#link-destination"
+              }
+            ]
+          "4":
+            patterns: [
+              {
+                include: "#link-title"
+              }
+            ]
+      }
+      {
+        name: "reference.link.markup.md"
+        match: "((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+)"
+        captures:
+          "1":
+            patterns: [
+              {
+                include: "#link-label"
+              }
+            ]
+          "2":
+            name: "punctuation.md"
+          "3":
+            patterns: [
+              {
+                include: "#link-destination"
+              }
+            ]
+      }
+      {
+        name: "auto.link.markup.md"
+        match: "(?i:(<)((coap|doi|javascript|aaa|aaas|about|acap|cap|cid|crid|data|dav|dict|dns|file|ftp|geo|go|gopher|h323|http|https|iax|icap|im|imap|info|ipp|iris|iris.beep|iris.xpc|iris.xpcs|iris.lwz|ldap|mailto|mid|msrp|msrps|mtqp|mupdate|news|nfs|ni|nih|nntp|opaquelocktoken|pop|pres|rtsp|service|session|shttp|sieve|sip|sips|sms|snmp|soap.beep|soap.beeps|tag|tel|telnet|tftp|thismessage|tn3270|tip|tv|urn|vemmi|ws|wss|xcon|xcon-userid|xmlrpc.beep|xmlrpc.beeps|xmpp|z39.50r|z39.50s|adiumxtra|afp|afs|aim|apt|attachment|aw|beshare|bitcoin|bolo|callto|chrome|chrome-extension|com-eventbrite-attendee|content|cvs|dlna-playsingle|dlna-playcontainer|dtn|dvb|ed2k|facetime|feed|finger|fish|gg|git|gizmoproject|gtalk|hcp|icon|ipn|irc|irc6|ircs|itms|jar|jms|keyparc|lastfm|ldaps|magnet|maps|market|message|mms|ms-help|msnim|mumble|mvn|notes|oid|palm|paparazzi|platform|proxy|psyc|query|res|resource|rmi|rsync|rtmp|secondlife|sftp|sgn|skype|smb|soldat|spotify|ssh|steam|svn|teamspeak|things|udp|unreal|ut2004|ventrilo|view-source|webcal|wtai|wyciwyg|xfire|xri|ymsgr):(?:[^ [:cntrl:]<>]+))(>))"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "uri.underline.markup.md"
+          "3":
+            name: "scheme.md"
+          "4":
+            name: "punctuation.md"
+      }
+      {
+        name: "email.auto.link.markup.md"
+        match: "(<)(([a-zA-Z0-9\\.!#$%&'\\*\\+/=?^_`{\\|}~-]+)(@)([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*))(>)"
+        captures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "uri.underline.markup.md"
+          "4":
+            name: "punctuation.md"
+          "6":
+            name: "punctuation.md"
+      }
+    ]
   "fenced-code-blocks": [
     {
       begin: "^\\s*([`~]{3})\\s*(apib|apiblueprint)(?=( |$))\\s*([^`]*)$"
