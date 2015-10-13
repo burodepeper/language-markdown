@@ -10,9 +10,15 @@ if atom.inDevMode()
   module.exports =
 
     activate: ->
-      @compileGrammar()
+      @compileFencedCodeGrammar()
+      @combineGrammarRepositories()
 
-    compileGrammar: ->
+    # Reads fixtures from {input},
+    # parses {data} to expand shortened syntax,
+    # creates patterns from valid items in {data},
+    # combines everything in to a {grammar} structure,
+    # and writes {grammar} to {output}.
+    compileFencedCodeGrammar: ->
       input = '../grammars/fixtures/fenced-code.cson'
       output = '../grammars/fenced-code.compiled.cson'
       filepath = path.join(__dirname, input)
@@ -21,7 +27,7 @@ if atom.inDevMode()
       grammar =
         name: data.name
         scopeName: data.scopeName
-        patterns: @createPatternsFromData(data)
+        patterns: @_createPatternsFromData(data)
         repository:
           'fenced-code-info':
             patterns: [
@@ -39,10 +45,22 @@ if atom.inDevMode()
       CSON.writeFileSync filepath, grammar, do ->
         console.log "[language-markdown] Grammar generated for 'fenced-code-blocks'"
 
-    createPatternsFromData: (data) ->
+    # TODO
+    # Loads the basic grammar structure,
+    # which includes the grouped parts in the repository,
+    # and then loads all grammar subrepositories,
+    # and appends them to the main repository,
+    # and finally writes {grammar} to {output}
+    combineGrammarRepositories: ->
+      return
+
+    # Transform an {item} into a {pattern} object,
+    # and adds it to the {patterns} array.
+    # Returns {patterns}.
+    _createPatternsFromData: (data) ->
       patterns = []
       for item in data.list
-        if item = @parseItem(item)
+        if item = @_parseItem(item)
 
           pattern =
             begin: '^\\s*([`~]{3})\\s*('+item.pattern+')(?=( |$))\\s*([^`]*)$'
@@ -60,12 +78,10 @@ if atom.inDevMode()
           patterns.push pattern
       return patterns
 
-    # NOTE
-    # {item.pattern} is REQUIRED; return false if omitted
-    # if omitted {item.include} = "source."+item.pattern
-    # if omitted {item.contentName} = "embedded."+item.include
-    parseItem: (item) ->
-      if item.pattern?
+    # When provided with a valid {item} ({item.pattern} is required),
+    # missing {include} and/or {contentName} are generated.
+    _parseItem: (item) ->
+      if (typeof item is 'object') and item.pattern?
         unless item.include then item.include = 'source.'+item.pattern
         unless item.contentName then item.contentName = 'embedded.'+item.include
         return item
