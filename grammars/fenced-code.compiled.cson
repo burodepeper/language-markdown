@@ -9,17 +9,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -42,17 +34,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -75,17 +59,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -108,17 +84,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -141,17 +109,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -174,17 +134,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -207,17 +159,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -240,17 +184,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -273,17 +209,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -306,17 +234,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -339,17 +259,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -372,17 +284,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -405,17 +309,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -438,17 +334,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -471,17 +359,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -504,17 +384,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -537,17 +409,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -570,17 +434,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -603,17 +459,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -636,17 +484,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -669,17 +509,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -702,17 +534,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -735,17 +559,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -768,17 +584,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -801,17 +609,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -834,17 +634,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -867,17 +659,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -900,17 +684,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -933,17 +709,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -966,17 +734,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -999,17 +759,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -1032,17 +784,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -1065,17 +809,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -1098,17 +834,9 @@ patterns: [
       "2":
         name: "language.constant.md"
       "4":
-        name: "info.fenced.code.md"
         patterns: [
           {
-            match: "([^ ]+)(=)([^ ]+)"
-            captures:
-              "1":
-                name: "key.keyword.md"
-              "2":
-                name: "punctuation.md"
-              "3":
-                name: "value.string.md"
+            include: "#fenced-code-info"
           }
         ]
     end: "^\\s*(\\1)$"
@@ -1124,3 +852,18 @@ patterns: [
     ]
   }
 ]
+repository:
+  "fenced-code-info":
+    patterns: [
+      {
+        match: "([^ ]+)(=)([^ ]+)"
+        name: "info.fenced.code.md"
+        captures:
+          "1":
+            name: "key.keyword.md"
+          "2":
+            name: "punctuation.md"
+          "3":
+            name: "value.string.md"
+      }
+    ]
