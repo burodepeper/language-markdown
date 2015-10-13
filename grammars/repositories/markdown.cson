@@ -28,6 +28,7 @@ repository:
       { include: '#quotes' }
       { include: '#tables' }
       { include: '#fenced-code' }
+      { include: '#fenced-code-blocks' }
     ]
   inlines:
     patterns: [

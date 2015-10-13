@@ -48,7 +48,7 @@ if atom.inDevMode()
               patterns: patterns
 
       # Compile and add fenced-code-blocks to repository
-      grammar.repository['fenced-code-blocks'] = @compileFencedCodeGrammar()
+      grammar.repository['fenced-code-blocks'] = { patterns: @compileFencedCodeGrammar() }
 
       # FIXME
       # Either

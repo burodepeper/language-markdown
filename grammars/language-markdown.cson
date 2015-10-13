@@ -43,6 +43,9 @@ repository:
       {
         include: "#fenced-code"
       }
+      {
+        include: "#fenced-code-blocks"
+      }
     ]
   inlines:
     patterns: [
@@ -1038,855 +1041,856 @@ repository:
             name: "punctuation.md"
       }
     ]
-  "fenced-code-blocks": [
-    {
-      begin: "^\\s*([`~]{3})\\s*(apib|apiblueprint)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.text.html.markdown.source.gfm.apib"
-      patterns: [
-        {
-          include: "text.html.markdown.source.gfm.apib"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(ass)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.ass"
-      patterns: [
-        {
-          include: "source.ass"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(coffee|coffeescript|coffee-script)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.coffee"
-      patterns: [
-        {
-          include: "source.coffee"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(c)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.c"
-      patterns: [
-        {
-          include: "source.c"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(clojure)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.clojure"
-      patterns: [
-        {
-          include: "source.clojure"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(cpp|c\\+\\+)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.cpp"
-      patterns: [
-        {
-          include: "source.cpp"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(cs|csharp)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.cs"
-      patterns: [
-        {
-          include: "source.cs"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(css)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.css"
-      patterns: [
-        {
-          include: "source.css"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(diff|patch|rej)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.diff"
-      patterns: [
-        {
-          include: "source.diff"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(elixir)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.elixir"
-      patterns: [
-        {
-          include: "source.elixir"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(elm)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.elm"
-      patterns: [
-        {
-          include: "source.elm"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(erlang)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.erlang"
-      patterns: [
-        {
-          include: "source.erlang"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(go|golang)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.go"
-      patterns: [
-        {
-          include: "source.go"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(haskell)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.haskell"
-      patterns: [
-        {
-          include: "source.haskell"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(html)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.text.html.basic"
-      patterns: [
-        {
-          include: "text.html.basic"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(java)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.java"
-      patterns: [
-        {
-          include: "source.java"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(javascript|js)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.js"
-      patterns: [
-        {
-          include: "source.js"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(json)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.json"
-      patterns: [
-        {
-          include: "source.json"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(julia)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.julia"
-      patterns: [
-        {
-          include: "source.julia"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(less)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.less"
-      patterns: [
-        {
-          include: "source.less"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(markdown|mdown|md)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.text.md"
-      patterns: [
-        {
-          include: "text.md"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(mson)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.text.html.markdown.source.gfm.mson"
-      patterns: [
-        {
-          include: "text.html.markdown.source.gfm.mson"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(objc|objective-c)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.objc"
-      patterns: [
-        {
-          include: "source.objc"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(php)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.php"
-      patterns: [
-        {
-          include: "source.php"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(py|python)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.python"
-      patterns: [
-        {
-          include: "source.python"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(r)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.r"
-      patterns: [
-        {
-          include: "source.r"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(ruby)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.ruby"
-      patterns: [
-        {
-          include: "source.ruby"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(rust|rs)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.rust"
-      patterns: [
-        {
-          include: "source.rust"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(scss)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.scss"
-      patterns: [
-        {
-          include: "source.scss"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(sh|bash)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.shell"
-      patterns: [
-        {
-          include: "source.shell"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(sql)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.sql"
-      patterns: [
-        {
-          include: "source.sql"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(swift)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.swift"
-      patterns: [
-        {
-          include: "source.swift"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(xml)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.text.xml"
-      patterns: [
-        {
-          include: "text.xml"
-        }
-      ]
-    }
-    {
-      begin: "^\\s*([`~]{3})\\s*(yaml|yml)(?=( |$))\\s*([^`]*)$"
-      beginCaptures:
-        "1":
-          name: "punctuation.md"
-        "2":
-          name: "language.constant.md"
-        "4":
-          patterns: [
-            {
-              include: "#fenced-code-info"
-            }
-          ]
-      end: "^\\s*(\\1)$"
-      endCaptures:
-        "1":
-          name: "punctuation.md"
-      name: "fenced.code.md"
-      contentName: "embedded.source.yaml"
-      patterns: [
-        {
-          include: "source.yaml"
-        }
-      ]
-    }
-  ]
+  "fenced-code-blocks":
+    patterns: [
+      {
+        begin: "^\\s*([`~]{3})\\s*(apib|apiblueprint)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.text.html.markdown.source.gfm.apib"
+        patterns: [
+          {
+            include: "text.html.markdown.source.gfm.apib"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(ass)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.ass"
+        patterns: [
+          {
+            include: "source.ass"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(coffee|coffeescript|coffee-script)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.coffee"
+        patterns: [
+          {
+            include: "source.coffee"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(c)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.c"
+        patterns: [
+          {
+            include: "source.c"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(clojure)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.clojure"
+        patterns: [
+          {
+            include: "source.clojure"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(cpp|c\\+\\+)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.cpp"
+        patterns: [
+          {
+            include: "source.cpp"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(cs|csharp)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.cs"
+        patterns: [
+          {
+            include: "source.cs"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(css)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.css"
+        patterns: [
+          {
+            include: "source.css"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(diff|patch|rej)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.diff"
+        patterns: [
+          {
+            include: "source.diff"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(elixir)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.elixir"
+        patterns: [
+          {
+            include: "source.elixir"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(elm)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.elm"
+        patterns: [
+          {
+            include: "source.elm"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(erlang)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.erlang"
+        patterns: [
+          {
+            include: "source.erlang"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(go|golang)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.go"
+        patterns: [
+          {
+            include: "source.go"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(haskell)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.haskell"
+        patterns: [
+          {
+            include: "source.haskell"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(html)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.text.html.basic"
+        patterns: [
+          {
+            include: "text.html.basic"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(java)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.java"
+        patterns: [
+          {
+            include: "source.java"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(javascript|js)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.js"
+        patterns: [
+          {
+            include: "source.js"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(json)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.json"
+        patterns: [
+          {
+            include: "source.json"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(julia)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.julia"
+        patterns: [
+          {
+            include: "source.julia"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(less)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.less"
+        patterns: [
+          {
+            include: "source.less"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(markdown|mdown|md)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.text.md"
+        patterns: [
+          {
+            include: "text.md"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(mson)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.text.html.markdown.source.gfm.mson"
+        patterns: [
+          {
+            include: "text.html.markdown.source.gfm.mson"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(objc|objective-c)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.objc"
+        patterns: [
+          {
+            include: "source.objc"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(php)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.php"
+        patterns: [
+          {
+            include: "source.php"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(py|python)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.python"
+        patterns: [
+          {
+            include: "source.python"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(r)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.r"
+        patterns: [
+          {
+            include: "source.r"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(ruby)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.ruby"
+        patterns: [
+          {
+            include: "source.ruby"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(rust|rs)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.rust"
+        patterns: [
+          {
+            include: "source.rust"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(scss)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.scss"
+        patterns: [
+          {
+            include: "source.scss"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(sh|bash)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.shell"
+        patterns: [
+          {
+            include: "source.shell"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(sql)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.sql"
+        patterns: [
+          {
+            include: "source.sql"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(swift)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.swift"
+        patterns: [
+          {
+            include: "source.swift"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(xml)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.text.xml"
+        patterns: [
+          {
+            include: "text.xml"
+          }
+        ]
+      }
+      {
+        begin: "^\\s*([`~]{3})\\s*(yaml|yml)(?=( |$))\\s*([^`]*)$"
+        beginCaptures:
+          "1":
+            name: "punctuation.md"
+          "2":
+            name: "language.constant.md"
+          "4":
+            patterns: [
+              {
+                include: "#fenced-code-info"
+              }
+            ]
+        end: "^\\s*(\\1)$"
+        endCaptures:
+          "1":
+            name: "punctuation.md"
+        name: "fenced.code.md"
+        contentName: "embedded.source.yaml"
+        patterns: [
+          {
+            include: "source.yaml"
+          }
+        ]
+      }
+    ]
