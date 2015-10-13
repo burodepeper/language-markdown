@@ -1,0 +1,16 @@
+key: 'line-breaks'
+patterns: [
+
+  # two trailing spaces
+  {
+    match: '(  )$'
+    name: 'line-break.constant.md'
+  }
+
+  # trailing backslash
+  {
+    match: '(\\\\)$'
+    name: 'line-break.constant.md'
+  }
+
+]

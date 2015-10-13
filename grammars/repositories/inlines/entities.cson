@@ -1,0 +1,28 @@
+key: 'entities'
+patterns: [
+  {
+    # TODO
+    # Whoever wants to extract the full list of valid entity names from
+    # https://html.spec.whatwg.org/multipage/entities.json
+    # instead of using this insanely lazy alphanumeric match; be my guest.
+    match: '(&)([a-zA-Z0-9]{2,32})(;)'
+    name: 'entity.constant.md'
+    captures:
+      1: { name: 'punctuation.md' }
+      3: { name: 'punctuation.md' }
+  }
+  {
+    match: '(&#)([0-9]{1,8})(;)'
+    name: 'entity.constant.md'
+    captures:
+      1: { name: 'punctuation.md' }
+      3: { name: 'punctuation.md' }
+  }
+  {
+    match: '(&#[x|X])([0-9a-fA-F]{1,8})(;)'
+    name: 'entity.constant.md'
+    captures:
+      1: { name: 'punctuation.md' }
+      3: { name: 'punctuation.md' }
+  }
+]

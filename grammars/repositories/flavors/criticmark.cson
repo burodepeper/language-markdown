@@ -1,0 +1,73 @@
+key: 'criticmark'
+patterns: [
+  {
+    name: 'addition.critic.inserted.markup.md'
+    begin: '({\\+\\+)'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    end: '(\\+\\+})'
+    endCaptures:
+      1: name: 'punctuation.md'
+    patterns: [
+      { include: '#emphasis' }
+    ]
+  }
+  {
+    name: 'deletion.critic.deleted.markup.md'
+    begin: '({--)'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    end: '(--})'
+    endCaptures:
+      1: name: 'punctuation.md'
+    patterns: [
+      { include: '#emphasis' }
+    ]
+  }
+  {
+    name: 'highlight.critic.changed.markup.md'
+    begin: '({==)'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    end: '(==})'
+    endCaptures:
+      1: name: 'punctuation.md'
+    patterns: [
+      { include: '#emphasis' }
+    ]
+  }
+  {
+    name: 'comment.critic.markup.md'
+    begin: '({>>)'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    patterns: [
+      {
+        match: '(?<=[\\s|>])((@)(\\w[-\\w:]*))(?=\\s)'
+        captures:
+          1: name: 'username.reference.variable.md'
+          2: name: 'punctuation.md'
+      }
+      { include: '#emphasis' }
+    ]
+    end: '(<<})'
+    endCaptures:
+      1: name: 'punctuation.md'
+  }
+  {
+    name: 'substitution.critic.inserted.markup.md'
+    begin: '({~~)'
+    beginCaptures:
+      1: name: 'punctuation.md'
+    end: '(~~})'
+    endCaptures:
+      1: name: 'punctuation.md'
+    patterns: [
+      {
+        match: '~>'
+        name: 'punctuation.md'
+      }
+      { include: '#emphasis' }
+    ]
+  }
+]

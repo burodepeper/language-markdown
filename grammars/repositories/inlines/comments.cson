@@ -1,0 +1,11 @@
+key: 'comments'
+patterns: [
+  {
+    name: 'comment.md'
+    begin: '(<!--)'
+    end: '(-->)'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+  }
+]

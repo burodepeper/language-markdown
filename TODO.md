@@ -1,8 +1,8 @@
 # david-splits-grammar
 
 - [x] Restructure `/lib/main.coffee` to make room for combining grammar subrepositories.
-- [ ] Move and split parts of main grammar repository in to `/grammars/repositories/blocks/*.cson` and `/grammars/repositories/inlines/*.cson`
-- [ ] Move the basic structure to `/grammars/repositories/markdown.cson`
+- [x] Move and split parts of main grammar repository in to `/grammars/repositories/blocks/*.cson` and `/grammars/repositories/inlines/*.cson`
+- [x] Move the basic structure to `/grammars/repositories/markdown.cson`
 - [ ] Implement `combineGrammarRepositories()`
   - [ ] Load basic grammar structure
   - [ ] Load all grammar repositories (via GLOB?)
