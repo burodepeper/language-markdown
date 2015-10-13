@@ -5,7 +5,9 @@
 if atom.inDevMode()
 
   CSON = require 'season'
+  {Directory} = require 'pathwatcher'
   path = require 'path'
+  fs = require 'fs'
 
   module.exports =
 
@@ -42,17 +44,34 @@ if atom.inDevMode()
             ]
 
       filepath = path.join(__dirname, output)
-      CSON.writeFileSync filepath, grammar, do ->
-        console.log "[language-markdown] Grammar generated for 'fenced-code-blocks'"
+      CSON.writeFileSync filepath, grammar
 
-    # TODO
     # Loads the basic grammar structure,
     # which includes the grouped parts in the repository,
     # and then loads all grammar subrepositories,
     # and appends them to the main repository,
     # and finally writes {grammar} to {output}
     combineGrammarRepositories: ->
-      return
+      input = '../grammars/repositories/markdown.cson'
+      output = '../grammars/markdown.compiled.json'
+      repositoryDirectories = ['blocks', 'flavors', 'inlines']
+      filepath = path.join(__dirname, input)
+      grammar = CSON.readFileSync(filepath)
+
+      for directoryName in repositoryDirectories
+        directory = new Directory(path.join(__dirname, '../grammars/repositories/'+directoryName))
+        entries = directory.getEntriesSync()
+        for entry in entries
+          {key, patterns} = CSON.readFileSync(entry.path)
+          if key and patterns
+            grammar.repository[key] = patterns
+
+      # NOTE
+      # Write directly to JSON, because JSON requires double quotes around strings.
+      # In our case, various #{} patterns in CSON would be interpreted, and as such cause errors when loading the package. This seems to circumvent that.
+      json = JSON.stringify(grammar)
+      filepath = path.join(__dirname, output)
+      fs.writeFileSync filepath, json
 
     # Transform an {item} into a {pattern} object,
     # and adds it to the {patterns} array.

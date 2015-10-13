@@ -3,9 +3,10 @@
 - [x] Restructure `/lib/main.coffee` to make room for combining grammar subrepositories.
 - [x] Move and split parts of main grammar repository in to `/grammars/repositories/blocks/*.cson` and `/grammars/repositories/inlines/*.cson`
 - [x] Move the basic structure to `/grammars/repositories/markdown.cson`
-- [ ] Implement `combineGrammarRepositories()`
-  - [ ] Load basic grammar structure
-  - [ ] Load all grammar repositories (via GLOB?)
-  - [ ] Append grammar repositories to the main repository
-  - [ ] Write combined grammar to disk
+- [x] Implement `combineGrammarRepositories()`
+  - [x] Load basic grammar structure
+  - [x] Load all grammar repositories
+  - [x] Append grammar repositories to the main repository
+  - [x] Write combined grammar to disk
+- [ ] Include fenced code blocks as `fenced-code-blocks`, and don't forget its repository
 - [ ] Remove original `markdown.cson` and hope that everything works...
