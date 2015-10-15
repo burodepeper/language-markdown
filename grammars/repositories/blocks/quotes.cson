@@ -7,7 +7,8 @@ patterns: [
       1: { name: 'punctuation.md' }
       2:
         patterns: [
-          include: '#blocks'
+          { include: '#blocks' }
+          { include: '#inlines-in-blocks' }
         ]
   }
 ]

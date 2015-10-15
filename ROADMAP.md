@@ -4,7 +4,7 @@
 - [ ] specs for `inlines/links`: 442-520, @479
 - [ ] specs for `inlines/images`: 521-542, @522
 - [x] specs for `inlines/autolinks`: 543-558
-- [ ] specs for `blocks/links-references`: 146-168, @151
+- [x] specs for `blocks/links-references`
 - [ ] specs for `blocks/html`: 104-145
 - [ ] specs for `inlines/html`: 559-579
 - [ ] specs for `inlines/line-breaks`: 580-594

@@ -618,6 +618,9 @@
               "patterns": [
                 {
                   "include": "#blocks"
+                },
+                {
+                  "include": "#inlines-in-blocks"
                 }
               ]
             }

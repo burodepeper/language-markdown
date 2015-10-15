@@ -35,7 +35,7 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | Core (blocks) | Horizontal rules | complete | 27 of 27 | Good |
 | Core (blocks) | (ATX) Headings | complete | 23 of 23 | Good |
 | Core (blocks) | Fenced code blocks | _beta_ | 25 of 27 | Okay |
-| Core (blocks) | Links reference definitions | _beta_ | - | Okay |
+| Core (blocks) | Links reference definitions | _beta_ | 21 of 23 | Good |
 | Core (blocks) | Block quotes | complete | 25 of 25 | Good |
 | Core (blocks) | Lists | complete | 33 of 34 | Good |
 | Core (inlines) | Backslash escapes | _alpha_ | 5 of 13 | Okay |
