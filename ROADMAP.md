@@ -1,8 +1,8 @@
 # Current work in progress towards _v0.1_
 
 - [x] specs for `blocks/fenced-code`: 77-103
-- [ ] specs for `inlines/links`: 442-520
-- [ ] specs for `inlines/images`: 521-542
+- [ ] specs for `inlines/links`: 442-520, @479
+- [ ] specs for `inlines/images`: 521-542, @522
 - [x] specs for `inlines/autolinks`: 543-558
 - [ ] specs for `blocks/links-references`: 146-168
 - [ ] specs for `blocks/html`: 104-145
