@@ -16,7 +16,7 @@ if atom.inDevMode()
     # via which the compiler can be executed
     activate: ->
       @subscriptions = new CompositeDisposable()
-      @subscriptions.add atom.commands.add 'atom-workspace', 'language-markdown:compile-grammar': => @compileGrammar()
+      @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:compile-grammar-and-reload': => @compileGrammar()
 
     # Reads fixtures from {input},
     # parses {data} to expand shortened syntax,
@@ -52,9 +52,11 @@ if atom.inDevMode()
       grammar.repository['fenced-code-blocks'] =
         patterns: @compileFencedCodeGrammar()
 
+      # Write {grammar} to {filepath},
+      # and reload window when complete
       filepath = path.join(__dirname, output)
       CSON.writeFileSync filepath, grammar, do ->
-        console.log "[language-markdown] Done!"
+        atom.commands.dispatch 'body', 'window:reload'
 
     # Transform an {item} into a {pattern} object,
     # and adds it to the {patterns} array.
