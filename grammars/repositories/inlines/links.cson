@@ -80,6 +80,14 @@ patterns: [
       3: patterns: [{ include: '#link-destination' }]
   }
 
+  # [label]
+  {
+    match: '((?:\\[)(?:[^\\]]*)(?:\\]))(?!:)'
+    # match: '((?:\\[)(?:[^((?<!\\\\)\\])]*)(?:\\]))(?!:)'
+    captures:
+      1: patterns: [{ include: '#link-label' }]
+  }
+
   # auto-link: absolute uri
   {
     name: 'auto.link.markup.md'
