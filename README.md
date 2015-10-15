@@ -1,16 +1,16 @@
 # Markdown grammar [![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
 
-The intention of this package is to provide an alternative to [language-gfm]() by providing an implementation that intends to follow the [CommonMark](http://www.commonmark.org/) specifications as reasonable as possible.
+The intention of this package is to provide a more flexible alternative to [language-gfm](https://github.com/atom/language-gfm/) by providing an implementation that intends to follow the [CommonMark](http://www.commonmark.org/) specifications as reasonably as possible.
 
-An additional aim is to provide support for _additional flavors_ (such as Github, Pandoc, CriticMark, etc.) and to allow the user to dynamically select which to use, and which not.
+An additional aim is to provide support for _different flavors_ (such as Github, Pandoc, CriticMark, etc.) and to allow the user to dynamically select which to use, and which not.
 
 ---
 
 ### Limitations
 
-Unfortunately however, because of the way Atom handles/parses grammar, it is impossible or simply unrealistic to fully and consistently implement the specs as provided. This has forced us to make a few decisions in certain areas. Our _focus_ is to support **actual real-life use-cases** instead of blindly following overly specific rules. The _aim_ of this language-pack therefor is to support the user in writing Markdown files, and _not_ to be a perfect representation of them.
+Unfortunately however, because of the way Atom handles/parses grammar, it is impossible or simply unrealistic to fully and consistently implement the specs as provided. This has forced us to make a few decisions in certain areas. Our _focus_ is to support **actual real-life use-cases** instead of blindly following overly specific rules. The _aim_ of this language-pack therefore is to support the user in writing Markdown files, and _not_ to be a perfect representation of them.
 
-Following is list of areas that are limited in their implementation/support. A more detailed explanation can be found further down in this document.
+The following list gives a summary of elements that are limited in their implementation/support. A more detailed explanation can be found further down in this document.
 
 - **Setext headers** are not implemented.
 - **Indented code blocks** are implemented, but disabled in favor of fenced-code-blocks.
@@ -24,9 +24,9 @@ If you experience any issue that is above a reasonable/tolerable level of annoya
 
 ### Current status
 
-**Usable**, but with some caveats.
+v0.0.12: **Pretty stable**, but with some caveats.
 
-Our scope-names are still purely semantic, so there's a good chance that your syntax theme won't fully support this package. If you don't mind a light syntax theme, give [minimal-syntax](https://atom.io/packages/minimal-syntax) a try. It is updated parallel to development to support all of our development scopes.
+If you don't mind a light syntax theme, give [minimal-syntax](https://atom.io/packages/minimal-syntax) a try. It is updated in parallel to this package, and tweaks many bits and pieces that the default syntax themes overlook.
 
 #### Detailed status
 
@@ -34,14 +34,14 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | ------ | ------- | ------- | ----- | ------- |
 | Core (blocks) | Horizontal rules | complete | 27 of 27 | Good |
 | Core (blocks) | (ATX) Headings | complete | 23 of 23 | Good |
-| Core (blocks) | Fenced code blocks | _beta_ | 25 of 27 | Okay |
+| Core (blocks) | Fenced code blocks | _beta_ | 25 of 27 | Good |
 | Core (blocks) | Links reference definitions | _beta_ | 21 of 23 | Good |
 | Core (blocks) | Block quotes | complete | 25 of 25 | Good |
 | Core (blocks) | Lists | complete | 33 of 34 | Good |
 | Core (inlines) | Backslash escapes | _alpha_ | 5 of 13 | Okay |
 | Core (inlines) | Entities | _alpha_ | 7 of 12 | Good |
 | Core (inlines) | Code spans | _beta_ | 12 of 15 | Good |
-| Core (inlines) | Emphasis | _alpha_ | 77 of 130 | Limited |
+| Core (inlines) | Emphasis | _alpha_ | 77 of 130 | Okay |
 | Core (inlines) | Links | _alpha_ | 26 of 43 | Okay |
 | Core (inlines) | Images | _beta_ | - | Okay |
 | Core (inlines) | Autolinks | complete | 16 of 16 | Good |
@@ -69,8 +69,8 @@ Our scope-names are still purely semantic, so there's a good chance that your sy
 | Feature | Status |
 | ------- | ------ |
 | Dynamic grammar selection | _on hold_ |
-| Less verbose specs | _in beta_ |
-| Improved fenced code blocks | _on hold_ |
+| Less verbose specs | _beta_ |
+| Improved fenced code blocks | _beta_ |
 
 ---
 
