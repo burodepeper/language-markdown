@@ -1,0 +1,136 @@
+@146
+"[foo]: /url "title""+
+""+
+"[foo]" {
+  text.md {
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+# NOTE multiline not supported
+@147
+"[foo]:"+
+"   /url"+
+"        'the title'"+
+""+
+"[foo]" {
+  text.md {
+    "[foo]:"
+    "   /url"
+    "        'the title'"
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+# TODO
+# @148
+# "[Foo*bar\]]:my_(url) 'title (with parens)'"+
+# ""+
+# "[Foo*bar\]]" {
+#
+# }
+
+# NOTE multiline not supported
+@149
+"[Foo bar]:"+
+"<my url>"+
+"'title'"+
+""+
+"[Foo bar]" {
+  text.md {
+    "[Foo bar]:"
+    "<my url>"
+    "'title'"
+    ""
+    "[Foo bar]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "Foo bar"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+@150
+"[foo]: /url '"+
+"title"+
+"line1"+
+"line2"+
+"'"+
+""+
+"[foo]" {
+  text.md {
+    "[foo]: /url '" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+      }
+      " '"
+    }
+    "title"
+    "line1"
+    "line2"
+    "'"
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}

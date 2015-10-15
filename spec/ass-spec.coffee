@@ -10,7 +10,7 @@ fixtures = [
   "blocks/headings"
   "blocks/fenced-code"
   # "blocks/html-blocks"
-  # "blocks/link-references"
+  "blocks/link-references" # WIP
   "blocks/quotes"
   "blocks/lists"
   # INLINES
@@ -29,9 +29,9 @@ fixtures = [
 ]
 
 # Overwrite fixtures, cause this is what I'm working on...
-# fixtures = [
-#   "blocks/fenced-code"
-# ]
+fixtures = [
+  "blocks/link-references"
+]
 
 describe "Markdown grammar", ->
   grammar = null
