@@ -49,8 +49,8 @@ if atom.inDevMode()
               patterns: patterns
 
       # Compile and add fenced-code-blocks to repository
-      grammar.repository['fenced-code-blocks'] = { patterns: @compileFencedCodeGrammar() }
-
+      grammar.repository['fenced-code-blocks'] =
+        patterns: @compileFencedCodeGrammar()
 
       filepath = path.join(__dirname, output)
       CSON.writeFileSync filepath, grammar, do ->
@@ -78,6 +78,7 @@ if atom.inDevMode()
             patterns: [{ include: item.include }]
 
           patterns.push pattern
+
       return patterns
 
     # When provided with a valid {item} ({item.pattern} is required),
