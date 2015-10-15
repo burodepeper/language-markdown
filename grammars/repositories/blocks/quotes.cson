@@ -1,0 +1,14 @@
+key: 'quotes'
+patterns: [
+  {
+    match: '^(?: {0,3})(>){1}(?: ){0,1}(.*)$'
+    name: 'quote.markup.md'
+    captures:
+      1: { name: 'punctuation.md' }
+      2:
+        patterns: [
+          { include: '#blocks' }
+          { include: '#inlines-in-blocks' }
+        ]
+  }
+]

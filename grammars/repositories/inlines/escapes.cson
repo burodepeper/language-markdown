@@ -1,0 +1,7 @@
+key: 'escapes'
+patterns: [
+  {
+    match: '\\\\.'
+    name: 'escape.constant.md'
+  }
+]

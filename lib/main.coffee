@@ -1,54 +1,70 @@
-# HACK
-# Always (and only) execute in dev-mode.
-# This means that after updating any of the grammar fixtures, the package has to be reloaded in dev-mode at least once to regenerate the grammar files.
+# NOTE
+# When in dev-mode, the command {language-markdown:compile-grammar} is added, which triggers a re-compile of the grammar. This piece of awesomeness needs to be triggered manually however, everytime you've changed a piece of the grammar. Yay for automation. But since a change in grammar needs a reload of Atom anyway, I think I can get away with this solution.
 if atom.inDevMode()
 
+  {CompositeDisposable} = require 'atom'
   CSON = require 'season'
+  {Directory} = require 'pathwatcher'
   path = require 'path'
+  fs = require 'fs'
 
   module.exports =
-    
-    data: null
-    version: null
-    input: '../grammars/fixtures/fenced-code.cson'
-    output: '../grammars/fenced-code.compiled.cson'
 
+    subscriptions: null
+
+    # Create the {language-markdown:compile-grammar} command,
+    # via which the compiler can be executed
     activate: ->
-      @updateGrammar()
+      @subscriptions = new CompositeDisposable()
+      @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:compile-grammar-and-reload': => @compileGrammar()
 
-    loadFixture: ->
-      filepath = path.join(__dirname, @input)
-      @data = CSON.readFileSync(filepath)
+    # Reads fixtures from {input},
+    # parses {data} to expand shortened syntax,
+    # creates and returns patterns from valid items in {data}.
+    compileFencedCodeGrammar: ->
+      input = '../grammars/fixtures/fenced-code.cson'
+      filepath = path.join(__dirname, input)
+      data = CSON.readFileSync(filepath)
+      @_createPatternsFromData(data)
 
-    updateGrammar: ->
-      if @loadFixture()
+    # Loads the basic grammar structure,
+    # which includes the grouped parts in the repository,
+    # and then loads all grammar subrepositories,
+    # and appends them to the main repository,
+    # and finally writes {grammar} to {output}
+    compileGrammar: ->
+      input = '../grammars/repositories/markdown.cson'
+      output = '../grammars/language-markdown.json'
+      repositoryDirectories = ['blocks', 'flavors', 'inlines']
+      filepath = path.join(__dirname, input)
+      grammar = CSON.readFileSync(filepath)
 
-        grammar =
-          version: @inputVersion
-          name: @data.name
-          scopeName: @data.scopeName
-          patterns: @createPatternsFromData()
-          repository:
-            'fenced-code-info':
-              patterns: [
-                {
-                  match: '([^ ]+)(=)([^ ]+)'
-                  name: 'info.fenced.code.md'
-                  captures:
-                    1: name: 'key.keyword.md'
-                    2: name: 'punctuation.md'
-                    3: name: 'value.string.md'
-                }
-              ]
+      for directoryName in repositoryDirectories
+        directory = new Directory(path.join(__dirname, '../grammars/repositories/'+directoryName))
+        entries = directory.getEntriesSync()
+        for entry in entries
+          {key, patterns} = CSON.readFileSync(entry.path)
+          if key and patterns
+            grammar.repository[key] =
+              patterns: patterns
 
-        filepath = path.join(__dirname, @output)
-        CSON.writeFileSync filepath, grammar, do ->
-          console.log "language-markdown: Grammar generated for 'fenced-code-blocks'"
+      # Compile and add fenced-code-blocks to repository
+      grammar.repository['fenced-code-blocks'] =
+        patterns: @compileFencedCodeGrammar()
 
-    createPatternsFromData: ->
+      # Write {grammar} to {filepath},
+      # and reload window when complete
+      filepath = path.join(__dirname, output)
+      CSON.writeFileSync filepath, grammar, do ->
+        atom.commands.dispatch 'body', 'window:reload'
+
+    # Transform an {item} into a {pattern} object,
+    # and adds it to the {patterns} array.
+    # Returns {patterns}.
+    _createPatternsFromData: (data) ->
       patterns = []
-      for item in @data.list
-        if item = @parseItem(item)
+      for item in data.list
+        if item = @_parseItem(item)
 
           pattern =
             begin: '^\\s*([`~]{3})\\s*('+item.pattern+')(?=( |$))\\s*([^`]*)$'
@@ -64,14 +80,13 @@ if atom.inDevMode()
             patterns: [{ include: item.include }]
 
           patterns.push pattern
+
       return patterns
 
-    # NOTE
-    # {item.pattern} is REQUIRED; return false if omitted
-    # if omitted {item.include} = "source."+item.pattern
-    # if omitted {item.contentName} = "embedded."+item.include
-    parseItem: (item) ->
-      if item.pattern?
+    # When provided with a valid {item} ({item.pattern} is required),
+    # missing {include} and/or {contentName} are generated.
+    _parseItem: (item) ->
+      if (typeof item is 'object') and item.pattern?
         unless item.include then item.include = 'source.'+item.pattern
         unless item.contentName then item.contentName = 'embedded.'+item.include
         return item

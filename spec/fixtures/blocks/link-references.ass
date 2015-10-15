@@ -1,0 +1,765 @@
+@146
+"[foo]: /url "title""+
+""+
+"[foo]" {
+  text.md {
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+# NOTE multiline not supported
+@147
+"[foo]:"+
+"   /url"+
+"        'the title'"+
+""+
+"[foo]" {
+  text.md {
+    "[foo]:"
+    "   /url"
+    "        'the title'"
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+# TODO
+# @148
+# "[Foo*bar\]]:my_(url) 'title (with parens)'"+
+# ""+
+# "[Foo*bar\]]" {
+#
+# }
+
+# NOTE multiline not supported
+@149
+"[Foo bar]:"+
+"<my url>"+
+"'title'"+
+""+
+"[Foo bar]" {
+  text.md {
+    "[Foo bar]:"
+    "<my url>"
+    "'title'"
+    ""
+    "[Foo bar]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "Foo bar"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+# NOTE multiline not supported
+@150
+"[foo]: /url '"+
+"title"+
+"line1"+
+"line2"+
+"'"+
+""+
+"[foo]" {
+  text.md {
+    "[foo]: /url '" {
+      "[foo]: /url" {
+        reference.link.markup.md {
+          "[foo]" {
+            label.link.string.md {
+              "[": punctuation.md
+              "foo"
+              "]": punctuation.md
+            }
+          }
+          ":": punctuation.md
+          " "
+          "/url" {
+            destination.link.md {
+              "/url": uri.underline.link.md
+            }
+          }
+        }
+      }
+      " '"
+    }
+    "title"
+    "line1"
+    "line2"
+    "'"
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+# NOTE multiline not supported
+@151
+"[foo]: /url 'title"+
+""+
+"with blank line'"+
+""+
+"[foo]" {
+  text.md {
+    "[foo]: /url 'title" {
+      "[foo]: /url" {
+        reference.link.markup.md {
+          "[foo]" {
+            label.link.string.md {
+              "[": punctuation.md
+              "foo"
+              "]": punctuation.md
+            }
+          }
+          ":": punctuation.md
+          " "
+          "/url" {
+            destination.link.md {
+              "/url": uri.underline.link.md
+            }
+          }
+        }
+      }
+      " 'title"
+    }
+    ""
+    "with blank line'"
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+@152
+"[foo]:"+
+"/url"+
+""+
+"[foo]" {
+  text.md {
+    "[foo]:"
+    "/url"
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+@153
+"[foo]:"+
+""+
+"[foo]" {
+  text.md {
+    "[foo]:"
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+# TODO
+# @154
+# "[foo]: /url\bar\*baz "foo\"bar\baz""+
+# ""+
+# "[foo]" {
+#
+# }
+
+@155
+"[foo]"+
+""+
+"[foo]: url" {
+  text.md {
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+    ""
+    "[foo]: url" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "url" {
+          destination.link.md {
+            "url": uri.underline.link.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@156
+"[foo]"+
+""+
+"[foo]: first"+
+"[foo]: second" {
+  text.md {
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+    ""
+    "[foo]: first" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "first" {
+          destination.link.md {
+            "first": uri.underline.link.md
+          }
+        }
+      }
+    }
+    "[foo]: second" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "second" {
+          destination.link.md {
+            "second": uri.underline.link.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@157
+"[FOO]: /url"+
+""+
+"[Foo]" {
+  text.md {
+    "[FOO]: /url" {
+      reference.link.markup.md {
+        "[FOO]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "FOO"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+      }
+    }
+    ""
+    "[Foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "Foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+@158
+"[ΑΓΩ]: /φου"+
+""+
+"[αγω]" {
+  text.md {
+    "[ΑΓΩ]: /φου" {
+      reference.link.markup.md {
+        "[ΑΓΩ]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "ΑΓΩ"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/φου" {
+          destination.link.md {
+            "/φου": uri.underline.link.md
+          }
+        }
+      }
+    }
+    ""
+    "[αγω]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "αγω"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+@159
+"[foo]: /url" {
+  text.md {
+    "[foo]: /url" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@160
+"["+
+"foo"+
+"]: /url"+
+"bar" {
+  text.md {
+    "["
+    "foo"
+    "]: /url"
+    "bar"
+  }
+}
+
+@161
+"[foo]: /url "title" ok" {
+  text.md {
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+    " ok"
+  }
+}
+
+@162
+"[foo]: /url"+
+""title" ok" {
+  text.md {
+    "[foo]: /url" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+      }
+    }
+    ""title" ok"
+  }
+}
+
+@163
+"    [foo]: /url "title""+
+""+
+"[foo]" {
+  text.md {
+    "    "
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+@164
+"```"+
+"[foo]: /url"+
+"```"+
+""+
+"[foo]" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      source.md {
+        "[foo]: /url"
+      }
+      "```": punctuation.md
+    }
+    ""
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+# NOTE can't detect multiline relations
+@165
+"Foo"+
+"[bar]: /baz"+
+""+
+"[bar]" {
+  text.md {
+    "Foo"
+    "[bar]: /baz" {
+      reference.link.markup.md {
+        "[bar]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "bar"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/baz" {
+          destination.link.md {
+            "/baz": uri.underline.link.md
+          }
+        }
+      }
+    }
+    ""
+    "[bar]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "bar"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+@166
+"# [Foo]"+
+"[foo]: /url"+
+"> bar" {
+  text.md {
+    heading.markup.md {
+      heading-1.md {
+        "#": punctuation.md
+        " "
+        "[Foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "Foo"
+            "]": punctuation.md
+          }
+        }
+      }
+    }
+    "[foo]: /url" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+      }
+    }
+    "> bar" {
+      quote.markup.md {
+        ">": punctuation.md
+        " "
+        "bar"
+      }
+    }
+  }
+}
+
+@167
+"[foo]: /foo-url "foo""+
+"[bar]: /bar-url"+
+"  "bar""+
+"[baz]: /baz-url"+
+""+
+"[foo],"+
+"[bar],"+
+"[baz]" {
+  text.md {
+    "[foo]: /foo-url "foo"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/foo-url" {
+          destination.link.md {
+            "/foo-url": uri.underline.link.md
+          }
+        }
+        " "
+        ""foo"" {
+          title.link.md {
+            '"': punctuation.md
+            "foo"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+    "[bar]: /bar-url" {
+      reference.link.markup.md {
+        "[bar]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "bar"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/bar-url" {
+          destination.link.md {
+            "/bar-url": uri.underline.link.md
+          }
+        }
+      }
+    }
+    "  "bar""
+    "[baz]: /baz-url" {
+      reference.link.markup.md {
+        "[baz]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "baz"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/baz-url" {
+          destination.link.md {
+            "/baz-url": uri.underline.link.md
+          }
+        }
+      }
+    }
+    ""
+    "[foo]," {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+      ","
+    }
+    "[bar]," {
+      label.link.string.md {
+        "[": punctuation.md
+        "bar"
+        "]": punctuation.md
+      }
+      ","
+    }
+    "[baz]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "baz"
+        "]": punctuation.md
+      }
+    }
+  }
+}
+
+@168
+"[foo]"+
+""+
+"> [foo]: /url" {
+  text.md {
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+    ""
+    "> [foo]: /url" {
+      quote.markup.md {
+        ">": punctuation.md
+        " "
+        reference.link.markup.md {
+          "[foo]" {
+            label.link.string.md {
+              "[": punctuation.md
+              "foo"
+              "]": punctuation.md
+            }
+          }
+          ":": punctuation.md
+          " "
+          "/url" {
+            destination.link.md {
+              "/url": uri.underline.link.md
+            }
+          }
+        }
+      }
+    }
+  }
+}

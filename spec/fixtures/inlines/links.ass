@@ -79,7 +79,16 @@
 @446
 # "[link](/my uri)": text.md
 "[link](/my uri)" {
-  "[link](/my uri)": text.md
+  text.md {
+    "[link]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+    }
+    "(/my uri)"
+  }
 }
 
 @447
@@ -106,7 +115,14 @@
 "[link](foo"+
 "bar)" {
   text.md {
-    "[link](foo"
+    "[link]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+    }
+    "(foo"
     "bar)"
   }
 }
@@ -115,7 +131,14 @@
 "[link](<foo"+
 "bar>)" {
   text.md {
-    "[link](<foo"
+    "[link]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+    }
+    "(<foo"
     "bar>)"
   }
 }
@@ -460,8 +483,17 @@
 
 @464
 # "[link] (/uri)": text.md
-"[link](/my uri)" {
-  "[link](/my uri)": text.md
+"[link] (/my uri)" {
+  text.md {
+    "[link]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+    }
+    " (/my uri)"
+  }
 }
 
 # FIXME
@@ -484,9 +516,17 @@
 # }
 
 @466
-# "[link] bar](/uri)": text.md
 "[link] bar](/uri)" {
-  "[link] bar](/uri)": text.md
+  text.md {
+    "[link]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+    }
+    " bar](/uri)"
+  }
 }
 
 # FIXME
