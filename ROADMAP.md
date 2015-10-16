@@ -1,5 +1,10 @@
 # Current work in progress towards _v0.1_
 
+- [x] Make `README.md` more compact, and move secondary info to separate files
+- [x] Add keybinding for `markdown:compile`
+- [ ] Move table grammar to github directory
+- [ ] Break down spec-status in PASS, SKIP and FAIL counts
+
 - [x] specs for `blocks/fenced-code`: 77-103
 - [ ] specs for `inlines/links`: 442-520, @479
 - [ ] specs for `inlines/images`: 521-542, @522
