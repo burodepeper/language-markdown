@@ -1,0 +1,2 @@
+'atom-workspace':
+  'cmd-alt-ctrl-c': 'markdown:compile-grammar-and-reload'
