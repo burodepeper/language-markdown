@@ -20,8 +20,8 @@
 
 ## Flavors
 
-- [ ] grammar for `github/strikethrough`
-- [ ] grammar for `github/emojis`
+- [x] grammar for `github/strikethrough`
+- [x] grammar for `github/emojis`
 - [ ] specs for `github/mentions`
 - [ ] specs for `github/issues`
 - [ ] specs for `github/emojis`
