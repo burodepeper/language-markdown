@@ -6,10 +6,17 @@
   }
 }
 
+# NOTE
+# A '---' at the start of a document is recognized as the start of a yaml
+# front-matter block. In testing, every tests is technically a separate new
+# document, so this test includes a scope you wouldn't expect. For that reason,
+# test @8d has been added.
 @commonmark-8b
 "---" {
   text.md {
-    '---': hr.md
+    front-matter.yaml.source.md {
+      '---': hr.md
+    }
   }
 }
 
@@ -17,6 +24,15 @@
 "___" {
   text.md {
     '___': hr.md
+  }
+}
+
+@commonmark-8d
+" "+
+"---" {
+  text.md {
+    " "
+    '---': hr.md
   }
 }
 

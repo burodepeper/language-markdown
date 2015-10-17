@@ -4,7 +4,7 @@
 
 - [x] Make `README.md` more compact, and move secondary info to separate files
 - [x] Add keybinding for `markdown:compile`
-- [ ] Move table grammar to github directory
+- [ ] Move table-grammar to github-directory
 - [ ] Break down spec-status in PASS, SKIP and FAIL counts
 
 ## Core
@@ -27,9 +27,10 @@
 - [ ] specs for `github/strikethrough`
 - [ ] specs for `github/tables`
 - [ ] specs for `criticmark/annotation`
+- [ ] specs for `yaml-front-matter`
 
 ## Community
 
-- [ ] grammar, example and specs for `yaml-front-matter`
+- [x] support `yaml-front-matter`
 - [ ] import additional specs from `language-gfm`
 - [ ] import/check issues from `language-gfm`

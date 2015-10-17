@@ -677,9 +677,14 @@
       "patterns": [
         {
           "begin": "\\A---$",
-          "end": "^(---|\\.\\.\\.)$",
-          "captures": {
+          "beginCaptures": {
             "0": {
+              "name": "hr.md"
+            }
+          },
+          "end": "^(---|\\.\\.\\.)$",
+          "endCaptures": {
+            "1": {
               "name": "hr.md"
             }
           },
