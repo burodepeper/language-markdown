@@ -1,10 +1,14 @@
 key: 'github'
 patterns: [
 
+  # NOTE
+  # From github.com/join: "Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen". The / is added to support @atom/feedback for instance.
   {
-    match: '(?<=^|\\s|"|\'|\\(|\\[)((@)(\\w[-\\w:]*))(?=[\\s"\'.,;\\)\\]])'
+    # match: '(?<=^|\\s|"|\'|\\(|\\[)((@)(\\w[-\\w:]*))(?=[\\s"\'.,;\\)\\]])'
+    # match: '(?<=^|\\s|"|\'|\\(|\\[)((@)(\\w[-\\w:/]*))(?=[\\s"\'.,;\\)\\]])'
+    match: '(?<=^|\\s|"|\'|\\(|\\[)((@)([a-zA-Z0-9][a-zA-Z0-9\\-/]*[a-zA-Z0-9]))(?=[\\s"\'\\.,;:\\)\\]])'
     captures:
-      1: name: 'username.reference.gfm.variable.md'
+      1: name: 'mention.reference.gfm.variable.md'
       2: name: 'punctuation.md'
   }
 

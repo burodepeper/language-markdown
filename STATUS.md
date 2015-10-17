@@ -18,7 +18,7 @@
 | Core: inlines  | Images                      |      TODO | OK     |
 | Core: inlines  | Autolinks                   |  16 of 16 | Good   |
 | Core: inlines  | Line-breaks                 |      TODO | Good   |
-| Github         | Mentions                    |      TODO | Good   |
+| Github         | Mentions                    |  22 of 22 | Good   |
 | Github         | Issues                      |      TODO | Good   |
 | Github         | Emojis                      |      TODO | Good   |
 | Github         | Strikethrough               |      TODO | Good   |
@@ -26,8 +26,7 @@
 | CriticMark     | Annotation                  |      TODO | Good   |
 | YAML           | Front matter                |    3 of 3 | Good   |
 
-Number of tests: > 300
-Number of assertions: > 1500
+Number of tests: 361 (1656 assertions)
 
 ### Notes
 
@@ -35,6 +34,7 @@ Number of assertions: > 1500
 - The Github `task-lists` are implemented as a part of unordered-lists.
 - Setext-headers (underlined-headers) are not supported.
 - Indented-code-blocks have been disabled to prevent false-positives.
+- Github tables require pipes at the start of each line
 
 ### References
 

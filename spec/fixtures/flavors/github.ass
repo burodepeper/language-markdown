@@ -1,0 +1,256 @@
+# mentions
+
+@github-mentions-1
+"@username" {
+  text.md {
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+  }
+}
+
+@github-mentions-2
+"@user name" {
+  text.md {
+    "@user" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "user"
+      }
+    }
+    " name"
+  }
+}
+
+@github-mentions-3
+"user@name": text.md
+
+@github-mentions-4
+"@username: something, something" {
+  text.md {
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    ": something, something"
+  }
+}
+
+@github-mentions-5
+"@userName123" {
+  text.md {
+    "@userName123" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "userName123"
+      }
+    }
+  }
+}
+
+@github-mentions-6
+"@user_name": text.md
+
+@github-mentions-7
+"@user-name" {
+  text.md {
+    "@user-name" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "user-name"
+      }
+    }
+  }
+}
+
+@github-mentions-8
+"@:user:name": text.md
+
+@github-mentions-9
+"@user:name" {
+  text.md {
+    "@user" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "user"
+      }
+    }
+    ":name"
+  }
+}
+
+@github-mentions-10
+""@username"" {
+  text.md {
+    """
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    """
+  }
+}
+
+@github-mentions-11
+"'@username'" {
+  text.md {
+    "'"
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    "'"
+  }
+}
+
+@github-mentions-12
+"(@username)" {
+  text.md {
+    "("
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    ")"
+  }
+}
+
+# NOTE
+# Though technically allowed, but link-reference-labels are parsed before
+# mentions.
+@github-mentions-13
+"[@username]" {
+  text.md {
+    label.link.string.md {
+      "[": punctuation.md
+      "@username"
+      "]": punctuation.md
+    }
+  }
+}
+
+# NOTE
+# technically okay, but a weird thing to do...
+@github-mentions-14
+"(@username]" {
+  text.md {
+    "("
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    "]"
+  }
+}
+
+@github-mentions-15
+">@username" {
+  text.md {
+    quote.markup.md {
+      ">": punctuation.md
+      "@username" {
+        mention.reference.gfm.variable.md {
+          "@": punctuation.md
+          "username"
+        }
+      }
+    }
+  }
+}
+
+@github-mentions-16
+"@one, @two, @three" {
+  text.md {
+    "@one" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "one"
+      }
+    }
+    ", "
+    "@two" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "two"
+      }
+    }
+    ", "
+    "@three" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "three"
+      }
+    }
+  }
+}
+
+@github-mentions-17
+"@username=cool": text.md
+
+@github-mentions-18
+"@username." {
+  text.md {
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    "."
+  }
+}
+
+@github-mentions-19
+"-@username": text.md
+
+@github-mentions-20
+"- @username" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "@username" {
+        mention.reference.gfm.variable.md {
+          "@": punctuation.md
+          "username"
+        }
+      }
+    }
+  }
+}
+
+@github-mentions-21
+"@atom/feedback" {
+  text.md {
+    "@atom/feedback" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "atom/feedback"
+      }
+    }
+  }
+}
+
+@github-mentions-22
+"@username-": text.md
+
+# issues
+
+# emojis
+
+# strikethrough
+
+# tables

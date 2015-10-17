@@ -753,10 +753,10 @@
     "github": {
       "patterns": [
         {
-          "match": "(?<=^|\\s|\"|'|\\(|\\[)((@)(\\w[-\\w:]*))(?=[\\s\"'.,;\\)\\]])",
+          "match": "(?<=^|\\s|\"|'|\\(|\\[)((@)([a-zA-Z0-9][a-zA-Z0-9\\-/]*[a-zA-Z0-9]))(?=[\\s\"'\\.,;:\\)\\]])",
           "captures": {
             "1": {
-              "name": "username.reference.gfm.variable.md"
+              "name": "mention.reference.gfm.variable.md"
             },
             "2": {
               "name": "punctuation.md"

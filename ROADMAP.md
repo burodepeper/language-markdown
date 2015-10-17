@@ -17,14 +17,14 @@
 - [ ] specs for `inlines/images`: 521-542, @522
 - [x] specs for `inlines/autolinks`: 543-558
 - [x] specs for `blocks/links-references`
-- [ ] specs for `html`: 104-145 & 559-579 (a selection)
+- [ ] specs for `html`: 104-145 & 559-579 (if possible)
 - [ ] specs for `inlines/line-breaks`: 580-594
 
 ### Flavors
 
 - [x] grammar for `github/strikethrough`
 - [x] grammar for `github/emojis`
-- [ ] specs for `github/mentions`
+- [x] specs for `github/mentions`
 - [ ] specs for `github/issues`
 - [ ] specs for `github/emojis`
 - [ ] specs for `github/strikethrough`
@@ -35,8 +35,10 @@
 ### Community
 
 - [x] support `yaml-front-matter`
-- [ ] import additional specs from `language-gfm`
-- [ ] import/check issues from `language-gfm`
+- [ ] import additional specs from [language-gfm]
+- [ ] import/check issues from [language-gfm]
+
+[language-gfm]: /atom/language-gfm
 
 --------------------------------------------------------------------------------
 
