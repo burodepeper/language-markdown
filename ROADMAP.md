@@ -1,9 +1,13 @@
 # Current work in progress towards _v0.1_
 
+## Janitorial
+
 - [x] Make `README.md` more compact, and move secondary info to separate files
 - [x] Add keybinding for `markdown:compile`
 - [ ] Move table grammar to github directory
 - [ ] Break down spec-status in PASS, SKIP and FAIL counts
+
+## Core
 
 - [x] specs for `blocks/fenced-code`: 77-103
 - [ ] specs for `inlines/links`: 442-520, @479
@@ -14,6 +18,8 @@
 - [ ] specs for `inlines/html`: 559-579
 - [ ] specs for `inlines/line-breaks`: 580-594
 
+## Flavors
+
 - [ ] grammar for `github/strikethrough`
 - [ ] grammar for `github/emojis`
 - [ ] specs for `github/mentions`
@@ -23,5 +29,8 @@
 - [ ] specs for `github/tables`
 - [ ] specs for `criticmark/annotation`
 
+## Community
+
+- [ ] grammar, example and specs for `yaml-front-matter`
 - [ ] import additional specs from `language-gfm`
 - [ ] import/check issues from `language-gfm`
