@@ -17,7 +17,7 @@
 - [ ] specs for `inlines/images`: 521-542, @522
 - [x] specs for `inlines/autolinks`: 543-558
 - [x] specs for `blocks/links-references`
-- [ ] examples for `html`: 104-145 + 559-579
+- [ ] specs for `html`: 104-145 & 559-579 (a selection)
 - [ ] specs for `inlines/line-breaks`: 580-594
 
 ### Flavors
@@ -45,3 +45,4 @@
 ### Janitorial
 
 - [ ] Automatically load all `.ass` files in `/spec/fixtures` when `fixtures` is not defined.
+- [ ] Perhaps remove the `/examples` directory; requires a lot of upkeep
