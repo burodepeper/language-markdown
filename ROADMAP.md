@@ -1,4 +1,4 @@
-# Current work in progress towards _v0.1_
+# Current roadmap towards _v0.1_
 
 ## Janitorial
 
@@ -6,6 +6,7 @@
 - [x] Add keybinding for `markdown:compile`
 - [ ] Move table-grammar to github-directory
 - [ ] Break down spec-status in PASS, SKIP and FAIL counts
+- [ ] Proper examples in EXAMPLES.md
 
 ## Core
 
