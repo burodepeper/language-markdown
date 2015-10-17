@@ -14,8 +14,7 @@
 - [ ] specs for `inlines/images`: 521-542, @522
 - [x] specs for `inlines/autolinks`: 543-558
 - [x] specs for `blocks/links-references`
-- [ ] specs for `blocks/html`: 104-145
-- [ ] specs for `inlines/html`: 559-579
+- [ ] examples for `html`: 104-145 + 559-579
 - [ ] specs for `inlines/line-breaks`: 580-594
 
 ## Flavors
