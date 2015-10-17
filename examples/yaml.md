@@ -16,7 +16,7 @@ publisher:  My Press
 rights: © 2007 John Smith, CC BY-NC
 ...
 
-The above text should be rendered as a `yaml` front-matter block, but this bit is regular Markdown again. Below is the same yaml, but this time as a fenced code block.
+The above text should be rendered as a `yaml` `front-matter` block, but this bit is regular `Markdown` again. Below is the same `yaml`, but this time as a fenced code block.
 
 ```yaml
 title:
