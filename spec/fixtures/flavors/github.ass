@@ -249,6 +249,227 @@
 
 # issues
 
+@github-issues-1
+"#123" {
+  text.md {
+    "#123" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "123"
+      }
+    }
+  }
+}
+
+@github-issues-2
+"#12.3" {
+  text.md {
+    "#12" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "12"
+      }
+    }
+    ".3"
+  }
+}
+
+@github-issues-3
+"123#456": text.md
+
+@github-issues-4
+"#123: something, something" {
+  text.md {
+    "#123" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "123"
+      }
+    }
+    ": something, something"
+  }
+}
+
+@github-issues-5
+"#123_456": text.md
+
+@github-issues-6
+"#123-456": text.md
+
+@github-issues-7
+"#123-#456": text.md
+
+@github-issues-8
+"#123:456" {
+  text.md {
+    "#123" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "123"
+      }
+    }
+    ":456"
+  }
+}
+
+@github-issues-9
+""#123"" {
+  text.md {
+    """
+    "#123" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "123"
+      }
+    }
+    """
+  }
+}
+
+@github-issues-10
+"'#123'" {
+  text.md {
+    "'"
+    "#123" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "123"
+      }
+    }
+    "'"
+  }
+}
+
+@github-issues-11
+"(#123)" {
+  text.md {
+    "("
+    "#123" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "123"
+      }
+    }
+    ")"
+  }
+}
+
+# NOTE
+# Though technically allowed, but link-reference-labels are parsed before
+# mentions.
+@github-issues-12
+"[#123]" {
+  text.md {
+    label.link.string.md {
+      "[": punctuation.md
+      "#123"
+      "]": punctuation.md
+    }
+  }
+}
+
+# NOTE
+# Technically okay, but a weird thing to do...
+@github-issues-13
+"(#123]" {
+  text.md {
+    "("
+    "#123" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "123"
+      }
+    }
+    "]"
+  }
+}
+
+@github-issues-14
+">#123" {
+  text.md {
+    quote.markup.md {
+      ">": punctuation.md
+      "#123" {
+        issue.reference.gfm.variable.md {
+          "#": punctuation.md
+          "123"
+        }
+      }
+    }
+  }
+}
+
+@github-issues-15
+"#123, #456, #789" {
+  text.md {
+    "#123" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "123"
+      }
+    }
+    ", "
+    "#456" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "456"
+      }
+    }
+    ", "
+    "#789" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "789"
+      }
+    }
+  }
+}
+
+@github-issues-16
+"#123=done": text.md
+
+@github-issues-17
+"#123." {
+  text.md {
+    "#123" {
+      issue.reference.gfm.variable.md {
+        "#": punctuation.md
+        "123"
+      }
+    }
+    "."
+  }
+}
+
+@github-issues-18
+"-#123": text.md
+
+@github-issues-19
+"#-123": text.md
+
+@github-issues-20
+"- #123" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "#123" {
+        issue.reference.gfm.variable.md {
+          "#": punctuation.md
+          "123"
+        }
+      }
+    }
+  }
+}
+
+# TODO
+# @github-issues-21
+# "#atom/123": text.md
+
+@github-issues-22
+"#123-": text.md
+
 # emojis
 
 # strikethrough

@@ -19,14 +19,14 @@
 | Core: inlines  | Autolinks                   |  16 of 16 | Good   |
 | Core: inlines  | Line-breaks                 |      TODO | Good   |
 | Github         | Mentions                    |  22 of 22 | Good   |
-| Github         | Issues                      |      TODO | Good   |
+| Github         | Issues                      |  21 of 22 | Good   |
 | Github         | Emojis                      |      TODO | Good   |
 | Github         | Strikethrough               |      TODO | Good   |
 | Github         | Tables                      |      TODO | Good   |
 | CriticMark     | Annotation                  |      TODO | Good   |
 | YAML           | Front matter                |    3 of 3 | Good   |
 
-Number of tests: 361 (1656 assertions)
+Number of tests: **382** (1712 assertions)
 
 ### Notes
 
