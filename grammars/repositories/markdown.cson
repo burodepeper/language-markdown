@@ -22,6 +22,7 @@ repository:
   blocks:
     patterns: [
       { include: '#comments' }
+      { include: '#yaml-front-matter' }
       { include: '#hr' }
       { include: '#headings' }
       { include: '#lists' }
@@ -29,7 +30,6 @@ repository:
       { include: '#tables' }
       { include: '#fenced-code' }
       { include: '#fenced-code-blocks' }
-      { include: '#yaml-front-matter' }
     ]
   inlines:
     patterns: [

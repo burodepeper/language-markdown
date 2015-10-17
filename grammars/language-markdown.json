@@ -27,6 +27,9 @@
           "include": "#comments"
         },
         {
+          "include": "#yaml-front-matter"
+        },
+        {
           "include": "#hr"
         },
         {
@@ -665,6 +668,25 @@
             },
             {
               "include": "#inlines"
+            }
+          ]
+        }
+      ]
+    },
+    "yaml-front-matter": {
+      "patterns": [
+        {
+          "begin": "\\A---$",
+          "end": "^(---|\\.\\.\\.)$",
+          "captures": {
+            "0": {
+              "name": "hr.md"
+            }
+          },
+          "name": "front-matter.yaml.source.md",
+          "patterns": [
+            {
+              "include": "source.yaml"
             }
           ]
         }
