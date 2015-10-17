@@ -22,7 +22,7 @@ fixtures = [
   "inlines/autolinks"
   # "inlines/line-breaks"
   # FLAVORS
-  "flavors/github"
+  "flavors/github" # WIP
   # "flavors/criticmark"
   "flavors/yaml-front-matter"
 ]

@@ -26,7 +26,7 @@
 - [x] grammar for `github/emojis`
 - [x] specs for `github/mentions`
 - [x] specs for `github/issues`
-- [ ] specs for `github/emojis`
+- [x] specs for `github/emojis`
 - [ ] specs for `github/strikethrough`
 - [ ] specs for `github/tables`
 - [ ] specs for `criticmark/annotation`
