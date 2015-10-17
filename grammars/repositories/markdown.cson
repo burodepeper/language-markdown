@@ -29,6 +29,7 @@ repository:
       { include: '#tables' }
       { include: '#fenced-code' }
       { include: '#fenced-code-blocks' }
+      { include: '#yaml-front-matter' }
     ]
   inlines:
     patterns: [
