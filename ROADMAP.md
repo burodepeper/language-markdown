@@ -1,6 +1,8 @@
-# Current roadmap towards _v0.1_
+# Roadmap
 
-## Janitorial
+## v0.1
+
+### Janitorial
 
 - [x] Make `README.md` more compact, and move secondary info to separate files
 - [x] Add keybinding for `markdown:compile`
@@ -8,7 +10,7 @@
 - [ ] Break down spec-status in PASS, SKIP and FAIL counts
 - [ ] Proper examples in EXAMPLES.md
 
-## Core
+### Core
 
 - [x] specs for `blocks/fenced-code`: 77-103
 - [ ] specs for `inlines/links`: 442-520, @479
@@ -18,7 +20,7 @@
 - [ ] examples for `html`: 104-145 + 559-579
 - [ ] specs for `inlines/line-breaks`: 580-594
 
-## Flavors
+### Flavors
 
 - [x] grammar for `github/strikethrough`
 - [x] grammar for `github/emojis`
@@ -28,10 +30,18 @@
 - [ ] specs for `github/strikethrough`
 - [ ] specs for `github/tables`
 - [ ] specs for `criticmark/annotation`
-- [ ] specs for `yaml-front-matter`
+- [x] specs for `yaml-front-matter`
 
-## Community
+### Community
 
 - [x] support `yaml-front-matter`
 - [ ] import additional specs from `language-gfm`
 - [ ] import/check issues from `language-gfm`
+
+--------------------------------------------------------------------------------
+
+## v0.2
+
+### Janitorial
+
+- [ ] Automatically load all `.ass` files in `/spec/fixtures` when `fixtures` is not defined.
