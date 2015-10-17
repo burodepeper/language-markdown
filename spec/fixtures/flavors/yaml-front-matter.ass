@@ -1,0 +1,56 @@
+@yaml-1
+"---"+
+"title:"+
+"- type: main"+
+"  text: My Book"+
+"..." {
+  text.md {
+    front-matter.yaml.source.md {
+      "---": hr.md
+      "title:"
+      "- type: main"
+      "  text: My Book"
+      "...": hr.md
+    }
+  }
+}
+
+@yaml-2
+" "+
+"---"+
+"title:"+
+"- type: main"+
+"  text: My Book"+
+"..." {
+  text.md {
+    " "
+    "---": hr.md
+    "title:"
+    "- type: main" {
+      unordered.list.markup.md {
+        "-": punctuation.md
+        " "
+        "type: main"
+      }
+    }
+    "  text: My Book"
+    "..."
+  }
+}
+
+@yaml-3
+"---"+
+"front: matter"+
+"---"+
+""+
+"This is a paragraph" {
+  text.md {
+    front-matter.yaml.source.md {
+      "---": hr.md
+      "front: matter"
+      "---": hr.md
+    }
+    ""
+    "This is a paragraph"
+  }
+}

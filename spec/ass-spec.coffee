@@ -9,7 +9,6 @@ fixtures = [
   "blocks/hr"
   "blocks/headings"
   "blocks/fenced-code"
-  # "blocks/html-blocks"
   "blocks/link-references"
   "blocks/quotes"
   "blocks/lists"
@@ -21,16 +20,16 @@ fixtures = [
   "inlines/links" # WIP
   "inlines/images"
   "inlines/autolinks"
-  # "inlines/html"
   # "inlines/line-breaks"
   # FLAVORS
   # "flavors/github"
   # "flavors/criticmark"
+  "flavors/yaml-front-matter"
 ]
 
 # Overwrite fixtures, cause this is what I'm working on...
 # fixtures = [
-#   "blocks/link-references"
+#   "flavors/yaml-front-matter"
 # ]
 
 describe "Markdown grammar", ->
