@@ -1,6 +1,6 @@
 {
   "name": "language-markdown",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Still in development (but pretty stable); manually select 'Markdown' grammar if it's not automatically selected.",
   "repository": "https://github.com/burodepeper/language-markdown",
   "bugs": {
