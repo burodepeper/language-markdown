@@ -4,7 +4,7 @@
 
 - [x] Make `README.md` more compact, and move secondary info to separate files
 - [x] Add keybinding for `markdown:compile`
-- [ ] Move table-grammar to github-directory
+- [x] Move table-grammar to github-directory
 - [ ] Break down spec-status in PASS, SKIP and FAIL counts
 - [ ] Proper examples in EXAMPLES.md
 

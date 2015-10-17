@@ -12,4 +12,29 @@ patterns: [
       1: name: 'issue.reference.gfm.variable.md'
       2: name: 'punctuation.md'
   }
+  {
+    name: 'table.storage.md'
+    begin: '^\\|'
+    beginCaptures:
+      0: name: 'punctuation.md'
+    end: '(\\|)?\\s*$'
+    endCaptures:
+      1: name: 'punctuation.md'
+    patterns: [
+      {
+        match: '(?<= )\\|(?= )'
+        name: 'punctuation.md'
+      }
+      {
+        match: '(:?)(-+)(:?)'
+        captures:
+          1: name: 'alignment.punctuation.md'
+          2: name: 'punctuation.md'
+          3: name: 'alignment.punctuation.md'
+      }
+      {
+        include: '#inlines'
+      }
+    ]
+  }
 ]
