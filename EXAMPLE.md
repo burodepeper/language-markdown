@@ -90,6 +90,8 @@ Would html-tags work? <strong class="test" id='andere test' data-id='item-14'>ma
 Usernames: @burodepeper and @leipert are awesome
 Issues: #11 is issue number eleven, but #abc is nothing
 
+Can I do emojis like :banana: and :+1:, and perhaps ~~strike-through~~ things?
+
 | Left | **Nuttin'** | Right |
 | :------- | ----- | -------: |
 | Block \quotes | _in progress_ | ...<div class='test'>... |
