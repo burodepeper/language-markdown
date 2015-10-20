@@ -1,0 +1,101 @@
+# CriticMark
+
+@1a
+"{++Chocolate++}" {
+  text.md {
+    addition.critic.inserted.markup.md {
+      "{++": punctuation.md
+      "Chocolate"
+      "++}": punctuation.md
+    }
+  }
+}
+
+@1b
+"{++_Lots of_ chocolate++}" {
+  text.md {
+    addition.critic.inserted.markup.md {
+      "{++": punctuation.md
+      "_Lots of_" {
+        emphasis.italic.markup.md {
+          "_": punctuation.md
+          "Lots of"
+          "_": punctuation.md
+        }
+      }
+      " chocolate"
+      "++}": punctuation.md
+    }
+  }
+}
+
+@2
+"{--Hunger--}" {
+  text.md {
+    deletion.critic.deleted.markup.md {
+      "{--": punctuation.md
+      "Hunger"
+      "--}": punctuation.md
+    }
+  }
+}
+
+@3
+"{~~Sadness~>Love~~}" {
+  text.md {
+    substitution.critic.inserted.markup.md {
+      "{~~": punctuation.md
+      "Sadness"
+      "~>": punctuation.md
+      "Love"
+      "~~}": punctuation.md
+    }
+  }
+}
+
+@4
+"{>>No comment<<}" {
+  text.md {
+    comment.critic.markup.md {
+      "{>>": punctuation.md
+      "No comment"
+      "<<}": punctuation.md
+    }
+  }
+}
+
+@5a
+"{==Yellow marker==}" {
+  text.md {
+    highlight.critic.changed.markup.md {
+      "{==": punctuation.md
+      "Yellow marker"
+      "==}": punctuation.md
+    }
+  }
+}
+
+@5b
+"{==Yellow marker==}{>>@burodepeper<<}" {
+  text.md {
+    "{==Yellow marker==}" {
+      highlight.critic.changed.markup.md {
+        "{==": punctuation.md
+        "Yellow marker"
+        "==}": punctuation.md
+      }
+    }
+    "{>>@burodepeper<<}" {
+      comment.critic.markup.md {
+        "{>>": punctuation.md
+        "@burodepeper" {
+          username.reference.variable.md {
+            "@": punctuation.md
+            "burodepeper"
+          }
+        }
+        "<<}": punctuation.md
+      }
+    }
+  }
+}

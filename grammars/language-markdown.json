@@ -703,7 +703,7 @@
           },
           "patterns": [
             {
-              "match": "(?<=[\\s|>])((@)(\\w[-\\w:]*))(?=\\s)",
+              "match": "(?<=[\\s|>])((@)(\\w[-\\w:]*))(?=[\\s|:|<])",
               "captures": {
                 "1": {
                   "name": "username.reference.variable.md"

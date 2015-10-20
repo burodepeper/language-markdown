@@ -29,7 +29,7 @@
 - [x] specs for `github/emojis`
 - [x] specs for `github/strikethrough`
 - [x] specs for `github/tables`
-- [ ] specs for `criticmark/annotation`
+- [x] specs for `criticmark/annotation`
 - [x] specs for `yaml-front-matter`
 
 ### Community

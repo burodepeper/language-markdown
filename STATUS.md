@@ -23,10 +23,10 @@
 | Github      | Emojis                      |    6 of 6 | Good   |
 | Github      | Strikethrough               |    3 of 3 | Good   |
 | Github      | Tables                      |  12 of 12 | Good   |
-| CriticMark  | Annotation                  |      TODO | Good   |
+| CriticMark  | Annotation                  |    7 of 7 | Good   |
 | YAML        | Front matter                |    3 of 3 | Good   |
 
-Total number of tests: **466**
+Total number of tests: **475**
 
 ### Notes
 
@@ -34,7 +34,7 @@ Total number of tests: **466**
 - The Github `task-lists` are implemented as a part of unordered-lists.
 - Setext-headers (underlined-headers) are not supported.
 - Indented-code-blocks have been disabled to prevent false-positives.
-- Github tables require pipes at the start of each line.
+- Github tables require pipes at the start of each line, and cells need a padding of at least one space.
 
 ### References
 
