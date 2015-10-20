@@ -4,7 +4,7 @@
 
 ### Janitorial
 
-- [ ] Use a `dev` branch
+- [x] Use a `dev` branch from now on
 - [ ] Automatically load all `.ass` files in [/spec/fixtures] when `fixtures` is not defined.
 - [ ] Perhaps remove the `/examples` directory; requires a lot of upkeep
 - [ ] Proper examples in [EXAMPLES.md]
