@@ -15,7 +15,7 @@
 | CM: inlines | Code spans                  |  12 of 15 | Good   |
 | CM: inlines | Emphasis                    | 77 of 130 | OK     |
 | CM: inlines | Links                       |  51 of 85 | OK     |
-| CM: inlines | Images                      |      TODO | OK     |
+| CM: inlines | Images                      |  14 of 22 | OK     |
 | CM: inlines | Autolinks                   |  16 of 16 | Good   |
 | CM: inlines | Line-breaks                 |  17 of 17 | Good   |
 | Github      | Mentions                    |  22 of 22 | Good   |
@@ -26,7 +26,7 @@
 | CriticMark  | Annotation                  |      TODO | Good   |
 | YAML        | Front matter                |    3 of 3 | Good   |
 
-Total number of tests: **441**
+Total number of tests: **454**
 
 ### Notes
 

@@ -2,7 +2,6 @@
 "![foo](/url "title")" {
   text.md {
     link.markup.md {
-
       "![foo]" {
         image.link.string.md {
           "![": punctuation.md
@@ -10,14 +9,12 @@
           "]": punctuation.md
         }
       }
-
       "(/url "title")" {
         "(": punctuation.md
         destination.link.md {
           "/url": uri.underline.link.md
         }
         " "
-
         "title" {
           title.link.md {
             """: punctuation.md
@@ -25,10 +22,8 @@
             """: punctuation.md
           }
         }
-
         ")": punctuation.md
       }
-
     }
   }
 }
@@ -81,3 +76,793 @@
 #
 #   }
 # }
+
+# FIXME
+# @523
+# "![foo ![bar](/url)](/url2)" {
+#   text.md {
+#     link.markup.md {
+#       "![foo ![bar](/url)]" {
+#         image.link.string.md {
+#           "![": punctuation.md
+#           "foo ![bar](/url)"
+#           "]": punctuation.md
+#         }
+#       }
+#       "(/url2)" {
+#         "(": punctuation.md
+#         destination.link.md {
+#           "/url": uri.underline.link.md
+#         }
+#         ")": punctuation.md
+#       }
+#     }
+#   }
+# }
+
+# FIXME
+# @524
+# "![foo [bar](/url)](/url2)" {
+#   text.md {
+#     link.markup.md {
+#       "![foo [bar](/url)]" {
+#         image.link.string.md {
+#           "![": punctuation.md
+#           "foo [bar](/url)"
+#           "]": punctuation.md
+#         }
+#       }
+#       "(/url2)" {
+#         "(": punctuation.md
+#         destination.link.md {
+#           "/url": uri.underline.link.md
+#         }
+#         ")": punctuation.md
+#       }
+#     }
+#   }
+# }
+
+# FIXME no emphasis in link-image
+# @525
+# "![foo *bar*][]"+
+# ""+
+# "[foo *bar*]: train.jpg "train & tracks"" {
+#   text.md {
+#     "![foo *bar*][]" {
+#       link.markup.md {
+#         "![foo *bar*]" {
+#           image.link.string.md {
+#             "![": punctuation.md
+#             "foo *bar*"
+#             "]": punctuation.md
+#           }
+#         }
+#         "[]" {
+#           label.link.string.md {
+#             "[": punctuation.md
+#             "]": punctuation.md
+#           }
+#         }
+#       }
+#     }
+#     ""
+#     "[foo *bar*]: train.jpg "train & tracks"" {
+#       reference.link.markup.md {
+#         "[foo *bar*]" {
+#           text.link.string.md {
+#             "[": punctuation.md
+#             "foo *bar*"
+#             "]": punctuation.md
+#           }
+#         }
+#         ":": punctuation.md
+#         " "
+#         "train.jpg" {
+#           destination.link.md {
+#             "train.jpg": uri.underline.link.md
+#           }
+#         }
+#         " "
+#         ""train & tracks"" {
+#           title.link.md {
+#             """: punctuation.md
+#             "train & tracks"
+#             """: punctuation.md
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
+
+# FIXME no emphasis in link-image
+# @526
+# "![foo *bar*][foobar]"+
+# ""+
+# "[FOOBAR]: train.jpg "train & tracks"" {
+#   text.md {
+#     "![foo *bar*][foobar]" {
+#       link.markup.md {
+#         "![foo *bar*]" {
+#           image.link.string.md {
+#             "![": punctuation.md
+#             "foo *bar*"
+#             "]": punctuation.md
+#           }
+#         }
+#         "[foobar]" {
+#           label.link.string.md {
+#             "[": punctuation.md
+#             "foobar"
+#             "]": punctuation.md
+#           }
+#         }
+#       }
+#     }
+#     ""
+#     "[FOOBAR]: train.jpg "train & tracks"" {
+#       reference.link.markup.md {
+#         "[FOOBAR]" {
+#           text.link.string.md {
+#             "[": punctuation.md
+#             "FOOBAR"
+#             "]": punctuation.md
+#           }
+#         }
+#         ":": punctuation.md
+#         " "
+#         "train.jpg" {
+#           destination.link.md {
+#             "train.jpg": uri.underline.link.md
+#           }
+#         }
+#         " "
+#         ""train & tracks"" {
+#           title.link.md {
+#             """: punctuation.md
+#             "train & tracks"
+#             """: punctuation.md
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
+
+@527
+"![foo](train.jpg)" {
+  text.md {
+    link.markup.md {
+      "![foo]" {
+        image.link.string.md {
+          "![": punctuation.md
+          "foo"
+          "]": punctuation.md
+        }
+      }
+      "(train.jpg)" {
+        "(": punctuation.md
+        destination.link.md {
+          "train.jpg": uri.underline.link.md
+        }
+        ")": punctuation.md
+      }
+    }
+  }
+}
+
+@528
+"My ![foo bar](/path/to/train.jpg  "title"   )" {
+  text.md {
+    "My "
+    link.markup.md {
+      "![foo bar]" {
+        image.link.string.md {
+          "![": punctuation.md
+          "foo bar"
+          "]": punctuation.md
+        }
+      }
+      "(/path/to/train.jpg  "title"   )" {
+        "(": punctuation.md
+        destination.link.md {
+          "/path/to/train.jpg": uri.underline.link.md
+        }
+        "  "
+        "title" {
+          title.link.md {
+            """: punctuation.md
+            "title"
+            """: punctuation.md
+          }
+        }
+        "   "
+        ")": punctuation.md
+      }
+    }
+  }
+}
+
+@529
+"![foo](<url>)" {
+  text.md {
+    link.markup.md {
+      "![foo]" {
+        image.link.string.md {
+          "![": punctuation.md
+          "foo"
+          "]": punctuation.md
+        }
+      }
+      "(<url>)" {
+        "(": punctuation.md
+        destination.link.md {
+          "<": punctuation.md
+          "url": uri.underline.link.md
+          ">": punctuation.md
+        }
+        ")": punctuation.md
+      }
+    }
+  }
+}
+
+@530
+"![](/url)" {
+  text.md {
+    link.markup.md {
+      "![]" {
+        image.link.string.md {
+          "![": punctuation.md
+          "]": punctuation.md
+        }
+      }
+      "(/url)" {
+        "(": punctuation.md
+        destination.link.md {
+          "/url": uri.underline.link.md
+        }
+        ")": punctuation.md
+      }
+    }
+  }
+}
+
+@531
+"![foo] [bar]"+
+""+
+"[bar]: /url" {
+  text.md {
+    "![foo]" {
+      link.markup.md {
+        image.link.string.md {
+          "![": punctuation.md
+          "foo"
+          "]": punctuation.md
+        }
+      }
+    }
+    " "
+    "[bar]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "bar"
+        "]": punctuation.md
+      }
+    }
+    ""
+    "[bar]: /url" {
+      reference.link.markup.md {
+        "[bar]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "bar"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@532
+"![foo] [bar]"+
+""+
+"[BAR]: /url" {
+  text.md {
+    "![foo]" {
+      link.markup.md {
+        image.link.string.md {
+          "![": punctuation.md
+          "foo"
+          "]": punctuation.md
+        }
+      }
+    }
+    " "
+    "[bar]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "bar"
+        "]": punctuation.md
+      }
+    }
+    ""
+    "[BAR]: /url" {
+      reference.link.markup.md {
+        "[BAR]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "BAR"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@533
+"![foo][]"+
+""+
+"[foo]: /url "title"" {
+  text.md {
+    "![foo][]" {
+      link.markup.md {
+        "![foo]" {
+          image.link.string.md {
+            "![": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        "[]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "]": punctuation.md
+          }
+        }
+      }
+    }
+    ""
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
+
+# FIXME
+# @534
+# "![*foo* bar][]"+
+# ""+
+# "[*foo* bar]: /url "title"" {
+#   text.md {
+#     "![*foo* bar][]" {
+#       link.markup.md {
+#         "![*foo* bar]" {
+#           image.link.string.md {
+#             "![": punctuation.md
+#             "*foo* bar"
+#             "]": punctuation.md
+#           }
+#         }
+#         "[]" {
+#           label.link.string.md {
+#             "[": punctuation.md
+#             "]": punctuation.md
+#           }
+#         }
+#       }
+#     }
+#     ""
+#     "[*foo* bar]: /url "title"" {
+#       reference.link.markup.md {
+#         "[*foo* bar]" {
+#           label.link.string.md {
+#             "[": punctuation.md
+#             "*foo* bar"
+#             "]": punctuation.md
+#           }
+#         }
+#         ":": punctuation.md
+#         " "
+#         "/url" {
+#           destination.link.md {
+#             "/url": uri.underline.link.md
+#           }
+#         }
+#         " "
+#         ""title"" {
+#           title.link.md {
+#             '"': punctuation.md
+#             "title"
+#             '"': punctuation.md
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
+
+@535
+"![Foo][]"+
+""+
+"[foo]: /url "title"" {
+  text.md {
+    "![Foo][]" {
+      link.markup.md {
+        "![Foo]" {
+          image.link.string.md {
+            "![": punctuation.md
+            "Foo"
+            "]": punctuation.md
+          }
+        }
+        "[]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "]": punctuation.md
+          }
+        }
+      }
+    }
+    ""
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@536
+"![foo] "+
+"[]"+
+""+
+"[foo]: /url "title"" {
+  text.md {
+    "![foo]" {
+      link.markup.md {
+        "![foo]" {
+          image.link.string.md {
+            "![": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+      }
+    }
+    " "
+    "[]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "]": punctuation.md
+      }
+    }
+    ""
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@537
+"![foo]"+
+""+
+"[foo]: /url "title"" {
+  text.md {
+    "![foo]" {
+      link.markup.md {
+        "![foo]" {
+          image.link.string.md {
+            "![": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+      }
+    }
+    ""
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
+
+# FIXME
+# @538
+# "![*foo* bar]"+
+# ""+
+# "[*foo* bar]: /url "title"" {
+#   text.md {
+#     "![*foo* bar]" {
+#       link.markup.md {
+#         "![*foo* bar]" {
+#           image.link.string.md {
+#             "![": punctuation.md
+#             "*foo* bar"
+#             "]": punctuation.md
+#           }
+#         }
+#       }
+#     }
+#     " "
+#     "[]" {
+#       label.link.string.md {
+#         "[": punctuation.md
+#         "]": punctuation.md
+#       }
+#     }
+#     ""
+#     "[*foo* bar]: /url "title"" {
+#       reference.link.markup.md {
+#         "[*foo* bar]" {
+#           label.link.string.md {
+#             "[": punctuation.md
+#             "*foo* bar"
+#             "]": punctuation.md
+#           }
+#         }
+#         ":": punctuation.md
+#         " "
+#         "/url" {
+#           destination.link.md {
+#             "/url": uri.underline.link.md
+#           }
+#         }
+#         " "
+#         ""title"" {
+#           title.link.md {
+#             '"': punctuation.md
+#             "title"
+#             '"': punctuation.md
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
+
+# FIXME
+# @539
+# "![[foo]]"+
+# ""+
+# "[[foo]]: /url "title"" {
+#   text.md {
+#     "![[foo]]"
+#     ""
+#     "[[foo]]: /url "title""
+#   }
+# }
+
+@540
+"![Foo]"+
+""+
+"[foo]: /url "title"" {
+  text.md {
+    "![Foo]" {
+      link.markup.md {
+        "![Foo]" {
+          image.link.string.md {
+            "![": punctuation.md
+            "Foo"
+            "]": punctuation.md
+          }
+        }
+      }
+    }
+    ""
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@541
+"\!\[foo]"+
+""+
+"[foo]: /url "title"" {
+  text.md {
+    "\!": escape.constant.md
+    "\[": escape.constant.md
+    "foo]"
+    ""
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@542
+"\![foo]"+
+""+
+"[foo]: /url "title"" {
+  text.md {
+    "\!": escape.constant.md
+    "[foo]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "foo"
+        "]": punctuation.md
+      }
+    }
+    ""
+    "[foo]: /url "title"" {
+      reference.link.markup.md {
+        "[foo]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+        " "
+        "/url" {
+          destination.link.md {
+            "/url": uri.underline.link.md
+          }
+        }
+        " "
+        ""title"" {
+          title.link.md {
+            '"': punctuation.md
+            "title"
+            '"': punctuation.md
+          }
+        }
+      }
+    }
+  }
+}

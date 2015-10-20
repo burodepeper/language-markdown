@@ -13,7 +13,7 @@
 
 - [x] specs for `blocks/fenced-code`: 77-103
 - [x] specs for `inlines/links`: 442-520
-- [ ] specs for `inlines/images`: 521-542
+- [x] specs for `inlines/images`: 521-542
 - [x] specs for `inlines/autolinks`: 543-558
 - [x] specs for `blocks/links-references`
 - [x] specs for `html`: 104-145 & 559-579 (if possible)

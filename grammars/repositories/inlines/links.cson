@@ -5,7 +5,7 @@ patterns: [
   # ![link](/uri "title")
   {
     name: 'link.markup.md'
-    match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+) ((?:["\'\\(]).*?(?:["\'\\)]))(\\))'
+    match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+)(?:\\s+)((?:["\'\\(]).*?(?:["\'\\)]))(?:\\s*)(\\))'
     captures:
       1: patterns: [{ include: '#link-text' }]
       2: name: 'punctuation.md'
