@@ -28,7 +28,7 @@
 - [x] specs for `github/issues`
 - [x] specs for `github/emojis`
 - [x] specs for `github/strikethrough`
-- [ ] specs for `github/tables`
+- [x] specs for `github/tables`
 - [ ] specs for `criticmark/annotation`
 - [x] specs for `yaml-front-matter`
 

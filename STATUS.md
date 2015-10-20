@@ -22,11 +22,11 @@
 | Github      | Issues                      |  21 of 22 | Good   |
 | Github      | Emojis                      |    6 of 6 | Good   |
 | Github      | Strikethrough               |    3 of 3 | Good   |
-| Github      | Tables                      |      TODO | Good   |
+| Github      | Tables                      |  12 of 12 | Good   |
 | CriticMark  | Annotation                  |      TODO | Good   |
 | YAML        | Front matter                |    3 of 3 | Good   |
 
-Total number of tests: **454**
+Total number of tests: **466**
 
 ### Notes
 

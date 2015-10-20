@@ -23,14 +23,14 @@ fixtures = [
   "inlines/line-breaks"
   "inlines/textual-content"
   # FLAVORS
-  "flavors/github" # WIP
+  "flavors/github"
   # "flavors/criticmark"
   "flavors/yaml-front-matter"
 ]
 
 # Overwrite fixtures, cause this is what I'm working on...
 # fixtures = [
-#   "inlines/images"
+#   "flavors/github"
 # ]
 
 describe "Markdown grammar", ->
