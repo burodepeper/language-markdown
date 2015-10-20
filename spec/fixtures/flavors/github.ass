@@ -1,6 +1,6 @@
 # mentions
 
-@github-mentions-1
+@mentions/1
 "@username" {
   text.md {
     "@username" {
@@ -12,7 +12,7 @@
   }
 }
 
-@github-mentions-2
+@mentions/2
 "@user name" {
   text.md {
     "@user" {
@@ -25,10 +25,10 @@
   }
 }
 
-@github-mentions-3
+@mentions/3
 "user@name": text.md
 
-@github-mentions-4
+@mentions/4
 "@username: something, something" {
   text.md {
     "@username" {
@@ -41,7 +41,7 @@
   }
 }
 
-@github-mentions-5
+@mentions/5
 "@userName123" {
   text.md {
     "@userName123" {
@@ -53,10 +53,10 @@
   }
 }
 
-@github-mentions-6
+@mentions/6
 "@user_name": text.md
 
-@github-mentions-7
+@mentions/7
 "@user-name" {
   text.md {
     "@user-name" {
@@ -68,10 +68,10 @@
   }
 }
 
-@github-mentions-8
+@mentions/8
 "@:user:name": text.md
 
-@github-mentions-9
+@mentions/9
 "@user:name" {
   text.md {
     "@user" {
@@ -84,7 +84,7 @@
   }
 }
 
-@github-mentions-10
+@mentions/10
 ""@username"" {
   text.md {
     """
@@ -98,7 +98,7 @@
   }
 }
 
-@github-mentions-11
+@mentions/11
 "'@username'" {
   text.md {
     "'"
@@ -112,7 +112,7 @@
   }
 }
 
-@github-mentions-12
+@mentions/12
 "(@username)" {
   text.md {
     "("
@@ -129,7 +129,7 @@
 # NOTE
 # Though technically allowed, but link-reference-labels are parsed before
 # mentions.
-@github-mentions-13
+@mentions/13
 "[@username]" {
   text.md {
     label.link.string.md {
@@ -142,7 +142,7 @@
 
 # NOTE
 # technically okay, but a weird thing to do...
-@github-mentions-14
+@mentions/14
 "(@username]" {
   text.md {
     "("
@@ -156,7 +156,7 @@
   }
 }
 
-@github-mentions-15
+@mentions/15
 ">@username" {
   text.md {
     quote.markup.md {
@@ -171,7 +171,7 @@
   }
 }
 
-@github-mentions-16
+@mentions/16
 "@one, @two, @three" {
   text.md {
     "@one" {
@@ -197,10 +197,10 @@
   }
 }
 
-@github-mentions-17
+@mentions/17
 "@username=cool": text.md
 
-@github-mentions-18
+@mentions/18
 "@username." {
   text.md {
     "@username" {
@@ -213,10 +213,10 @@
   }
 }
 
-@github-mentions-19
+@mentions/19
 "-@username": text.md
 
-@github-mentions-20
+@mentions/20
 "- @username" {
   text.md {
     unordered.list.markup.md {
@@ -232,7 +232,7 @@
   }
 }
 
-@github-mentions-21
+@mentions/21
 "@atom/feedback" {
   text.md {
     "@atom/feedback" {
@@ -244,12 +244,12 @@
   }
 }
 
-@github-mentions-22
+@mentions/22
 "@username-": text.md
 
 # issues
 
-@github-issues-1
+@issues/1
 "#123" {
   text.md {
     "#123" {
@@ -261,7 +261,7 @@
   }
 }
 
-@github-issues-2
+@issues/2
 "#12.3" {
   text.md {
     "#12" {
@@ -274,10 +274,10 @@
   }
 }
 
-@github-issues-3
+@issues/3
 "123#456": text.md
 
-@github-issues-4
+@issues/4
 "#123: something, something" {
   text.md {
     "#123" {
@@ -290,16 +290,16 @@
   }
 }
 
-@github-issues-5
+@issues/5
 "#123_456": text.md
 
-@github-issues-6
+@issues/6
 "#123-456": text.md
 
-@github-issues-7
+@issues/7
 "#123-#456": text.md
 
-@github-issues-8
+@issues/8
 "#123:456" {
   text.md {
     "#123" {
@@ -312,7 +312,7 @@
   }
 }
 
-@github-issues-9
+@issues/9
 ""#123"" {
   text.md {
     """
@@ -326,7 +326,7 @@
   }
 }
 
-@github-issues-10
+@issues/10
 "'#123'" {
   text.md {
     "'"
@@ -340,7 +340,7 @@
   }
 }
 
-@github-issues-11
+@issues/11
 "(#123)" {
   text.md {
     "("
@@ -357,7 +357,7 @@
 # NOTE
 # Though technically allowed, but link-reference-labels are parsed before
 # mentions.
-@github-issues-12
+@issues/12
 "[#123]" {
   text.md {
     label.link.string.md {
@@ -370,7 +370,7 @@
 
 # NOTE
 # Technically okay, but a weird thing to do...
-@github-issues-13
+@issues/13
 "(#123]" {
   text.md {
     "("
@@ -384,7 +384,7 @@
   }
 }
 
-@github-issues-14
+@issues/14
 ">#123" {
   text.md {
     quote.markup.md {
@@ -399,7 +399,7 @@
   }
 }
 
-@github-issues-15
+@issues/15
 "#123, #456, #789" {
   text.md {
     "#123" {
@@ -425,10 +425,10 @@
   }
 }
 
-@github-issues-16
+@issues/16
 "#123=done": text.md
 
-@github-issues-17
+@issues/17
 "#123." {
   text.md {
     "#123" {
@@ -441,13 +441,13 @@
   }
 }
 
-@github-issues-18
+@issues/18
 "-#123": text.md
 
-@github-issues-19
+@issues/19
 "#-123": text.md
 
-@github-issues-20
+@issues/20
 "- #123" {
   text.md {
     unordered.list.markup.md {
@@ -464,15 +464,15 @@
 }
 
 # TODO
-# @github-issues-21
+# @issues/21
 # "#atom/123": text.md
 
-@github-issues-22
+@issues/22
 "#123-": text.md
 
 # emojis
 
-@github-emoji-1
+@emoji/1
 ":+1:" {
   text.md {
     emoji.constant.gfm.md {
@@ -483,19 +483,19 @@
   }
 }
 
-@github-emoji-2
+@emoji/2
 ":david:": text.md
 
-@github-emoji-3
+@emoji/3
 ":david is awesome:": text.md
 
-@github-emoji-4
+@emoji/4
 ":arrow_UP:": text.md
 
-@github-emoji-5
+@emoji/5
 "david:+1:": text.md
 
-@github-emoji-6
+@emoji/6
 "david :+1:" {
   text.md {
     "david "
