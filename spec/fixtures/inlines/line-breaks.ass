@@ -1,0 +1,177 @@
+# http://spec.commonmark.org/0.22/#hard-line-breaks
+
+@580
+"foo  "+
+"baz" {
+  text.md {
+    "foo"
+    "  ": line-break.constant.md
+    "baz"
+  }
+}
+
+@581
+"foo\"+
+"baz" {
+  text.md {
+    "foo"
+    "\": line-break.constant.md
+    "baz"
+  }
+}
+
+@582
+"foo       "+
+"baz" {
+  text.md {
+    "foo     "
+    "  ": line-break.constant.md
+    "baz"
+  }
+
+}
+
+@583
+"foo  "+
+"     bar" {
+  text.md {
+    "foo"
+    "  ": line-break.constant.md
+    "     bar"
+  }
+}
+
+@584
+"foo\"+
+"     bar" {
+  text.md {
+    "foo"
+    "\": line-break.constant.md
+    "     bar"
+  }
+}
+
+# NOTE no multiline support
+@585
+"*foo  "+
+"bar*" {
+  text.md {
+    "*foo"
+    "  ": line-break.constant.md
+    "bar*"
+  }
+}
+
+# NOTE no multiline support
+@586
+"*foo\"+
+"bar*" {
+  text.md {
+    "*foo"
+    "\": line-break.constant.md
+    "bar*"
+  }
+}
+
+# NOTE no multiline support
+@587
+"`code  "+
+"span`" {
+  text.md {
+    "`code"
+    "  ": line-break.constant.md
+    "span`"
+  }
+}
+
+# NOTE no multiline support
+@588
+"`code\"+
+"span`" {
+  text.md {
+    "`code"
+    "\": line-break.constant.md
+    "span`"
+  }
+}
+
+@589
+"<a href="foo  "+
+"bar">" {
+  text.md {
+    "<a href="foo"
+    "  ": line-break.constant.md
+    "bar">"
+  }
+}
+
+@590
+"<a href="foo\"+
+"bar">" {
+  text.md {
+    "<a href="foo"
+    "\": line-break.constant.md
+    "bar">"
+  }
+}
+
+@591
+"foo\" {
+  text.md {
+    "foo"
+    "\": line-break.constant.md
+  }
+}
+
+@592
+"foo  " {
+  text.md {
+    "foo"
+    "  ": line-break.constant.md
+  }
+}
+
+@593
+"### foo\" {
+  text.md {
+    heading.markup.md {
+      heading-3.md {
+        '###': punctuation.md
+        ' '
+        'foo\'
+      }
+    }
+  }
+}
+
+@594
+"### foo  " {
+  text.md {
+    heading.markup.md {
+      heading-3.md {
+        '###': punctuation.md
+        ' '
+        'foo'
+        "  "
+      }
+    }
+  }
+}
+
+@595
+"foo"+
+"baz" {
+  text.md {
+    "foo"
+    "baz"
+  }
+}
+
+@596
+"foo "+
+" baz" {
+  text.md {
+    "foo "
+    " baz"
+  }
+}

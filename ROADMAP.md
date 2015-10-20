@@ -7,8 +7,8 @@
 - [x] Make `README.md` more compact, and move secondary info to separate files
 - [x] Add keybinding for `markdown:compile`
 - [x] Move table-grammar to github-directory
-- [ ] Break down spec-status in PASS, SKIP and FAIL counts
-- [ ] Proper examples in EXAMPLES.md
+- [ ] Proper examples in [EXAMPLES.md]
+- [x] Allow `/` in `lib-ass` identifiers
 
 ### Core
 
@@ -18,7 +18,8 @@
 - [x] specs for `inlines/autolinks`: 543-558
 - [x] specs for `blocks/links-references`
 - [ ] specs for `html`: 104-145 & 559-579 (if possible)
-- [ ] specs for `inlines/line-breaks`: 580-594
+- [x] specs for `inlines/line-breaks`: 580-594
+- [x] specs for `inlines/textual-content`
 
 ### Flavors
 
@@ -46,5 +47,6 @@
 
 ### Janitorial
 
-- [ ] Automatically load all `.ass` files in `/spec/fixtures` when `fixtures` is not defined.
+- [ ] Use a `dev` branch
+- [ ] Automatically load all `.ass` files in [/spec/fixtures] when `fixtures` is not defined.
 - [ ] Perhaps remove the `/examples` directory; requires a lot of upkeep

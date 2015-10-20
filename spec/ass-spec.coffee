@@ -18,9 +18,10 @@ fixtures = [
   "inlines/entities"
   "inlines/emphasis"
   "inlines/links" # WIP
-  "inlines/images"
+  "inlines/images" # WIP
   "inlines/autolinks"
-  # "inlines/line-breaks"
+  "inlines/line-breaks"
+  "inlines/textual-content"
   # FLAVORS
   "flavors/github" # WIP
   # "flavors/criticmark"
@@ -29,7 +30,8 @@ fixtures = [
 
 # Overwrite fixtures, cause this is what I'm working on...
 # fixtures = [
-#   "flavors/github"
+#   "inlines/line-breaks"
+#   "inlines/textual-content"
 # ]
 
 describe "Markdown grammar", ->
@@ -46,10 +48,6 @@ describe "Markdown grammar", ->
   it "parses the grammar", ->
     expect(grammar).toBeDefined()
     expect(grammar.scopeName).toBe "text.md"
-
-  it "tokenizes spaces", ->
-    {tokens} = grammar.tokenizeLine(" ")
-    expect(tokens[0]).toEqual value: " ", scopes: ["text.md"]
 
   for fixture in fixtures
 
