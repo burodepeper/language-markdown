@@ -507,7 +507,7 @@
   }
 }
 
-# TODO strikethrough
+# strikethrough
 
 @strike/1
 "~~bad~~ word" {

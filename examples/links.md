@@ -143,6 +143,7 @@ bar>)
 
 <!-- http://spec.commonmark.org/0.22/#example-483 -->
 [link *foo **bar** `#`*][ref]
+[link _foo **bar** `#`_][ref]
 
 [ref]: /uri
 
