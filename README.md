@@ -4,7 +4,7 @@ A realistic implementation of the [CommonMark](http://www.commonmark.org/) speci
 
 If you experience any issue above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/) or contact @burodepeper directly.
 
- **Current status**: _Stable_, and working towards first beta; [more details](STATUS.md)
+ **Current status**: _beta 1_ is released; [more details](STATUS.md)
 
 ---
 
