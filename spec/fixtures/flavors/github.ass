@@ -507,6 +507,24 @@
   }
 }
 
-# strikethrough
+# TODO strikethrough
 
-# tables
+@strike/1
+"~~bad~~ word" {
+  text.md {
+    strike.markup.md {
+      "~~": punctuation.md
+      "bad"
+      "~~": punctuation.md
+    }
+    " word"
+  }
+}
+
+@strike/2
+"~~bad~~word": text.md
+
+@strike/2
+"good~~bad~~": text.md
+
+# TODO tables
