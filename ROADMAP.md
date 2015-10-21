@@ -20,3 +20,11 @@
 - [ ] import/check issues from [language-gfm]
 
 [language-gfm]: /atom/language-gfm
+
+---
+
+## Future
+
+### Interface
+
+- [ ] Add new link-items automatically when pressing [ENTER]
