@@ -43,6 +43,10 @@ list: [
   { pattern:'mson', include:'text.html.markdown.source.gfm.mson' }
   { pattern:'objc|objective-c', include:'source.objc' }
   { pattern:'php' }
+  # { pattern:'php', include:'text.html.php' }
+  # { pattern:'php', include:'text.html.basic', contentName:'embedded.text.html.php' }
+  # { pattern:'php', include:'text.html.basic' }
+  # { pattern:'php', include:'text.html.php', contentName:'source.js.embedded.html' }
   { pattern:'py|python', include:'source.python' }
   { pattern:'r' }
   { pattern:'ruby' }

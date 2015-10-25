@@ -35,9 +35,11 @@ var test = {
 ```
 
 ``` php
+<?php
 function test ($var) {
   echo "string";
 }
+?>
 ```
 
 ~~~ julia hide=true
