@@ -513,6 +513,33 @@
     "lists": {
       "patterns": [
         {
+          "match": "^(?:\\s*)(- \\[ \\])$",
+          "name": "empty.task.unordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([-+\\*]){1}$",
+          "name": "empty.unordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "^(?:\\s*)([0-9]{1,9}[\\.\\)])$",
+          "name": "empty.ordered.list.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
           "match": "^(?:\\s*)(- \\[ \\])(?: )(.*)$",
           "name": "task.unordered.list.markup.md",
           "captures": {
@@ -585,24 +612,6 @@
                   "include": "#inlines-in-blocks"
                 }
               ]
-            }
-          }
-        },
-        {
-          "match": "^(?:\\s*)([-+\\*]){1}$",
-          "name": "empty.unordered.list.markup.md",
-          "captures": {
-            "1": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
-          "match": "^(?:\\s*)([0-9]{1,9}[\\.\\)])$",
-          "name": "empty.ordered.list.markup.md",
-          "captures": {
-            "1": {
-              "name": "punctuation.md"
             }
           }
         }

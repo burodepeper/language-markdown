@@ -67,6 +67,8 @@ $(function(){
 
 - [ ] Something to be done
 - [x] Accomplished task
+- [ ]
+- [ ] Above is an empty task
 
 <!-- And of course comments work! -->
 <!--
