@@ -2,9 +2,8 @@
 # When in dev-mode, the command {language-markdown:compile-grammar} is added, which triggers a re-compile of the grammar. This piece of awesomeness needs to be triggered manually however, everytime you've changed a piece of the grammar. Yay for automation. But since a change in grammar needs a reload of Atom anyway, I think I can get away with this solution.
 if atom.inDevMode()
 
-  {CompositeDisposable} = require 'atom'
+  {CompositeDisposable, Directory} = require 'atom'
   CSON = require 'season'
-  {Directory} = require 'pathwatcher'
   path = require 'path'
   fs = require 'fs'
 

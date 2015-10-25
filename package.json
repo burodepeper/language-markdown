@@ -15,7 +15,6 @@
   "dependencies": {
     "lodash": "^3.10.1",
     "lib-ass": "0.0.6",
-    "pathwatcher": "^6.2",
     "season": "^5.3"
   },
   "coffeelintConfig": {
