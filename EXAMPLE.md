@@ -35,9 +35,11 @@ var test = {
 ```
 
 ``` php
+<?php
 function test ($var) {
   echo "string";
 }
+?>
 ```
 
 ~~~ julia hide=true
@@ -67,6 +69,8 @@ $(function(){
 
 - [ ] Something to be done
 - [x] Accomplished task
+- [ ]
+- [ ] Above is an empty task
 
 <!-- And of course comments work! -->
 <!--

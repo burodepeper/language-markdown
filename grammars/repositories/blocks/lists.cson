@@ -1,6 +1,28 @@
 key: 'lists'
 patterns: [
   {
+    # Empty unordered lists, for styling purposes
+    match: '^(?:\\s*)(- \\[ \\])$'
+    name: 'empty.task.unordered.list.markup.md'
+    captures:
+      1: { name: 'punctuation.md' }
+  }
+  {
+    # Empty unordered lists, for styling purposes
+    match: '^(?:\\s*)([-+\\*]){1}$'
+    name: 'empty.unordered.list.markup.md'
+    captures:
+      1: { name: 'punctuation.md' }
+  }
+  {
+    # Empty ordered lists, for styling purposes
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)])$'
+    name: 'empty.ordered.list.markup.md'
+    captures:
+      1: { name: 'punctuation.md' }
+  }
+
+  {
     # Task list item
     match: '^(?:\\s*)(- \\[ \\])(?: )(.*)$'
     name: 'task.unordered.list.markup.md'
@@ -47,19 +69,5 @@ patterns: [
           { include: '#blocks' }
           { include: '#inlines-in-blocks' }
         ]
-  }
-  {
-    # Empty unordered lists, for styling purposes
-    match: '^(?:\\s*)([-+\\*]){1}$'
-    name: 'empty.unordered.list.markup.md'
-    captures:
-      1: { name: 'punctuation.md' }
-  }
-  {
-    # Empty ordered lists, for styling purposes
-    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)])$'
-    name: 'empty.ordered.list.markup.md'
-    captures:
-      1: { name: 'punctuation.md' }
   }
 ]
