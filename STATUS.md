@@ -43,3 +43,4 @@ Total number of tests: **475**
 - https://github.com/CriticMarkup/CriticMarkup-toolkit/
 - http://jekyllrb.com/docs/frontmatter/
 - http://pandoc.org/README.html#epub-metadata
+- http://pandoc.org/demo/example9/pandocs-markdown.html
