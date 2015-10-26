@@ -21,7 +21,7 @@ Anyway, a few things are nerfed, but they are not worth the emphasize a proper l
 ### Created with blood, sweat, tears, and these amazing tools:
 
 [minimal-syntax](https://atom.io/packages/minimal-syntax)<br>
-A light syntax theme, high contrast/low brightness, three primary colors, and easy on the eyes.
+A light syntax theme, high contrast/low brightness, three primary colors, and easy on the eyes. And now also available in [minimal-syntax-dark](https://atom.io/packages/minimal-syntax-dark)
 
 [lib-ass](https://www.npmjs.org/packages/lib-ass)<br>
 Describe your tests in re-usable language-independent semantical format, and have them quickly translated into automated tests of your choosing.
