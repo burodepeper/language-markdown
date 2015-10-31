@@ -1,108 +1,75 @@
-# Markdown #
+# Markdown examples
 
-This is just a quick sample document to give you an example of the Markdown elements that this package parses. There is an `examples/` directory which contains the _literally_ hundreds upon hundreds of specific examples that have been put to the test.
+This document will showcase the various elements of Markdown (and some of its flavors) this package supports. It is both a guide to you, the user, to be educated. And for us, the developer, to see if things still behave as they are supposed to. This is not a complete reference though.
 
-> I am, for example, a quote by a famous author.
+TODO optimum results with [minimal-syntax] and [maximal-ui]
 
-1. I am a list of things
-2. you need to do in a
-  1. Get out of bed
-  2. Do hygiene stuff
-  3. Put on fresh clothes
-  4. Save the world
-  5. TODO Add better `examples`
-  6.
-  7. Empty list-items look slightly different
-3. specific order.
-4. [links are](</a thing too>)
+[minimal-syntax]: https://github.com/burodepeper/minimal-syntax/
+[maximal-ui]: https://github.com/burodepeper/maximal-ui/
+
+----------------
+
+## Blocks
+
+- Headings
+- Horizontal rules
+- Fenced code blocks
+- Lists
+- Quotes
+- HTML (and comments)
+
+### TODO Headings
+
+### Horizontal rules
+
+You can use horizontal rules (the equivalent of the html `<hr>`) to add a horizontal separator to your document. A horizontal rule is made up of three or more dashes `-`. It is also possible to use underscores `_` or asterisks `*` for this purpose, but I prefer dashes.
 
 ---
 
-- I am just a list,
-- but I am **awesome**
-- nonetheless.
+***
 
-```javascript
-var test = {
-  isComplete: true
-};
-```
+___
 
-```ass
-"I am awesome" {
-  "I am awesome": text.md
+### TODO Fenced code blocks
+
+### TODO Lists
+
+### TODO Quotes
+
+### HTML (and comments)
+
+The [language-html] package is included by default (if you have it installed) so that gives you the opportunity to add <!-- comments to Markdown documents -->, which are actually just HTML comments. And it also allows to just put HTML-tags just about anywhere. You can even mix in inline styles with your HTML. Let's try some:
+
+<article id='document-123' class='article news'>
+  <header>
+    <h1>Embedded HTML in Markdown documents</h1>
+    <p class='intro'>This revolution in something proves to be _something completely different_ and is not special at all!</p>
+  </header>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. _Duis aute irure dolor in reprehenderit in voluptate velit esse **cillum dolore** eu fugiat nulla pariatur._ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [read more](/link-to-someplace)</p>
+</article>
+
+I believe it will even support inline _CSS_ and _Javascript_. Let's give that a try:
+
+<style type='text/css'>
+article.article {
+  color: red;
 }
-```
+</style>
 
-``` php
-<?php
-function test ($var) {
-  echo "string";
-}
-?>
-```
+<script>
+document.getElementById("document-123").setAttribute("awesome", true);
+</script>
 
-~~~ julia hide=true
-for i in 1:10
-  println(i)
-end
-~~~
+----------------
 
-~~~    ruby startline=3 $%@#$
-def foo(x)
-  return 3
-end
-~~~
+## TODO Inlines
 
-```
-# I am plain source
-var test = {
-  isComplete: true
-};
-```
+----------------
 
-~~~
-$(function(){
-  app.init();
-});
-~~~
+## Flavors
 
-- [ ] Something to be done
-- [x] Accomplished task
-- [ ]
-- [ ] Above is an empty task
+### TODO Github
 
-<!-- And of course comments work! -->
-<!--
-Also multiline comments, because that's the whole point.
--->
+### TODO CriticMark
 
----
-
-And possibly other stuff, like...
-
-Escape ch\arac\ters
-
-Would html-tags work? <strong class="test" id='andere test' data-id='item-14'>maybe?</strong>
-
-<script type="text/javascript"></script>
-
----
-
-## Github flavoured markdown
-
-Usernames: @burodepeper and @leipert are awesome
-Issues: #11 is issue number eleven, but #abc is nothing
-
-Can I do emojis like :banana: and :+1:, and perhaps ~~strike-through~~ things?
-
-| Left | **Nuttin'** | Right |
-| :------- | ----- | -------: |
-| Block \quotes | _in progress_ | ...<div class='test'>... |
-| [link](/link) | `little bit of code` | @burodepeper |
-
----
-
-## Some CriticMark styles
-
-Lorem ipsum dolor sit amet, {++consectetur *adipisicing* elit++}, sed do eiusmod tempor incididunt ut labore et dolore {--magna--} aliqua. Ut enim ad minim veniam, quis nostrud{==hmm==} exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in{>>@tpoisot Some comment<<} reprehenderit in voluptate velit esse {~~cillum~>sillum~~} dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### TODO YAML front-matter
