@@ -2,10 +2,10 @@
 
 ## v0.2
 
-### Janitorial
+### Maintenance
 
 - [x] Use a `dev` branch from now on
-- [ ] Automatically load all `.ass` files in [/spec/fixtures] when `fixtures` is not defined.
+- [x] Automatically load all `.ass` files in [/spec/fixtures] when `fixtures` is not defined.
 - [ ] Clean up the main grammar file; are sub-repositories possible for the `link-` patterns?
 - [ ] Perhaps remove the `/examples` directory; requires a lot of upkeep
 - [ ] Proper examples in [EXAMPLES.md]
@@ -13,6 +13,10 @@
   - [ ] Remove unneccessary repeated elements that provide context unimportant to syntax highlighting
   - [ ] Remove duplicates
   - [ ] Remove tests aimed at interpretation rather than representation (for instance, uppercase vs lowercase testing, or logical dependencies)
+
+### Grammar and specs
+
+- [ ] Add spec for gfm task-lists (#29)
 
 ### Community
 

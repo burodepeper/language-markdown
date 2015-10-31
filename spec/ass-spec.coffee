@@ -1,37 +1,36 @@
-path = require 'path'
-ASS = require 'lib-ass'
-fs = require 'fs'
 _ = require 'lodash'
+ASS = require 'lib-ass'
+{Directory} = require 'atom'
+fs = require 'fs'
+path = require 'path'
 
-fixtures = [
-  "issues"
-  # BLOCKS
-  "blocks/hr"
-  "blocks/headings"
-  "blocks/fenced-code"
-  "blocks/link-references"
-  "blocks/quotes"
-  "blocks/lists"
-  # INLINES
-  "inlines/code-spans"
-  "inlines/escapes"
-  "inlines/entities"
-  "inlines/emphasis"
-  "inlines/links"
-  "inlines/images"
-  "inlines/autolinks"
-  "inlines/line-breaks"
-  "inlines/textual-content"
-  # FLAVORS
-  "flavors/github"
-  "flavors/criticmark"
-  "flavors/yaml-front-matter"
-]
-
-# Overwrite fixtures, cause this is what I'm working on...
+# NOTE
+# Manually specify {fixtures} if you only want to run specific tests.
+# A {fixture} is a relative path + filename (without extension).
 # fixtures = [
-#   "flavors/criticmark"
+#   "issues"
 # ]
+
+# Automatically generate the {fixtures} array from the file system.
+# Include all .ass files found inside /spec/fixtures, by their relative path
+# but excluding the file extension. This {fixture} is used to generate
+# identifiers for tasks.
+unless fixtures
+  getFixturesFrom = (directoryPath = '') ->
+    results = []
+    directory = new Directory(path.join(__dirname, './fixtures' + directoryPath))
+    entries = directory.getEntriesSync()
+    for entry in entries
+      if entry.isFile()
+        filename = entry.getBaseName()
+        if filename.substr(-4) is '.ass'
+          fixture = directoryPath + "/" + filename.substr(0, filename.length - 4)
+          results.push fixture
+      else
+        results = results.concat(getFixturesFrom(directoryPath + "/" + entry.getBaseName()))
+    return results
+
+  fixtures = getFixturesFrom()
 
 describe "Markdown grammar", ->
   grammar = null
@@ -93,13 +92,13 @@ describe "Markdown grammar", ->
             for line, a in tokens
               for token, b in line
                 expectation = test.tokens[i]
+                # NOTE
+                # A token.value without a length has been created, and is
+                # ignored. I believe this happens when an optional capture in
+                # the grammar is empty. As far as I can tell, these can be
+                # safely ignored, because you would omit these (unexpected)
+                # tokens when writing manual tests.
                 if tokens[a][b].value.length
                   expect(tokens[a][b]).toEqual value: expectation.value, scopes: expectation.scopes
-                # else
-                  # NOTE
-                  # A token.value without a length has been created, and is ignored. I believe this happens when an optional capture in the grammar is empty. As far as I can tell, these can be ignored, because you would omit these (unexpected) tokens when writing manual tests.
-                  # console.log "=== expectation[#{i}] for tokens[#{a}][#{b}] doesn't exist"
-                  # console.log "--- value:'#{tokens[a][b].value}'"
-                  # console.log "--- scopes:'#{tokens[a][b].scopes}'"
                 i++
             return
