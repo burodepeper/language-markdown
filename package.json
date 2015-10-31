@@ -1,6 +1,6 @@
 {
   "name": "language-markdown",
-  "version": "0.0.13",
+  "version": "0.1.2",
   "description": "Adds support for Markdown (including Github flavored, CriticMark, and YAML front-matter) based on CommonMark and common sense.",
   "repository": "https://github.com/burodepeper/language-markdown",
   "bugs": {
@@ -15,7 +15,7 @@
   "dependencies": {
     "lodash": "^3.10.1",
     "lib-ass": "0.0.6",
-    "pathwatcher": "^5.0.0"
+    "season": "^5.3"
   },
   "coffeelintConfig": {
     "max_line_length": {
