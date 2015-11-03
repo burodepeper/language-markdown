@@ -11,13 +11,6 @@ TODO optimum results with [minimal-syntax] and [maximal-ui]
 
 ## Blocks
 
-- Headings
-- Horizontal rules
-- Fenced code blocks
-- Lists
-- Quotes
-- HTML (and comments)
-
 ### TODO Headings
 
 ### Horizontal rules
@@ -25,9 +18,7 @@ TODO optimum results with [minimal-syntax] and [maximal-ui]
 You can use horizontal rules (the equivalent of the html `<hr>`) to add a horizontal separator to your document. A horizontal rule is made up of three or more dashes `-`. It is also possible to use underscores `_` or asterisks `*` for this purpose, but I prefer dashes.
 
 ---
-
 ***
-
 ___
 
 ### TODO Fenced code blocks

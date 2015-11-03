@@ -6,6 +6,7 @@
 
 - [x] Use a `dev` branch from now on
 - [x] Automatically load all `.ass` files in [/spec/fixtures] when `fixtures` is not defined.
+  - [ ] Split up `github` spec to test the automatic loading of the fixtures.
 - [ ] Clean up the main grammar file; are sub-repositories possible for the `link-` patterns?
 - [ ] Perhaps remove the `/examples` directory; requires a lot of upkeep
 - [ ] Proper examples in [EXAMPLE.md]
