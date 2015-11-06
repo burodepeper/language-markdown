@@ -1,0 +1,10 @@
+key: 'link-label'
+patterns: [
+  {
+    name: 'label.link.string.md'
+    match: '^(\\[)(.*)(\\])$'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+  }
+]

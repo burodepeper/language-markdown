@@ -111,13 +111,6 @@
         }
       ]
     },
-    "html": {
-      "patterns": [
-        {
-          "include": "text.html.basic"
-        }
-      ]
-    },
     "fenced-code-info": {
       "patterns": [
         {
@@ -132,126 +125,6 @@
             },
             "3": {
               "name": "value.string.md"
-            }
-          }
-        }
-      ]
-    },
-    "link-destination": {
-      "patterns": [
-        {
-          "name": "destination.link.md",
-          "match": "^(<)(.*)(>)$",
-          "captures": {
-            "1": {
-              "name": "punctuation.md"
-            },
-            "2": {
-              "name": "uri.underline.link.md"
-            },
-            "3": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
-          "name": "destination.link.md",
-          "match": "(.+)",
-          "captures": {
-            "1": {
-              "name": "uri.underline.link.md"
-            }
-          }
-        }
-      ]
-    },
-    "link-label": {
-      "patterns": [
-        {
-          "name": "label.link.string.md",
-          "match": "^(\\[)(.*)(\\])$",
-          "captures": {
-            "1": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "punctuation.md"
-            }
-          }
-        }
-      ]
-    },
-    "link-text": {
-      "patterns": [
-        {
-          "name": "image.link.string.md",
-          "match": "^(!\\[)(.*)(\\])$",
-          "captures": {
-            "1": {
-              "name": "punctuation.md"
-            },
-            "2": {
-              "patterns": [
-                {
-                  "include": "#emphasis"
-                },
-                {
-                  "include": "#code"
-                }
-              ]
-            },
-            "3": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
-          "name": "text.link.string.md",
-          "match": "^(\\[)(.*)(\\])$",
-          "captures": {
-            "1": {
-              "name": "punctuation.md"
-            },
-            "2": {
-              "patterns": [
-                {
-                  "include": "#emphasis"
-                },
-                {
-                  "include": "#code"
-                }
-              ]
-            },
-            "3": {
-              "name": "punctuation.md"
-            }
-          }
-        }
-      ]
-    },
-    "link-title": {
-      "patterns": [
-        {
-          "name": "title.link.md",
-          "match": "^(['|\"])(.*)(\\1)$",
-          "captures": {
-            "1": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
-          "name": "title.link.md",
-          "match": "^(\\()(.*)(\\))$",
-          "captures": {
-            "1": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "punctuation.md"
             }
           }
         }
@@ -1118,6 +991,13 @@
         }
       ]
     },
+    "html": {
+      "patterns": [
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    },
     "line-breaks": {
       "patterns": [
         {
@@ -1127,6 +1007,126 @@
         {
           "match": "(\\\\)$",
           "name": "line-break.constant.md"
+        }
+      ]
+    },
+    "link-destination": {
+      "patterns": [
+        {
+          "name": "destination.link.md",
+          "match": "^(<)(.*)(>)$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "uri.underline.link.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "destination.link.md",
+          "match": "(.+)",
+          "captures": {
+            "1": {
+              "name": "uri.underline.link.md"
+            }
+          }
+        }
+      ]
+    },
+    "link-label": {
+      "patterns": [
+        {
+          "name": "label.link.string.md",
+          "match": "^(\\[)(.*)(\\])$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "link-text": {
+      "patterns": [
+        {
+          "name": "image.link.string.md",
+          "match": "^(!\\[)(.*)(\\])$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#emphasis"
+                },
+                {
+                  "include": "#code"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "text.link.string.md",
+          "match": "^(\\[)(.*)(\\])$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#emphasis"
+                },
+                {
+                  "include": "#code"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "link-title": {
+      "patterns": [
+        {
+          "name": "title.link.md",
+          "match": "^(['|\"])(.*)(\\1)$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "title.link.md",
+          "match": "^(\\()(.*)(\\))$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
         }
       ]
     },
