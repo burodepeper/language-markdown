@@ -9,8 +9,11 @@
 - [ ] Support advanced gfm references (#35)
 - [ ] Add support for TOML front matter (#36)
 - [ ] Add Markdown Extra flavor (#37)
-  - [ ] {} settings after link/image
-  - [ ] {} as punctuation with fenced code blocks
+  - [ ] Add special attributes ({}) to
+    - [ ] Headings
+    - [ ] Fenced code blocks
+    - [ ] Links
+    - [ ] Images
   - [x] Defintion lists
   - [x] Footnotes
   - [x] Abbreviations
