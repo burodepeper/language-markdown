@@ -11,7 +11,7 @@
 - [ ] Add Markdown Extra flavor (#37)
   - [ ] {} settings after link/image
   - [ ] {} as punctuation with fenced code blocks
-  - [ ] Defintion lists (possibly)
+  - [x] Defintion lists
   - [x] Footnotes
   - [ ] Abbreviations
   - [ ] specs
@@ -26,6 +26,7 @@
 - [ ] Add new link-items automatically when pressing `ENTER`
 - [ ] Commands for (strong) emphasis; see [language-gfm/issues/94]
 - [ ] Show an index of headings found in the current document, possibility in a side panel
+- [ ] Linter: check if link-labels have a matching reference
 
 ### Maintenance
 

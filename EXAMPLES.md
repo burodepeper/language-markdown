@@ -368,3 +368,10 @@ I really love {~~*italic fonts*~>*italic font-styles*~~}.
 
 That's some text with a footnote.[^1]
 [^1]: And that's the footnote.
+
+Apple
+:   Pomaceous fruit of plants of the genus Malus in the family Rosaceae.
+
+Orange
+: The fruit of an evergreen tree of the genus Citrus.
+: Optional second line of definition-list-item

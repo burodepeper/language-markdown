@@ -4,4 +4,13 @@ patterns: [
   # NOTE by @burodepeper
   # Footnotes are implemented as part of /inlines/links.cson
 
+  # Definition list items
+  # : letters and stuff
+  {
+    name: 'definition.list.markup.md'
+    match: '^(?:\\s*)(:)( +)(.*)$'
+    captures:
+      1: { name: 'punctuation.md' }
+  }
+
 ]

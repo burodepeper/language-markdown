@@ -730,7 +730,17 @@
       ]
     },
     "markdown-extra": {
-      "patterns": []
+      "patterns": [
+        {
+          "name": "definition.list.markup.md",
+          "match": "^(?:\\s*)(:)( +)(.*)$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
     },
     "yaml-front-matter": {
       "patterns": [
