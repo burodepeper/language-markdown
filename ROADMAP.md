@@ -9,6 +9,12 @@
 - [ ] Support advanced gfm references (#35)
 - [ ] Add support for TOML front matter (#36)
 - [ ] Add Markdown Extra flavor (#37)
+  - [ ] {} settings after link/image
+  - [ ] {} as punctuation with fenced code blocks
+  - [ ] Defintion lists (possibly)
+  - [x] Footnotes
+  - [ ] Abbreviations
+  - [ ] specs
 - [ ] language-gfm/issues/40
 
 ---

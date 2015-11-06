@@ -18,6 +18,9 @@
     },
     {
       "include": "#inlines"
+    },
+    {
+      "include": "#flavors"
     }
   ],
   "repository": {
@@ -74,12 +77,19 @@
         },
         {
           "include": "#line-breaks"
+        }
+      ]
+    },
+    "flavors": {
+      "patterns": [
+        {
+          "include": "#criticmark"
         },
         {
           "include": "#github"
         },
         {
-          "include": "#criticmark"
+          "include": "#markdown-extra"
         }
       ]
     },
@@ -104,10 +114,7 @@
           "include": "#emphasis"
         },
         {
-          "include": "#github"
-        },
-        {
-          "include": "#criticmark"
+          "include": "#flavors"
         }
       ]
     },
@@ -722,6 +729,9 @@
         }
       ]
     },
+    "markdown-extra": {
+      "patterns": []
+    },
     "yaml-front-matter": {
       "patterns": [
         {
@@ -1042,7 +1052,7 @@
       "patterns": [
         {
           "name": "label.link.string.md",
-          "match": "^(\\[)(.*)(\\])$",
+          "match": "^(\\[\\^?)(.*)(\\])$",
           "captures": {
             "1": {
               "name": "punctuation.md"
@@ -1132,6 +1142,35 @@
     },
     "links": {
       "patterns": [
+        {
+          "name": "reference.footnote.link.markup.md",
+          "match": "((?:\\[\\^)(?:[^\\]]+)(?:\\]))(?!:)",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "definition.footnote.link.markup.md",
+          "match": "((?:\\[\\^)(?:[^\\]]+)(?:\\]))(:)",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
+        },
         {
           "name": "link.markup.md",
           "match": "((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+)(?:\\s+)((?:[\"'\\(]).*?(?:[\"'\\)]))(?:\\s*)(\\))",

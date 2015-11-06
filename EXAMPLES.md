@@ -361,3 +361,10 @@ Lorem ipsum dolor sit amet.{>>This is a comment<<}
 Lorem ipsum dolor sit amet.{>>This is a comment; by @author<<}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. {==Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.==}{>>confusing<<} Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.
 I really love {~~*italic fonts*~>*italic font-styles*~~}.
+
+
+
+<!---------- Markdown Extra --------------------------------------------------->
+
+That's some text with a footnote.[^1]
+[^1]: And that's the footnote.

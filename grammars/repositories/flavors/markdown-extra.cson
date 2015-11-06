@@ -1,0 +1,7 @@
+key: 'markdown-extra'
+patterns: [
+
+  # NOTE by @burodepeper
+  # Footnotes are implemented as part of /inlines/links.cson
+
+]

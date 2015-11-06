@@ -1,10 +1,14 @@
 key: 'link-label'
 patterns: [
+
+  # NOTE by @burodepeper
+  # The ^ is an optional character for Markdown Extra footnotes
   {
     name: 'label.link.string.md'
-    match: '^(\\[)(.*)(\\])$'
+    match: '^(\\[\\^?)(.*)(\\])$'
     captures:
       1: name: 'punctuation.md'
       3: name: 'punctuation.md'
   }
+  
 ]
