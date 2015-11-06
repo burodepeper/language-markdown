@@ -890,8 +890,8 @@
       "patterns": [
         {
           "name": "comment.md",
-          "begin": "(<!--)",
-          "end": "(-->)",
+          "begin": "(<!(?:-{2,}))",
+          "end": "((?:-{2,})>)",
           "captures": {
             "1": {
               "name": "punctuation.md"

@@ -2,8 +2,10 @@ key: 'comments'
 patterns: [
   {
     name: 'comment.md'
-    begin: '(<!--)'
-    end: '(-->)'
+    # begin: '(<!--)'
+    # end: '(-->)'
+    begin: '(<!(?:-{2,}))'
+    end: '((?:-{2,})>)'
     captures:
       1: name: 'punctuation.md'
       3: name: 'punctuation.md'
