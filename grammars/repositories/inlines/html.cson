@@ -1,0 +1,4 @@
+key: 'html'
+patterns: [
+  { include: 'text.html.basic' }
+]

@@ -1,0 +1,34 @@
+@1
+":+1:" {
+  text.md {
+    emoji.constant.gfm.md {
+      ":": punctuation.md
+      "+1"
+      ":": punctuation.md
+    }
+  }
+}
+
+@2
+":david:": text.md
+
+@3
+":david is awesome:": text.md
+
+@4
+":arrow_UP:": text.md
+
+@5
+"david:+1:": text.md
+
+@6
+"david :+1:" {
+  text.md {
+    "david "
+    emoji.constant.gfm.md {
+      ":": punctuation.md
+      "+1"
+      ":": punctuation.md
+    }
+  }
+}

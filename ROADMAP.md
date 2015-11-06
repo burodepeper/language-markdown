@@ -1,25 +1,15 @@
 # Roadmap
 
-## v0.2
+## v0.3
 
-### Janitorial
-
-- [x] Use a `dev` branch from now on
-- [ ] Automatically load all `.ass` files in [/spec/fixtures] when `fixtures` is not defined.
-- [ ] Clean up the main grammar file; are sub-repositories possible for the `link-` patterns?
-- [ ] Perhaps remove the `/examples` directory; requires a lot of upkeep
-- [ ] Proper examples in [EXAMPLES.md]
-- [ ] Thin out the specs:
+- [ ] **Thin out the specs**:
   - [ ] Remove unneccessary repeated elements that provide context unimportant to syntax highlighting
   - [ ] Remove duplicates
   - [ ] Remove tests aimed at interpretation rather than representation (for instance, uppercase vs lowercase testing, or logical dependencies)
-
-### Community
-
-- [ ] import additional specs from [language-gfm]
-- [ ] import/check issues from [language-gfm]
-
-[language-gfm]: /atom/language-gfm
+- [ ] Support advanced gfm references (#35)
+- [ ] Add support for TOML front matter (#36)
+- [ ] Add Markdown Extra flavor (#37)
+- [ ] language-gfm/issues/40
 
 ---
 
@@ -27,4 +17,10 @@
 
 ### Interface
 
-- [ ] Add new link-items automatically when pressing [ENTER]
+- [ ] Add new link-items automatically when pressing `ENTER`
+- [ ] Commands for (strong) emphasis; see [language-gfm/issues/94]
+- [ ] Show an index of headings found in the current document, possibility in a side panel
+
+### Maintenance
+
+- [ ] Create an abstracted function to recursively index files inside a directory with a certain extension, while retaining a relative path; method is currently used to load fixtures in spec, but can also be used to load all cson files when compiling the grammar file.

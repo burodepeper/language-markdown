@@ -4,7 +4,7 @@ A realistic implementation of the [CommonMark](http://www.commonmark.org/) speci
 
 If you experience any issue above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/) or contact @burodepeper directly.
 
- **Current status**: _beta 1_ is released; [more details](STATUS.md)
+ **Current status**: pretty stable; [more details](STATUS.md)
 
 ---
 
@@ -14,7 +14,9 @@ Pretty much _all of your regular Markdown needs/uses_ are supported by this pack
 
 I'd rather have you ask why your specific situation isn't italicized as you'd intended, than have you complain that your entire document acts like Microsoft Word 2007 after you've accidently moved an image two pixels and it decides to change the formatting on every single paragraph of your twelve page essay that is due in a hour at the exact moment you realize that your printer is probably either out of ink or paper, and you really need to pee.
 
-Anyway, a few things are nerfed, but they are not worth the emphasize a proper list would give them: no setext headings, no indented code blocks, and complex nested grammar is at your own risk.
+Anyway, a few things are nerfed, but they are not worth the emphasis a proper list would give them: no setext headings, no indented code blocks, and complex nested grammar is at your own risk.
+
+Check out [EXAMPLES.md](EXAMPLES.md) for a pretty extensive list of possibilities.
 
 ---
 

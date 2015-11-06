@@ -1,0 +1,17 @@
+key: 'link-title'
+patterns: [
+  {
+    name: 'title.link.md'
+    match: '^([\'|"])(.*)(\\1)$'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+  }
+  {
+    name: 'title.link.md'
+    match: '^(\\()(.*)(\\))$'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+  }
+]

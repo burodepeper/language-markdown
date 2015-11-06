@@ -1,9 +1,8 @@
-key: 'comments'
+key: 'link-label'
 patterns: [
   {
-    name: 'comment.md'
-    begin: '(<!(?:-{2,}))'
-    end: '((?:-{2,})>)'
+    name: 'label.link.string.md'
+    match: '^(\\[)(.*)(\\])$'
     captures:
       1: name: 'punctuation.md'
       3: name: 'punctuation.md'

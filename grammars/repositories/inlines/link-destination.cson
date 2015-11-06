@@ -1,0 +1,17 @@
+key: 'link-destination'
+patterns: [
+  {
+    name: 'destination.link.md'
+    match: '^(<)(.*)(>)$'
+    captures:
+      1: name: 'punctuation.md'
+      2: name: 'uri.underline.link.md'
+      3: name: 'punctuation.md'
+  }
+  {
+    name: 'destination.link.md'
+    match: '(.+)'
+    captures:
+      1: name: 'uri.underline.link.md'
+  }
+]
