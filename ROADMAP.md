@@ -17,7 +17,7 @@
 
 ### Grammar, specs and issues
 
-- [ ] Add spec for gfm task-lists (#29)
+- [x] Add spec for gfm task-lists (#29)
 - [x] HTML doesn't work in list-items (#33)
 - [x] Add extended dashes to punctuation part of comment (#34)
 
