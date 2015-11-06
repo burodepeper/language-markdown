@@ -1,0 +1,17 @@
+@1
+"~~bad~~ word" {
+  text.md {
+    strike.markup.md {
+      "~~": punctuation.md
+      "bad"
+      "~~": punctuation.md
+    }
+    " word"
+  }
+}
+
+@2
+"~~bad~~word": text.md
+
+@3
+"good~~bad~~": text.md

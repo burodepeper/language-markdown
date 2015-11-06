@@ -1,0 +1,184 @@
+@1
+"| one | two | three |" {
+  text.md {
+    table.storage.md {
+      "|": punctuation.md
+      " one "
+      "|": punctuation.md
+      " two "
+      "|": punctuation.md
+      " three "
+      "|": punctuation.md
+    }
+  }
+}
+
+@2
+"one | two | three |": text.md
+
+@3
+"| one | two | three" {
+  text.md {
+    table.storage.md {
+      "|": punctuation.md
+      " one "
+      "|": punctuation.md
+      " two "
+      "|": punctuation.md
+      " three"
+    }
+  }
+}
+
+@4
+"|one|two|three|": text.md
+
+@5
+"| --- | --- | --- |" {
+  text.md {
+    table.storage.md {
+      "|": punctuation.md
+      " "
+      "---": punctuation.md
+      " "
+      "|": punctuation.md
+      " "
+      "---": punctuation.md
+      " "
+      "|": punctuation.md
+      " "
+      "---": punctuation.md
+      " "
+      "|": punctuation.md
+    }
+  }
+}
+
+@6
+"--- | --- | --- |": text.md
+
+@7
+"| --- | --- | ---" {
+  text.md {
+    table.storage.md {
+      "|": punctuation.md
+      " "
+      "---": punctuation.md
+      " "
+      "|": punctuation.md
+      " "
+      "---": punctuation.md
+      " "
+      "|": punctuation.md
+      " "
+      "---": punctuation.md
+    }
+  }
+}
+
+@8
+"|---|---|---|": text.md
+
+@9
+"|:--- |:---:| ---:|" {
+  text.md {
+    table.storage.md {
+      "|": punctuation.md
+      ":": alignment.punctuation.md
+      "---": punctuation.md
+      " "
+      "|": punctuation.md
+      ":": alignment.punctuation.md
+      "---": punctuation.md
+      ":": alignment.punctuation.md
+      "|": punctuation.md
+      " "
+      "---": punctuation.md
+      ":": alignment.punctuation.md
+      "|": punctuation.md
+    }
+  }
+}
+
+@10
+"| :-- | :-: | --: |" {
+  text.md {
+    table.storage.md {
+      "|": punctuation.md
+      " "
+      ":": alignment.punctuation.md
+      "--": punctuation.md
+      " "
+      "|": punctuation.md
+      " "
+      ":": alignment.punctuation.md
+      "-": punctuation.md
+      ":": alignment.punctuation.md
+      " "
+      "|": punctuation.md
+      " "
+      "--": punctuation.md
+      ":": alignment.punctuation.md
+      " "
+      "|": punctuation.md
+    }
+  }
+}
+
+@11
+"| _one_ | **two** | [three] |" {
+  text.md {
+    table.storage.md {
+      "|": punctuation.md
+      " "
+      "_one_" {
+        emphasis.italic.markup.md {
+          "_": punctuation.md
+          "one"
+          "_": punctuation.md
+        }
+      }
+      " "
+      "|": punctuation.md
+      " "
+      "**two**" {
+        strong.emphasis.bold.markup.md {
+          "**": punctuation.md
+          "two"
+          "**": punctuation.md
+        }
+      }
+      " "
+      "|": punctuation.md
+      " "
+      "[three]" {
+        label.link.string.md {
+          "[": punctuation.md
+          "three"
+          "]": punctuation.md
+        }
+      }
+      " "
+      "|": punctuation.md
+    }
+  }
+}
+
+@12
+"| --- | --- | three |" {
+  text.md {
+    table.storage.md {
+      "|": punctuation.md
+      " "
+      "---": punctuation.md
+      " "
+      "|": punctuation.md
+      " "
+      "---": punctuation.md
+      " "
+      "|": punctuation.md
+      " three "
+      "|": punctuation.md
+    }
+  }
+}

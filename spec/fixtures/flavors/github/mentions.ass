@@ -1,0 +1,246 @@
+@1
+"@username" {
+  text.md {
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+  }
+}
+
+@2
+"@user name" {
+  text.md {
+    "@user" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "user"
+      }
+    }
+    " name"
+  }
+}
+
+@3
+"user@name": text.md
+
+@4
+"@username: something, something" {
+  text.md {
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    ": something, something"
+  }
+}
+
+@5
+"@userName123" {
+  text.md {
+    "@userName123" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "userName123"
+      }
+    }
+  }
+}
+
+@6
+"@user_name": text.md
+
+@7
+"@user-name" {
+  text.md {
+    "@user-name" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "user-name"
+      }
+    }
+  }
+}
+
+@8
+"@:user:name": text.md
+
+@9
+"@user:name" {
+  text.md {
+    "@user" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "user"
+      }
+    }
+    ":name"
+  }
+}
+
+@10
+""@username"" {
+  text.md {
+    """
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    """
+  }
+}
+
+@11
+"'@username'" {
+  text.md {
+    "'"
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    "'"
+  }
+}
+
+@12
+"(@username)" {
+  text.md {
+    "("
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    ")"
+  }
+}
+
+# NOTE
+# Though technically allowed, but link-reference-labels are parsed before
+# mentions.
+@13
+"[@username]" {
+  text.md {
+    label.link.string.md {
+      "[": punctuation.md
+      "@username"
+      "]": punctuation.md
+    }
+  }
+}
+
+# NOTE
+# technically okay, but a weird thing to do...
+@14
+"(@username]" {
+  text.md {
+    "("
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    "]"
+  }
+}
+
+@15
+">@username" {
+  text.md {
+    quote.markup.md {
+      ">": punctuation.md
+      "@username" {
+        mention.reference.gfm.variable.md {
+          "@": punctuation.md
+          "username"
+        }
+      }
+    }
+  }
+}
+
+@16
+"@one, @two, @three" {
+  text.md {
+    "@one" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "one"
+      }
+    }
+    ", "
+    "@two" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "two"
+      }
+    }
+    ", "
+    "@three" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "three"
+      }
+    }
+  }
+}
+
+@17
+"@username=cool": text.md
+
+@18
+"@username." {
+  text.md {
+    "@username" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    "."
+  }
+}
+
+@19
+"-@username": text.md
+
+@20
+"- @username" {
+  text.md {
+    unordered.list.markup.md {
+      "-": punctuation.md
+      " "
+      "@username" {
+        mention.reference.gfm.variable.md {
+          "@": punctuation.md
+          "username"
+        }
+      }
+    }
+  }
+}
+
+@21
+"@atom/feedback" {
+  text.md {
+    "@atom/feedback" {
+      mention.reference.gfm.variable.md {
+        "@": punctuation.md
+        "atom/feedback"
+      }
+    }
+  }
+}
+
+@22
+"@username-": text.md
