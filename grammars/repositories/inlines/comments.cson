@@ -2,8 +2,6 @@ key: 'comments'
 patterns: [
   {
     name: 'comment.md'
-    # begin: '(<!--)'
-    # end: '(-->)'
     begin: '(<!(?:-{2,}))'
     end: '((?:-{2,})>)'
     captures:

@@ -50,6 +50,7 @@ repository:
       { include: '#escapes' }
       { include: '#code' }
       { include: '#entities' }
+      { include: '#html' }
       { include: '#links' }
       { include: '#emphasis' }
       { include: '#github' }
