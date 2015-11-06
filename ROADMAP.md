@@ -8,8 +8,8 @@
 - [x] Automatically load all `.ass` files in [/spec/fixtures] when `fixtures` is not defined.
   - [x] Split up `github` spec to test the automatic loading of the fixtures.
 - [x] Clean up the main grammar file; subrepos for helpers
-- [ ] Perhaps remove the `/examples` directory; requires a lot of upkeep
-- [ ] Proper examples in [EXAMPLE.md]
+- [x] Perhaps remove the `/examples` directory; requires a lot of upkeep
+- [x] Proper examples in [EXAMPLES.md]
 - [ ] Thin out the specs:
   - [ ] Remove unneccessary repeated elements that provide context unimportant to syntax highlighting
   - [ ] Remove duplicates
