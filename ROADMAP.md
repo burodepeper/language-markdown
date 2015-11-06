@@ -25,7 +25,8 @@
 ### Community
 
 - [ ] import additional specs from [language-gfm]
-- [ ] import/check issues from [language-gfm]
+- [ ] import issues from [language-gfm]
+- [ ] extract enhancement ideas from [language-gfm]
 
 [language-gfm]: /atom/language-gfm
 
@@ -35,7 +36,7 @@
 
 ### Interface
 
-- [ ] Add new link-items automatically when pressing [ENTER]
+- [ ] Add new link-items automatically when pressing `ENTER`
 
 ### Maintenance
 
