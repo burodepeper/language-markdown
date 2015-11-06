@@ -375,3 +375,6 @@ Apple
 Orange
 : The fruit of an evergreen tree of the genus Citrus.
 : Optional second line of definition-list-item
+
+*[HTML]: Hyper Text Markup Language
+*[W3C]:  World Wide Web Consortium

@@ -739,6 +739,22 @@
               "name": "punctuation.md"
             }
           }
+        },
+        {
+          "name": "abbreviation.reference.link.markup.md",
+          "match": "^((?:\\*\\[)(?:[^\\]]+)(?:\\]))(:) (.*)$",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.md"
+            }
+          }
         }
       ]
     },
@@ -1062,7 +1078,7 @@
       "patterns": [
         {
           "name": "label.link.string.md",
-          "match": "^(\\[\\^?)(.*)(\\])$",
+          "match": "^(\\*?\\[\\^?)(.*)(\\])$",
           "captures": {
             "1": {
               "name": "punctuation.md"

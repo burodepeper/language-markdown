@@ -13,7 +13,7 @@
   - [ ] {} as punctuation with fenced code blocks
   - [x] Defintion lists
   - [x] Footnotes
-  - [ ] Abbreviations
+  - [x] Abbreviations
   - [ ] specs
 - [ ] language-gfm/issues/40
 
