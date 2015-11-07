@@ -379,10 +379,10 @@ Orange
 *[HTML]: Hyper Text Markup Language
 *[W3C]:  World Wide Web Consortium
 
-## Header 2 ##      {#header2}
-## The Site ##    {.main}
-## Le Site ##    {lang=fr}
-## Le Site ##    {.main .shine #the-site lang=fr}
+## Header 2, with _emphasis_ ##      {#header2 .main}
+## The Site {these=are #not .special} ##
+## Even when header is not closed {lang=fr}
+### Le Site ####{.main .shine #the-site lang=fr}
 [link]{.class}
 [link](</test url>){.class}
 ![link]{.class}

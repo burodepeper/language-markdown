@@ -265,14 +265,23 @@
               "patterns": [
                 {
                   "begin": "^(?: {0,3})(#{1})(?: +)",
-                  "end": "(?: ){1}(#*)(?: *)$",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
                   "name": "heading-1.md",
-                  "captures": {
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
                     "1": {
                       "name": "punctuation.md"
                     },
-                    "3": {
-                      "name": "punctuation.md"
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
                     }
                   },
                   "patterns": [
@@ -283,14 +292,23 @@
                 },
                 {
                   "begin": "^(?: {0,3})(#{2})(?: +)",
-                  "end": "(?: ){1}(#*)(?: *)$",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
                   "name": "heading-2.md",
-                  "captures": {
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
                     "1": {
                       "name": "punctuation.md"
                     },
-                    "3": {
-                      "name": "punctuation.md"
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
                     }
                   },
                   "patterns": [
@@ -301,14 +319,23 @@
                 },
                 {
                   "begin": "^(?: {0,3})(#{3})(?: +)",
-                  "end": "(?: ){1}(#*)(?: *)$",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
                   "name": "heading-3.md",
-                  "captures": {
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
                     "1": {
                       "name": "punctuation.md"
                     },
-                    "3": {
-                      "name": "punctuation.md"
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
                     }
                   },
                   "patterns": [
@@ -319,14 +346,23 @@
                 },
                 {
                   "begin": "^(?: {0,3})(#{4})(?: +)",
-                  "end": "(?: ){1}(#*)(?: *)$",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
                   "name": "heading-4.md",
-                  "captures": {
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
                     "1": {
                       "name": "punctuation.md"
                     },
-                    "3": {
-                      "name": "punctuation.md"
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
                     }
                   },
                   "patterns": [
@@ -337,14 +373,23 @@
                 },
                 {
                   "begin": "^(?: {0,3})(#{5})(?: +)",
-                  "end": "(?: ){1}(#*)(?: *)$",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
                   "name": "heading-5.md",
-                  "captures": {
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
                     "1": {
                       "name": "punctuation.md"
                     },
-                    "3": {
-                      "name": "punctuation.md"
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
                     }
                   },
                   "patterns": [
@@ -355,14 +400,23 @@
                 },
                 {
                   "begin": "^(?: {0,3})(#{6})(?: +)",
-                  "end": "(?: ){1}(#*)(?: *)$",
+                  "end": "(?: ){1}(#*)(?:\\s*)(?:(\\{[[:ascii:]]*\\}))?$",
                   "name": "heading-6.md",
-                  "captures": {
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "endCaptures": {
                     "1": {
                       "name": "punctuation.md"
                     },
-                    "3": {
-                      "name": "punctuation.md"
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "#special-attributes"
+                        }
+                      ]
                     }
                   },
                   "patterns": [
