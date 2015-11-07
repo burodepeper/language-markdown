@@ -1,0 +1,9 @@
+key: 'special-attributes'
+patterns: [
+
+  {
+    name: 'special-attributes.md'
+    match: '(\\{)([^\\}]*)(\\})'
+  }
+
+]

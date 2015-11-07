@@ -66,7 +66,7 @@ if atom.inDevMode()
         if item = @_parseItem(item)
 
           pattern =
-            begin: '^\\s*([`~]{3})\\s*('+item.pattern+')(?=( |$))\\s*([^`]*)$'
+            begin: '^\\s*([`~]{3,})\\s*\\.?('+item.pattern+')(?=( |$))\\s*([^`]*)$'
             beginCaptures:
               1: name: 'punctuation.md'
               2: name: 'language.constant.md'

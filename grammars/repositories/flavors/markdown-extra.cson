@@ -4,7 +4,11 @@ patterns: [
   # NOTE by @burodepeper
   # Footnotes are implemented as part of /inlines/links.cson
 
-  # Definition list items
+  # NOTE by @burodepeper
+  # 'Special attributes' are implemented in /flavors/markdown-extra-special-attributes.cson
+
+  # Definition-list-items
+  # ---------------------
   # : letters and stuff
   {
     name: 'definition.list.markup.md'
@@ -13,7 +17,8 @@ patterns: [
       1: { name: 'punctuation.md' }
   }
 
-  # TODO Abbreviations
+  # Abbreviations
+  # -------------
   # *[HTML]: Hyper Text Markup Language
   # *[W3C]:  World Wide Web Consortium
   {
@@ -24,6 +29,5 @@ patterns: [
       2: name: 'punctuation.md'
       # 3: patterns: [{ include: '#link-destination' }]
   }
-
 
 ]

@@ -360,7 +360,7 @@ Lorem {~~hipsum~>ipsum~~} dolor sit amet...
 Lorem ipsum dolor sit amet.{>>This is a comment<<}
 Lorem ipsum dolor sit amet.{>>This is a comment; by @author<<}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. {==Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.==}{>>confusing<<} Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.
-I really love {~~*italic fonts*~>*italic font-styles*~~}.
+I really love {~~_italic_ letters~>**bold** text~~}.
 
 
 
@@ -378,3 +378,19 @@ Orange
 
 *[HTML]: Hyper Text Markup Language
 *[W3C]:  World Wide Web Consortium
+
+## Header 2 ##      {#header2}
+## The Site ##    {.main}
+## Le Site ##    {lang=fr}
+## Le Site ##    {.main .shine #the-site lang=fr}
+[link](url){#id .class}
+![img](url){#id .class}
+[linkref]: url "optional title" {#id .class}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~ .js
+alert("Hello world");
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.html #example-1}
+<p>paragraph <b>emphasis</b>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
