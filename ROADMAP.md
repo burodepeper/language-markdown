@@ -17,7 +17,7 @@
   - [x] Defintion lists
   - [x] Footnotes
   - [x] Abbreviations
-  - [ ] specs
+  - [ ] specs and examples
 - [ ] language-gfm/issues/40
 
 ---

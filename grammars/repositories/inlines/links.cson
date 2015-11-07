@@ -24,7 +24,23 @@ patterns: [
   # ![link](/uri "title")
   {
     name: 'link.markup.md'
-    match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+)(?:\\s+)((?:["\'\\(]).*?(?:["\'\\)]))(?:\\s*)(\\))'
+    match: '(?x)
+      (
+        (?:!?\\[)
+        (?:[^\\]]*)
+        (?:\\])
+      )
+      (\\()
+      ([^ [:cntrl:]]+)
+      (?:\\s+)
+      (
+        (?:["\'\\(])
+        .*?
+        (?:["\'\\)])
+      )
+      (?:\\s*)
+      (\\))
+    '
     captures:
       1: patterns: [{ include: '#link-text' }]
       2: name: 'punctuation.md'
@@ -121,7 +137,6 @@ patterns: [
   {
     name: 'email.auto.link.markup.md'
     match: '(<)(([a-zA-Z0-9\\.!#$%&\'\\*\\+/=?^_`{\\|}~-]+)(@)([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*))(>)'
-    # match: '(<)([a-zA-Z0-9\\.*\\+_-]+)(@)(>)'
     captures:
       1: name: 'punctuation.md'
       2: name: 'uri.underline.markup.md'
