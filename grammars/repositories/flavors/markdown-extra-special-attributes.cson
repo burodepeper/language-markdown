@@ -2,8 +2,41 @@ key: 'special-attributes'
 patterns: [
 
   {
-    name: 'special-attributes.md'
-    match: '(\\{)([^\\}]*)(\\})'
+    name: 'special-attributes.raw.markup.md'
+    match: '^(\\{)([^\\}]*)(\\})$'
+    captures:
+      1: name: 'punctuation.md'
+      2:
+        patterns: [
+
+          # #id
+          {
+            name: 'id.attribute.meta.md'
+            match: '(#)([^\\s|\\}]*)'
+            captures:
+              1: name: 'punctuation.md'
+          }
+
+          # .class
+          {
+            name: 'class.attribute.meta.md'
+            match: '(\\.)([^\\s|\\}]*)'
+            captures:
+              1: name: 'punctuation.md'
+          }
+
+          # key=value
+          {
+            match: '([^ ]+)(=)([^\\s|\\}]*)'
+            name: 'other.attribute.meta.md'
+            captures:
+              1: name: 'key.keyword.md'
+              2: name: 'punctuation.md'
+              3: name: 'value.string.md'
+          }
+
+        ]
+      3: name: 'punctuation.md'
   }
 
 ]

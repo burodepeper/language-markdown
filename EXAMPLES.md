@@ -383,9 +383,17 @@ Orange
 ## The Site ##    {.main}
 ## Le Site ##    {lang=fr}
 ## Le Site ##    {.main .shine #the-site lang=fr}
+[link]{.class}
+[link](</test url>){.class}
+![link]{.class}
+[label][reference]{.class}
+![label][reference]{.class}
 [link](url){#id .class}
-![img](url){#id .class}
+![img](url){#id .class lang=fr}
+[link](url "title"){#id .class}
 [linkref]: url "optional title" {#id .class}
+[label](http://www.url.com){.external-link target=_blank}
+[linkref]: /url {#id .class}
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ .js
 alert("Hello world");

@@ -9,11 +9,11 @@
 - [ ] Support advanced gfm references (#35)
 - [ ] Add support for TOML front matter (#36)
 - [ ] Add Markdown Extra flavor (#37)
-  - [ ] Add special attributes ({}) to
+  - [ ] Add special-attributes (`{#id .class key=value}`) to
     - [ ] Headings
     - [ ] Fenced code blocks
-    - [ ] Links
-    - [ ] Images
+    - [x] Links
+    - [x] Images
   - [x] Defintion lists
   - [x] Footnotes
   - [x] Abbreviations
