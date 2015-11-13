@@ -12,19 +12,13 @@
 }
 
 @314
-"a * foo bar*" {
-  "a * foo bar*": text.md
-}
+"a * foo bar*": text.md
 
 @315
-"a*"foo"*" {
-  "a*"foo"*": text.md
-}
+"a*"foo"*": text.md
 
 @316
-"* a *" {
-  "* a *": text.md
-}
+"* a *": text.md
 
 @317
 "foo*bar*" {
@@ -63,34 +57,22 @@
 }
 
 @320
-"_ foo bar_" {
-  "_ foo bar_": text.md
-}
+"_ foo bar_": text.md
 
 @321
-"a_"foo"_" {
-  "a_"foo"_": text.md
-}
+"a_"foo"_": text.md
 
 @322
-"foo_bar_" {
-  "foo_bar_": text.md
-}
+"foo_bar_": text.md
 
 @323
-"5_6_78" {
-  "5_6_78": text.md
-}
+"5_6_78": text.md
 
 @324
-"пристаням_стремятся_" {
-  "пристаням_стремятся_": text.md
-}
+"пристаням_стремятся_": text.md
 
 @325
-"aa_"bb"_cc" {
-  "aa_"bb"_cc": text.md
-}
+"aa_"bb"_cc": text.md
 
 @326
 "foo-_(bar)_" {
@@ -105,14 +87,10 @@
 }
 
 @327
-"_foo*" {
-  "_foo*": text.md
-}
+"_foo*": text.md
 
 @328
-"*foo bar *" {
-  "*foo bar *": text.md
-}
+"*foo bar *": text.md
 
 @329
 "*foo bar\n*" {
@@ -125,9 +103,7 @@
 }
 
 @330
-"*(*foo)" {
-  "*(*foo)": text.md
-}
+"*(*foo)": text.md
 
 # FIXME
 # @331
@@ -147,27 +123,15 @@
 #   }
 # }
 
-@332
-"*foo*bar" {
-  text.md {
-    emphasis.italic.markup.md {
-      "*": punctuation.md
-      "foo"
-      "*": punctuation.md
-    }
-    "bar"
-  }
-}
+# NOTE
+# Removed @332, because not relevant to syntax highlighting
+# @burodepeper
 
 @333
-"_foo bar _" {
-  "_foo bar _": text.md
-}
+"_foo bar _": text.md
 
 @334
-"_(_foo)" {
-  "_(_foo)": text.md
-}
+"_(_foo)": text.md
 
 # FIXME
 # @335
@@ -188,14 +152,10 @@
 # }
 
 @336
-"_foo_bar" {
-  "_foo_bar": text.md
-}
+"_foo_bar": text.md
 
 @337
-"_пристаням_стремятся" {
-  "_пристаням_стремятся": text.md
-}
+"_пристаням_стремятся": text.md
 
 @338
 "_foo_bar_baz_" {
@@ -232,14 +192,10 @@
 }
 
 @341
-"** foo bar**" {
-  "** foo bar**": text.md
-}
+"** foo bar**": text.md
 
 @342
-"a**"foo"**" {
-  "a**"foo"**": text.md
-}
+"a**"foo"**": text.md
 
 @343
 "foo**bar**" {
@@ -265,9 +221,7 @@
 }
 
 @345
-"__ foo bar__" {
-  "__ foo bar__": text.md
-}
+"__ foo bar__": text.md
 
 @346
 "__\nfoo bar__" {
@@ -278,24 +232,16 @@
 }
 
 @347
-"a__"foo"__" {
-  "a__"foo"__": text.md
-}
+"a__"foo"__": text.md
 
 @348
-"foo__bar__" {
-  "foo__bar__": text.md
-}
+"foo__bar__": text.md
 
 @349
-"5__6__78" {
-  "5__6__78": text.md
-}
+"5__6__78": text.md
 
 @350
-"пристаням__стремятся__" {
-  "пристаням__стремятся__": text.md
-}
+"пристаням__стремятся__": text.md
 
 # FIXME
 # @351
@@ -328,14 +274,10 @@
 }
 
 @353
-"**foo bar **" {
-  "**foo bar **": text.md
-}
+"**foo bar **": text.md
 
 @354
-"**(**foo)" {
-  "**(**foo)": text.md
-}
+"**(**foo)": text.md
 
 # FIXME
 # @355
@@ -433,14 +375,10 @@
 }
 
 @359
-"__foo bar __" {
-  "__foo bar __": text.md
-}
+"__foo bar __": text.md
 
 @360
-"__(__foo)" {
-  "__(__foo)": text.md
-}
+"__(__foo)": text.md
 
 # FIXME
 # @361
@@ -461,14 +399,10 @@
 # }
 
 @362
-"__foo__bar" {
-  "__foo__bar": text.md
-}
+"__foo__bar": text.md
 
 @363
-"__пристаням__стремятся" {
-  "__пристаням__стремятся": text.md
-}
+"__пристаням__стремятся": text.md
 
 # FIXME
 # @364
@@ -740,14 +674,10 @@
 # }
 
 @379
-"** is not an empty emphasis" {
-  "** is not an empty emphasis": text.md
-}
+"** is not an empty emphasis": text.md
 
 @380
-"**** is not an empty strong emphasis" {
-  "**** is not an empty strong emphasis": text.md
-}
+"**** is not an empty strong emphasis": text.md
 
 @381
 "**foo [bar](/url)**" {
@@ -976,19 +906,13 @@
 }
 
 @393
-"__ is not an empty emphasis" {
-  "__ is not an empty emphasis": text.md
-}
+"__ is not an empty emphasis": text.md
 
 @394
-"____ is not an empty strong emphasis" {
-  "____ is not an empty strong emphasis": text.md
-}
+"____ is not an empty strong emphasis": text.md
 
 @395
-"foo ***" {
-  "foo ***": text.md
-}
+"foo ***": text.md
 
 @396
 "foo *\**" {

@@ -12,12 +12,12 @@
 | CM: blocks  | Lists                       |  16 of 17 | Good   |
 | CM: inlines | Backslash escapes           |   5 of 13 | OK     |
 | CM: inlines | Entities                    |   7 of 12 | Good   |
-| CM: inlines | Code spans                  |  12 of 15 | Good   |
-| CM: inlines | Emphasis                    | 77 of 130 | OK     |
-| CM: inlines | Links                       |  51 of 85 | OK     |
-| CM: inlines | Images                      |  14 of 22 | OK     |
+| CM: inlines | Code spans                  |  13 of 17 | Good   |
+| CM: inlines | Emphasis                    | 78 of 130 | OK     |
+| CM: inlines | Links                       |  35 of 71 | OK     |
+| CM: inlines | Images                      |   7 of 15 | OK     |
 | CM: inlines | Autolinks                   |  16 of 16 | Good   |
-| CM: inlines | Line-breaks                 |  17 of 17 | Good   |
+| CM: inlines | Line-breaks                 |  15 of 15 | Good   |
 | Github      | Mentions                    |  22 of 22 | Good   |
 | Github      | Issues                      |  21 of 22 | Good   |
 | Github      | Emojis                      |    6 of 6 | Good   |
@@ -27,7 +27,7 @@
 | CriticMark  | Annotation                  |    7 of 7 | Good   |
 | YAML        | Front matter                |    3 of 3 | Good   |
 
-Total number of tests: **442**
+Total number of tests: **420**
 
 ### Notes
 

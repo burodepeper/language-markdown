@@ -329,145 +329,9 @@
   }
 }
 
-@531
-"![foo] [bar]"+
-""+
-"[bar]: /url" {
-  text.md {
-    "![foo]" {
-      link.markup.md {
-        image.link.string.md {
-          "![": punctuation.md
-          "foo"
-          "]": punctuation.md
-        }
-      }
-    }
-    " "
-    "[bar]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "bar"
-        "]": punctuation.md
-      }
-    }
-    ""
-    "[bar]: /url" {
-      reference.link.markup.md {
-        "[bar]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "bar"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-      }
-    }
-  }
-}
-
-@532
-"![foo] [bar]"+
-""+
-"[BAR]: /url" {
-  text.md {
-    "![foo]" {
-      link.markup.md {
-        image.link.string.md {
-          "![": punctuation.md
-          "foo"
-          "]": punctuation.md
-        }
-      }
-    }
-    " "
-    "[bar]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "bar"
-        "]": punctuation.md
-      }
-    }
-    ""
-    "[BAR]: /url" {
-      reference.link.markup.md {
-        "[BAR]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "BAR"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-      }
-    }
-  }
-}
-
-@533
-"![foo][]"+
-""+
-"[foo]: /url "title"" {
-  text.md {
-    "![foo][]" {
-      link.markup.md {
-        "![foo]" {
-          image.link.string.md {
-            "![": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        "[]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "]": punctuation.md
-          }
-        }
-      }
-    }
-    ""
-    "[foo]: /url "title"" {
-      reference.link.markup.md {
-        "[foo]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-        " "
-        ""title"" {
-          title.link.md {
-            '"': punctuation.md
-            "title"
-            '"': punctuation.md
-          }
-        }
-      }
-    }
-  }
-}
+# NOTE
+# Removed @531-533, because not relevant to syntax highlighting
+# @burodepeper
 
 # FIXME
 # @534
@@ -522,157 +386,9 @@
 #   }
 # }
 
-@535
-"![Foo][]"+
-""+
-"[foo]: /url "title"" {
-  text.md {
-    "![Foo][]" {
-      link.markup.md {
-        "![Foo]" {
-          image.link.string.md {
-            "![": punctuation.md
-            "Foo"
-            "]": punctuation.md
-          }
-        }
-        "[]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "]": punctuation.md
-          }
-        }
-      }
-    }
-    ""
-    "[foo]: /url "title"" {
-      reference.link.markup.md {
-        "[foo]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-        " "
-        ""title"" {
-          title.link.md {
-            '"': punctuation.md
-            "title"
-            '"': punctuation.md
-          }
-        }
-      }
-    }
-  }
-}
-
-@536
-"![foo] "+
-"[]"+
-""+
-"[foo]: /url "title"" {
-  text.md {
-    "![foo]" {
-      link.markup.md {
-        "![foo]" {
-          image.link.string.md {
-            "![": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-      }
-    }
-    " "
-    "[]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "]": punctuation.md
-      }
-    }
-    ""
-    "[foo]: /url "title"" {
-      reference.link.markup.md {
-        "[foo]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-        " "
-        ""title"" {
-          title.link.md {
-            '"': punctuation.md
-            "title"
-            '"': punctuation.md
-          }
-        }
-      }
-    }
-  }
-}
-
-@537
-"![foo]"+
-""+
-"[foo]: /url "title"" {
-  text.md {
-    "![foo]" {
-      link.markup.md {
-        "![foo]" {
-          image.link.string.md {
-            "![": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-      }
-    }
-    ""
-    "[foo]: /url "title"" {
-      reference.link.markup.md {
-        "[foo]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-        " "
-        ""title"" {
-          title.link.md {
-            '"': punctuation.md
-            "title"
-            '"': punctuation.md
-          }
-        }
-      }
-    }
-  }
-}
+# NOTE
+# Removed @535-537, because not relevant to syntax highlighting
+# @burodepeper
 
 # FIXME
 # @538
@@ -740,94 +456,21 @@
 #   }
 # }
 
-@540
-"![Foo]"+
-""+
-"[foo]: /url "title"" {
-  text.md {
-    "![Foo]" {
-      link.markup.md {
-        "![Foo]" {
-          image.link.string.md {
-            "![": punctuation.md
-            "Foo"
-            "]": punctuation.md
-          }
-        }
-      }
-    }
-    ""
-    "[foo]: /url "title"" {
-      reference.link.markup.md {
-        "[foo]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-        " "
-        ""title"" {
-          title.link.md {
-            '"': punctuation.md
-            "title"
-            '"': punctuation.md
-          }
-        }
-      }
-    }
-  }
-}
+# NOTE
+# Removed @540, because not relevant to syntax highlighting
+# @burodepeper
 
 @541
-"\!\[foo]"+
-""+
-"[foo]: /url "title"" {
+"\!\[foo]" {
   text.md {
     "\!": escape.constant.md
     "\[": escape.constant.md
     "foo]"
-    ""
-    "[foo]: /url "title"" {
-      reference.link.markup.md {
-        "[foo]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-        " "
-        ""title"" {
-          title.link.md {
-            '"': punctuation.md
-            "title"
-            '"': punctuation.md
-          }
-        }
-      }
-    }
   }
 }
 
 @542
-"\![foo]"+
-""+
-"[foo]: /url "title"" {
+"\![foo]" {
   text.md {
     "\!": escape.constant.md
     "[foo]" {
@@ -835,33 +478,6 @@
         "[": punctuation.md
         "foo"
         "]": punctuation.md
-      }
-    }
-    ""
-    "[foo]: /url "title"" {
-      reference.link.markup.md {
-        "[foo]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-        " "
-        ""title"" {
-          title.link.md {
-            '"': punctuation.md
-            "title"
-            '"': punctuation.md
-          }
-        }
       }
     }
   }

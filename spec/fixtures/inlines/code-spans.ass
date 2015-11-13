@@ -1,5 +1,5 @@
 # http://spec.commonmark.org/0.22/#example-298
-@298
+@298a
 "`foo`" {
   text.md {
     code.raw.markup.md {
@@ -7,6 +7,32 @@
       'foo'
       '`': punctuation.md
     }
+  }
+}
+
+@298b
+"before`foo`after" {
+  text.md {
+    "before"
+    code.raw.markup.md {
+      '`': punctuation.md
+      'foo'
+      '`': punctuation.md
+    }
+    "after"
+  }
+}
+
+@298c
+"before `foo` after" {
+  text.md {
+    "before "
+    code.raw.markup.md {
+      '`': punctuation.md
+      'foo'
+      '`': punctuation.md
+    }
+    " after"
   }
 }
 
@@ -167,16 +193,8 @@
 
 # http://spec.commonmark.org/0.22/#example-311
 @311
-"```foo``" {
-  text.md {
-    '```foo``'
-  }
-}
+'```foo``': text.md
 
 # http://spec.commonmark.org/0.22/#example-312
 @312
-"`foo" {
-  text.md {
-    '`foo'
-  }
-}
+'`foo': text.md

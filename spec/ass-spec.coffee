@@ -8,7 +8,8 @@ path = require 'path'
 # Manually specify {fixtures} if you only want to run specific tests.
 # A {fixture} is a relative path + filename (without extension).
 # fixtures = [
-#   "flavors/github/task-lists"
+#   # "flavors/github/task-lists"
+#   "inlines/emphasis"
 # ]
 
 # Automatically generate the {fixtures} array from the file system.

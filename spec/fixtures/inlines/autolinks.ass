@@ -57,9 +57,7 @@
 }
 
 @547
-"<http://foo.bar/baz bim>" {
-  "<http://foo.bar/baz bim>": text.md
-}
+"<http://foo.bar/baz bim>": text.md
 
 @548
 "<http://example.com/\[\>" {
@@ -115,36 +113,22 @@
 }
 
 @552
-"<>" {
-  "<>": text.md
-}
+"<>": text.md
 
 @553
-"<heck://bing.bong>" {
-  "<heck://bing.bong>": text.md
-}
+"<heck://bing.bong>": text.md
 
 @554
-"< http://foo.bar >" {
-  "< http://foo.bar >": text.md
-}
+"< http://foo.bar >": text.md
 
 @555
-"<foo.bar.baz>" {
-  "<foo.bar.baz>": text.md
-}
+"<foo.bar.baz>": text.md
 
 @556
-"<localhost:5001/foo>" {
-  "<localhost:5001/foo>": text.md
-}
+"<localhost:5001/foo>": text.md
 
 @557
-"http://example.com" {
-  "http://example.com": text.md
-}
+"http://example.com": text.md
 
 @558
-"foo@bar.example.com" {
-  "foo@bar.example.com": text.md
-}
+"foo@bar.example.com": text.md
