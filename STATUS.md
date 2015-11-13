@@ -27,7 +27,7 @@
 | CriticMark  | Annotation                  |    7 of 7 | Good   |
 | YAML        | Front matter                |    3 of 3 | Good   |
 
-Total number of tests: **495**
+Total number of tests: **494**
 
 ### Notes
 

@@ -10,8 +10,11 @@
 - [ ] Add support for TOML front matter (#36)
 - [ ] Add Markdown Extra flavor (#37)
   - [ ] Add special-attributes (`{#id .class key=value}`) to
-    - [ ] Headings
+    - [x] Headings
     - [ ] Fenced code blocks
+      - [ ] Separate `special-attribute-elements` from `special-attributes`
+      - [ ] Use `special-attribute-elements` to replace `fenced-code-info`
+      - [ ] Combine the two types of generated `fenced-code-blocks` in a single match
     - [x] Links
     - [x] Images
   - [x] Defintion lists

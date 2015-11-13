@@ -254,6 +254,8 @@ bar
 [link](/url 'title "and" title')
 [link _foo **bar** `#`_](/uri)
 
+At the base is the old friend, Wordpress [update: this is old news, it's running [Statamic](http://www.statamic.com) now. But this still should be interesting].
+
 [foo][bar]
 [link _foo **bar** `#`_][ref]
 [foo][bar][baz]
@@ -381,7 +383,7 @@ Orange
 
 ## Header 2, with _emphasis_ ##      {#header2 .main}
 ## The Site {these=are #not .special} ##
-## Even when header is not closed {lang=fr}
+## Even when header is not closed {.class lang=fr}
 ### Le Site ####{.main .shine #the-site lang=fr}
 [link]{.class}
 [link](</test url>){.class}
