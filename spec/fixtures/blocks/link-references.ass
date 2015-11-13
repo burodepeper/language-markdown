@@ -44,21 +44,11 @@
 @147
 "[foo]:"+
 "   /url"+
-"        'the title'"+
-""+
-"[foo]" {
+"        'the title'" {
   text.md {
     "[foo]:"
     "   /url"
     "        'the title'"
-    ""
-    "[foo]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "foo"
-        "]": punctuation.md
-      }
-    }
   }
 }
 
@@ -74,21 +64,11 @@
 @149
 "[Foo bar]:"+
 "<my url>"+
-"'title'"+
-""+
-"[Foo bar]" {
+"'title'" {
   text.md {
     "[Foo bar]:"
     "<my url>"
     "'title'"
-    ""
-    "[Foo bar]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "Foo bar"
-        "]": punctuation.md
-      }
-    }
   }
 }
 
@@ -98,9 +78,7 @@
 "title"+
 "line1"+
 "line2"+
-"'"+
-""+
-"[foo]" {
+"'" {
   text.md {
     "[foo]: /url '" {
       "[foo]: /url" {
@@ -127,14 +105,6 @@
     "line1"
     "line2"
     "'"
-    ""
-    "[foo]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "foo"
-        "]": punctuation.md
-      }
-    }
   }
 }
 
@@ -142,9 +112,7 @@
 @151
 "[foo]: /url 'title"+
 ""+
-"with blank line'"+
-""+
-"[foo]" {
+"with blank line'" {
   text.md {
     "[foo]: /url 'title" {
       "[foo]: /url" {
@@ -169,52 +137,20 @@
     }
     ""
     "with blank line'"
-    ""
-    "[foo]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "foo"
-        "]": punctuation.md
-      }
-    }
   }
 }
 
 @152
 "[foo]:"+
-"/url"+
-""+
-"[foo]" {
+"/url" {
   text.md {
     "[foo]:"
     "/url"
-    ""
-    "[foo]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "foo"
-        "]": punctuation.md
-      }
-    }
   }
 }
 
 @153
-"[foo]:"+
-""+
-"[foo]" {
-  text.md {
-    "[foo]:"
-    ""
-    "[foo]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "foo"
-        "]": punctuation.md
-      }
-    }
-  }
-}
+"[foo]:": text.md
 
 # TODO
 # @154
@@ -258,92 +194,10 @@
   }
 }
 
-@156
-"[foo]"+
-""+
-"[foo]: first"+
-"[foo]: second" {
-  text.md {
-    "[foo]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "foo"
-        "]": punctuation.md
-      }
-    }
-    ""
-    "[foo]: first" {
-      reference.link.markup.md {
-        "[foo]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "first" {
-          destination.link.md {
-            "first": uri.underline.link.md
-          }
-        }
-      }
-    }
-    "[foo]: second" {
-      reference.link.markup.md {
-        "[foo]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "second" {
-          destination.link.md {
-            "second": uri.underline.link.md
-          }
-        }
-      }
-    }
-  }
-}
-
-@157
-"[FOO]: /url"+
-""+
-"[Foo]" {
-  text.md {
-    "[FOO]: /url" {
-      reference.link.markup.md {
-        "[FOO]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "FOO"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-      }
-    }
-    ""
-    "[Foo]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "Foo"
-        "]": punctuation.md
-      }
-    }
-  }
-}
+# NOTE
+# Removed @156, because it is not related to syntax highlighting
+# Removed @157, because it is not related to syntax highlighting
+# @burodepeper
 
 @158
 "[ΑΓΩ]: /φου"+
@@ -476,9 +330,7 @@
 }
 
 @163
-"    [foo]: /url "title""+
-""+
-"[foo]" {
+"    [foo]: /url "title"" {
   text.md {
     "    "
     "[foo]: /url "title"" {
@@ -507,23 +359,13 @@
         }
       }
     }
-    ""
-    "[foo]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "foo"
-        "]": punctuation.md
-      }
-    }
   }
 }
 
 @164
 "```"+
 "[foo]: /url"+
-"```"+
-""+
-"[foo]" {
+"```" {
   text.md {
     fenced.code.md {
       "```": punctuation.md
@@ -532,23 +374,13 @@
       }
       "```": punctuation.md
     }
-    ""
-    "[foo]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "foo"
-        "]": punctuation.md
-      }
-    }
   }
 }
 
 # NOTE can't detect multiline relations
 @165
 "Foo"+
-"[bar]: /baz"+
-""+
-"[bar]" {
+"[bar]: /baz" {
   text.md {
     "Foo"
     "[bar]: /baz" {
@@ -569,21 +401,11 @@
         }
       }
     }
-    ""
-    "[bar]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "bar"
-        "]": punctuation.md
-      }
-    }
   }
 }
 
 @166
-"# [Foo]"+
-"[foo]: /url"+
-"> bar" {
+"# [Foo]" {
   text.md {
     heading.markup.md {
       heading-1.md {
@@ -596,31 +418,6 @@
             "]": punctuation.md
           }
         }
-      }
-    }
-    "[foo]: /url" {
-      reference.link.markup.md {
-        "[foo]" {
-          label.link.string.md {
-            "[": punctuation.md
-            "foo"
-            "]": punctuation.md
-          }
-        }
-        ":": punctuation.md
-        " "
-        "/url" {
-          destination.link.md {
-            "/url": uri.underline.link.md
-          }
-        }
-      }
-    }
-    "> bar" {
-      quote.markup.md {
-        ">": punctuation.md
-        " "
-        "bar"
       }
     }
   }
@@ -727,18 +524,8 @@
 }
 
 @168
-"[foo]"+
-""+
 "> [foo]: /url" {
   text.md {
-    "[foo]" {
-      label.link.string.md {
-        "[": punctuation.md
-        "foo"
-        "]": punctuation.md
-      }
-    }
-    ""
     "> [foo]: /url" {
       quote.markup.md {
         ">": punctuation.md

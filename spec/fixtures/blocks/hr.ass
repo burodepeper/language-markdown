@@ -1,5 +1,5 @@
 # http://spec.commonmark.org/0.22/#example-8
-@commonmark-8a
+@8a
 "***" {
   text.md {
     '***': hr.md
@@ -11,7 +11,9 @@
 # front-matter block. In testing, every tests is technically a separate new
 # document, so this test includes a scope you wouldn't expect. For that reason,
 # test @8d has been added.
-@commonmark-8b
+# @burodepeper
+
+@8b
 "---" {
   text.md {
     front-matter.yaml.source.md {
@@ -20,14 +22,14 @@
   }
 }
 
-@commonmark-8c
+@8c
 "___" {
   text.md {
     '___': hr.md
   }
 }
 
-@commonmark-8d
+@8d
 " "+
 "---" {
   text.md {
@@ -37,49 +39,31 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-9
-@commonmark-9
-"+++" {
-  "+++": text.md
-}
+@9
+"+++": text.md
 
 # http://spec.commonmark.org/0.22/#example-10
-@commonmark-10
-"===" {
-  "===": text.md
-}
+@10
+"===": text.md
 
 # http://spec.commonmark.org/0.22/#example-11
-@commonmark-11a
-"--" {
-  "--": text.md
-}
+@11a
+"--": text.md
 
-@commonmark-11b
-"**" {
-  "**": text.md
-}
+@11b
+"**": text.md
 
-@commonmark-11c
-"__" {
-  "__": text.md
-}
+@11c
+"__": text.md
 
 # http://spec.commonmark.org/0.22/#example-12
-@commonmark-12a
-" ***" {
-  text.md {
-    ' ***': hr.md
-  }
-}
 
-@commonmark-12b
-"  ***" {
-  text.md {
-    '  ***': hr.md
-  }
-}
+# NOTE
+# Removed @12a, because it is too similar to @12c
+# Removed @12b, because it is too similar to @12c
+# @burodepeper
 
-@commonmark-12c
+@12c
 "   ***" {
   text.md {
     '   ***': hr.md
@@ -87,23 +71,15 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-13
-@commonmark-13
-"    ***" {
-  "    ***": text.md
-}
+@13
+"    ***": text.md
 
-# http://spec.commonmark.org/0.22/#example-14
-@commonmark-14
-"Foo"+
-"    ***" {
-  text.md {
-    "Foo"
-    "    ***"
-  }
-}
+# NOTE
+# Removed @14, because it is not related to syntax highlighting
+# @burodepeper
 
 # http://spec.commonmark.org/0.22/#example-15
-@commonmark-15
+@15
 "_____________________________________" {
   text.md {
     "_____________________________________": hr.md
@@ -111,7 +87,7 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-16
-@commonmark-16
+@16
 " - - -" {
   text.md {
     " - - -": hr.md
@@ -119,7 +95,7 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-17
-@commonmark-17
+@17
 " **  * ** * ** * **" {
   text.md {
     " **  * ** * ** * **": hr.md
@@ -127,7 +103,7 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-18
-@commonmark-18
+@18
 "-     -      -      -" {
   text.md {
     "-     -      -      -": hr.md
@@ -135,7 +111,7 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-19
-@commonmark-19
+@19
 "- - - -    " {
   text.md {
     "- - - -    ": hr.md
@@ -143,23 +119,16 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-20
-@commonmark-20a
-"_ _ _ _ a" {
-  "_ _ _ _ a": text.md
-}
+@20a
+"_ _ _ _ a": text.md
 
-@commonmark-20b
-"a------" {
-  "a------": text.md
-}
-
-@commonmark-20c
-"---a---" {
-  "---a---": text.md
-}
+# NOTE
+# Removed @20b, because it is too similar to @20a
+# Removed @20c, because it is too similar to @20a
+# @burodepeper
 
 # http://spec.commonmark.org/0.22/#example-21
-@commonmark-21
+@21
 " *-*" {
   text.md {
     " "
@@ -171,54 +140,14 @@
   }
 }
 
-# http://spec.commonmark.org/0.22/#example-22
-@commonmark-22
-"- foo"+
-"***"+
-"- bar" {
-  text.md {
-    unordered.list.markup.md {
-      "-": punctuation.md
-      " "
-      "foo"
-    }
-    "***": hr.md
-    unordered.list.markup.md {
-      "-": punctuation.md
-      " "
-      "bar"
-    }
-  }
-}
-
-# http://spec.commonmark.org/0.22/#example-23
-@commonmark-23
-"Foo"+
-"***"+
-"bar" {
-  text.md {
-    "Foo"
-    "***": hr.md
-    "bar"
-  }
-}
-
 # NOTE
-# According to the spec, this should be converted to a setext header, but they are not supported.
-# http://spec.commonmark.org/0.22/#example-24
-@commonmark-24
-"Foo"+
-"---"+
-"bar" {
-  text.md {
-    "Foo"
-    "---": hr.md
-    "bar"
-  }
-}
+# Removed @22, because it is not related to syntax highlighting
+# Removed @23, because it is not related to syntax highlighting
+# Removed @24, because it is not related to syntax highlighting
+# @burodepeper
 
 # http://spec.commonmark.org/0.22/#example-25
-@commonmark-25
+@25
 "* Foo"+
 "* * *"+
 "* Bar" {
@@ -238,7 +167,7 @@
 }
 
 # http://spec.commonmark.org/0.22/#example-26
-@commonmark-26
+@26
 "- Foo"+
 "- * * *" {
   text.md {

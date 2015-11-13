@@ -4,7 +4,7 @@
 
 - [ ] **Thin out the specs**:
   - [ ] Remove unneccessary repeated elements that provide context unimportant to syntax highlighting
-  - [ ] Remove duplicates
+  - [ ] Remove duplicately items
   - [ ] Remove tests aimed at interpretation rather than representation (for instance, uppercase vs lowercase testing, or logical dependencies)
 - [ ] Support advanced gfm references (#35)
 - [ ] Add support for TOML front matter (#36)
@@ -21,7 +21,12 @@
   - [x] Footnotes
   - [x] Abbreviations
   - [ ] specs and examples
+  - [ ] Test with default syntax-themes
 - [ ] language-gfm/issues/40
+- [ ] Review existing specs
+  - [ ] /blocks/fenced-code/100
+  - [ ] /blocks/fenced-code/101
+  - [ ] /blocks/lists/262
 
 ---
 

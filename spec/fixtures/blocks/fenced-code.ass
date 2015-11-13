@@ -151,93 +151,13 @@
   }
 }
 
-@86
-"```"+
-""+
-"  "+
-"```" {
-  text.md {
-    fenced.code.md {
-      "```": punctuation.md
-      source.md {
-        ""
-        "  "
-      }
-      "```": punctuation.md
-    }
-  }
-}
-
-@87
-"```"+
-"```" {
-  text.md {
-    fenced.code.md {
-      "```": punctuation.md
-      "```": punctuation.md
-    }
-  }
-}
-
-@88
-" ```"+
-" aaa"+
-"aaa"+
-"```" {
-  text.md {
-    fenced.code.md {
-      " "
-      "```": punctuation.md
-      source.md {
-        " aaa"
-        "aaa"
-      }
-      "```": punctuation.md
-    }
-  }
-}
-
-@89
-"  ```"+
-"aaa"+
-"  aaa"+
-"aaa"+
-"  ```" {
-  text.md {
-    fenced.code.md {
-      "  "
-      "```": punctuation.md
-      source.md {
-        "aaa"
-        "  aaa"
-        "aaa"
-      }
-      "  "
-      "```": punctuation.md
-    }
-  }
-}
-
-@90
-"   ```"+
-"   aaa"+
-"    aaa"+
-"  aaa"+
-"   ```" {
-  text.md {
-    fenced.code.md {
-      "   "
-      "```": punctuation.md
-      source.md {
-        "   aaa"
-        "    aaa"
-        "  aaa"
-      }
-      "   "
-      "```": punctuation.md
-    }
-  }
-}
+# NOTE
+# Removed @86, because it is not related to syntax highlighting
+# Removed @87, because it is not related to syntax highlighting
+# Removed @88, because it is not related to syntax highlighting
+# Removed @89, because it is not related to syntax highlighting
+# Removed @90, because it is not related to syntax highlighting
+# @burodepeper
 
 @91
 "    ```"+
@@ -250,67 +170,18 @@
   }
 }
 
-@92
-"```"+
-"aaa"+
-"  ```" {
-  text.md {
-    fenced.code.md {
-      "```": punctuation.md
-      source.md {
-        "aaa"
-      }
-      "  "
-      "```": punctuation.md
-    }
-  }
-}
+# NOTE
+# Removed @92, because it is not related to syntax highlighting
+# Removed @93, because it is not related to syntax highlighting
+# Removed @94, because it is not related to syntax highlighting
+# @burodepeper
 
-@93
-"   ```"+
-"aaa"+
-"  ```" {
-  text.md {
-    fenced.code.md {
-      "   "
-      "```": punctuation.md
-      source.md {
-        "aaa"
-      }
-      "  "
-      "```": punctuation.md
-    }
-  }
-}
-
-@94
-"```"+
-"aaa"+
-"    ```" {
-  text.md {
-    fenced.code.md {
-      "```": punctuation.md
-      source.md {
-        "aaa"
-        "    ```"
-      }
-    }
-  }
-}
-
-# NOTE is not implemented according to spec, because our implementation requires begin and end-of-line characters for the markers, so a fenced-code-block can not be on a single line
+# NOTE
+# is not implemented according to spec, because our implementation requires
+# begin and end-of-line characters for the markers, so a fenced-code-block can
+# not be on a single line
+# @burodepeper
 @95
-# "``` ```"+
-# "aaa" {
-#   text.md {
-#     fenced.code.md {
-#       "```": punctuation.md
-#       " "
-#       "```": punctuation.md
-#     }
-#     "aaa"
-#   }
-# }
 "``` ```"+
 "aaa" {
   text.md {
@@ -411,7 +282,7 @@
 #
 # }
 
-# FIXME
+# TODO
 # @101
 # "````;"+
 # "````" {
@@ -424,15 +295,9 @@
 #   }
 # }
 
-# NOTE see @95
-@102
-"``` aa ```"+
-"foo" {
-  text.md {
-    "``` aa ```"
-    "foo"
-  }
-}
+# NOTE
+# Removed @102, see @95
+# @burodepeper
 
 @103
 "```"+

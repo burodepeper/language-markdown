@@ -4,12 +4,12 @@
 
 | Flavor      | Section                     | Specs     | Status |
 | ----------- | --------------------------- | --------: | ------ |
-| CM: blocks  | Horizontal rules            |  27 of 27 | Good   |
-| CM: blocks  | ATX Headings                |  23 of 23 | Good   |
-| CM: blocks  | Fenced code blocks          |  25 of 27 | Good   |
-| CM: blocks  | Links reference definitions |  21 of 23 | Good   |
-| CM: blocks  | Block quotes                |  25 of 25 | Good   |
-| CM: blocks  | Lists                       |  33 of 34 | Good   |
+| CM: blocks  | Horizontal rules            |  20 of 20 | Good   |
+| CM: blocks  | ATX Headings                |  19 of 19 | Good   |
+| CM: blocks  | Fenced code blocks          |  16 of 18 | Good   |
+| CM: blocks  | Links reference definitions |  19 of 21 | Good   |
+| CM: blocks  | Block quotes                |  13 of 13 | Good   |
+| CM: blocks  | Lists                       |  16 of 17 | Good   |
 | CM: inlines | Backslash escapes           |   5 of 13 | OK     |
 | CM: inlines | Entities                    |   7 of 12 | Good   |
 | CM: inlines | Code spans                  |  12 of 15 | Good   |
@@ -27,7 +27,7 @@
 | CriticMark  | Annotation                  |    7 of 7 | Good   |
 | YAML        | Front matter                |    3 of 3 | Good   |
 
-Total number of tests: **494**
+Total number of tests: **442**
 
 ### Notes
 
