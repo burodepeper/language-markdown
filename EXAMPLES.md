@@ -75,6 +75,12 @@ def something(x)
 end
 ~~~
 
+~~~~~~~ ruby startline=3 $%@#$
+def foo(x)
+  return 3
+end
+~~~~~~~
+
 
 
 <!---------- Lists ------------------------------------------------------------>
@@ -403,6 +409,6 @@ Orange
 alert("Hello world");
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.html #example-1}
-<p>paragraph <b>emphasis</b>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.js #id .class key=value}
+alert("Hello world");
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

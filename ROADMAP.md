@@ -9,12 +9,12 @@
 - [ ] Support advanced gfm references (#35)
 - [ ] Add support for TOML front matter (#36)
 - [ ] Add Markdown Extra flavor (#37)
-  - [ ] Add special-attributes (`{#id .class key=value}`) to
+  - [x] Add special-attributes (`{#id .class key=value}`) to
     - [x] Headings
-    - [ ] Fenced code blocks
-      - [ ] Separate `special-attribute-elements` from `special-attributes`
-      - [ ] Use `special-attribute-elements` to replace `fenced-code-info`
-      - [ ] Combine the two types of generated `fenced-code-blocks` in a single match
+    - [x] Fenced code blocks
+      - [x] Separate `special-attribute-elements` from `special-attributes`
+      - [x] Use `special-attribute-elements` to replace `fenced-code-info`
+      - [x] Combine the two types of generated `fenced-code-blocks` in a single match
     - [x] Links
     - [x] Images
   - [x] Defintion lists
@@ -24,8 +24,7 @@
   - [ ] Test with default syntax-themes
 - [ ] language-gfm/issues/40
 - [ ] Review existing specs
-  - [ ] /blocks/fenced-code/100
-  - [ ] /blocks/fenced-code/101
+  - [x] /blocks/fenced-code/100
   - [ ] /blocks/lists/262
 
 ---

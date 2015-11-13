@@ -272,15 +272,35 @@
   }
 }
 
-# TODO added to PR #19
-# @100
-# "~~~~    ruby startline=3 $%@#$"+
-# "def foo(x)"+
-# "  return 3"+
-# "end"+
-# "~~~~~~~" {
-#
-# }
+@100
+"~~~~~~~ ruby startline=3 $%@#$"+
+"def foo(x)"+
+"  return 3"+
+"end"+
+"~~~~~~~" {
+  text.md {
+    fenced.code.md {
+      "~~~~~~~": punctuation.md
+      " "
+      "ruby": language.constant.md
+      " "
+      "startline=3" {
+        other.special.attribute.meta.md {
+          "startline": key.keyword.md
+          "=": punctuation.md
+          "3": value.string.md
+        }
+      }
+      " $%@#$"
+      embedded.source.ruby {
+        "def foo(x)"
+        "  return 3"
+        "end"
+      }
+      "~~~~~~~": punctuation.md
+    }
+  }
+}
 
 # TODO
 # @101
