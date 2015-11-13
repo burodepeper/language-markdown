@@ -4,7 +4,15 @@ A realistic implementation of the [CommonMark](http://www.commonmark.org/) speci
 
 If you experience any issue above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/) or contact @burodepeper directly.
 
- **Current status**: pretty stable; [more details](STATUS.md)
+**Supports**:
+
+- CommonMark Markdown
+- Github Flavored Markdown
+- Markdown Extra
+- CriticMark annotation
+- Front Matter (yaml and toml)
+
+[more details](STATUS.md)
 
 ---
 
