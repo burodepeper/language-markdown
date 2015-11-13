@@ -1,3 +1,14 @@
+---
+title: "Markdown examples"
+description: "This is a collection of samples to display the various Markdown elements that are supported by this package."
+tags: [ "markdown", "package", "atom", "front-matter" ]
+categories:
+  - "Grammar"
+  - "Markdown"
+---
+
+
+
 # Markdown examples
 
 To see all that `language-markdown` has to offer, use either [minimal-syntax] or [minimal-syntax-dark]. Your syntax-theme might not support all features.

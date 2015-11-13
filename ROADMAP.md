@@ -7,8 +7,8 @@
   - [x] Remove duplicately items
   - [x] Remove tests aimed at interpretation rather than representation (for instance, uppercase vs lowercase testing, or logical dependencies)
 - [ ] Support advanced gfm references (#35)
-- [ ] Add support for TOML front matter (#36)
-- [ ] Add Markdown Extra flavor (#37)
+- [x] Add support for TOML front matter (#36)
+- [x] Add Markdown Extra flavor (#37)
   - [x] Add special-attributes (`{#id .class key=value}`) to
     - [x] Headings
     - [x] Fenced code blocks
@@ -21,7 +21,7 @@
   - [x] Footnotes
   - [x] Abbreviations
   - [x] specs and examples
-  - [ ] Test with default syntax-themes
+  - [x] Test with default syntax-themes
 - [ ] language-gfm/issues/40
 - [ ] Review existing specs
   - [x] /blocks/fenced-code/100

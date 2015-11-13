@@ -40,7 +40,13 @@
 
 # http://spec.commonmark.org/0.22/#example-9
 @9
-"+++": text.md
+"+++" {
+  text.md {
+    front-matter.toml.source.md {
+      '+++': hr.md
+    }
+  }
+}
 
 # http://spec.commonmark.org/0.22/#example-10
 @10

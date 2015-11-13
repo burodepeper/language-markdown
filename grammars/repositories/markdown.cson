@@ -23,7 +23,7 @@ repository:
   blocks:
     patterns: [
       { include: '#comments' }
-      { include: '#yaml-front-matter' }
+      { include: '#front-matter' }
       { include: '#hr' }
       { include: '#headings' }
       { include: '#lists' }

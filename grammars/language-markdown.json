@@ -30,7 +30,7 @@
           "include": "#comments"
         },
         {
-          "include": "#yaml-front-matter"
+          "include": "#front-matter"
         },
         {
           "include": "#hr"
@@ -677,6 +677,50 @@
         }
       ]
     },
+    "front-matter": {
+      "patterns": [
+        {
+          "begin": "\\A---$",
+          "beginCaptures": {
+            "0": {
+              "name": "hr.md"
+            }
+          },
+          "end": "^(---|\\.\\.\\.)$",
+          "endCaptures": {
+            "1": {
+              "name": "hr.md"
+            }
+          },
+          "name": "front-matter.yaml.source.md",
+          "patterns": [
+            {
+              "include": "source.yaml"
+            }
+          ]
+        },
+        {
+          "begin": "\\A\\+\\+\\+$",
+          "beginCaptures": {
+            "0": {
+              "name": "hr.md"
+            }
+          },
+          "end": "^\\+\\+\\+$",
+          "endCaptures": {
+            "0": {
+              "name": "hr.md"
+            }
+          },
+          "name": "front-matter.toml.source.md",
+          "patterns": [
+            {
+              "include": "source.toml"
+            }
+          ]
+        }
+      ]
+    },
     "github": {
       "patterns": [
         {
@@ -850,30 +894,6 @@
               "name": "punctuation.md"
             }
           }
-        }
-      ]
-    },
-    "yaml-front-matter": {
-      "patterns": [
-        {
-          "begin": "\\A---$",
-          "beginCaptures": {
-            "0": {
-              "name": "hr.md"
-            }
-          },
-          "end": "^(---|\\.\\.\\.)$",
-          "endCaptures": {
-            "1": {
-              "name": "hr.md"
-            }
-          },
-          "name": "front-matter.yaml.source.md",
-          "patterns": [
-            {
-              "include": "source.yaml"
-            }
-          ]
         }
       ]
     },
