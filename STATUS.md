@@ -26,8 +26,9 @@
 | Github      | Task lists                  |  10 of 10 | Good   |
 | CriticMark  | Annotation                  |    7 of 7 | Good   |
 | YAML        | Front matter                |    3 of 3 | Good   |
+| MD Extra    | -                           |  11 of 11 | Good   |
 
-Total number of tests: **421**
+Total number of tests: **434**
 
 ### Notes
 

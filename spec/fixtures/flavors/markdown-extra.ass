@@ -1,0 +1,285 @@
+@1
+"That's some text with a footnote.[^1]"+
+"[^1]: And that's the footnote." {
+  text.md {
+    "That's some text with a footnote."
+    "[^1]" {
+      reference.footnote.link.markup.md {
+        label.link.string.md {
+          "[^": punctuation.md
+          "1"
+          "]": punctuation.md
+        }
+      }
+    }
+    "[^1]:" {
+      definition.footnote.link.markup.md {
+        "[^1]" {
+          label.link.string.md {
+            "[^": punctuation.md
+            "1"
+            "]": punctuation.md
+          }
+        }
+        ":": punctuation.md
+      }
+    }
+    " And that's the footnote."
+  }
+}
+
+@2
+"Apple"+
+":   Pomaceous fruit of plants of the genus Malus in the family Rosaceae." {
+  text.md {
+    "Apple"
+    ":   Pomaceous fruit of plants of the genus Malus in the family Rosaceae." {
+      definition.list.markup.md {
+        ":": punctuation.md
+        "   Pomaceous fruit of plants of the genus Malus in the family Rosaceae."
+      }
+    }
+  }
+}
+
+@3
+"Orange"+
+": The fruit of an evergreen tree of the genus Citrus."+
+": Optional second line of definition-list-item" {
+  text.md {
+    "Orange"
+    ": The fruit of an evergreen tree of the genus Citrus." {
+      definition.list.markup.md {
+        ":": punctuation.md
+        " The fruit of an evergreen tree of the genus Citrus."
+      }
+    }
+    ": Optional second line of definition-list-item" {
+      definition.list.markup.md {
+        ":": punctuation.md
+        " Optional second line of definition-list-item"
+      }
+    }
+  }
+}
+
+@4
+"*[NOT]:Not an abbreviation": text.md
+
+@5
+"*[HTML]: Hyper Text Markup Language" {
+  text.md {
+    abbreviation.reference.link.markup.md {
+      "*[HTML]" {
+        label.link.string.md {
+          "*[": punctuation.md
+          "HTML"
+          "]": punctuation.md
+        }
+      }
+      ":": punctuation.md
+      " Hyper Text Markup Language"
+    }
+  }
+}
+
+@6
+"*[W3C]:  World Wide Web Consortium" {
+  text.md {
+    abbreviation.reference.link.markup.md {
+      "*[W3C]" {
+        label.link.string.md {
+          "*[": punctuation.md
+          "W3C"
+          "]": punctuation.md
+        }
+      }
+      ":": punctuation.md
+      "  World Wide Web Consortium"
+    }
+  }
+}
+
+@7
+"# Heading {key=value #id .class} #" {
+  text.md {
+    heading.markup.md {
+      heading-1.md {
+        '#': punctuation.md
+        ' '
+        'Heading {key=value #id .class}'
+        " "
+        '#': punctuation.md
+      }
+    }
+  }
+}
+
+@8
+"## Open heading {.class lang=fr}" {
+  text.md {
+    heading.markup.md {
+      heading-2.md {
+        '##': punctuation.md
+        ' '
+        'Open heading'
+        " "
+        "{.class lang=fr}" {
+          special-attributes.raw.markup.md {
+            "{": punctuation.md
+            ".class" {
+              class.special.attribute.meta.md {
+                ".": punctuation.md
+                "class"
+              }
+            }
+            " "
+            "lang=fr" {
+              other.special.attribute.meta.md {
+                "lang": key.keyword.md
+                "=": punctuation.md
+                "fr": value.string.md
+              }
+            }
+            "}": punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@9
+"### Le Site ######{.class .shine #title lang=fr}" {
+  text.md {
+    heading.markup.md {
+      heading-3.md {
+        "###": punctuation.md
+        " "
+        "Le Site"
+        " "
+        "######": punctuation.md
+        "{.class .shine #title lang=fr}" {
+          special-attributes.raw.markup.md {
+            "{": punctuation.md
+            ".class" {
+              class.special.attribute.meta.md {
+                ".": punctuation.md
+                "class"
+              }
+            }
+            " "
+            ".shine" {
+              class.special.attribute.meta.md {
+                ".": punctuation.md
+                "shine"
+              }
+            }
+            " "
+            "#title" {
+              id.special.attribute.meta.md {
+                "#": punctuation.md
+                "title"
+              }
+            }
+            " "
+            "lang=fr" {
+              other.special.attribute.meta.md {
+                "lang": key.keyword.md
+                "=": punctuation.md
+                "fr": value.string.md
+              }
+            }
+            "}": punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
+
+@10
+"[label](http://www.url.com){#id .external-link target=_blank}" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "label"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "http://www.url.com": uri.underline.link.md
+      }
+      ")": punctuation.md
+      "{#id .external-link target=_blank}" {
+        special-attributes.raw.markup.md {
+          "{": punctuation.md
+          "#id" {
+            id.special.attribute.meta.md {
+              "#": punctuation.md
+              "id"
+            }
+          }
+          " "
+          ".external-link" {
+            class.special.attribute.meta.md {
+              ".": punctuation.md
+              "external-link"
+            }
+          }
+          " "
+          "target=_blank" {
+            other.special.attribute.meta.md {
+              "target": key.keyword.md
+              "=": punctuation.md
+              "_blank": value.string.md
+            }
+          }
+          "}": punctuation.md
+        }
+      }
+    }
+  }
+}
+
+@11
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.js #id .class key=value}"+
+"alert("Hello world");"+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~" {
+  text.md {
+    fenced.code.md {
+      "~~~~~~~~~~~~~~~~~~~~~~~~~~~~": punctuation.md
+      " "
+      "{": punctuation.md
+      ".js": language.constant.md
+      " "
+      "#id" {
+        id.special.attribute.meta.md {
+          "#": punctuation.md
+          "id"
+        }
+      }
+      " "
+      ".class" {
+        class.special.attribute.meta.md {
+          ".": punctuation.md
+          "class"
+        }
+      }
+      " "
+      "key=value" {
+        other.special.attribute.meta.md {
+          "key": key.keyword.md
+          "=": punctuation.md
+          "value": value.string.md
+        }
+      }
+      "}": punctuation.md
+      embedded.source.js {
+        "alert("Hello world");"
+      }
+      "~~~~~~~~~~~~~~~~~~~~~~~~~~~~": punctuation.md
+    }
+  }
+}

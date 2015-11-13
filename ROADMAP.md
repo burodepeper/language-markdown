@@ -20,7 +20,7 @@
   - [x] Defintion lists
   - [x] Footnotes
   - [x] Abbreviations
-  - [ ] specs and examples
+  - [x] specs and examples
   - [ ] Test with default syntax-themes
 - [ ] language-gfm/issues/40
 - [ ] Review existing specs
