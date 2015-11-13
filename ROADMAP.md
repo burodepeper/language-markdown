@@ -2,10 +2,10 @@
 
 ## v0.3
 
-- [ ] **Thin out the specs**:
-  - [ ] Remove unneccessary repeated elements that provide context unimportant to syntax highlighting
-  - [ ] Remove duplicately items
-  - [ ] Remove tests aimed at interpretation rather than representation (for instance, uppercase vs lowercase testing, or logical dependencies)
+- [x] **Thin out the specs**:
+  - [x] Remove unneccessary repeated elements that provide context unimportant to syntax highlighting
+  - [x] Remove duplicately items
+  - [x] Remove tests aimed at interpretation rather than representation (for instance, uppercase vs lowercase testing, or logical dependencies)
 - [ ] Support advanced gfm references (#35)
 - [ ] Add support for TOML front matter (#36)
 - [ ] Add Markdown Extra flavor (#37)
