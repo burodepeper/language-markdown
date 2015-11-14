@@ -6,7 +6,7 @@
   - [x] Remove unneccessary repeated elements that provide context unimportant to syntax highlighting
   - [x] Remove duplicately items
   - [x] Remove tests aimed at interpretation rather than representation (for instance, uppercase vs lowercase testing, or logical dependencies)
-- [ ] Support advanced gfm references (#35)
+- [x] Support advanced gfm references (#35)
 - [x] Add support for TOML front matter (#36)
 - [x] Add Markdown Extra flavor (#37)
   - [x] Add special-attributes (`{#id .class key=value}`) to
@@ -23,9 +23,8 @@
   - [x] specs and examples
   - [x] Test with default syntax-themes
 - [ ] language-gfm/issues/40
-- [ ] Review existing specs
+- [x] Review existing specs
   - [x] /blocks/fenced-code/100
-  - [ ] /blocks/lists/262
 
 ---
 
@@ -41,3 +40,5 @@
 ### Maintenance
 
 - [ ] Create an abstracted function to recursively index files inside a directory with a certain extension, while retaining a relative path; method is currently used to load fixtures in spec, but can also be used to load all cson files when compiling the grammar file.
+- [ ] Spec for gfm-references
+- [ ] Review spec [/blocks/lists/262]

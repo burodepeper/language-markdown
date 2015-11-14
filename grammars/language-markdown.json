@@ -735,12 +735,87 @@
           }
         },
         {
-          "match": "(?<=^|\\s|\"|'|\\(|\\[)((#)(\\d+))(?=[\\s\"'\\.,;:\\)\\]])",
+          "match": "(?<=^|\\s|\"|'|\\(|\\[)((#|GH-)(\\d+))(?=[\\s\"'\\.,;:\\)\\]])",
           "captures": {
             "1": {
               "name": "issue.reference.gfm.variable.md"
             },
             "2": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![0-9a-f])(([a-zA-Z0-9][a-zA-Z0-9\\-]*)(/)([a-zA-Z0-9][a-zA-Z0-9\\-\\._]*)((#)(\\d+)))(?![0-9a-f])",
+          "name": "reference.gfm.variable.md",
+          "captures": {
+            "2": {
+              "name": "user.gfm.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "4": {
+              "name": "repository.gfm.md"
+            },
+            "5": {
+              "name": "issue.gfm.md"
+            },
+            "6": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![0-9a-f])(([a-zA-Z0-9][a-zA-Z0-9\\-]*)(/)([a-zA-Z0-9][a-zA-Z0-9\\-\\._]*)(@)(([0-9a-f]{7})([0-9a-f]{33})))(?![0-9a-f])",
+          "name": "reference.gfm.variable.md",
+          "captures": {
+            "2": {
+              "name": "user.gfm.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "4": {
+              "name": "repository.gfm.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "name": "sha.gfm.md"
+            },
+            "8": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![0-9a-f])(([a-zA-Z0-9][a-zA-Z0-9\\-]*)(@)(([0-9a-f]{7})([0-9a-f]{33})))(?![0-9a-f])",
+          "name": "reference.gfm.variable.md",
+          "captures": {
+            "2": {
+              "name": "user.gfm.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "4": {
+              "name": "sha.gfm.md"
+            },
+            "6": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<![0-9a-f])(([0-9a-f]{7})([0-9a-f]{33}))(?![0-9a-f])",
+          "name": "reference.gfm.variable.md",
+          "captures": {
+            "1": {
+              "name": "sha.gfm.md"
+            },
+            "3": {
               "name": "punctuation.md"
             }
           }
