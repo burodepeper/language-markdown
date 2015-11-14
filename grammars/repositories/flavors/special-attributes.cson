@@ -1,0 +1,13 @@
+key: 'special-attributes'
+patterns: [
+
+  {
+    name: 'special-attributes.raw.markup.md'
+    match: '^(\\{)([^\\}]*)(\\})$'
+    captures:
+      1: name: 'punctuation.md'
+      2: patterns: [{ include:'#special-attribute-elements' }]
+      3: name: 'punctuation.md'
+  }
+
+]

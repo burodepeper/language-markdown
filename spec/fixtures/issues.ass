@@ -1,6 +1,28 @@
+@40
+"At the base is the old friend, Wordpress [update: this is old news, it's running [Statamic](http://www.statamic.com) now. But this still should be interesting]." {
+  text.md {
+    "At the base is the old friend, Wordpress [update: this is old news, it's running "
+    "[Statamic](http://www.statamic.com)" {
+      link.markup.md {
+        text.link.string.md {
+          "[": punctuation.md
+          "Statamic"
+          "]": punctuation.md
+        }
+        "(": punctuation.md
+        destination.link.md {
+          "http://www.statamic.com": uri.underline.link.md
+        }
+        ")": punctuation.md
+      }
+    }
+    " now. But this still should be interesting]."
+  }
+}
+
 # https://github.com/atom/language-gfm/issues/117
 # NOTE expected outcome: only emphasize first letters of words
-@issue-gfm-117a
+@gfm/117a
 "*f*oo *b*ar baz" {
   text.md {
     emphasis.italic.markup.md {
@@ -18,7 +40,7 @@
   }
 }
 
-@issue-gfm-117b
+@gfm/117b
 "**f**oo **b**ar baz" {
   text.md {
     strong.emphasis.bold.markup.md {
@@ -37,7 +59,7 @@
 }
 
 # https://github.com/burodepeper/language-markdown/issues/17
-@issue-17a
+@17a
 "A line with *italics* and **bold** fails." {
   text.md {
     "A line with "
@@ -56,7 +78,7 @@
   }
 }
 
-@issue-17b
+@17b
 "Even _mixing_ the **type** of *markers* is __not enough__." {
   text.md {
     "Even "

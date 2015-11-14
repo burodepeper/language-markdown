@@ -1,0 +1,30 @@
+key: 'special-attribute-elements'
+patterns: [
+
+  # #id
+  {
+    name: 'id.special.attribute.meta.md'
+    match: '(?<=^|\\s)(#)([^\\s|\\}]*)'
+    captures:
+      1: name: 'punctuation.md'
+  }
+
+  # .class
+  {
+    name: 'class.special.attribute.meta.md'
+    match: '(\\.)([^\\s|\\}]*)'
+    captures:
+      1: name: 'punctuation.md'
+  }
+
+  # key=value
+  {
+    match: '([^ ]+)(=)([^\\s|\\}]*)'
+    name: 'other.special.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+  }
+
+]

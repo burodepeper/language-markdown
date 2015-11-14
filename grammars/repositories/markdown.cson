@@ -16,13 +16,14 @@ maxTokensPerLine: 100
 patterns: [
   { include: '#blocks' }
   { include: '#inlines' }
+  { include: '#flavors' }
 ]
 
 repository:
   blocks:
     patterns: [
       { include: '#comments' }
-      { include: '#yaml-front-matter' }
+      { include: '#front-matter' }
       { include: '#hr' }
       { include: '#headings' }
       { include: '#lists' }
@@ -40,8 +41,12 @@ repository:
       { include: '#html' }
       { include: '#emphasis' }
       { include: '#line-breaks' }
-      { include: '#github' }
+    ]
+  flavors:
+    patterns: [
       { include: '#criticmark' }
+      { include: '#github' }
+      { include: '#markdown-extra' }
     ]
 
   # NOTE by @burodepeper
@@ -55,6 +60,7 @@ repository:
       { include: '#html' }
       { include: '#links' }
       { include: '#emphasis' }
-      { include: '#github' }
-      { include: '#criticmark' }
+      # { include: '#github' }
+      # { include: '#criticmark' }
+      { include: '#flavors' }
     ]

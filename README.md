@@ -1,10 +1,19 @@
-# Markdown grammar [![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
+# Markdown grammar
 
 A realistic implementation of the [CommonMark](http://www.commonmark.org/) specifications as a more flexible (drop-in) alternative to [language-gfm](https://github.com/atom/language-gfm/).
 
+**Supports**:
+
+- CommonMark Markdown
+- Github Flavored Markdown
+- Markdown Extra
+- CriticMark annotation
+- Front Matter (yaml and toml)
+- [more details](STATUS.md)
+
 If you experience any issue above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/) or contact @burodepeper directly.
 
- **Current status**: pretty stable; [more details](STATUS.md)
+[![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
 
 ---
 
@@ -23,7 +32,7 @@ Check out [EXAMPLES.md](EXAMPLES.md) for a pretty extensive list of possibilitie
 ### Created with blood, sweat, tears, and these amazing tools:
 
 [minimal-syntax](https://atom.io/packages/minimal-syntax)<br>
-A light syntax theme, high contrast/low brightness, three primary colors, and easy on the eyes. And now also available in [minimal-syntax-dark](https://atom.io/packages/minimal-syntax-dark)
+A light syntax theme, high contrast/low brightness, three primary colors, and easy on the eyes. Now also available as [minimal-syntax-dark](https://atom.io/packages/minimal-syntax-dark).
 
 [lib-ass](https://www.npmjs.org/packages/lib-ass)<br>
 Describe your tests in re-usable language-independent semantical format, and have them quickly translated into automated tests of your choosing.

@@ -1,0 +1,33 @@
+key: 'markdown-extra'
+patterns: [
+
+  # NOTE by @burodepeper
+  # Footnotes are implemented as part of /inlines/links.cson
+
+  # NOTE by @burodepeper
+  # 'Special attributes' are implemented in /flavors/markdown-extra-special-attributes.cson
+
+  # Definition-list-items
+  # ---------------------
+  # : letters and stuff
+  {
+    name: 'definition.list.markup.md'
+    match: '^(?:\\s*)(:)( +)(.*)$'
+    captures:
+      1: { name: 'punctuation.md' }
+  }
+
+  # Abbreviations
+  # -------------
+  # *[HTML]: Hyper Text Markup Language
+  # *[W3C]:  World Wide Web Consortium
+  {
+    name: 'abbreviation.reference.link.markup.md'
+    match: '^((?:\\*\\[)(?:[^\\]]+)(?:\\]))(:) (.*)$'
+    captures:
+      1: patterns: [{ include: '#link-label' }]
+      2: name: 'punctuation.md'
+      # 3: patterns: [{ include: '#link-destination' }]
+  }
+
+]

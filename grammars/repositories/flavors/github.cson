@@ -12,11 +12,71 @@ patterns: [
       2: name: 'punctuation.md'
   }
 
+  # #26 and GH-26
   {
-    match: '(?<=^|\\s|"|\'|\\(|\\[)((#)(\\d+))(?=[\\s"\'\\.,;:\\)\\]])'
+    match: '(?<=^|\\s|"|\'|\\(|\\[)((#|GH-)(\\d+))(?=[\\s"\'\\.,;:\\)\\]])'
     captures:
       1: name: 'issue.reference.gfm.variable.md'
       2: name: 'punctuation.md'
+  }
+
+  # jlord/sheetsee.js#26
+  {
+    match: '(?<![0-9a-f])(([a-zA-Z0-9][a-zA-Z0-9\\-]*)(/)([a-zA-Z0-9][a-zA-Z0-9\\-\\._]*)((#)(\\d+)))(?![0-9a-f])'
+    name: 'reference.gfm.variable.md'
+    captures:
+      2: name: 'user.gfm.md'
+      3: name: 'punctuation.md'
+      4: name: 'repository.gfm.md'
+      5: name: 'issue.gfm.md'
+      6: name: 'punctuation.md'
+  }
+
+  # NOTE
+  # Disabled, because it causes a lot of false-positives.
+  # @burodepeper
+  #
+  # jlord#26
+  # {
+  #   match: '(?<![0-9a-f])(([a-zA-Z0-9][a-zA-Z0-9\\-]*)((#)(\\d+)))(?![0-9a-f])'
+  #   name: 'reference.gfm.variable.md'
+  #   captures:
+  #     2: name: 'user.gfm.md'
+  #     3: name: 'issue.gfm.md'
+  #     4: name: 'punctuation.md'
+  # }
+
+  # jlord/sheetsee.js@a5c3785ed8d6a35868bc169f07e40e889087fd2e
+  {
+    match: '(?<![0-9a-f])(([a-zA-Z0-9][a-zA-Z0-9\\-]*)(/)([a-zA-Z0-9][a-zA-Z0-9\\-\\._]*)(@)(([0-9a-f]{7})([0-9a-f]{33})))(?![0-9a-f])'
+    name: 'reference.gfm.variable.md'
+    captures:
+      2: name: 'user.gfm.md'
+      3: name: 'punctuation.md'
+      4: name: 'repository.gfm.md'
+      5: name: 'punctuation.md'
+      6: name: 'sha.gfm.md'
+      8: name: 'punctuation.md'
+  }
+
+  # jlord@a5c3785ed8d6a35868bc169f07e40e889087fd2e
+  {
+    match: '(?<![0-9a-f])(([a-zA-Z0-9][a-zA-Z0-9\\-]*)(@)(([0-9a-f]{7})([0-9a-f]{33})))(?![0-9a-f])'
+    name: 'reference.gfm.variable.md'
+    captures:
+      2: name: 'user.gfm.md'
+      3: name: 'punctuation.md'
+      4: name: 'sha.gfm.md'
+      6: name: 'punctuation.md'
+  }
+
+  # a5c3785ed8d6a35868bc169f07e40e889087fd2e
+  {
+    match: '(?<![0-9a-f])(([0-9a-f]{7})([0-9a-f]{33}))(?![0-9a-f])'
+    name: 'reference.gfm.variable.md'
+    captures:
+      1: name: 'sha.gfm.md'
+      3: name: 'punctuation.md'
   }
 
   {
@@ -48,7 +108,7 @@ patterns: [
   {
     # begin: '(?<=^|[^\\w\\d~])~~(?!$|~|\\s)'
     # end: '(?<!^|\\s)~~*~(?=$|[^\\w|\\d])'
-    match: '(?<=^|[^\\w\\d])(~~)(.+?)(~~(?=$|[^\\w\\d]))'
+    match: '(?<=^|[^\\w\\d~])(~~)(?!~)(.+?)(~~(?=$|[^\\w\\d~]))'
     name: 'strike.markup.md'
     captures:
       1: name: 'punctuation.md'

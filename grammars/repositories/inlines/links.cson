@@ -1,17 +1,54 @@
 key: 'links'
 patterns: [
 
+  # Markdown Extra: footnote reference
+  # [^1]
+  {
+    name: 'reference.footnote.link.markup.md'
+    match: '((?:\\[\\^)(?:[^\\[\\]]+)(?:\\]))(?!:)'
+    captures:
+      1: patterns: [{ include: '#link-label' }]
+  }
+
+  # Markdown Extra: footnote definition
+  # [^1]: And this is the footnote
+  {
+    name: 'definition.footnote.link.markup.md'
+    match: '((?:\\[\\^)(?:[^\\[\\]]+)(?:\\]))(:)'
+    captures:
+      1: patterns: [{ include: '#link-label' }]
+      2: name: 'punctuation.md'
+  }
+
   # [link](/uri "title")
   # ![link](/uri "title")
   {
     name: 'link.markup.md'
-    match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]+)(?:\\s+)((?:["\'\\(]).*?(?:["\'\\)]))(?:\\s*)(\\))'
+    match: '(?x)
+      (
+        (?:!?\\[)
+        (?:[^\\[\\]]*)
+        (?:\\])
+      )
+      (\\()
+      ([^ [:cntrl:]]+)
+      (?:\\s+)
+      (
+        (?:["\'\\(])
+        .*?
+        (?:["\'\\)])
+      )
+      (?:\\s*)
+      (\\))
+      (\\{[[:ascii:]]*\\})?
+    '
     captures:
       1: patterns: [{ include: '#link-text' }]
       2: name: 'punctuation.md'
       3: patterns: [{ include: '#link-destination' }]
       4: patterns: [{ include: '#link-title' }]
       5: name: 'punctuation.md'
+      6: patterns: [{ include: '#special-attributes' }]
   }
 
   # [link]()
@@ -20,12 +57,23 @@ patterns: [
   # ![link](/uri)
   {
     name: 'link.markup.md'
-    match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()([^ [:cntrl:]]*)(\\))'
+    match: '(?x)
+      (
+        (?:!?\\[)
+        (?:[^\\[\\]]*)
+        (?:\\])
+      )
+      (\\()
+      ([^ [:cntrl:]]*)
+      (\\))
+      (\\{[[:ascii:]]*\\})?
+    '
     captures:
       1: patterns: [{ include: '#link-text' }]
       2: name: 'punctuation.md'
       3: patterns: [{ include: '#link-destination' }]
       4: name: 'punctuation.md'
+      5: patterns: [{ include: '#special-attributes' }]
   }
 
   # NOTE Spaces in URI are allowed between < and >
@@ -33,58 +81,120 @@ patterns: [
   # ![link](<>)
   {
     name: 'link.markup.md'
-    match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))(\\()(<[^[:cntrl:]]*>)(\\))'
+    match: '(?x)
+      (
+        (?:!?\\[)
+        (?:[^\\[\\]]*)
+        (?:\\])
+      )
+      (\\()
+      (<[^[:cntrl:]]*>)
+      (\\))
+      (\\{[[:ascii:]]*\\})?
+    '
     captures:
       1: patterns: [{ include: '#link-text' }]
       2: name: 'punctuation.md'
       3: patterns: [{ include: '#link-destination' }]
       4: name: 'punctuation.md'
+      5: patterns: [{ include: '#special-attributes' }]
   }
 
   # [foo][bar]
   # ![foo][bar]
   {
     name: 'link.markup.md'
-    match: '((?:!?\\[)(?:[^\\]]*)(?:\\]))((?:\\[)(?:[^\\]]*)(?:\\]))'
+    match: '(?x)
+      (
+        (?:!?\\[)
+        (?:[^\\[\\]]*)
+        (?:\\])
+      )
+      (
+        (?:\\[)
+        (?:[^\\[\\]]*)
+        (?:\\])
+      )
+      (\\{[[:ascii:]]*\\})?
+    '
     captures:
       1: patterns: [{ include: '#link-text' }]
       2: patterns: [{ include: '#link-label' }]
+      3: patterns: [{ include: '#special-attributes' }]
   }
 
   # ![image]
   {
     name: 'link.markup.md'
-    match: '((?:!\\[)(?:[^\\]]*)(?:\\]))'
+    match: '(?x)
+      (
+        (?:!\\[)
+        (?:[^\\[\\]]*)
+        (?:\\])
+      )
+      (\\{[[:ascii:]]*\\})?
+    '
     captures:
       1: patterns: [{ include: '#link-text' }]
+      2: patterns: [{ include: '#special-attributes' }]
   }
 
   # [ref]: /uri "title"
   {
     name: 'reference.link.markup.md'
-    match: '((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+) ((?:").*?(?:"))'
+    # match: '((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+) ((?:").*?(?:"))'
+    # match: '((?:\\[)(?:[^\\]]*)(?:\\]))(:)(?:\\s)([^ [:cntrl:]]+)(?:\\s)((?:").*?(?:"))'
+    match: '(?x)
+      ((?:\\[)(?:[^\\[\\]]*)(?:\\]))
+      (:)
+      (?:\\s)
+      ([^ [:cntrl:]]+)
+      (?:\\s)
+      ((?:")(?:.*?)(?:"))
+      (?:(?:\\s)(\\{[[:ascii:]]*\\}))?
+    '
     captures:
       1: patterns: [{ include: '#link-label' }]
       2: name: 'punctuation.md'
       3: patterns: [{ include: '#link-destination' }]
       4: patterns: [{ include: '#link-title' }]
+      5: patterns: [{ include: '#special-attributes' }]
   }
 
   # [ref]: /uri
   {
     name: 'reference.link.markup.md'
-    match: '((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+)'
+    # match: '((?:\\[)(?:[^\\]]*)(?:\\]))(:) ([^ [:cntrl:]]+)'
+    # match: '((?:\\[)(?:[^\\]]*)(?:\\]))(:)(?:\\s)([^ [:cntrl:]]+)'
+    match: '(?x)
+      ((?:\\[)(?:[^\\[\\]]*)(?:\\]))
+      (:)
+      (?:\\s)
+      ([^ [:cntrl:]]+)
+      (?:(?:\\s)(\\{[[:ascii:]]*\\}))?
+    '
     captures:
       1: patterns: [{ include: '#link-label' }]
       2: name: 'punctuation.md'
       3: patterns: [{ include: '#link-destination' }]
+      4: patterns: [{ include: '#special-attributes' }]
   }
 
   # [label]
   {
-    match: '((?:\\[)(?:[^\\]]*)(?:\\]))(?!:)'
+    # match: '((?:\\[)(?:[^\\]]*)(?:\\]))(?!:)'
+    match: '(?x)
+      (
+        (?:\\[)
+        (?:[^\\[\\]]*)
+        (?:\\])
+      )
+      (?!:)
+      (\\{[[:ascii:]]*\\})?
+    '
     captures:
       1: patterns: [{ include: '#link-label' }]
+      2: patterns: [{ include: '#special-attributes' }]
   }
 
   # auto-link: absolute uri
@@ -102,7 +212,6 @@ patterns: [
   {
     name: 'email.auto.link.markup.md'
     match: '(<)(([a-zA-Z0-9\\.!#$%&\'\\*\\+/=?^_`{\\|}~-]+)(@)([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*))(>)'
-    # match: '(<)([a-zA-Z0-9\\.*\\+_-]+)(@)(>)'
     captures:
       1: name: 'punctuation.md'
       2: name: 'uri.underline.markup.md'

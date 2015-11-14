@@ -1,3 +1,14 @@
+---
+title: "Markdown examples"
+description: "This is a collection of samples to display the various Markdown elements that are supported by this package."
+tags: [ "markdown", "package", "atom", "front-matter" ]
+categories:
+  - "Grammar"
+  - "Markdown"
+---
+
+
+
 # Markdown examples
 
 To see all that `language-markdown` has to offer, use either [minimal-syntax] or [minimal-syntax-dark]. Your syntax-theme might not support all features.
@@ -74,6 +85,12 @@ def something(x)
   return 3
 end
 ~~~
+
+~~~~~~~ ruby startline=3 $%@#$
+def foo(x)
+  return 3
+end
+~~~~~~~
 
 
 
@@ -169,6 +186,7 @@ foo@bar.example.com
 `foo`
 `` foo ` bar  ``
 ` `` `
+before`during`after
 
 
 
@@ -254,6 +272,8 @@ bar
 [link](/url 'title "and" title')
 [link _foo **bar** `#`_](/uri)
 
+At the base is the old friend, Wordpress [update: this is old news, it's running [Statamic](http://www.statamic.com) now. But this still should be interesting].
+
 [foo][bar]
 [link _foo **bar** `#`_][ref]
 [foo][bar][baz]
@@ -320,8 +340,16 @@ user@name
 -#123
 #-123
 - #123
-#atom/123 <!-- TODO -->
 #123-
+
+<!-- References -->
+SHA: a5c3785ed8d6a35868bc169f07e40e889087fd2e
+User@SHA: jlord@a5c3785ed8d6a35868bc169f07e40e889087fd2e
+User/Repository@SHA: jlord/sheetsee.js@a5c3785ed8d6a35868bc169f07e40e889087fd2e
+#Num: #26
+GH-Num: GH-26
+User#Num: jlord#26
+User/Repository#Num: jlord/sheetsee.js#26
 
 <!-- Emojis -->
 :+1:
@@ -352,7 +380,7 @@ one | two | three |
 
 
 
-<!---------- CritickMark ------------------------------------------------------>
+<!---------- CriticMark ------------------------------------------------------>
 
 Lorem ipsum dolor{++ sit++} amet...
 Lorem{-- ipsum--} dolor sit amet...
@@ -360,4 +388,46 @@ Lorem {~~hipsum~>ipsum~~} dolor sit amet...
 Lorem ipsum dolor sit amet.{>>This is a comment<<}
 Lorem ipsum dolor sit amet.{>>This is a comment; by @author<<}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. {==Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.==}{>>confusing<<} Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.
-I really love {~~*italic fonts*~>*italic font-styles*~~}.
+I really love {~~_italic_ letters~>**bold** text~~}.
+
+
+
+<!---------- Markdown Extra --------------------------------------------------->
+
+That's some text with a footnote.[^1]
+[^1]: And that's the footnote.
+
+Apple
+:   Pomaceous fruit of plants of the genus Malus in the family Rosaceae.
+
+Orange
+: The fruit of an evergreen tree of the genus Citrus.
+: Optional second line of definition-list-item
+
+*[NOT]:Not an abbreviation
+*[HTML]: Hyper Text Markup Language
+*[W3C]:  World Wide Web Consortium
+
+## Header 2, with _emphasis_ ##      {#header2 .main}
+## The Site {these=are #not .special} ##
+## Even when header is not closed {.class lang=fr}
+### Le Site ####{.main .shine #the-site lang=fr}
+[link]{.class}
+[link](</test url>){.class}
+![link]{.class}
+[label][reference]{.class}
+![label][reference]{.class}
+[link](url){#id .class}
+![img](url){#id .class lang=fr}
+[link](url "title"){#id .class}
+[linkref]: url "optional title" {#id .class}
+[label](http://www.url.com){.external-link target=_blank}
+[linkref]: /url {#id .class}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~ .js
+alert("Hello world");
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.js #id .class key=value}
+alert("Hello world");
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -31,25 +31,9 @@
 
 }
 
-@583
-"foo  "+
-"     bar" {
-  text.md {
-    "foo"
-    "  ": line-break.constant.md
-    "     bar"
-  }
-}
-
-@584
-"foo\"+
-"     bar" {
-  text.md {
-    "foo"
-    "\": line-break.constant.md
-    "     bar"
-  }
-}
+# NOTE
+# Removed @583-584, because not relevant to syntax highlighting
+# @burodepeper
 
 # NOTE no multiline support
 @585

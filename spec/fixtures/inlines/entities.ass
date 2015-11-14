@@ -124,14 +124,10 @@
 }
 
 @289
-"&nbsp &x; &#; &#x; &ThisIsWayTooLongToBeAnEntityIsntIt; &hi?;" {
-  "&nbsp &x; &#; &#x; &ThisIsWayTooLongToBeAnEntityIsntIt; &hi?;": text.md
-}
+"&nbsp &x; &#; &#x; &ThisIsWayTooLongToBeAnEntityIsntIt; &hi?;": text.md
 
 @290
-"&copy" {
-  "&copy": text.md
-}
+"&copy": text.md
 
 # FIXME
 # @291

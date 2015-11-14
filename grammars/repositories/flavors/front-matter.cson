@@ -1,0 +1,23 @@
+key: 'front-matter'
+patterns: [
+  {
+    begin: '\\A---$'
+    beginCaptures:
+      0: name: 'hr.md'
+    end: '^(---|\\.\\.\\.)$'
+    endCaptures:
+      1: name: 'hr.md'
+    name: 'front-matter.yaml.source.md'
+    patterns: [{ include: 'source.yaml' }]
+  }
+  {
+    begin: '\\A\\+\\+\\+$'
+    beginCaptures:
+      0: name: 'hr.md'
+    end: '^\\+\\+\\+$'
+    endCaptures:
+      0: name: 'hr.md'
+    name: 'front-matter.toml.source.md'
+    patterns: [{ include: 'source.toml' }]
+  }
+]
