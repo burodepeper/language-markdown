@@ -22,23 +22,27 @@
   - [x] Abbreviations
   - [x] specs and examples
   - [x] Test with default syntax-themes
-- [ ] language-gfm/issues/40
 - [x] Review existing specs
   - [x] /blocks/fenced-code/100
 
 ---
 
-## Future
+## v0.4
 
 ### Interface
 
 - [ ] Add new link-items automatically when pressing `ENTER`
 - [ ] Commands for (strong) emphasis; see [language-gfm/issues/94]
-- [ ] Show an index of headings found in the current document, possibility in a side panel
-- [ ] Linter: check if link-labels have a matching reference
 
 ### Maintenance
 
 - [ ] Create an abstracted function to recursively index files inside a directory with a certain extension, while retaining a relative path; method is currently used to load fixtures in spec, but can also be used to load all cson files when compiling the grammar file.
 - [ ] Spec for gfm-references
 - [ ] Review spec [/blocks/lists/262]
+
+---
+
+## Future
+
+- [ ] Show an index of headings found in the current document, possibility in a side panel
+- [ ] Linter: check if link-labels have a matching reference
