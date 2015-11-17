@@ -2518,43 +2518,6 @@
           ]
         },
         {
-          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:php))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
-          "beginCaptures": {
-            "1": {
-              "name": "punctuation.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "language.constant.md"
-            },
-            "5": {
-              "patterns": [
-                {
-                  "include": "#special-attribute-elements"
-                }
-              ]
-            },
-            "6": {
-              "name": "punctuation.md"
-            }
-          },
-          "end": "^\\s*(\\1)$",
-          "endCaptures": {
-            "1": {
-              "name": "punctuation.md"
-            }
-          },
-          "name": "fenced.code.md",
-          "contentName": "embedded.source.php",
-          "patterns": [
-            {
-              "include": "source.php"
-            }
-          ]
-        },
-        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:py|python))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
