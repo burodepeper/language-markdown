@@ -43,7 +43,7 @@ module.exports =
 
                 # TODO
                 # list-item is valid when a punctuation class is immediately
-                # followed by a non-empty list class
+                # followed by a non-empty list-item class
                 if classes.indexOf('punctuation') isnt -1
                   isPunctuation = true
                 if classes.indexOf('list') isnt -1
@@ -56,28 +56,8 @@ module.exports =
                 # TODO add left padding to ordered list-items (003.)
                 # TODO add incomplete task-list-item
                 # TODO skip definition-lists?
-                editor.insertText token.value
+                editor.insertText(token.value)
                 break
-
-            # scopeDescriptor = editor.scopeDescriptorForBufferPosition(previousRowRange.end)
-            # # console.log scopeDescriptor
-            #
-            # # Determine via {scopeDescriptor.scopes} if {previousLine} was a
-            # # non-empty list-item
-            # isListItem = false
-            # for scope in scopeDescriptor.scopes.reverse()
-            #   scopes = scope.split('.')
-            #   if scopes.indexOf('list') isnt -1
-            #     if scopes.indexOf('empty') is -1
-            #       isListItem = true
-            #       # console.log scopes
-            #       break
-            #
-            # if isListItem
-            #   console.log "isListItem:", isListItem
-            #   grammar = editor.getGrammar()
-            #   {tokens} = grammar.tokenizeLine(previousLine)
-            #   console.log tokens
 
 
               # NOTE
