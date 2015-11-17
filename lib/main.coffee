@@ -4,41 +4,95 @@ path = require 'path'
 fs = require 'fs'
 
 module.exports =
-
   subscriptions: null
 
   activate: (state) ->
     @subscriptions = new CompositeDisposable()
 
+    # NOTE
+    # https://atom.io/docs/api/v1.2.0/TextEditor
+    # https://atom.io/docs/api/v1.2.0/ScopeDescriptor
+    # https://atom.io/docs/latest/behind-atom-scoped-settings-scopes-and-scope-descriptors
+
+    # TODO
+    # Add thank-you for @jonmagic
+
+    # TODO
+    # Add an option to disable automatic list-items in settings-panel
+
     # Create a new list-item after pressing [enter]
     @subscriptions.add atom.workspace.observeTextEditors (editor) ->
       editor.onDidInsertText (event) ->
-        if editor.getGrammar().name is 'Markdown'
+        grammar = editor.getGrammar()
+        if grammar.name is 'Markdown'
           if event.text is "\n"
+
             previousRowNumber = event.range.start.row
             previousRowRange = editor.buffer.rangeForRow(previousRowNumber)
             previousLine = editor.getTextInRange(previousRowRange)
-            # console.log previousLine
+            {tokens} = grammar.tokenizeLine(previousLine)
 
-            # TODO
-            # - Use tokens to determine if {previousLine} was indeed Markdown, and not a bit of embedded Javascript for example
-            # - Determine if {previousLine} was a list-item, and if so, what kind of list-item
-            # - If {previousLine} was not an empty list-item, insert the correct new list-item on the current line, with the correct amount of leading white-space
+            tokens.reverse()
+            for token in tokens
+              isPunctuation = false
+              isListItem = false
 
-            # NOTE
-            # Taken from gfm-lists by @jonmagic; not sure if it is usable.
+              scopes = token.scopes.reverse()
+              for scope in scopes
+                classes = scope.split('.')
+
+                # TODO
+                # list-item is valid when a punctuation class is immediately
+                # followed by a non-empty list class
+                if classes.indexOf('punctuation') isnt -1
+                  isPunctuation = true
+                if classes.indexOf('list') isnt -1
+                  if isPunctuation and classes.indexOf('empty') is -1
+                    isListItem = true
+
+              if isListItem and isPunctuation
+                # TODO increment ordered list-item
+                # TODO add left padding to ordered list-items (003.)
+                # TODO add incomplete task-list-item
+                # TODO skip definition-lists?
+                editor.insertText token.value + ' '
+                break
+
+            # scopeDescriptor = editor.scopeDescriptorForBufferPosition(previousRowRange.end)
+            # # console.log scopeDescriptor
             #
-            # match = previous_line.match(/^\s*([\-|\*]\s\[[x|\s]\]|\*|\-|\d\.)\s.+/)
-            # console.log(match)
-            # if match
-            #   switch match[1]
-            #     when "*"     then editor.insertText "* "
-            #     when "-"     then editor.insertText "- "
-            #     when "- [ ]" then editor.insertText "- [ ] "
-            #     when "* [ ]" then editor.insertText "* [ ] "
-            #     when "- [x]" then editor.insertText "- [ ] "
-            #     when "* [x]" then editor.insertText "* [ ] "
-            #     else editor.insertText "#{parseInt(match[1]) + 1}. "
+            # # Determine via {scopeDescriptor.scopes} if {previousLine} was a
+            # # non-empty list-item
+            # isListItem = false
+            # for scope in scopeDescriptor.scopes.reverse()
+            #   scopes = scope.split('.')
+            #   if scopes.indexOf('list') isnt -1
+            #     if scopes.indexOf('empty') is -1
+            #       isListItem = true
+            #       # console.log scopes
+            #       break
+            #
+            # if isListItem
+            #   console.log "isListItem:", isListItem
+            #   grammar = editor.getGrammar()
+            #   {tokens} = grammar.tokenizeLine(previousLine)
+            #   console.log tokens
+
+
+              # NOTE
+              # Taken from gfm-lists by @jonmagic
+              #
+              # match = previous_line.match(/^\s*([\-|\*]\s\[[x|\s]\]|\*|\-|\d\.)\s.+/)
+              # console.log(match)
+              # if match
+              #   switch match[1]
+              #     when "*"     then editor.insertText "* "
+              #     when "-"     then editor.insertText "- "
+              #     when "- [ ]" then editor.insertText "- [ ] "
+              #     when "* [ ]" then editor.insertText "* [ ] "
+              #     when "- [x]" then editor.insertText "- [ ] "
+              #     when "* [x]" then editor.insertText "* [ ] "
+              #     else editor.insertText "#{parseInt(match[1]) + 1}. "
 
     # Only when in dev-mode,
     # create the {language-markdown:compile-grammar} command,
