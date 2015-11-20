@@ -6,7 +6,7 @@
 - [x] Upgrade links to allow linked-images (#40)
 - [ ] Spec for gfm-references
 - [ ] Review spec [/blocks/lists/262]
-- [ ] Add support for `mermaid` to fenced-code-blocks
+- [x] Add support for `mermaid` to fenced-code-blocks
 
 ---
 
@@ -18,3 +18,4 @@
 - [ ] Linter: check if link-labels have a matching reference
 - [ ] Add support for `erb` to fenced-code-blocks (#43)
 - [ ] Add support for `php` to fenced-code-blocks (#22)
+- [ ] Check if `language-gfm` is activated and notify user of possible conflicts

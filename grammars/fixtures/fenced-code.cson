@@ -41,6 +41,7 @@ list: [
   { pattern:'julia' }
   { pattern:'less' }
   { pattern:'markdown|mdown|md', include:'text.md' }
+  { pattern:'mermaid' }
   { pattern:'mson', include:'text.html.markdown.source.gfm.mson' }
   { pattern:'objc|objective-c', include:'source.objc' }
   # { pattern:'php' }
