@@ -9,7 +9,7 @@
 | CM: blocks  | Fenced code blocks          |  17 of 18 | Good   |
 | CM: blocks  | Links reference definitions |  19 of 21 | Good   |
 | CM: blocks  | Block quotes                |  13 of 13 | Good   |
-| CM: blocks  | Lists                       |  16 of 17 | Good   |
+| CM: blocks  | Lists                       |  15 of 16 | Good   |
 | CM: inlines | Backslash escapes           |   5 of 13 | OK     |
 | CM: inlines | Entities                    |   7 of 12 | Good   |
 | CM: inlines | Code spans                  |  13 of 17 | Good   |

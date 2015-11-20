@@ -5,7 +5,7 @@
 - [ ] Add new link-items automatically when pressing `ENTER` (#45)
 - [x] Upgrade links to allow linked-images (#40)
 - [x] Spec for gfm-references
-- [ ] Review spec [/blocks/lists/262]
+- [x] Review spec [/blocks/lists/262]
 - [x] Add support for `mermaid` to fenced-code-blocks
 
 ---
