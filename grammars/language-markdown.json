@@ -727,10 +727,13 @@
           "match": "(?<=^|\\s|\"|'|\\(|\\[)((@)([a-zA-Z0-9][a-zA-Z0-9\\-/]*[a-zA-Z0-9]))(?=[\\s\"'\\.,;:\\)\\]])",
           "captures": {
             "1": {
-              "name": "mention.reference.gfm.variable.md"
+              "name": "reference.gfm.variable.md"
             },
             "2": {
               "name": "punctuation.md"
+            },
+            "3": {
+              "name": "mention.gfm.md"
             }
           }
         },
@@ -738,10 +741,13 @@
           "match": "(?<=^|\\s|\"|'|\\(|\\[)((#|GH-)(\\d+))(?=[\\s\"'\\.,;:\\)\\]])",
           "captures": {
             "1": {
-              "name": "issue.reference.gfm.variable.md"
+              "name": "reference.gfm.variable.md"
             },
             "2": {
               "name": "punctuation.md"
+            },
+            "3": {
+              "name": "issue.gfm.md"
             }
           }
         },
@@ -758,11 +764,11 @@
             "4": {
               "name": "repository.gfm.md"
             },
-            "5": {
-              "name": "issue.gfm.md"
-            },
             "6": {
               "name": "punctuation.md"
+            },
+            "7": {
+              "name": "issue.gfm.md"
             }
           }
         },

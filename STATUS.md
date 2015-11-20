@@ -20,6 +20,7 @@
 | CM: inlines | Line-breaks                 |  15 of 15 | Good   |
 | Github      | Mentions                    |  22 of 22 | Good   |
 | Github      | Issues                      |  21 of 22 | Good   |
+| Github      | References                  |    5 of 5 | Good   |
 | Github      | Emojis                      |    6 of 6 | Good   |
 | Github      | Strikethrough               |    3 of 3 | Good   |
 | Github      | Tables                      |  12 of 12 | Good   |
@@ -28,7 +29,7 @@
 | YAML        | Front matter                |    3 of 3 | Good   |
 | MD Extra    | -                           |  12 of 12 | Good   |
 
-Total number of tests: **438**
+Total number of tests: **445**
 
 ### Notes
 
