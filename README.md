@@ -1,6 +1,6 @@
 # Markdown grammar
 
-A realistic implementation of the [CommonMark](http://www.commonmark.org/) specifications as a more flexible (drop-in) alternative to [language-gfm](https://github.com/atom/language-gfm/).
+A realistic implementation of the [CommonMark](http://www.commonmark.org/) specifications as a flexible (drop-in) alternative to [language-gfm](https://github.com/atom/language-gfm/).
 
 **Supports**:
 
