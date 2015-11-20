@@ -1509,7 +1509,7 @@
         },
         {
           "name": "reference.link.markup.md",
-          "match": "(?x) ((?:\\[)(?:[^\\[\\]]*)(?:\\])) (:) (?:\\s) ([^ [:cntrl:]]+) (?:\\s) ((?:\")(?:.*?)(?:\")) (?:(?:\\s)(\\{[[:ascii:]]*\\}))?",
+          "match": "(?x) ((?:\\[)(?:[^\\[\\]]*)(?:\\])) (:) (?:\\s) ([^ [:cntrl:]]+) (?:(?:\\s)((?:\")(?:.*?)(?:\")))? (?:(?:\\s)(\\{[[:ascii:]]*\\}))?",
           "captures": {
             "1": {
               "patterns": [
@@ -1536,36 +1536,6 @@
               ]
             },
             "5": {
-              "patterns": [
-                {
-                  "include": "#special-attributes"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "name": "reference.link.markup.md",
-          "match": "(?x) ((?:\\[)(?:[^\\[\\]]*)(?:\\])) (:) (?:\\s) ([^ [:cntrl:]]+) (?:(?:\\s)(\\{[[:ascii:]]*\\}))?",
-          "captures": {
-            "1": {
-              "patterns": [
-                {
-                  "include": "#link-label"
-                }
-              ]
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "patterns": [
-                {
-                  "include": "#link-destination"
-                }
-              ]
-            },
-            "4": {
               "patterns": [
                 {
                   "include": "#special-attributes"

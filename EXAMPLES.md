@@ -294,7 +294,7 @@ My ![foo bar](/path/to/train.jpg  "title"   )
 
 [bar]: /url "title"
 [ref]: /uri
-[foo]: /url 'title
+[foo]: /url 'not a title
 ![foo](/url "title")
 ![](/url)
 
