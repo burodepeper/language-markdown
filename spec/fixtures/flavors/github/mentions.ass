@@ -2,9 +2,9 @@
 "@username" {
   text.md {
     "@username" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "username"
+        "username": mention.gfm.md
       }
     }
   }
@@ -14,9 +14,9 @@
 "@user name" {
   text.md {
     "@user" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "user"
+        "user": mention.gfm.md
       }
     }
     " name"
@@ -30,9 +30,9 @@
 "@username: something, something" {
   text.md {
     "@username" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "username"
+        "username": mention.gfm.md
       }
     }
     ": something, something"
@@ -43,9 +43,9 @@
 "@userName123" {
   text.md {
     "@userName123" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "userName123"
+        "userName123": mention.gfm.md
       }
     }
   }
@@ -58,9 +58,9 @@
 "@user-name" {
   text.md {
     "@user-name" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "user-name"
+        "user-name": mention.gfm.md
       }
     }
   }
@@ -73,9 +73,9 @@
 "@user:name" {
   text.md {
     "@user" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "user"
+        "user": mention.gfm.md
       }
     }
     ":name"
@@ -87,9 +87,9 @@
   text.md {
     """
     "@username" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "username"
+        "username": mention.gfm.md
       }
     }
     """
@@ -101,9 +101,9 @@
   text.md {
     "'"
     "@username" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "username"
+        "username": mention.gfm.md
       }
     }
     "'"
@@ -115,9 +115,9 @@
   text.md {
     "("
     "@username" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "username"
+        "username": mention.gfm.md
       }
     }
     ")"
@@ -145,9 +145,9 @@
   text.md {
     "("
     "@username" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "username"
+        "username": mention.gfm.md
       }
     }
     "]"
@@ -160,9 +160,9 @@
     quote.markup.md {
       ">": punctuation.md
       "@username" {
-        mention.reference.gfm.variable.md {
+        reference.gfm.variable.md {
           "@": punctuation.md
-          "username"
+          "username": mention.gfm.md
         }
       }
     }
@@ -173,23 +173,23 @@
 "@one, @two, @three" {
   text.md {
     "@one" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "one"
+        "one": mention.gfm.md
       }
     }
     ", "
     "@two" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "two"
+        "two": mention.gfm.md
       }
     }
     ", "
     "@three" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "three"
+        "three": mention.gfm.md
       }
     }
   }
@@ -202,9 +202,9 @@
 "@username." {
   text.md {
     "@username" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "username"
+        "username": mention.gfm.md
       }
     }
     "."
@@ -220,9 +220,9 @@
     unordered.list.markup.md {
       "- ": punctuation.md
       "@username" {
-        mention.reference.gfm.variable.md {
+        reference.gfm.variable.md {
           "@": punctuation.md
-          "username"
+          "username": mention.gfm.md
         }
       }
     }
@@ -233,9 +233,9 @@
 "@atom/feedback" {
   text.md {
     "@atom/feedback" {
-      mention.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "@": punctuation.md
-        "atom/feedback"
+        "atom/feedback": mention.gfm.md
       }
     }
   }

@@ -227,33 +227,8 @@
 # Removed @259, because it is not related to syntax highlighting
 # Removed @260, because it is not related to syntax highlighting
 # Removed @261, because it is not related to syntax highlighting
+# Removed @262, because it is not related to syntax highlighting
 # @burodepeper
-
-# TODO
-# @262
-# "- a"+
-# "- b"+
-# ""+
-# "  [ref]: /url"+
-# "- d" {
-#   text.md {
-#     unordered.list.markup.md {
-#       "-": punctuation.md
-#       " "
-#       "a"
-#       "-": punctuation.md
-#       " "
-#       "b"
-#     }
-#     ""
-#     "  [ref]: /url"
-#     unordered.list.markup.md {
-#       "-": punctuation.md
-#       " "
-#       "d"
-#     }
-#   }
-# }
 
 @265
 "* a"+

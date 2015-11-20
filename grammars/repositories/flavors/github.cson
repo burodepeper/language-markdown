@@ -8,16 +8,18 @@ patterns: [
     # match: '(?<=^|\\s|"|\'|\\(|\\[)((@)(\\w[-\\w:/]*))(?=[\\s"\'.,;\\)\\]])'
     match: '(?<=^|\\s|"|\'|\\(|\\[)((@)([a-zA-Z0-9][a-zA-Z0-9\\-/]*[a-zA-Z0-9]))(?=[\\s"\'\\.,;:\\)\\]])'
     captures:
-      1: name: 'mention.reference.gfm.variable.md'
+      1: name: 'reference.gfm.variable.md'
       2: name: 'punctuation.md'
+      3: name: 'mention.gfm.md'
   }
 
   # #26 and GH-26
   {
     match: '(?<=^|\\s|"|\'|\\(|\\[)((#|GH-)(\\d+))(?=[\\s"\'\\.,;:\\)\\]])'
     captures:
-      1: name: 'issue.reference.gfm.variable.md'
+      1: name: 'reference.gfm.variable.md'
       2: name: 'punctuation.md'
+      3: name: 'issue.gfm.md'
   }
 
   # jlord/sheetsee.js#26
@@ -28,8 +30,8 @@ patterns: [
       2: name: 'user.gfm.md'
       3: name: 'punctuation.md'
       4: name: 'repository.gfm.md'
-      5: name: 'issue.gfm.md'
       6: name: 'punctuation.md'
+      7: name: 'issue.gfm.md'
   }
 
   # NOTE

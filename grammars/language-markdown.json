@@ -727,10 +727,13 @@
           "match": "(?<=^|\\s|\"|'|\\(|\\[)((@)([a-zA-Z0-9][a-zA-Z0-9\\-/]*[a-zA-Z0-9]))(?=[\\s\"'\\.,;:\\)\\]])",
           "captures": {
             "1": {
-              "name": "mention.reference.gfm.variable.md"
+              "name": "reference.gfm.variable.md"
             },
             "2": {
               "name": "punctuation.md"
+            },
+            "3": {
+              "name": "mention.gfm.md"
             }
           }
         },
@@ -738,10 +741,13 @@
           "match": "(?<=^|\\s|\"|'|\\(|\\[)((#|GH-)(\\d+))(?=[\\s\"'\\.,;:\\)\\]])",
           "captures": {
             "1": {
-              "name": "issue.reference.gfm.variable.md"
+              "name": "reference.gfm.variable.md"
             },
             "2": {
               "name": "punctuation.md"
+            },
+            "3": {
+              "name": "issue.gfm.md"
             }
           }
         },
@@ -758,11 +764,11 @@
             "4": {
               "name": "repository.gfm.md"
             },
-            "5": {
-              "name": "issue.gfm.md"
-            },
             "6": {
               "name": "punctuation.md"
+            },
+            "7": {
+              "name": "issue.gfm.md"
             }
           }
         },
@@ -1283,6 +1289,55 @@
     "link-text": {
       "patterns": [
         {
+          "name": "text.link.string.md",
+          "match": "(?x) ^(\\[) ( ( (?:!\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() ([^ [:cntrl:]]+)? (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[[:ascii:]]*\\})? ) (\\])",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "link.markup.md"
+            },
+            "3": {
+              "patterns": [
+                {
+                  "include": "#link-text"
+                }
+              ]
+            },
+            "4": {
+              "name": "punctuation.md"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "#link-destination"
+                }
+              ]
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#link-title"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            },
+            "8": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            },
+            "9": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
           "name": "image.link.string.md",
           "match": "^(!\\[)(.*)(\\])$",
           "captures": {
@@ -1389,7 +1444,7 @@
         },
         {
           "name": "link.markup.md",
-          "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() ([^ [:cntrl:]]+) (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) (\\)) (\\{[[:ascii:]]*\\})?",
+          "match": "(?x) ( (?:\\[) (?: (?: (?:!\\[) (?:[^\\[\\]]*) (?:\\]) ) (?:\\() (?:[^ [:cntrl:]]+)? (?: (?:\\s+) (?: (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (?:\\)) (?:\\{[[:ascii:]]*\\})? ) (?:\\]) ) (\\() ([^ [:cntrl:]]+)? (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[[:ascii:]]*\\})?",
           "captures": {
             "1": {
               "patterns": [
@@ -1429,7 +1484,7 @@
         },
         {
           "name": "link.markup.md",
-          "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() ([^ [:cntrl:]]*) (\\)) (\\{[[:ascii:]]*\\})?",
+          "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() ([^ [:cntrl:]]+)? (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[[:ascii:]]*\\})?",
           "captures": {
             "1": {
               "patterns": [
@@ -1449,9 +1504,16 @@
               ]
             },
             "4": {
-              "name": "punctuation.md"
+              "patterns": [
+                {
+                  "include": "#link-title"
+                }
+              ]
             },
             "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
               "patterns": [
                 {
                   "include": "#special-attributes"
@@ -1462,7 +1524,7 @@
         },
         {
           "name": "link.markup.md",
-          "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() (<[^[:cntrl:]]*>) (\\)) (\\{[[:ascii:]]*\\})?",
+          "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() (<[^[:cntrl:]]*>) (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[[:ascii:]]*\\})?",
           "captures": {
             "1": {
               "patterns": [
@@ -1482,9 +1544,43 @@
               ]
             },
             "4": {
-              "name": "punctuation.md"
+              "patterns": [
+                {
+                  "include": "#link-title"
+                }
+              ]
             },
             "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attributes"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "link.markup.md",
+          "match": "(?x) ( (?:\\[) (?: (?: (?:!\\[) (?:[^\\[\\]]*) (?:\\]) ) (?:\\() (?:[^ [:cntrl:]]+)? (?: (?:\\s+) (?: (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (?:\\)) (?:\\{[[:ascii:]]*\\})? ) (?:\\]) ) ( (?:\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\{[[:ascii:]]*\\})?",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#link-text"
+                }
+              ]
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#link-label"
+                }
+              ]
+            },
+            "3": {
               "patterns": [
                 {
                   "include": "#special-attributes"
@@ -1542,7 +1638,7 @@
         },
         {
           "name": "reference.link.markup.md",
-          "match": "(?x) ((?:\\[)(?:[^\\[\\]]*)(?:\\])) (:) (?:\\s) ([^ [:cntrl:]]+) (?:\\s) ((?:\")(?:.*?)(?:\")) (?:(?:\\s)(\\{[[:ascii:]]*\\}))?",
+          "match": "(?x) ((?:\\[)(?:[^\\[\\]]*)(?:\\])) (:) (?:\\s) ([^ [:cntrl:]]+) (?:(?:\\s)((?:\")(?:.*?)(?:\")))? (?:(?:\\s)(\\{[[:ascii:]]*\\}))?",
           "captures": {
             "1": {
               "patterns": [
@@ -1569,36 +1665,6 @@
               ]
             },
             "5": {
-              "patterns": [
-                {
-                  "include": "#special-attributes"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "name": "reference.link.markup.md",
-          "match": "(?x) ((?:\\[)(?:[^\\[\\]]*)(?:\\])) (:) (?:\\s) ([^ [:cntrl:]]+) (?:(?:\\s)(\\{[[:ascii:]]*\\}))?",
-          "captures": {
-            "1": {
-              "patterns": [
-                {
-                  "include": "#link-label"
-                }
-              ]
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "patterns": [
-                {
-                  "include": "#link-destination"
-                }
-              ]
-            },
-            "4": {
               "patterns": [
                 {
                   "include": "#special-attributes"
@@ -2444,6 +2510,43 @@
           ]
         },
         {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:mermaid))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "6": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.source.mermaid",
+          "patterns": [
+            {
+              "include": "source.mermaid"
+            }
+          ]
+        },
+        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:mson))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
@@ -2514,43 +2617,6 @@
           "patterns": [
             {
               "include": "source.objc"
-            }
-          ]
-        },
-        {
-          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:php))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
-          "beginCaptures": {
-            "1": {
-              "name": "punctuation.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "language.constant.md"
-            },
-            "5": {
-              "patterns": [
-                {
-                  "include": "#special-attribute-elements"
-                }
-              ]
-            },
-            "6": {
-              "name": "punctuation.md"
-            }
-          },
-          "end": "^\\s*(\\1)$",
-          "endCaptures": {
-            "1": {
-              "name": "punctuation.md"
-            }
-          },
-          "name": "fenced.code.md",
-          "contentName": "embedded.source.php",
-          "patterns": [
-            {
-              "include": "source.php"
             }
           ]
         },

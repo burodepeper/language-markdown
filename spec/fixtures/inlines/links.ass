@@ -91,7 +91,7 @@
   }
 }
 
-@447
+@447a
 "[link](</my uri>)" {
   text.md {
     link.markup.md {
@@ -105,6 +105,32 @@
         "<": punctuation.md
         "/my uri": uri.underline.link.md
         ">": punctuation.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@447b
+"[link](</my uri> "title")" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "link"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "<": punctuation.md
+        "/my uri": uri.underline.link.md
+        ">": punctuation.md
+      }
+      ' '
+      title.link.md {
+        '"': punctuation.md
+        "title"
+        '"': punctuation.md
       }
       ")": punctuation.md
     }
@@ -637,39 +663,38 @@
   }
 }
 
-# FIXME
-# @470
-# "[![moon](moon.jpg)](/uri)" {
-#   text.md {
-#     link.markup.md {
-#       text.link.string.md {
-#         "[": punctuation.md
-#
-#         "![moon](moon.jpg)" {
-#           link.markup.md {
-#             image.link.string.md {
-#               "![": punctuation.md
-#               "moon"
-#               "]": punctuation.md
-#             }
-#             "(": punctuation.md
-#             destination.link.md {
-#               "/uri": uri.underline.link.md
-#             }
-#             ")": punctuation.md
-#           }
-#         }
-#
-#         "]": punctuation.md
-#       }
-#       "(": punctuation.md
-#       destination.link.md {
-#         "/uri": uri.underline.link.md
-#       }
-#       ")": punctuation.md
-#     }
-#   }
-# }
+@470
+"[![moon](moon.jpg)](/uri)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+
+        "![moon](moon.jpg)" {
+          link.markup.md {
+            image.link.string.md {
+              "![": punctuation.md
+              "moon"
+              "]": punctuation.md
+            }
+            "(": punctuation.md
+            destination.link.md {
+              "moon.jpg": uri.underline.link.md
+            }
+            ")": punctuation.md
+          }
+        }
+
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "/uri": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
 
 # FIXME
 # @471
@@ -1026,13 +1051,40 @@
   }
 }
 
-# FIXME
-# @484
-# "[![moon](moon.jpg)][ref]"+
-# ""+
-# "[ref]: /uri" {
-#
-# }
+@484
+"[![moon](moon.jpg)][ref]" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+
+        "![moon](moon.jpg)" {
+          link.markup.md {
+            image.link.string.md {
+              "![": punctuation.md
+              "moon"
+              "]": punctuation.md
+            }
+            "(": punctuation.md
+            destination.link.md {
+              "moon.jpg": uri.underline.link.md
+            }
+            ")": punctuation.md
+          }
+        }
+
+        "]": punctuation.md
+      }
+      "[ref]" {
+        label.link.string.md {
+          "[": punctuation.md
+          "ref"
+          "]": punctuation.md
+        }
+      }
+    }
+  }
+}
 
 # TODO
 # @485
