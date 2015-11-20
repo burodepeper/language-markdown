@@ -283,3 +283,96 @@
     }
   }
 }
+
+@12
+"[![alt](/image.jpg "title"){.class key=value}](/url "title"){.class key=value}" {
+  text.md {
+    link.markup.md {
+      "[![alt](/image.jpg "title"){.class key=value}]" {
+        text.link.string.md {
+          "[": punctuation.md
+          "![alt](/image.jpg "title"){.class key=value}" {
+            link.markup.md {
+              "![alt]" {
+                image.link.string.md {
+                  "![": punctuation.md
+                  "alt"
+                  "]": punctuation.md
+                }
+              }
+              "(/image.jpg "title")" {
+                "(": punctuation.md
+                destination.link.md {
+                  "/image.jpg": uri.underline.link.md
+                }
+                " "
+                "title" {
+                  title.link.md {
+                    """: punctuation.md
+                    "title"
+                    """: punctuation.md
+                  }
+                }
+                ")": punctuation.md
+              }
+              "{.class key=value}" {
+                special-attributes.raw.markup.md {
+                  "{": punctuation.md
+                  ".class" {
+                    class.special.attribute.meta.md {
+                      ".": punctuation.md
+                      "class"
+                    }
+                  }
+                  " "
+                  "key=value" {
+                    other.special.attribute.meta.md {
+                      "key": key.keyword.md
+                      "=": punctuation.md
+                      "value": value.string.md
+                    }
+                  }
+                  "}": punctuation.md
+                }
+              }
+            }
+          }
+          "]": punctuation.md
+        }
+      }
+      "(/url "title")" {
+        "(": punctuation.md
+        destination.link.md {
+          "/url": uri.underline.link.md
+        }
+        ' '
+        title.link.md {
+          '"': punctuation.md
+          "title"
+          '"': punctuation.md
+        }
+        ")": punctuation.md
+      }
+      "{.class key=value}" {
+        special-attributes.raw.markup.md {
+          "{": punctuation.md
+          ".class" {
+            class.special.attribute.meta.md {
+              ".": punctuation.md
+              "class"
+            }
+          }
+          " "
+          "key=value" {
+            other.special.attribute.meta.md {
+              "key": key.keyword.md
+              "=": punctuation.md
+              "value": value.string.md
+            }
+          }
+          "}": punctuation.md
+        }
+      }
+    }
+  }
+}

@@ -20,7 +20,57 @@ patterns: [
       2: name: 'punctuation.md'
   }
 
-  # TODO Add linked images
+  # [![image-alt](/image-url "image-title")](/link "link-title")
+  # [![image-alt](/image-url "image-title"){special-attributes}](/link "link-title"){special-attributes}
+  {
+    name: 'link.markup.md'
+    match: '(?x)
+      (
+        (?:\\[)
+        (?:
+          (?:
+            (?:!\\[)
+            (?:[^\\[\\]]*)
+            (?:\\])
+          )
+          (?:\\()
+          (?:[^ [:cntrl:]]+)?
+          (?:
+            (?:\\s+)
+            (?:
+              (?:["\'\\(])
+              .*?
+              (?:["\'\\)])
+            )
+            (?:\\s*)
+          )?
+          (?:\\))
+          (?:\\{[[:ascii:]]*\\})?
+        )
+        (?:\\])
+      )
+      (\\()
+      ([^ [:cntrl:]]+)?
+      (?:
+        (?:\\s+)
+        (
+          (?:["\'\\(])
+          .*?
+          (?:["\'\\)])
+        )
+        (?:\\s*)
+      )?
+      (\\))
+      (\\{[[:ascii:]]*\\})?
+    '
+    captures:
+      1: patterns: [{ include: '#link-text' }]
+      2: name: 'punctuation.md'
+      3: patterns: [{ include: '#link-destination' }]
+      4: patterns: [{ include: '#link-title' }]
+      5: name: 'punctuation.md'
+      6: patterns: [{ include: '#special-attributes' }]
+  }
 
   # [link]()
   # [link](/uri)
@@ -60,8 +110,8 @@ patterns: [
   }
 
   # NOTE Spaces in URI are allowed between < and >
-  # [link](<>)
-  # ![link](<>)
+  # [link](<> "title")
+  # ![link](<> "title")
   {
     name: 'link.markup.md'
     match: '(?x)
@@ -72,6 +122,15 @@ patterns: [
       )
       (\\()
       (<[^[:cntrl:]]*>)
+      (?:
+        (?:\\s+)
+        (
+          (?:["\'\\(])
+          .*?
+          (?:["\'\\)])
+        )
+        (?:\\s*)
+      )?
       (\\))
       (\\{[[:ascii:]]*\\})?
     '
@@ -79,8 +138,51 @@ patterns: [
       1: patterns: [{ include: '#link-text' }]
       2: name: 'punctuation.md'
       3: patterns: [{ include: '#link-destination' }]
-      4: name: 'punctuation.md'
-      5: patterns: [{ include: '#special-attributes' }]
+      4: patterns: [{ include: '#link-title' }]
+      5: name: 'punctuation.md'
+      6: patterns: [{ include: '#special-attributes' }]
+  }
+
+  # [![image-alt](/image-url "image-title")][ref]
+  # [![image-alt](/image-url "image-title"){special-attributes}][ref]{special-attributes}
+  {
+    name: 'link.markup.md'
+    match: '(?x)
+      (
+        (?:\\[)
+        (?:
+          (?:
+            (?:!\\[)
+            (?:[^\\[\\]]*)
+            (?:\\])
+          )
+          (?:\\()
+          (?:[^ [:cntrl:]]+)?
+          (?:
+            (?:\\s+)
+            (?:
+              (?:["\'\\(])
+              .*?
+              (?:["\'\\)])
+            )
+            (?:\\s*)
+          )?
+          (?:\\))
+          (?:\\{[[:ascii:]]*\\})?
+        )
+        (?:\\])
+      )
+      (
+        (?:\\[)
+        (?:[^\\[\\]]*)
+        (?:\\])
+      )
+      (\\{[[:ascii:]]*\\})?
+    '
+    captures:
+      1: patterns: [{ include: '#link-text' }]
+      2: patterns: [{ include: '#link-label' }]
+      3: patterns: [{ include: '#special-attributes' }]
   }
 
   # [foo][bar]

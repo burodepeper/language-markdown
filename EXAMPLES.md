@@ -270,6 +270,7 @@ bar
 [link](<>)
 [link](/my uri)
 [link](</my uri>)
+[link](</my uri> "title")
 [link]((foo)and(bar))
 [link](<foo(and(bar))>)
 [link](#fragment)
@@ -291,6 +292,9 @@ At the base is the old friend, Wordpress [update: this is old news, it's running
 ![foo *bar*][foobar]
 My ![foo bar](/path/to/train.jpg  "title"   )
 ![foo][]
+[![](/image.jpg)](/url)
+[![alt](/image.jpg "title")](/url "title")
+[![alt](/image.jpg "title"){.class key=value}](/url "title"){.class key=value}
 
 [bar]: /url "title"
 [ref]: /uri

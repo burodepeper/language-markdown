@@ -14,7 +14,7 @@
 | CM: inlines | Entities                    |   7 of 12 | Good   |
 | CM: inlines | Code spans                  |  13 of 17 | Good   |
 | CM: inlines | Emphasis                    | 78 of 130 | OK     |
-| CM: inlines | Links                       |  35 of 71 | OK     |
+| CM: inlines | Links                       |  38 of 72 | OK     |
 | CM: inlines | Images                      |   7 of 15 | OK     |
 | CM: inlines | Autolinks                   |  16 of 16 | Good   |
 | CM: inlines | Line-breaks                 |  15 of 15 | Good   |
@@ -26,9 +26,9 @@
 | Github      | Task lists                  |  10 of 10 | Good   |
 | CriticMark  | Annotation                  |    7 of 7 | Good   |
 | YAML        | Front matter                |    3 of 3 | Good   |
-| MD Extra    | -                           |  11 of 11 | Good   |
+| MD Extra    | -                           |  12 of 12 | Good   |
 
-Total number of tests: **434**
+Total number of tests: **438**
 
 ### Notes
 
