@@ -20,7 +20,13 @@ patterns: [
       2: name: 'punctuation.md'
   }
 
+  # TODO Add linked images
+
+  # [link]()
+  # [link](/uri)
   # [link](/uri "title")
+  # ![link]()
+  # ![link](/uri)
   # ![link](/uri "title")
   {
     name: 'link.markup.md'
@@ -31,14 +37,16 @@ patterns: [
         (?:\\])
       )
       (\\()
-      ([^ [:cntrl:]]+)
-      (?:\\s+)
-      (
-        (?:["\'\\(])
-        .*?
-        (?:["\'\\)])
-      )
-      (?:\\s*)
+      ([^ [:cntrl:]]+)?
+      (?:
+        (?:\\s+)
+        (
+          (?:["\'\\(])
+          .*?
+          (?:["\'\\)])
+        )
+        (?:\\s*)
+      )?
       (\\))
       (\\{[[:ascii:]]*\\})?
     '
@@ -49,31 +57,6 @@ patterns: [
       4: patterns: [{ include: '#link-title' }]
       5: name: 'punctuation.md'
       6: patterns: [{ include: '#special-attributes' }]
-  }
-
-  # [link]()
-  # [link](/uri)
-  # ![link]()
-  # ![link](/uri)
-  {
-    name: 'link.markup.md'
-    match: '(?x)
-      (
-        (?:!?\\[)
-        (?:[^\\[\\]]*)
-        (?:\\])
-      )
-      (\\()
-      ([^ [:cntrl:]]*)
-      (\\))
-      (\\{[[:ascii:]]*\\})?
-    '
-    captures:
-      1: patterns: [{ include: '#link-text' }]
-      2: name: 'punctuation.md'
-      3: patterns: [{ include: '#link-destination' }]
-      4: name: 'punctuation.md'
-      5: patterns: [{ include: '#special-attributes' }]
   }
 
   # NOTE Spaces in URI are allowed between < and >
