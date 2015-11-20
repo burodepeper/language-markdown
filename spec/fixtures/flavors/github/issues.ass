@@ -200,8 +200,7 @@
 "- #123" {
   text.md {
     unordered.list.markup.md {
-      "-": punctuation.md
-      " "
+      "- ": punctuation.md
       "#123" {
         issue.reference.gfm.variable.md {
           "#": punctuation.md

@@ -135,8 +135,7 @@
     }
     unordered.list.markup.md {
       '    '
-      '-': punctuation.md
-      ' '
+      '- ': punctuation.md
       'bar'
     }
   }

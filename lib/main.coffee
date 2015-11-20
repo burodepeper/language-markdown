@@ -51,7 +51,6 @@ module.exports =
                     isListItem = true
 
               if isListItem and isPunctuation
-                # TODO make the 'space' part of an empty list-item
                 # TODO increment ordered list-item
                 # TODO add left padding to ordered list-items (003.)
                 # TODO add incomplete task-list-item

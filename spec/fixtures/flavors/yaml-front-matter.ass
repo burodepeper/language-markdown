@@ -28,8 +28,7 @@
     "title:"
     "- type: main" {
       unordered.list.markup.md {
-        "-": punctuation.md
-        " "
+        "- ": punctuation.md
         "type: main"
       }
     }

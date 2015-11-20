@@ -1,30 +1,29 @@
 key: 'lists'
 patterns: [
+
+  # Empty lists; for styling purposes, and for detection.
   {
-    # Empty unordered lists, for styling purposes
-    match: '^(?:\\s*)(- \\[ \\])$'
+    match: '^(?:\\s*)(- \\[ \\]\\s?)$'
     name: 'empty.task.unordered.list.markup.md'
     captures:
-      1: { name: 'punctuation.md' }
+      1: name: 'punctuation.md'
   }
   {
-    # Empty unordered lists, for styling purposes
-    match: '^(?:\\s*)([-+\\*]){1}$'
+    match: '^(?:\\s*)([-+\\*]{1}\\s?)$'
     name: 'empty.unordered.list.markup.md'
     captures:
-      1: { name: 'punctuation.md' }
+      1: name: 'punctuation.md'
   }
   {
-    # Empty ordered lists, for styling purposes
-    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)])$'
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)]\\s?)$'
     name: 'empty.ordered.list.markup.md'
     captures:
-      1: { name: 'punctuation.md' }
+      1: name: 'punctuation.md'
   }
 
+  # Task list-item
   {
-    # Task list item
-    match: '^(?:\\s*)(- \\[ \\])(?: )(.*)$'
+    match: '^(?:\\s*)(- \\[ \\]\\s)(.*)$'
     name: 'task.unordered.list.markup.md'
     captures:
       1: { name: 'punctuation.md' }
@@ -34,9 +33,10 @@ patterns: [
           { include: '#inlines-in-blocks' }
         ]
   }
+
+  # Completed task list-item
   {
-    # Completed task list item
-    match: '^(?:\\s*)(- \\[x\\])(?: )(.*)$'
+    match: '^(?:\\s*)(- \\[x\\]\\s)(.*)$'
     name: 'completed.task.unordered.list.markup.md'
     captures:
       1: { name: 'punctuation.md' }
@@ -46,9 +46,10 @@ patterns: [
           { include: '#inlines-in-blocks' }
         ]
   }
+
+  # Unordered list-item
   {
-    # Unordered list
-    match: '^(?:\\s*)([-+\\*]){1}(?: )(.*)$'
+    match: '^(?:\\s*)([-+\\*]{1}\\s)(.*)$'
     name: 'unordered.list.markup.md'
     captures:
       1: { name: 'punctuation.md' }
@@ -58,9 +59,10 @@ patterns: [
           { include: '#inlines-in-blocks' }
         ]
   }
+
+  # Ordered list-item
   {
-    # Ordered list
-    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)])(?: )(.*)$'
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)]\\s)(.*)$'
     name: 'ordered.list.markup.md'
     captures:
       1: { name: 'punctuation.md' }

@@ -13,7 +13,7 @@
 | CM: inlines | Backslash escapes           |   5 of 13 | OK     |
 | CM: inlines | Entities                    |   7 of 12 | Good   |
 | CM: inlines | Code spans                  |  13 of 17 | Good   |
-| CM: inlines | Emphasis                    | 78 of 130 | OK     |
+| CM: inlines | Emphasis                    | 77 of 130 | OK     |
 | CM: inlines | Links                       |  35 of 71 | OK     |
 | CM: inlines | Images                      |   7 of 15 | OK     |
 | CM: inlines | Autolinks                   |  16 of 16 | Good   |
@@ -28,7 +28,7 @@
 | YAML        | Front matter                |    3 of 3 | Good   |
 | MD Extra    | -                           |  11 of 11 | Good   |
 
-Total number of tests: **434**
+Total number of tests: **433**
 
 ### Notes
 
