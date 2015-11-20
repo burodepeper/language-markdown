@@ -4,6 +4,14 @@ path = require 'path'
 fs = require 'fs'
 
 module.exports =
+
+  config:
+    addListItems:
+      title: 'Add new list-items'
+      description: 'Automatically add a new list-item after the current (non-empty) one when pressing `ENTER`'
+      type: 'boolean'
+      default: true
+
   subscriptions: null
 
   activate: (state) ->
@@ -23,68 +31,70 @@ module.exports =
     # Create a new list-item after pressing [enter]
     @subscriptions.add atom.workspace.observeTextEditors (editor) ->
       editor.onDidInsertText (event) ->
-        grammar = editor.getGrammar()
-        if grammar.name is 'Markdown'
-          if event.text is "\n"
+        if atom.config.get('language-markdown.addListItems')
+          grammar = editor.getGrammar()
+          if grammar.name is 'Markdown'
+            if event.text is "\n"
 
-            previousRowNumber = event.range.start.row
-            previousRowRange = editor.buffer.rangeForRow(previousRowNumber)
-            previousLine = editor.getTextInRange(previousRowRange)
-            # FIXME
-            # Because the line is tokenized outside of its context, a line that
-            # looks like it contains a list-item, but is part of a fenced-code-
-            # block, will still be considered a valid list-item. A solution
-            # would be to get the {tokens} from the {previousLine} via the
-            # {editor}, as it was implemented in an earlier, rather verbose
-            # version.
-            {tokens} = grammar.tokenizeLine(previousLine)
+              previousRowNumber = event.range.start.row
+              previousRowRange = editor.buffer.rangeForRow(previousRowNumber)
+              previousLine = editor.getTextInRange(previousRowRange)
 
-            tokens.reverse()
-            for token in tokens
-              isPunctuation = false
-              isListItem = false
+              # FIXME
+              # Because the line is tokenized outside of its context, a line that
+              # looks like it contains a list-item, but is part of a fenced-code-
+              # block, will still be considered a valid list-item. A solution
+              # would be to get the {tokens} from the {previousLine} via the
+              # {editor}, as it was implemented in an earlier, rather verbose
+              # version.
+              {tokens} = grammar.tokenizeLine(previousLine)
 
-              scopes = token.scopes.reverse()
-              for scope in scopes
-                classes = scope.split('.')
+              tokens.reverse()
+              for token in tokens
+                isPunctuation = false
+                isListItem = false
 
-                # a list-item is valid when a punctuation class is immediately
-                # followed by a non-empty list-item class
-                if classes.indexOf('punctuation') isnt -1
-                  isPunctuation = true
-                else if isPunctuation and classes.indexOf('list') isnt -1
-                  if classes.indexOf('empty') is -1
-                    isListItem = true
-                    typeOfList = 'unordered'
-                    if classes.indexOf('ordered') isnt -1 then typeOfList = 'ordered'
-                    # Skip definition-lists
-                    if classes.indexOf('definition') isnt -1 then isListItem = false
-                    break
+                scopes = token.scopes.reverse()
+                for scope in scopes
+                  classes = scope.split('.')
+
+                  # a list-item is valid when a punctuation class is immediately
+                  # followed by a non-empty list-item class
+                  if classes.indexOf('punctuation') isnt -1
+                    isPunctuation = true
+                  else if isPunctuation and classes.indexOf('list') isnt -1
+                    if classes.indexOf('empty') is -1
+                      isListItem = true
+                      typeOfList = 'unordered'
+                      if classes.indexOf('ordered') isnt -1 then typeOfList = 'ordered'
+                      # Skip definition-lists
+                      if classes.indexOf('definition') isnt -1 then isListItem = false
+                      break
+                    else
+                      isListItem = false
+                      isPunctuation = false
                   else
-                    isListItem = false
                     isPunctuation = false
-                else
-                  isPunctuation = false
 
-              if isListItem
-                text = token.value
+                if isListItem
+                  text = token.value
 
-                # increment ordered list-item
-                if typeOfList is 'ordered'
-                  length = text.length
-                  punctuation = text.match(/[^\d]+/)
-                  value = parseInt(text) + 1
-                  text = value + punctuation
-                  # add left padding to ordered list-items (003.)
-                  if text.length < length
-                    for i in [0 .. (text.length - length + 1)]
-                      text = '0' + text
-                else
-                  # Convert task-list-items into incompleted ones
-                  text = text.replace('x', ' ')
+                  # increment ordered list-item
+                  if typeOfList is 'ordered'
+                    length = text.length
+                    punctuation = text.match(/[^\d]+/)
+                    value = parseInt(text) + 1
+                    text = value + punctuation
+                    # add left padding to ordered list-items (003.)
+                    if text.length < length
+                      for i in [0 .. (text.length - length + 1)]
+                        text = '0' + text
+                  else
+                    # Convert task-list-items into incompleted ones
+                    text = text.replace('x', ' ')
 
-                editor.insertText(text + '')
-                break
+                  editor.insertText(text + '')
+                  break
 
     # Only when in dev-mode,
     # create the {language-markdown:compile-grammar} command,
