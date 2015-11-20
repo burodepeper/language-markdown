@@ -31,6 +31,7 @@ module.exports =
             previousRowRange = editor.buffer.rangeForRow(previousRowNumber)
             previousLine = editor.getTextInRange(previousRowRange)
             {tokens} = grammar.tokenizeLine(previousLine)
+            # TODO check if this doesn't cause problems with enters in embedded code
 
             tokens.reverse()
             for token in tokens
@@ -41,38 +42,43 @@ module.exports =
               for scope in scopes
                 classes = scope.split('.')
 
-                # TODO
-                # list-item is valid when a punctuation class is immediately
+                # a list-item is valid when a punctuation class is immediately
                 # followed by a non-empty list-item class
                 if classes.indexOf('punctuation') isnt -1
                   isPunctuation = true
-                if classes.indexOf('list') isnt -1
-                  if isPunctuation and classes.indexOf('empty') is -1
+                else if isPunctuation and classes.indexOf('list') isnt -1
+                  if classes.indexOf('empty') is -1
                     isListItem = true
+                    typeOfList = 'unordered'
+                    if classes.indexOf('ordered') isnt -1 then typeOfList = 'ordered'
+                    # Skip definition-lists
+                    if classes.indexOf('definition') isnt -1 then isListItem = false
+                    break
+                  else
+                    isListItem = false
+                    isPunctuation = false
+                else
+                  isPunctuation = false
 
-              if isListItem and isPunctuation
-                # TODO increment ordered list-item
-                # TODO add left padding to ordered list-items (003.)
-                # TODO add incomplete task-list-item
-                # TODO skip definition-lists?
-                editor.insertText(token.value)
+              if isListItem
+                text = token.value
+
+                # increment ordered list-item
+                if typeOfList is 'ordered'
+                  length = text.length
+                  punctuation = text.match(/[^\d]+/)
+                  value = parseInt(text) + 1
+                  text = value + punctuation
+                  # add left padding to ordered list-items (003.)
+                  if text.length < length
+                    for i in [0 .. (text.length - length + 1)]
+                      text = '0' + text
+                else
+                  # Convert task-list-items into incompleted ones
+                  text = text.replace('x', ' ')
+
+                editor.insertText(text + '')
                 break
-
-
-              # NOTE
-              # Taken from gfm-lists by @jonmagic
-              #
-              # match = previous_line.match(/^\s*([\-|\*]\s\[[x|\s]\]|\*|\-|\d\.)\s.+/)
-              # console.log(match)
-              # if match
-              #   switch match[1]
-              #     when "*"     then editor.insertText "* "
-              #     when "-"     then editor.insertText "- "
-              #     when "- [ ]" then editor.insertText "- [ ] "
-              #     when "* [ ]" then editor.insertText "* [ ] "
-              #     when "- [x]" then editor.insertText "- [ ] "
-              #     when "* [x]" then editor.insertText "* [ ] "
-              #     else editor.insertText "#{parseInt(match[1]) + 1}. "
 
     # Only when in dev-mode,
     # create the {language-markdown:compile-grammar} command,
