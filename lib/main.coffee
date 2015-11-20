@@ -30,8 +30,14 @@ module.exports =
             previousRowNumber = event.range.start.row
             previousRowRange = editor.buffer.rangeForRow(previousRowNumber)
             previousLine = editor.getTextInRange(previousRowRange)
+            # FIXME
+            # Because the line is tokenized outside of its context, a line that
+            # looks like it contains a list-item, but is part of a fenced-code-
+            # block, will still be considered a valid list-item. A solution
+            # would be to get the {tokens} from the {previousLine} via the
+            # {editor}, as it was implemented in an earlier, rather verbose
+            # version.
             {tokens} = grammar.tokenizeLine(previousLine)
-            # TODO check if this doesn't cause problems with enters in embedded code
 
             tokens.reverse()
             for token in tokens
