@@ -1,16 +1,6 @@
 # Roadmap
 
-## Next version (v0.4)
-
-- [ ] Add new link-items automatically when pressing `ENTER` (#45)
-- [x] Upgrade links to allow linked-images (#40)
-- [x] Spec for gfm-references
-- [x] Review spec [/blocks/lists/262]
-- [x] Add support for `mermaid` to fenced-code-blocks
-
----
-
-## Future
+## Ideas for a brighter future
 
 - [ ] Commands for (strong) emphasis; see [language-gfm/issues/94]
 - [ ] Create an abstracted function to recursively index files inside a directory with a certain extension, while retaining a relative path; method is currently used to load fixtures in spec, but can also be used to load all cson files when compiling the grammar file.
