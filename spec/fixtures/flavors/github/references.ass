@@ -1,0 +1,68 @@
+@1
+"a5c3785ed8d6a35868bc169f07e40e889087fd2e" {
+  text.md {
+    reference.gfm.variable.md {
+      sha.gfm.md {
+        "a5c3785"
+        "ed8d6a35868bc169f07e40e889087fd2e": punctuation.md
+      }
+    }
+  }
+}
+
+@2
+"jlord@a5c3785ed8d6a35868bc169f07e40e889087fd2e" {
+  text.md {
+    reference.gfm.variable.md {
+      "jlord": user.gfm.md
+      "@": punctuation.md
+      "a5c3785ed8d6a35868bc169f07e40e889087fd2e" {
+        sha.gfm.md {
+          "a5c3785"
+          "ed8d6a35868bc169f07e40e889087fd2e": punctuation.md
+        }
+      }
+    }
+  }
+}
+
+@3
+"jlord/sheetsee.js@a5c3785ed8d6a35868bc169f07e40e889087fd2e" {
+  text.md {
+    reference.gfm.variable.md {
+      "jlord": user.gfm.md
+      "/": punctuation.md
+      "sheetsee.js": repository.gfm.md
+      "@": punctuation.md
+      "a5c3785ed8d6a35868bc169f07e40e889087fd2e" {
+        sha.gfm.md {
+          "a5c3785"
+          "ed8d6a35868bc169f07e40e889087fd2e": punctuation.md
+        }
+      }
+    }
+  }
+}
+
+@4
+"GH-26" {
+  text.md {
+    reference.gfm.variable.md {
+      "GH-": punctuation.md
+      "26": issue.gfm.md
+    }
+  }
+}
+
+@5
+"jlord/sheetsee.js#26" {
+  text.md {
+    reference.gfm.variable.md {
+      "jlord": user.gfm.md
+      "/": punctuation.md
+      "sheetsee.js": repository.gfm.md
+      "#": punctuation.md
+      "26": issue.gfm.md
+    }
+  }
+}

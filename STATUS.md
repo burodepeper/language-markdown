@@ -9,26 +9,27 @@
 | CM: blocks  | Fenced code blocks          |  17 of 18 | Good   |
 | CM: blocks  | Links reference definitions |  19 of 21 | Good   |
 | CM: blocks  | Block quotes                |  13 of 13 | Good   |
-| CM: blocks  | Lists                       |  16 of 17 | Good   |
+| CM: blocks  | Lists                       |  15 of 16 | Good   |
 | CM: inlines | Backslash escapes           |   5 of 13 | OK     |
 | CM: inlines | Entities                    |   7 of 12 | Good   |
 | CM: inlines | Code spans                  |  13 of 17 | Good   |
 | CM: inlines | Emphasis                    | 78 of 130 | OK     |
-| CM: inlines | Links                       |  35 of 71 | OK     |
+| CM: inlines | Links                       |  38 of 72 | OK     |
 | CM: inlines | Images                      |   7 of 15 | OK     |
 | CM: inlines | Autolinks                   |  16 of 16 | Good   |
 | CM: inlines | Line-breaks                 |  15 of 15 | Good   |
 | Github      | Mentions                    |  22 of 22 | Good   |
 | Github      | Issues                      |  21 of 22 | Good   |
+| Github      | References                  |    5 of 5 | Good   |
 | Github      | Emojis                      |    6 of 6 | Good   |
 | Github      | Strikethrough               |    3 of 3 | Good   |
 | Github      | Tables                      |  12 of 12 | Good   |
 | Github      | Task lists                  |  10 of 10 | Good   |
 | CriticMark  | Annotation                  |    7 of 7 | Good   |
 | YAML        | Front matter                |    3 of 3 | Good   |
-| MD Extra    | -                           |  11 of 11 | Good   |
+| MD Extra    | -                           |  12 of 12 | Good   |
 
-Total number of tests: **434**
+Total number of tests: **445**
 
 ### Notes
 

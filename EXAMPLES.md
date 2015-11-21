@@ -92,6 +92,16 @@ def foo(x)
 end
 ~~~~~~~
 
+<!--
+~~~ erb
+<% wrap_layout :layout do %>
+  <article>
+    <%= yield %>
+  </article>
+<% end %>
+~~~
+-->
+
 
 
 <!---------- Lists ------------------------------------------------------------>
@@ -260,6 +270,7 @@ bar
 [link](<>)
 [link](/my uri)
 [link](</my uri>)
+[link](</my uri> "title")
 [link]((foo)and(bar))
 [link](<foo(and(bar))>)
 [link](#fragment)
@@ -281,10 +292,13 @@ At the base is the old friend, Wordpress [update: this is old news, it's running
 ![foo *bar*][foobar]
 My ![foo bar](/path/to/train.jpg  "title"   )
 ![foo][]
+[![](/image.jpg)](/url)
+[![alt](/image.jpg "title")](/url "title")
+[![alt](/image.jpg "title"){.class key=value}](/url "title"){.class key=value}
 
 [bar]: /url "title"
 [ref]: /uri
-[foo]: /url 'title
+[foo]: /url 'not a title
 ![foo](/url "title")
 ![](/url)
 
@@ -348,7 +362,7 @@ User@SHA: jlord@a5c3785ed8d6a35868bc169f07e40e889087fd2e
 User/Repository@SHA: jlord/sheetsee.js@a5c3785ed8d6a35868bc169f07e40e889087fd2e
 #Num: #26
 GH-Num: GH-26
-User#Num: jlord#26
+User#Num: jlord#26 <!-- not supported (yet), too much false positives -->
 User/Repository#Num: jlord/sheetsee.js#26
 
 <!-- Emojis -->

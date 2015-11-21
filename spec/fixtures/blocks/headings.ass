@@ -22,9 +22,9 @@
 @29a
 '#5 bolt' {
   text.md {
-    issue.reference.gfm.variable.md {
+    reference.gfm.variable.md {
       '#': punctuation.md
-      '5'
+      '5': issue.gfm.md
     }
     ' bolt'
   }

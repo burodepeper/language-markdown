@@ -2,9 +2,9 @@
 "#123" {
   text.md {
     "#123" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "123"
+        "123": issue.gfm.md
       }
     }
   }
@@ -14,9 +14,9 @@
 "#12.3" {
   text.md {
     "#12" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "12"
+        "12": issue.gfm.md
       }
     }
     ".3"
@@ -30,9 +30,9 @@
 "#123: something, something" {
   text.md {
     "#123" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "123"
+        "123": issue.gfm.md
       }
     }
     ": something, something"
@@ -52,9 +52,9 @@
 "#123:456" {
   text.md {
     "#123" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "123"
+        "123": issue.gfm.md
       }
     }
     ":456"
@@ -66,9 +66,9 @@
   text.md {
     """
     "#123" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "123"
+        "123": issue.gfm.md
       }
     }
     """
@@ -80,9 +80,9 @@
   text.md {
     "'"
     "#123" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "123"
+        "123": issue.gfm.md
       }
     }
     "'"
@@ -94,9 +94,9 @@
   text.md {
     "("
     "#123" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "123"
+        "123": issue.gfm.md
       }
     }
     ")"
@@ -124,9 +124,9 @@
   text.md {
     "("
     "#123" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "123"
+        "123": issue.gfm.md
       }
     }
     "]"
@@ -139,9 +139,9 @@
     quote.markup.md {
       ">": punctuation.md
       "#123" {
-        issue.reference.gfm.variable.md {
+        reference.gfm.variable.md {
           "#": punctuation.md
-          "123"
+          "123": issue.gfm.md
         }
       }
     }
@@ -152,23 +152,23 @@
 "#123, #456, #789" {
   text.md {
     "#123" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "123"
+        "123": issue.gfm.md
       }
     }
     ", "
     "#456" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "456"
+        "456": issue.gfm.md
       }
     }
     ", "
     "#789" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "789"
+        "789": issue.gfm.md
       }
     }
   }
@@ -181,9 +181,9 @@
 "#123." {
   text.md {
     "#123" {
-      issue.reference.gfm.variable.md {
+      reference.gfm.variable.md {
         "#": punctuation.md
-        "123"
+        "123": issue.gfm.md
       }
     }
     "."
@@ -200,12 +200,11 @@
 "- #123" {
   text.md {
     unordered.list.markup.md {
-      "-": punctuation.md
-      " "
+      "- ": punctuation.md
       "#123" {
-        issue.reference.gfm.variable.md {
+        reference.gfm.variable.md {
           "#": punctuation.md
-          "123"
+          "123": issue.gfm.md
         }
       }
     }

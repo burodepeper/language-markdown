@@ -159,14 +159,12 @@
 "* Bar" {
   text.md {
     unordered.list.markup.md {
-      "*": punctuation.md
-      " "
+      "* ": punctuation.md
       "Foo"
     }
     "* * *": hr.md
     unordered.list.markup.md {
-      "*": punctuation.md
-      " "
+      "* ": punctuation.md
       "Bar"
     }
   }
@@ -178,11 +176,9 @@
 "- * * *" {
   text.md {
     unordered.list.markup.md {
-      "-": punctuation.md
-      " "
+      "- ": punctuation.md
       "Foo"
-      "-": punctuation.md
-      " "
+      "- ": punctuation.md
       "* * *": hr.md
     }
   }
