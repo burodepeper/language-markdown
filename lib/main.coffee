@@ -22,11 +22,9 @@ module.exports =
     # https://atom.io/docs/api/v1.2.0/ScopeDescriptor
     # https://atom.io/docs/latest/behind-atom-scoped-settings-scopes-and-scope-descriptors
 
-    # TODO
-    # Add thank-you for @jonmagic
-
-    # TODO
-    # Add an option to disable automatic list-items in settings-panel
+    # NOTE
+    # Thank you to @jonmagic from whom I've borrowed the first bit of code to make adding new list-items a reality. My implementation has since then taken a completely different approach, but his attempt was a pleasant jump-start. @burodepeper
+    # https://github.com/jonmagic/gfm-lists
 
     # Create a new list-item after pressing [enter]
     @subscriptions.add atom.workspace.observeTextEditors (editor) ->
@@ -41,12 +39,7 @@ module.exports =
               previousLine = editor.getTextInRange(previousRowRange)
 
               # FIXME
-              # Because the line is tokenized outside of its context, a line that
-              # looks like it contains a list-item, but is part of a fenced-code-
-              # block, will still be considered a valid list-item. A solution
-              # would be to get the {tokens} from the {previousLine} via the
-              # {editor}, as it was implemented in an earlier, rather verbose
-              # version.
+              # Because the line is tokenized outside of its original context, a line that looks like it contains a list-item, but is part of a fenced-code-block, will still be considered a valid list-item. A solution would be to get the {tokens} from the {previousLine} via the {editor}, as it was implemented in an earlier, rather verbose version.
               {tokens} = grammar.tokenizeLine(previousLine)
 
               tokens.reverse()
@@ -62,13 +55,16 @@ module.exports =
                   # followed by a non-empty list-item class
                   if classes.indexOf('punctuation') isnt -1
                     isPunctuation = true
+
                   else if isPunctuation and classes.indexOf('list') isnt -1
                     if classes.indexOf('empty') is -1
                       isListItem = true
                       typeOfList = 'unordered'
-                      if classes.indexOf('ordered') isnt -1 then typeOfList = 'ordered'
-                      # Skip definition-lists
-                      if classes.indexOf('definition') isnt -1 then isListItem = false
+                      if classes.indexOf('ordered') isnt -1
+                        typeOfList = 'ordered'
+                      if classes.indexOf('definition') isnt -1
+                        # Skip definition-lists
+                        isListItem = false
                       break
                     else
                       isListItem = false
@@ -85,14 +81,17 @@ module.exports =
                     punctuation = text.match(/[^\d]+/)
                     value = parseInt(text) + 1
                     text = value + punctuation
+
                     # add left padding to ordered list-items (003.)
                     if text.length < length
                       for i in [0 .. (text.length - length + 1)]
                         text = '0' + text
+
                   else
                     # Convert task-list-items into incompleted ones
                     text = text.replace('x', ' ')
 
+                  # Force {text} to become a string; prevents rare errors
                   editor.insertText(text + '')
                   break
 
