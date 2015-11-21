@@ -23,8 +23,9 @@ module.exports =
     # https://atom.io/docs/latest/behind-atom-scoped-settings-scopes-and-scope-descriptors
 
     # NOTE
-    # Thank you to @jonmagic from whom I've borrowed the first bit of code to make adding new list-items a reality. My implementation has since then taken a completely different approach, but his attempt was a pleasant jump-start. @burodepeper
+    # Thank you to @jonmagic from whom I've borrowed the first bit of code to make adding new list-items a reality. My implementation has since then taken a completely different approach, but his attempt was a pleasant jump-start.
     # https://github.com/jonmagic/gfm-lists
+    # @burodepeper
 
     # Create a new list-item after pressing [enter]
     @subscriptions.add atom.workspace.observeTextEditors (editor) ->
@@ -38,62 +39,71 @@ module.exports =
               previousRowRange = editor.buffer.rangeForRow(previousRowNumber)
               previousLine = editor.getTextInRange(previousRowRange)
 
-              # FIXME
-              # Because the line is tokenized outside of its original context, a line that looks like it contains a list-item, but is part of a fenced-code-block, will still be considered a valid list-item. A solution would be to get the {tokens} from the {previousLine} via the {editor}, as it was implemented in an earlier, rather verbose version.
-              {tokens} = grammar.tokenizeLine(previousLine)
+              # NOTE
+              # At this point, it is rather tedious (as far as I know) to get to the tokenized version of {previousLine}. That is the reason why {tokens} a little further down is tokenized. But at this stage, we do need to know if {previousLine} was in fact Markdown, or from a different perspective, not a piece of embedded code. The reason for that is that the tokenized line below is tokenized without any context, so is Markdown by default. Therefore we determine if our current position is part of embedded code or not.
+              # @burodepeper
 
-              tokens.reverse()
-              for token in tokens
-                isPunctuation = false
-                isListItem = false
+              isEmbeddedCode = false
+              scopeDescriptor = editor.scopeDescriptorForBufferPosition(previousRowRange.end)
+              for scope in scopeDescriptor.scopes
+                if scope.indexOf('source') isnt -1
+                  isEmbeddedCode = true
 
-                scopes = token.scopes.reverse()
-                for scope in scopes
-                  classes = scope.split('.')
+              unless isEmbeddedCode
+                {tokens} = grammar.tokenizeLine(previousLine)
 
-                  # a list-item is valid when a punctuation class is immediately
-                  # followed by a non-empty list-item class
-                  if classes.indexOf('punctuation') isnt -1
-                    isPunctuation = true
+                tokens.reverse()
+                for token in tokens
+                  isPunctuation = false
+                  isListItem = false
 
-                  else if isPunctuation and classes.indexOf('list') isnt -1
-                    if classes.indexOf('empty') is -1
-                      isListItem = true
-                      typeOfList = 'unordered'
-                      if classes.indexOf('ordered') isnt -1
-                        typeOfList = 'ordered'
-                      if classes.indexOf('definition') isnt -1
-                        # Skip definition-lists
+                  scopes = token.scopes.reverse()
+                  for scope in scopes
+                    classes = scope.split('.')
+
+                    # a list-item is valid when a punctuation class is
+                    # immediately followed by a non-empty list-item class
+                    if classes.indexOf('punctuation') isnt -1
+                      isPunctuation = true
+
+                    else if isPunctuation and classes.indexOf('list') isnt -1
+                      if classes.indexOf('empty') is -1
+                        isListItem = true
+                        typeOfList = 'unordered'
+                        if classes.indexOf('ordered') isnt -1
+                          typeOfList = 'ordered'
+                        if classes.indexOf('definition') isnt -1
+                          # Skip definition-lists
+                          isListItem = false
+                        break
+                      else
                         isListItem = false
-                      break
+                        isPunctuation = false
                     else
-                      isListItem = false
                       isPunctuation = false
-                  else
-                    isPunctuation = false
 
-                if isListItem
-                  text = token.value
+                  if isListItem
+                    text = token.value
 
-                  # increment ordered list-item
-                  if typeOfList is 'ordered'
-                    length = text.length
-                    punctuation = text.match(/[^\d]+/)
-                    value = parseInt(text) + 1
-                    text = value + punctuation
+                    # increment ordered list-item
+                    if typeOfList is 'ordered'
+                      length = text.length
+                      punctuation = text.match(/[^\d]+/)
+                      value = parseInt(text) + 1
+                      text = value + punctuation
 
-                    # add left padding to ordered list-items (003.)
-                    if text.length < length
-                      for i in [0 .. (text.length - length + 1)]
-                        text = '0' + text
+                      # add left padding to ordered list-items (003.)
+                      if text.length < length
+                        for i in [0 .. (text.length - length + 1)]
+                          text = '0' + text
 
-                  else
-                    # Convert task-list-items into incompleted ones
-                    text = text.replace('x', ' ')
+                    else
+                      # Convert task-list-items into incompleted ones
+                      text = text.replace('x', ' ')
 
-                  # Force {text} to become a string; prevents rare errors
-                  editor.insertText(text + '')
-                  break
+                    # Force {text} to become a string; prevents rare errors
+                    editor.insertText(text + '')
+                    break
 
     # Only when in dev-mode,
     # create the {language-markdown:compile-grammar} command,
