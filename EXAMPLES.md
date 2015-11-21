@@ -294,7 +294,6 @@ My ![foo bar](/path/to/train.jpg  "title"   )
 ![foo][]
 [![](/image.jpg)](/url)
 [![alt](/image.jpg "title")](/url "title")
-[![alt](/image.jpg "title"){.class key=value}](/url "title"){.class key=value}
 
 [bar]: /url "title"
 [ref]: /uri
@@ -437,6 +436,7 @@ Orange
 [linkref]: url "optional title" {#id .class}
 [label](http://www.url.com){.external-link target=_blank}
 [linkref]: /url {#id .class}
+[![alt](/image.jpg "title"){.class key=value}](/url "title"){.class key=value}
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ .js
 alert("Hello world");
