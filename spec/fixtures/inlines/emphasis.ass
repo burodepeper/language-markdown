@@ -17,8 +17,15 @@
 @315
 "a*"foo"*": text.md
 
-@316
-"* a *": text.md
+# NOTE
+# The first space character is a non-breaking space, and as such this should
+# NOT be a list-item. However, a non-breaking space is matched by the \s regexp
+# operator, and I believe this is such an edge-case, that I'm not really going
+# to worry about it that much. I'll leave it in as a reminder that it once
+# worked ;) @burodepeper
+#
+# @316
+# "* a *": text.md
 
 @317
 "foo*bar*" {

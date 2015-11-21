@@ -11,8 +11,7 @@
 "  two" {
   text.md {
     unordered.list.markup.md {
-      '-': punctuation.md
-      ' '
+      '- ': punctuation.md
       'one'
     }
     ""
@@ -35,8 +34,7 @@
 '123456789. ok' {
   text.md {
     ordered.list.markup.md {
-      '123456789.': punctuation.md
-      ' '
+      '123456789. ': punctuation.md
       'ok'
     }
   }
@@ -49,8 +47,7 @@
 '0. ok' {
   text.md {
     ordered.list.markup.md {
-      '0.': punctuation.md
-      ' '
+      '0. ': punctuation.md
       'ok'
     }
   }
@@ -60,8 +57,7 @@
 "003. ok" {
   text.md {
     ordered.list.markup.md {
-      '003.': punctuation.md
-      ' '
+      '003. ': punctuation.md
       'ok'
     }
   }
@@ -81,16 +77,14 @@
 "- bar" {
   text.md {
     unordered.list.markup.md {
-      '-': punctuation.md
-      ' '
+      '- ': punctuation.md
       'foo'
     }
     empty.unordered.list.markup.md {
       '-': punctuation.md
     }
     unordered.list.markup.md {
-      '-': punctuation.md
-      ' '
+      '- ': punctuation.md
       'bar'
     }
   }
@@ -106,16 +100,14 @@
 "3. bar" {
   text.md {
     ordered.list.markup.md {
-      '1.': punctuation.md
-      ' '
+      '1. ': punctuation.md
       'foo'
     }
     empty.ordered.list.markup.md {
       '2.': punctuation.md
     }
     ordered.list.markup.md {
-      '3.': punctuation.md
-      ' '
+      '3. ': punctuation.md
       'bar'
     }
   }
@@ -138,8 +130,7 @@
       ">": punctuation.md
       " "
       ordered.list.markup.md {
-        "1.": punctuation.md
-        " "
+        "1. ": punctuation.md
         quote.markup.md {
           ">": punctuation.md
           " "
@@ -164,11 +155,9 @@
 "- - foo" {
   text.md {
     unordered.list.markup.md {
-      "-": punctuation.md
-      " "
+      "- ": punctuation.md
       unordered.list.markup.md {
-        "-": punctuation.md
-        " "
+        "- ": punctuation.md
         "foo"
       }
     }
@@ -179,14 +168,11 @@
 "1. - 2. foo" {
   text.md {
     ordered.list.markup.md {
-      "1.": punctuation.md
-      " "
+      "1. ": punctuation.md
       unordered.list.markup.md {
-        "-": punctuation.md
-        " "
+        "- ": punctuation.md
         ordered.list.markup.md {
-          "2.": punctuation.md
-          " "
+          "2. ": punctuation.md
           "foo"
         }
       }
@@ -201,8 +187,7 @@
 "  baz" {
   text.md {
     unordered.list.markup.md {
-      "-": punctuation.md
-      " "
+      "- ": punctuation.md
       heading.markup.md {
         heading-1.md {
           "#": punctuation.md
@@ -210,8 +195,7 @@
           "Foo"
         }
       }
-      "-": punctuation.md
-      " "
+      "- ": punctuation.md
       "Bar"
     }
     "  ---": hr.md
@@ -231,8 +215,7 @@
   text.md {
     "The number of windows in my house is"
     ordered.list.markup.md {
-      "14.": punctuation.md
-      " "
+      "14. ": punctuation.md
       " The number of doors is 6."
     }
   }
@@ -254,8 +237,7 @@
 "* c" {
   text.md {
     unordered.list.markup.md {
-      "*": punctuation.md
-      " "
+      "* ": punctuation.md
       "a"
     }
     quote.markup.md {
@@ -267,8 +249,7 @@
       ">": punctuation.md
     }
     unordered.list.markup.md {
-      "*": punctuation.md
-      " "
+      "* ": punctuation.md
       "c"
     }
   }

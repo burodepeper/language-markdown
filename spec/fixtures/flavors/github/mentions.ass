@@ -218,8 +218,7 @@
 "- @username" {
   text.md {
     unordered.list.markup.md {
-      "-": punctuation.md
-      " "
+      "- ": punctuation.md
       "@username" {
         reference.gfm.variable.md {
           "@": punctuation.md
