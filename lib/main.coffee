@@ -13,7 +13,7 @@ module.exports =
       default: true
     indentListItems:
       title: 'Indent list-items'
-      description: 'Automatically in- and outdent list-items by pressing `TAB` and `SHIFT + TAB`'
+      description: 'Automatically in- and outdent list-items by pressing `TAB` and `SHIFT+TAB`'
       type: 'boolean'
       default: true
 
@@ -22,19 +22,20 @@ module.exports =
   activate: (state) ->
     @subscriptions = new CompositeDisposable()
 
-    # NOTE
-    # https://atom.io/docs/api/v1.2.0/TextEditor
-    # https://atom.io/docs/api/v1.2.0/ScopeDescriptor
-    # https://atom.io/docs/latest/behind-atom-scoped-settings-scopes-and-scope-descriptors
+    # Add commands to overwrite the behavior of tab within list-item context
+    @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:indent-list-item': (event) => @indentListItem(event)
+    @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:outdent-list-item': (event) => @outdentListItem(event)
+
+    # Only when in dev-mode,
+    # create the {language-markdown:compile-grammar} command,
+    # via which the compiler can be executed
+    if atom.inDevMode()
+      @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:compile-grammar-and-reload': => @compileGrammar()
 
     # NOTE
     # Thank you to @jonmagic from whom I've borrowed the first bit of code to make adding new list-items a reality. My implementation has since then taken a completely different approach, but his attempt was a pleasant jump-start.
     # https://github.com/jonmagic/gfm-lists
     # @burodepeper
-
-    @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:indent-list-item': (event) => @indentListItem(event)
-
-    @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:outdent-list-item': (event) => @outdentListItem(event)
 
     # Create a new list-item after pressing [enter]
     @subscriptions.add atom.workspace.observeTextEditors (editor) ->
@@ -113,12 +114,6 @@ module.exports =
                     # Force {text} to become a string; prevents rare errors
                     editor.insertText(text + '')
                     break
-
-    # Only when in dev-mode,
-    # create the {language-markdown:compile-grammar} command,
-    # via which the compiler can be executed
-    if atom.inDevMode()
-      @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:compile-grammar-and-reload': => @compileGrammar()
 
   indentListItem: (event) ->
     {editor, position} = @getEditorAndPosition(event)
