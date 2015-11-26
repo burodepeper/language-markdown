@@ -1,2 +1,6 @@
 'atom-workspace':
   'cmd-alt-ctrl-c': 'markdown:compile-grammar-and-reload'
+
+'atom-text-editor:not([mini])':
+  'tab': 'markdown:indent-list-item'
+  'shift-tab': 'markdown:outdent-list-item'

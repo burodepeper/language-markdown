@@ -1,33 +1,25 @@
 # Markdown grammar
 
-A realistic implementation of the [CommonMark](http://www.commonmark.org/) specifications as a flexible (drop-in) alternative to [language-gfm](https://github.com/atom/language-gfm/).
+A realistic implementation of the [CommonMark](http://www.commonmark.org/) specifications as a flexible (drop-in) alternative to [language-gfm](https://github.com/atom/language-gfm/). Adds smart context-aware behavior to lists.
 
-**Supports**:
+If you experience any issue above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/) or contact @burodepeper directly.
+
+[![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
+
+## Supported grammar
 
 - CommonMark Markdown
 - Github Flavored Markdown
 - Markdown Extra
 - CriticMark annotation
 - Front Matter (yaml and toml)
-- [more details](STATUS.md)
+- View [more details](STATUS.md) or a [bunch of examples](EXAMPLES.md)
 
-If you experience any issue above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/) or contact @burodepeper directly.
+## Additional features
 
-[![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
-
----
-
-## Features
-
-Pretty much _all of your regular Markdown needs/uses_ are supported by this package, but certain features have been toned down a little to limit the number of false-positives.
-
-I'd rather have you ask why your specific situation isn't italicized as you'd intended, than have you complain that your entire document acts like Microsoft Word 2007 after you've accidently moved an image two pixels and it decides to change the formatting on every single paragraph of your twelve page essay that is due in a hour at the exact moment you realize that your printer is probably either out of ink or paper, and you really need to pee.
-
-Anyway, a few things are nerfed, but they are not worth the emphasis a proper list would give them: no setext headings, no indented code blocks, and complex nested grammar is at your own risk.
-
-Check out [EXAMPLES.md](EXAMPLES.md) for a pretty extensive list of possibilities.
-
----
+- **Smarter lists**
+  - Automatically create new list-items when pressing <kbd>enter</kbd>
+  - Indent or outdent list-items by pressing <kbd>tab</kbd> or <kbd>shift+tab</kbd>
 
 ### Created with blood, sweat, tears, and these amazing tools:
 
