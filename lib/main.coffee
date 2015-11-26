@@ -137,10 +137,11 @@ module.exports =
     return {editor, position}
 
   isListItem: (editor, position) ->
-    scopeDescriptor = editor.scopeDescriptorForBufferPosition(position)
-    for scope in scopeDescriptor.scopes
-      if scope.indexOf('list') isnt -1
-        return true
+    if editor.getGrammar().name is 'Markdown'
+      scopeDescriptor = editor.scopeDescriptorForBufferPosition(position)
+      for scope in scopeDescriptor.scopes
+        if scope.indexOf('list') isnt -1
+          return true
     return false
 
   # Loads the basic grammar structure,
