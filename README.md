@@ -23,7 +23,8 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
 
 ## Installation instructions
 
-Execute `apm install language-markdown` via your terminal, or search for `language-markdown` via the Atom GUI (Atom > Settings > Install).
+- Execute `apm install language-markdown` via your console;
+- Or install `language-markdown` via the Atom GUI (Atom > Settings > Install).
 
 ---
 
