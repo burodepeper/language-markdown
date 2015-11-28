@@ -3,6 +3,35 @@
 ## Current focus
 
 - [ ] Improve syntax-highlighting in combination with default syntax-themes
+  - **Atom Dark/Light**
+    - [ ] # Heading
+    - [ ] _italic_
+    - [ ] `inline-code`
+    - [ ] [label](link)
+    - [ ] [label]: /url "title"
+    - [ ] ---
+    - [ ] any list-item (or at least the punctuation)
+    - [ ] > Quote
+    - [ ] **bold**
+    - [ ] <http://www.autolink.com> (outside of list-item)
+    - [ ] ~~strike~~
+    - [ ] Criticmark: everything except comments
+    - [ ] .class and #id in special-attributes
+  - **One Dark**
+    - [ ] ---
+    - [ ] any list-item (or at least the punctuation)
+    - [ ] ~~strike~~
+  - **One Light**
+    - [ ] # Heading
+    - [ ] [label](link)
+    - [ ] [label]: /url "title"
+    - [ ] ---
+    - [ ] <http://www.autolink.com> (outside of list-item)
+    - [ ] ~~strike~~
+  - **base16 tomorrow (dark)**
+  - **base16 tomorrow (light)**
+  - **Solarized (dark)**
+  - **Solarized (light)**
 - [ ] Check if `language-gfm` is activated and notify user of possible conflicts
 - [ ] Keybinding for toggling task-list-items
 
