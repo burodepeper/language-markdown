@@ -3,7 +3,6 @@
 ## Current focus
 
 - [ ] Improve syntax-highlighting in combination with default syntax-themes
-- [ ] Check if `language-gfm` is activated and notify user of possible conflicts
 - [ ] Keybinding for toggling task-list-items (cmd+shift+x?)
 
 ## Ideas for a brighter future
