@@ -6,11 +6,19 @@ fs = require 'fs'
 module.exports =
 
   config:
+    
     addListItems:
       title: 'Add new list-items'
       description: 'Automatically add a new list-item after the current (non-empty) one when pressing `ENTER`'
       type: 'boolean'
       default: true
+
+    disableLanguageGfm:
+      title: 'Disable language-gfm'
+      description: 'Disable the default `language-gfm` package as this package is intended as its replacement'
+      type: 'boolean'
+      default: true
+
     indentListItems:
       title: 'Indent list-items'
       description: 'Automatically in- and outdent list-items by pressing `TAB` and `SHIFT+TAB`'
@@ -25,6 +33,10 @@ module.exports =
     # Add commands to overwrite the behavior of tab within list-item context
     @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:indent-list-item': (event) => @indentListItem(event)
     @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:outdent-list-item': (event) => @outdentListItem(event)
+
+    # Disable language-gfm as this package is intended as its replacement
+    if atom.config.get('language-markdown.disableLanguageGfm')
+      atom.packages.disablePackage('language-gfm')
 
     # Only when in dev-mode,
     # create the {language-markdown:compile-grammar} command,
