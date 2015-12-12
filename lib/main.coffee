@@ -6,16 +6,19 @@ fs = require 'fs'
 module.exports =
 
   config:
+    
     addListItems:
       title: 'Add new list-items'
       description: 'Automatically add a new list-item after the current (non-empty) one when pressing `ENTER`'
       type: 'boolean'
       default: true
+
     disableLanguageGfm:
       title: 'Disable language-gfm'
       description: 'Disable the default `language-gfm` package as this package is intended as its replacement'
       type: 'boolean'
       default: true
+
     indentListItems:
       title: 'Indent list-items'
       description: 'Automatically in- and outdent list-items by pressing `TAB` and `SHIFT+TAB`'
