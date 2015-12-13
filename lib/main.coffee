@@ -48,7 +48,10 @@ module.exports =
       @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:compile-grammar-and-reload': => @compileGrammar()
 
     # NOTE
-    # Thank you to @jonmagic from whom I've borrowed the first bit of code to make adding new list-items a reality. My implementation has since then taken a completely different approach, but his attempt was a pleasant jump-start.
+    # Thank you to @jonmagic from whom I've borrowed the first bit of code to
+    # make adding new list-items a reality. My implementation has since then
+    # taken a completely different approach, but his attempt was a pleasant
+    # jump-start.
     # https://github.com/jonmagic/gfm-lists
     # @burodepeper
 
@@ -65,7 +68,15 @@ module.exports =
               previousLine = editor.getTextInRange(previousRowRange)
 
               # NOTE
-              # At this point, it is rather tedious (as far as I know) to get to the tokenized version of {previousLine}. That is the reason why {tokens} a little further down is tokenized. But at this stage, we do need to know if {previousLine} was in fact Markdown, or from a different perspective, not a piece of embedded code. The reason for that is that the tokenized line below is tokenized without any context, so is Markdown by default. Therefore we determine if our current position is part of embedded code or not.
+              # At this point, it is rather tedious (as far as I know) to get
+              # to the tokenized version of {previousLine}. That is the reason
+              # why {tokens} a little further down is tokenized. But at this
+              # stage, we do need to know if {previousLine} was in fact
+              # Markdown, or from a different perspective, not a piece of
+              # embedded code. The reason for that is that the tokenized line
+              # below is tokenized without any context, so is Markdown by
+              # default. Therefore we determine if our current position is part
+              # of embedded code or not.
               # @burodepeper
 
               isEmbeddedCode = false
@@ -224,8 +235,6 @@ module.exports =
       if item = @parseItem(item)
 
         pattern =
-          # begin: '^\\s*([`~]{3,})\\s*(?:\\{)((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`]*)$'
-          # begin: '^\\s*([`~]{3,})\\s*((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`]*)$'
           begin: '^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`\\}]*)(\\}?)$'
           beginCaptures:
             1: name: 'punctuation.md'
