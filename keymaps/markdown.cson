@@ -1,5 +1,14 @@
-'atom-workspace':
+'.platform-darwin atom-workspace':
   'cmd-alt-ctrl-c': 'markdown:compile-grammar-and-reload'
+  'cmd-shift-x': 'markdown:toggle-task'
+
+'.platform-win32 atom-workspace':
+  'shift-alt-ctrl-c': 'markdown:compile-grammar-and-reload'
+  'ctrl-shift-x': 'markdown:toggle-task'
+
+'.platform-linux atom-workspace':
+  'shift-alt-ctrl-c': 'markdown:compile-grammar-and-reload'
+  'ctrl-shift-x': 'markdown:toggle-task'
 
 'atom-text-editor:not([mini])':
   'tab': 'markdown:indent-list-item'
