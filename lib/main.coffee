@@ -6,7 +6,7 @@ fs = require 'fs'
 module.exports =
 
   config:
-    
+
     addListItems:
       title: 'Add new list-items'
       description: 'Automatically add a new list-item after the current (non-empty) one when pressing `ENTER`'
@@ -33,6 +33,9 @@ module.exports =
     # Add commands to overwrite the behavior of tab within list-item context
     @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:indent-list-item': (event) => @indentListItem(event)
     @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:outdent-list-item': (event) => @outdentListItem(event)
+
+    # Add command to toggle a task
+    @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:toggle-task': (event) => @toggleTask(event)
 
     # Disable language-gfm as this package is intended as its replacement
     if atom.config.get('language-markdown.disableLanguageGfm')
@@ -153,8 +156,24 @@ module.exports =
       scopeDescriptor = editor.scopeDescriptorForBufferPosition(position)
       for scope in scopeDescriptor.scopes
         if scope.indexOf('list') isnt -1
-          return true
+          # NOTE
+          # return scope (which counts as true) which can be used to determine
+          # type of list-item
+          return scope
     return false
+
+  toggleTask: (event) ->
+    {editor, position} = @getEditorAndPosition(event)
+    listItem = @isListItem(editor, position)
+    if listItem and listItem.indexOf('task') isnt -1
+      if listItem.indexOf('completed') isnt -1
+        # TODO mark as incomplete
+        console.log "Mark as incomplete"
+      else
+        # TODO mark as complete
+        console.log "Mark as complete"
+    else
+      event.abortKeyBinding()
 
   # Loads the basic grammar structure,
   # which includes the grouped parts in the repository,
