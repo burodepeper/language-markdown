@@ -177,12 +177,14 @@ module.exports =
     {editor, position} = @getEditorAndPosition(event)
     listItem = @isListItem(editor, position)
     if listItem and listItem.indexOf('task') isnt -1
+      currentLine = editor.lineTextForBufferRow(position.row)
       if listItem.indexOf('completed') isnt -1
-        # TODO mark as incomplete
-        console.log "Mark as incomplete"
+        newLine = currentLine.replace(" [x] ", " [ ] ")
       else
-        # TODO mark as complete
-        console.log "Mark as complete"
+        newLine = currentLine.replace(" [ ] ", " [x] ")
+      # Replace the current line with the updated version
+      range = [[position.row, 0], [position.row, newLine.length]]
+      editor.setTextInBufferRange(range, newLine)
     else
       event.abortKeyBinding()
 
