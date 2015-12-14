@@ -159,11 +159,14 @@ module.exports =
 
   getEditorAndPosition: (event) ->
     editor = event.target.model
-    position = editor.cursors[0].marker.oldHeadBufferPosition
-    return {editor, position}
+    if editor
+      position = editor.cursors[0].marker.oldHeadBufferPosition
+      return {editor, position}
+    else
+      event.abortKeyBinding()
 
   isListItem: (editor, position) ->
-    if editor.getGrammar().name is 'Markdown'
+    if editor and editor.getGrammar().name is 'Markdown'
       scopeDescriptor = editor.scopeDescriptorForBufferPosition(position)
       for scope in scopeDescriptor.scopes
         if scope.indexOf('list') isnt -1
