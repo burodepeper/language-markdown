@@ -6,7 +6,7 @@ fs = require 'fs'
 module.exports =
 
   config:
-    
+
     addListItems:
       title: 'Add new list-items'
       description: 'Automatically add a new list-item after the current (non-empty) one when pressing `ENTER`'
@@ -34,6 +34,9 @@ module.exports =
     @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:indent-list-item': (event) => @indentListItem(event)
     @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:outdent-list-item': (event) => @outdentListItem(event)
 
+    # Add command to toggle a task
+    @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:toggle-task': (event) => @toggleTask(event)
+
     # Disable language-gfm as this package is intended as its replacement
     if atom.config.get('language-markdown.disableLanguageGfm')
       atom.packages.disablePackage('language-gfm')
@@ -45,7 +48,10 @@ module.exports =
       @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:compile-grammar-and-reload': => @compileGrammar()
 
     # NOTE
-    # Thank you to @jonmagic from whom I've borrowed the first bit of code to make adding new list-items a reality. My implementation has since then taken a completely different approach, but his attempt was a pleasant jump-start.
+    # Thank you to @jonmagic from whom I've borrowed the first bit of code to
+    # make adding new list-items a reality. My implementation has since then
+    # taken a completely different approach, but his attempt was a pleasant
+    # jump-start.
     # https://github.com/jonmagic/gfm-lists
     # @burodepeper
 
@@ -62,7 +68,15 @@ module.exports =
               previousLine = editor.getTextInRange(previousRowRange)
 
               # NOTE
-              # At this point, it is rather tedious (as far as I know) to get to the tokenized version of {previousLine}. That is the reason why {tokens} a little further down is tokenized. But at this stage, we do need to know if {previousLine} was in fact Markdown, or from a different perspective, not a piece of embedded code. The reason for that is that the tokenized line below is tokenized without any context, so is Markdown by default. Therefore we determine if our current position is part of embedded code or not.
+              # At this point, it is rather tedious (as far as I know) to get
+              # to the tokenized version of {previousLine}. That is the reason
+              # why {tokens} a little further down is tokenized. But at this
+              # stage, we do need to know if {previousLine} was in fact
+              # Markdown, or from a different perspective, not a piece of
+              # embedded code. The reason for that is that the tokenized line
+              # below is tokenized without any context, so is Markdown by
+              # default. Therefore we determine if our current position is part
+              # of embedded code or not.
               # @burodepeper
 
               isEmbeddedCode = false
@@ -153,8 +167,26 @@ module.exports =
       scopeDescriptor = editor.scopeDescriptorForBufferPosition(position)
       for scope in scopeDescriptor.scopes
         if scope.indexOf('list') isnt -1
-          return true
+          # NOTE
+          # return scope (which counts as true) which can be used to determine
+          # type of list-item
+          return scope
     return false
+
+  toggleTask: (event) ->
+    {editor, position} = @getEditorAndPosition(event)
+    listItem = @isListItem(editor, position)
+    if listItem and listItem.indexOf('task') isnt -1
+      currentLine = editor.lineTextForBufferRow(position.row)
+      if listItem.indexOf('completed') isnt -1
+        newLine = currentLine.replace(" [x] ", " [ ] ")
+      else
+        newLine = currentLine.replace(" [ ] ", " [x] ")
+      # Replace the current line with the updated version
+      range = [[position.row, 0], [position.row, newLine.length]]
+      editor.setTextInBufferRange(range, newLine)
+    else
+      event.abortKeyBinding()
 
   # Loads the basic grammar structure,
   # which includes the grouped parts in the repository,
@@ -205,8 +237,6 @@ module.exports =
       if item = @parseItem(item)
 
         pattern =
-          # begin: '^\\s*([`~]{3,})\\s*(?:\\{)((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`]*)$'
-          # begin: '^\\s*([`~]{3,})\\s*((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`]*)$'
           begin: '^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`\\}]*)(\\}?)$'
           beginCaptures:
             1: name: 'punctuation.md'
