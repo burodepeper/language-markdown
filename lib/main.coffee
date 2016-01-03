@@ -42,16 +42,13 @@ module.exports =
       atom.packages.disablePackage('language-gfm')
 
     # Only when in dev-mode,
-    # create the {language-markdown:compile-grammar} command,
-    # via which the compiler can be executed
+    # create the {language-markdown:compile-grammar} command via which the compiler can be executed.
+    # The keybinding via which this command can be executed, is also only available in dev-mode.
     if atom.inDevMode()
       @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:compile-grammar-and-reload': => @compileGrammar()
 
     # NOTE
-    # Thank you to @jonmagic from whom I've borrowed the first bit of code to
-    # make adding new list-items a reality. My implementation has since then
-    # taken a completely different approach, but his attempt was a pleasant
-    # jump-start.
+    # A thank you to @jonmagic from whom I've borrowed the first bit of code to make adding new list-items a reality. My implementation has since then taken a completely different approach, but his attempt was a pleasant jump-start.
     # https://github.com/jonmagic/gfm-lists
     # @burodepeper
 
