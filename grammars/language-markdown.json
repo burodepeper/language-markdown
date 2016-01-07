@@ -2769,6 +2769,43 @@
           ]
         },
         {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:sass))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "6": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.source.sass",
+          "patterns": [
+            {
+              "include": "source.sass"
+            }
+          ]
+        },
+        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:scss))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
@@ -2798,10 +2835,10 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.scss",
+          "contentName": "embedded.source.css.scss",
           "patterns": [
             {
-              "include": "source.scss"
+              "include": "source.css.scss"
             }
           ]
         },

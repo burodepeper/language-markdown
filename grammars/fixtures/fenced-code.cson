@@ -54,7 +54,8 @@ list: [
   { pattern:'r' }
   { pattern:'ruby' }
   { pattern:'rust|rs', include:'source.rust' }
-  { pattern:'scss' }
+  { pattern:'sass' }
+  { pattern:'scss', include:'source.css.scss' }
   { pattern:'sh|bash', include:'source.shell' }
   { pattern:'sql' }
   { pattern:'swift' }
