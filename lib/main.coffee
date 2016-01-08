@@ -25,6 +25,12 @@ module.exports =
       type: 'boolean'
       default: true
 
+    removeEmptyListItems:
+      title: 'Remove empty list-items'
+      description: 'Remove the automatically created empty list-items when left empty, leaving an empty line'
+      type: 'boolean'
+      default: true
+
   subscriptions: null
 
   activate: (state) ->
@@ -109,9 +115,13 @@ module.exports =
                           # Skip definition-lists
                           isListItem = false
                         break
+
                       else
                         isListItem = false
                         isPunctuation = false
+                        if atom.config.get('language-markdown.removeEmptyListItems')
+                          editor.setTextInBufferRange(previousRowRange, "")
+
                     else
                       isPunctuation = false
 
