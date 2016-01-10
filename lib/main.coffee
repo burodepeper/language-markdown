@@ -45,7 +45,8 @@ module.exports =
 
     # Disable language-gfm as this package is intended as its replacement
     if atom.config.get('language-markdown.disableLanguageGfm')
-      atom.packages.disablePackage('language-gfm')
+      unless atom.packages.isPackageDisabled('language-gfm')
+        atom.packages.disablePackage('language-gfm')
 
     # Only when in dev-mode,
     # create the {language-markdown:compile-grammar} command via which the compiler can be executed.
