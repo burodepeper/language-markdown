@@ -5,6 +5,8 @@ A realistic implementation of the [CommonMark](http://www.commonmark.org/) speci
 If you experience any issue above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/).
 
 [![Build Status](https://travis-ci.org/burodepeper/language-markdown.svg?branch=master)](https://travis-ci.org/burodepeper/language-markdown)
+[![apm](https://img.shields.io/apm/dm/language-markdown.svg)](https://atom.io/packages/language-markdown)
+[![apm](https://img.shields.io/apm/v/language-markdown.svg)]()
 
 ## Supported grammar
 
