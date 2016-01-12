@@ -1,4 +1,4 @@
-key: 'github'
+key: 'github-inlines'
 patterns: [
 
   # NOTE
@@ -108,33 +108,6 @@ patterns: [
       1: name: 'punctuation.md'
       3: name: 'punctuation.md'
       5: name: 'punctuation.md'
-  }
-
-  # Tables
-  {
-    name: 'table.storage.md'
-    # match: '^(\\|)(?=[ :])(.+)((?<=[ :])\\|?)\\s*$'
-    match: '^(\\|)(?=[ :])(.+)$'
-    captures:
-      1: name: 'punctuation.md'
-      2:
-        patterns: [
-          {
-            match: '(?<=[ :])\\|(?=$|[ :])'
-            name: 'punctuation.md'
-          }
-          {
-            match: '(:?)(-+)(:?)'
-            captures:
-              1: name: 'alignment.punctuation.md'
-              2: name: 'punctuation.md'
-              3: name: 'alignment.punctuation.md'
-          }
-          {
-            include: '#inlines'
-          }
-        ]
-      3: name: 'punctuation.md'
   }
 
   {
