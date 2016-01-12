@@ -23,11 +23,12 @@ patterns: [
 
   # Task list-item
   {
-    match: '^(?:\\s*)(- \\[ \\]\\s)(.*)$'
+    match: '^(?:\\s*)(- (\\[ \\])\\s)(.*)$'
     name: 'task.unordered.list.markup.md'
     captures:
-      1: { name: 'punctuation.md' }
-      2:
+      1: name: 'punctuation.md'
+      2: name: 'checkbox.punctuation.md'
+      3:
         patterns: [
           { include: '#blocks' }
           { include: '#inlines-in-blocks' }
@@ -36,11 +37,12 @@ patterns: [
 
   # Completed task list-item
   {
-    match: '^(?:\\s*)(- \\[x\\]\\s)(.*)$'
+    match: '^(?:\\s*)(- (\\[x\\])\\s)(.*)$'
     name: 'completed.task.unordered.list.markup.md'
     captures:
-      1: { name: 'punctuation.md' }
-      2:
+      1: name: 'punctuation.md'
+      2: name: 'checkbox.punctuation.md'
+      3:
         patterns: [
           { include: '#blocks' }
           { include: '#inlines-in-blocks' }

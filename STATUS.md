@@ -26,10 +26,10 @@
 | Github      | Tables                      |  12 of 12 | Good   |
 | Github      | Task lists                  |  10 of 10 | Good   |
 | CriticMark  | Annotation                  |    7 of 7 | Good   |
-| YAML        | Front matter                |    3 of 3 | Good   |
+| YAML/TOML   | Front matter                |    3 of 3 | Good   |
 | MD Extra    | -                           |  12 of 12 | Good   |
 
-Total number of tests: **445**
+Total number of tests: **452**
 
 ### Notes
 
