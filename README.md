@@ -11,7 +11,7 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
 ## Supported grammar
 
 - CommonMark Markdown
-- Github Flavored Markdown
+- Github Flavored Markdown (+AtomDoc)
 - Markdown Extra
 - CriticMark annotation
 - Front Matter (yaml and toml)
