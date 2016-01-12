@@ -827,6 +827,48 @@
           }
         },
         {
+          "match": "({)([A-Z][a-zA-Z]+)(})",
+          "name": "class.reference.gfm.variable.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "({)([A-Z][a-zA-Z]+)(::)([a-z][a-zA-Z]+)(})",
+          "name": "instance.method.reference.gfm.variable.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "({)([A-Z][a-zA-Z]+)(.)([a-z][a-zA-Z]+)(})",
+          "name": "class.method.reference.gfm.variable.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
           "name": "table.storage.md",
           "match": "^(\\|)(?=[ :])(.+)$",
           "captures": {

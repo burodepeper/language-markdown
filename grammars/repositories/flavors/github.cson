@@ -81,6 +81,36 @@ patterns: [
       3: name: 'punctuation.md'
   }
 
+  # {ClassName}
+  {
+    match: '(\{)([A-Z][a-zA-Z]+)(\})'
+    name: 'class.reference.gfm.variable.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+  }
+
+  # {ClassName::methodName}
+  {
+    match: '(\{)([A-Z][a-zA-Z]+)(::)([a-z][a-zA-Z]+)(\})'
+    name: 'instance.method.reference.gfm.variable.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
+
+  # {ClassName.methodName}
+  {
+    match: '(\{)([A-Z][a-zA-Z]+)(\.)([a-z][a-zA-Z]+)(\})'
+    name: 'class.method.reference.gfm.variable.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
+
+  # Tables
   {
     name: 'table.storage.md'
     # match: '^(\\|)(?=[ :])(.+)((?<=[ :])\\|?)\\s*$'
