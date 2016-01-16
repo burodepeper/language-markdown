@@ -48,9 +48,7 @@ module.exports =
       unless atom.packages.isPackageDisabled('language-gfm')
         atom.packages.disablePackage('language-gfm')
 
-    # Only when in dev-mode,
-    # create the {language-markdown:compile-grammar} command via which the compiler can be executed.
-    # The keybinding via which this command can be executed, is also only available in dev-mode.
+    # Create the {language-markdown:compile-grammar} command via which the compiler can be executed. The keybinding via which this command can be executed, is also only available in dev-mode.
     if atom.inDevMode()
       @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:compile-grammar-and-reload': => @compileGrammar()
 
@@ -72,15 +70,7 @@ module.exports =
               previousLine = editor.getTextInRange(previousRowRange)
 
               # NOTE
-              # At this point, it is rather tedious (as far as I know) to get
-              # to the tokenized version of {previousLine}. That is the reason
-              # why {tokens} a little further down is tokenized. But at this
-              # stage, we do need to know if {previousLine} was in fact
-              # Markdown, or from a different perspective, not a piece of
-              # embedded code. The reason for that is that the tokenized line
-              # below is tokenized without any context, so is Markdown by
-              # default. Therefore we determine if our current position is part
-              # of embedded code or not.
+              # At this point, it is rather tedious (as far as I know) to get to the tokenized version of {previousLine}. That is the reason why {tokens} a little further down is tokenized. But at this stage, we do need to know if {previousLine} was in fact Markdown, or from a different perspective, not a piece of embedded code. The reason for that is that the tokenized line below is tokenized without any context, so is Markdown by default. Therefore we determine if our current position is part of embedded code or not.
               # @burodepeper
 
               isEmbeddedCode = false
@@ -101,8 +91,7 @@ module.exports =
                   for scope in scopes
                     classes = scope.split('.')
 
-                    # a list-item is valid when a punctuation class is
-                    # immediately followed by a non-empty list-item class
+                    # a list-item is valid when a punctuation class is immediately followed by a non-empty list-item class
                     if classes.indexOf('punctuation') isnt -1
                       isPunctuation = true
 
@@ -150,22 +139,22 @@ module.exports =
                     break
 
   indentListItem: (event) ->
-    {editor, position} = @getEditorAndPosition(event)
+    {editor, position} = @_getEditorAndPosition(event)
     indentListItems = atom.config.get('language-markdown.indentListItems')
-    if indentListItems and @isListItem(editor, position)
+    if indentListItems and @_isListItem(editor, position)
       editor.indentSelectedRows(position.row)
     else
       event.abortKeyBinding()
 
   outdentListItem: (event) ->
-    {editor, position} = @getEditorAndPosition(event)
+    {editor, position} = @_getEditorAndPosition(event)
     indentListItems = atom.config.get('language-markdown.indentListItems')
-    if indentListItems and @isListItem(editor, position)
+    if indentListItems and @_isListItem(editor, position)
       editor.outdentSelectedRows(position.row)
     else
       event.abortKeyBinding()
 
-  getEditorAndPosition: (event) ->
+  _getEditorAndPosition: (event) ->
     editor = event.target.model
     if editor
       position = editor.cursors[0].marker.oldHeadBufferPosition
@@ -173,20 +162,19 @@ module.exports =
     else
       event.abortKeyBinding()
 
-  isListItem: (editor, position) ->
+  _isListItem: (editor, position) ->
     if editor and editor.getGrammar().name is 'Markdown'
       scopeDescriptor = editor.scopeDescriptorForBufferPosition(position)
       for scope in scopeDescriptor.scopes
         if scope.indexOf('list') isnt -1
           # NOTE
-          # return scope (which counts as true) which can be used to determine
-          # type of list-item
+          # return scope (which counts as true) which can be used to determine type of list-item
           return scope
     return false
 
   toggleTask: (event) ->
-    {editor, position} = @getEditorAndPosition(event)
-    listItem = @isListItem(editor, position)
+    {editor, position} = @_getEditorAndPosition(event)
+    listItem = @_isListItem(editor, position)
     if listItem and listItem.indexOf('task') isnt -1
       currentLine = editor.lineTextForBufferRow(position.row)
       if listItem.indexOf('completed') isnt -1
@@ -205,47 +193,49 @@ module.exports =
   # and appends them to the main repository,
   # and finally writes {grammar} to {output}
   compileGrammar: ->
-    input = '../grammars/repositories/markdown.cson'
-    output = '../grammars/language-markdown.json'
-    repositoryDirectories = ['blocks', 'flavors', 'inlines']
-    filepath = path.join(__dirname, input)
-    grammar = CSON.readFileSync(filepath)
+    if atom.inDevMode()
+      input = '../grammars/repositories/markdown.cson'
+      output = '../grammars/language-markdown.json'
+      repositoryDirectories = ['blocks', 'flavors', 'inlines']
+      filepath = path.join(__dirname, input)
+      grammar = CSON.readFileSync(filepath)
 
-    for directoryName in repositoryDirectories
-      directory = new Directory(path.join(__dirname, '../grammars/repositories/'+directoryName))
-      entries = directory.getEntriesSync()
-      for entry in entries
-        {key, patterns} = CSON.readFileSync(entry.path)
-        if key and patterns
-          grammar.repository[key] =
-            patterns: patterns
+      for directoryName in repositoryDirectories
+        directory = new Directory(path.join(__dirname, '../grammars/repositories/'+directoryName))
+        entries = directory.getEntriesSync()
+        for entry in entries
+          {key, patterns} = CSON.readFileSync(entry.path)
+          if key and patterns
+            grammar.repository[key] =
+              patterns: patterns
 
-    # Compile and add fenced-code-blocks to repository
-    grammar.repository['fenced-code-blocks'] =
-      patterns: @compileFencedCodeGrammar()
+      # Compile and add fenced-code-blocks to repository
+      grammar.repository['fenced-code-blocks'] =
+        patterns: @_compileFencedCodeGrammar()
 
-    # Write {grammar} to {filepath},
-    # and reload window when complete
-    filepath = path.join(__dirname, output)
-    CSON.writeFileSync filepath, grammar, do ->
-      atom.commands.dispatch 'body', 'window:reload'
+      # Write {grammar} to {filepath},
+      # and reload window when complete
+      filepath = path.join(__dirname, output)
+      CSON.writeFileSync filepath, grammar, do ->
+        atom.commands.dispatch 'body', 'window:reload'
+
 
   # Reads fixtures from {input},
   # parses {data} to expand shortened syntax,
   # creates and returns patterns from valid items in {data}.
-  compileFencedCodeGrammar: ->
+  _compileFencedCodeGrammar: ->
     input = '../grammars/fixtures/fenced-code.cson'
     filepath = path.join(__dirname, input)
     data = CSON.readFileSync(filepath)
-    @createPatternsFromData(data)
+    @_createPatternsFromData(data)
 
   # Transform an {item} into a {pattern} object,
   # and adds it to the {patterns} array.
   # Returns {patterns}.
-  createPatternsFromData: (data) ->
+  _createPatternsFromData: (data) ->
     patterns = []
     for item in data.list
-      if item = @parseItem(item)
+      if item = @_parseItem(item)
 
         pattern =
           begin: '^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`\\}]*)(\\}?)$'
@@ -268,7 +258,7 @@ module.exports =
 
   # When provided with a valid {item} ({item.pattern} is required),
   # missing {include} and/or {contentName} are generated.
-  parseItem: (item) ->
+  _parseItem: (item) ->
     if (typeof item is 'object') and item.pattern?
       unless item.include then item.include = 'source.'+item.pattern
       unless item.contentName then item.contentName = 'embedded.'+item.include
