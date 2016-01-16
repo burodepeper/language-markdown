@@ -1,4 +1,4 @@
-key: 'github'
+key: 'github-inlines'
 patterns: [
 
   # NOTE
@@ -81,30 +81,33 @@ patterns: [
       3: name: 'punctuation.md'
   }
 
+  # {ClassName}
   {
-    name: 'table.storage.md'
-    # match: '^(\\|)(?=[ :])(.+)((?<=[ :])\\|?)\\s*$'
-    match: '^(\\|)(?=[ :])(.+)$'
+    match: '(\{)([A-Z][a-zA-Z]+)(\})'
+    name: 'class.reference.gfm.variable.md'
     captures:
       1: name: 'punctuation.md'
-      2:
-        patterns: [
-          {
-            match: '(?<=[ :])\\|(?=$|[ :])'
-            name: 'punctuation.md'
-          }
-          {
-            match: '(:?)(-+)(:?)'
-            captures:
-              1: name: 'alignment.punctuation.md'
-              2: name: 'punctuation.md'
-              3: name: 'alignment.punctuation.md'
-          }
-          {
-            include: '#inlines'
-          }
-        ]
       3: name: 'punctuation.md'
+  }
+
+  # {ClassName::methodName}
+  {
+    match: '(\{)([A-Z][a-zA-Z]+)(::)([a-z][a-zA-Z]+)(\})'
+    name: 'instance.method.reference.gfm.variable.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
+
+  # {ClassName.methodName}
+  {
+    match: '(\{)([A-Z][a-zA-Z]+)(\.)([a-z][a-zA-Z]+)(\})'
+    name: 'class.method.reference.gfm.variable.md'
+    captures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+      5: name: 'punctuation.md'
   }
 
   {
