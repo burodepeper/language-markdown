@@ -14,7 +14,10 @@ describe "Markdown", ->
     editor = atom.workspace.buildTextEditor()
     editor.setText('')
     editor.setCursorBufferPosition(0, 0)
-    # TODO set width of tab to 2 characters, and only use soft-tabs
+
+    editor.config.set('editor.softTabs', true)
+    editor.config.set('editor.tabLength', 2)
+    editor.config.set('editor.tabType', 'soft')
 
     runs ->
       grammar = atom.grammars.grammarForScopeName('text.md')
@@ -64,11 +67,10 @@ describe "Markdown", ->
       atom.commands.dispatch(editorElement, "markdown:indent-list-item")
       expect(editor.getText()).toBe('    - item')
 
-    # TODO How does indenting work with tabs instead of spaces?
-    xit 'indents an tabbed indented list-item', ->
+    it 'indents a tabbed indented list-item', ->
       editor.setText('\t- item')
       atom.commands.dispatch(editorElement, "markdown:indent-list-item")
-      expect(editor.getText()).toBe('\t\t- item')
+      expect(editor.getText()).toBe('  \t- item')
 
     it 'does NOT indent an invalid list-item', ->
       editor.setText('-item')
@@ -84,7 +86,7 @@ describe "Markdown", ->
       editor.setText('```\n- item\n```')
       editor.setCursorBufferPosition(1, 3)
       atom.commands.dispatch(editorElement, "markdown:indent-list-item")
-      expect(editor.getText()).not.toBe('```\n  - item\n```')
+      expect(editor.getText()).toBe('```\n- item\n```')
 
     it 'indents a valid numbered list-item', ->
       editor.setText('1. item')
@@ -97,10 +99,10 @@ describe "Markdown", ->
       expect(editor.getText()).toBe('  - [ ] task')
 
     # TODO it should not indent definition-lists
-    xit 'does NOT indent definition-lists', ->
-      editor.setText(': definition')
-      atom.commands.dispatch(editorElement, "markdown:indent-list-item")
-      expect(editor.getText()).toBe(': definition')
+    # xit 'does NOT indent definition-lists', ->
+    #   editor.setText(': definition')
+    #   atom.commands.dispatch(editorElement, "markdown:indent-list-item")
+    #   expect(editor.getText()).toBe(': definition')
 
   # describe 'outdenting list-items', ->
 
