@@ -51,7 +51,7 @@ list: [
   # { pattern:'php', include:'text.html.basic' }
   # { pattern:'php', include:'text.html.php', contentName:'source.js.embedded.html' }
   { pattern:'py|python', include:'source.python' }
-  { pattern:'r' }
+  { pattern:'(r)|(\\{r[^\\}]*\\})', include:'source.r' }
   { pattern:'ruby' }
   { pattern:'rust|rs', include:'source.rust' }
   { pattern:'sass' }
