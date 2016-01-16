@@ -102,8 +102,7 @@ module.exports =
                         if classes.indexOf('ordered') isnt -1
                           typeOfList = 'ordered'
                         if classes.indexOf('definition') isnt -1
-                          # Skip definition-lists
-                          isListItem = false
+                          typeOfList = 'definition'
                         break
 
                       else
@@ -115,7 +114,7 @@ module.exports =
                     else
                       isPunctuation = false
 
-                  if isListItem
+                  if isListItem and typeOfList isnt 'definition'
                     text = token.value
 
                     # increment ordered list-item
