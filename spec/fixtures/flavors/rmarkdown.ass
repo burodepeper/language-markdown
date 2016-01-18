@@ -1,0 +1,62 @@
+@1
+"```{r}"+
+"summary(cars)"+
+"```" {
+
+}
+
+@2
+"```{r, echo=FALSE}"+
+"summary(cars)"+
+"```" {
+
+}
+
+@3
+"```{r, echo=FALSE}"+
+"plot(cars)"+
+"```" {
+
+}
+
+@4
+"```{r, eval=FALSE}"+
+"summary(cars)"+
+"```" {
+
+}
+
+@5
+"```{r, results='asis'}"+
+"knitr::kable(mtcars)"+
+"```" {
+
+}
+
+@6
+"```{r setup, include=FALSE}"+
+"knitr::opts_chunk$set(cache=TRUE)"+
+"```" {
+
+}
+
+@7
+"```{r engine='Rcpp'}"+
+"#include <Rcpp.h>"+
+""+
+"// [[Rcpp::export]]"+
+"int fibonacci(const int x) {"+
+"  if (x == 0 || x == 1) return(x);"+
+"  return (fibonacci(x - 1)) + fibonacci(x - 2);"+
+"}"+
+"```" {
+
+}
+
+@8
+"```{r}"+
+"fibonacci(10L)"+
+"fibonacci(20L)"+
+"```" {
+  
+}
