@@ -1,0 +1,22 @@
+# http://rmarkdown.rstudio.com/authoring_rcodechunks.html
+
+key: 'rmarkdown'
+patterns: [
+  {
+    begin: '^(```)((\\{)(r)([^,]*)(,?)([^\\}]*)(\\}))$'
+    end: '^(\\1)$'
+    name: 'fenced.code.md'
+    contentName: 'source.r'
+    beginCaptures:
+      1: name: 'punctuation.md'
+      # 2:
+      3: name: 'punctuation.md'
+      4: name: 'language.constant.md'
+      # 5: TODO arguments before comma
+      6: name: 'punctuation.md'
+      # 7: TODO arguments after comma
+      8: name: 'punctuation.md'
+    endCaptures:
+      1: name: 'punctuation.md'
+  }
+]

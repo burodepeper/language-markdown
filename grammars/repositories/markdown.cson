@@ -47,6 +47,7 @@ repository:
       { include: '#criticmark' }
       { include: '#github-inlines' }
       { include: '#markdown-extra' }
+      { include: '#rmarkdown' }
     ]
 
   # NOTE by @burodepeper
