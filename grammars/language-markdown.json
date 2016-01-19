@@ -89,6 +89,9 @@
           "include": "#github-inlines"
         },
         {
+          "include": "#rmarkdown"
+        },
+        {
           "include": "#markdown-extra"
         }
       ]
@@ -964,6 +967,57 @@
               ]
             },
             "2": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "rmarkdown": {
+      "patterns": [
+        {
+          "begin": "^(```)((\\{)(r)([^,]*)(,?)([^\\}]*)(\\}))$",
+          "end": "^(\\1)$",
+          "name": "fenced.code.md",
+          "contentName": "embedded.source.r",
+          "patterns": [
+            {
+              "include": "source.r"
+            }
+          ],
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "4": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "6": {
+              "name": "punctuation.md"
+            },
+            "7": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "8": {
+              "name": "punctuation.md"
+            }
+          },
+          "endCaptures": {
+            "1": {
               "name": "punctuation.md"
             }
           }

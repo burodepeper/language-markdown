@@ -46,8 +46,8 @@ repository:
     patterns: [
       { include: '#criticmark' }
       { include: '#github-inlines' }
-      { include: '#markdown-extra' }
       { include: '#rmarkdown' }
+      { include: '#markdown-extra' }
     ]
 
   # NOTE by @burodepeper

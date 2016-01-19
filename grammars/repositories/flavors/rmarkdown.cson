@@ -6,15 +6,18 @@ patterns: [
     begin: '^(```)((\\{)(r)([^,]*)(,?)([^\\}]*)(\\}))$'
     end: '^(\\1)$'
     name: 'fenced.code.md'
-    contentName: 'source.r'
+    contentName: 'embedded.source.r'
+    patterns: [{ include: 'source.r' }]
     beginCaptures:
       1: name: 'punctuation.md'
       # 2:
       3: name: 'punctuation.md'
       4: name: 'language.constant.md'
-      # 5: TODO arguments before comma
+      # before comma
+      5: patterns: [{ include: '#special-attribute-elements' }]
       6: name: 'punctuation.md'
-      # 7: TODO arguments after comma
+      # after comma
+      7: patterns: [{ include: '#special-attribute-elements' }]
       8: name: 'punctuation.md'
     endCaptures:
       1: name: 'punctuation.md'
