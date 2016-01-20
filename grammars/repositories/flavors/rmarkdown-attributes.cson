@@ -1,0 +1,49 @@
+key: 'rmarkdown-attributes'
+patterns: [
+
+  {
+    match: '(eval|include|purl|collapse|echo|error|message|warning|highlight|prompt|strip\\.white|tidy|autodep|cache|cache\\.lazy|external|fig\\.showtext|sanitize)(=)(TRUE|FALSE)'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.constant.md'
+  }
+
+  {
+    match: '(interval|dpi|fig\\.(height|width|retina))(=)([0-9]+)'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.numeric.constant.md'
+  }
+
+  {
+    match: '(child|code|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|vars)|dependson|dev.args|fig\\.(?:cap|ext|process|scap|subcap|showtext)|out\\.(?:extra|height|width)|resize\\.(?:height|width))(=)(NULL)'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.constant.md'
+  }
+
+  {
+    match: '(results|engine|child|code|comment|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:align|cap|env|ext|keep|lp|path|pos|process|scap|subcap|show)|out\\.extra)(=)(([\'|"])[^\\s|=|,|\'|"]+(\\4))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+  }
+
+  # {
+  #   match: '([^=|,]+)(=)([^\\s|=|,|\\}]+)'
+  #   name: 'rmarkdown.attribute.meta.md'
+  #   captures:
+  #     1: name: 'key.keyword.md'
+  #     2: name: 'punctuation.md'
+  #     3: name: 'value.string.md'
+  # }
+
+]

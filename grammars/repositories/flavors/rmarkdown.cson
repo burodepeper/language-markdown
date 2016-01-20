@@ -4,22 +4,28 @@
 key: 'rmarkdown'
 patterns: [
   {
-    begin: '^(```)((\\{)(r)([^,]*)(,?)([^\\}]*)(\\}))$'
+    # begin: '^(```)((\\{)(r)([^,]*)(,?)([^\\}]*)(\\}))$'
+    begin: '(?x)
+      (```)(
+        (\\{)(r)(?:\\s)?
+        (?:([a-z0-9|_]*)(?=[\\s|,|}]))?
+        ([^\\}]*)?
+        (\\})
+      )
+    '
     end: '^(\\1)$'
-    name: 'fenced.code.md'
+
+    name: 'r.fenced.code.md'
     contentName: 'embedded.source.r'
     patterns: [{ include: 'source.r' }]
+
     beginCaptures:
       1: name: 'punctuation.md'
-      # 2:
       3: name: 'punctuation.md'
       4: name: 'language.constant.md'
-      # before comma
-      5: patterns: [{ include: '#special-attribute-elements' }]
-      6: name: 'punctuation.md'
-      # after comma
-      7: patterns: [{ include: '#special-attribute-elements' }]
-      8: name: 'punctuation.md'
+      5: name: 'label.string.md'
+      6: patterns: [{ include: '#rmarkdown-attributes' }]
+      7: name: 'punctuation.md'
     endCaptures:
       1: name: 'punctuation.md'
   }
