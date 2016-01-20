@@ -3,7 +3,7 @@
 ## Current focus
 
 - [ ] Improve syntax-highlighting in combination with default syntax-themes
-- [ ] Keybinding for toggling task-list-items (cmd+shift+x?)
+- [x] Keybinding for toggling task-list-items (cmd+shift+x?)
 
 ## Ideas for a brighter future
 

@@ -28,9 +28,9 @@ repository:
       { include: '#headings' }
       { include: '#lists' }
       { include: '#quotes' }
-      { include: '#tables' }
       { include: '#fenced-code' }
       { include: '#fenced-code-blocks' }
+      { include: '#github-blocks' }
     ]
   inlines:
     patterns: [
@@ -45,7 +45,7 @@ repository:
   flavors:
     patterns: [
       { include: '#criticmark' }
-      { include: '#github' }
+      { include: '#github-inlines' }
       { include: '#markdown-extra' }
     ]
 
@@ -60,7 +60,5 @@ repository:
       { include: '#html' }
       { include: '#links' }
       { include: '#emphasis' }
-      # { include: '#github' }
-      # { include: '#criticmark' }
       { include: '#flavors' }
     ]

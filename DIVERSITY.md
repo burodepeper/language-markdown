@@ -102,6 +102,9 @@ jlord/sheetsee.js@a5c3785ed8d6a35868bc169f07e40e889087fd2e
 GH-26
 jlord/sheetsee.js#26
 
+- `options` (optional) The {Object} with disable options (default: {}):
+- Other AtomDoc references: {ClassName::methodName} and {ClassName.methodName}
+
 :+1:
 david :+1:
 ~~bad~~ word

@@ -36,7 +36,7 @@ list: [
   { pattern:'haskell' }
   { pattern:'html', include:'text.html.basic' }
   { pattern:'java' }
-  { pattern:'javascript|js', include:'source.js' }
+  { pattern:'javascript|js|jsx', include:'source.js' }
   { pattern:'json' }
   { pattern:'julia' }
   { pattern:'less' }
@@ -54,7 +54,8 @@ list: [
   { pattern:'r' }
   { pattern:'ruby' }
   { pattern:'rust|rs', include:'source.rust' }
-  { pattern:'scss' }
+  { pattern:'sass' }
+  { pattern:'scss', include:'source.css.scss' }
   { pattern:'sh|bash', include:'source.shell' }
   { pattern:'sql' }
   { pattern:'swift' }

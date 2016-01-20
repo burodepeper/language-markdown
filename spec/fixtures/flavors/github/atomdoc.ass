@@ -1,0 +1,49 @@
+@1
+"The {String} name of the package to disable." {
+  text.md {
+    "The "
+    "{String}" {
+      class.reference.gfm.variable.md {
+        "{": punctuation.md
+        "String"
+        "}": punctuation.md
+      }
+    }
+    " name of the package to disable."
+  }
+}
+
+@2
+"{ClassName::methodName}" {
+  text.md {
+    instance.method.reference.gfm.variable.md {
+      "{": punctuation.md
+      "ClassName"
+      "::": punctuation.md
+      "methodName"
+      "}": punctuation.md
+    }
+  }
+}
+
+@3
+"{ClassName.methodName}" {
+  text.md {
+    class.method.reference.gfm.variable.md {
+      "{": punctuation.md
+      "ClassName"
+      ".": punctuation.md
+      "methodName"
+      "}": punctuation.md
+    }
+  }
+}
+
+@4
+"{className}": text.md
+
+@5
+"{className::MethodName}": text.md
+
+@6
+"{className.MethodName}": text.md

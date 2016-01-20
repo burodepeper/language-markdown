@@ -25,6 +25,12 @@ module.exports =
       type: 'boolean'
       default: true
 
+    removeEmptyListItems:
+      title: 'Remove empty list-items'
+      description: 'Remove the automatically created empty list-items when left empty, leaving an empty line'
+      type: 'boolean'
+      default: true
+
   subscriptions: null
 
   activate: (state) ->
@@ -39,16 +45,15 @@ module.exports =
 
     # Disable language-gfm as this package is intended as its replacement
     if atom.config.get('language-markdown.disableLanguageGfm')
-      atom.packages.disablePackage('language-gfm')
+      unless atom.packages.isPackageDisabled('language-gfm')
+        atom.packages.disablePackage('language-gfm')
 
-    # Only when in dev-mode,
-    # create the {language-markdown:compile-grammar} command,
-    # via which the compiler can be executed
+    # Create the {language-markdown:compile-grammar} command via which the compiler can be executed. The keybinding via which this command can be executed, is also only available in dev-mode.
     if atom.inDevMode()
       @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:compile-grammar-and-reload': => @compileGrammar()
 
     # NOTE
-    # Thank you to @jonmagic from whom I've borrowed the first bit of code to make adding new list-items a reality. My implementation has since then taken a completely different approach, but his attempt was a pleasant jump-start.
+    # A thank you to @jonmagic from whom I've borrowed the first bit of code to make adding new list-items a reality. My implementation has since then taken a completely different approach, but his attempt was a pleasant jump-start.
     # https://github.com/jonmagic/gfm-lists
     # @burodepeper
 
@@ -86,8 +91,7 @@ module.exports =
                   for scope in scopes
                     classes = scope.split('.')
 
-                    # a list-item is valid when a punctuation class is
-                    # immediately followed by a non-empty list-item class
+                    # a list-item is valid when a punctuation class is immediately followed by a non-empty list-item class
                     if classes.indexOf('punctuation') isnt -1
                       isPunctuation = true
 
@@ -101,9 +105,13 @@ module.exports =
                           # Skip definition-lists
                           isListItem = false
                         break
+
                       else
                         isListItem = false
                         isPunctuation = false
+                        if atom.config.get('language-markdown.removeEmptyListItems')
+                          editor.setTextInBufferRange(previousRowRange, "")
+
                     else
                       isPunctuation = false
 
@@ -131,47 +139,51 @@ module.exports =
                     break
 
   indentListItem: (event) ->
-    {editor, position} = @getEditorAndPosition(event)
+    {editor, position} = @_getEditorAndPosition(event)
     indentListItems = atom.config.get('language-markdown.indentListItems')
-    if indentListItems and @isListItem(editor, position)
+    if indentListItems and @_isListItem(editor, position)
       editor.indentSelectedRows(position.row)
     else
       event.abortKeyBinding()
 
   outdentListItem: (event) ->
-    {editor, position} = @getEditorAndPosition(event)
+    {editor, position} = @_getEditorAndPosition(event)
     indentListItems = atom.config.get('language-markdown.indentListItems')
-    if indentListItems and @isListItem(editor, position)
+    if indentListItems and @_isListItem(editor, position)
       editor.outdentSelectedRows(position.row)
     else
       event.abortKeyBinding()
 
-  getEditorAndPosition: (event) ->
+  _getEditorAndPosition: (event) ->
     editor = event.target.model
-    position = editor.cursors[0].marker.oldHeadBufferPosition
-    return {editor, position}
+    if editor
+      position = editor.cursors[0].marker.oldHeadBufferPosition
+      return {editor, position}
+    else
+      event.abortKeyBinding()
 
-  isListItem: (editor, position) ->
-    if editor.getGrammar().name is 'Markdown'
+  _isListItem: (editor, position) ->
+    if editor and editor.getGrammar().name is 'Markdown'
       scopeDescriptor = editor.scopeDescriptorForBufferPosition(position)
       for scope in scopeDescriptor.scopes
         if scope.indexOf('list') isnt -1
           # NOTE
-          # return scope (which counts as true) which can be used to determine
-          # type of list-item
+          # return scope (which counts as true) which can be used to determine type of list-item
           return scope
     return false
 
   toggleTask: (event) ->
-    {editor, position} = @getEditorAndPosition(event)
-    listItem = @isListItem(editor, position)
+    {editor, position} = @_getEditorAndPosition(event)
+    listItem = @_isListItem(editor, position)
     if listItem and listItem.indexOf('task') isnt -1
+      currentLine = editor.lineTextForBufferRow(position.row)
       if listItem.indexOf('completed') isnt -1
-        # TODO mark as incomplete
-        console.log "Mark as incomplete"
+        newLine = currentLine.replace(" [x] ", " [ ] ")
       else
-        # TODO mark as complete
-        console.log "Mark as complete"
+        newLine = currentLine.replace(" [ ] ", " [x] ")
+      # Replace the current line with the updated version
+      range = [[position.row, 0], [position.row, newLine.length]]
+      editor.setTextInBufferRange(range, newLine)
     else
       event.abortKeyBinding()
 
@@ -181,51 +193,51 @@ module.exports =
   # and appends them to the main repository,
   # and finally writes {grammar} to {output}
   compileGrammar: ->
-    input = '../grammars/repositories/markdown.cson'
-    output = '../grammars/language-markdown.json'
-    repositoryDirectories = ['blocks', 'flavors', 'inlines']
-    filepath = path.join(__dirname, input)
-    grammar = CSON.readFileSync(filepath)
+    if atom.inDevMode()
+      input = '../grammars/repositories/markdown.cson'
+      output = '../grammars/language-markdown.json'
+      repositoryDirectories = ['blocks', 'flavors', 'inlines']
+      filepath = path.join(__dirname, input)
+      grammar = CSON.readFileSync(filepath)
 
-    for directoryName in repositoryDirectories
-      directory = new Directory(path.join(__dirname, '../grammars/repositories/'+directoryName))
-      entries = directory.getEntriesSync()
-      for entry in entries
-        {key, patterns} = CSON.readFileSync(entry.path)
-        if key and patterns
-          grammar.repository[key] =
-            patterns: patterns
+      for directoryName in repositoryDirectories
+        directory = new Directory(path.join(__dirname, '../grammars/repositories/'+directoryName))
+        entries = directory.getEntriesSync()
+        for entry in entries
+          {key, patterns} = CSON.readFileSync(entry.path)
+          if key and patterns
+            grammar.repository[key] =
+              patterns: patterns
 
-    # Compile and add fenced-code-blocks to repository
-    grammar.repository['fenced-code-blocks'] =
-      patterns: @compileFencedCodeGrammar()
+      # Compile and add fenced-code-blocks to repository
+      grammar.repository['fenced-code-blocks'] =
+        patterns: @_compileFencedCodeGrammar()
 
-    # Write {grammar} to {filepath},
-    # and reload window when complete
-    filepath = path.join(__dirname, output)
-    CSON.writeFileSync filepath, grammar, do ->
-      atom.commands.dispatch 'body', 'window:reload'
+      # Write {grammar} to {filepath},
+      # and reload window when complete
+      filepath = path.join(__dirname, output)
+      CSON.writeFileSync filepath, grammar, do ->
+        atom.commands.dispatch 'body', 'window:reload'
+
 
   # Reads fixtures from {input},
   # parses {data} to expand shortened syntax,
   # creates and returns patterns from valid items in {data}.
-  compileFencedCodeGrammar: ->
+  _compileFencedCodeGrammar: ->
     input = '../grammars/fixtures/fenced-code.cson'
     filepath = path.join(__dirname, input)
     data = CSON.readFileSync(filepath)
-    @createPatternsFromData(data)
+    @_createPatternsFromData(data)
 
   # Transform an {item} into a {pattern} object,
   # and adds it to the {patterns} array.
   # Returns {patterns}.
-  createPatternsFromData: (data) ->
+  _createPatternsFromData: (data) ->
     patterns = []
     for item in data.list
-      if item = @parseItem(item)
+      if item = @_parseItem(item)
 
         pattern =
-          # begin: '^\\s*([`~]{3,})\\s*(?:\\{)((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`]*)$'
-          # begin: '^\\s*([`~]{3,})\\s*((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`]*)$'
           begin: '^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`\\}]*)(\\}?)$'
           beginCaptures:
             1: name: 'punctuation.md'
@@ -246,7 +258,7 @@ module.exports =
 
   # When provided with a valid {item} ({item.pattern} is required),
   # missing {include} and/or {contentName} are generated.
-  parseItem: (item) ->
+  _parseItem: (item) ->
     if (typeof item is 'object') and item.pattern?
       unless item.include then item.include = 'source.'+item.pattern
       unless item.contentName then item.contentName = 'embedded.'+item.include

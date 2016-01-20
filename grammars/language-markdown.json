@@ -45,13 +45,13 @@
           "include": "#quotes"
         },
         {
-          "include": "#tables"
-        },
-        {
           "include": "#fenced-code"
         },
         {
           "include": "#fenced-code-blocks"
+        },
+        {
+          "include": "#github-blocks"
         }
       ]
     },
@@ -86,7 +86,7 @@
           "include": "#criticmark"
         },
         {
-          "include": "#github"
+          "include": "#github-inlines"
         },
         {
           "include": "#markdown-extra"
@@ -458,13 +458,16 @@
           }
         },
         {
-          "match": "^(?:\\s*)(- \\[ \\]\\s)(.*)$",
+          "match": "^(?:\\s*)(- (\\[ \\])\\s)(.*)$",
           "name": "task.unordered.list.markup.md",
           "captures": {
             "1": {
               "name": "punctuation.md"
             },
             "2": {
+              "name": "checkbox.punctuation.md"
+            },
+            "3": {
               "patterns": [
                 {
                   "include": "#blocks"
@@ -477,13 +480,16 @@
           }
         },
         {
-          "match": "^(?:\\s*)(- \\[x\\]\\s)(.*)$",
+          "match": "^(?:\\s*)(- (\\[x\\])\\s)(.*)$",
           "name": "completed.task.unordered.list.markup.md",
           "captures": {
             "1": {
               "name": "punctuation.md"
             },
             "2": {
+              "name": "checkbox.punctuation.md"
+            },
+            "3": {
               "patterns": [
                 {
                   "include": "#blocks"
@@ -721,7 +727,48 @@
         }
       ]
     },
-    "github": {
+    "github-blocks": {
+      "patterns": [
+        {
+          "name": "table.storage.md",
+          "match": "^(\\|)(?=[ :])(.+)$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "match": "(?<=[ :])\\|(?=$|[ :])",
+                  "name": "punctuation.md"
+                },
+                {
+                  "match": "(:?)(-+)(:?)",
+                  "captures": {
+                    "1": {
+                      "name": "alignment.punctuation.md"
+                    },
+                    "2": {
+                      "name": "punctuation.md"
+                    },
+                    "3": {
+                      "name": "alignment.punctuation.md"
+                    }
+                  }
+                },
+                {
+                  "include": "#inlines-in-blocks"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "github-inlines": {
       "patterns": [
         {
           "match": "(?<=^|\\s|\"|'|\\(|\\[)((@)([a-zA-Z0-9][a-zA-Z0-9\\-/]*[a-zA-Z0-9]))(?=[\\s\"'\\.,;:\\)\\]])",
@@ -827,38 +874,43 @@
           }
         },
         {
-          "name": "table.storage.md",
-          "match": "^(\\|)(?=[ :])(.+)$",
+          "match": "({)([A-Z][a-zA-Z]+)(})",
+          "name": "class.reference.gfm.variable.md",
           "captures": {
             "1": {
               "name": "punctuation.md"
             },
-            "2": {
-              "patterns": [
-                {
-                  "match": "(?<=[ :])\\|(?=$|[ :])",
-                  "name": "punctuation.md"
-                },
-                {
-                  "match": "(:?)(-+)(:?)",
-                  "captures": {
-                    "1": {
-                      "name": "alignment.punctuation.md"
-                    },
-                    "2": {
-                      "name": "punctuation.md"
-                    },
-                    "3": {
-                      "name": "alignment.punctuation.md"
-                    }
-                  }
-                },
-                {
-                  "include": "#inlines"
-                }
-              ]
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "({)([A-Z][a-zA-Z]+)(::)([a-z][a-zA-Z]+)(})",
+          "name": "instance.method.reference.gfm.variable.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
             },
             "3": {
+              "name": "punctuation.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "({)([A-Z][a-zA-Z]+)(.)([a-z][a-zA-Z]+)(})",
+          "name": "class.method.reference.gfm.variable.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "punctuation.md"
+            },
+            "5": {
               "name": "punctuation.md"
             }
           }
@@ -2325,7 +2377,7 @@
           ]
         },
         {
-          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:javascript|js))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:javascript|js|jsx))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
               "name": "punctuation.md"
@@ -2769,6 +2821,43 @@
           ]
         },
         {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:sass))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "6": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.source.sass",
+          "patterns": [
+            {
+              "include": "source.sass"
+            }
+          ]
+        },
+        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:scss))(?=( |$))\\s*([^`\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
@@ -2798,10 +2887,10 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.scss",
+          "contentName": "embedded.source.css.scss",
           "patterns": [
             {
-              "include": "source.scss"
+              "include": "source.css.scss"
             }
           ]
         },
