@@ -25,6 +25,11 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
   - Toggle tasks with <kbd>cmd+shift+x</kbd> or <kbd>ctrl+shift+x</kbd>
   - Remove empty list-items when pressing <kbd>enter</kbd>
 
+## Syntax theme support
+
+TODO List of (default) themes that are supported
+TODO How to add syntax highlighting to your own theme
+
 ## Installation instructions
 
 1. Install `language-markdown` via
