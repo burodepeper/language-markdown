@@ -4,12 +4,10 @@
 "```" {
   text.md {
     r.fenced.code.md {
-      "```{r}" {
-        "```": punctuation.md
-        "{": punctuation.md
-        "r": language.constant.md
-        "}": punctuation.md
-      }
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      "}": punctuation.md
       "summary(cars)": embedded.source.r
       "```": punctuation.md
     }
@@ -17,133 +15,221 @@
 }
 
 @2
-"```{r, echo=FALSE}"+
-"summary(cars)"+
-"```" {
+"```{r, echo=FALSE}" {
   text.md {
     r.fenced.code.md {
-      "```{r, echo=FALSE}" {
-        "```": punctuation.md
-        "{": punctuation.md
-        "r": language.constant.md
-        ", "
-        "echo=FALSE" {
-          rmarkdown.attribute.meta.md {
-            "echo": key.keyword.md
-            "=": punctuation.md
-            "FALSE": value.constant.md
-          }
-        }
-        "}": punctuation.md
-      }
-      "summary(cars)": embedded.source.r
       "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      ", "
+      "echo=FALSE" {
+        rmarkdown.attribute.meta.md {
+          "echo": key.keyword.md
+          "=": punctuation.md
+          "FALSE": value.constant.md
+        }
+      }
+      "}": punctuation.md
     }
   }
 }
 
 @3a
-"```{r eval=FALSE}"+
-"summary(cars)"+
-"```" {
+"```{r eval=FALSE}" {
   text.md {
     r.fenced.code.md {
-      "```{r eval=FALSE}" {
-        "```": punctuation.md
-        "{": punctuation.md
-        "r": language.constant.md
-        " "
-        "eval=FALSE" {
-          rmarkdown.attribute.meta.md {
-            "eval": key.keyword.md
-            "=": punctuation.md
-            "FALSE": value.constant.md
-          }
-        }
-        "}": punctuation.md
-      }
-      "summary(cars)": embedded.source.r
       "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "eval=FALSE" {
+        rmarkdown.attribute.meta.md {
+          "eval": key.keyword.md
+          "=": punctuation.md
+          "FALSE": value.constant.md
+        }
+      }
+      "}": punctuation.md
     }
   }
 }
 
 @3b
-"```{r eval=FALS}"+
-"summary(cars)"+
-"```" {
+"```{r eval=FALS}" {
   text.md {
     r.fenced.code.md {
-      "```{r eval=FALS}" {
-        "```": punctuation.md
-        "{": punctuation.md
-        "r": language.constant.md
-        " "
-        "eval=FALS"
-        "}": punctuation.md
-      }
-      "summary(cars)": embedded.source.r
       "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "eval=FALS"
+      "}": punctuation.md
     }
   }
 }
 
 @4
-"```{r, results='asis'}"+
-"knitr::kable(mtcars)"+
-"```" {
+"```{r, results='asis'}" {
   text.md {
     r.fenced.code.md {
-      "```{r, results='asis'}" {
-        "```": punctuation.md
-        "{": punctuation.md
-        "r": language.constant.md
-        ", "
-        "results='asis'" {
-          rmarkdown.attribute.meta.md {
-            "results": key.keyword.md
-            "=": punctuation.md
-            "'asis'" {
-              value.string.md {
-                "'": punctuation.md
-                "asis"
-                "'": punctuation.md
-              }
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      ", "
+      "results='asis'" {
+        rmarkdown.attribute.meta.md {
+          "results": key.keyword.md
+          "=": punctuation.md
+          "'asis'" {
+            value.string.md {
+              "'": punctuation.md
+              "asis"
+              "'": punctuation.md
             }
           }
         }
-        "}": punctuation.md
       }
-      "knitr::kable(mtcars)": embedded.source.r
-      "```": punctuation.md
+      "}": punctuation.md
     }
   }
 }
 
-# @5
-# "```{r setup, include=FALSE}"+
-# "knitr::opts_chunk$set(cache=TRUE)"+
-# "```" {
-#
-# }
+@5
+"```{r setup, include=FALSE}" {
+  text.md {
+    r.fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "setup": label.string.md
+      ", "
+      "include=FALSE" {
+        rmarkdown.attribute.meta.md {
+          "include": key.keyword.md
+          "=": punctuation.md
+          "FALSE": value.constant.md
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}
 
 # @6
 # "```{r engine='Rcpp'}"+
 # "#include <Rcpp.h>"+
-# ""+
-# "// [[Rcpp::export]]"+
-# "int fibonacci(const int x) {"+
-# "  if (x == 0 || x == 1) return(x);"+
-# "  return (fibonacci(x - 1)) + fibonacci(x - 2);"+
-# "}"+
 # "```" {
-#
+#   text.md {
+#     r.fenced.code.md {
+#       "```": punctuation.md
+#       "{": punctuation.md
+#       "r": language.constant.md
+#       " "
+#       "engine='Rcpp'" {
+#         rmarkdown.attribute.meta.md {
+#           "engine": key.keyword.md
+#           "=": punctuation.md
+#           "'Rcpp'" {
+#             value.string.md {
+#               "'": punctuation.md
+#               "Rcpp"
+#               "'": punctuation.md
+#             }
+#           }
+#         }
+#       }
+#       "}": punctuation.md
+#       "#include <Rcpp.h>": embedded.source.r
+#       "```": punctuation.md
+#     }
+#   }
 # }
 
-# @7
-# "```{r}"+
-# "fibonacci(10L)"+
-# "fibonacci(20L)"+
-# "```" {
-#
+@7a
+"```{r, results='asis', include=FALSE}" {
+  text.md {
+    r.fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      ", "
+      "results='asis'" {
+        rmarkdown.attribute.meta.md {
+          "results": key.keyword.md
+          "=": punctuation.md
+          "'asis'" {
+            value.string.md {
+              "'": punctuation.md
+              "asis"
+              "'": punctuation.md
+            }
+          }
+        }
+      }
+      ", "
+      "include=FALSE" {
+        rmarkdown.attribute.meta.md {
+          "include": key.keyword.md
+          "=": punctuation.md
+          "FALSE": value.constant.md
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}
+
+@7b
+"```{r label results='asis', include=FALSE}" {
+  text.md {
+    r.fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "label": label.string.md
+      " "
+      "results='asis'" {
+        rmarkdown.attribute.meta.md {
+          "results": key.keyword.md
+          "=": punctuation.md
+          "'asis'" {
+            value.string.md {
+              "'": punctuation.md
+              "asis"
+              "'": punctuation.md
+            }
+          }
+        }
+      }
+      ", "
+      "include=FALSE" {
+        rmarkdown.attribute.meta.md {
+          "include": key.keyword.md
+          "=": punctuation.md
+          "FALSE": value.constant.md
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}
+
+# @7c
+# "```{r label results='asis' include=FALSE}" {
+#   text.md {
+#     r.fenced.code.md {
+#       "```": punctuation.md
+#       "{": punctuation.md
+#       "r": language.constant.md
+#       " "
+#       "label": label.string.md
+#       " "
+#       "results='asis'"
+#       ", "
+#       "include=FALSE"
+#       "}": punctuation.md
+#     }
+#   }
 # }
