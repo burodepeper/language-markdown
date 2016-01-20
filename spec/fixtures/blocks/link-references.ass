@@ -2,7 +2,7 @@
 "[foo]: /url "title""+
 ""+
 "[foo]" {
-  text.md {
+  source.text.md {
     "[foo]: /url "title"" {
       reference.link.markup.md {
         "[foo]" {
@@ -45,7 +45,7 @@
 "[foo]:"+
 "   /url"+
 "        'the title'" {
-  text.md {
+  source.text.md {
     "[foo]:"
     "   /url"
     "        'the title'"
@@ -65,7 +65,7 @@
 "[Foo bar]:"+
 "<my url>"+
 "'title'" {
-  text.md {
+  source.text.md {
     "[Foo bar]:"
     "<my url>"
     "'title'"
@@ -79,7 +79,7 @@
 "line1"+
 "line2"+
 "'" {
-  text.md {
+  source.text.md {
     "[foo]: /url '" {
       "[foo]: /url" {
         reference.link.markup.md {
@@ -113,7 +113,7 @@
 "[foo]: /url 'title"+
 ""+
 "with blank line'" {
-  text.md {
+  source.text.md {
     "[foo]: /url 'title" {
       "[foo]: /url" {
         reference.link.markup.md {
@@ -143,14 +143,14 @@
 @152
 "[foo]:"+
 "/url" {
-  text.md {
+  source.text.md {
     "[foo]:"
     "/url"
   }
 }
 
 @153
-"[foo]:": text.md
+"[foo]:": source.text.md
 
 # TODO
 # @154
@@ -164,7 +164,7 @@
 "[foo]"+
 ""+
 "[foo]: url" {
-  text.md {
+  source.text.md {
     "[foo]" {
       label.link.string.md {
         "[": punctuation.md
@@ -203,7 +203,7 @@
 "[ΑΓΩ]: /φου"+
 ""+
 "[αγω]" {
-  text.md {
+  source.text.md {
     "[ΑΓΩ]: /φου" {
       reference.link.markup.md {
         "[ΑΓΩ]" {
@@ -235,7 +235,7 @@
 
 @159
 "[foo]: /url" {
-  text.md {
+  source.text.md {
     "[foo]: /url" {
       reference.link.markup.md {
         "[foo]" {
@@ -262,7 +262,7 @@
 "foo"+
 "]: /url"+
 "bar" {
-  text.md {
+  source.text.md {
     "["
     "foo"
     "]: /url"
@@ -272,7 +272,7 @@
 
 @161
 "[foo]: /url "title" ok" {
-  text.md {
+  source.text.md {
     "[foo]: /url "title"" {
       reference.link.markup.md {
         "[foo]" {
@@ -306,7 +306,7 @@
 @162
 "[foo]: /url"+
 ""title" ok" {
-  text.md {
+  source.text.md {
     "[foo]: /url" {
       reference.link.markup.md {
         "[foo]" {
@@ -331,7 +331,7 @@
 
 @163
 "    [foo]: /url "title"" {
-  text.md {
+  source.text.md {
     "    "
     "[foo]: /url "title"" {
       reference.link.markup.md {
@@ -366,7 +366,7 @@
 "```"+
 "[foo]: /url"+
 "```" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "```": punctuation.md
       source.md {
@@ -381,7 +381,7 @@
 @165
 "Foo"+
 "[bar]: /baz" {
-  text.md {
+  source.text.md {
     "Foo"
     "[bar]: /baz" {
       reference.link.markup.md {
@@ -406,7 +406,7 @@
 
 @166
 "# [Foo]" {
-  text.md {
+  source.text.md {
     heading.markup.md {
       heading-1.md {
         "#": punctuation.md
@@ -432,7 +432,7 @@
 "[foo],"+
 "[bar],"+
 "[baz]" {
-  text.md {
+  source.text.md {
     "[foo]: /foo-url "foo"" {
       reference.link.markup.md {
         "[foo]" {
@@ -525,7 +525,7 @@
 
 @168
 "> [foo]: /url" {
-  text.md {
+  source.text.md {
     "> [foo]: /url" {
       quote.markup.md {
         ">": punctuation.md

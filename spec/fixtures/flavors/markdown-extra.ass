@@ -1,7 +1,7 @@
 @1
 "That's some text with a footnote.[^1]"+
 "[^1]: And that's the footnote." {
-  text.md {
+  source.text.md {
     "That's some text with a footnote."
     "[^1]" {
       reference.footnote.link.markup.md {
@@ -31,7 +31,7 @@
 @2
 "Apple"+
 ":   Pomaceous fruit of plants of the genus Malus in the family Rosaceae." {
-  text.md {
+  source.text.md {
     "Apple"
     ":   Pomaceous fruit of plants of the genus Malus in the family Rosaceae." {
       definition.list.markup.md {
@@ -46,7 +46,7 @@
 "Orange"+
 ": The fruit of an evergreen tree of the genus Citrus."+
 ": Optional second line of definition-list-item" {
-  text.md {
+  source.text.md {
     "Orange"
     ": The fruit of an evergreen tree of the genus Citrus." {
       definition.list.markup.md {
@@ -64,11 +64,11 @@
 }
 
 @4
-"*[NOT]:Not an abbreviation": text.md
+"*[NOT]:Not an abbreviation": source.text.md
 
 @5
 "*[HTML]: Hyper Text Markup Language" {
-  text.md {
+  source.text.md {
     abbreviation.reference.link.markup.md {
       "*[HTML]" {
         label.link.string.md {
@@ -85,7 +85,7 @@
 
 @6
 "*[W3C]:  World Wide Web Consortium" {
-  text.md {
+  source.text.md {
     abbreviation.reference.link.markup.md {
       "*[W3C]" {
         label.link.string.md {
@@ -102,7 +102,7 @@
 
 @7
 "# Heading {key=value #id .class} #" {
-  text.md {
+  source.text.md {
     heading.markup.md {
       heading-1.md {
         '#': punctuation.md
@@ -117,7 +117,7 @@
 
 @8
 "## Open heading {.class lang=fr}" {
-  text.md {
+  source.text.md {
     heading.markup.md {
       heading-2.md {
         '##': punctuation.md
@@ -151,7 +151,7 @@
 
 @9
 "### Le Site ######{.class .shine #title lang=fr}" {
-  text.md {
+  source.text.md {
     heading.markup.md {
       heading-3.md {
         "###": punctuation.md
@@ -200,7 +200,7 @@
 
 @10
 "[label](http://www.url.com){#id .external-link target=_blank}" {
-  text.md {
+  source.text.md {
     link.markup.md {
       text.link.string.md {
         "[": punctuation.md
@@ -247,7 +247,7 @@
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.js #id .class key=value}"+
 "alert("Hello world");"+
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "~~~~~~~~~~~~~~~~~~~~~~~~~~~~": punctuation.md
       " "
@@ -286,7 +286,7 @@
 
 @12
 "[![alt](/image.jpg "title"){.class key=value}](/url "title"){.class key=value}" {
-  text.md {
+  source.text.md {
     link.markup.md {
       "[![alt](/image.jpg "title"){.class key=value}]" {
         text.link.string.md {

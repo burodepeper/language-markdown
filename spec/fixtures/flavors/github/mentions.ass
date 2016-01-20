@@ -1,6 +1,6 @@
 @1
 "@username" {
-  text.md {
+  source.text.md {
     "@username" {
       reference.gfm.variable.md {
         "@": punctuation.md
@@ -12,7 +12,7 @@
 
 @2
 "@user name" {
-  text.md {
+  source.text.md {
     "@user" {
       reference.gfm.variable.md {
         "@": punctuation.md
@@ -24,11 +24,11 @@
 }
 
 @3
-"user@name": text.md
+"user@name": source.text.md
 
 @4
 "@username: something, something" {
-  text.md {
+  source.text.md {
     "@username" {
       reference.gfm.variable.md {
         "@": punctuation.md
@@ -41,7 +41,7 @@
 
 @5
 "@userName123" {
-  text.md {
+  source.text.md {
     "@userName123" {
       reference.gfm.variable.md {
         "@": punctuation.md
@@ -52,11 +52,11 @@
 }
 
 @6
-"@user_name": text.md
+"@user_name": source.text.md
 
 @7
 "@user-name" {
-  text.md {
+  source.text.md {
     "@user-name" {
       reference.gfm.variable.md {
         "@": punctuation.md
@@ -67,11 +67,11 @@
 }
 
 @8
-"@:user:name": text.md
+"@:user:name": source.text.md
 
 @9
 "@user:name" {
-  text.md {
+  source.text.md {
     "@user" {
       reference.gfm.variable.md {
         "@": punctuation.md
@@ -84,7 +84,7 @@
 
 @10
 ""@username"" {
-  text.md {
+  source.text.md {
     """
     "@username" {
       reference.gfm.variable.md {
@@ -98,7 +98,7 @@
 
 @11
 "'@username'" {
-  text.md {
+  source.text.md {
     "'"
     "@username" {
       reference.gfm.variable.md {
@@ -112,7 +112,7 @@
 
 @12
 "(@username)" {
-  text.md {
+  source.text.md {
     "("
     "@username" {
       reference.gfm.variable.md {
@@ -129,7 +129,7 @@
 # mentions.
 @13
 "[@username]" {
-  text.md {
+  source.text.md {
     label.link.string.md {
       "[": punctuation.md
       "@username"
@@ -142,7 +142,7 @@
 # technically okay, but a weird thing to do...
 @14
 "(@username]" {
-  text.md {
+  source.text.md {
     "("
     "@username" {
       reference.gfm.variable.md {
@@ -156,7 +156,7 @@
 
 @15
 ">@username" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       ">": punctuation.md
       "@username" {
@@ -171,7 +171,7 @@
 
 @16
 "@one, @two, @three" {
-  text.md {
+  source.text.md {
     "@one" {
       reference.gfm.variable.md {
         "@": punctuation.md
@@ -196,11 +196,11 @@
 }
 
 @17
-"@username=cool": text.md
+"@username=cool": source.text.md
 
 @18
 "@username." {
-  text.md {
+  source.text.md {
     "@username" {
       reference.gfm.variable.md {
         "@": punctuation.md
@@ -212,11 +212,11 @@
 }
 
 @19
-"-@username": text.md
+"-@username": source.text.md
 
 @20
 "- @username" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "- ": punctuation.md
       "@username" {
@@ -231,7 +231,7 @@
 
 @21
 "@atom/feedback" {
-  text.md {
+  source.text.md {
     "@atom/feedback" {
       reference.gfm.variable.md {
         "@": punctuation.md
@@ -242,4 +242,4 @@
 }
 
 @22
-"@username-": text.md
+"@username-": source.text.md

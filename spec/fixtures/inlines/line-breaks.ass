@@ -3,7 +3,7 @@
 @580
 "foo  "+
 "baz" {
-  text.md {
+  source.text.md {
     "foo"
     "  ": line-break.constant.md
     "baz"
@@ -13,7 +13,7 @@
 @581
 "foo\"+
 "baz" {
-  text.md {
+  source.text.md {
     "foo"
     "\": line-break.constant.md
     "baz"
@@ -23,7 +23,7 @@
 @582
 "foo       "+
 "baz" {
-  text.md {
+  source.text.md {
     "foo     "
     "  ": line-break.constant.md
     "baz"
@@ -39,7 +39,7 @@
 @585
 "*foo  "+
 "bar*" {
-  text.md {
+  source.text.md {
     "*foo"
     "  ": line-break.constant.md
     "bar*"
@@ -50,7 +50,7 @@
 @586
 "*foo\"+
 "bar*" {
-  text.md {
+  source.text.md {
     "*foo"
     "\": line-break.constant.md
     "bar*"
@@ -61,7 +61,7 @@
 @587
 "`code  "+
 "span`" {
-  text.md {
+  source.text.md {
     "`code"
     "  ": line-break.constant.md
     "span`"
@@ -72,7 +72,7 @@
 @588
 "`code\"+
 "span`" {
-  text.md {
+  source.text.md {
     "`code"
     "\": line-break.constant.md
     "span`"
@@ -82,7 +82,7 @@
 @589
 "<a href="foo  "+
 "bar">" {
-  text.md {
+  source.text.md {
     "<a href="foo"
     "  ": line-break.constant.md
     "bar">"
@@ -92,7 +92,7 @@
 @590
 "<a href="foo\"+
 "bar">" {
-  text.md {
+  source.text.md {
     "<a href="foo"
     "\": line-break.constant.md
     "bar">"
@@ -101,7 +101,7 @@
 
 @591
 "foo\" {
-  text.md {
+  source.text.md {
     "foo"
     "\": line-break.constant.md
   }
@@ -109,7 +109,7 @@
 
 @592
 "foo  " {
-  text.md {
+  source.text.md {
     "foo"
     "  ": line-break.constant.md
   }
@@ -117,7 +117,7 @@
 
 @593
 "### foo\" {
-  text.md {
+  source.text.md {
     heading.markup.md {
       heading-3.md {
         '###': punctuation.md
@@ -130,7 +130,7 @@
 
 @594
 "### foo  " {
-  text.md {
+  source.text.md {
     heading.markup.md {
       heading-3.md {
         '###': punctuation.md
@@ -145,7 +145,7 @@
 @595
 "foo"+
 "baz" {
-  text.md {
+  source.text.md {
     "foo"
     "baz"
   }
@@ -154,7 +154,7 @@
 @596
 "foo "+
 " baz" {
-  text.md {
+  source.text.md {
     "foo "
     " baz"
   }

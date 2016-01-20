@@ -4,7 +4,7 @@
 "&nbsp; &amp; &copy; &AElig; &Dcaron;"+
 "&frac34; &HilbertSpace; &DifferentialD;"+
 "&ClockwiseContourIntegral; &ngE;" {
-  text.md {
+  source.text.md {
     entity.constant.md {
       "&": punctuation.md
       "nbsp"
@@ -67,7 +67,7 @@
 
 @287
 "&#35; &#1234; &#992; &#98765432; &#0;" {
-  text.md {
+  source.text.md {
     entity.constant.md {
       "&#": punctuation.md
       "35"
@@ -102,7 +102,7 @@
 
 @288
 "&#X22; &#XD06; &#xcab;" {
-  text.md {
+  source.text.md {
     entity.constant.md {
       "&#X": punctuation.md
       "22"
@@ -124,15 +124,15 @@
 }
 
 @289
-"&nbsp &x; &#; &#x; &ThisIsWayTooLongToBeAnEntityIsntIt; &hi?;": text.md
+"&nbsp &x; &#; &#x; &ThisIsWayTooLongToBeAnEntityIsntIt; &hi?;": source.text.md
 
 @290
-"&copy": text.md
+"&copy": source.text.md
 
 # FIXME
 # @291
 # "&MadeUpEntity;" {
-#   "&MadeUpEntity;": text.md
+#   "&MadeUpEntity;": source.text.md
 # }
 
 # TODO
@@ -165,7 +165,7 @@
 
 @296
 "`f&ouml;&ouml;`" {
-  text.md {
+  source.text.md {
     code.raw.markup.md {
       '`': punctuation.md
       "f&ouml;&ouml;"
@@ -176,7 +176,7 @@
 
 @297
 "    f&ouml;f&ouml;" {
-  text.md {
+  source.text.md {
     "    f"
     entity.constant.md {
       "&": punctuation.md

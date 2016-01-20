@@ -40,12 +40,12 @@ describe "Markdown grammar", ->
       atom.packages.activatePackage('language-markdown')
 
     runs ->
-      grammar = atom.grammars.grammarForScopeName('text.md')
+      grammar = atom.grammars.grammarForScopeName('source.text.md')
 
   # Test the grammar
   it "parses the grammar", ->
     expect(grammar).toBeDefined()
-    expect(grammar.scopeName).toBe "text.md"
+    expect(grammar.scopeName).toBe("source.text.md")
 
   for fixture in fixtures
 
@@ -75,7 +75,7 @@ describe "Markdown grammar", ->
           atom.packages.activatePackage('language-markdown')
 
         runs ->
-          grammar = atom.grammars.grammarForScopeName('text.md')
+          grammar = atom.grammars.grammarForScopeName('source.text.md')
 
       # Cycle through the tests we've created in ASS
       # and we need to do it in a closure apparently

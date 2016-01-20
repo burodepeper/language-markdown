@@ -4,7 +4,7 @@
 '> # Foo'+
 '> bar'+
 '> baz' {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
       ' '
@@ -29,7 +29,7 @@
 "># Foo"+
 ">bar"+
 "> baz" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
       heading.markup.md {
@@ -52,7 +52,7 @@
 "   > # Foo"+
 "   > bar"+
 " > baz" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       "   "
       '>': punctuation.md
@@ -80,7 +80,7 @@
 "    > # Foo"+
 "    > bar"+
 "    > baz" {
-  text.md {
+  source.text.md {
     "    > # Foo"
     "    > bar"
     "    > baz"
@@ -94,7 +94,7 @@
 @186
 ">     foo"+
 "    bar" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
       ' '
@@ -109,7 +109,7 @@
 "> ```"+
 "foo"+
 "```" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
       ' '
@@ -127,7 +127,7 @@
 @188
 "> foo"+
 "    - bar" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
       ' '
@@ -143,7 +143,7 @@
 
 @189
 ">" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
     }
@@ -154,7 +154,7 @@
 ">"+
 ">  "+
 "> " {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
       '>': punctuation.md
@@ -170,7 +170,7 @@
 ">"+
 "> foo"+
 ">  " {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
       '>': punctuation.md
@@ -190,7 +190,7 @@
 @200
 "> > > foo"+
 "bar" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
       ' '
@@ -212,7 +212,7 @@
 ">>> foo"+
 "> bar"+
 ">>baz" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
       quote.markup.md {
@@ -239,7 +239,7 @@
 ">     code"+
 ""+
 ">    not code" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       '>': punctuation.md
       ' '

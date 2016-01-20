@@ -1,6 +1,6 @@
 @1
 ":+1:" {
-  text.md {
+  source.text.md {
     emoji.constant.gfm.md {
       ":": punctuation.md
       "+1"
@@ -10,20 +10,20 @@
 }
 
 @2
-":david:": text.md
+":david:": source.text.md
 
 @3
-":david is awesome:": text.md
+":david is awesome:": source.text.md
 
 @4
-":arrow_UP:": text.md
+":arrow_UP:": source.text.md
 
 @5
-"david:+1:": text.md
+"david:+1:": source.text.md
 
 @6
 "david :+1:" {
-  text.md {
+  source.text.md {
     "david "
     emoji.constant.gfm.md {
       ":": punctuation.md

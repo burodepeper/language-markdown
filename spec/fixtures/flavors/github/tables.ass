@@ -1,6 +1,6 @@
 @1
 "| one | two | three |" {
-  text.md {
+  source.text.md {
     table.storage.md {
       "|": punctuation.md
       " one "
@@ -14,11 +14,11 @@
 }
 
 @2
-"one | two | three |": text.md
+"one | two | three |": source.text.md
 
 @3
 "| one | two | three" {
-  text.md {
+  source.text.md {
     table.storage.md {
       "|": punctuation.md
       " one "
@@ -31,11 +31,11 @@
 }
 
 @4
-"|one|two|three|": text.md
+"|one|two|three|": source.text.md
 
 @5
 "| --- | --- | --- |" {
-  text.md {
+  source.text.md {
     table.storage.md {
       "|": punctuation.md
       " "
@@ -55,11 +55,11 @@
 }
 
 @6
-"--- | --- | --- |": text.md
+"--- | --- | --- |": source.text.md
 
 @7
 "| --- | --- | ---" {
-  text.md {
+  source.text.md {
     table.storage.md {
       "|": punctuation.md
       " "
@@ -77,11 +77,11 @@
 }
 
 @8
-"|---|---|---|": text.md
+"|---|---|---|": source.text.md
 
 @9
 "|:--- |:---:| ---:|" {
-  text.md {
+  source.text.md {
     table.storage.md {
       "|": punctuation.md
       ":": alignment.punctuation.md
@@ -102,7 +102,7 @@
 
 @10
 "| :-- | :-: | --: |" {
-  text.md {
+  source.text.md {
     table.storage.md {
       "|": punctuation.md
       " "
@@ -127,7 +127,7 @@
 
 @11
 "| _one_ | **two** | [three] |" {
-  text.md {
+  source.text.md {
     table.storage.md {
       "|": punctuation.md
       " "
@@ -166,7 +166,7 @@
 
 @12
 "| --- | --- | three |" {
-  text.md {
+  source.text.md {
     table.storage.md {
       "|": punctuation.md
       " "

@@ -2,7 +2,7 @@
 
 @1a
 "{++Chocolate++}" {
-  text.md {
+  source.text.md {
     addition.critic.inserted.markup.md {
       "{++": punctuation.md
       "Chocolate"
@@ -13,7 +13,7 @@
 
 @1b
 "{++_Lots of_ chocolate++}" {
-  text.md {
+  source.text.md {
     addition.critic.inserted.markup.md {
       "{++": punctuation.md
       "_Lots of_" {
@@ -31,7 +31,7 @@
 
 @2
 "{--Hunger--}" {
-  text.md {
+  source.text.md {
     deletion.critic.deleted.markup.md {
       "{--": punctuation.md
       "Hunger"
@@ -42,7 +42,7 @@
 
 @3
 "{~~Sadness~>Love~~}" {
-  text.md {
+  source.text.md {
     substitution.critic.inserted.markup.md {
       "{~~": punctuation.md
       "Sadness"
@@ -55,7 +55,7 @@
 
 @4
 "{>>No comment<<}" {
-  text.md {
+  source.text.md {
     comment.critic.markup.md {
       "{>>": punctuation.md
       "No comment"
@@ -66,7 +66,7 @@
 
 @5a
 "{==Yellow marker==}" {
-  text.md {
+  source.text.md {
     highlight.critic.changed.markup.md {
       "{==": punctuation.md
       "Yellow marker"
@@ -77,7 +77,7 @@
 
 @5b
 "{==Yellow marker==}{>>@burodepeper<<}" {
-  text.md {
+  source.text.md {
     "{==Yellow marker==}" {
       highlight.critic.changed.markup.md {
         "{==": punctuation.md

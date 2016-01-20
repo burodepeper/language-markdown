@@ -1,6 +1,6 @@
 @1
 "~~bad~~ word" {
-  text.md {
+  source.text.md {
     strike.markup.md {
       "~~": punctuation.md
       "bad"
@@ -11,7 +11,7 @@
 }
 
 @2
-"~~bad~~word": text.md
+"~~bad~~word": source.text.md
 
 @3
-"good~~bad~~": text.md
+"good~~bad~~": source.text.md

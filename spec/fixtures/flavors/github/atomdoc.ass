@@ -1,6 +1,6 @@
 @1
 "The {String} name of the package to disable." {
-  text.md {
+  source.text.md {
     "The "
     "{String}" {
       class.reference.gfm.variable.md {
@@ -15,7 +15,7 @@
 
 @2
 "{ClassName::methodName}" {
-  text.md {
+  source.text.md {
     instance.method.reference.gfm.variable.md {
       "{": punctuation.md
       "ClassName"
@@ -28,7 +28,7 @@
 
 @3
 "{ClassName.methodName}" {
-  text.md {
+  source.text.md {
     class.method.reference.gfm.variable.md {
       "{": punctuation.md
       "ClassName"
@@ -40,10 +40,10 @@
 }
 
 @4
-"{className}": text.md
+"{className}": source.text.md
 
 @5
-"{className::MethodName}": text.md
+"{className::MethodName}": source.text.md
 
 @6
-"{className.MethodName}": text.md
+"{className.MethodName}": source.text.md

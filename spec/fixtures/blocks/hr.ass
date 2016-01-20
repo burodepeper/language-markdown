@@ -1,7 +1,7 @@
 # http://spec.commonmark.org/0.22/#example-8
 @8a
 "***" {
-  text.md {
+  source.text.md {
     '***': hr.md
   }
 }
@@ -15,7 +15,7 @@
 
 @8b
 "---" {
-  text.md {
+  source.text.md {
     front-matter.yaml.source.md {
       '---': hr.md
     }
@@ -24,7 +24,7 @@
 
 @8c
 "___" {
-  text.md {
+  source.text.md {
     '___': hr.md
   }
 }
@@ -32,7 +32,7 @@
 @8d
 " "+
 "---" {
-  text.md {
+  source.text.md {
     " "
     '---': hr.md
   }
@@ -41,7 +41,7 @@
 # http://spec.commonmark.org/0.22/#example-9
 @9
 "+++" {
-  text.md {
+  source.text.md {
     front-matter.toml.source.md {
       '+++': hr.md
     }
@@ -50,17 +50,17 @@
 
 # http://spec.commonmark.org/0.22/#example-10
 @10
-"===": text.md
+"===": source.text.md
 
 # http://spec.commonmark.org/0.22/#example-11
 @11a
-"--": text.md
+"--": source.text.md
 
 @11b
-"**": text.md
+"**": source.text.md
 
 @11c
-"__": text.md
+"__": source.text.md
 
 # http://spec.commonmark.org/0.22/#example-12
 
@@ -71,14 +71,14 @@
 
 @12c
 "   ***" {
-  text.md {
+  source.text.md {
     '   ***': hr.md
   }
 }
 
 # http://spec.commonmark.org/0.22/#example-13
 @13
-"    ***": text.md
+"    ***": source.text.md
 
 # NOTE
 # Removed @14, because it is not related to syntax highlighting
@@ -87,7 +87,7 @@
 # http://spec.commonmark.org/0.22/#example-15
 @15
 "_____________________________________" {
-  text.md {
+  source.text.md {
     "_____________________________________": hr.md
   }
 }
@@ -95,7 +95,7 @@
 # http://spec.commonmark.org/0.22/#example-16
 @16
 " - - -" {
-  text.md {
+  source.text.md {
     " - - -": hr.md
   }
 }
@@ -103,7 +103,7 @@
 # http://spec.commonmark.org/0.22/#example-17
 @17
 " **  * ** * ** * **" {
-  text.md {
+  source.text.md {
     " **  * ** * ** * **": hr.md
   }
 }
@@ -111,7 +111,7 @@
 # http://spec.commonmark.org/0.22/#example-18
 @18
 "-     -      -      -" {
-  text.md {
+  source.text.md {
     "-     -      -      -": hr.md
   }
 }
@@ -119,14 +119,14 @@
 # http://spec.commonmark.org/0.22/#example-19
 @19
 "- - - -    " {
-  text.md {
+  source.text.md {
     "- - - -    ": hr.md
   }
 }
 
 # http://spec.commonmark.org/0.22/#example-20
 @20a
-"_ _ _ _ a": text.md
+"_ _ _ _ a": source.text.md
 
 # NOTE
 # Removed @20b, because it is too similar to @20a
@@ -136,7 +136,7 @@
 # http://spec.commonmark.org/0.22/#example-21
 @21
 " *-*" {
-  text.md {
+  source.text.md {
     " "
     emphasis.italic.markup.md {
       "*": punctuation.md
@@ -157,7 +157,7 @@
 "* Foo"+
 "* * *"+
 "* Bar" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "* ": punctuation.md
       "Foo"
@@ -174,7 +174,7 @@
 @26
 "- Foo"+
 "- * * *" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "- ": punctuation.md
       "Foo"

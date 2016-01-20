@@ -5,7 +5,7 @@
 "<"+
 " >"+
 "```" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "```": punctuation.md
       source.md {
@@ -22,7 +22,7 @@
 "<"+
 " >"+
 "~~~" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "~~~": punctuation.md
       source.md {
@@ -39,7 +39,7 @@
 "aaa"+
 "~~~"+
 "```" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "```": punctuation.md
       source.md {
@@ -56,7 +56,7 @@
 "aaa"+
 "```"+
 "~~~" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "~~~": punctuation.md
       source.md {
@@ -73,7 +73,7 @@
 "aaa"+
 "```"+
 "``````" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "````": punctuation.md
       source.md {
@@ -90,7 +90,7 @@
 "aaa"+
 "~~~"+
 "~~~~" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "~~~~": punctuation.md
       source.md {
@@ -104,7 +104,7 @@
 
 @83
 "```" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "```": punctuation.md
     }
@@ -116,7 +116,7 @@
 ""+
 "```"+
 "aaa" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "`````": punctuation.md
       source.md {
@@ -135,7 +135,7 @@
 "> aaa"+
 ""+
 "bbb" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       ">": punctuation.md
       " "
@@ -163,7 +163,7 @@
 "    ```"+
 "    aaa"+
 "    ```" {
-  text.md {
+  source.text.md {
     "    ```"
     "    aaa"
     "    ```"
@@ -184,7 +184,7 @@
 @95
 "``` ```"+
 "aaa" {
-  text.md {
+  source.text.md {
     "``` ```"
     "aaa"
   }
@@ -194,7 +194,7 @@
 "~~~~~~"+
 "aaa"+
 "~~~ ~~" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "~~~~~~": punctuation.md
       source.md {
@@ -211,7 +211,7 @@
 "bar"+
 "```"+
 "baz" {
-  text.md {
+  source.text.md {
     "foo"
     fenced.code.md {
       "```": punctuation.md
@@ -231,7 +231,7 @@
 "bar"+
 "~~~"+
 "# baz" {
-  text.md {
+  source.text.md {
     "foo"
     "---": hr.md
     fenced.code.md {
@@ -257,7 +257,7 @@
 "  return 3"+
 "end"+
 "```" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "```": punctuation.md
       "ruby": language.constant.md
@@ -278,7 +278,7 @@
 "  return 3"+
 "end"+
 "~~~~~~~" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "~~~~~~~": punctuation.md
       " "
@@ -306,7 +306,7 @@
 # @101
 # "````;"+
 # "````" {
-#   text.md {
+#   source.text.md {
 #     fenced.code.md {
 #       "````": punctuation.md
 #       ";"
@@ -323,7 +323,7 @@
 "```"+
 "``` aaa"+
 "```" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "```": punctuation.md
       source.md {

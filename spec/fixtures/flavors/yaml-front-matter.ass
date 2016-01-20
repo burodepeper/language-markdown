@@ -4,7 +4,7 @@
 "- type: main"+
 "  text: My Book"+
 "..." {
-  text.md {
+  source.text.md {
     front-matter.yaml.source.md {
       "---": hr.md
       "title:"
@@ -22,7 +22,7 @@
 "- type: main"+
 "  text: My Book"+
 "..." {
-  text.md {
+  source.text.md {
     " "
     "---": hr.md
     "title:"
@@ -43,7 +43,7 @@
 "---"+
 ""+
 "This is a paragraph" {
-  text.md {
+  source.text.md {
     front-matter.yaml.source.md {
       "---": hr.md
       "front: matter"

@@ -9,7 +9,7 @@
 "- one"+
 ""+
 "  two" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       '- ': punctuation.md
       'one'
@@ -23,7 +23,7 @@
 "-one"+
 ""+
 "2.two" {
-  text.md {
+  source.text.md {
     "-one"
     ""
     "2.two"
@@ -32,7 +32,7 @@
 
 @214
 '123456789. ok' {
-  text.md {
+  source.text.md {
     ordered.list.markup.md {
       '123456789. ': punctuation.md
       'ok'
@@ -41,11 +41,11 @@
 }
 
 @215
-'1234567890. not ok': text.md
+'1234567890. not ok': source.text.md
 
 @216
 '0. ok' {
-  text.md {
+  source.text.md {
     ordered.list.markup.md {
       '0. ': punctuation.md
       'ok'
@@ -55,7 +55,7 @@
 
 @217
 "003. ok" {
-  text.md {
+  source.text.md {
     ordered.list.markup.md {
       '003. ': punctuation.md
       'ok'
@@ -64,7 +64,7 @@
 }
 
 @218
-"-1. not ok": text.md
+"-1. not ok": source.text.md
 
 # NOTE
 # Removed @219, because it is not related to syntax highlighting
@@ -75,7 +75,7 @@
 "- foo"+
 "-"+
 "- bar" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       '- ': punctuation.md
       'foo'
@@ -98,7 +98,7 @@
 "1. foo"+
 "2."+
 "3. bar" {
-  text.md {
+  source.text.md {
     ordered.list.markup.md {
       '1. ': punctuation.md
       'foo'
@@ -115,7 +115,7 @@
 
 @232
 "*" {
-  text.md {
+  source.text.md {
     empty.unordered.list.markup.md {
       '*': punctuation.md
     }
@@ -125,7 +125,7 @@
 @240
 "> 1. > Blockquote"+
 "> continued here." {
-  text.md {
+  source.text.md {
     quote.markup.md {
       ">": punctuation.md
       " "
@@ -153,7 +153,7 @@
 
 @245
 "- - foo" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "- ": punctuation.md
       unordered.list.markup.md {
@@ -166,7 +166,7 @@
 
 @246
 "1. - 2. foo" {
-  text.md {
+  source.text.md {
     ordered.list.markup.md {
       "1. ": punctuation.md
       unordered.list.markup.md {
@@ -185,7 +185,7 @@
 "- Bar"+
 "  ---"+
 "  baz" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "- ": punctuation.md
       heading.markup.md {
@@ -212,7 +212,7 @@
 @251
 "The number of windows in my house is"+
 "14.  The number of doors is 6." {
-  text.md {
+  source.text.md {
     "The number of windows in my house is"
     ordered.list.markup.md {
       "14. ": punctuation.md
@@ -235,7 +235,7 @@
 "  > b"+
 "  >"+
 "* c" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "* ": punctuation.md
       "a"
