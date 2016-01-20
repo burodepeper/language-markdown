@@ -2,61 +2,148 @@
 "```{r}"+
 "summary(cars)"+
 "```" {
-
+  text.md {
+    r.fenced.code.md {
+      "```{r}" {
+        "```": punctuation.md
+        "{": punctuation.md
+        "r": language.constant.md
+        "}": punctuation.md
+      }
+      "summary(cars)": embedded.source.r
+      "```": punctuation.md
+    }
+  }
 }
 
 @2
 "```{r, echo=FALSE}"+
 "summary(cars)"+
 "```" {
-
+  text.md {
+    r.fenced.code.md {
+      "```{r, echo=FALSE}" {
+        "```": punctuation.md
+        "{": punctuation.md
+        "r": language.constant.md
+        ", "
+        "echo=FALSE" {
+          rmarkdown.attribute.meta.md {
+            "echo": key.keyword.md
+            "=": punctuation.md
+            "FALSE": value.constant.md
+          }
+        }
+        "}": punctuation.md
+      }
+      "summary(cars)": embedded.source.r
+      "```": punctuation.md
+    }
+  }
 }
 
-@3
-"```{r, echo=FALSE}"+
-"plot(cars)"+
+@3a
+"```{r eval=FALSE}"+
+"summary(cars)"+
 "```" {
+  text.md {
+    r.fenced.code.md {
+      "```{r eval=FALSE}" {
+        "```": punctuation.md
+        "{": punctuation.md
+        "r": language.constant.md
+        " "
+        "eval=FALSE" {
+          rmarkdown.attribute.meta.md {
+            "eval": key.keyword.md
+            "=": punctuation.md
+            "FALSE": value.constant.md
+          }
+        }
+        "}": punctuation.md
+      }
+      "summary(cars)": embedded.source.r
+      "```": punctuation.md
+    }
+  }
+}
 
+@3b
+"```{r eval=FALS}"+
+"summary(cars)"+
+"```" {
+  text.md {
+    r.fenced.code.md {
+      "```{r eval=FALS}" {
+        "```": punctuation.md
+        "{": punctuation.md
+        "r": language.constant.md
+        " "
+        "eval=FALS"
+        "}": punctuation.md
+      }
+      "summary(cars)": embedded.source.r
+      "```": punctuation.md
+    }
+  }
 }
 
 @4
-"```{r, eval=FALSE}"+
-"summary(cars)"+
-"```" {
-
-}
-
-@5
 "```{r, results='asis'}"+
 "knitr::kable(mtcars)"+
 "```" {
-
+  text.md {
+    r.fenced.code.md {
+      "```{r, results='asis'}" {
+        "```": punctuation.md
+        "{": punctuation.md
+        "r": language.constant.md
+        ", "
+        "results='asis'" {
+          rmarkdown.attribute.meta.md {
+            "results": key.keyword.md
+            "=": punctuation.md
+            "'asis'" {
+              value.string.md {
+                "'": punctuation.md
+                "asis"
+                "'": punctuation.md
+              }
+            }
+          }
+        }
+        "}": punctuation.md
+      }
+      "knitr::kable(mtcars)": embedded.source.r
+      "```": punctuation.md
+    }
+  }
 }
 
-@6
-"```{r setup, include=FALSE}"+
-"knitr::opts_chunk$set(cache=TRUE)"+
-"```" {
+# @5
+# "```{r setup, include=FALSE}"+
+# "knitr::opts_chunk$set(cache=TRUE)"+
+# "```" {
+#
+# }
 
-}
+# @6
+# "```{r engine='Rcpp'}"+
+# "#include <Rcpp.h>"+
+# ""+
+# "// [[Rcpp::export]]"+
+# "int fibonacci(const int x) {"+
+# "  if (x == 0 || x == 1) return(x);"+
+# "  return (fibonacci(x - 1)) + fibonacci(x - 2);"+
+# "}"+
+# "```" {
+#
+# }
 
-@7
-"```{r engine='Rcpp'}"+
-"#include <Rcpp.h>"+
-""+
-"// [[Rcpp::export]]"+
-"int fibonacci(const int x) {"+
-"  if (x == 0 || x == 1) return(x);"+
-"  return (fibonacci(x - 1)) + fibonacci(x - 2);"+
-"}"+
-"```" {
-
-}
-
-@8
-"```{r}"+
-"fibonacci(10L)"+
-"fibonacci(20L)"+
-"```" {
-  
-}
+# @7
+# "```{r}"+
+# "fibonacci(10L)"+
+# "fibonacci(20L)"+
+# "```" {
+#
+# }
