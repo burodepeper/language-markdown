@@ -1,0 +1,279 @@
+// 1.
+// Define colors
+
+@_background:     #ffffff;
+@_text:           #333333;
+@_syntax:         #0000ff;
+@_syntax_alt:     darken(@_syntax, 15%);
+@_content:        #009900;
+@_variable:       #0099cc;
+@_constant:       #ee1100;
+@_highlight:      #ffdd00;
+@_comment:        #ff8000;
+@_neutral:        mix(@_text, @_background);
+
+// 2.
+// Generic markup styles
+
+.source {
+  .markup {
+    &.heading {
+      color: @_syntax;
+      font-weight: bold;
+    }
+
+    &.inserted,
+    &.addition,
+    &.quote {
+      color: @_content;
+    }
+
+    &.deletion {
+      color: @_constant;
+    }
+
+    &.changed {
+      color: @_syntax;
+    }
+
+    &.list {
+      color: @_syntax_alt;
+
+      &.completed {
+        opacity: 0.333;
+      }
+    }
+
+    &.underline {
+      text-decoration: underline;
+    }
+
+    &.raw {
+      color: @neutral;
+    }
+  }
+}
+
+// 3.
+// Custom markdown styles
+
+// .text.md {
+//   .md {
+//     &.heading {
+//       color: @syntax;
+//
+//       &.empty {
+//         .punctuation {
+//           opacity: 1;
+//         }
+//       }
+//
+//       .emphasis {
+//         opacity: 1;
+//         font-weight: normal;
+//       }
+//     }
+//
+//     &.hr {
+//       color: @constant;
+//     }
+//
+//     &.quote {
+//       color: @content;
+//
+//       .link.markup,
+//       .link.text,
+//       .link.image,
+//       .string {
+//         color: @content-alt;
+//       }
+//
+//       .uri {
+//         color: @syntax-alt;
+//       }
+//     }
+//
+//     &.link {
+//       &.text {
+//         color: @content;
+//       }
+//       &.destination {
+//         color: @syntax;
+//
+//         .uri {
+//           text-decoration: underline;
+//         }
+//       }
+//       &.title {
+//         color: @syntax-alt;
+//         font-style: italic;
+//       }
+//       &.string {
+//         background: fade(@content, 5%);
+//       }
+//     }
+//
+//     &.gfm,
+//     &.reference {
+//       color: @variable;
+//       font-weight: normal;
+//     }
+//
+//     &.list {
+//       > .punctuation {
+//         opacity: 1;
+//
+//         .checkbox {
+//           color: @syntax-alt;
+//           background: fade(@syntax-alt, 10%);
+//         }
+//       }
+//       .heading {
+//         color: @syntax-alt;
+//       }
+//       &.task {
+//         &.completed {
+//           color: @text;
+//           opacity: 0.333;
+//
+//           .code {
+//             background: transparent;
+//             color: @text;
+//           }
+//
+//           .punctuation {
+//             color: @text;
+//           }
+//
+//           .todo,
+//           .review {
+//             color: inherit;
+//           }
+//
+//           .fixme {
+//             background: transparent;
+//             outline: none;
+//             color: inherit;
+//           }
+//         }
+//       }
+//       &.unordered,
+//       &.ordered
+//       {
+//         color: @text;
+//
+//         > .punctuation {
+//           color: @syntax;
+//         }
+//       }
+//       &.empty {
+//         .punctuation {
+//           color: @syntax-alt;
+//         }
+//       }
+//     }
+//
+//     &.code {
+//       color: @neutral;
+//
+//       &:not(.fenced) {
+//         background: fade(@neutral, 10%);
+//       }
+//
+//       &.fenced {
+//         &.info {
+//           color: @syntax-alt;
+//         }
+//       }
+//     }
+//
+//     &.constant {
+//       color: @constant;
+//       &.language {
+//         color: @neutral;
+//         font-weight: normal;
+//       }
+//     }
+//
+//     &.punctuation {
+//       opacity: 0.5;
+//       background: inherit;
+//     }
+//
+//     &.emphasis {
+//       font-style: italic;
+//
+//       &:not(.strong) {
+//         opacity: 0.75;
+//       }
+//
+//       &:not(.strong) .strong {
+//         font-style: italic;
+//       }
+//     }
+//
+//     &.strong {
+//       font-weight: bold;
+//       font-style: normal;
+//     }
+//
+//     &.table {
+//       color: @syntax-alt;
+//
+//       > .punctuation {
+//         color: @syntax;
+//         opacity: 0.5;
+//
+//         &.alignment {
+//           color: @syntax;
+//           opacity: 1;
+//         }
+//       }
+//     }
+//
+//     &.strike {
+//       text-decoration: line-through;
+//       opacity: 0.5;
+//     }
+//
+//     &.critic {
+//       &.addition {
+//         color: @content;
+//       }
+//       &.deletion {
+//         color: @constant;
+//       }
+//       &.comment {
+//         color: @comment;
+//         font-style: normal;
+//       }
+//       &.substitution {
+//         color: @syntax;
+//       }
+//     }
+//
+//     &.special-attributes {
+//       color: @neutral;
+//     }
+//
+//     &.special.attribute {
+//       &.other {
+//         color: inherit;
+//       }
+// 
+//       &.id,
+//       &.class
+//       {
+//         color: @constant;
+//       }
+//
+//       &.id {
+//         font-weight: bold;
+//       }
+//
+//       &.class {
+//         font-weight: normal;
+//       }
+//     }
+//   }
+// }
