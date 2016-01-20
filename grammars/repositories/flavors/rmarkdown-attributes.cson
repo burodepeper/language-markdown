@@ -35,6 +35,8 @@ patterns: [
       1: name: 'key.keyword.md'
       2: name: 'punctuation.md'
       3: name: 'value.string.md'
+      4: name: 'punctuation.md'
+      5: name: 'punctuation.md'
   }
 
   # {

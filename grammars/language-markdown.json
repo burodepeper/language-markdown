@@ -1032,6 +1032,12 @@
             },
             "3": {
               "name": "value.string.md"
+            },
+            "4": {
+              "name": "punctuation.md"
+            },
+            "5": {
+              "name": "punctuation.md"
             }
           }
         }
