@@ -1,6 +1,6 @@
 {
   "name": "Markdown",
-  "scopeName": "text.md",
+  "scopeName": "source.text.md",
   "fileTypes": [
     "markdown",
     "md",
