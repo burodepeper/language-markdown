@@ -1,4 +1,6 @@
-# TODO Simulate pressing `tab` instead of triggering a specific command
+# TODO
+# Simulate pressing `tab` instead of triggering a specific command.
+# Or is that simply outside of the scope of these specs?
 
 describe "Markdown", ->
 
@@ -46,9 +48,49 @@ describe "Markdown", ->
     for command, isRegistered of customCommands
       expect(isRegistered).toBe(true)
 
-  # TODO
-  # toggle-task
-  # describe 'toggling tasks', ->
+  describe 'toggling tasks', ->
+
+    it 'toggles a task', ->
+      editor.setText('- [ ] task')
+      editor.setCursorBufferPosition(0, 0)
+      atom.commands.dispatch(editorElement, "markdown:toggle-task")
+      expect(editor.getText()).toBe('- [x] task')
+
+    it 'toggles a task (with the cursor half way on the line)', ->
+      editor.setText('- [ ] task')
+      editor.setCursorBufferPosition(0, 4)
+      atom.commands.dispatch(editorElement, "markdown:toggle-task")
+      expect(editor.getText()).toBe('- [x] task')
+
+    it 'toggles a completed task', ->
+      editor.setText('- [x] task')
+      editor.setCursorBufferPosition(0, 0)
+      atom.commands.dispatch(editorElement, "markdown:toggle-task")
+      expect(editor.getText()).toBe('- [ ] task')
+
+    it 'toggles an indented task', ->
+      editor.setText('  - [ ] task')
+      editor.setCursorBufferPosition(0, 0)
+      atom.commands.dispatch(editorElement, "markdown:toggle-task")
+      expect(editor.getText()).toBe('  - [x] task')
+
+    it 'does not toggle an invalid task', ->
+      editor.setText('- [] invalid task')
+      editor.setCursorBufferPosition(0, 0)
+      atom.commands.dispatch(editorElement, "markdown:toggle-task")
+      expect(editor.getText()).toBe('- [] invalid task')
+
+    it 'does nothing on a normal list-item', ->
+      editor.setText('- item')
+      editor.setCursorBufferPosition(0, 0)
+      atom.commands.dispatch(editorElement, "markdown:toggle-task")
+      expect(editor.getText()).toBe('- item')
+
+    it 'does nothing on a bit of regular text', ->
+      editor.setText('[ ] text')
+      editor.setCursorBufferPosition(0, 0)
+      atom.commands.dispatch(editorElement, "markdown:toggle-task")
+      expect(editor.getText()).toBe('[ ] text')
 
   describe 'indenting list-items', ->
 
