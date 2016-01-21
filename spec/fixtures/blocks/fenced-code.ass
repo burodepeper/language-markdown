@@ -233,7 +233,7 @@
 "# baz" {
   source.text.md {
     "foo"
-    "---": hr.md
+    "---": hr.constant.markup.md
     fenced.code.md {
       "~~~": punctuation.md
       source.md {
@@ -241,7 +241,7 @@
       }
       "~~~": punctuation.md
     }
-    heading.markup.md {
+    heading.support.markup.md {
       heading-1.md {
         "#": punctuation.md
         " "

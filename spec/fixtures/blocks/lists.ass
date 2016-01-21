@@ -188,7 +188,7 @@
   source.text.md {
     unordered.list.markup.md {
       "- ": punctuation.md
-      heading.markup.md {
+      heading.support.markup.md {
         heading-1.md {
           "#": punctuation.md
           " "
@@ -198,7 +198,7 @@
       "- ": punctuation.md
       "Bar"
     }
-    "  ---": hr.md
+    "  ---": hr.constant.markup.md
     "  baz"
   }
 }

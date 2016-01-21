@@ -8,7 +8,7 @@
     quote.markup.md {
       '>': punctuation.md
       ' '
-      heading.markup.md {
+      heading.support.markup.md {
         heading-1.md {
           '#': punctuation.md
           ' '
@@ -32,7 +32,7 @@
   source.text.md {
     quote.markup.md {
       '>': punctuation.md
-      heading.markup.md {
+      heading.support.markup.md {
         heading-1.md {
           '#': punctuation.md
           ' '
@@ -57,7 +57,7 @@
       "   "
       '>': punctuation.md
       " "
-      heading.markup.md {
+      heading.support.markup.md {
         heading-1.md {
           '#': punctuation.md
           ' '

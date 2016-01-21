@@ -3,7 +3,7 @@
 @543
 "<http://foo.bar.baz>" {
   source.text.md {
-    auto.link.markup.md {
+    auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "http": scheme.md
@@ -17,7 +17,7 @@
 @544
 "<http://foo.bar.baz/test?q=hello&id=22&boolean>" {
   source.text.md {
-    auto.link.markup.md {
+    auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "http": scheme.md
@@ -31,7 +31,7 @@
 @545
 "<irc://foo.bar:2233/baz>" {
   source.text.md {
-    auto.link.markup.md {
+    auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "irc": scheme.md
@@ -45,7 +45,7 @@
 @546
 "<MAILTO:FOO@BAR.BAZ>" {
   source.text.md {
-    auto.link.markup.md {
+    auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "MAILTO": scheme.md
@@ -62,7 +62,7 @@
 @548
 "<http://example.com/\[\>" {
   source.text.md {
-    auto.link.markup.md {
+    auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "http": scheme.md
@@ -76,7 +76,7 @@
 @549
 "<foo@bar.example.com>" {
   source.text.md {
-    email.auto.link.markup.md {
+    email.auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "foo"
@@ -91,7 +91,7 @@
 @550
 "<foo+special@Bar.baz-bar0.com>" {
   source.text.md {
-    email.auto.link.markup.md {
+    email.auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "foo+special"

@@ -161,7 +161,7 @@
 #           "\*": escape.constant.md
 #         }
 #         " "
-#         title.link.heading.markup.md {
+#         title.link.heading.support.markup.md {
 #           '"': punctuation.md
 #           "ti"
 #           "\*": escape.constant.md

@@ -1,7 +1,7 @@
 @521
 "![foo](/url "title")" {
   source.text.md {
-    link.markup.md {
+    link.markup.entity.md {
       "![foo]" {
         image.link.string.md {
           "![": punctuation.md
@@ -16,7 +16,7 @@
         }
         " "
         "title" {
-          title.link.md {
+          title.link.meta.md {
             """: punctuation.md
             "title"
             """: punctuation.md
@@ -36,7 +36,7 @@
 #   source.text.md {
 #
 #     "![foo *bar*]" {
-#       link.markup.md {
+#       link.markup.entity.md {
 #         image.link.string.md {
 #           "![": punctuation.md
 #           "foo *bar*"
@@ -48,7 +48,7 @@
 #     ""
 #
 #     "[foo *bar*]: train.jpg "train & tracks"" {
-#       reference.link.markup.md {
+#       reference.link.markup.entity.md {
 #         "[foo *bar*]" {
 #           text.link.string.md {
 #             "[": punctuation.md
@@ -65,7 +65,7 @@
 #         }
 #         " "
 #         ""train & tracks"" {
-#           title.link.md {
+#           title.link.meta.md {
 #             """: punctuation.md
 #             "train & tracks"
 #             """: punctuation.md
@@ -81,7 +81,7 @@
 # @523
 # "![foo ![bar](/url)](/url2)" {
 #   source.text.md {
-#     link.markup.md {
+#     link.markup.entity.md {
 #       "![foo ![bar](/url)]" {
 #         image.link.string.md {
 #           "![": punctuation.md
@@ -104,7 +104,7 @@
 # @524
 # "![foo [bar](/url)](/url2)" {
 #   source.text.md {
-#     link.markup.md {
+#     link.markup.entity.md {
 #       "![foo [bar](/url)]" {
 #         image.link.string.md {
 #           "![": punctuation.md
@@ -130,7 +130,7 @@
 # "[foo *bar*]: train.jpg "train & tracks"" {
 #   source.text.md {
 #     "![foo *bar*][]" {
-#       link.markup.md {
+#       link.markup.entity.md {
 #         "![foo *bar*]" {
 #           image.link.string.md {
 #             "![": punctuation.md
@@ -148,7 +148,7 @@
 #     }
 #     ""
 #     "[foo *bar*]: train.jpg "train & tracks"" {
-#       reference.link.markup.md {
+#       reference.link.markup.entity.md {
 #         "[foo *bar*]" {
 #           text.link.string.md {
 #             "[": punctuation.md
@@ -165,7 +165,7 @@
 #         }
 #         " "
 #         ""train & tracks"" {
-#           title.link.md {
+#           title.link.meta.md {
 #             """: punctuation.md
 #             "train & tracks"
 #             """: punctuation.md
@@ -183,7 +183,7 @@
 # "[FOOBAR]: train.jpg "train & tracks"" {
 #   source.text.md {
 #     "![foo *bar*][foobar]" {
-#       link.markup.md {
+#       link.markup.entity.md {
 #         "![foo *bar*]" {
 #           image.link.string.md {
 #             "![": punctuation.md
@@ -202,7 +202,7 @@
 #     }
 #     ""
 #     "[FOOBAR]: train.jpg "train & tracks"" {
-#       reference.link.markup.md {
+#       reference.link.markup.entity.md {
 #         "[FOOBAR]" {
 #           text.link.string.md {
 #             "[": punctuation.md
@@ -219,7 +219,7 @@
 #         }
 #         " "
 #         ""train & tracks"" {
-#           title.link.md {
+#           title.link.meta.md {
 #             """: punctuation.md
 #             "train & tracks"
 #             """: punctuation.md
@@ -233,7 +233,7 @@
 @527
 "![foo](train.jpg)" {
   source.text.md {
-    link.markup.md {
+    link.markup.entity.md {
       "![foo]" {
         image.link.string.md {
           "![": punctuation.md
@@ -256,7 +256,7 @@
 "My ![foo bar](/path/to/train.jpg  "title"   )" {
   source.text.md {
     "My "
-    link.markup.md {
+    link.markup.entity.md {
       "![foo bar]" {
         image.link.string.md {
           "![": punctuation.md
@@ -271,7 +271,7 @@
         }
         "  "
         "title" {
-          title.link.md {
+          title.link.meta.md {
             """: punctuation.md
             "title"
             """: punctuation.md
@@ -287,7 +287,7 @@
 @529
 "![foo](<url>)" {
   source.text.md {
-    link.markup.md {
+    link.markup.entity.md {
       "![foo]" {
         image.link.string.md {
           "![": punctuation.md
@@ -311,7 +311,7 @@
 @530
 "![](/url)" {
   source.text.md {
-    link.markup.md {
+    link.markup.entity.md {
       "![]" {
         image.link.string.md {
           "![": punctuation.md
@@ -340,7 +340,7 @@
 # "[*foo* bar]: /url "title"" {
 #   source.text.md {
 #     "![*foo* bar][]" {
-#       link.markup.md {
+#       link.markup.entity.md {
 #         "![*foo* bar]" {
 #           image.link.string.md {
 #             "![": punctuation.md
@@ -358,7 +358,7 @@
 #     }
 #     ""
 #     "[*foo* bar]: /url "title"" {
-#       reference.link.markup.md {
+#       reference.link.markup.entity.md {
 #         "[*foo* bar]" {
 #           label.link.string.md {
 #             "[": punctuation.md
@@ -375,7 +375,7 @@
 #         }
 #         " "
 #         ""title"" {
-#           title.link.md {
+#           title.link.meta.md {
 #             '"': punctuation.md
 #             "title"
 #             '"': punctuation.md
@@ -397,7 +397,7 @@
 # "[*foo* bar]: /url "title"" {
 #   source.text.md {
 #     "![*foo* bar]" {
-#       link.markup.md {
+#       link.markup.entity.md {
 #         "![*foo* bar]" {
 #           image.link.string.md {
 #             "![": punctuation.md
@@ -416,7 +416,7 @@
 #     }
 #     ""
 #     "[*foo* bar]: /url "title"" {
-#       reference.link.markup.md {
+#       reference.link.markup.entity.md {
 #         "[*foo* bar]" {
 #           label.link.string.md {
 #             "[": punctuation.md
@@ -433,7 +433,7 @@
 #         }
 #         " "
 #         ""title"" {
-#           title.link.md {
+#           title.link.meta.md {
 #             '"': punctuation.md
 #             "title"
 #             '"': punctuation.md

@@ -11,7 +11,7 @@ patterns: [
   # ---------------------
   # : letters and stuff
   {
-    name: 'definition.list.markup.md'
+    name: 'definition.list.markup.entity.md'
     match: '^(?:\\s*)(:)( +)(.*)$'
     captures:
       1: { name: 'punctuation.md' }
@@ -22,7 +22,7 @@ patterns: [
   # *[HTML]: Hyper Text Markup Language
   # *[W3C]:  World Wide Web Consortium
   {
-    name: 'abbreviation.reference.link.markup.md'
+    name: 'abbreviation.reference.link.markup.entity.md'
     match: '^((?:\\*\\[)(?:[^\\]]+)(?:\\]))(:) (.*)$'
     captures:
       1: patterns: [{ include: '#link-label' }]

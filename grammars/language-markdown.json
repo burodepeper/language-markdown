@@ -415,15 +415,15 @@
     "hr": {
       "patterns": [
         {
-          "name": "hr.markup.md",
+          "name": "hr.constant.markup.md",
           "match": "^[ ]{0,3}[-]{1,} *[-]{1,} *[-]{1,}[ -]*$"
         },
         {
-          "name": "hr.markup.md",
+          "name": "hr.constant.markup.md",
           "match": "^[ ]{0,3}[*]{1,} *[*]{1,} *[*]{1,}[ *]*$"
         },
         {
-          "name": "hr.markup.md",
+          "name": "hr.constant.markup.md",
           "match": "^[ ]{0,3}[_]{1,} *[_]{1,} *[_]{1,}[ _]*$"
         }
       ]
@@ -689,13 +689,13 @@
           "begin": "\\A---$",
           "beginCaptures": {
             "0": {
-              "name": "hr.constant.md"
+              "name": "hr.constant.markup.md"
             }
           },
           "end": "^(---|\\.\\.\\.)$",
           "endCaptures": {
             "1": {
-              "name": "hr.constant.md"
+              "name": "hr.constant.markup.md"
             }
           },
           "name": "front-matter.yaml.source.md",
@@ -709,13 +709,13 @@
           "begin": "\\A\\+\\+\\+$",
           "beginCaptures": {
             "0": {
-              "name": "hr.constant.md"
+              "name": "hr.constant.markup.md"
             }
           },
           "end": "^\\+\\+\\+$",
           "endCaptures": {
             "0": {
-              "name": "hr.constant.md"
+              "name": "hr.constant.markup.md"
             }
           },
           "name": "front-matter.toml.source.md",
@@ -944,7 +944,7 @@
     "markdown-extra": {
       "patterns": [
         {
-          "name": "definition.list.markup.md",
+          "name": "definition.list.markup.entity.md",
           "match": "^(?:\\s*)(:)( +)(.*)$",
           "captures": {
             "1": {
@@ -953,7 +953,7 @@
           }
         },
         {
-          "name": "abbreviation.reference.link.markup.md",
+          "name": "abbreviation.reference.link.markup.entity.md",
           "match": "^((?:\\*\\[)(?:[^\\]]+)(?:\\]))(:) (.*)$",
           "captures": {
             "1": {
@@ -1348,7 +1348,7 @@
               "name": "punctuation.md"
             },
             "2": {
-              "name": "link.markup.md"
+              "name": "link.markup.entity.md"
             },
             "3": {
               "patterns": [
@@ -1466,7 +1466,7 @@
     "links": {
       "patterns": [
         {
-          "name": "reference.footnote.link.markup.md",
+          "name": "reference.footnote.link.markup.entity.md",
           "match": "((?:\\[\\^)(?:[^\\[\\]]+)(?:\\]))(?!:)",
           "captures": {
             "1": {
@@ -1479,7 +1479,7 @@
           }
         },
         {
-          "name": "definition.footnote.link.markup.md",
+          "name": "definition.footnote.link.markup.entity.md",
           "match": "((?:\\[\\^)(?:[^\\[\\]]+)(?:\\]))(:)",
           "captures": {
             "1": {

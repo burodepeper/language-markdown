@@ -84,17 +84,17 @@
   source.text.md {
     table.storage.md {
       "|": punctuation.md
-      ":": alignment.punctuation.md
+      ":": alignment.punctuation.meta.md
       "---": punctuation.md
       " "
       "|": punctuation.md
-      ":": alignment.punctuation.md
+      ":": alignment.punctuation.meta.md
       "---": punctuation.md
-      ":": alignment.punctuation.md
+      ":": alignment.punctuation.meta.md
       "|": punctuation.md
       " "
       "---": punctuation.md
-      ":": alignment.punctuation.md
+      ":": alignment.punctuation.meta.md
       "|": punctuation.md
     }
   }
@@ -106,19 +106,19 @@
     table.storage.md {
       "|": punctuation.md
       " "
-      ":": alignment.punctuation.md
+      ":": alignment.punctuation.meta.md
       "--": punctuation.md
       " "
       "|": punctuation.md
       " "
-      ":": alignment.punctuation.md
+      ":": alignment.punctuation.meta.md
       "-": punctuation.md
-      ":": alignment.punctuation.md
+      ":": alignment.punctuation.meta.md
       " "
       "|": punctuation.md
       " "
       "--": punctuation.md
-      ":": alignment.punctuation.md
+      ":": alignment.punctuation.meta.md
       " "
       "|": punctuation.md
     }

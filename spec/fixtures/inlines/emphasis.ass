@@ -441,7 +441,7 @@
     emphasis.italic.markup.md {
       "*": punctuation.md
       'foo '
-      link.markup.md {
+      link.markup.entity.md {
         text.link.string.md {
           "[": punctuation.md
           "bar"
@@ -692,7 +692,7 @@
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       'foo '
-      link.markup.md {
+      link.markup.entity.md {
         text.link.string.md {
           "[": punctuation.md
           "bar"
@@ -891,7 +891,7 @@
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       'foo '
-      link.markup.md {
+      link.markup.entity.md {
         text.link.string.md {
           "[": punctuation.md
           emphasis.italic.markup.md {

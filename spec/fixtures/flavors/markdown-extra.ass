@@ -4,7 +4,7 @@
   source.text.md {
     "That's some text with a footnote."
     "[^1]" {
-      reference.footnote.link.markup.md {
+      reference.footnote.link.markup.entity.md {
         label.link.string.md {
           "[^": punctuation.md
           "1"
@@ -13,7 +13,7 @@
       }
     }
     "[^1]:" {
-      definition.footnote.link.markup.md {
+      definition.footnote.link.markup.entity.md {
         "[^1]" {
           label.link.string.md {
             "[^": punctuation.md
@@ -34,7 +34,7 @@
   source.text.md {
     "Apple"
     ":   Pomaceous fruit of plants of the genus Malus in the family Rosaceae." {
-      definition.list.markup.md {
+      definition.list.markup.entity.md {
         ":": punctuation.md
         "   Pomaceous fruit of plants of the genus Malus in the family Rosaceae."
       }
@@ -49,13 +49,13 @@
   source.text.md {
     "Orange"
     ": The fruit of an evergreen tree of the genus Citrus." {
-      definition.list.markup.md {
+      definition.list.markup.entity.md {
         ":": punctuation.md
         " The fruit of an evergreen tree of the genus Citrus."
       }
     }
     ": Optional second line of definition-list-item" {
-      definition.list.markup.md {
+      definition.list.markup.entity.md {
         ":": punctuation.md
         " Optional second line of definition-list-item"
       }
@@ -69,7 +69,7 @@
 @5
 "*[HTML]: Hyper Text Markup Language" {
   source.text.md {
-    abbreviation.reference.link.markup.md {
+    abbreviation.reference.link.markup.entity.md {
       "*[HTML]" {
         label.link.string.md {
           "*[": punctuation.md
@@ -86,7 +86,7 @@
 @6
 "*[W3C]:  World Wide Web Consortium" {
   source.text.md {
-    abbreviation.reference.link.markup.md {
+    abbreviation.reference.link.markup.entity.md {
       "*[W3C]" {
         label.link.string.md {
           "*[": punctuation.md
@@ -103,7 +103,7 @@
 @7
 "# Heading {key=value #id .class} #" {
   source.text.md {
-    heading.markup.md {
+    heading.support.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
@@ -118,7 +118,7 @@
 @8
 "## Open heading {.class lang=fr}" {
   source.text.md {
-    heading.markup.md {
+    heading.support.markup.md {
       heading-2.md {
         '##': punctuation.md
         ' '
@@ -152,7 +152,7 @@
 @9
 "### Le Site ######{.class .shine #title lang=fr}" {
   source.text.md {
-    heading.markup.md {
+    heading.support.markup.md {
       heading-3.md {
         "###": punctuation.md
         " "
@@ -201,7 +201,7 @@
 @10
 "[label](http://www.url.com){#id .external-link target=_blank}" {
   source.text.md {
-    link.markup.md {
+    link.markup.entity.md {
       text.link.string.md {
         "[": punctuation.md
         "label"
@@ -287,12 +287,12 @@
 @12
 "[![alt](/image.jpg "title"){.class key=value}](/url "title"){.class key=value}" {
   source.text.md {
-    link.markup.md {
+    link.markup.entity.md {
       "[![alt](/image.jpg "title"){.class key=value}]" {
         text.link.string.md {
           "[": punctuation.md
           "![alt](/image.jpg "title"){.class key=value}" {
-            link.markup.md {
+            link.markup.entity.md {
               "![alt]" {
                 image.link.string.md {
                   "![": punctuation.md
@@ -307,7 +307,7 @@
                 }
                 " "
                 "title" {
-                  title.link.md {
+                  title.link.meta.md {
                     """: punctuation.md
                     "title"
                     """: punctuation.md
@@ -346,7 +346,7 @@
           "/url": uri.underline.link.md
         }
         ' '
-        title.link.md {
+        title.link.meta.md {
           '"': punctuation.md
           "title"
           '"': punctuation.md

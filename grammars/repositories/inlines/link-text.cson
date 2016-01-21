@@ -28,7 +28,7 @@ patterns: [
     '
     captures:
       1: name: 'punctuation.md'
-      2: name: 'link.markup.md'
+      2: name: 'link.markup.entity.md'
       3: patterns: [{ include: '#link-text' }]
       4: name: 'punctuation.md'
       5: patterns: [{ include: '#link-destination' }]

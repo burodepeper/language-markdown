@@ -118,7 +118,7 @@
 @593
 "### foo\" {
   source.text.md {
-    heading.markup.md {
+    heading.support.markup.md {
       heading-3.md {
         '###': punctuation.md
         ' '
@@ -131,7 +131,7 @@
 @594
 "### foo  " {
   source.text.md {
-    heading.markup.md {
+    heading.support.markup.md {
       heading-3.md {
         '###': punctuation.md
         ' '
