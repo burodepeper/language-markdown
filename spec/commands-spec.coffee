@@ -15,6 +15,7 @@ describe "Markdown", ->
     editor.setText('')
     editor.setCursorBufferPosition(0, 0)
 
+    # Set default config so we can 'assume' these values later on
     editor.config.set('editor.softTabs', true)
     editor.config.set('editor.tabLength', 2)
     editor.config.set('editor.tabType', 'soft')
@@ -53,6 +54,7 @@ describe "Markdown", ->
 
     it 'indents a valid list-item', ->
       editor.setText('- item')
+      editor.setCursorBufferPosition(0, 0)
       atom.commands.dispatch(editorElement, "markdown:indent-list-item")
       expect(editor.getText()).toBe('  - item')
 
@@ -77,7 +79,7 @@ describe "Markdown", ->
       atom.commands.dispatch(editorElement, "markdown:indent-list-item")
       expect(editor.getText()).toBe('-item')
 
-    it 'indents a list-item with a single leading space', ->
+    it 'indents a partially indented list-item', ->
       editor.setText(' - item')
       atom.commands.dispatch(editorElement, "markdown:indent-list-item")
       expect(editor.getText()).toBe('   - item')
@@ -98,13 +100,62 @@ describe "Markdown", ->
       atom.commands.dispatch(editorElement, "markdown:indent-list-item")
       expect(editor.getText()).toBe('  - [ ] task')
 
-    # TODO it should not indent definition-lists
-    # xit 'does NOT indent definition-lists', ->
-    #   editor.setText(': definition')
-    #   atom.commands.dispatch(editorElement, "markdown:indent-list-item")
-    #   expect(editor.getText()).toBe(': definition')
+    it 'indents definition-lists', ->
+      editor.setText(': definition')
+      atom.commands.dispatch(editorElement, "markdown:indent-list-item")
+      expect(editor.getText()).toBe('  : definition')
 
-  # describe 'outdenting list-items', ->
+  describe 'outdenting list-items', ->
 
-    # TODO
-    # outdent-list-item
+    it 'outdents a valid list-item', ->
+      editor.setText('  - item')
+      editor.setCursorBufferPosition(0, 0)
+      atom.commands.dispatch(editorElement, "markdown:outdent-list-item")
+      expect(editor.getText()).toBe('- item')
+
+    it 'outdents a list-item when the cursor is not at the start of a line', ->
+      editor.setText('  - item')
+      editor.setCursorBufferPosition(0, 3)
+      atom.commands.dispatch(editorElement, "markdown:outdent-list-item")
+      expect(editor.getText()).toBe('- item')
+
+    it 'does nothing on an unindented list-item', ->
+      editor.setText('- item')
+      atom.commands.dispatch(editorElement, "markdown:outdent-list-item")
+      expect(editor.getText()).toBe('- item')
+
+    it 'outdents a tabbed indented list-item', ->
+      editor.setText('\t- item')
+      atom.commands.dispatch(editorElement, "markdown:outdent-list-item")
+      expect(editor.getText()).toBe('- item')
+
+    it 'does NOT outdent an invalid list-item', ->
+      editor.setText('  -item')
+      atom.commands.dispatch(editorElement, "markdown:outdent-list-item")
+      expect(editor.getText()).toBe('  -item')
+
+    it 'outdents a partially (3 spaces) indented list-item', ->
+      editor.setText('   - item')
+      atom.commands.dispatch(editorElement, "markdown:outdent-list-item")
+      expect(editor.getText()).toBe(' - item')
+
+    it 'does NOT outdent a seemingly valid list-item as part of fenced-code', ->
+      editor.setText('```\n  - item\n```')
+      editor.setCursorBufferPosition(1, 3)
+      atom.commands.dispatch(editorElement, "markdown:outdent-list-item")
+      expect(editor.getText()).toBe('```\n  - item\n```')
+
+    it 'indents a valid numbered list-item', ->
+      editor.setText('  1. item')
+      atom.commands.dispatch(editorElement, "markdown:outdent-list-item")
+      expect(editor.getText()).toBe('1. item')
+
+    it 'outdents a task-list-item', ->
+      editor.setText('  - [ ] task')
+      atom.commands.dispatch(editorElement, "markdown:outdent-list-item")
+      expect(editor.getText()).toBe('- [ ] task')
+
+    it 'outdents definition-lists', ->
+      editor.setText('  : definition')
+      atom.commands.dispatch(editorElement, "markdown:outdent-list-item")
+      expect(editor.getText()).toBe(': definition')
