@@ -3,7 +3,7 @@ patterns: [
   {
     # Empty headings
     match: '^(?:[ ]{0,3})((?:#{1,6})\\s*(?:#*)\\s*)$'
-    name: 'empty.heading.markup.md'
+    name: 'empty.heading.support.markup.md'
     captures:
       1:
         patterns: [
@@ -63,7 +63,7 @@ patterns: [
     # match for a heading? It seems more logical to test against one match, than
     # to go through all six of them every iteration.
     match: '^((?: {0,3})(?:#{1,6})(?: +)(?:.+))$'
-    name: 'heading.markup.md'
+    name: 'heading.support.markup.md'
     captures:
       1:
         patterns: [
