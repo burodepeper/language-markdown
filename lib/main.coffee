@@ -37,11 +37,11 @@ module.exports =
     @subscriptions = new CompositeDisposable()
 
     # Add commands to overwrite the behavior of tab within list-item context
-    @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:indent-list-item': (event) => @indentListItem(event)
-    @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:outdent-list-item': (event) => @outdentListItem(event)
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:indent-list-item': (event) => @indentListItem(event)
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:outdent-list-item': (event) => @outdentListItem(event)
 
     # Add command to toggle a task
-    @subscriptions.add atom.commands.add 'atom-workspace', 'markdown:toggle-task': (event) => @toggleTask(event)
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:toggle-task': (event) => @toggleTask(event)
 
     # Disable language-gfm as this package is intended as its replacement
     if atom.config.get('language-markdown.disableLanguageGfm')
@@ -102,8 +102,7 @@ module.exports =
                         if classes.indexOf('ordered') isnt -1
                           typeOfList = 'ordered'
                         if classes.indexOf('definition') isnt -1
-                          # Skip definition-lists
-                          isListItem = false
+                          typeOfList = 'definition'
                         break
 
                       else
@@ -115,7 +114,7 @@ module.exports =
                     else
                       isPunctuation = false
 
-                  if isListItem
+                  if isListItem and typeOfList isnt 'definition'
                     text = token.value
 
                     # increment ordered list-item
