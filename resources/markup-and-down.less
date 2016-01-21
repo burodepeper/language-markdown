@@ -15,43 +15,58 @@
 // 2.
 // Generic markup styles
 
-.source {
-  .markup {
-    &.heading {
-      color: @_syntax;
-      font-weight: bold;
-    }
+.markup {
 
-    &.inserted,
-    &.addition,
-    &.quote {
-      color: @_content;
-    }
+  &.bold,
+  &.heading,
+  &.strong.emphasis {
+    font-weight: bold;
+  }
 
-    &.deletion {
-      color: @_constant;
-    }
+  &.italic,
+  &.emphasis:not(.strong) {
+    font-style: italic;
+  }
 
-    &.changed {
-      color: @_syntax;
-    }
+  &.underline {
+    text-decoration: underline;
+  }
 
-    &.list {
+  &.heading,
+  &.changed {
+    color: @_syntax;
+  }
+
+  &.inserted,
+  &.addition,
+  &.quote {
+    color: @_content;
+  }
+
+  &.deletion,
+  &.hr {
+    color: @_constant;
+  }
+
+  &.link {
+    color: @_syntax_variable;
+  }
+
+  &.list {
+    & > .punctuation {
       color: @_syntax_alt;
-
-      &.completed {
-        opacity: 0.333;
-      }
     }
 
-    &.underline {
-      text-decoration: underline;
-    }
-
-    &.raw {
-      color: @neutral;
+    &.completed {
+      opacity: 0.333;
     }
   }
+
+  &.raw,
+  &.code {
+    color: @neutral;
+  }
+
 }
 
 // 3.
@@ -260,7 +275,7 @@
 //       &.other {
 //         color: inherit;
 //       }
-// 
+//
 //       &.id,
 //       &.class
 //       {
