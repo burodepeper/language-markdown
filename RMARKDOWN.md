@@ -16,7 +16,7 @@ summary(cars)
 summary(cars)
 ```
 
-```{r, results='asis', invalid='123', child=NULL, eval=FALS}
+```{r, results='asis', results='duh', invalid='123', child=NULL, eval=FALS}
 knitr::kable(mtcars)
 ```
 

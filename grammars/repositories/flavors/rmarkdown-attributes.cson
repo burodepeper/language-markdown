@@ -28,8 +28,12 @@ patterns: [
       3: name: 'value.constant.md'
   }
 
+  # TODO
+  # engine=''
+
+  # results='markup|hide|hold|asis'
   {
-    match: '(results|engine|child|code|comment|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:align|cap|env|ext|keep|lp|path|pos|process|scap|subcap|show)|out\\.extra)(=)(([\'|"])[^\\s|=|,|\'|"]+(\\4))'
+    match: '(results)(=)(([\'|"])(?:markup|hide|hold|asis)(\\4))'
     name: 'rmarkdown.attribute.meta.md'
     captures:
       1: name: 'key.keyword.md'
@@ -39,13 +43,40 @@ patterns: [
       5: name: 'punctuation.md'
   }
 
-  # {
-  #   match: '([^=|,]+)(=)([^\\s|=|,|\\}]+)'
-  #   name: 'rmarkdown.attribute.meta.md'
-  #   captures:
-  #     1: name: 'key.keyword.md'
-  #     2: name: 'punctuation.md'
-  #     3: name: 'value.string.md'
-  # }
+  # fig.align='default|left|right|center'
+  {
+    match: '(fig\\.align)(=)(([\'|"])(?:default|left|right|center)(\\4))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+      4: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
+
+  # fig.keep='high|all|first|last|none'
+  {
+    match: '(fig\\.keep)(=)(([\'|"])(?:high|all|first|last|none)(\\4))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+      4: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
+
+  # Generic key='value'
+  {
+    match: '(engine|child|code|comment|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:cap|env|ext|lp|path|pos|process|scap|subcap|show)|out\\.extra)(=)(([\'|"])[^\\s|=|,|\'|"]+(\\4))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+      4: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
 
 ]

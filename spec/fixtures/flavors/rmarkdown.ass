@@ -68,7 +68,7 @@
   }
 }
 
-@4
+@4a
 "```{r, results='asis'}" {
   text.md {
     r.fenced.code.md {
@@ -89,6 +89,20 @@
           }
         }
       }
+      "}": punctuation.md
+    }
+  }
+}
+
+@4b
+# 'duh' is not valid value for the key results
+"```{r, results='duh'}" {
+  text.md {
+    r.fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      ", results='duh'"
       "}": punctuation.md
     }
   }
