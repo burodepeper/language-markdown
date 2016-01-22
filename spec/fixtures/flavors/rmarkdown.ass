@@ -3,7 +3,7 @@
 "summary(cars)"+
 "```" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -17,7 +17,7 @@
 @2
 "```{r, echo=FALSE}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -37,7 +37,7 @@
 @3a
 "```{r eval=FALSE}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -57,7 +57,7 @@
 @3b
 "```{r eval=FALS}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -71,7 +71,7 @@
 @3c
 "```{r eval=FALSE echo=TRUE}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -92,7 +92,7 @@
 @4a
 "```{r, results='asis'}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -119,7 +119,7 @@
 # 'duh' is not valid value for the key results
 "```{r, results='duh'}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -132,7 +132,7 @@
 @5a
 "```{r setup, include=FALSE}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -154,7 +154,7 @@
 @5b
 "```{r Abc_123}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -168,7 +168,7 @@
 @5c
 "```{r Abc-123}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -183,7 +183,7 @@
 # A period is not a valid part of the label, I think
 "```{r Abc.123}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -198,7 +198,7 @@
 # Abc is the label, 123 is 'invalid'
 "```{r Abc 123}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -216,7 +216,7 @@
 # "#include <Rcpp.h>"+
 # "```" {
 #   text.md {
-#     r.fenced.code.md {
+#     fenced.code.md {
 #       "```": punctuation.md
 #       "{": punctuation.md
 #       "r": language.constant.md
@@ -244,7 +244,7 @@
 @7a
 "```{r, results='asis', include=FALSE}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -278,7 +278,7 @@
 @7b
 "```{r label results='asis', include=FALSE}" {
   text.md {
-    r.fenced.code.md {
+    fenced.code.md {
       "```": punctuation.md
       "{": punctuation.md
       "r": language.constant.md
@@ -314,7 +314,7 @@
 # @7c
 # "```{r label results='asis' include=FALSE}" {
 #   text.md {
-#     r.fenced.code.md {
+#     fenced.code.md {
 #       "```": punctuation.md
 #       "{": punctuation.md
 #       "r": language.constant.md

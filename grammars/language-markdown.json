@@ -1111,7 +1111,7 @@
         {
           "begin": "(?x) (```)( (\\{)(r)(?:\\s)? (?:([a-zA-Z0-9|_|-]*)(?=[\\s|,|}])\\s?)? ([^\\}]*)? (\\}) )",
           "end": "^(\\1)$",
-          "name": "r.fenced.code.md",
+          "name": "fenced.code.md",
           "contentName": "embedded.source.r",
           "patterns": [
             {
