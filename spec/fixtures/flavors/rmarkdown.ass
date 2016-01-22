@@ -68,6 +68,27 @@
   }
 }
 
+@3c
+"```{r eval=FALSE echo=TRUE}" {
+  text.md {
+    r.fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "eval=FALSE" {
+        rmarkdown.attribute.meta.md {
+          "eval": key.keyword.md
+          "=": punctuation.md
+          "FALSE": value.constant.md
+        }
+      }
+      " echo=TRUE"
+      "}": punctuation.md
+    }
+  }
+}
+
 @4a
 "```{r, results='asis'}" {
   text.md {
@@ -183,7 +204,8 @@
       "r": language.constant.md
       " "
       "Abc": label.string.md
-      " 123"
+      " "
+      "123"
       "}": punctuation.md
     }
   }

@@ -7,7 +7,6 @@ fibonacci(10L)
 summary(cars)
 ```
 
-<!-- TODO needs commas as separators -->
 ```{r echo=FALSE eval=FALSE}
 summary(cars)
 ```
@@ -20,7 +19,10 @@ summary(cars)
 knitr::kable(mtcars)
 ```
 
-```{r label, include=FALSE, invalid='abc'}
+```{r label results='asis', include=FALSE}
+```
+
+```{r label, include=FALSE, invalid='abc' results='asis'}
 knitr::opts_chunk$set(cache=TRUE)
 ```
 
