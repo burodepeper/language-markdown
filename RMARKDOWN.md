@@ -48,5 +48,8 @@ int fibonacci(const int x) {
 ```{r, echo=FALSE   }
 ```
 
+```{r, echo=2:3:-4,dpi=100}
+```
+
 ```{r,echo=FALSE,include=TRUE}
 ```

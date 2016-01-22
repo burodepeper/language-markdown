@@ -1,5 +1,6 @@
 # http://rmarkdown.rstudio.com/authoring_rcodechunks.html
 # http://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+# http://yihui.name/knitr/options/
 
 key: 'rmarkdown'
 patterns: [
