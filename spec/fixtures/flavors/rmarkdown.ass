@@ -94,7 +94,7 @@
   }
 }
 
-@5
+@5a
 "```{r setup, include=FALSE}" {
   text.md {
     r.fenced.code.md {
@@ -111,6 +111,65 @@
           "FALSE": value.constant.md
         }
       }
+      "}": punctuation.md
+    }
+  }
+}
+
+@5b
+"```{r Abc_123}" {
+  text.md {
+    r.fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "Abc_123": label.string.md
+      "}": punctuation.md
+    }
+  }
+}
+
+@5c
+"```{r Abc-123}" {
+  text.md {
+    r.fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "Abc-123": label.string.md
+      "}": punctuation.md
+    }
+  }
+}
+
+@5d
+# A period is not a valid part of the label, I think
+"```{r Abc.123}" {
+  text.md {
+    r.fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "Abc.123"
+      "}": punctuation.md
+    }
+  }
+}
+
+@5e
+# Abc is the label, 123 is 'invalid'
+"```{r Abc 123}" {
+  text.md {
+    r.fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "Abc": label.string.md
+      " 123"
       "}": punctuation.md
     }
   }
