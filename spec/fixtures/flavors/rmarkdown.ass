@@ -311,20 +311,120 @@
   }
 }
 
-# @7c
-# "```{r label results='asis' include=FALSE}" {
-#   text.md {
-#     fenced.code.md {
-#       "```": punctuation.md
-#       "{": punctuation.md
-#       "r": language.constant.md
-#       " "
-#       "label": label.string.md
-#       " "
-#       "results='asis'"
-#       ", "
-#       "include=FALSE"
-#       "}": punctuation.md
-#     }
-#   }
-# }
+@7c
+"```{r label results='asis' include=FALSE}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "label": label.string.md
+      " "
+      "results='asis'" {
+        rmarkdown.attribute.meta.md {
+          "results": key.keyword.md
+          "=": punctuation.md
+          "'asis'" {
+            value.string.md {
+              "'": punctuation.md
+              "asis"
+              "'": punctuation.md
+            }
+          }
+        }
+      }
+      " include=FALSE"
+      "}": punctuation.md
+    }
+  }
+}
+
+@8
+"```{r comment='# '}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "comment='# '" {
+        rmarkdown.attribute.meta.md {
+          "comment": key.keyword.md
+          "=": punctuation.md
+          "'# '" {
+            value.string.md {
+              "'": punctuation.md
+              "# "
+              "'": punctuation.md
+            }
+          }
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}
+
+@9a
+# Because a look-behind can't be of variable width, attributes can't be separated by more than one space
+"```{r,  echo=FALSE}" {
+text.md {
+  fenced.code.md {
+    "```": punctuation.md
+    "{": punctuation.md
+    "r": language.constant.md
+    ",  echo=FALSE"
+    "}": punctuation.md
+  }
+}
+}
+
+@9b
+"```{r, echo=FALSE   }" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      ", "
+      "echo=FALSE" {
+        rmarkdown.attribute.meta.md {
+          "echo": key.keyword.md
+          "=": punctuation.md
+          "FALSE": value.constant.md
+        }
+      }
+      "   "
+      "}": punctuation.md
+    }
+  }
+}
+
+@9c
+"```{r,echo=FALSE,include=TRUE}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      ","
+      "echo=FALSE" {
+        rmarkdown.attribute.meta.md {
+          "echo": key.keyword.md
+          "=": punctuation.md
+          "FALSE": value.constant.md
+        }
+      }
+      ","
+      "include=TRUE" {
+        rmarkdown.attribute.meta.md {
+          "include": key.keyword.md
+          "=": punctuation.md
+          "TRUE": value.constant.md
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}

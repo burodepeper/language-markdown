@@ -1084,7 +1084,7 @@
           }
         },
         {
-          "match": "(?<=^|,|,\\s)(engine|child|code|comment|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:cap|env|ext|lp|path|pos|process|scap|subcap|show)|out\\.extra)(=)((['|\"])[^\\s|=|,|'|\"]+(\\4))",
+          "match": "(?<=^|,|,\\s)(engine|child|code|comment|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:cap|env|ext|lp|path|pos|process|scap|subcap|show)|out\\.extra)(=)((['|\"])[^=|,|'|\"]+(\\4))",
           "name": "rmarkdown.attribute.meta.md",
           "captures": {
             "1": {

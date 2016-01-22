@@ -35,3 +35,18 @@ int fibonacci(const int x) {
     return (fibonacci(x - 1)) + fibonacci(x - 2);
 }
 ```
+
+```{r comment='# '}
+```
+
+```{r dev.args=list(bg='yellow', pointsize=10)}
+```
+
+```{r,  echo=FALSE}
+```
+
+```{r, echo=FALSE   }
+```
+
+```{r,echo=FALSE,include=TRUE}
+```
