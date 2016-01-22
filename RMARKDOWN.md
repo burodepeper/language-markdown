@@ -36,6 +36,9 @@ int fibonacci(const int x) {
 }
 ```
 
+```{r engine='foobar'}
+```
+
 ```{r comment='# '}
 ```
 
@@ -48,6 +51,7 @@ int fibonacci(const int x) {
 ```{r, echo=FALSE   }
 ```
 
+<!-- TODO numeric values of 'echo' need some work, see docs in cson -->
 ```{r, echo=2:3:-4,dpi=100}
 ```
 

@@ -28,8 +28,18 @@ patterns: [
       3: name: 'value.constant.md'
   }
 
-  # TODO
+  # NOTE This is just temporary
   # engine=''
+  {
+    match: '(?<=^|,|,\\s)(engine)(=)(([\'|"])(?:asis|asy|awk|bash|c|cat|coffee|dot|fortran|gawk|groovy|haskell|highlight|lein|mysql|node|perl|psql|python|Rcpp|Rscript|ruby|sas|scala|sed|sh|stan|stata|tikz|zsh)(\\4))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+      4: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
 
   # results='markup|hide|hold|asis'
   {
@@ -69,7 +79,7 @@ patterns: [
 
   # Generic key='value'
   {
-    match: '(?<=^|,|,\\s)(engine|child|code|comment|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:cap|env|ext|lp|path|pos|process|scap|subcap|show)|out\\.extra)(=)(([\'|"])[^=|,|\'|"]+(\\4))'
+    match: '(?<=^|,|,\\s)(child|code|comment|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:cap|env|ext|lp|path|pos|process|scap|subcap|show)|out\\.extra)(=)(([\'|"])[^=|,|\'|"]+(\\4))'
     name: 'rmarkdown.attribute.meta.md'
     captures:
       1: name: 'key.keyword.md'
