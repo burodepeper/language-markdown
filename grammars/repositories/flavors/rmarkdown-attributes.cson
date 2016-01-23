@@ -77,6 +77,21 @@ patterns: [
       5: name: 'punctuation.md'
   }
 
+  # TODO
+  # Someday, create patterns for capture #5
+  # dev.args=list(bg='yellow', pointsize=10)
+  {
+    match: '(?<=^|,|,\\s)(dev\\.args)(=)(list(\\()([^\\)]*)(\\)))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.storage.md'
+      4: name: 'punctuation.md'
+      5: name: 'value.string.md'
+      6: name: 'punctuation.md'
+  }
+
   # Generic key='value'
   {
     match: '(?<=^|,|,\\s)(child|code|comment|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:cap|env|ext|lp|path|pos|process|scap|subcap|show)|out\\.extra)(=)(([\'|"])[^=|,|\'|"]+(\\4))'

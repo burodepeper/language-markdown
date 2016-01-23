@@ -428,3 +428,30 @@ text.md {
     }
   }
 }
+
+@10
+"```{r dev.args=list(bg='yellow', pointsize=10)}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "dev.args=list(bg='yellow', pointsize=10)" {
+        rmarkdown.attribute.meta.md {
+          "dev.args": key.keyword.md
+          "=": punctuation.md
+          "list(bg='yellow', pointsize=10)" {
+            value.storage.md {
+              "list"
+              "(": punctuation.md
+              "bg='yellow', pointsize=10": value.string.md
+              ")": punctuation.md
+            }
+          }
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}

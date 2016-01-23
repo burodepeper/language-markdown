@@ -8,7 +8,9 @@ summary(cars)
 ```
 
 ```{r echo=FALSE eval=FALSE}
-summary(cars)
+```
+
+```{r echo=FALSE, eval=FALSE}
 ```
 
 ```{r just_a_label}
