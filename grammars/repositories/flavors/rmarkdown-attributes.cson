@@ -81,7 +81,7 @@ patterns: [
   # Someday, create patterns for capture #5
   # dev.args=list(bg='yellow', pointsize=10)
   {
-    match: '(?<=^|,|,\\s)(dev\\.args)(=)(list(\\()([^\\)]*)(\\)))'
+    match: '(?<=^|,|,\\s)(dev\\.args|tidy\\.opts)(=)(list(\\()([^\\)]*)(\\)))'
     name: 'rmarkdown.attribute.meta.md'
     captures:
       1: name: 'key.keyword.md'

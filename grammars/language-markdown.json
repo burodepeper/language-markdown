@@ -1105,7 +1105,7 @@
           }
         },
         {
-          "match": "(?<=^|,|,\\s)(dev\\.args)(=)(list(\\()([^\\)]*)(\\)))",
+          "match": "(?<=^|,|,\\s)(dev\\.args|tidy\\.opts)(=)(list(\\()([^\\)]*)(\\)))",
           "name": "rmarkdown.attribute.meta.md",
           "captures": {
             "1": {
