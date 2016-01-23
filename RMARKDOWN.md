@@ -53,9 +53,46 @@ int fibonacci(const int x) {
 ```{r, echo=FALSE   }
 ```
 
-<!-- TODO numeric values of 'echo' need some work, see docs in cson -->
-```{r, echo=2:3:-4,dpi=100}
+```{r,echo=FALSE,include=TRUE}
 ```
 
-```{r,echo=FALSE,include=TRUE}
+<!--
+TODO
+The examples below are rather specific specimens taken from: http://yihui.name/knitr/options/
+-->
+
+```{r, echo=2:3:-4, dpi=100}
+```
+
+```{r eval=c(1, 3, 4)}
+```
+
+```{r eval=-(4:5)}
+```
+
+```{r tidy.opts=list(blank=FALSE, width.cutoff=60)}
+```
+
+```{r cache.rebuild=!file.exists("path/to/file.ext")}
+```
+
+```{r dependson=c(-1, -2)}
+```
+
+```{r foo, dev=c('pdf', 'png')}
+```
+
+```{r dev=c('pdf', 'tiff'), dev.args=list(pdf = list(colormodel = 'cmyk', useDingats = TRUE), tiff = list(compression = 'lzw'))}
+```
+
+```{r out.width=3in, out.height='8cm', out.extra='style="display:block;"'}
+```
+
+```{r ffmpeg.bitrate=1M, ffmpeg.format='webm'}
+```
+
+```{r code=capture.output(dump('fivenum', ''))}
+```
+
+```{r fig.cap=paste('p-value is', t.test(x)$p.value)}
 ```
