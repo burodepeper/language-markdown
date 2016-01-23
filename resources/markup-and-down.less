@@ -208,10 +208,16 @@
 
     &.special-attributes {}
 
-    &.special.attribute {
-      &.other {}
-      &.id {}
-      &.class {}
+    &.attribute {
+      &.special {
+        &.other {}
+        &.id {}
+        &.class {}
+      }
+      .value {
+        &.string {}
+        &.storage {}
+      }
     }
   }
 }
