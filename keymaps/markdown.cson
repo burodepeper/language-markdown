@@ -5,13 +5,13 @@
 '.platform-linux atom-workspace':
   'shift-alt-ctrl-c': 'markdown:compile-grammar-and-reload'
 
-'.platform-darwin atom-text-editor[data-grammar="text md"]':
+'.platform-darwin atom-text-editor':
   'cmd-shift-x': 'markdown:toggle-task'
-'.platform-win32 atom-text-editor[data-grammar="text md"]':
+'.platform-win32 atom-text-editor':
   'ctrl-shift-x': 'markdown:toggle-task'
-'.platform-linux atom-text-editor[data-grammar="text md"]':
+'.platform-linux atom-text-editor':
   'ctrl-shift-x': 'markdown:toggle-task'
 
-'atom-text-editor[data-grammar="text md"]':
+'atom-text-editor':
   'tab': 'markdown:indent-list-item'
   'shift-tab': 'markdown:outdent-list-item'
