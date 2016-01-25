@@ -1,6 +1,6 @@
 @1
 "#123" {
-  text.md {
+  source.text.md {
     "#123" {
       reference.gfm.variable.md {
         "#": punctuation.md
@@ -12,7 +12,7 @@
 
 @2
 "#12.3" {
-  text.md {
+  source.text.md {
     "#12" {
       reference.gfm.variable.md {
         "#": punctuation.md
@@ -24,11 +24,11 @@
 }
 
 @3
-"123#456": text.md
+"123#456": source.text.md
 
 @4
 "#123: something, something" {
-  text.md {
+  source.text.md {
     "#123" {
       reference.gfm.variable.md {
         "#": punctuation.md
@@ -40,17 +40,17 @@
 }
 
 @5
-"#123_456": text.md
+"#123_456": source.text.md
 
 @6
-"#123-456": text.md
+"#123-456": source.text.md
 
 @7
-"#123-#456": text.md
+"#123-#456": source.text.md
 
 @8
 "#123:456" {
-  text.md {
+  source.text.md {
     "#123" {
       reference.gfm.variable.md {
         "#": punctuation.md
@@ -63,7 +63,7 @@
 
 @9
 ""#123"" {
-  text.md {
+  source.text.md {
     """
     "#123" {
       reference.gfm.variable.md {
@@ -77,7 +77,7 @@
 
 @10
 "'#123'" {
-  text.md {
+  source.text.md {
     "'"
     "#123" {
       reference.gfm.variable.md {
@@ -91,7 +91,7 @@
 
 @11
 "(#123)" {
-  text.md {
+  source.text.md {
     "("
     "#123" {
       reference.gfm.variable.md {
@@ -108,7 +108,7 @@
 # mentions.
 @12
 "[#123]" {
-  text.md {
+  source.text.md {
     label.link.string.md {
       "[": punctuation.md
       "#123"
@@ -121,7 +121,7 @@
 # Technically okay, but a weird thing to do...
 @13
 "(#123]" {
-  text.md {
+  source.text.md {
     "("
     "#123" {
       reference.gfm.variable.md {
@@ -135,7 +135,7 @@
 
 @14
 ">#123" {
-  text.md {
+  source.text.md {
     quote.markup.md {
       ">": punctuation.md
       "#123" {
@@ -150,7 +150,7 @@
 
 @15
 "#123, #456, #789" {
-  text.md {
+  source.text.md {
     "#123" {
       reference.gfm.variable.md {
         "#": punctuation.md
@@ -175,11 +175,11 @@
 }
 
 @16
-"#123=done": text.md
+"#123=done": source.text.md
 
 @17
 "#123." {
-  text.md {
+  source.text.md {
     "#123" {
       reference.gfm.variable.md {
         "#": punctuation.md
@@ -191,14 +191,14 @@
 }
 
 @18
-"-#123": text.md
+"-#123": source.text.md
 
 @19
-"#-123": text.md
+"#-123": source.text.md
 
 @20
 "- #123" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "- ": punctuation.md
       "#123" {
@@ -213,7 +213,7 @@
 
 # TODO
 # @21
-# "#atom/123": text.md
+# "#atom/123": source.text.md
 
 @22
-"#123-": text.md
+"#123-": source.text.md

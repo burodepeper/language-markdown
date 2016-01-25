@@ -2,7 +2,7 @@
 
 @273
 "\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~" {
-  text.md {
+  source.text.md {
     escape.constant.md {
       "\!"
       "\""
@@ -43,7 +43,7 @@
 # FIXME
 # @274
 # "\→\A\a\ \3\φ\«" {
-#   "\→\A\a\ \3\φ\«": text.md
+#   "\→\A\a\ \3\φ\«": source.text.md
 # }
 
 @275
@@ -55,7 +55,7 @@
 "\* not a list"+
 "\# not a header"+
 "\[foo]: /url "not a reference"" {
-  text.md {
+  source.text.md {
     "\*": escape.constant.md
     "not emphasized*"
     "\<": escape.constant.md
@@ -79,7 +79,7 @@
 # FIXME emphasis not detected
 # @276
 # "\\*emphasis*" {
-#   text.md {
+#   source.text.md {
 #     "\\": escape.constant.md
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
@@ -98,7 +98,7 @@
 
 @278
 "`` \[\` ``" {
-  text.md {
+  source.text.md {
     code.raw.markup.md {
       "``": punctuation.md
       " \[\` "
@@ -110,7 +110,7 @@
 # NOTE no indented-code-blocks
 @279
 "    \[\]" {
-  text.md {
+  source.text.md {
     "    "
     "\[": escape.constant.md
     "\]": escape.constant.md
@@ -121,7 +121,7 @@
 "~~~"+
 "\[\]"+
 "~~~" {
-  text.md {
+  source.text.md {
     fenced.code.md {
       "~~~": punctuation.md
       source.md {
@@ -147,7 +147,7 @@
 # FIXME escapes should work inside this
 # @283
 # "[foo](/bar\* "ti\*tle")" {
-#   text.md {
+#   source.text.md {
 #     link.md {
 #       text.link.string.md {
 #         "[": punctuation.md
@@ -161,7 +161,7 @@
 #           "\*": escape.constant.md
 #         }
 #         " "
-#         title.link.heading.markup.md {
+#         title.link.heading.support.markup.md {
 #           '"': punctuation.md
 #           "ti"
 #           "\*": escape.constant.md

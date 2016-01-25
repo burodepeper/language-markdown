@@ -1,8 +1,8 @@
 # http://spec.commonmark.org/0.22/#example-27
 @27
 '# Heading' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
@@ -15,13 +15,13 @@
 # http://spec.commonmark.org/0.22/#example-28
 @28
 '####### foo' {
-  '####### foo': text.md
+  '####### foo': source.text.md
 }
 
 # http://spec.commonmark.org/0.22/#example-29
 @29a
 '#5 bolt' {
-  text.md {
+  source.text.md {
     reference.gfm.variable.md {
       '#': punctuation.md
       '5': issue.gfm.md
@@ -32,13 +32,13 @@
 
 @29b
 '#foobar' {
-  '#foobar': text.md
+  '#foobar': source.text.md
 }
 
 # http://spec.commonmark.org/0.22/#example-30
 @30
 '\## foo' {
-  text.md {
+  source.text.md {
     '\#': escape.constant.md
     '# foo'
   }
@@ -47,8 +47,8 @@
 # http://spec.commonmark.org/0.22/#example-31
 @31
 '# foo *bar* \*baz\*' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
@@ -70,8 +70,8 @@
 # http://spec.commonmark.org/0.22/#example-32
 @32
 '#                  foo' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-1.md {
         '#': punctuation.md
         '                  '
@@ -84,8 +84,8 @@
 # http://spec.commonmark.org/0.22/#example-33
 @33
 '  ## Heading' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-2.md {
         '  '
         '##': punctuation.md
@@ -105,8 +105,8 @@
 # http://spec.commonmark.org/0.22/#example-36
 @36a
 '## foo ##' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-2.md {
         '##': punctuation.md
         ' '
@@ -120,8 +120,8 @@
 
 @36b
 '  ###   bar    ###' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-3.md {
         '  '
         '###': punctuation.md
@@ -137,8 +137,8 @@
 # http://spec.commonmark.org/0.22/#example-37
 @37a
 '# foo ##################################' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
@@ -152,8 +152,8 @@
 
 @37b
 '##### foo ##' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-5.md {
         '#####': punctuation.md
         ' '
@@ -168,8 +168,8 @@
 # http://spec.commonmark.org/0.22/#example-38
 @38
 '### foo ###     ' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-3.md {
         '###': punctuation.md
         ' '
@@ -185,8 +185,8 @@
 # http://spec.commonmark.org/0.22/#example-39
 @39
 '### foo ### b' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-3.md {
         '###': punctuation.md
         ' '
@@ -199,8 +199,8 @@
 # http://spec.commonmark.org/0.22/#example-40
 @40
 '# foo#' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-1.md {
         '#': punctuation.md
         ' '
@@ -219,8 +219,8 @@
 
 @41b
 '## foo #\##' {
-  text.md {
-    heading.markup.md {
+  source.text.md {
+    heading.support.markup.md {
       heading-2.md {
         '##': punctuation.md
         ' '
@@ -240,8 +240,8 @@
 # http://spec.commonmark.org/0.22/#example-44
 @44a
 '## ' {
-  text.md {
-    empty.heading.markup.md {
+  source.text.md {
+    empty.heading.support.markup.md {
       heading-2.md {
         '##': punctuation.md
         ' '
@@ -252,8 +252,8 @@
 
 @44b
 '#' {
-  text.md {
-    empty.heading.markup.md {
+  source.text.md {
+    empty.heading.support.markup.md {
       heading-1.md {
         '#': punctuation.md
       }
@@ -263,8 +263,8 @@
 
 @44c
 '### ###' {
-  text.md {
-    empty.heading.markup.md {
+  source.text.md {
+    empty.heading.support.markup.md {
       heading-3.md {
         '###': punctuation.md
         ' '

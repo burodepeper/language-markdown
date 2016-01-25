@@ -2,7 +2,7 @@
 
 @313
 "*foo bar*" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "*": punctuation.md
       "foo bar"
@@ -12,10 +12,10 @@
 }
 
 @314
-"a * foo bar*": text.md
+"a * foo bar*": source.text.md
 
 @315
-"a*"foo"*": text.md
+"a*"foo"*": source.text.md
 
 # NOTE
 # The first space character is a non-breaking space, and as such this should
@@ -25,11 +25,11 @@
 # worked ;) @burodepeper
 #
 # @316
-# "* a *": text.md
+# "* a *": source.text.md
 
 @317
 "foo*bar*" {
-  text.md {
+  source.text.md {
     "foo"
     emphasis.italic.markup.md {
       "*": punctuation.md
@@ -41,7 +41,7 @@
 
 @318
 "5*6*78" {
-  text.md {
+  source.text.md {
     "5"
     emphasis.italic.markup.md {
       "*": punctuation.md
@@ -54,7 +54,7 @@
 
 @319
 "_foo bar_" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "_": punctuation.md
       "foo bar"
@@ -64,26 +64,26 @@
 }
 
 @320
-"_ foo bar_": text.md
+"_ foo bar_": source.text.md
 
 @321
-"a_"foo"_": text.md
+"a_"foo"_": source.text.md
 
 @322
-"foo_bar_": text.md
+"foo_bar_": source.text.md
 
 @323
-"5_6_78": text.md
+"5_6_78": source.text.md
 
 @324
-"пристаням_стремятся_": text.md
+"пристаням_стремятся_": source.text.md
 
 @325
-"aa_"bb"_cc": text.md
+"aa_"bb"_cc": source.text.md
 
 @326
 "foo-_(bar)_" {
-  text.md {
+  source.text.md {
     "foo-"
     emphasis.italic.markup.md {
       "_": punctuation.md
@@ -94,14 +94,14 @@
 }
 
 @327
-"_foo*": text.md
+"_foo*": source.text.md
 
 @328
-"*foo bar *": text.md
+"*foo bar *": source.text.md
 
 @329
 "*foo bar\n*" {
-  text.md {
+  source.text.md {
     "*foo bar"
     empty.unordered.list.markup.md {
       "*": punctuation.md
@@ -110,12 +110,12 @@
 }
 
 @330
-"*(*foo)": text.md
+"*(*foo)": source.text.md
 
 # FIXME
 # @331
 # "*(*foo*)*" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       "("
@@ -135,15 +135,15 @@
 # @burodepeper
 
 @333
-"_foo bar _": text.md
+"_foo bar _": source.text.md
 
 @334
-"_(_foo)": text.md
+"_(_foo)": source.text.md
 
 # FIXME
 # @335
 # "_(_foo_)_" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "_": punctuation.md
 #       "("
@@ -159,14 +159,14 @@
 # }
 
 @336
-"_foo_bar": text.md
+"_foo_bar": source.text.md
 
 @337
-"_пристаням_стремятся": text.md
+"_пристаням_стремятся": source.text.md
 
 @338
 "_foo_bar_baz_" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "_": punctuation.md
       "foo_bar_baz"
@@ -177,7 +177,7 @@
 
 @339
 "_(bar)_." {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "_": punctuation.md
       "(bar)"
@@ -189,7 +189,7 @@
 
 @340
 "**foo bar**" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       "foo bar"
@@ -199,14 +199,14 @@
 }
 
 @341
-"** foo bar**": text.md
+"** foo bar**": source.text.md
 
 @342
-"a**"foo"**": text.md
+"a**"foo"**": source.text.md
 
 @343
 "foo**bar**" {
-  text.md {
+  source.text.md {
     "foo"
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
@@ -218,7 +218,7 @@
 
 @344
 "__foo bar__" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "__": punctuation.md
       "foo bar"
@@ -228,32 +228,32 @@
 }
 
 @345
-"__ foo bar__": text.md
+"__ foo bar__": source.text.md
 
 @346
 "__\nfoo bar__" {
-  text.md {
+  source.text.md {
     "__"
     "foo bar__"
   }
 }
 
 @347
-"a__"foo"__": text.md
+"a__"foo"__": source.text.md
 
 @348
-"foo__bar__": text.md
+"foo__bar__": source.text.md
 
 @349
-"5__6__78": text.md
+"5__6__78": source.text.md
 
 @350
-"пристаням__стремятся__": text.md
+"пристаням__стремятся__": source.text.md
 
 # FIXME
 # @351
 # "__foo, __bar__, baz__" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "__": punctuation.md
 #       "foo, "
@@ -270,7 +270,7 @@
 
 @352
 "foo-__(bar)__" {
-  text.md {
+  source.text.md {
     "foo-"
     strong.emphasis.bold.markup.md {
       "__": punctuation.md
@@ -281,15 +281,15 @@
 }
 
 @353
-"**foo bar **": text.md
+"**foo bar **": source.text.md
 
 @354
-"**(**foo)": text.md
+"**(**foo)": source.text.md
 
 # FIXME
 # @355
 # "*(**foo**)*" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       "("
@@ -308,7 +308,7 @@
 # @356a
 # "**Gomphocarpus (*Gomphocarpus physocarpus*, syn."+
 # "*Asclepias physocarpa*)**" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "**": punctuation.md
 #       "Gomphocarpus ("
@@ -331,7 +331,7 @@
 
 @356b
 "**Gomphocarpus (*Gomphocarpus physocarpus*, syn. *Asclepias physocarpa*)**" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       "Gomphocarpus ("
@@ -354,7 +354,7 @@
 
 @357
 "**foo "*bar*" foo**" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       'foo "'
@@ -371,7 +371,7 @@
 
 @358
 "**foo**bar" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       'foo'
@@ -382,15 +382,15 @@
 }
 
 @359
-"__foo bar __": text.md
+"__foo bar __": source.text.md
 
 @360
-"__(__foo)": text.md
+"__(__foo)": source.text.md
 
 # FIXME
 # @361
 # "_(__foo__)_" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "_": punctuation.md
 #       '('
@@ -406,15 +406,15 @@
 # }
 
 @362
-"__foo__bar": text.md
+"__foo__bar": source.text.md
 
 @363
-"__пристаням__стремятся": text.md
+"__пристаням__стремятся": source.text.md
 
 # FIXME
 # @364
 # "__foo__bar__baz__" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "__": punctuation.md
 #       'foo__bar_baz'
@@ -425,7 +425,7 @@
 
 @365
 "__(bar)__." {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "__": punctuation.md
       '(bar)'
@@ -437,11 +437,11 @@
 
 @366
 "*foo [bar](/url)*" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "*": punctuation.md
       'foo '
-      link.markup.md {
+      link.markup.entity.md {
         text.link.string.md {
           "[": punctuation.md
           "bar"
@@ -461,7 +461,7 @@
 # TODO multiline
 # @367
 # "*foo\nbar*" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       'foo'
@@ -475,7 +475,7 @@
 # FIXME
 # @368
 # "_foo __bar__ baz_" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       '_': punctuation.md
 #       'foo '
@@ -493,7 +493,7 @@
 # FIXME
 # @369
 # "_foo _bar_ baz_" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       '_': punctuation.md
 #       'foo '
@@ -511,7 +511,7 @@
 # FIXME
 # @370
 # "__foo_ bar_" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       '_': punctuation.md
 #       emphasis.italic.markup.md {
@@ -528,7 +528,7 @@
 # FIXME
 # @371
 # "*foo *bar**" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       '*': punctuation.md
 #       'foo '
@@ -545,7 +545,7 @@
 # FIXME
 # @372
 # "*foo **bar** baz*" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       '*': punctuation.md
 #       'foo '
@@ -563,7 +563,7 @@
 # FIXME
 # @373
 # "*foo**bar**baz*" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       '*': punctuation.md
 #       'foo'
@@ -581,7 +581,7 @@
 # FIXME
 # @374
 # "***foo** bar*" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       strong.emphasis.bold.markup.md {
@@ -598,7 +598,7 @@
 # FIXME
 # @375
 # "*foo **bar***" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       "foo "
@@ -615,7 +615,7 @@
 # FIXME
 # @376
 # "*foo**bar***" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       "foo"
@@ -631,7 +631,7 @@
 # FIXME
 # @377
 # "*foo **bar *baz* bim** bop*" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       "foo "
@@ -655,7 +655,7 @@
 # FIXME
 # @378
 # "*foo [*bar*](/url)*" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       'foo '
@@ -681,18 +681,18 @@
 # }
 
 @379
-"** is not an empty emphasis": text.md
+"** is not an empty emphasis": source.text.md
 
 @380
-"**** is not an empty strong emphasis": text.md
+"**** is not an empty strong emphasis": source.text.md
 
 @381
 "**foo [bar](/url)**" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       'foo '
-      link.markup.md {
+      link.markup.entity.md {
         text.link.string.md {
           "[": punctuation.md
           "bar"
@@ -712,7 +712,7 @@
 # FIXME multiline
 # @382
 # "**foo\nbar**" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "**": punctuation.md
 #       'foo'
@@ -724,7 +724,7 @@
 
 @383
 "__foo _bar_ baz__" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "__": punctuation.md
       'foo '
@@ -742,7 +742,7 @@
 # FIXME
 # @384
 # "__foo __bar__ baz__" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "__": punctuation.md
 #       'foo '
@@ -760,7 +760,7 @@
 # FIXME
 # @385
 # "____foo__ bar__" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "__": punctuation.md
 #       strong.emphasis.bold.markup.md {
@@ -777,7 +777,7 @@
 # FIXME
 # @386
 # "**foo **bar****" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "**": punctuation.md
 #       "foo "
@@ -793,7 +793,7 @@
 
 @387
 "**foo *bar* baz**" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       "foo "
@@ -812,7 +812,7 @@
 # FIXME
 # @388
 # "**foo*bar*baz**" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       emphasis.italic.markup.md {
@@ -829,7 +829,7 @@
 
 @389
 "***foo* bar**" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       emphasis.italic.markup.md {
@@ -846,7 +846,7 @@
 # FIXME
 # @390
 # "**foo *bar***" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "**": punctuation.md
 #       "foo "
@@ -864,7 +864,7 @@
 # @391
 # "**foo *bar **baz**"+
 # "bim* bop**" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "**": punctuation.md
 #       "foo "
@@ -887,11 +887,11 @@
 
 @392
 "**foo [*bar*](/url)**" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       'foo '
-      link.markup.md {
+      link.markup.entity.md {
         text.link.string.md {
           "[": punctuation.md
           emphasis.italic.markup.md {
@@ -913,17 +913,17 @@
 }
 
 @393
-"__ is not an empty emphasis": text.md
+"__ is not an empty emphasis": source.text.md
 
 @394
-"____ is not an empty strong emphasis": text.md
+"____ is not an empty strong emphasis": source.text.md
 
 @395
-"foo ***": text.md
+"foo ***": source.text.md
 
 @396
 "foo *\**" {
-  text.md {
+  source.text.md {
     "foo "
     emphasis.italic.markup.md {
       "*": punctuation.md
@@ -935,7 +935,7 @@
 
 @397
 "foo *_*" {
-  text.md {
+  source.text.md {
     "foo "
     emphasis.italic.markup.md {
       "*": punctuation.md
@@ -948,12 +948,12 @@
 # FIXME
 # @398
 # "foo *****" {
-#   "foo *****": text.md
+#   "foo *****": source.text.md
 # }
 
 @399
 "foo **\***" {
-  text.md {
+  source.text.md {
     "foo "
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
@@ -965,7 +965,7 @@
 
 @400
 "foo **_**" {
-  text.md {
+  source.text.md {
     "foo "
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
@@ -978,7 +978,7 @@
 # FIXME
 # @401
 # "**foo*" {
-#   text.md {
+#   source.text.md {
 #     "*"
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
@@ -990,7 +990,7 @@
 
 @402
 "*foo**" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "*": punctuation.md
       "foo"
@@ -1003,7 +1003,7 @@
 # FIXME
 # @403
 # "***foo**" {
-#   text.md {
+#   source.text.md {
 #     "*"
 #     strong.emphasis.bold.markup.md {
 #       "**": punctuation.md
@@ -1016,7 +1016,7 @@
 # FIXME
 # @404
 # "****foo*" {
-#   text.md {
+#   source.text.md {
 #     "***"
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
@@ -1028,7 +1028,7 @@
 
 @405
 "**foo***" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       "foo"
@@ -1040,7 +1040,7 @@
 
 @406
 "*foo****" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "*": punctuation.md
       "foo"
@@ -1052,12 +1052,12 @@
 
 @407
 "foo ___" {
-  "foo ___": text.md
+  "foo ___": source.text.md
 }
 
 @408
 "foo _\__" {
-  text.md {
+  source.text.md {
     "foo "
     emphasis.italic.markup.md {
       "_": punctuation.md
@@ -1069,7 +1069,7 @@
 
 @409
 "foo _*_" {
-  text.md {
+  source.text.md {
     "foo "
     emphasis.italic.markup.md {
       "_": punctuation.md
@@ -1082,12 +1082,12 @@
 # FIXME
 # @410
 # "foo _____" {
-#   "foo _____": text.md
+#   "foo _____": source.text.md
 # }
 
 @411
 "foo __\___" {
-  text.md {
+  source.text.md {
     "foo "
     strong.emphasis.bold.markup.md {
       "__": punctuation.md
@@ -1099,7 +1099,7 @@
 
 @412
 "foo __*__" {
-  text.md {
+  source.text.md {
     "foo "
     strong.emphasis.bold.markup.md {
       "__": punctuation.md
@@ -1112,7 +1112,7 @@
 # FIXME
 # @413
 # "__foo_" {
-#   text.md {
+#   source.text.md {
 #     "_"
 #     emphasis.italic.markup.md {
 #       "_": punctuation.md
@@ -1125,7 +1125,7 @@
 # FIXME
 # @414
 # "_foo__" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "_": punctuation.md
 #       "foo"
@@ -1138,7 +1138,7 @@
 # FIXME
 # @415
 # "___foo__" {
-#   text.md {
+#   source.text.md {
 #     "_"
 #     strong.emphasis.bold.markup.md {
 #       "__": punctuation.md
@@ -1151,7 +1151,7 @@
 # FIXME
 # @416
 # "____foo_" {
-#   text.md {
+#   source.text.md {
 #     "___"
 #     emphasis.italic.markup.md {
 #       "_": punctuation.md
@@ -1164,7 +1164,7 @@
 # FIXME
 # @417
 # "__foo___" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "__": punctuation.md
 #       "foo"
@@ -1177,7 +1177,7 @@
 # FIXME
 # @418
 # "_foo____" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "_": punctuation.md
 #       "foo"
@@ -1189,7 +1189,7 @@
 
 @419
 "**foo**" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       "foo"
@@ -1200,7 +1200,7 @@
 
 @420
 "*_foo_*" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "*": punctuation.md
       emphasis.italic.markup.md {
@@ -1215,7 +1215,7 @@
 
 @421
 "__foo__" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "__": punctuation.md
       "foo"
@@ -1226,7 +1226,7 @@
 
 @422
 "_*foo*_" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "_": punctuation.md
       emphasis.italic.markup.md {
@@ -1242,7 +1242,7 @@
 # FIXME
 # @423
 # "****foo****" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "**": punctuation.md
 #       strong.emphasis.bold.markup.md {
@@ -1257,7 +1257,7 @@
 
 @424
 "____foo____" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "__": punctuation.md
       strong.emphasis.bold.markup.md {
@@ -1273,7 +1273,7 @@
 # FIXME
 # @425
 # "******foo******" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "**": punctuation.md
 #       strong.emphasis.bold.markup.md {
@@ -1293,7 +1293,7 @@
 # FIXME
 # @426
 # "***foo***" {
-#   text.md {
+#   source.text.md {
 #     strong.emphasis.bold.markup.md {
 #       "**": punctuation.md
 #       emphasis.italic.markup.md {
@@ -1308,7 +1308,7 @@
 
 @427
 "_____foo_____" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "__": punctuation.md
       strong.emphasis.bold.markup.md {
@@ -1327,7 +1327,7 @@
 
 @428
 "*foo _bar* baz_" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "*": punctuation.md
       "foo _bar"
@@ -1340,7 +1340,7 @@
 # FIXME
 # @429
 # "**foo*bar**" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       emphasis.italic.markup.md {
@@ -1356,7 +1356,7 @@
 
 @430
 "*foo __bar *baz bim__ bam*" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "*": punctuation.md
       "foo "
@@ -1374,7 +1374,7 @@
 # FIXME
 # @431
 # "**foo **bar baz**" {
-#   text.md {
+#   source.text.md {
 #     "**foo "
 #     strong.emphasis.bold.markup.md {
 #       "**": punctuation.md
@@ -1387,7 +1387,7 @@
 # FIXME
 # @432
 # "*foo *bar baz*" {
-#   text.md {
+#   source.text.md {
 #     "*foo "
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
@@ -1400,7 +1400,7 @@
 # FIXME
 # @433
 # "*[bar*](/url)" {
-#   text.md {
+#   source.text.md {
 #     "*"
 #     link.md {
 #       text.link.string.md {
@@ -1418,7 +1418,7 @@
 # FIXME
 # @434
 # "_foo [bar_](/url)" {
-#   text.md {
+#   source.text.md {
 #     "_foo "
 #     link.md {
 #       text.link.string.md {
@@ -1454,7 +1454,7 @@
 # FIXME
 # @438
 # "*a `*`*" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "*": punctuation.md
 #       "a "
@@ -1471,7 +1471,7 @@
 # FIXME
 # @439
 # "_a `_`_" {
-#   text.md {
+#   source.text.md {
 #     emphasis.italic.markup.md {
 #       "_": punctuation.md
 #       "a "

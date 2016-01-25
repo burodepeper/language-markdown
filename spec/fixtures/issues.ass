@@ -1,9 +1,9 @@
 @40
 "At the base is the old friend, Wordpress [update: this is old news, it's running [Statamic](http://www.statamic.com) now. But this still should be interesting]." {
-  text.md {
+  source.text.md {
     "At the base is the old friend, Wordpress [update: this is old news, it's running "
     "[Statamic](http://www.statamic.com)" {
-      link.markup.md {
+      link.markup.entity.md {
         text.link.string.md {
           "[": punctuation.md
           "Statamic"
@@ -24,7 +24,7 @@
 # NOTE expected outcome: only emphasize first letters of words
 @gfm/117a
 "*f*oo *b*ar baz" {
-  text.md {
+  source.text.md {
     emphasis.italic.markup.md {
       "*": punctuation.md
       "f"
@@ -42,7 +42,7 @@
 
 @gfm/117b
 "**f**oo **b**ar baz" {
-  text.md {
+  source.text.md {
     strong.emphasis.bold.markup.md {
       "**": punctuation.md
       "f"
@@ -61,7 +61,7 @@
 # https://github.com/burodepeper/language-markdown/issues/17
 @17a
 "A line with *italics* and **bold** fails." {
-  text.md {
+  source.text.md {
     "A line with "
     emphasis.italic.markup.md {
       "*": punctuation.md
@@ -80,7 +80,7 @@
 
 @17b
 "Even _mixing_ the **type** of *markers* is __not enough__." {
-  text.md {
+  source.text.md {
     "Even "
     emphasis.italic.markup.md {
       "_": punctuation.md

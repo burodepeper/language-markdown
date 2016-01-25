@@ -1,6 +1,6 @@
 @1
 "- [ ] Task" {
-  text.md {
+  source.text.md {
     task.unordered.list.markup.md {
       "- [ ] ": punctuation.md
       "Task"
@@ -10,7 +10,7 @@
 
 @2
 "- [x] Completed task" {
-  text.md {
+  source.text.md {
     completed.task.unordered.list.markup.md {
       "- [x] ": punctuation.md
       "Completed task"
@@ -20,7 +20,7 @@
 
 @3
 "- [] Not a task" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "- ": punctuation.md
       "[]" {
@@ -36,7 +36,7 @@
 
 @4
 "-[ ] Not a task" {
-  text.md {
+  source.text.md {
     "-"
     "[ ]" {
       label.link.string.md {
@@ -51,7 +51,7 @@
 
 @5
 "-[] Not a task" {
-  text.md {
+  source.text.md {
     "-"
     "[]" {
       label.link.string.md {
@@ -65,7 +65,7 @@
 
 @6
 "- [ ]Not a task" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "- ": punctuation.md
       "[ ]" {
@@ -82,7 +82,7 @@
 
 @7
 "-[ ]Not a task" {
-  text.md {
+  source.text.md {
     "-"
     "[ ]" {
       label.link.string.md {
@@ -97,7 +97,7 @@
 
 @8
 "-[]Not a task" {
-  text.md {
+  source.text.md {
     "-"
     "[]" {
       label.link.string.md {
@@ -111,7 +111,7 @@
 
 @9
 "- [  ] Not a task" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "- ": punctuation.md
       "[  ]" {
@@ -128,7 +128,7 @@
 
 @10
 "- [X] Not a completed task, I think" {
-  text.md {
+  source.text.md {
     unordered.list.markup.md {
       "- ": punctuation.md
       "[X]" {

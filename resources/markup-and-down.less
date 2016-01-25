@@ -1,0 +1,223 @@
+// 1.
+// Define colors
+// ----------------------------------------
+// The colors below are taken from the `minimal-syntax` theme. Change them to
+// whatever you want. It's best to re-use color variables set in the rest of
+// your theme.
+
+@_background:     #ffffff;
+@_text:           #333333;
+@_syntax:         #0000ff;
+@_syntax_alt:     darken(@_syntax, 15%);
+@_content:        #009900;
+@_variable:       #0099cc;
+@_constant:       #ee1100;
+@_highlight:      #ffdd00;
+@_comment:        #ff8000;
+@_neutral:        mix(@_text, @_background);
+
+
+
+// 2.
+// Generic markup styles
+// ----------------------------------------
+
+.markup {
+
+  &.bold,
+  &.heading,
+  &.strong.emphasis {
+    font-weight: bold;
+  }
+
+  &.italic,
+  &.emphasis:not(.strong) {
+    font-style: italic;
+  }
+
+  &.underline {
+    text-decoration: underline;
+  }
+
+  &.strike {
+    text-decoration: line-through;
+  }
+
+  &.heading,
+  &.substitution,
+  &.changed {
+    color: @_syntax;
+  }
+
+  &.inserted,
+  &.addition,
+  &.quote {
+    color: @_content;
+  }
+
+  &.deletion,
+  &.hr {
+    color: @_constant;
+  }
+
+  &.link {
+    color: @_variable;
+  }
+
+  &.list {
+    & > .punctuation {
+      color: @_syntax_alt;
+    }
+  }
+
+  &.raw,
+  &.code {
+    color: @_neutral;
+  }
+
+ .punctuation {
+   opacity: 0.5;
+ }
+}
+
+
+
+// 3.
+// Define custom markdown styles
+// ----------------------------------------
+// Below is an incomplete list of markdown elements you might want to style
+// differently from the default markup elements defined above. All styles are
+// empty, primarily to give you an idea of what's possible.
+
+.text.md {
+  .md {
+
+    &.heading {
+      > .punctuation {}
+      &.empty {
+        .punctuation {}
+      }
+    }
+
+    &.hr {}
+    &.quote {}
+
+    &.link {
+      &.text {}
+      &.destination {
+        .uri {}
+      }
+      &.label {}
+      &.title {}
+      &.auto {
+        &.email {}
+      }
+      &.reference {
+        &.abbreviation {}
+      }
+      &.footnote {
+        &.reference {}
+        &.definition {}
+      }
+    }
+
+    &.gfm {
+      &.reference {
+        .mention {}
+        .issue {}
+        .user {}
+        .repository {}
+        .sha {}
+
+        &.class {}
+        &.method {
+          &.instance {}
+          &.class {}
+        }
+      }
+
+      &.emoji {}
+    }
+
+    &.constant {
+      &.entity {}
+      &.escape {}
+      &.line-break {}
+    }
+
+    &.reference {
+      &.class {}
+      &.link {}
+    }
+
+    &.list {
+      > .punctuation {
+        &.checkbox {}
+      }
+
+      &.unordered {}
+      &.ordered {}
+      &.empty {}
+
+      &.task {
+        &.completed {}
+      }
+
+      &.definition {}
+    }
+
+    &.code {
+      &:not(.fenced) {}
+
+      &.fenced {
+        &.info {}
+      }
+
+      &.raw {}
+    }
+
+    &.constant {
+      &.language {}
+    }
+
+    &.emphasis {
+      &:not(.strong) {}
+
+      &:not(.strong) .strong {
+        font-style: italic;
+      }
+    }
+
+    &.strong {}
+
+    &.table {
+      > .punctuation {
+        &.alignment {}
+      }
+    }
+
+    &.strike {}
+
+    &.critic {
+      &.addition {}
+      &.deletion {}
+      &.comment {}
+      &.highlight {}
+      &.substitution {}
+    }
+
+    &.special-attributes {}
+
+    &.attribute {
+      &.special {
+        &.other {}
+        &.id {}
+        &.class {}
+      }
+      .value {
+        &.string {}
+        &.storage {}
+      }
+    }
+  }
+}

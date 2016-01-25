@@ -4,7 +4,6 @@ patterns: [
   # Tables
   {
     name: 'table.storage.md'
-    # match: '^(\\|)(?=[ :])(.+)((?<=[ :])\\|?)\\s*$'
     match: '^(\\|)(?=[ :])(.+)$'
     captures:
       1: name: 'punctuation.md'
@@ -17,9 +16,9 @@ patterns: [
           {
             match: '(:?)(-+)(:?)'
             captures:
-              1: name: 'alignment.punctuation.md'
+              1: name: 'alignment.punctuation.meta.md'
               2: name: 'punctuation.md'
-              3: name: 'alignment.punctuation.md'
+              3: name: 'alignment.punctuation.meta.md'
           }
           {
             include: '#inlines-in-blocks'

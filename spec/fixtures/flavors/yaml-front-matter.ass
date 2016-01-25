@@ -4,13 +4,13 @@
 "- type: main"+
 "  text: My Book"+
 "..." {
-  text.md {
+  source.text.md {
     front-matter.yaml.source.md {
-      "---": hr.md
+      "---": hr.constant.markup.md
       "title:"
       "- type: main"
       "  text: My Book"
-      "...": hr.md
+      "...": hr.constant.markup.md
     }
   }
 }
@@ -22,9 +22,9 @@
 "- type: main"+
 "  text: My Book"+
 "..." {
-  text.md {
+  source.text.md {
     " "
-    "---": hr.md
+    "---": hr.constant.markup.md
     "title:"
     "- type: main" {
       unordered.list.markup.md {
@@ -43,11 +43,11 @@
 "---"+
 ""+
 "This is a paragraph" {
-  text.md {
+  source.text.md {
     front-matter.yaml.source.md {
-      "---": hr.md
+      "---": hr.constant.markup.md
       "front: matter"
-      "---": hr.md
+      "---": hr.constant.markup.md
     }
     ""
     "This is a paragraph"

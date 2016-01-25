@@ -1,7 +1,7 @@
 # http://spec.commonmark.org/0.22/#example-298
 @298a
 "`foo`" {
-  text.md {
+  source.text.md {
     code.raw.markup.md {
       '`': punctuation.md
       'foo'
@@ -12,7 +12,7 @@
 
 @298b
 "before`foo`after" {
-  text.md {
+  source.text.md {
     "before"
     code.raw.markup.md {
       '`': punctuation.md
@@ -25,7 +25,7 @@
 
 @298c
 "before `foo` after" {
-  text.md {
+  source.text.md {
     "before "
     code.raw.markup.md {
       '`': punctuation.md
@@ -39,7 +39,7 @@
 # http://spec.commonmark.org/0.22/#example-299
 @299
 "`` foo ` bar  ``" {
-  text.md {
+  source.text.md {
     code.raw.markup.md {
       '``': punctuation.md
       ' foo ` bar  '
@@ -51,7 +51,7 @@
 # http://spec.commonmark.org/0.22/#example-300
 @300
 "` `` `" {
-  text.md {
+  source.text.md {
     code.raw.markup.md {
       '`': punctuation.md
       ' `` '
@@ -65,7 +65,7 @@
 "``"+
 "foo"+
 "``" {
-  text.md {
+  source.text.md {
     '``'
     'foo'
     '``'
@@ -76,7 +76,7 @@
 @302
 "`foo   bar"+
 "  baz`" {
-  text.md {
+  source.text.md {
     '`foo   bar'
     '  baz`'
   }
@@ -85,7 +85,7 @@
 # http://spec.commonmark.org/0.22/#example-303
 @303
 "`foo `` bar`" {
-  text.md {
+  source.text.md {
     code.raw.markup.md {
       '`': punctuation.md
       'foo `` bar'
@@ -97,7 +97,7 @@
 # http://spec.commonmark.org/0.22/#example-304
 @304
 "`foo\`bar`" {
-  text.md {
+  source.text.md {
     code.raw.markup.md {
       '`': punctuation.md
       'foo\'
@@ -111,7 +111,7 @@
 # @305
 # http://spec.commonmark.org/0.22/#example-305
 # "*foo`*`" {
-#   text.md {
+#   source.text.md {
 #     '*foo'
 #     code.raw.markup.md {
 #       '`': punctuation.md
@@ -125,7 +125,7 @@
 # http://spec.commonmark.org/0.22/#example-306
 # @306
 # "[not a `link](/foo`)" {
-#   text.md {
+#   source.text.md {
 #     '[not a'
 #     code.raw.markup.md {
 #       '`': punctuation.md
@@ -139,7 +139,7 @@
 # http://spec.commonmark.org/0.22/#example-307
 @307
 "`<a href="`">`" {
-  text.md {
+  source.text.md {
     code.raw.markup.md {
       '`': punctuation.md
       '<a href="'
@@ -153,7 +153,7 @@
 # test fails, because the html package is not included when testing, but it does work in an actual document
 # @308
 # '<a href="`">`' {
-#   text.md {
+#   source.text.md {
 #     meta.tag.inline.any.html {
 #       "<": punctuation.definition.tag.begin.html
 #       "a": entity.name.tag.inline.any.html
@@ -174,7 +174,7 @@
 # http://spec.commonmark.org/0.22/#example-309
 @309
 "`<http://foo.bar.`baz>`" {
-  text.md {
+  source.text.md {
     code.raw.markup.md {
       '`': punctuation.md
       '<http://foo.bar.'
@@ -193,8 +193,8 @@
 
 # http://spec.commonmark.org/0.22/#example-311
 @311
-'```foo``': text.md
+'```foo``': source.text.md
 
 # http://spec.commonmark.org/0.22/#example-312
 @312
-'`foo': text.md
+'`foo': source.text.md

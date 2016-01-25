@@ -2,8 +2,8 @@
 
 @543
 "<http://foo.bar.baz>" {
-  text.md {
-    auto.link.markup.md {
+  source.text.md {
+    auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "http": scheme.md
@@ -16,8 +16,8 @@
 
 @544
 "<http://foo.bar.baz/test?q=hello&id=22&boolean>" {
-  text.md {
-    auto.link.markup.md {
+  source.text.md {
+    auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "http": scheme.md
@@ -30,8 +30,8 @@
 
 @545
 "<irc://foo.bar:2233/baz>" {
-  text.md {
-    auto.link.markup.md {
+  source.text.md {
+    auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "irc": scheme.md
@@ -44,8 +44,8 @@
 
 @546
 "<MAILTO:FOO@BAR.BAZ>" {
-  text.md {
-    auto.link.markup.md {
+  source.text.md {
+    auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "MAILTO": scheme.md
@@ -57,12 +57,12 @@
 }
 
 @547
-"<http://foo.bar/baz bim>": text.md
+"<http://foo.bar/baz bim>": source.text.md
 
 @548
 "<http://example.com/\[\>" {
-  text.md {
-    auto.link.markup.md {
+  source.text.md {
+    auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "http": scheme.md
@@ -75,8 +75,8 @@
 
 @549
 "<foo@bar.example.com>" {
-  text.md {
-    email.auto.link.markup.md {
+  source.text.md {
+    email.auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "foo"
@@ -90,8 +90,8 @@
 
 @550
 "<foo+special@Bar.baz-bar0.com>" {
-  text.md {
-    email.auto.link.markup.md {
+  source.text.md {
+    email.auto.link.markup.entity.md {
       "<": punctuation.md
       uri.underline.markup.md {
         "foo+special"
@@ -105,7 +105,7 @@
 
 @551
 "<foo\+@bar.example.com>" {
-  text.md {
+  source.text.md {
     "<foo"
     "\+": escape.constant.md
     "@bar.example.com>"
@@ -113,22 +113,22 @@
 }
 
 @552
-"<>": text.md
+"<>": source.text.md
 
 @553
-"<heck://bing.bong>": text.md
+"<heck://bing.bong>": source.text.md
 
 @554
-"< http://foo.bar >": text.md
+"< http://foo.bar >": source.text.md
 
 @555
-"<foo.bar.baz>": text.md
+"<foo.bar.baz>": source.text.md
 
 @556
-"<localhost:5001/foo>": text.md
+"<localhost:5001/foo>": source.text.md
 
 @557
-"http://example.com": text.md
+"http://example.com": source.text.md
 
 @558
-"foo@bar.example.com": text.md
+"foo@bar.example.com": source.text.md

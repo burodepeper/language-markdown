@@ -1,13 +1,13 @@
 # http://spec.commonmark.org/0.22/#textual-content
 
 @597
-"hello $.;'there": text.md
+"hello $.;'there": source.text.md
 
 @598
-"Foo χρῆν": text.md
+"Foo χρῆν": source.text.md
 
 @599
-"Multiple     spaces": text.md
+"Multiple     spaces": source.text.md
 
 @space
-" ": text.md
+" ": source.text.md

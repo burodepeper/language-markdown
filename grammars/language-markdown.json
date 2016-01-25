@@ -1,6 +1,6 @@
 {
   "name": "Markdown",
-  "scopeName": "text.md",
+  "scopeName": "source.text.md",
   "fileTypes": [
     "markdown",
     "md",
@@ -158,7 +158,7 @@
       "patterns": [
         {
           "match": "^(?:[ ]{0,3})((?:#{1,6})\\s*(?:#*)\\s*)$",
-          "name": "empty.heading.markup.md",
+          "name": "empty.heading.support.markup.md",
           "captures": {
             "1": {
               "patterns": [
@@ -240,7 +240,7 @@
         },
         {
           "match": "^((?: {0,3})(?:#{1,6})(?: +)(?:.+))$",
-          "name": "heading.markup.md",
+          "name": "heading.support.markup.md",
           "captures": {
             "1": {
               "patterns": [
@@ -415,15 +415,15 @@
     "hr": {
       "patterns": [
         {
-          "name": "hr.md",
+          "name": "hr.constant.markup.md",
           "match": "^[ ]{0,3}[-]{1,} *[-]{1,} *[-]{1,}[ -]*$"
         },
         {
-          "name": "hr.md",
+          "name": "hr.constant.markup.md",
           "match": "^[ ]{0,3}[*]{1,} *[*]{1,} *[*]{1,}[ *]*$"
         },
         {
-          "name": "hr.md",
+          "name": "hr.constant.markup.md",
           "match": "^[ ]{0,3}[_]{1,} *[_]{1,} *[_]{1,}[ _]*$"
         }
       ]
@@ -683,13 +683,13 @@
           "begin": "\\A---$",
           "beginCaptures": {
             "0": {
-              "name": "hr.md"
+              "name": "hr.constant.markup.md"
             }
           },
           "end": "^(---|\\.\\.\\.)$",
           "endCaptures": {
             "1": {
-              "name": "hr.md"
+              "name": "hr.constant.markup.md"
             }
           },
           "name": "front-matter.yaml.source.md",
@@ -703,13 +703,13 @@
           "begin": "\\A\\+\\+\\+$",
           "beginCaptures": {
             "0": {
-              "name": "hr.md"
+              "name": "hr.constant.markup.md"
             }
           },
           "end": "^\\+\\+\\+$",
           "endCaptures": {
             "0": {
-              "name": "hr.md"
+              "name": "hr.constant.markup.md"
             }
           },
           "name": "front-matter.toml.source.md",
@@ -740,13 +740,13 @@
                   "match": "(:?)(-+)(:?)",
                   "captures": {
                     "1": {
-                      "name": "alignment.punctuation.md"
+                      "name": "alignment.punctuation.meta.md"
                     },
                     "2": {
                       "name": "punctuation.md"
                     },
                     "3": {
-                      "name": "alignment.punctuation.md"
+                      "name": "alignment.punctuation.meta.md"
                     }
                   }
                 },
@@ -938,7 +938,7 @@
     "markdown-extra": {
       "patterns": [
         {
-          "name": "definition.list.markup.md",
+          "name": "definition.list.markup.entity.md",
           "match": "^(?:\\s*)(:)( +)(.*)$",
           "captures": {
             "1": {
@@ -947,7 +947,7 @@
           }
         },
         {
-          "name": "abbreviation.reference.link.markup.md",
+          "name": "abbreviation.reference.link.markup.entity.md",
           "match": "^((?:\\*\\[)(?:[^\\]]+)(?:\\]))(:) (.*)$",
           "captures": {
             "1": {
@@ -1342,7 +1342,7 @@
               "name": "punctuation.md"
             },
             "2": {
-              "name": "link.markup.md"
+              "name": "link.markup.entity.md"
             },
             "3": {
               "patterns": [
@@ -1432,7 +1432,7 @@
     "link-title": {
       "patterns": [
         {
-          "name": "title.link.md",
+          "name": "title.link.meta.md",
           "match": "^(['|\"])(.*)(\\1)$",
           "captures": {
             "1": {
@@ -1444,7 +1444,7 @@
           }
         },
         {
-          "name": "title.link.md",
+          "name": "title.link.meta.md",
           "match": "^(\\()(.*)(\\))$",
           "captures": {
             "1": {
@@ -1460,7 +1460,7 @@
     "links": {
       "patterns": [
         {
-          "name": "reference.footnote.link.markup.md",
+          "name": "reference.footnote.link.markup.entity.md",
           "match": "((?:\\[\\^)(?:[^\\[\\]]+)(?:\\]))(?!:)",
           "captures": {
             "1": {
@@ -1473,7 +1473,7 @@
           }
         },
         {
-          "name": "definition.footnote.link.markup.md",
+          "name": "definition.footnote.link.markup.entity.md",
           "match": "((?:\\[\\^)(?:[^\\[\\]]+)(?:\\]))(:)",
           "captures": {
             "1": {
@@ -1489,7 +1489,7 @@
           }
         },
         {
-          "name": "link.markup.md",
+          "name": "link.markup.entity.md",
           "match": "(?x) ( (?:\\[) (?: (?: (?:!\\[) (?:[^\\[\\]]*) (?:\\]) ) (?:\\() (?:[^ [:cntrl:]]+)? (?: (?:\\s+) (?: (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (?:\\)) (?:\\{[[:ascii:]]*\\})? ) (?:\\]) ) (\\() ([^ [:cntrl:]]+)? (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[[:ascii:]]*\\})?",
           "captures": {
             "1": {
@@ -1529,7 +1529,7 @@
           }
         },
         {
-          "name": "link.markup.md",
+          "name": "link.markup.entity.md",
           "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() ([^ [:cntrl:]]+)? (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[[:ascii:]]*\\})?",
           "captures": {
             "1": {
@@ -1569,7 +1569,7 @@
           }
         },
         {
-          "name": "link.markup.md",
+          "name": "link.markup.entity.md",
           "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\() (<[^[:cntrl:]]*>) (?: (?:\\s+) ( (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (\\)) (\\{[[:ascii:]]*\\})?",
           "captures": {
             "1": {
@@ -1609,7 +1609,7 @@
           }
         },
         {
-          "name": "link.markup.md",
+          "name": "link.markup.entity.md",
           "match": "(?x) ( (?:\\[) (?: (?: (?:!\\[) (?:[^\\[\\]]*) (?:\\]) ) (?:\\() (?:[^ [:cntrl:]]+)? (?: (?:\\s+) (?: (?:[\"'\\(]) .*? (?:[\"'\\)]) ) (?:\\s*) )? (?:\\)) (?:\\{[[:ascii:]]*\\})? ) (?:\\]) ) ( (?:\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\{[[:ascii:]]*\\})?",
           "captures": {
             "1": {
@@ -1636,7 +1636,7 @@
           }
         },
         {
-          "name": "link.markup.md",
+          "name": "link.markup.entity.md",
           "match": "(?x) ( (?:!?\\[) (?:[^\\[\\]]*) (?:\\]) ) ( (?:\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\{[[:ascii:]]*\\})?",
           "captures": {
             "1": {
@@ -1663,7 +1663,7 @@
           }
         },
         {
-          "name": "link.markup.md",
+          "name": "link.markup.entity.md",
           "match": "(?x) ( (?:!\\[) (?:[^\\[\\]]*) (?:\\]) ) (\\{[[:ascii:]]*\\})?",
           "captures": {
             "1": {
@@ -1683,7 +1683,7 @@
           }
         },
         {
-          "name": "reference.link.markup.md",
+          "name": "reference.link.markup.entity.md",
           "match": "(?x) ((?:\\[)(?:[^\\[\\]]*)(?:\\])) (:) (?:\\s) ([^ [:cntrl:]]+) (?:(?:\\s)((?:\")(?:.*?)(?:\")))? (?:(?:\\s)(\\{[[:ascii:]]*\\}))?",
           "captures": {
             "1": {
@@ -1739,7 +1739,7 @@
           }
         },
         {
-          "name": "auto.link.markup.md",
+          "name": "auto.link.markup.entity.md",
           "match": "(?i:(<)((coap|doi|javascript|aaa|aaas|about|acap|cap|cid|crid|data|dav|dict|dns|file|ftp|geo|go|gopher|h323|http|https|iax|icap|im|imap|info|ipp|iris|iris.beep|iris.xpc|iris.xpcs|iris.lwz|ldap|mailto|mid|msrp|msrps|mtqp|mupdate|news|nfs|ni|nih|nntp|opaquelocktoken|pop|pres|rtsp|service|session|shttp|sieve|sip|sips|sms|snmp|soap.beep|soap.beeps|tag|tel|telnet|tftp|thismessage|tn3270|tip|tv|urn|vemmi|ws|wss|xcon|xcon-userid|xmlrpc.beep|xmlrpc.beeps|xmpp|z39.50r|z39.50s|adiumxtra|afp|afs|aim|apt|attachment|aw|beshare|bitcoin|bolo|callto|chrome|chrome-extension|com-eventbrite-attendee|content|cvs|dlna-playsingle|dlna-playcontainer|dtn|dvb|ed2k|facetime|feed|finger|fish|gg|git|gizmoproject|gtalk|hcp|icon|ipn|irc|irc6|ircs|itms|jar|jms|keyparc|lastfm|ldaps|magnet|maps|market|message|mms|ms-help|msnim|mumble|mvn|notes|oid|palm|paparazzi|platform|proxy|psyc|query|res|resource|rmi|rsync|rtmp|secondlife|sftp|sgn|skype|smb|soldat|spotify|ssh|steam|svn|teamspeak|things|udp|unreal|ut2004|ventrilo|view-source|webcal|wtai|wyciwyg|xfire|xri|ymsgr):(?:[^ [:cntrl:]<>]+))(>))",
           "captures": {
             "1": {
@@ -1757,7 +1757,7 @@
           }
         },
         {
-          "name": "email.auto.link.markup.md",
+          "name": "email.auto.link.markup.entity.md",
           "match": "(<)(([a-zA-Z0-9\\.!#$%&'\\*\\+/=?^_`{\\|}~-]+)(@)([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*))(>)",
           "captures": {
             "1": {
