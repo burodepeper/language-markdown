@@ -2,13 +2,7 @@
 "- [ ] Task" {
   text.md {
     task.unordered.list.markup.md {
-      "- [ ] " {
-        punctuation.md {
-          "- "
-          "[ ]": checkbox.punctuation.md
-          " "
-        }
-      }
+      "- [ ] ": punctuation.md
       "Task"
     }
   }
@@ -18,13 +12,7 @@
 "- [x] Completed task" {
   text.md {
     completed.task.unordered.list.markup.md {
-      "- [x] " {
-        punctuation.md {
-          "- "
-          "[x]": checkbox.punctuation.md
-          " "
-        }
-      }
+      "- [x] ": punctuation.md
       "Completed task"
     }
   }
