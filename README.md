@@ -15,15 +15,28 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
 - Markdown Extra
 - CriticMark annotation
 - Front Matter (yaml and toml)
+- R Markdown
 - View [more details](STATUS.md) or a [bunch of examples](EXAMPLES.md)
 
-## Additional features
+### Additional features
 
 - **Smarter lists**
   - Automatically create new list-items when pressing <kbd>enter</kbd>
   - Indent or outdent list-items by pressing <kbd>tab</kbd> or <kbd>shift+tab</kbd>
   - Toggle tasks with <kbd>cmd+shift+x</kbd> or <kbd>ctrl+shift+x</kbd>
   - Remove empty list-items when pressing <kbd>enter</kbd>
+
+### Syntax-theme support
+
+By default, most syntax-themes only provide basic styling for `.markup` classes. This package provides additional, more specific classes which are supported by the following syntax-themes:
+
+**Full/extended support**
+
+- [minimal-syntax](https://atom.io/themes/minimal-syntax) (light)
+- [minimal-syntax-dark](https://atom.io/themes/minimal-syntax-dark) (dark)
+- [pubster-syntax](https://atom.io/packages/pubster-syntax) (dark)
+
+---
 
 ## Installation instructions
 
@@ -41,15 +54,25 @@ First of all, any and all contributions are more than welcome! Having said that,
 3. When submitting a PR, please do so on the `dev` branch, instead of directly on `master`. It's not that big of a deal, but it keeps merge conflicts going back and forth between `master` and `dev` to a minimum.
 4. When in doubt about a conflict on the main grammar file, don't worry about it. Before publishing an update, it will be re-compiled just to be sure anyway.
 
----
+### Add extended support for language-markdown to your syntax-theme
 
-### Created with blood, sweat, tears, and these amazing tools:
+TODO Learn more about adding support for `language-markdown` to your syntax-theme
 
-[minimal-syntax](https://atom.io/packages/minimal-syntax)<br>
-A light syntax theme, high contrast/low brightness, three primary colors, and easy on the eyes. Now also available as [minimal-syntax-dark](https://atom.io/packages/minimal-syntax-dark).
+----
 
-[lib-ass](https://www.npmjs.org/packages/lib-ass)<br>
-Describe your tests in re-usable language-independent semantical format, and have them quickly translated into automated tests of your choosing.
+#### Notes
 
-[language-ass](https://github.com/burodepeper/language-ass/)<br>
-Syntax highlighting in Atom for `.ass` files.
+- Raw `html` is included when you have `language-html` installed
+- The Github `task-lists` are implemented as a part of `unordered-lists`
+- Setext-headers (underlined-headers) are not supported
+- `Indented-code-blocks` have been disabled to prevent false-positives; use `fenced-code-blocks` instead
+- Github tables require pipes at the start of each line, and cells need a padding of at least one space
+
+#### References used
+
+- http://spec.commonmark.org/0.22/
+- https://help.github.com/articles/github-flavored-markdown/
+- https://github.com/CriticMarkup/CriticMarkup-toolkit/
+- http://jekyllrb.com/docs/frontmatter/
+- http://pandoc.org/README.html#epub-metadata
+- http://pandoc.org/demo/example9/pandocs-markdown.html
