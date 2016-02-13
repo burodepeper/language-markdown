@@ -991,7 +991,7 @@
           }
         },
         {
-          "match": "(?<=^|,|,\\s)(echo|interval|dpi|fig\\.(?:height|width|retina))(=)([0-9\\-:]+)",
+          "match": "(?<=^|,|,\\s)(echo|eval|interval|dpi|ffmpeg\\.(?:bitrate|format)|fig\\.(?:height|width|retina)|out\\.(?:height|width))(=)([0-9\\-:\\(\\)]+(cm|in|M|px)?)",
           "name": "rmarkdown.attribute.meta.md",
           "captures": {
             "1": {
@@ -1002,6 +1002,9 @@
             },
             "3": {
               "name": "value.numeric.constant.md"
+            },
+            "4": {
+              "name": "punctuation.md"
             }
           }
         },
@@ -1105,7 +1108,7 @@
           }
         },
         {
-          "match": "(?<=^|,|,\\s)(dev\\.args|tidy\\.opts)(=)(list(\\()([^\\)]*)(\\)))",
+          "match": "(?<=^|,|,\\s)(dependson|dev|dev\\.args|eval|tidy\\.opts)(=)((?:c|list)(\\()([^\\)]*)(\\)))",
           "name": "rmarkdown.attribute.meta.md",
           "captures": {
             "1": {
@@ -1129,7 +1132,7 @@
           }
         },
         {
-          "match": "(?<=^|,|,\\s)(child|code|comment|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:cap|env|ext|lp|path|pos|process|scap|subcap|show)|out\\.extra)(=)((['|\"])[^=|,|'|\"]+(\\4))",
+          "match": "(?<=^|,|,\\s)(child|code|comment|ffmpeg\\.(?:bitrate|format)|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:cap|env|ext|lp|path|pos|process|scap|subcap|show)|out\\.(?:extra|height|width))(=)(('|\")[^\\4]+?(\\4))",
           "name": "rmarkdown.attribute.meta.md",
           "captures": {
             "1": {
