@@ -455,3 +455,103 @@ text.md {
     }
   }
 }
+
+@11
+"```{r eval=-(4:5)}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "eval=-(4:5)" {
+        rmarkdown.attribute.meta.md {
+          "eval": key.keyword.md
+          "=": punctuation.md
+          "-(4:5)": value.numeric.constant.md
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}
+
+@12
+"```{r eval=c(1, 3, 4)}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "eval=c(1, 3, 4)" {
+        rmarkdown.attribute.meta.md {
+          "eval": key.keyword.md
+          "=": punctuation.md
+          "c(1, 3, 4)" {
+            value.storage.md {
+              "c"
+              "(": punctuation.md
+              "1, 3, 4": value.string.md
+              ")": punctuation.md
+            }
+          }
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}
+
+@13
+"```{r out.width=3in, out.height='8cm', out.extra='style="display:block;"'}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "out.width=3in" {
+        rmarkdown.attribute.meta.md {
+          "out.width": key.keyword.md
+          "=": punctuation.md
+          "3in" {
+            value.numeric.constant.md {
+              "3"
+              "in": punctuation.md
+            }
+          }
+        }
+      }
+      ", "
+      "out.height='8cm'" {
+        rmarkdown.attribute.meta.md {
+          "out.height": key.keyword.md
+          "=": punctuation.md
+          "'8cm'" {
+            value.string.md {
+              "'": punctuation.md
+              "8cm"
+              "'": punctuation.md
+            }
+          }
+        }
+      }
+      ", "
+      "out.extra='style="display:block;"'" {
+        rmarkdown.attribute.meta.md {
+          "out.extra": key.keyword.md
+          "=": punctuation.md
+          "'style="display:block;"'" {
+            value.string.md {
+              "'": punctuation.md
+              "style="display:block;""
+              "'": punctuation.md
+            }
+          }
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}
