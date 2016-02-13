@@ -47,6 +47,7 @@ int fibonacci(const int x) {
 ```{r dev.args=list(bg='yellow', pointsize=10)}
 ```
 
+<!-- Invalid because multiple spaces -->
 ```{r,  echo=FALSE}
 ```
 
@@ -56,13 +57,13 @@ int fibonacci(const int x) {
 ```{r,echo=FALSE,include=TRUE}
 ```
 
+```{r, echo=2:3:-4, dpi=100}
+```
+
 <!--
 TODO
 The examples below are rather specific specimens taken from: http://yihui.name/knitr/options/
 -->
-
-```{r, echo=2:3:-4, dpi=100}
-```
 
 ```{r eval=c(1, 3, 4)}
 ```

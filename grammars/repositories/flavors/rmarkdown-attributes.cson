@@ -11,7 +11,7 @@ patterns: [
   }
 
   {
-    match: '(?<=^|,|,\\s)(echo|interval|dpi|fig\\.(?:height|width|retina))(=)([0-9-]+)'
+    match: '(?<=^|,|,\\s)(echo|interval|dpi|fig\\.(?:height|width|retina))(=)([0-9\\-:]+)'
     name: 'rmarkdown.attribute.meta.md'
     captures:
       1: name: 'key.keyword.md'
