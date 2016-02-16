@@ -81,7 +81,7 @@ patterns: [
   # TODO
   # Someday, create patterns for capture #5
   # dev.args=list(bg='yellow', pointsize=10)
-  # eval|dependson|dev=c(1, 3, 4)
+  # (eval|dependson|dev)=c(1, 3, 4)
   {
     match: '(?<=^|,|,\\s)(dependson|dev|dev\\.args|eval|tidy\\.opts)(=)((?:c|list)(\\()([^\\)]*)(\\)))'
     name: 'rmarkdown.attribute.meta.md'

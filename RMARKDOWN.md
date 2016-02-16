@@ -84,6 +84,7 @@ int fibonacci(const int x) {
 <!--
 TODO
 The examples below are rather specific specimens taken from: http://yihui.name/knitr/options/
+They have not been implemented yet
 -->
 
 
