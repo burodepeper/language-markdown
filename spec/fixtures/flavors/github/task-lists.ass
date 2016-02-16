@@ -1,8 +1,28 @@
-@1
+@1a
 "- [ ] Task" {
   text.md {
     task.unordered.list.markup.md {
       "- [ ] ": punctuation.md
+      "Task"
+    }
+  }
+}
+
+@1b
+"+ [ ] Task" {
+  text.md {
+    task.unordered.list.markup.md {
+      "+ [ ] ": punctuation.md
+      "Task"
+    }
+  }
+}
+
+@1c
+"* [ ] Task" {
+  text.md {
+    task.unordered.list.markup.md {
+      "* [ ] ": punctuation.md
       "Task"
     }
   }
@@ -139,6 +159,36 @@
         }
       }
       " Not a completed task, I think"
+    }
+  }
+}
+
+@11a
+"1. [ ] Task" {
+  text.md {
+    task.ordered.list.markup.md {
+      "1. [ ] ": punctuation.md
+      "Task"
+    }
+  }
+}
+
+@11b
+"12. [x] Completed task" {
+  text.md {
+    completed.task.ordered.list.markup.md {
+      "12. [x] ": punctuation.md
+      "Completed task"
+    }
+  }
+}
+
+@11c
+"123) [ ] Task" {
+  text.md {
+    completed.task.ordered.list.markup.md {
+      "123) [x] ": punctuation.md
+      "Task"
     }
   }
 }
