@@ -220,6 +220,7 @@ a*"foo"*
 *foo [bar](/url)*
 foo *\**
 _____foo_____
+**Github Flavored stuff like @burodepeper and #123 is still highlighted, or :+1: and &amp;**
 
 
 

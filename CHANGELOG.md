@@ -3,6 +3,7 @@
   - Allow ordered/numbered task-lists
   - Allow `+` and `*` as markers for task-lists
   - Allow capital `X` to mark a task as complete
+- #90: Fix nested inline elements
 
 ### v0.11.0
 - #82: Add **R Markdown** flavor (thanks to @pimentel)

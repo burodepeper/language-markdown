@@ -108,3 +108,43 @@
     "."
   }
 }
+
+@90
+"**Nested inlines: @username, #123, :+1: and &nbsp;**" {
+  text.md {
+    strong.emphasis.bold.markup.md {
+      "**": punctuation.md
+      "Nested inlines: "
+      "@username" {
+        reference.gfm.variable.md {
+          "@": punctuation.md
+          "username": mention.gfm.md
+        }
+      }
+      ", "
+      "#123" {
+        reference.gfm.variable.md {
+          "#": punctuation.md
+          "123": issue.gfm.md
+        }
+      }
+      ", "
+      ":+1:" {
+        emoji.constant.gfm.md {
+          ":": punctuation.md
+          "+1"
+          ":": punctuation.md
+        }
+      }
+      " and "
+      "&nbsp;" {
+        entity.constant.md {
+          "&": punctuation.md
+          "nbsp"
+          ";": punctuation.md
+        }
+      }
+      "**": punctuation.md
+    }
+  }
+}

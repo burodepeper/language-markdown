@@ -77,6 +77,9 @@
         },
         {
           "include": "#line-breaks"
+        },
+        {
+          "include": "#github-inlines"
         }
       ]
     },
@@ -118,6 +121,34 @@
         },
         {
           "include": "#flavors"
+        }
+      ]
+    },
+    "inlines-in-inlines": {
+      "patterns": [
+        {
+          "include": "#escapes"
+        },
+        {
+          "include": "#code"
+        },
+        {
+          "include": "#entities"
+        },
+        {
+          "include": "#html"
+        },
+        {
+          "include": "#links"
+        },
+        {
+          "include": "#emphasis"
+        },
+        {
+          "include": "#github-inlines"
+        },
+        {
+          "include": "#criticmark"
         }
       ]
     },
@@ -1335,16 +1366,7 @@
             "2": {
               "patterns": [
                 {
-                  "include": "#escapes"
-                },
-                {
-                  "include": "#code"
-                },
-                {
-                  "include": "#links"
-                },
-                {
-                  "include": "#emphasis"
+                  "include": "#inlines-in-inlines"
                 }
               ]
             },
@@ -1363,16 +1385,7 @@
             "2": {
               "patterns": [
                 {
-                  "include": "#escapes"
-                },
-                {
-                  "include": "#inline-code"
-                },
-                {
-                  "include": "#links"
-                },
-                {
-                  "include": "#emphasis"
+                  "include": "#inlines-in-inlines"
                 }
               ]
             },
@@ -1415,16 +1428,7 @@
             "2": {
               "patterns": [
                 {
-                  "include": "#escapes"
-                },
-                {
-                  "include": "#code"
-                },
-                {
-                  "include": "#links"
-                },
-                {
-                  "include": "#emphasis"
+                  "include": "#inlines-in-inlines"
                 }
               ]
             },
@@ -1443,16 +1447,7 @@
             "2": {
               "patterns": [
                 {
-                  "include": "#escapes"
-                },
-                {
-                  "include": "#code"
-                },
-                {
-                  "include": "#links"
-                },
-                {
-                  "include": "#emphasis"
+                  "include": "#inlines-in-inlines"
                 }
               ]
             },
