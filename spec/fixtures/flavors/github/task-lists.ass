@@ -186,8 +186,8 @@
 @11c
 "123) [ ] Task" {
   text.md {
-    completed.task.ordered.list.markup.md {
-      "123) [x] ": punctuation.md
+    task.ordered.list.markup.md {
+      "123) [ ] ": punctuation.md
       "Task"
     }
   }

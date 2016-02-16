@@ -125,6 +125,8 @@ end
 * Asterisk and
 + Plus-sign are also valid
 1. - 2. foo
+3. [ ] A numbered task
+4. [x] Another one, but this one is completed
 
 
 
