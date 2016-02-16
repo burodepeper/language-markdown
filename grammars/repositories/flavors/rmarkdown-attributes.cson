@@ -1,3 +1,9 @@
+# TODO
+# ```{r cache.rebuild=!file.exists("path/to/file.ext")}
+# ```{r dev=c('pdf', 'tiff'), dev.args=list(pdf = list(colormodel = 'cmyk', useDingats = TRUE), tiff = list(compression = 'lzw'))}
+# ```{r code=capture.output(dump('fivenum', ''))}
+# ```{r fig.cap=paste('p-value is', t.test(x)$p.value)}
+
 key: 'rmarkdown-attributes'
 patterns: [
 
