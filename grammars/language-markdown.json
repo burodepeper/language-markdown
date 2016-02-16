@@ -434,7 +434,7 @@
     "lists": {
       "patterns": [
         {
-          "match": "^(?:\\s*)(- \\[ \\]\\s?)$",
+          "match": "^(?:\\s*)([-+\\*] \\[ \\]\\s?)$",
           "name": "empty.task.unordered.list.markup.md",
           "captures": {
             "1": {
@@ -461,7 +461,7 @@
           }
         },
         {
-          "match": "^(?:\\s*)(- \\[ \\]\\s)(.*)$",
+          "match": "^(?:\\s*)([-+\\*] \\[ \\]\\s)(.*)$",
           "name": "task.unordered.list.markup.md",
           "captures": {
             "1": {
@@ -480,7 +480,7 @@
           }
         },
         {
-          "match": "^(?:\\s*)(- \\[x\\]\\s)(.*)$",
+          "match": "^(?:\\s*)([-+\\*] \\[x\\]\\s)(.*)$",
           "name": "completed.task.unordered.list.markup.md",
           "captures": {
             "1": {

@@ -3,7 +3,7 @@ patterns: [
 
   # Empty lists; for styling purposes, and for detection.
   {
-    match: '^(?:\\s*)(- \\[ \\]\\s?)$'
+    match: '^(?:\\s*)([-+\\*] \\[ \\]\\s?)$'
     name: 'empty.task.unordered.list.markup.md'
     captures:
       1: name: 'punctuation.md'
@@ -23,7 +23,7 @@ patterns: [
 
   # Task list-item
   {
-    match: '^(?:\\s*)(- \\[ \\]\\s)(.*)$'
+    match: '^(?:\\s*)([-+\\*] \\[ \\]\\s)(.*)$'
     name: 'task.unordered.list.markup.md'
     captures:
       1: name: 'punctuation.md'
@@ -36,7 +36,7 @@ patterns: [
 
   # Completed task list-item
   {
-    match: '^(?:\\s*)(- \\[x\\]\\s)(.*)$'
+    match: '^(?:\\s*)([-+\\*] \\[x\\]\\s)(.*)$'
     name: 'completed.task.unordered.list.markup.md'
     captures:
       1: name: 'punctuation.md'
