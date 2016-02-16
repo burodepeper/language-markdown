@@ -30,7 +30,9 @@ list: [
   { pattern:'diff|patch|rej', include:'source.diff' }
   { pattern:'elixir' }
   { pattern:'elm' }
+
   # { pattern:'erb', include:'source.ruby', contentName:'text.html.erb' }
+
   { pattern:'erlang' }
   { pattern:'go|golang', include:'source.go' }
   { pattern:'haskell' }
@@ -44,14 +46,19 @@ list: [
   { pattern:'mermaid' }
   { pattern:'mson', include:'text.html.markdown.source.gfm.mson' }
   { pattern:'objc|objective-c', include:'source.objc' }
+
   # { pattern:'php' }
   # { pattern:'php', contentName:'text.html.php' }
   # { pattern:'php', include:'text.html.php' }
   # { pattern:'php', include:'text.html.basic', contentName:'embedded.text.html.php' }
   # { pattern:'php', include:'text.html.basic' }
   # { pattern:'php', include:'text.html.php', contentName:'source.js.embedded.html' }
+
   { pattern:'py|python', include:'source.python' }
-  { pattern:'r' }
+
+  # NOTE Disabled in favor of using R Markdown
+  # { pattern:'r' }
+
   { pattern:'ruby' }
   { pattern:'rust|rs', include:'source.rust' }
   { pattern:'sass' }

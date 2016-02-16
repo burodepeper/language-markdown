@@ -1,0 +1,109 @@
+key: 'rmarkdown-attributes'
+patterns: [
+
+  {
+    match: '(?<=^|,|,\\s)(eval|include|purl|collapse|echo|error|message|warning|highlight|prompt|strip\\.white|tidy|autodep|cache|cache\\.lazy|external|fig\\.showtext|sanitize)(=)(TRUE|FALSE)'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.constant.md'
+  }
+
+  {
+    match: '(?<=^|,|,\\s)(echo|eval|interval|dpi|ffmpeg\\.(?:bitrate|format)|fig\\.(?:height|width|retina)|out\\.(?:height|width))(=)([0-9\\-:\\(\\)]+(cm|in|M|px)?)'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.numeric.constant.md'
+      4: name: 'punctuation.md'
+  }
+
+  {
+    match: '(?<=^|,|,\\s)(child|code|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|vars)|dependson|dev.args|fig\\.(?:cap|ext|process|scap|subcap|showtext)|out\\.(?:extra|height|width)|resize\\.(?:height|width))(=)(NULL)'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.constant.md'
+  }
+
+  # NOTE This is just temporary
+  # engine=''
+  {
+    match: '(?<=^|,|,\\s)(engine)(=)(([\'|"])(?:asis|asy|awk|bash|c|cat|coffee|dot|fortran|gawk|groovy|haskell|highlight|lein|mysql|node|perl|psql|python|Rcpp|Rscript|ruby|sas|scala|sed|sh|stan|stata|tikz|zsh)(\\4))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+      4: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
+
+  # results='markup|hide|hold|asis'
+  {
+    match: '(?<=^|,|,\\s)(results)(=)(([\'|"])(?:markup|hide|hold|asis)(\\4))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+      4: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
+
+  # fig.align='default|left|right|center'
+  {
+    match: '(?<=^|,|,\\s)(fig\\.align)(=)(([\'|"])(?:default|left|right|center)(\\4))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+      4: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
+
+  # fig.keep='high|all|first|last|none'
+  {
+    match: '(?<=^|,|,\\s)(fig\\.keep)(=)(([\'|"])(?:high|all|first|last|none)(\\4))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+      4: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
+
+  # TODO
+  # Someday, create patterns for capture #5
+  # dev.args=list(bg='yellow', pointsize=10)
+  # (eval|dependson|dev)=c(1, 3, 4)
+  {
+    match: '(?<=^|,|,\\s)(dependson|dev|dev\\.args|eval|tidy\\.opts)(=)((?:c|list)(\\()([^\\)]*)(\\)))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.storage.md'
+      4: name: 'punctuation.md'
+      5: name: 'value.string.md'
+      6: name: 'punctuation.md'
+  }
+
+  # Generic key='value'
+  {
+    match: '(?<=^|,|,\\s)(child|code|comment|ffmpeg\\.(?:bitrate|format)|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:cap|env|ext|lp|path|pos|process|scap|subcap|show)|out\\.(?:extra|height|width))(=)((\'|")[^\\4]+?(\\4))'
+    name: 'rmarkdown.attribute.meta.md'
+    captures:
+      1: name: 'key.keyword.md'
+      2: name: 'punctuation.md'
+      3: name: 'value.string.md'
+      4: name: 'punctuation.md'
+      5: name: 'punctuation.md'
+  }
+
+]

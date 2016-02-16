@@ -7,9 +7,9 @@ path = require 'path'
 # NOTE
 # Manually specify {fixtures} if you only want to run specific tests.
 # A {fixture} is a relative path + filename (without extension).
-# fixtures = [
-#   "flavors/github/task-lists"
-# ]
+fixtures = [
+  "flavors/rmarkdown"
+]
 
 # Automatically generate the {fixtures} array from the file system.
 # Include all .ass files found inside /spec/fixtures, by their relative path
