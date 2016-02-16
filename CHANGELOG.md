@@ -1,6 +1,9 @@
 ### v0.11.0
 - #82: Add **R Markdown** flavor (thanks to @pimentel)
 
+### v0.10.1
+- Fix wrong scope on keymaps preventing list-item in- and outdenting
+
 ### v0.10.0
 - #79: Spec for custom commands
 - Fix: wrong scope on keymaps
