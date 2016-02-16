@@ -499,7 +499,7 @@
           }
         },
         {
-          "match": "^(?:\\s*)([-+\\*] \\[x\\]\\s)(.*)$",
+          "match": "^(?:\\s*)([-+\\*] \\[[xX]\\]\\s)(.*)$",
           "name": "completed.task.unordered.list.markup.md",
           "captures": {
             "1": {
@@ -518,7 +518,7 @@
           }
         },
         {
-          "match": "^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[x\\]\\s)(.*)$",
+          "match": "^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[[xX]\\]\\s)(.*)$",
           "name": "completed.task.ordered.list.markup.md",
           "captures": {
             "1": {

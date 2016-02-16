@@ -28,11 +28,31 @@
   }
 }
 
-@2
+@2a
 "- [x] Completed task" {
   text.md {
     completed.task.unordered.list.markup.md {
       "- [x] ": punctuation.md
+      "Completed task"
+    }
+  }
+}
+
+@2b
+"+ [x] Completed task" {
+  text.md {
+    completed.task.unordered.list.markup.md {
+      "+ [x] ": punctuation.md
+      "Completed task"
+    }
+  }
+}
+
+@2c
+"* [x] Completed task" {
+  text.md {
+    completed.task.unordered.list.markup.md {
+      "* [x] ": punctuation.md
       "Completed task"
     }
   }
@@ -146,22 +166,26 @@
   }
 }
 
-@10
-"- [X] Not a completed task, I think" {
-  text.md {
-    unordered.list.markup.md {
-      "- ": punctuation.md
-      "[X]" {
-        label.link.string.md {
-          "[": punctuation.md
-          "X"
-          "]": punctuation.md
-        }
-      }
-      " Not a completed task, I think"
-    }
-  }
-}
+# NOTE
+# Disabled @10 because I've enabled that tasks can be marked as completed with a capital X now.
+# @burodepeper
+#
+# @10
+# "- [X] Not a completed task, I think" {
+#   text.md {
+#     unordered.list.markup.md {
+#       "- ": punctuation.md
+#       "[X]" {
+#         label.link.string.md {
+#           "[": punctuation.md
+#           "X"
+#           "]": punctuation.md
+#         }
+#       }
+#       " Not a completed task, I think"
+#     }
+#   }
+# }
 
 @11a
 "1. [ ] Task" {
@@ -189,6 +213,26 @@
     task.ordered.list.markup.md {
       "123) [ ] ": punctuation.md
       "Task"
+    }
+  }
+}
+
+@12a
+"- [X] Completed task" {
+  text.md {
+    completed.task.unordered.list.markup.md {
+      "- [X] ": punctuation.md
+      "Completed task"
+    }
+  }
+}
+
+@12b
+"0123. [X] Completed task" {
+  text.md {
+    completed.task.ordered.list.markup.md {
+      "0123. [X] ": punctuation.md
+      "Completed task"
     }
   }
 }
