@@ -99,7 +99,3 @@ They have not been implemented yet
 
 ```{r fig.cap=paste('p-value is', t.test(x)$p.value)}
 ```
-
-```{r}
-print('hello world')
-```

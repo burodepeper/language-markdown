@@ -1,7 +1,7 @@
 {
   "name": "language-markdown",
   "version": "0.10.1",
-  "description": "Adds support for Markdown (including Github flavored, AtomDoc, Markdown Extra, CriticMark, and YAML/TOML front-matter) based on CommonMark and common sense. Adds smart context-aware behavior to lists.",
+  "description": "Adds grammar support for Markdown (including Github flavored, AtomDoc, Markdown Extra, CriticMark, YAML/TOML front-matter, and R Markdown), and smart context-aware behavior to lists.",
   "keywords": [
     "markdown",
     "commonmark",
@@ -10,7 +10,8 @@
     "markdown extra",
     "criticmark",
     "front-matter",
-    "atomdoc"
+    "atomdoc",
+    "r markdown"
   ],
   "repository": "https://github.com/burodepeper/language-markdown",
   "bugs": {

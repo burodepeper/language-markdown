@@ -445,3 +445,10 @@ alert("Hello world");
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.js #id .class key=value}
 alert("Hello world");
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+<!---------- R Markdown ---------->
+```{r label, include=FALSE invalid='abc', results='asis', dev.args=list(bg='yellow', pointsize=10), echo=2:3:-4}
+print('hello world')
+```
