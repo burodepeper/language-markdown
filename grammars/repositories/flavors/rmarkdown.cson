@@ -1,0 +1,32 @@
+# http://rmarkdown.rstudio.com/authoring_rcodechunks.html
+# http://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+# http://yihui.name/knitr/options/
+
+key: 'rmarkdown'
+patterns: [
+  {
+    begin: '(?x)
+      (```)(
+        (\\{)(r)(?:\\s)?
+        (?:([a-zA-Z0-9|_|-]*)(?=[\\s|,|}])\\s?)?
+        ([^\\}]*)?
+        (\\})
+      )
+    '
+    end: '^(\\1)$'
+
+    name: 'fenced.code.md'
+    contentName: 'embedded.source.r'
+    patterns: [{ include: 'source.r' }]
+
+    beginCaptures:
+      1: name: 'punctuation.md'
+      3: name: 'punctuation.md'
+      4: name: 'language.constant.md'
+      5: name: 'label.string.md'
+      6: patterns: [{ include: '#rmarkdown-attributes' }]
+      7: name: 'punctuation.md'
+    endCaptures:
+      1: name: 'punctuation.md'
+  }
+]

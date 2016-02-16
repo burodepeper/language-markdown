@@ -1,5 +1,7 @@
 # language-markdown
 
+**Note**: this file is not up-to-date, but kept around for whatever reasons
+
 ## Status
 
 | Flavor      | Section                     | Specs     | Status |

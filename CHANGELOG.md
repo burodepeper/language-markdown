@@ -1,10 +1,13 @@
+### v0.11.0
+- #82: Add **R Markdown** flavor (thanks to @pimentel)
+
 ### v0.10.1
 - Fix wrong scope on keymaps preventing list-item in- and outdenting
 
 ### v0.10.0
-- #79: Spec for custom commands
+- #79: Add specs for custom commands
 - Fix: wrong scope on keymaps
-- Fix: revert marking checkbox as separate token in task-lists; prevented new task-list-items from being created
+- Fix: revert #76 (marking checkbox as separate token in task-lists); prevented new task-list-items from being created
 
 ## v0.9.0
 - #74: Add support for AtomDoc references, such as {ClassName} and {Class::method}
