@@ -9,6 +9,12 @@ patterns: [
       1: name: 'punctuation.md'
   }
   {
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[ \\]\\s)$'
+    name: 'empty.task.ordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+  }
+  {
     match: '^(?:\\s*)([-+\\*]{1}\\s?)$'
     name: 'empty.unordered.list.markup.md'
     captures:
