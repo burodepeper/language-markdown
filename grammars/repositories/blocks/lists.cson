@@ -3,8 +3,14 @@ patterns: [
 
   # Empty lists; for styling purposes, and for detection.
   {
-    match: '^(?:\\s*)(- \\[ \\]\\s?)$'
+    match: '^(?:\\s*)([-+\\*] \\[ \\]\\s?)$'
     name: 'empty.task.unordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+  }
+  {
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[ \\]\\s)$'
+    name: 'empty.task.ordered.list.markup.md'
     captures:
       1: name: 'punctuation.md'
   }
@@ -23,8 +29,19 @@ patterns: [
 
   # Task list-item
   {
-    match: '^(?:\\s*)(- \\[ \\]\\s)(.*)$'
+    match: '^(?:\\s*)([-+\\*] \\[ \\]\\s)(.*)$'
     name: 'task.unordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+      2:
+        patterns: [
+          { include: '#blocks' }
+          { include: '#inlines-in-blocks' }
+        ]
+  }
+  {
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[ \\]\\s)(.*)$'
+    name: 'task.ordered.list.markup.md'
     captures:
       1: name: 'punctuation.md'
       2:
@@ -36,8 +53,19 @@ patterns: [
 
   # Completed task list-item
   {
-    match: '^(?:\\s*)(- \\[x\\]\\s)(.*)$'
+    match: '^(?:\\s*)([-+\\*] \\[[xX]\\]\\s)(.*)$'
     name: 'completed.task.unordered.list.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+      2:
+        patterns: [
+          { include: '#blocks' }
+          { include: '#inlines-in-blocks' }
+        ]
+  }
+  {
+    match: '^(?:\\s*)([0-9]{1,9}[\\.\\)] \\[[xX]\\]\\s)(.*)$'
+    name: 'completed.task.ordered.list.markup.md'
     captures:
       1: name: 'punctuation.md'
       2:

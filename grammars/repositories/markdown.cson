@@ -39,8 +39,10 @@ repository:
       { include: '#entities' }
       { include: '#links' }
       { include: '#html' }
+      { include: '#liquid' }
       { include: '#emphasis' }
       { include: '#line-breaks' }
+      { include: '#github-inlines' }
     ]
   flavors:
     patterns: [
@@ -59,7 +61,24 @@ repository:
       { include: '#code' }
       { include: '#entities' }
       { include: '#html' }
+      { include: '#liquid' }
       { include: '#links' }
       { include: '#emphasis' }
       { include: '#flavors' }
+    ]
+
+  # NOTE
+  # The inlines that are allowed inside of other inlines differ a little from inlines themselves, or something. This might have to be cleaned up later.
+  # @burodepeper
+  'inlines-in-inlines':
+    patterns: [
+      { include: '#escapes' }
+      { include: '#code' }
+      { include: '#entities' }
+      { include: '#html' }
+      { include: '#liquid' }
+      { include: '#links' }
+      { include: '#emphasis' }
+      { include: '#github-inlines' }
+      { include: '#criticmark' }
     ]

@@ -52,10 +52,11 @@ patterns: [
     captures:
       1: name: 'punctuation.md'
       2: patterns: [
-        { include: '#escapes' }
-        { include: '#code' }
-        { include: '#links' }
-        { include: '#emphasis' }
+        { include: '#inlines-in-inlines' }
+        # { include: '#escapes' }
+        # { include: '#code' }
+        # { include: '#links' }
+        # { include: '#emphasis' }
       ]
       3: name: 'punctuation.md'
   }
@@ -65,10 +66,11 @@ patterns: [
     captures:
       1: name: 'punctuation.md'
       2: patterns: [
-        { include: '#escapes' }
-        { include: '#inline-code' }
-        { include: '#links' }
-        { include: '#emphasis' }
+        { include: '#inlines-in-inlines' }
+        # { include: '#escapes' }
+        # { include: '#inline-code' }
+        # { include: '#links' }
+        # { include: '#emphasis' }
       ]
       3: name: 'punctuation.md'
   }
@@ -110,10 +112,11 @@ patterns: [
     captures:
       1: name: 'punctuation.md'
       2: patterns: [
-        { include: '#escapes' }
-        { include: '#code' }
-        { include: '#links' }
-        { include: '#emphasis' }
+        { include: '#inlines-in-inlines' }
+        # { include: '#escapes' }
+        # { include: '#code' }
+        # { include: '#links' }
+        # { include: '#emphasis' }
       ]
       3: name: 'punctuation.md'
   }
@@ -123,10 +126,11 @@ patterns: [
     captures:
       1: name: 'punctuation.md'
       2: patterns: [
-        { include: '#escapes' }
-        { include: '#code' }
-        { include: '#links' }
-        { include: '#emphasis' }
+        { include: '#inlines-in-inlines' }
+        # { include: '#escapes' }
+        # { include: '#code' }
+        # { include: '#links' }
+        # { include: '#emphasis' }
       ]
       3: name: 'punctuation.md'
   }

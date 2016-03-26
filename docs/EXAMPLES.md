@@ -124,7 +124,11 @@ end
 - [x] This is a completed task
 * Asterisk and
 + Plus-sign are also valid
+  + [ ] And can be tasks too!
+  + [X] And completed ones can have a capital X
 1. - 2. foo
+3. [ ] A numbered task
+4. [x] Another one, but this one is completed
 
 
 
@@ -216,6 +220,7 @@ a*"foo"*
 *foo [bar](/url)*
 foo *\**
 _____foo_____
+**Github Flavored stuff like @burodepeper and #123 is still highlighted, or :+1: and &amp;**
 
 
 
