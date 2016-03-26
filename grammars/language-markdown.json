@@ -73,6 +73,9 @@
           "include": "#html"
         },
         {
+          "include": "#liquid"
+        },
+        {
           "include": "#emphasis"
         },
         {
@@ -114,6 +117,9 @@
           "include": "#html"
         },
         {
+          "include": "#liquid"
+        },
+        {
           "include": "#links"
         },
         {
@@ -137,6 +143,9 @@
         },
         {
           "include": "#html"
+        },
+        {
+          "include": "#liquid"
         },
         {
           "include": "#links"
@@ -2034,6 +2043,13 @@
               "name": "punctuation.md"
             }
           }
+        }
+      ]
+    },
+    "liquid": {
+      "patterns": [
+        {
+          "include": "text.html.liquid"
         }
       ]
     },
