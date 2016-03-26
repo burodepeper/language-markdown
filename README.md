@@ -27,7 +27,8 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
   - Automatically create new list-items when pressing <kbd>enter</kbd>
   - Indent or outdent list-items by pressing <kbd>tab</kbd> or <kbd>shift+tab</kbd>
   - Toggle tasks with <kbd>cmd+shift+x</kbd> or <kbd>ctrl+shift+x</kbd>
-  - Remove empty list-items when pressing <kbd>enter</kbd>
+  - Remove empty trailing list-items when pressing <kbd>enter</kbd>
+- Supports embedded HTML and Liquid
 
 ### Syntax-theme support
 
