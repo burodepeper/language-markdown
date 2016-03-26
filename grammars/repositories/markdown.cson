@@ -39,6 +39,7 @@ repository:
       { include: '#entities' }
       { include: '#links' }
       { include: '#html' }
+      { include: '#liquid' }
       { include: '#emphasis' }
       { include: '#line-breaks' }
       { include: '#github-inlines' }
@@ -60,6 +61,7 @@ repository:
       { include: '#code' }
       { include: '#entities' }
       { include: '#html' }
+      { include: '#liquid' }
       { include: '#links' }
       { include: '#emphasis' }
       { include: '#flavors' }
@@ -74,6 +76,7 @@ repository:
       { include: '#code' }
       { include: '#entities' }
       { include: '#html' }
+      { include: '#liquid' }
       { include: '#links' }
       { include: '#emphasis' }
       { include: '#github-inlines' }
