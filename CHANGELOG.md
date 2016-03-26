@@ -1,9 +1,10 @@
-### Upcoming minor release
+### v0.12.0
 - #94: Upgrade lists
   - Allow ordered/numbered task-lists
   - Allow `+` and `*` as markers for task-lists
   - Allow capital `X` to mark a task as complete
 - #90: Fix nested inline elements
+- #97: Add support for `liquid` (thanks @fusion809)
 
 ### v0.11.0
 - #82: Add **R Markdown** flavor (thanks to @pimentel)
