@@ -1,3 +1,6 @@
+#### v0.12.1 (unreleased)
+- #100: Allow inline code-spans with any number of (matching) backticks (thanks @cblp)
+
 ### v0.12.0
 - #94: Upgrade lists
   - Allow ordered/numbered task-lists

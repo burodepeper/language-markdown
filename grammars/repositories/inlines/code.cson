@@ -4,7 +4,7 @@ patterns: [
     # begin: '(`+)(?!$)'
     # end: '(?<!`)(\\1)(?!`)'
     # match: '(?<!`)(`+)[^`]+(\\1)(?!`)'
-    match: '(?<!`)(`{1,2})(?!`).+?(?<!`)(\\1)(?!`)'
+    match: '(?<!`)(`+)(?!`).+?(?<!`)(\\1)(?!`)'
     name: 'code.raw.markup.md'
     captures:
       1: name: 'punctuation.md'

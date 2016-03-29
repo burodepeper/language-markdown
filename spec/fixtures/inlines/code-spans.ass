@@ -36,6 +36,32 @@
   }
 }
 
+@298d
+"before ```code``` after" {
+  text.md {
+    "before "
+    code.raw.markup.md {
+      '```': punctuation.md
+      'code'
+      '```': punctuation.md
+    }
+    " after"
+  }
+}
+
+@298e
+"before ````code```` after" {
+  text.md {
+    "before "
+    code.raw.markup.md {
+      '````': punctuation.md
+      'code'
+      '````': punctuation.md
+    }
+    " after"
+  }
+}
+
 # http://spec.commonmark.org/0.22/#example-299
 @299
 "`` foo ` bar  ``" {
@@ -192,8 +218,11 @@
 # }
 
 # http://spec.commonmark.org/0.22/#example-311
-@311
+@311a
 '```foo``': text.md
+
+@311b
+'```foo````': text.md
 
 # http://spec.commonmark.org/0.22/#example-312
 @312
