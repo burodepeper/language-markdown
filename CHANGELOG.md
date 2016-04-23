@@ -1,7 +1,8 @@
-#### v0.12.1 (unreleased)
+## Upcoming release
+- Add keybindings `_` and `*` that toggle (**strong**) _emphasis_ on selected text
 - #100: Allow inline code-spans with any number of (matching) backticks (thanks @cblp)
 
-### v0.12.0
+## v0.12.0
 - #94: Upgrade lists
   - Allow ordered/numbered task-lists
   - Allow `+` and `*` as markers for task-lists
@@ -9,7 +10,7 @@
 - #90: Fix nested inline elements
 - #97: Add support for `liquid` (thanks @fusion809)
 
-### v0.11.0
+## v0.11.0
 - #82: Add **R Markdown** flavor (thanks to @pimentel)
 
 ### v0.10.1
