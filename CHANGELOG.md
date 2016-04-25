@@ -1,6 +1,7 @@
 ## Upcoming release
 - Add keybindings `_` and `*` that toggle (**strong**) _emphasis_ on selected text
 - #100: Allow inline code-spans with any number of (matching) backticks (thanks @cblp)
+- Add `one-o-eight-syntax` to supported syntax themes (thanks @tpoisot)
 
 ## v0.12.0
 - #94: Upgrade lists

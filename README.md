@@ -41,6 +41,7 @@ By default, most syntax-themes only provide basic styling for `.markup` classes.
 - [minimal-syntax-dark](https://atom.io/themes/minimal-syntax-dark) (dark, high-contrast)
 - [pen-paper-coffee](https://atom.io/themes/pen-paper-coffee-syntax) (light, low-contrast)
 - [pubster-syntax](https://atom.io/themes/pubster-syntax) (dark, high-contrast)
+- [one-o-eight-syntax](https://atom.io/themes/one-o-eight-syntax) (various, medium-contrast)
 
 ---
 
