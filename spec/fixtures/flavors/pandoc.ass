@@ -1,0 +1,157 @@
+@citation/1
+"Blah blah [see @doe99, pp. 33-35; also @smith04, chap. 1]." {
+  text.md {
+    "Blah blah "
+    "[see @doe99, pp. 33-35; also @smith04, chap. 1]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "see "
+        "@doe99" {
+          citation.reference.variable.md {
+            "@": punctuation.md
+            "doe99"
+          }
+        }
+        ", pp. 33-35; also "
+        "@smith04" {
+          citation.reference.variable.md {
+            "@": punctuation.md
+            "smith04"
+          }
+        }
+        ", chap. 1"
+        "]": punctuation.md
+      }
+    }
+    "."
+  }
+}
+
+@citation/2
+"Blah blah [@doe99, pp. 33-35, 38-39 and *passim*]." {
+  text.md {
+    "Blah blah "
+    "[@doe99, pp. 33-35, 38-39 and *passim*]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "@doe99" {
+          citation.reference.variable.md {
+            "@": punctuation.md
+            "doe99"
+          }
+        }
+        ", pp. 33-35, 38-39 and *passim*"
+        "]": punctuation.md
+      }
+    }
+    "."
+  }
+}
+
+@citation/3
+"Blah blah [@smith04; @doe99]." {
+  text.md {
+    "Blah blah "
+    "[@smith04; @doe99]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "@smith04" {
+          citation.reference.variable.md {
+            "@": punctuation.md
+            "smith04"
+          }
+        }
+        "; "
+        "@doe99" {
+          citation.reference.variable.md {
+            "@": punctuation.md
+            "doe99"
+          }
+        }
+        "]": punctuation.md
+      }
+    }
+    "."
+  }
+}
+
+@citation/4
+"Blah blah [@smith04; @_aB3:.#$%&-+?<>~/test; @.invalid, something else]." {
+  text.md {
+    "Blah blah "
+    "[@smith04; @_aB3:.#$%&-+?<>~/test; @.invalid, something else]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "@smith04" {
+          citation.reference.variable.md {
+            "@": punctuation.md
+            "smith04"
+          }
+        }
+        "; "
+        "@_aB3:.#$%&-+?<>~/test" {
+          citation.reference.variable.md {
+            "@": punctuation.md
+            "_aB3:.#$%&-+?<>~/test"
+          }
+        }
+        "; @.invalid, something else"
+        "]": punctuation.md
+      }
+    }
+    "."
+  }
+}
+
+@citation/5
+"Smith says blah [-@smith04]." {
+  text.md {
+    "Smith says blah "
+    "[-@smith04]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "-@smith04" {
+          citation.reference.variable.md {
+            "-@": punctuation.md
+            "smith04"
+          }
+        }
+        "]": punctuation.md
+      }
+    }
+    "."
+  }
+}
+
+@citation/6
+"@smith04 says blah." {
+  text.md {
+    "@smith04" {
+      reference.gfm.variable.md {
+        "@": punctuation.md
+        "smith04": mention.gfm.md
+      }
+    }
+    " says blah."
+  }
+}
+
+@citation/7
+"@smith04 [p. 33] says blah." {
+  text.md {
+    "@smith04" {
+      reference.gfm.variable.md {
+        "@": punctuation.md
+        "smith04": mention.gfm.md
+      }
+    }
+    " "
+    "[p. 33]" {
+      label.link.string.md {
+        "[": punctuation.md
+        "p. 33"
+        "]": punctuation.md
+    }
+    " says blah."
+  }
+}

@@ -1054,6 +1054,19 @@
         }
       ]
     },
+    "pandoc-citations": {
+      "patterns": [
+        {
+          "match": "(?x) ( (-?@) ( [a-zA-Z0-9_] [a-zA-Z0-9_:.#$%&+?<>~/-]* ) )",
+          "captures": {
+            "2": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "citation.reference.variable.md"
+        }
+      ]
+    },
     "rmarkdown-attributes": {
       "patterns": [
         {
@@ -1603,6 +1616,13 @@
           "captures": {
             "1": {
               "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#pandoc-citations"
+                }
+              ]
             },
             "3": {
               "name": "punctuation.md"

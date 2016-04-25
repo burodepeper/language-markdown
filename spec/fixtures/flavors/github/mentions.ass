@@ -125,14 +125,18 @@
 }
 
 # NOTE
-# Though technically allowed, but link-reference-labels are parsed before
-# mentions.
+# This is recognized as a Pandoc citation
 @13
 "[@username]" {
   text.md {
     label.link.string.md {
       "[": punctuation.md
-      "@username"
+      "@username" {
+        citation.reference.variable.md {
+          "@": punctuation.md
+          "username"
+        }
+      }
       "]": punctuation.md
     }
   }
