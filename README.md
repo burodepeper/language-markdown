@@ -28,6 +28,7 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
   - Indent or outdent list-items by pressing <kbd>tab</kbd> or <kbd>shift+tab</kbd>
   - Toggle tasks with <kbd>cmd+shift+x</kbd> or <kbd>ctrl+shift+x</kbd>
   - Remove empty trailing list-items when pressing <kbd>enter</kbd>
+- Adds shortcuts (via <kbd>_</kbd> and <kbd>*</kbd>) for toggling inline emphasis on selected text
 - Supports embedded HTML and Liquid
 
 ### Syntax-theme support
