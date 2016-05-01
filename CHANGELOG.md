@@ -2,6 +2,8 @@
 - Add keybindings `_` and `*` that toggle (**strong**) _emphasis_ on selected text
 - #100: Allow inline code-spans with any number of (matching) backticks (thanks @cblp)
 - Add `one-o-eight-syntax` to supported syntax themes (thanks @tpoisot)
+- Detect Pandoc citations (in square brackets) (thanks @tpoisot)
+- Merge Github mentions and Pandoc citations into generic references
 
 ## v0.12.0
 - #94: Upgrade lists
