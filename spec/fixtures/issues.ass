@@ -116,9 +116,9 @@
       "**": punctuation.md
       "Nested inlines: "
       "@username" {
-        reference.gfm.variable.md {
+        reference.variable.md {
           "@": punctuation.md
-          "username": mention.gfm.md
+          "username"
         }
       }
       ", "

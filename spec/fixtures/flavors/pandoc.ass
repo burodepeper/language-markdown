@@ -7,14 +7,14 @@
         "[": punctuation.md
         "see "
         "@doe99" {
-          citation.reference.variable.md {
+          reference.variable.md {
             "@": punctuation.md
             "doe99"
           }
         }
         ", pp. 33-35; also "
         "@smith04" {
-          citation.reference.variable.md {
+          reference.variable.md {
             "@": punctuation.md
             "smith04"
           }
@@ -35,7 +35,7 @@
       label.link.string.md {
         "[": punctuation.md
         "@doe99" {
-          citation.reference.variable.md {
+          reference.variable.md {
             "@": punctuation.md
             "doe99"
           }
@@ -56,14 +56,14 @@
       label.link.string.md {
         "[": punctuation.md
         "@smith04" {
-          citation.reference.variable.md {
+          reference.variable.md {
             "@": punctuation.md
             "smith04"
           }
         }
         "; "
         "@doe99" {
-          citation.reference.variable.md {
+          reference.variable.md {
             "@": punctuation.md
             "doe99"
           }
@@ -83,14 +83,14 @@
       label.link.string.md {
         "[": punctuation.md
         "@smith04" {
-          citation.reference.variable.md {
+          reference.variable.md {
             "@": punctuation.md
             "smith04"
           }
         }
         "; "
         "@_aB3:.#$%&-+?<>~/test" {
-          citation.reference.variable.md {
+          reference.variable.md {
             "@": punctuation.md
             "_aB3:.#$%&-+?<>~/test"
           }
@@ -111,7 +111,7 @@
       label.link.string.md {
         "[": punctuation.md
         "-@smith04" {
-          citation.reference.variable.md {
+          reference.variable.md {
             "-@": punctuation.md
             "smith04"
           }
@@ -127,9 +127,9 @@
 "@smith04 says blah." {
   text.md {
     "@smith04" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "smith04": mention.gfm.md
+        "smith04"
       }
     }
     " says blah."
@@ -140,9 +140,9 @@
 "@smith04 [p. 33] says blah." {
   text.md {
     "@smith04" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "smith04": mention.gfm.md
+        "smith04"
       }
     }
     " "

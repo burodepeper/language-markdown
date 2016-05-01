@@ -9,7 +9,7 @@ patterns: [
     match: '^(\\*?\\[\\^?)(.*)(\\])$'
     captures:
       1: name: 'punctuation.md'
-      2: patterns: [{ include: '#pandoc-citations' }]
+      2: patterns: [{ include: '#references' }]
       3: name: 'punctuation.md'
   }
 

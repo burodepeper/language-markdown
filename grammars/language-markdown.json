@@ -82,6 +82,9 @@
           "include": "#line-breaks"
         },
         {
+          "include": "#references"
+        },
+        {
           "include": "#github-inlines"
         }
       ]
@@ -126,6 +129,9 @@
           "include": "#emphasis"
         },
         {
+          "include": "#references"
+        },
+        {
           "include": "#flavors"
         }
       ]
@@ -152,6 +158,9 @@
         },
         {
           "include": "#emphasis"
+        },
+        {
+          "include": "#references"
         },
         {
           "include": "#github-inlines"
@@ -855,20 +864,6 @@
     "github-inlines": {
       "patterns": [
         {
-          "match": "(?<=^|\\s|\"|'|\\(|\\[)((@)([a-zA-Z0-9][a-zA-Z0-9\\-/]*[a-zA-Z0-9]))(?=[\\s\"'\\.,;:\\)\\]])",
-          "captures": {
-            "1": {
-              "name": "reference.gfm.variable.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "mention.gfm.md"
-            }
-          }
-        },
-        {
           "match": "(?<=^|\\s|\"|'|\\(|\\[)((#|GH-)(\\d+))(?=[\\s\"'\\.,;:\\)\\]])",
           "captures": {
             "1": {
@@ -1051,19 +1046,6 @@
               "name": "punctuation.md"
             }
           }
-        }
-      ]
-    },
-    "pandoc-citations": {
-      "patterns": [
-        {
-          "match": "(?x) ( (-?@) ( [a-zA-Z0-9_] [a-zA-Z0-9_:.#$%&+?<>~/-]* ) )",
-          "captures": {
-            "2": {
-              "name": "punctuation.md"
-            }
-          },
-          "name": "citation.reference.variable.md"
         }
       ]
     },
@@ -1620,7 +1602,7 @@
             "2": {
               "patterns": [
                 {
-                  "include": "#pandoc-citations"
+                  "include": "#references"
                 }
               ]
             },
@@ -2079,6 +2061,19 @@
       "patterns": [
         {
           "include": "text.html.liquid"
+        }
+      ]
+    },
+    "references": {
+      "patterns": [
+        {
+          "match": "(?x) (?<=^|\\s|\"|'|\\(|\\[) ( (-?@) ( [a-zA-Z0-9_] [a-zA-Z0-9_:.#$%&+?<>~/-]* (?<![:|.|+|?|<|>|/|-]) ) )",
+          "captures": {
+            "2": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "reference.variable.md"
         }
       ]
     },

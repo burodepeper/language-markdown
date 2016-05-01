@@ -3,15 +3,18 @@ patterns: [
 
   # NOTE
   # From github.com/join: "Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen". The / is added to support @atom/feedback for instance.
-  {
-    # match: '(?<=^|\\s|"|\'|\\(|\\[)((@)(\\w[-\\w:]*))(?=[\\s"\'.,;\\)\\]])'
-    # match: '(?<=^|\\s|"|\'|\\(|\\[)((@)(\\w[-\\w:/]*))(?=[\\s"\'.,;\\)\\]])'
-    match: '(?<=^|\\s|"|\'|\\(|\\[)((@)([a-zA-Z0-9][a-zA-Z0-9\\-/]*[a-zA-Z0-9]))(?=[\\s"\'\\.,;:\\)\\]])'
-    captures:
-      1: name: 'reference.gfm.variable.md'
-      2: name: 'punctuation.md'
-      3: name: 'mention.gfm.md'
-  }
+  # {
+  #   # match: '(?<=^|\\s|"|\'|\\(|\\[)((@)(\\w[-\\w:]*))(?=[\\s"\'.,;\\)\\]])'
+  #   # match: '(?<=^|\\s|"|\'|\\(|\\[)((@)(\\w[-\\w:/]*))(?=[\\s"\'.,;\\)\\]])'
+  #   match: '(?<=^|\\s|"|\'|\\(|\\[)((@)([a-zA-Z0-9][a-zA-Z0-9\\-/]*[a-zA-Z0-9]))(?=[\\s"\'\\.,;:\\)\\]])'
+  #   captures:
+  #     1: name: 'reference.gfm.variable.md'
+  #     2: name: 'punctuation.md'
+  #     3: name: 'mention.gfm.md'
+  # }
+
+  # NOTE
+  # Mentions (like @burodepeper, or @atom/feedback) are parsed as generic references; see /inlines/references.cson
 
   # #26 and GH-26
   {
