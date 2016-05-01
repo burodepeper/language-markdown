@@ -1,0 +1,31 @@
+key: 'references'
+patterns: [
+  {
+    # NOTE
+    # These references cover both Github Flavored Markdown mentions, and Pandoc citation keys.
+
+    # NOTE on Pandoc
+    # Citations go inside square brackets and are separated by semicolons. Each citation must have a key, composed of ‘@’ + the citation identifier from the database, and may optionally have a prefix, a locator, and a suffix. The citation key must begin with a letter, digit, or _, and may contain alphanumerics, _, and internal punctuation characters (:.#$%&-+?<>~/).
+    # http://pandoc.org/README.html#citations
+
+    # NOTE on Github usernames
+    # From github.com/join: "Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen". The / is added to support @atom/feedback for instance.
+
+    # NOTE
+    # Due to false-positives with commonly used punctuation signs (@username: and @username. for example) this pattern should not allow these to be the last character of the match.
+
+    match: '(?x)
+      (?<=^|\\s|"|\'|\\(|\\[)
+      (
+        (\-?@)
+        (
+          [a-zA-Z0-9_]
+          [a-zA-Z0-9_:.#$%&+?<>~/-]*
+          (?<![:|\.|+|?|<|>|/|-])
+        )
+      )'
+    captures:
+      2: name: 'punctuation.md'
+    name: 'reference.variable.md'
+  }
+]

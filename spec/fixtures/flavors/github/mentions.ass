@@ -2,9 +2,9 @@
 "@username" {
   text.md {
     "@username" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "username": mention.gfm.md
+        "username"
       }
     }
   }
@@ -14,9 +14,9 @@
 "@user name" {
   text.md {
     "@user" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "user": mention.gfm.md
+        "user"
       }
     }
     " name"
@@ -30,9 +30,9 @@
 "@username: something, something" {
   text.md {
     "@username" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "username": mention.gfm.md
+        "username"
       }
     }
     ": something, something"
@@ -43,24 +43,33 @@
 "@userName123" {
   text.md {
     "@userName123" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "userName123": mention.gfm.md
+        "userName123"
       }
     }
   }
 }
 
 @6
-"@user_name": text.md
+"@user_name" {
+  text.md {
+    "@user_name" {
+      reference.variable.md {
+        "@": punctuation.md
+        "user_name"
+      }
+    }
+  }
+}
 
 @7
 "@user-name" {
   text.md {
     "@user-name" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "user-name": mention.gfm.md
+        "user-name"
       }
     }
   }
@@ -72,13 +81,12 @@
 @9
 "@user:name" {
   text.md {
-    "@user" {
-      reference.gfm.variable.md {
+    "@user:name" {
+      reference.variable.md {
         "@": punctuation.md
-        "user": mention.gfm.md
+        "user:name"
       }
     }
-    ":name"
   }
 }
 
@@ -87,9 +95,9 @@
   text.md {
     """
     "@username" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "username": mention.gfm.md
+        "username"
       }
     }
     """
@@ -101,9 +109,9 @@
   text.md {
     "'"
     "@username" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "username": mention.gfm.md
+        "username"
       }
     }
     "'"
@@ -115,9 +123,9 @@
   text.md {
     "("
     "@username" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "username": mention.gfm.md
+        "username"
       }
     }
     ")"
@@ -125,14 +133,18 @@
 }
 
 # NOTE
-# Though technically allowed, but link-reference-labels are parsed before
-# mentions.
+# This is recognized as a Pandoc citation
 @13
 "[@username]" {
   text.md {
     label.link.string.md {
       "[": punctuation.md
-      "@username"
+      "@username" {
+        reference.variable.md {
+          "@": punctuation.md
+          "username"
+        }
+      }
       "]": punctuation.md
     }
   }
@@ -145,9 +157,9 @@
   text.md {
     "("
     "@username" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "username": mention.gfm.md
+        "username"
       }
     }
     "]"
@@ -160,9 +172,9 @@
     quote.markup.md {
       ">": punctuation.md
       "@username" {
-        reference.gfm.variable.md {
+        reference.variable.md {
           "@": punctuation.md
-          "username": mention.gfm.md
+          "username"
         }
       }
     }
@@ -173,46 +185,67 @@
 "@one, @two, @three" {
   text.md {
     "@one" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "one": mention.gfm.md
+        "one"
       }
     }
     ", "
     "@two" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "two": mention.gfm.md
+        "two"
       }
     }
     ", "
     "@three" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "three": mention.gfm.md
+        "three"
       }
     }
   }
 }
 
 @17
-"@username=cool": text.md
+"@username=cool" {
+  text.md {
+    "@username" {
+      reference.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    "=cool"
+  }
+}
 
 @18
 "@username." {
   text.md {
     "@username" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "username": mention.gfm.md
+        "username"
       }
     }
     "."
   }
 }
 
+# NOTE
+# The leading dash is a Pandoc citation feature.
 @19
-"-@username": text.md
+"-@username" {
+  text.md {
+    "-@username" {
+      reference.variable.md {
+        "-@": punctuation.md
+        "username"
+      }
+    }
+  }
+}
 
 @20
 "- @username" {
@@ -220,9 +253,9 @@
     unordered.list.markup.md {
       "- ": punctuation.md
       "@username" {
-        reference.gfm.variable.md {
+        reference.variable.md {
           "@": punctuation.md
-          "username": mention.gfm.md
+          "username"
         }
       }
     }
@@ -233,13 +266,23 @@
 "@atom/feedback" {
   text.md {
     "@atom/feedback" {
-      reference.gfm.variable.md {
+      reference.variable.md {
         "@": punctuation.md
-        "atom/feedback": mention.gfm.md
+        "atom/feedback"
       }
     }
   }
 }
 
 @22
-"@username-": text.md
+"@username-" {
+  text.md {
+    "@username" {
+      reference.variable.md {
+        "@": punctuation.md
+        "username"
+      }
+    }
+    "-"
+  }
+}

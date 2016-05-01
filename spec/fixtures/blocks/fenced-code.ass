@@ -179,13 +179,20 @@
 # NOTE
 # is not implemented according to spec, because our implementation requires
 # begin and end-of-line characters for the markers, so a fenced-code-block can
-# not be on a single line
+# not be on a single line. This element basically falls back to being an empty
+# inline code-span.
 # @burodepeper
 @95
 "``` ```"+
 "aaa" {
   text.md {
-    "``` ```"
+    "``` ```" {
+      code.raw.markup.md {
+        "```": punctuation.md
+        " "
+        "```": punctuation.md
+      }
+    }
     "aaa"
   }
 }

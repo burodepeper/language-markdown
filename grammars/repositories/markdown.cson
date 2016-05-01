@@ -42,6 +42,7 @@ repository:
       { include: '#liquid' }
       { include: '#emphasis' }
       { include: '#line-breaks' }
+      { include: '#references' }
       { include: '#github-inlines' }
     ]
   flavors:
@@ -64,6 +65,7 @@ repository:
       { include: '#liquid' }
       { include: '#links' }
       { include: '#emphasis' }
+      { include: '#references' }
       { include: '#flavors' }
     ]
 
@@ -79,6 +81,7 @@ repository:
       { include: '#liquid' }
       { include: '#links' }
       { include: '#emphasis' }
+      { include: '#references' }
       { include: '#github-inlines' }
       { include: '#criticmark' }
     ]

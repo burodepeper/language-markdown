@@ -15,3 +15,5 @@
 'atom-text-editor[data-grammar="text md"]':
   'tab': 'markdown:indent-list-item'
   'shift-tab': 'markdown:outdent-list-item'
+  '_': 'markdown:emphasis'
+  '*': 'markdown:strong-emphasis'
