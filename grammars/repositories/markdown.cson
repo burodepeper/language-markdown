@@ -11,7 +11,9 @@ fileTypes: [
   'emdee'
 ]
 
-maxTokensPerLine: 100
+# NOTE
+# Disabled this, because the value of a hundred is already the default value, and changing it doesn't seem to have any direct effect.
+# maxTokensPerLine: 100
 
 patterns: [
   { include: '#blocks' }

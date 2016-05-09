@@ -11,7 +11,6 @@
     "ron",
     "emdee"
   ],
-  "maxTokensPerLine": 100,
   "patterns": [
     {
       "include": "#blocks"
