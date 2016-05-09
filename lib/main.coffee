@@ -188,10 +188,16 @@ module.exports =
       return token + text + token
 
   _getEditorAndPosition: (event) ->
-    editor = event.target.model
+    # editor = event.target.model
+    editor = atom.workspace.getActiveTextEditor()
     if editor
-      position = editor.cursors[0].marker.oldHeadBufferPosition
-      return {editor, position}
+      # position = editor.cursors[0].marker.oldHeadBufferPosition
+      positions = editor.getCursorBufferPositions()
+      if positions
+        position = positions[0]
+        return {editor, position}
+      else
+        event.abortKeyBinding()
     else
       event.abortKeyBinding()
 
