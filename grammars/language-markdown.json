@@ -823,7 +823,7 @@
       "patterns": [
         {
           "name": "table.storage.md",
-          "match": "^(\\|)(?=[ :])(.+)$",
+          "match": "^(\\|)(?=[ :])([ |:-]+)$",
           "captures": {
             "1": {
               "name": "punctuation.md"
@@ -847,6 +847,29 @@
                       "name": "alignment.punctuation.md"
                     }
                   }
+                },
+                {
+                  "include": "#inlines-in-blocks"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "table.storage.md",
+          "match": "^(\\|)(?= )(.+)$",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "match": "(?<= )\\|(?=$| )",
+                  "name": "punctuation.md"
                 },
                 {
                   "include": "#inlines-in-blocks"

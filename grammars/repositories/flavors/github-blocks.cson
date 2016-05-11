@@ -1,11 +1,10 @@
 key: 'github-blocks'
 patterns: [
 
-  # Tables
+  # Table: structure
   {
     name: 'table.storage.md'
-    # match: '^(\\|)(?=[ :])(.+)((?<=[ :])\\|?)\\s*$'
-    match: '^(\\|)(?=[ :])(.+)$'
+    match: '^(\\|)(?=[ :])([ |:-]+)$'
     captures:
       1: name: 'punctuation.md'
       2:
@@ -20,6 +19,25 @@ patterns: [
               1: name: 'alignment.punctuation.md'
               2: name: 'punctuation.md'
               3: name: 'alignment.punctuation.md'
+          }
+          {
+            include: '#inlines-in-blocks'
+          }
+        ]
+      3: name: 'punctuation.md'
+  }
+
+  # Table: data
+  {
+    name: 'table.storage.md'
+    match: '^(\\|)(?= )(.+)$'
+    captures:
+      1: name: 'punctuation.md'
+      2:
+        patterns: [
+          {
+            match: '(?<= )\\|(?=$| )'
+            name: 'punctuation.md'
           }
           {
             include: '#inlines-in-blocks'

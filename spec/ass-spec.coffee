@@ -8,7 +8,7 @@ path = require 'path'
 # Manually specify {fixtures} if you only want to run specific tests.
 # A {fixture} is a relative path + filename (without extension).
 # fixtures = [
-#   "flavors/pandoc"
+#   "flavors/github/tables"
 #   # "issues"
 # ]
 
