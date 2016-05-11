@@ -29,7 +29,7 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
   - Toggle tasks with <kbd>cmd+shift+x</kbd> or <kbd>ctrl+shift+x</kbd>
   - Remove empty trailing list-items when pressing <kbd>enter</kbd>
 - Adds shortcuts (via <kbd>_</kbd> and <kbd>*</kbd>) for toggling inline emphasis on selected text
-- Supports embedded HTML and Liquid
+- Supports embedded `HTML`- and `Liquid`-tags
 
 ### Syntax-theme support
 
@@ -75,7 +75,7 @@ As part of PR #83, all scopes created by this grammar are being rewritten and re
 - `indented-code-blocks` have been disabled to prevent false-positives; use `fenced-code-blocks` instead ([more details](https://github.com/burodepeper/language-markdown/issues/88#issuecomment-183344420))
 - Github tables require pipes at the start of each line, and cells need a padding of at least one space; this is a suggested convention to prevent false positives
 
-#### References used
+#### References
 
 - http://spec.commonmark.org/0.22/
 - https://help.github.com/categories/writing-on-github/
