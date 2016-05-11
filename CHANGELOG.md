@@ -1,3 +1,5 @@
+- #113: Separate table-data from table-structure
+
 ## v0.13.0
 - Add keybindings `_` and `*` that toggle (**strong**) _emphasis_ on selected text
 - #100: Allow inline code-spans with any number of (matching) backticks (thanks @cblp)
