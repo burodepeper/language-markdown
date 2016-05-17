@@ -47,10 +47,10 @@
           "include": "#rmarkdown"
         },
         {
-          "include": "#fenced-code"
+          "include": "#fenced-code-blocks"
         },
         {
-          "include": "#fenced-code-blocks"
+          "include": "#fenced-code"
         },
         {
           "include": "#github-blocks"
