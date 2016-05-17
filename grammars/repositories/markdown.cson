@@ -30,6 +30,7 @@ repository:
       { include: '#headings' }
       { include: '#lists' }
       { include: '#quotes' }
+      { include: '#rmarkdown' }
       { include: '#fenced-code' }
       { include: '#fenced-code-blocks' }
       { include: '#github-blocks' }
@@ -51,7 +52,7 @@ repository:
     patterns: [
       { include: '#criticmark' }
       { include: '#github-inlines' }
-      { include: '#rmarkdown' }
+      # { include: '#rmarkdown' }
       { include: '#markdown-extra' }
     ]
 

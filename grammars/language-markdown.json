@@ -44,6 +44,9 @@
           "include": "#quotes"
         },
         {
+          "include": "#rmarkdown"
+        },
+        {
           "include": "#fenced-code"
         },
         {
@@ -95,9 +98,6 @@
         },
         {
           "include": "#github-inlines"
-        },
-        {
-          "include": "#rmarkdown"
         },
         {
           "include": "#markdown-extra"
