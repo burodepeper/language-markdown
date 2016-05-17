@@ -1,3 +1,4 @@
+- #112: Re-add R to generic fenced-code-blocks (thanks @heavywatal)
 - #113: Separate table-data from table-structure
 
 ## v0.13.0
