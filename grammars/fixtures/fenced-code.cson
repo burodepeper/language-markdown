@@ -55,10 +55,7 @@ list: [
   # { pattern:'php', include:'text.html.php', contentName:'source.js.embedded.html' }
 
   { pattern:'py|python', include:'source.python' }
-
-  # NOTE Disabled in favor of using R Markdown
-  # { pattern:'r' }
-
+  { pattern:'r' }
   { pattern:'ruby' }
   { pattern:'rust|rs', include:'source.rust' }
   { pattern:'sass' }

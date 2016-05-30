@@ -169,15 +169,26 @@
   text.md {
     table.storage.md {
       "|": punctuation.md
-      " "
-      "---": punctuation.md
-      " "
+      " --- "
       "|": punctuation.md
-      " "
-      "---": punctuation.md
-      " "
+      " --- "
       "|": punctuation.md
       " three "
+      "|": punctuation.md
+    }
+  }
+}
+
+@12
+"| name | e-mail | address |" {
+  text.md {
+    table.storage.md {
+      "|": punctuation.md
+      " name "
+      "|": punctuation.md
+      " e-mail "
+      "|": punctuation.md
+      " address "
       "|": punctuation.md
     }
   }

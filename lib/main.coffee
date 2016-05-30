@@ -188,10 +188,16 @@ module.exports =
       return token + text + token
 
   _getEditorAndPosition: (event) ->
-    editor = event.target.model
+    # editor = event.target.model
+    editor = atom.workspace.getActiveTextEditor()
     if editor
-      position = editor.cursors[0].marker.oldHeadBufferPosition
-      return {editor, position}
+      # position = editor.cursors[0].marker.oldHeadBufferPosition
+      positions = editor.getCursorBufferPositions()
+      if positions
+        position = positions[0]
+        return {editor, position}
+      else
+        event.abortKeyBinding()
     else
       event.abortKeyBinding()
 
@@ -271,13 +277,14 @@ module.exports =
       if item = @_parseItem(item)
 
         pattern =
-          begin: '^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`\\}]*)(\\}?)$'
+          begin: '^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:'+item.pattern+'))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$'
           beginCaptures:
             1: name: 'punctuation.md'
             2: name: 'punctuation.md'
             3: name: 'language.constant.md'
-            5: patterns: [{ include:'#special-attribute-elements' }]
-            6: name: 'punctuation.md'
+            5: name: 'punctuation.md'
+            6: patterns: [{ include:'#special-attribute-elements' }]
+            7: name: 'punctuation.md'
           end: '^\\s*(\\1)$'
           endCaptures:
             1: name: 'punctuation.md'

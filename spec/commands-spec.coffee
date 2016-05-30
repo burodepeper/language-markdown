@@ -48,7 +48,7 @@ describe "Markdown", ->
     for command, isRegistered of customCommands
       expect(isRegistered).toBe(true)
 
-  describe 'toggling tasks', ->
+  xdescribe 'toggling tasks', ->
 
     it 'toggles a task', ->
       editor.setText('- [ ] task')
@@ -92,7 +92,7 @@ describe "Markdown", ->
       atom.commands.dispatch(editorElement, "markdown:toggle-task")
       expect(editor.getText()).toBe('[ ] text')
 
-  describe 'indenting list-items', ->
+  xdescribe 'indenting list-items', ->
 
     it 'indents a valid list-item', ->
       editor.setText('- item')
@@ -147,7 +147,7 @@ describe "Markdown", ->
       atom.commands.dispatch(editorElement, "markdown:indent-list-item")
       expect(editor.getText()).toBe('  : definition')
 
-  describe 'outdenting list-items', ->
+  xdescribe 'outdenting list-items', ->
 
     it 'outdents a valid list-item', ->
       editor.setText('  - item')

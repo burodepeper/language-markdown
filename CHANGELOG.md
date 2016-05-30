@@ -1,3 +1,7 @@
+- #114: Remove necessity for a whitespace character following the language-name in fenced-code-blocks (thanks @eloquently)
+- #112: Re-add R to generic fenced-code-blocks (thanks @heavywatal)
+- #113: Separate table-data from table-structure
+
 ## v0.13.0
 - Add keybindings `_` and `*` that toggle (**strong**) _emphasis_ on selected text
 - #100: Allow inline code-spans with any number of (matching) backticks (thanks @cblp)

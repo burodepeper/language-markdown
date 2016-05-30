@@ -11,7 +11,9 @@ fileTypes: [
   'emdee'
 ]
 
-maxTokensPerLine: 100
+# NOTE
+# Disabled this, because the value of a hundred is already the default value, and changing it doesn't seem to have any direct effect.
+# maxTokensPerLine: 100
 
 patterns: [
   { include: '#blocks' }
@@ -28,8 +30,9 @@ repository:
       { include: '#headings' }
       { include: '#lists' }
       { include: '#quotes' }
-      { include: '#fenced-code' }
+      { include: '#rmarkdown' }
       { include: '#fenced-code-blocks' }
+      { include: '#fenced-code' }
       { include: '#github-blocks' }
     ]
   inlines:
@@ -49,7 +52,7 @@ repository:
     patterns: [
       { include: '#criticmark' }
       { include: '#github-inlines' }
-      { include: '#rmarkdown' }
+      # { include: '#rmarkdown' }
       { include: '#markdown-extra' }
     ]
 

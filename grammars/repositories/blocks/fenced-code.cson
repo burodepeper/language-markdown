@@ -1,6 +1,7 @@
 key: 'fenced-code'
 patterns: [
   {
+    # begin: '^\\s{0,3}([`]{3,})(?:[^`]*)?$'
     begin: '^\\s{0,3}([`]{3,})$'
     beginCaptures:
       1: name: 'punctuation.md'
@@ -12,6 +13,7 @@ patterns: [
   }
 
   {
+    # begin: '^\\s{0,3}([~]{3,})(?:[^~]*)?$'
     begin: '^\\s{0,3}([~]{3,})$'
     beginCaptures:
       1: name: 'punctuation.md'
