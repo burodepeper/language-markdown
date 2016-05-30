@@ -277,13 +277,14 @@ module.exports =
       if item = @_parseItem(item)
 
         pattern =
-          begin: '^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:'+item.pattern+'))(?=( |$))\\s*([^`\\}]*)(\\}?)$'
+          begin: '^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:'+item.pattern+'))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$'
           beginCaptures:
             1: name: 'punctuation.md'
             2: name: 'punctuation.md'
             3: name: 'language.constant.md'
-            5: patterns: [{ include:'#special-attribute-elements' }]
-            6: name: 'punctuation.md'
+            5: name: 'punctuation.md'
+            6: patterns: [{ include:'#special-attribute-elements' }]
+            7: name: 'punctuation.md'
           end: '^\\s*(\\1)$'
           endCaptures:
             1: name: 'punctuation.md'
