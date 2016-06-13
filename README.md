@@ -1,8 +1,6 @@
 # Markdown grammar
 
-A realistic implementation of various Markdown specifications as a flexible, drop-in alternative for [language-gfm](https://github.com/atom/language-gfm/). Adds smart context-aware behavior to lists.
-
-**An effort for better syntax-theme support/integration is underway (see #83 for details). Until markup styles are (somewhat) standardized, there is a good chance that not everything in your Markdown documents is correctly hightlighted. If you run into any issues, please report them [here](issues/new/) or at their respective repos and link me (@burodepeper) in the description.**
+A realistic implementation of various Markdown specifications as a flexible, drop-in alternative for [language-gfm](https://github.com/atom/language-gfm/). Adds smart context-aware behavior to lists, and keyboard shortcuts for inline emphasis.
 
 If you experience any issue above a reasonable/tolerable level of annoyancy, don't hesitate to [create an issue](issues/new/).
 
