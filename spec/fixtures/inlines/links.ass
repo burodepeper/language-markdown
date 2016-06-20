@@ -169,21 +169,39 @@
   }
 }
 
+# NOTE
+# Adapted to not cause issues with
+# https://github.com/burodepeper/language-markdown/issues/117
+#
+# @450
+# "[link]((foo)and(bar))" {
+#   text.md {
+#     link.markup.md {
+#       text.link.string.md {
+#         "[": punctuation.md
+#         "link"
+#         "]": punctuation.md
+#       }
+#       "(": punctuation.md
+#       destination.link.md {
+#         "(foo)and(bar)": uri.underline.link.md
+#       }
+#       ")": punctuation.md
+#     }
+#   }
+# }
+
 @450
 "[link]((foo)and(bar))" {
   text.md {
-    link.markup.md {
-      text.link.string.md {
+    "[link]" {
+      label.link.string.md {
         "[": punctuation.md
         "link"
         "]": punctuation.md
       }
-      "(": punctuation.md
-      destination.link.md {
-        "(foo)and(bar)": uri.underline.link.md
-      }
-      ")": punctuation.md
     }
+    "((foo)and(bar))"
   }
 }
 

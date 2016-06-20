@@ -161,3 +161,77 @@
     }
   }
 }
+
+@117a
+"[abc](https://uccu.cool3c.com/)and[cde](https://uccu.cool3c.com/)" {
+  text.md {
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "abc"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "https://uccu.cool3c.com/": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+    "and"
+    link.markup.md {
+      text.link.string.md {
+        "[": punctuation.md
+        "cde"
+        "]": punctuation.md
+      }
+      "(": punctuation.md
+      destination.link.md {
+        "https://uccu.cool3c.com/": uri.underline.link.md
+      }
+      ")": punctuation.md
+    }
+  }
+}
+
+@117b
+"[abc][1]and[cde][1]" {
+  text.md {
+    "[abc][1]" {
+      link.markup.md {
+        "[abc]" {
+          text.link.string.md {
+            "[": punctuation.md
+            "abc"
+            "]": punctuation.md
+          }
+        }
+        "[1]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "1"
+            "]": punctuation.md
+          }
+        }
+      }
+    }
+    "and"
+    "[cde][1]" {
+      link.markup.md {
+        "[cde]" {
+          text.link.string.md {
+            "[": punctuation.md
+            "cde"
+            "]": punctuation.md
+          }
+        }
+        "[1]" {
+          label.link.string.md {
+            "[": punctuation.md
+            "1"
+            "]": punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
