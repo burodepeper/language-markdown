@@ -2023,21 +2023,6 @@
           }
         },
         {
-          "match": "(?x) (?<!\\[) ( (\\[\\[) ([^\\[\\]]+) (\\]\\]) ) (?!\\])",
-          "name": "link.markup.md",
-          "captures": {
-            "1": {
-              "name": "interlink.link.string.markup.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "4": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
           "match": "(?x) ( (?:\\[) (?:[^\\[\\]]*) (?:\\]) ) (?!:) (\\{[[:ascii:]]*\\})?",
           "captures": {
             "1": {
