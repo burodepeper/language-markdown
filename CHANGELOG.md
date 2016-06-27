@@ -1,3 +1,4 @@
+### v0.14.1
 - #117: Disallow parenthesis in link-destination (thanks @tsaiid)
 
 ## v0.14.0

@@ -244,6 +244,25 @@ patterns: [
       5: patterns: [{ include: '#special-attributes' }]
   }
 
+  # [[interlink]]
+  # NOTE temporary solution to support the interlink syntax used by the nvatom package, see https://github.com/burodepeper/language-markdown/issues/120
+  # {
+  #   match: '(?x)
+  #     (?<!\\[)
+  #     (
+  #       (\\[\\[)
+  #       ([^\\[\\]]+)
+  #       (\\]\\])
+  #     )
+  #     (?!\\])
+  #   '
+  #   name: 'link.markup.md'
+  #   captures:
+  #     1: name: 'interlink.link.string.markup.md'
+  #     2: name: 'punctuation.md'
+  #     4: name: 'punctuation.md'
+  # }
+
   # [label]
   {
     match: '(?x)
