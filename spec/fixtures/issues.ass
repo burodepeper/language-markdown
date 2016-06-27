@@ -235,3 +235,18 @@
     }
   }
 }
+
+@120
+"[[interlink]]" {
+  text.md {
+    "[[interlink]]" {
+      link.markup.md {
+        interlink.link.string.markup.md {
+          "[[": punctuation.md
+          "interlink"
+          "]]": punctuation.md
+        }
+      }
+    }
+  }
+}
