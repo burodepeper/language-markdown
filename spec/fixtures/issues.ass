@@ -316,6 +316,7 @@
     fenced.code.md {
       "```": punctuation.md
       "js": language.constant.md
+      ""
       embedded.source.js {
         "var test = "String";"
       }
@@ -339,9 +340,11 @@
       }
     }
     "."
+    ""
     fenced.code.md {
       "```": punctuation.md
       "js": language.constant.md
+      ""
       embedded.source.js {
         "var sum = 12 + 34;"
       }
