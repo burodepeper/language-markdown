@@ -466,15 +466,15 @@
     "hr": {
       "patterns": [
         {
-          "name": "hr.md",
+          "name": "hr.constant.md",
           "match": "^[ ]{0,3}[-]{1,} *[-]{1,} *[-]{1,}[ -]*$"
         },
         {
-          "name": "hr.md",
+          "name": "hr.constant.md",
           "match": "^[ ]{0,3}[*]{1,} *[*]{1,} *[*]{1,}[ *]*$"
         },
         {
-          "name": "hr.md",
+          "name": "hr.constant.md",
           "match": "^[ ]{0,3}[_]{1,} *[_]{1,} *[_]{1,}[ _]*$"
         }
       ]
@@ -781,13 +781,13 @@
           "begin": "\\A---$",
           "beginCaptures": {
             "0": {
-              "name": "hr.md"
+              "name": "hr.constant.md"
             }
           },
           "end": "^(---|\\.\\.\\.)$",
           "endCaptures": {
             "1": {
-              "name": "hr.md"
+              "name": "hr.constant.md"
             }
           },
           "name": "front-matter.yaml.source.md",
@@ -801,13 +801,13 @@
           "begin": "\\A\\+\\+\\+$",
           "beginCaptures": {
             "0": {
-              "name": "hr.md"
+              "name": "hr.constant.md"
             }
           },
           "end": "^\\+\\+\\+$",
           "endCaptures": {
             "0": {
-              "name": "hr.md"
+              "name": "hr.constant.md"
             }
           },
           "name": "front-matter.toml.source.md",
@@ -2902,6 +2902,46 @@
           ]
         },
         {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:lua))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.source.lua",
+          "patterns": [
+            {
+              "include": "source.lua"
+            }
+          ]
+        },
+        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:markdown|mdown|md))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
@@ -3498,6 +3538,46 @@
           "patterns": [
             {
               "include": "source.yaml"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:[a-zA-Z0-9-_]+))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.source",
+          "patterns": [
+            {
+              "include": "source"
             }
           ]
         }

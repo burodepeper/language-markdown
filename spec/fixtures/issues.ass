@@ -250,3 +250,158 @@
 #     }
 #   }
 # }
+
+@121a
+"```nohighlight" +
+"first block" +
+"```" +
+"" +
+"*dead, non-italic*" +
+"we are still in a `fenced.code.md`, `ctrl-cmd-p` says." +
+"" +
+"```nohighlight" +
+"second block" +
+"```" +
+"" +
+"*resurrection! italic*" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "nohighlight": language.constant.md
+      ""
+      embedded.source {
+        "first block"
+      }
+      "```": punctuation.md
+    }
+    ""
+    "*dead, non-italic*" {
+      emphasis.italic.markup.md {
+        "*": punctuation.md
+        "dead, non-italic"
+        "*": punctuation.md
+      }
+    }
+    "we are still in a "
+    "`fenced.code.md`" {
+      code.raw.markup.md {
+        "`": punctuation.md
+        "fenced.code.md"
+        "`": punctuation.md
+      }
+    }
+    ", "
+    "`ctrl-cmd-p`" {
+      code.raw.markup.md {
+        "`": punctuation.md
+        "ctrl-cmd-p"
+        "`": punctuation.md
+      }
+    }
+    " says."
+    ""
+    fenced.code.md {
+      "```": punctuation.md
+      "nohighlight": language.constant.md
+      ""
+      embedded.source {
+        "second block"
+      }
+      "```": punctuation.md
+    }
+    ""
+    "*resurrection! italic*" {
+      emphasis.italic.markup.md {
+        "*": punctuation.md
+        "resurrection! italic"
+        "*": punctuation.md
+      }
+    }
+  }
+}
+
+@121b
+"```js" +
+"var test = "String";" +
+"```" +
+"" +
+"I'm **bold**, and I'm _italic_." +
+"" +
+"```js" +
+"var sum = 12 + 34;" +
+"```" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "js": language.constant.md
+      ""
+      embedded.source.js {
+        "var test = "String";"
+      }
+      "```": punctuation.md
+    }
+    ""
+    "I'm "
+    "**bold**" {
+      strong.emphasis.bold.markup.md {
+        "**": punctuation.md
+        "bold"
+        "**": punctuation.md
+      }
+    }
+    ", and I'm "
+    "_italic_" {
+      emphasis.italic.markup.md {
+        "_": punctuation.md
+        "italic"
+        "_": punctuation.md
+      }
+    }
+    "."
+    ""
+    fenced.code.md {
+      "```": punctuation.md
+      "js": language.constant.md
+      ""
+      embedded.source.js {
+        "var sum = 12 + 34;"
+      }
+      "```": punctuation.md
+    }
+  }
+}
+
+@123
+"The "normal" Alpha animation path, which simply transitions from one Alpha value to another in a linear fashion, looks like this:" +
+"```lua" +
+"function(progress, start, delta)" +
+"  return start + (progress * delta)" +
+"end" +
+"```" +
+"" +
+"### Translate" {
+  text.md {
+    "The "normal" Alpha animation path, which simply transitions from one Alpha value to another in a linear fashion, looks like this:"
+    fenced.code.md {
+      "```": punctuation.md
+      "lua": language.constant.md
+      ""
+      embedded.source.lua {
+        "function(progress, start, delta)"
+        "  return start + (progress * delta)"
+        "end"
+      }
+      "```": punctuation.md
+    }
+    ""
+    "### Translate" {
+      heading.markup.md {
+        heading-3.md {
+          "###": punctuation.md
+          " "
+          "Translate"
+        }
+      }
+    }
+  }
+}
