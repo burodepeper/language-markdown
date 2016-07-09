@@ -240,7 +240,7 @@
 "# baz" {
   text.md {
     "foo"
-    "---": hr.md
+    "---": hr.constant.md
     fenced.code.md {
       "~~~": punctuation.md
       source.md {

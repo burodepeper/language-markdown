@@ -198,7 +198,7 @@
       "- ": punctuation.md
       "Bar"
     }
-    "  ---": hr.md
+    "  ---": hr.constant.md
     "  baz"
   }
 }

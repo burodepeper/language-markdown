@@ -781,13 +781,13 @@
           "begin": "\\A---$",
           "beginCaptures": {
             "0": {
-              "name": "hr.md"
+              "name": "hr.constant.md"
             }
           },
           "end": "^(---|\\.\\.\\.)$",
           "endCaptures": {
             "1": {
-              "name": "hr.md"
+              "name": "hr.constant.md"
             }
           },
           "name": "front-matter.yaml.source.md",
@@ -801,13 +801,13 @@
           "begin": "\\A\\+\\+\\+$",
           "beginCaptures": {
             "0": {
-              "name": "hr.md"
+              "name": "hr.constant.md"
             }
           },
           "end": "^\\+\\+\\+$",
           "endCaptures": {
             "0": {
-              "name": "hr.md"
+              "name": "hr.constant.md"
             }
           },
           "name": "front-matter.toml.source.md",

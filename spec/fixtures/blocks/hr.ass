@@ -2,7 +2,7 @@
 @8a
 "***" {
   text.md {
-    '***': hr.md
+    '***': hr.constant.md
   }
 }
 
@@ -17,7 +17,7 @@
 "---" {
   text.md {
     front-matter.yaml.source.md {
-      '---': hr.md
+      '---': hr.constant.md
     }
   }
 }
@@ -25,7 +25,7 @@
 @8c
 "___" {
   text.md {
-    '___': hr.md
+    '___': hr.constant.md
   }
 }
 
@@ -34,7 +34,7 @@
 "---" {
   text.md {
     " "
-    '---': hr.md
+    '---': hr.constant.md
   }
 }
 
@@ -43,7 +43,7 @@
 "+++" {
   text.md {
     front-matter.toml.source.md {
-      '+++': hr.md
+      '+++': hr.constant.md
     }
   }
 }
@@ -72,7 +72,7 @@
 @12c
 "   ***" {
   text.md {
-    '   ***': hr.md
+    '   ***': hr.constant.md
   }
 }
 
@@ -88,7 +88,7 @@
 @15
 "_____________________________________" {
   text.md {
-    "_____________________________________": hr.md
+    "_____________________________________": hr.constant.md
   }
 }
 
@@ -96,7 +96,7 @@
 @16
 " - - -" {
   text.md {
-    " - - -": hr.md
+    " - - -": hr.constant.md
   }
 }
 
@@ -104,7 +104,7 @@
 @17
 " **  * ** * ** * **" {
   text.md {
-    " **  * ** * ** * **": hr.md
+    " **  * ** * ** * **": hr.constant.md
   }
 }
 
@@ -112,7 +112,7 @@
 @18
 "-     -      -      -" {
   text.md {
-    "-     -      -      -": hr.md
+    "-     -      -      -": hr.constant.md
   }
 }
 
@@ -120,7 +120,7 @@
 @19
 "- - - -    " {
   text.md {
-    "- - - -    ": hr.md
+    "- - - -    ": hr.constant.md
   }
 }
 
@@ -162,7 +162,7 @@
       "* ": punctuation.md
       "Foo"
     }
-    "* * *": hr.md
+    "* * *": hr.constant.md
     unordered.list.markup.md {
       "* ": punctuation.md
       "Bar"
@@ -179,7 +179,7 @@
       "- ": punctuation.md
       "Foo"
       "- ": punctuation.md
-      "* * *": hr.md
+      "* * *": hr.constant.md
     }
   }
 }
