@@ -267,7 +267,8 @@
   text.md {
     fenced.code.md {
       "```": punctuation.md
-      "nohighlight"
+      "nohighlight": language.constant.md
+      ""
       embedded.source {
         "first block"
       }
@@ -281,11 +282,28 @@
         "*": punctuation.md
       }
     }
-    "we are still in a `fenced.code.md`, `ctrl-cmd-p` says."
+    "we are still in a "
+    "`fenced.code.md`" {
+      code.raw.markup.md {
+        "`": punctuation.md
+        "fenced.code.md"
+        "`": punctuation.md
+      }
+    }
+    ", "
+    "`ctrl-cmd-p`" {
+      code.raw.markup.md {
+        "`": punctuation.md
+        "ctrl-cmd-p"
+        "`": punctuation.md
+      }
+    }
+    " says."
     ""
     fenced.code.md {
       "```": punctuation.md
-      "nohighlight"
+      "nohighlight": language.constant.md
+      ""
       embedded.source {
         "second block"
       }
@@ -367,6 +385,7 @@
     fenced.code.md {
       "```": punctuation.md
       "lua": language.constant.md
+      ""
       embedded.source {
         "function(progress, start, delta)"
         "  return start + (progress * delta)"
