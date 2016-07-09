@@ -1,6 +1,6 @@
 {
   "name": "language-markdown",
-  "version": "0.14.1",
+  "version": "0.15.0",
   "description": "Adds grammar support for Markdown (including Github flavored, AtomDoc, Markdown Extra, CriticMark, YAML/TOML front-matter, and R Markdown), and smart context-aware behavior to lists, and keyboard shortcuts for inline emphasis.",
   "keywords": [
     "markdown",
