@@ -1,3 +1,5 @@
+- Mark horizontal-rule as a constant
+
 ### v0.14.1
 - #117: Disallow parenthesis in link-destination (thanks @tsaiid)
 
