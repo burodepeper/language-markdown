@@ -42,6 +42,7 @@ list: [
   { pattern:'json' }
   { pattern:'julia' }
   { pattern:'less' }
+  { pattern:'lua' }
   { pattern:'markdown|mdown|md', include:'text.md' }
   { pattern:'mermaid' }
   { pattern:'mson', include:'text.html.markdown.source.gfm.mson' }

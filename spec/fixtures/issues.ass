@@ -386,7 +386,7 @@
       "```": punctuation.md
       "lua": language.constant.md
       ""
-      embedded.source {
+      embedded.source.lua {
         "function(progress, start, delta)"
         "  return start + (progress * delta)"
         "end"
