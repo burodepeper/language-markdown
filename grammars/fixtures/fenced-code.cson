@@ -65,4 +65,12 @@ list: [
   { pattern:'swift' }
   { pattern:'xml', include:'text.xml' }
   { pattern:'yaml|yml', include:'source.yaml' }
+
+  # Fallback that detects any unsupported languages;
+  # Pattern might have to accept more characters.
+  {
+    pattern: '[a-zA-Z0-9-_]+'
+    include: 'source'
+    patternName: 'embedded.source'
+  }
 ]
