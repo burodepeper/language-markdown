@@ -1,3 +1,5 @@
+- Add keybinding `~` that toggles _strike-through_ on selected text
+
 ## v0.15.0
 - #121 and #123: Add generic fenced-code-blocks (thanks @heavywatal)
 - #123: Add language support for `Lua` (thanks @Stanzilla)

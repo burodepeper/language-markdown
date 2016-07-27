@@ -17,3 +17,4 @@
   'shift-tab': 'markdown:outdent-list-item'
   '_': 'markdown:emphasis'
   '*': 'markdown:strong-emphasis'
+  '~': 'markdown:strike-through'
