@@ -25,12 +25,14 @@ list: [
   { pattern:'c' }
   { pattern:'clojure' }
   { pattern:'cpp|c\\+\\+', include:'source.cpp' }
+  { pattern:'cr|crystal', include:'source.crystal'}
   { pattern:'cs|csharp', include:'source.cs' }
   { pattern:'css' }
   { pattern:'diff|patch|rej', include:'source.diff' }
   { pattern:'elixir' }
   { pattern:'elm' }
 
+  # { pattern:'ecr', include:'source.crystal', contentName:'text.html.ecr'}
   # { pattern:'erb', include:'source.ruby', contentName:'text.html.erb' }
 
   { pattern:'erlang' }
