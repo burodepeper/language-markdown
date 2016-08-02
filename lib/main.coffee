@@ -21,7 +21,7 @@ module.exports =
 
     emphasisShortcuts:
       title: 'Emphasis shortcuts'
-      description: 'Enables keybindings `_` for emphasis and `*` for strong emphasis on selected text; emphasizing an already emphasized selection will de-emphasize it'
+      description: 'Enables keybindings `_` for emphasis, `*` for strong emphasis, and `~` for strike-through on selected text; emphasizing an already emphasized selection will de-emphasize it'
       type: 'boolean'
       default: true
 
@@ -47,8 +47,9 @@ module.exports =
     @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:outdent-list-item': (event) => @outdentListItem(event)
 
     # Add commands for emphasizing selections
-    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:emphasis': (event) => @emphasizeSelection(event, false)
-    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:strong-emphasis': (event) => @emphasizeSelection(event, true)
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:emphasis': (event) => @emphasizeSelection(event, "_")
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:strong-emphasis': (event) => @emphasizeSelection(event, "**")
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:strike-through': (event) => @emphasizeSelection(event, "~~")
 
     # Add command to toggle a task
     @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:toggle-task': (event) => @toggleTask(event)
@@ -163,14 +164,13 @@ module.exports =
     else
       event.abortKeyBinding()
 
-  emphasizeSelection: (event, strong) ->
+  emphasizeSelection: (event, token) ->
     if atom.config.get('language-markdown.emphasisShortcuts')
       {editor, position} = @_getEditorAndPosition(event)
       text = editor.getSelectedText()
       if text
         # Multi-line emphasis is not supported, so the command is aborted when a new-line is detected in the selection
         if text.indexOf("\n") is -1
-          token = if strong is true then "**" else "_"
           editor.insertText(@_wrapSelection(text, token))
         else
           event.abortKeyBinding()
@@ -180,11 +180,11 @@ module.exports =
       event.abortKeyBinding()
 
   _wrapSelection: (text, token) ->
+    # unwrap selection
     if (text.substr(0, token.length) is token) and (text.substr(-token.length) is token)
-      # unwrap
       return text.substr(token.length, text.length - token.length * 2)
+    # wrap selection
     else
-      #wrap
       return token + text + token
 
   _getEditorAndPosition: (event) ->
