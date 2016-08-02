@@ -1,3 +1,4 @@
+- #126: Add support for embedded Crystal code snippet highlighting (thanks @keplersj)
 - Add keybinding `~` that toggles _strike-through_ on selected text
 
 ## v0.15.0
