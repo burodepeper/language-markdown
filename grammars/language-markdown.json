@@ -9,7 +9,8 @@
     "mkdown",
     "rmd",
     "ron",
-    "emdee"
+    "emdee",
+    "spec"
   ],
   "patterns": [
     {

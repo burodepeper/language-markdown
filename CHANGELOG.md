@@ -1,3 +1,6 @@
+### v0.16.2
+- Add `.spec` filetype for [Gauge](http://getgauge.io/documentation/user/current/getting_started/project_structure/)
+
 ## v0.16.0
 - #126: Add support for embedded Crystal code snippet highlighting (thanks @keplersj)
 - Add keybinding `~` that toggles _strike-through_ on selected text
