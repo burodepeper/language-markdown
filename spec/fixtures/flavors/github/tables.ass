@@ -77,7 +77,18 @@
 }
 
 @8
-"|---|---|---|": text.md
+"|---|---|---" {
+  text.md {
+    table.storage.md {
+      "|": punctuation.md
+      "---": punctuation.md
+      "|": punctuation.md
+      "---": punctuation.md
+      "|": punctuation.md
+      "---": punctuation.md
+    }
+  }
+}
 
 @9
 "|:--- |:---:| ---:|" {

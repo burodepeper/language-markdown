@@ -9,7 +9,8 @@
     "mkdown",
     "rmd",
     "ron",
-    "emdee"
+    "emdee",
+    "spec"
   ],
   "patterns": [
     {
@@ -823,37 +824,30 @@
       "patterns": [
         {
           "name": "table.storage.md",
-          "match": "^(\\|)(?=[ :])([ |:-]+)$",
+          "match": "^(\\|(?= |:|-)[ |:-]*?)(\\|?)$",
           "captures": {
             "1": {
-              "name": "punctuation.md"
-            },
-            "2": {
               "patterns": [
                 {
-                  "match": "(?<=[ :])\\|(?=$|[ :])",
-                  "name": "punctuation.md"
-                },
-                {
-                  "match": "(:?)(-+)(:?)",
+                  "match": "(\\|)(?: ?)(:?)(-+)(:?)(?: ?)(?=\\|| |$)",
                   "captures": {
                     "1": {
-                      "name": "alignment.punctuation.md"
-                    },
-                    "2": {
                       "name": "punctuation.md"
                     },
+                    "2": {
+                      "name": "alignment.punctuation.md"
+                    },
                     "3": {
+                      "name": "punctuation.md"
+                    },
+                    "4": {
                       "name": "alignment.punctuation.md"
                     }
                   }
-                },
-                {
-                  "include": "#inlines-in-blocks"
                 }
               ]
             },
-            "3": {
+            "2": {
               "name": "punctuation.md"
             }
           }
@@ -2338,6 +2332,46 @@
           "patterns": [
             {
               "include": "source.cpp"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:cr|crystal))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.source.crystal",
+          "patterns": [
+            {
+              "include": "source.crystal"
             }
           ]
         },
