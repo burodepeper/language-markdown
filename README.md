@@ -84,3 +84,7 @@ As part of PR #83, all scopes created by this grammar are being rewritten and re
 - http://rmarkdown.rstudio.com/authoring_rcodechunks.html
 - http://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 - http://yihui.name/knitr/options/
+
+```js
+var test = true;
+```

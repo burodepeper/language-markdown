@@ -68,8 +68,42 @@ module.exports =
     # https://github.com/jonmagic/gfm-lists
     # @burodepeper
 
-    # Create a new list-item after pressing [enter]
     @subscriptions.add atom.workspace.observeTextEditors (editor) ->
+
+      # When buffer is updated,
+      # if grammar is Markdown,
+      # scan tokens of lines in buffer,
+      # and mark lines that contain embedded code.
+      editor.onDidChange (event) ->
+        grammar = editor.getGrammar()
+        if grammar.name is "Markdown"
+
+          # TODO Clear existing decorations
+          console.log editor.getLineDecorations()
+
+          begin = false
+          end = false
+          numberOfLines = editor.getLineCount()
+          for i in [0 .. numberOfLines - 1]
+            scopeDescriptor = editor.scopeDescriptorForBufferPosition([i, 0])
+            lineIsClear = true
+
+            # Look for the start of an embedded-code section
+            for scope in scopeDescriptor.scopes
+              if scope is "fenced.code.md"
+                lineIsClear = false
+                if begin is false then begin = [i, 0]
+                end = [i, editor.buffer.lineForRow(i).length]
+                break
+
+            # If a clear line is detected, create a new decoration from begin to end
+            if lineIsClear and begin and end
+              marker = editor.buffer.markRange([begin, end])
+              decoration = editor.decorateMarker(marker, type: "line", class: "embedded-code")
+              begin = false
+              end = false
+
+      # Create a new list-item after pressing [enter]
       editor.onDidInsertText (event) ->
         grammar = editor.getGrammar()
         if grammar.name is 'Markdown'
