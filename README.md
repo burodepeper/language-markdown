@@ -10,7 +10,7 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
 
 ---
 
-## Supported grammar
+## Supported grammars
 
 - CommonMark Markdown
 - Github Flavored Markdown (including AtomDoc)
@@ -26,7 +26,7 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
   - Indent or outdent list-items by pressing <kbd>tab</kbd> or <kbd>shift+tab</kbd>
   - Toggle tasks with <kbd>cmd+shift+x</kbd> or <kbd>ctrl+shift+x</kbd>
   - Remove empty trailing list-items when pressing <kbd>enter</kbd>
-- Adds shortcuts (via <kbd>_</kbd> and <kbd>*</kbd>) for toggling inline emphasis on selected text
+- Adds shortcuts (via <kbd>_</kbd>, <kbd>*</kbd> and <kbd>~</kbd>) for toggling inline-emphasis and strike-through on selected text
 - Supports embedded `HTML`- and `Liquid`-tags
 
 ### Syntax-theme support
@@ -41,6 +41,10 @@ By default, most syntax-themes only provide basic styling for `.markup` classes.
 - [pubster-syntax](https://atom.io/themes/pubster-syntax) (dark, high-contrast)
 - [one-o-eight-syntax](https://atom.io/themes/one-o-eight-syntax) (various, medium-contrast)
 
+#### Add extended support for language-markdown to your syntax-theme
+
+This grammar generates scopes that (slightly) differ from those set by `language-gfm`. I've tried to consistently add a primary non-markup-related scope to each element, and additionally some generic markup-related scopes for more specific styling. Support for `markup` scopes in most syntax-themes in minimal, so I've created a `.less` [template](https://github.com/burodepeper/language-markdown/blob/dev-scopes/resources/markup-and-down.less) to easily implement these generic styles as part of your syntax-theme. See [minimal-syntax](https://github.com/burodepeper/minimal-syntax) for a good-to-go full implementation. [Let me know](https://github.com/burodepeper/language-markdown/issues/new/) when you've added full (or partial) `language-markdown` support to your syntax-theme, and I'll add your package to the list above.
+
 ---
 
 ## Installation instructions
@@ -50,18 +54,30 @@ By default, most syntax-themes only provide basic styling for `.markup` classes.
   - the Atom GUI: `Atom` > `Settings` > `Install` > Search for `language-markdown`
 2. Restart Atom (as a pre-caution; shouldn't be necessary)
 
+## F.A.Q.
+
+**Spell-check doesn't work; how do I enable it?**<br>The core-package `spell-check` doesn't scan documents in the `text.md` by default. You can easily add this yourself:
+
+- Open the Atom settings, and find the Packages tab
+- Search for the `spell-check` package; you can find it under the Core Packages
+- Open the settings for `spell-check`
+- Append `text.md` to the list of grammars (make sure the scopes are comma-separated)
+- Reload Atom to make sure the updated settings take effect
+
+**Some of my Markdown elements aren't highlighted**<br>`language-markdown` parses your Markdown document; it does not directly color the different elements. This is done by the syntax-theme you are using. There's a good chance that your syntax-theme doesn't support all the different elements that `language-markdown` recognizes. You can ask the author of the theme to add better support for `language-markdown`, or [add styles to your custom stylesheet](http://flight-manual.atom.io/using-atom/sections/basic-customization/#style-tweaks). You can also try one of the tried and tested syntax-themes featured above. If you can't get it to work, feel free to [open an issue](https://github.com/burodepeper/language-markdown/issues/new/), and I'll see what I can do.
+
+**Which elements of Markdown are supported?**<br>Because there is no clear Markdown standard, I've chosen to follow the [CommonMark Spec](http://spec.commonmark.org/) as closely as possible within the Atom environment. On top of that, I've implemented support for a few extensions: Github Flavored Markdown, Markdown Extra, CriticMark, Front Matter, and R Markdown. Together, I believe these specs cover a solid 98% of your day-to-day Markdown needs. If you feel that an element is missing, please [open an issue](https://github.com/burodepeper/language-markdown/issues/new/).
+
+---
+
 ## Contributing
 
-First of all, any and all contributions are more than welcome! Having said that, things over here are a little different than in other Atom packages.
+First of all, **any and all contributions are more than welcome!** Having said that, things over here are a little different than in other Atom packages.
 
 1. The main grammar file (`language-markdown.json`) is compiled, so there is no use in changing it directly. Instead, the grammar has been split up into several smaller pieces which can be found in `/grammars/repositories`, and the grammar for fenced-code-blocks is compiled from a list that can be found in `/grammars/fixtures`. After you have changed anything, you can recompile the main grammar by executing the `compile-grammar-and-reload` command (<kbd>cmd+alt+ctrl+c</kbd> on Mac OS X, and <kbd>shift-alt-ctrl-c</kbd> on other platforms) which is only available while in `dev-mode`. This will also automatically reload Atom for you.
 2. Specs are written in a custom format called `ASS` and can be found in `/spec/fixtures` as `.ass` files. I believe they are pretty self-explanatory, and installing [language-ass](https://github.com/burodepeper/language-ass/) will add syntax highlighting for you. In combination with [minimal-syntax](https://atom.io/packages/minimal-syntax) this makes them a breeze to work with. Pun intended.
 3. When submitting a PR, please do so on the `dev` branch, instead of directly on `master`. It's not that big of a deal, but it keeps merge conflicts going back and forth between `master` and `dev` to a minimum.
 4. When in doubt about a conflict on the main grammar file, don't worry about it. Before publishing an update, it will be re-compiled anyway.
-
-### Add extended support for language-markdown to your syntax-theme
-
-As part of PR #83, all scopes created by this grammar are being rewritten and re-evaluated. An aspect of all of this is the creation of a set of generic markup-related styles that can be used across different languages. I've created a `.less` [template](https://github.com/burodepeper/language-markdown/blob/dev-scopes/resources/markup-and-down.less) (this version is not final!) to easily implement these generic styles in your syntax-theme.
 
 ---
 
