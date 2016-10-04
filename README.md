@@ -53,6 +53,18 @@ This grammar generates scopes that (slightly) differ from those set by `language
   - your console: `apm install language-markdown`
   - the Atom GUI: `Atom` > `Settings` > `Install` > Search for `language-markdown`
 2. Restart Atom (as a pre-caution; shouldn't be necessary)
+3. Select `language-markdown` as your Markdown grammar:
+  - press <kbd>ctrl+shift+L</kbd> and choose "Markdown" (this disables `language-gfm` to minimize conflicts); or
+  - manually disable `language-gfm`, and let `language-markdown` automatically handle Markdown files
+
+#### Uninstalling language-markdown
+
+The core-package `language-gfm` is automatically disabled (unless you've enabled the setting that prevents this) when using `language-markdown` to avoid any conflicts. Because `language-markdown` is intended as a drop-in replacement you most likely won't need both anyway. However, if you uninstall `language-markdown`, `language-gfm` doesn't automatically get re-activated. There's no API available to do this, so you'll have to re-activate `language-gfm` manually, which is quite easy.
+
+1. Open the "Settings" and go to the "Packages" tab
+2. Search for `language-gfm`
+3. Click `Enable` to re-activate it
+4. You probably want to reload Atom to make sure the change takes effect
 
 ## F.A.Q.
 
