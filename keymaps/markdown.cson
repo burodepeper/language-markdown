@@ -18,3 +18,4 @@
   '_': 'markdown:emphasis'
   '*': 'markdown:strong-emphasis'
   '~': 'markdown:strike-through'
+  'enter': 'markdown:insert-list-item'

@@ -54,6 +54,9 @@ module.exports =
     # Add command to toggle a task
     @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:toggle-task': (event) => @toggleTask(event)
 
+    # Add command to insert a new list-item
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:insert-list-item': (event) => @insertListItem(event)
+
     # Disable language-gfm as this package is intended as its replacement
     if atom.config.get('language-markdown.disableLanguageGfm')
       unless atom.packages.isPackageDisabled('language-gfm')
@@ -74,7 +77,8 @@ module.exports =
         grammar = editor.getGrammar()
         if grammar.name is 'Markdown'
           if atom.config.get('language-markdown.addListItems')
-            if event.text is "\n"
+            # if event.text is "\n"
+            if false
 
               previousRowNumber = event.range.start.row
               previousRowRange = editor.buffer.rangeForRow(previousRowNumber)
@@ -148,6 +152,89 @@ module.exports =
                     editor.insertText(text + '')
                     break
 
+  _getEditor: ->
+    return atom.workspace.getActiveTextEditor()
+
+  # TODO Fix multiple-cursor issues
+  # TODO Fix line-indentation
+  insertListItem: (event) ->
+    editor = @_getEditor()
+    if editor
+      positions = editor.getCursorBufferPositions()
+      grammar = editor.getGrammar()
+      for position in positions.reverse()
+
+        previousRowRange = editor.buffer.rangeForRow(position.row)
+        previousLine = editor.getTextInRange(previousRowRange)
+        scopeDescriptor = editor.scopeDescriptorForBufferPosition(previousRowRange.end)
+        isEmbeddedCode = false
+
+        for scope in scopeDescriptor.scopes
+          if scope.indexOf('source') isnt -1
+            isEmbeddedCode = true
+
+        if isEmbeddedCode
+          event.abortKeyBinding()
+        else
+          {tokens} = grammar.tokenizeLine(previousLine)
+          tokens.reverse()
+          for token in tokens
+            isPunctuation = false
+            isListItem = false
+            scopes = token.scopes.reverse()
+            for scope in scopes
+              classes = scope.split('.')
+
+              # A list-item is valid when a punctuation class is immediately followed by a non-empty list-item class
+              if classes.indexOf('punctuation') isnt -1
+                isPunctuation = true
+
+              else if isPunctuation and classes.indexOf('list') isnt -1
+                if classes.indexOf('empty') is -1
+                  isListItem = true
+                  typeOfList = 'unordered'
+                  if classes.indexOf('ordered') isnt -1
+                    typeOfList = 'ordered'
+                  if classes.indexOf('definition') isnt -1
+                    typeOfList = 'definition'
+                  break
+
+                else
+                  isListItem = false
+                  isPunctuation = false
+                  if atom.config.get('language-markdown.removeEmptyListItems')
+                    editor.setTextInBufferRange(previousRowRange, '')
+
+              else
+                isPunctuation = false
+
+            if isListItem and typeOfList isnt 'definition'
+              text = token.value
+
+              # Increment ordered list-items
+              if typeOfList is 'ordered'
+                length = text.length
+                punctuation = text.match(/[^\d]+/)
+                value = parseInt(text) + 1
+                text = value + punctuation
+
+                # Add left-padding to ordered list-items (ie, 0003.)
+                if text.length < length
+                  for i in [0 .. (text.length - length + 1)]
+                    text = '0' + text
+
+              # Convert task-list-items into incompleted ones
+              else
+                text = text.replace('x', ' ')
+
+              editor.insertText('\n' + text)
+              break
+
+      return
+
+    else
+      event.abortKeyBinding()
+
   indentListItem: (event) ->
     {editor, position} = @_getEditorAndPosition(event)
     indentListItems = atom.config.get('language-markdown.indentListItems')
@@ -188,10 +275,8 @@ module.exports =
       return token + text + token
 
   _getEditorAndPosition: (event) ->
-    # editor = event.target.model
     editor = atom.workspace.getActiveTextEditor()
     if editor
-      # position = editor.cursors[0].marker.oldHeadBufferPosition
       positions = editor.getCursorBufferPositions()
       if positions
         position = positions[0]
