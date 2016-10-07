@@ -156,18 +156,20 @@ module.exports =
     return atom.workspace.getActiveTextEditor()
 
   # TODO Fix multiple-cursor issues
-  # TODO Fix line-indentation
   insertListItem: (event) ->
     editor = @_getEditor()
     if editor
       positions = editor.getCursorBufferPositions()
       grammar = editor.getGrammar()
-      for position in positions.reverse()
+      for position in positions
+
+        console.log("position:", position)
 
         previousRowRange = editor.buffer.rangeForRow(position.row)
         previousLine = editor.getTextInRange(previousRowRange)
         scopeDescriptor = editor.scopeDescriptorForBufferPosition(previousRowRange.end)
         isEmbeddedCode = false
+        indentationLevel = editor.indentationForBufferRow(position.row)
 
         for scope in scopeDescriptor.scopes
           if scope.indexOf('source') isnt -1
@@ -228,7 +230,11 @@ module.exports =
                 text = text.replace('x', ' ')
 
               editor.insertText('\n' + text)
+              editor.setIndentationForBufferRow(position.row + 1, indentationLevel)
               break
+
+            # Inserts the 'regular' line-break
+            # editor.insertText('\n')
 
       return
 
