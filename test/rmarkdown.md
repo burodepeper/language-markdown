@@ -23,5 +23,12 @@
 ## case 4
 something wrong with second "engine"
 
-```{js nolabel, engine="first"  ,   engine ="second"   , engine="third"}
+```{js nolabel= "nolabel", engine="first"  ,   engine ="second"   , engine="third"}
 ```
+
+## case 5
+
+```{}
+```
+
+## case 7
