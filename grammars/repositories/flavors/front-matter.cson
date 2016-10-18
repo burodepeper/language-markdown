@@ -20,4 +20,14 @@ patterns: [
     name: 'front-matter.toml.source.md'
     patterns: [{ include: 'source.toml' }]
   }
+  {
+    begin: '\\A;{3}$'
+    beginCaptures:
+      0: name: 'hr.constant.md'
+    end: '^;{3}$'
+    endCaptures:
+      0: name: 'hr.constant.md'
+    name: 'front-matter.json.source.md'
+    patterns: [{ include: 'source.json' }]
+  }
 ]
