@@ -9,7 +9,8 @@ path = require 'path'
 # A {fixture} is a relative path + filename (without extension).
 # fixtures = [
 #   # "flavors/github/tables"
-#   "issues"
+#   # "inlines/entities"
+#   # "issues"
 # ]
 
 # Automatically generate the {fixtures} array from the file system.
