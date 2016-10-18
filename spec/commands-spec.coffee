@@ -30,13 +30,13 @@ describe "Markdown", ->
   afterEach ->
     editor.setText('')
 
-  it 'should be empty', ->
+  xit 'should be empty', ->
     expect(editor.isEmpty()).toBe(true)
 
-  it 'should have Markdown selected as grammar', ->
+  xit 'should have Markdown selected as grammar', ->
     expect(editor.getGrammar().name).toBe('Markdown')
 
-  it 'should have registered its custom commands', ->
+  xit 'should have registered its custom commands', ->
     commands = atom.commands.findCommands({ target: editorElement })
     customCommands =
       'markdown:indent-list-item': false
