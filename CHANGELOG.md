@@ -1,3 +1,9 @@
+## v0.17.0
+- #131: Add JSON front matter (thanks @gkjpetter)
+- #42: Prevent `language-html` from marking singular ampersands as invalid (thanks @bobrocke and @joallard)
+- Disabled spec for commands; failed with latest release
+- Rewritten instructions in `README.md`
+
 ### v0.16.3
 - #131: Fix broken column alignment delimiters when used without a leading or trailing space (thanks @tpoisot)
 
