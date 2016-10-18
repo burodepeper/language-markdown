@@ -16,7 +16,7 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
 - Github Flavored Markdown (including AtomDoc)
 - Markdown Extra
 - CriticMark annotation
-- Front Matter (yaml and toml)
+- Front Matter (yaml, toml and json)
 - R Markdown
 
 ### Additional features
