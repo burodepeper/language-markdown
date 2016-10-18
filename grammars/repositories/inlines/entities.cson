@@ -1,5 +1,13 @@
 key: 'entities'
 patterns: [
+
+  # NOTE
+  # Detect a singular ampersand pre- and superceded by whitespace, so it doesn't get picked up erronously by language-html which marks it as invalid. This rule has no other purpose than to prevent the aforementioned.
+  {
+    match: '(?<=^|\\s)(&)(?=$|\\s|,|!|\\?|\\.)'
+    name: 'ampersand.md'
+  }
+
   {
     # TODO
     # Whoever wants to extract the full list of valid entity names from

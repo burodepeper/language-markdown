@@ -53,3 +53,20 @@
     "This is a paragraph"
   }
 }
+
+@fm/4
+";;;"+
+""json": true"+
+";;;"+
+""+
+"This is a paragraph" {
+  text.md {
+    front-matter.json.source.md {
+      ";;;": hr.constant.md
+      ""json": true"
+      ";;;": hr.constant.md
+    }
+    ""
+    "This is a paragraph"
+  }
+}

@@ -191,3 +191,34 @@
     }
   }
 }
+
+@issue-42a
+"Sentence with a singular & and skipped by language-html" {
+  text.md {
+    "Sentence with a singular "
+    "&": ampersand.md
+    " and skipped by language-html"
+  }
+}
+
+@issue-42b
+"Singular ampersands can be followed by limited punctuation: &, &. &! &?" {
+  text.md {
+    "Singular ampersands can be followed by limited punctuation: "
+    "&": ampersand.md
+    ", "
+    "&": ampersand.md
+    ". "
+    "&": ampersand.md
+    "! "
+    "&": ampersand.md
+    "?"
+  }
+}
+
+@issue-42c
+"&" {
+  text.md {
+    "&": ampersand.md
+  }
+}

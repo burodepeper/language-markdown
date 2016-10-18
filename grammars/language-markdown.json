@@ -817,6 +817,26 @@
               "include": "source.toml"
             }
           ]
+        },
+        {
+          "begin": "\\A;{3}$",
+          "beginCaptures": {
+            "0": {
+              "name": "hr.constant.md"
+            }
+          },
+          "end": "^;{3}$",
+          "endCaptures": {
+            "0": {
+              "name": "hr.constant.md"
+            }
+          },
+          "name": "front-matter.json.source.md",
+          "patterns": [
+            {
+              "include": "source.json"
+            }
+          ]
         }
       ]
     },
@@ -1513,6 +1533,10 @@
     },
     "entities": {
       "patterns": [
+        {
+          "match": "(?<=^|\\s)(&)(?=$|\\s|,|!|\\?|\\.)",
+          "name": "ampersand.md"
+        },
         {
           "match": "(&)([a-zA-Z0-9]{2,32})(;)",
           "name": "entity.constant.md",
