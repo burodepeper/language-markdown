@@ -35,6 +35,7 @@ repository:
       { include: '#fenced-code-blocks' }
       { include: '#fenced-code' }
       { include: '#github-blocks' }
+      { include: '#math-block' }
     ]
   inlines:
     patterns: [
@@ -48,6 +49,7 @@ repository:
       { include: '#line-breaks' }
       { include: '#references' }
       { include: '#github-inlines' }
+      { include: '#math-inline' }
     ]
   flavors:
     patterns: [

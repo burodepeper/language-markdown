@@ -55,6 +55,9 @@
         },
         {
           "include": "#github-blocks"
+        },
+        {
+          "include": "#math-block"
         }
       ]
     },
@@ -89,6 +92,9 @@
         },
         {
           "include": "#github-inlines"
+        },
+        {
+          "include": "#math-inline"
         }
       ]
     },
@@ -1079,6 +1085,49 @@
               ]
             },
             "2": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "math-block": {
+      "patterns": [
+        {
+          "name": "block.math.embedded.code.markup.md",
+          "begin": "^\\${2}$",
+          "end": "^\\${2}$",
+          "patterns": [
+            {
+              "include": "text.tex.latex"
+            }
+          ],
+          "beginCaptures": {
+            "0": "hr.constant.md"
+          },
+          "endCaptures": {
+            "0": "hr.constant.md"
+          }
+        }
+      ]
+    },
+    "math-inline": {
+      "patterns": [
+        {
+          "name": "inline.math.embedded.code.markup.md",
+          "match": "(\\$)(?! )(.*)(?<! )(\\$)(?!\\d)",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "text.tex.latex"
+                }
+              ]
+            },
+            "3": {
               "name": "punctuation.md"
             }
           }
