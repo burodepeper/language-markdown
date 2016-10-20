@@ -1,0 +1,55 @@
+@math/1
+"Given some function $f \in \{0,1\}^*\to\{0,1\}^*$, there must exist ..." {
+  text.md {
+    "Given some function "
+    "$f \in \{0,1\}^*\to\{0,1\}^*$" {
+      inline.math.markup.md {
+        "$": punctuation.md
+        "f \in \{0,1\}^*\to\{0,1\}^*"
+        "$": punctuation.md
+      }
+    }
+    ", there must exist ..."
+  }
+}
+
+@math/2
+"$$"+
+"f \in \{0,1\}^*\to\{0,1\}^*"+
+"$$" {
+  text.md {
+    block.math.markup.md {
+      "$$": punctuation.md
+      "f \in \{0,1\}^*\to\{0,1\}^*"
+      "$$": punctuation.md
+    }
+  }
+}
+
+@math/3a
+"This is a $variable" {
+  text.md {
+    "This is a $variable"
+  }
+}
+
+@math/3b
+"This is a `$variable`" {
+  text.md {
+    "This is a "
+    "`$variable`" {
+      code.raw.markup.md {
+        '`': punctuation.md
+        '$variable'
+        '`': punctuation.md
+      }
+    }
+  }
+}
+
+@math/4
+"You owe me $10.000, not $10" {
+  text.md {
+    "You owe me $10.000, not $10"
+  }
+}

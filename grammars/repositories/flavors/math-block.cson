@@ -1,13 +1,13 @@
 key: 'math-block'
 patterns: [
 
-  name: 'block.math.embedded.code.markup.md'
-  begin: '^\\${2}$'
-  end: '^\\${2}$'
+  name: 'block.math.markup.md'
+  begin: '^(\\${2})$'
+  end: '^(\\${2})$'
   patterns: [{ include: 'text.tex.latex' }]
   beginCaptures:
-    0: 'hr.constant.md'
+    1: name: 'punctuation.md'
   endCaptures:
-    0: 'hr.constant.md'
+    1: name: 'punctuation.md'
 
 ]
