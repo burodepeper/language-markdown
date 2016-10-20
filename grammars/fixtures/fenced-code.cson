@@ -41,7 +41,7 @@ list: [
   { pattern:'html', include:'text.html.basic' }
   { pattern:'java' }
   { pattern:'javascript|js|jsx', include:'source.js' }
-  { pattern:'json' }
+  { pattern:'json|har', indclude:'source.json' }
   { pattern:'julia' }
   { pattern:'less' }
   { pattern:'lua' }
