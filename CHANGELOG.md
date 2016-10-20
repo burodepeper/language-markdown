@@ -1,3 +1,5 @@
+- #145: Add support for embedded math (via `language-latex`) (thanks @codebje)
+
 ## v0.17.0
 - #131: Add JSON front matter (thanks @gkjpetter)
 - #42: Prevent `language-html` from marking singular ampersands as invalid (thanks @bobrocke and @joallard)
