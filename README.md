@@ -28,6 +28,7 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
   - Remove empty trailing list-items when pressing <kbd>enter</kbd>
 - Adds shortcuts (via <kbd>_</kbd>, <kbd>*</kbd> and <kbd>~</kbd>) for toggling inline-emphasis and strike-through on selected text
 - Supports embedded `HTML`- and `Liquid`-tags
+- Embedded math functions (via `language-latex`)
 
 ### Syntax-theme support
 
