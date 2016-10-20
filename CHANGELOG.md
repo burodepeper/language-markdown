@@ -1,3 +1,4 @@
+- #137: Add `har` to fenced-code-blocks (thanks @ntotten)
 - #145: Add support for embedded math (via `language-latex`) (thanks @codebje)
 
 ## v0.17.0
