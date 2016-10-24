@@ -555,3 +555,84 @@ text.md {
     }
   }
 }
+
+@14
+"```{foo}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "foo": language.constant.md
+      "}": punctuation.md
+    }
+  }
+}
+
+@15
+"```{js label, test=1, engine="2"}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "js": language.constant.md
+      " "
+      "label": label.string.md
+      ", test=1, engine="2""
+      "}": punctuation.md
+    }
+  }
+}
+
+@16
+"```{r label }" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "label": label.string.md
+      " "
+      "}": punctuation.md
+    }
+  }
+}   
+
+@17
+"```{js nolabel= "nolabel", engine="first"  ,   engine ="second"   , engine="third"}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "js": language.constant.md
+      " nolabel= "nolabel", engine="first"  ,   engine ="second"   , engine="third""
+      "}": punctuation.md
+    }
+  }
+}
+
+@18
+"```{}"{
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "}": punctuation.md
+    }
+  }
+}
+
+@19
+"```{a b c d e}"{
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "a": language.constant.md
+      " "
+      "b": label.string.md
+      " c d e"
+      "}": punctuation.md
+    }
+  }
+}

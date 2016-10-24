@@ -5,15 +5,20 @@
 key: 'rmarkdown'
 patterns: [
   {
+    # test and edit regex on https://regex101.com/r/PDu8pO/1/tests
     begin: '(?x)
-      (```)(
-        (\\{)(r)(?:\\s)?
-        (?:([a-zA-Z0-9|_|-]*)(?=[\\s|,|}])\\s?)?
-        ([^\\}]*)?
-        (\\})
-      )
+        (?:\\n|^)(`{3,})
+            (\\{)
+                (r|javascript|js|jsx|python|sql|bash|rcpp|stan|css)[ ]*,?[ ]*
+                (?:([^= ,]*)[ ]*(?:(?=[,\\}])|(?=[ ]+[a-zA-Z0-9_])))?[ ]*,?[ ]*
+                (.*?)
+            (\\})[ ]*
+        (?=\\n|$)
     '
-    end: '^(\\1)$'
+    end: '(?x)
+        (?:\n|^)
+            (\\1)
+        (?=\\n|$)'
 
     name: 'fenced.code.md'
     contentName: 'embedded.source.r'
@@ -21,11 +26,11 @@ patterns: [
 
     beginCaptures:
       1: name: 'punctuation.md'
-      3: name: 'punctuation.md'
-      4: name: 'language.constant.md'
-      5: name: 'label.string.md'
-      6: patterns: [{ include: '#rmarkdown-attributes' }]
-      7: name: 'punctuation.md'
+      2: name: 'punctuation.md'
+      3: name: 'language.constant.md'
+      4: name: 'label.string.md'
+      5: patterns: [{ include: '#rmarkdown-attributes' }]
+      6: name: 'punctuation.md'
     endCaptures:
       1: name: 'punctuation.md'
   }
