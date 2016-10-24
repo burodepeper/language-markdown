@@ -5,24 +5,20 @@
 key: 'rmarkdown'
 patterns: [
   {
+    # test and edit regex on https://regex101.com/r/PDu8pO/1/tests
     begin: '(?x)
-    (?:\\n|^)
-        (`{3,})[(?: )\\.]*
+        (?:\\n|^)(`{3,})
             (\\{)
-                (\\S*)(?: )*
-                (?:
-                    ([^=(?: )]*)
-                    (?: )*
-                    (?=[,\\}])
-                )?(?: )*,?
+                (r|javascript|js|jsx|python|sql|bash|rcpp|stan|css)[ ]*,?[ ]*
+                (?:([^= ,]*)[ ]*(?:(?=[,\\}])|(?=[ ]+[a-zA-Z0-9_])))?[ ]*,?[ ]*
                 (.*?)
-            (\\})
-    (?: )*(?=\\n|$)'
-
+            (\\})[ ]*
+        (?=\\n|$)
+    '
     end: '(?x)
-    (?:\n|^)
-        (\\1)
-    (?=\\n|$)'
+        (?:\n|^)
+            (\\1)
+        (?=\\n|$)'
 
     name: 'fenced.code.md'
     contentName: 'embedded.source.r'
