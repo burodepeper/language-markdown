@@ -59,7 +59,7 @@ module.exports =
     
     # Add command for linkifying selections
     @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:link': (event) => @linkSelection(event)
-    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:image': (event) => @imageSelection(event)
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:image': (event) => @linkSelection(event, true)
 
     # Add command to toggle a task
     @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:toggle-task': (event) => @toggleTask(event)
@@ -189,19 +189,20 @@ module.exports =
     else
       event.abortKeyBinding()
       
-  linkSelection: (event) ->
+  linkSelection: (event, isImage) ->
     if atom.config.get('language-markdown.linkShortcuts')
       {editor, position} = @_getEditorAndPosition(event)
       text = editor.getSelectedText()
       if text
         # Multi-line emphasis is not supported, so the command is aborted when a new-line is detected in the selection
         if text.indexOf("\n") is -1
+          imageToken = if isImage then '!' else ''
           if text.match(/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/)
-            editor.insertText('[](' + text + ')')
+            editor.insertText(imageToken + '[](' + text + ')')
             {editor, position} = @_getEditorAndPosition(event)
             editor.setCursorBufferPosition([position.row, position.column - (text.length + 3)])
           else
-            editor.insertText('[' + text + ']()')
+            editor.insertText(imageToken + '[' + text + ']()')
             {editor, position} = @_getEditorAndPosition(event)
             editor.setCursorBufferPosition([position.row, position.column - 1])
         else
@@ -211,28 +212,6 @@ module.exports =
     else
       event.abortKeyBinding()
       
-  imageSelection: (event) ->
-    if atom.config.get('language-markdown.linkShortcuts')
-      {editor, position} = @_getEditorAndPosition(event)
-      text = editor.getSelectedText()
-      if text
-        # Multi-line emphasis is not supported, so the command is aborted when a new-line is detected in the selection
-        if text.indexOf("\n") is -1
-          if text.match(/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/)
-            editor.insertText('![](' + text + ')')
-            {editor, position} = @_getEditorAndPosition(event)
-            editor.setCursorBufferPosition([position.row, position.column - (text.length + 3)])
-          else
-            editor.insertText('![' + text + ']()')
-            {editor, position} = @_getEditorAndPosition(event)
-            editor.setCursorBufferPosition([position.row, position.column - 1])
-        else
-          event.abortKeyBinding()
-      else
-        event.abortKeyBinding()
-    else
-      event.abortKeyBinding()
-
   _wrapSelection: (text, token) ->
     # unwrap selection
     if (text.substr(0, token.length) is token) and (text.substr(-token.length) is token)
