@@ -198,6 +198,7 @@ module.exports =
         if text.indexOf("\n") is -1
           imageToken = if isImage then '!' else ''
           if text.match(/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/)
+            # if text.match(/\.(jpg|jpeg|png|gif|tiff)/) then imageToken = '!'
             editor.insertText(imageToken + '[](' + text + ')')
             {editor, position} = @_getEditorAndPosition(event)
             editor.setCursorBufferPosition([position.row, position.column - (text.length + 3)])
