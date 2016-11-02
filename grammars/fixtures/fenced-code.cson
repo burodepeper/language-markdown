@@ -41,11 +41,13 @@ list: [
   { pattern:'html', include:'text.html.basic' }
   { pattern:'java' }
   { pattern:'javascript|js|jsx', include:'source.js' }
-  { pattern:'json' }
+  { pattern:'json|har', include:'source.json' }
   { pattern:'julia' }
+  { pattern:'latex|tex', include:'text.tex.latex' }
   { pattern:'less' }
   { pattern:'lua' }
   { pattern:'markdown|mdown|md', include:'text.md' }
+  { pattern:'m|mathematica', include:'source.mathematica' }
   { pattern:'mermaid' }
   { pattern:'mson', include:'text.html.markdown.source.gfm.mson' }
   { pattern:'objc|objective-c', include:'source.objc' }

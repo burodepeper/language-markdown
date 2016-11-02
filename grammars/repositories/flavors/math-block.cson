@@ -1,0 +1,13 @@
+key: 'math-block'
+patterns: [
+
+  name: 'block.math.markup.md'
+  begin: '^(\\${2})$'
+  end: '^(\\${2})$'
+  patterns: [{ include: 'text.tex.latex' }]
+  beginCaptures:
+    1: name: 'punctuation.md'
+  endCaptures:
+    1: name: 'punctuation.md'
+
+]

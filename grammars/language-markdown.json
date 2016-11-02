@@ -55,6 +55,9 @@
         },
         {
           "include": "#github-blocks"
+        },
+        {
+          "include": "#math-block"
         }
       ]
     },
@@ -89,6 +92,9 @@
         },
         {
           "include": "#github-inlines"
+        },
+        {
+          "include": "#math-inline"
         }
       ]
     },
@@ -1079,6 +1085,53 @@
               ]
             },
             "2": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "math-block": {
+      "patterns": [
+        {
+          "name": "block.math.markup.md",
+          "begin": "^(\\${2})$",
+          "end": "^(\\${2})$",
+          "patterns": [
+            {
+              "include": "text.tex.latex"
+            }
+          ],
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "math-inline": {
+      "patterns": [
+        {
+          "name": "inline.math.markup.md",
+          "match": "(\\$)(?! )(.*)(?<! )(\\$)(?!\\d)",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "text.tex.latex"
+                }
+              ]
+            },
+            "3": {
               "name": "punctuation.md"
             }
           }
@@ -2840,7 +2893,7 @@
           ]
         },
         {
-          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:json))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:json|har))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
               "name": "punctuation.md"
@@ -2916,6 +2969,46 @@
           "patterns": [
             {
               "include": "source.julia"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:latex|tex))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.text.tex.latex",
+          "patterns": [
+            {
+              "include": "text.tex.latex"
             }
           ]
         },
@@ -3036,6 +3129,46 @@
           "patterns": [
             {
               "include": "text.md"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:m|mathematica))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.source.mathematica",
+          "patterns": [
+            {
+              "include": "source.mathematica"
             }
           ]
         },

@@ -27,7 +27,10 @@ If you experience any issue above a reasonable/tolerable level of annoyancy, don
   - Toggle tasks with <kbd>cmd+shift+x</kbd> or <kbd>ctrl+shift+x</kbd>
   - Remove empty trailing list-items when pressing <kbd>enter</kbd>
 - Adds shortcuts (via <kbd>_</kbd>, <kbd>*</kbd> and <kbd>~</kbd>) for toggling inline-emphasis and strike-through on selected text
+- Add shortcut (via <kbd>@</kbd>) for converting selected text to a link
+- Add shortcut (via <kbd>!</kbd>) for converting selected text to a link
 - Supports embedded `HTML`- and `Liquid`-tags
+- Embedded math functions (via `language-latex`)
 
 ### Syntax-theme support
 

@@ -1,3 +1,8 @@
+- #137: Add `har` to fenced-code-blocks (thanks @ntotten)
+- #145: Add support for embedded math (via `language-latex`) (thanks @codebje)
+- #148: Add fenced-code blocks for `language-latex` and `language-mathematica` (thanks @Edenharder)
+- #151: Add commands for converting a selection to a link (`@`) or an inline image (`!`) (thanks @gnestor)
+
 ## v0.17.0
 - #131: Add JSON front matter (thanks @gkjpetter)
 - #42: Prevent `language-html` from marking singular ampersands as invalid (thanks @bobrocke and @joallard)
