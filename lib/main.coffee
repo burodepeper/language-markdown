@@ -31,15 +31,9 @@ module.exports =
       type: 'boolean'
       default: true
       
-    linkShortcut:
-      title: 'Link shortcut'
-      description: 'Enables keybindings for converting the selected text to a link'
-      type: 'boolean'
-      default: true
-      
-    imageShortcut:
-      title: 'Image shortcut'
-      description: 'Enables keybindings for converting the selected text to an image'
+    linkShortcuts:
+      title: 'Link shortcuts'
+      description: 'Enables keybindings `@` for converting the selected text to a link and `!` for converting the selected text to an image'
       type: 'boolean'
       default: true
 
@@ -196,7 +190,7 @@ module.exports =
       event.abortKeyBinding()
       
   linkSelection: (event) ->
-    if atom.config.get('language-markdown.linkShortcut')
+    if atom.config.get('language-markdown.linkShortcuts')
       {editor, position} = @_getEditorAndPosition(event)
       text = editor.getSelectedText()
       if text
@@ -218,7 +212,7 @@ module.exports =
       event.abortKeyBinding()
       
   imageSelection: (event) ->
-    if atom.config.get('language-markdown.imageShortcut')
+    if atom.config.get('language-markdown.linkShortcuts')
       {editor, position} = @_getEditorAndPosition(event)
       text = editor.getSelectedText()
       if text
