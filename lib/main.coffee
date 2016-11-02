@@ -30,6 +30,18 @@ module.exports =
       description: 'Automatically in- and outdent list-items by pressing `TAB` and `SHIFT+TAB`'
       type: 'boolean'
       default: true
+      
+    linkShortcut:
+      title: 'Link shortcut'
+      description: 'Enables keybindings for converting the selected text to a link'
+      type: 'boolean'
+      default: true
+      
+    imageShortcut:
+      title: 'Image shortcut'
+      description: 'Enables keybindings for converting the selected text to an image'
+      type: 'boolean'
+      default: true
 
     removeEmptyListItems:
       title: 'Remove empty list-items'
@@ -50,6 +62,10 @@ module.exports =
     @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:emphasis': (event) => @emphasizeSelection(event, "_")
     @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:strong-emphasis': (event) => @emphasizeSelection(event, "**")
     @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:strike-through': (event) => @emphasizeSelection(event, "~~")
+    
+    # Add command for linkifying selections
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:link': (event) => @linkSelection(event)
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:image': (event) => @imageSelection(event)
 
     # Add command to toggle a task
     @subscriptions.add atom.commands.add 'atom-text-editor', 'markdown:toggle-task': (event) => @toggleTask(event)
@@ -172,6 +188,50 @@ module.exports =
         # Multi-line emphasis is not supported, so the command is aborted when a new-line is detected in the selection
         if text.indexOf("\n") is -1
           editor.insertText(@_wrapSelection(text, token))
+        else
+          event.abortKeyBinding()
+      else
+        event.abortKeyBinding()
+    else
+      event.abortKeyBinding()
+      
+  linkSelection: (event) ->
+    if atom.config.get('language-markdown.linkShortcut')
+      {editor, position} = @_getEditorAndPosition(event)
+      text = editor.getSelectedText()
+      if text
+        # Multi-line emphasis is not supported, so the command is aborted when a new-line is detected in the selection
+        if text.indexOf("\n") is -1
+          if text.match(/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/)
+            editor.insertText('[](' + text + ')')
+            {editor, position} = @_getEditorAndPosition(event)
+            editor.setCursorBufferPosition([position.row, position.column - (text.length + 3)])
+          else
+            editor.insertText('[' + text + ']()')
+            {editor, position} = @_getEditorAndPosition(event)
+            editor.setCursorBufferPosition([position.row, position.column - 1])
+        else
+          event.abortKeyBinding()
+      else
+        event.abortKeyBinding()
+    else
+      event.abortKeyBinding()
+      
+  imageSelection: (event) ->
+    if atom.config.get('language-markdown.imageShortcut')
+      {editor, position} = @_getEditorAndPosition(event)
+      text = editor.getSelectedText()
+      if text
+        # Multi-line emphasis is not supported, so the command is aborted when a new-line is detected in the selection
+        if text.indexOf("\n") is -1
+          if text.match(/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/)
+            editor.insertText('![](' + text + ')')
+            {editor, position} = @_getEditorAndPosition(event)
+            editor.setCursorBufferPosition([position.row, position.column - (text.length + 3)])
+          else
+            editor.insertText('![' + text + ']()')
+            {editor, position} = @_getEditorAndPosition(event)
+            editor.setCursorBufferPosition([position.row, position.column - 1])
         else
           event.abortKeyBinding()
       else

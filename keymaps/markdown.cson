@@ -18,3 +18,5 @@
   '_': 'markdown:emphasis'
   '*': 'markdown:strong-emphasis'
   '~': 'markdown:strike-through'
+  '@': 'markdown:link'
+  '!': 'markdown:image'
