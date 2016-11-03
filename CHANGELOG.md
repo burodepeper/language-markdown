@@ -1,3 +1,6 @@
+### v0.18.1
+- #153: Fix multiple math-inlines on the same line, and allow math-block delimiters with extended arguments (thanks @laughingrice)
+
 ## v0.18.0
 - #137: Add `har` to fenced-code-blocks (thanks @ntotten)
 - #145: Add support for embedded math (via `language-latex`) (thanks @codebje)
