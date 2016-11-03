@@ -53,3 +53,70 @@
     "You owe me $10.000, not $10"
   }
 }
+
+@math/5
+"the reference image $I_r$ and the template image $I_t$." {
+  text.md {
+    "the reference image "
+    "$I_r$" {
+      inline.math.markup.md {
+        "$": punctuation.md
+        "I_r"
+        "$": punctuation.md
+      }
+    }
+    " and the template image "
+    "$I_t$" {
+      inline.math.markup.md {
+        "$": punctuation.md
+        "I_t"
+        "$": punctuation.md
+      }
+    }
+    "."
+  }
+}
+
+@math/6
+"$$"+
+"d_y(x) = D \del{f_r(x), f_t(y)}"+
+"$$ {#eq:dist}" {
+  text.md {
+    block.math.markup.md {
+      "$$": punctuation.md
+      "d_y(x) = D \del{f_r(x), f_t(y)}"
+      "$$": punctuation.md
+      " {#eq:dist}"
+    }
+  }
+}
+
+@math/7
+"$$"+
+"d_y(x) = D \del{f_r(x), f_t(y)}"+
+"$$"+
+"# Heading"+
+"$$"+
+"d_y(x) = D \del{f_r(x), f_t(y)}"+
+"$$ {#eq:dist}" {
+  text.md {
+    block.math.markup.md {
+      "$$": punctuation.md
+      "d_y(x) = D \del{f_r(x), f_t(y)}"
+      "$$": punctuation.md
+    }
+    heading.markup.md {
+      heading-1.md {
+        '#': punctuation.md
+        ' '
+        'Heading'
+      }
+    }
+    block.math.markup.md {
+      "$$": punctuation.md
+      "d_y(x) = D \del{f_r(x), f_t(y)}"
+      "$$": punctuation.md
+      " {#eq:dist}"
+    }
+  }
+}
