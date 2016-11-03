@@ -1119,7 +1119,7 @@
       "patterns": [
         {
           "name": "inline.math.markup.md",
-          "match": "(\\$)(?! )(.*)(?<! )(\\$)(?!\\d)",
+          "match": "(\\$)(?! )(.+?)(?<! )(\\$)(?!\\d)",
           "captures": {
             "1": {
               "name": "punctuation.md"
