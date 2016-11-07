@@ -57,6 +57,7 @@ repository:
       { include: '#github-inlines' }
       # { include: '#rmarkdown' }
       { include: '#markdown-extra' }
+      { include: '#pandoc' }
     ]
 
   # NOTE by @burodepeper
