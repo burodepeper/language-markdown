@@ -1,3 +1,5 @@
+- #155: Add support for Pandoc grid-tables (thanks @mangecoeur)
+
 ### v0.18.1
 - #153: Fix multiple math-inlines on the same line, and allow math-block delimiters with extended arguments (thanks @laughingrice)
 
