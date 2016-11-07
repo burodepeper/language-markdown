@@ -108,6 +108,9 @@
         },
         {
           "include": "#markdown-extra"
+        },
+        {
+          "include": "#pandoc"
         }
       ]
     },
@@ -1132,6 +1135,28 @@
               ]
             },
             "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "pandoc": {
+      "patterns": [
+        {
+          "name": "table.storage.md",
+          "match": "^(\\+-+)+\\+$",
+          "captures": {
+            "0": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "table.storage.md",
+          "match": "^(\\+=+)+\\+$",
+          "captures": {
+            "0": {
               "name": "punctuation.md"
             }
           }

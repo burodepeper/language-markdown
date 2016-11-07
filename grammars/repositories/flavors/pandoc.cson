@@ -1,0 +1,20 @@
+key: 'pandoc'
+patterns: [
+
+  # grid_tables extension
+  {
+    name: 'table.storage.md'
+    match: '^(\\+-+)+\\+$'
+    captures:
+      0: name: 'punctuation.md'
+  }
+
+  # grid_tables extension: head/body separator
+  {
+    name: 'table.storage.md'
+    match: '^(\\+=+)+\\+$'
+    captures:
+      0: name: 'punctuation.md'
+  }
+
+]

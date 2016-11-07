@@ -151,7 +151,47 @@
         "[": punctuation.md
         "p. 33"
         "]": punctuation.md
+      }
     }
     " says blah."
+  }
+}
+
+@grid-table/1
+"+---+---+---+" {
+  text.md {
+    "+---+---+---+" {
+      table.storage.md {
+        "+---+---+---+": punctuation.md
+      }
+    }
+  }
+}
+
+@grid-table/2
+"+===+===+===+" {
+  text.md {
+    "+===+===+===+" {
+      table.storage.md {
+        "+===+===+===+": punctuation.md
+      }
+    }
+  }
+}
+
+@grid-table/3
+"+---+---+---" {
+  text.md {
+    "+---+---+---"
+  }
+}
+
+@grid-table/4
+"+ --- + --- + --- +" {
+  text.md {
+    unordered.list.markup.md {
+      "+ ": punctuation.md
+      "--- + --- + --- +"
+    }
   }
 }
