@@ -3070,10 +3070,10 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.less",
+          "contentName": "embedded.source.css.less",
           "patterns": [
             {
-              "include": "source.less"
+              "include": "source.css.less"
             }
           ]
         },

@@ -1,3 +1,4 @@
+- Update `less` base-scope for fenced-code blocks
 - #155: Add support for Pandoc grid-tables (thanks @mangecoeur)
 
 ### v0.18.1

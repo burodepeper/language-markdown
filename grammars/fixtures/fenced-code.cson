@@ -44,7 +44,7 @@ list: [
   { pattern:'json|har', include:'source.json' }
   { pattern:'julia' }
   { pattern:'latex|tex', include:'text.tex.latex' }
-  { pattern:'less' }
+  { pattern:'less', include:'source.css.less' }
   { pattern:'lua' }
   { pattern:'markdown|mdown|md', include:'text.md' }
   { pattern:'m|mathematica', include:'source.mathematica' }
