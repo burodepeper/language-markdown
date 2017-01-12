@@ -74,6 +74,7 @@ repository:
       { include: '#emphasis' }
       { include: '#references' }
       { include: '#flavors' }
+      { include: '#math-inline' }
     ]
 
   # NOTE

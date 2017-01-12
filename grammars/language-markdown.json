@@ -142,6 +142,9 @@
         },
         {
           "include": "#flavors"
+        },
+        {
+          "include": "#math-inline"
         }
       ]
     },

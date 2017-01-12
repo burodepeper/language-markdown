@@ -120,3 +120,20 @@
     }
   }
 }
+
+@math/8
+"- Math in a list: $a + B$" {
+  text.md {
+    unordered.list.markup.md {
+      "- ": punctuation.md
+      "Math in a list: "
+      "$a + B$" {
+        inline.math.markup.md {
+          "$": punctuation.md
+          "a + B"
+          "$": punctuation.md
+        }
+      }
+    }
+  }
+}
