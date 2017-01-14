@@ -4,6 +4,8 @@ GrammarCompiler = require './GrammarCompiler'
 path = require 'path'
 fs = require 'fs'
 
+{isListItem} = require './functions'
+
 module.exports =
 
   config:
@@ -162,7 +164,7 @@ module.exports =
   indentListItem: (event) ->
     {editor, position} = @_getEditorAndPosition(event)
     indentListItems = atom.config.get('language-markdown.indentListItems')
-    if indentListItems and @_isListItem(editor, position)
+    if indentListItems and isListItem(editor, position)
       editor.indentSelectedRows(position.row)
     else
       event.abortKeyBinding()
@@ -170,7 +172,7 @@ module.exports =
   outdentListItem: (event) ->
     {editor, position} = @_getEditorAndPosition(event)
     indentListItems = atom.config.get('language-markdown.indentListItems')
-    if indentListItems and @_isListItem(editor, position)
+    if indentListItems and isListItem(editor, position)
       editor.outdentSelectedRows(position.row)
     else
       event.abortKeyBinding()
@@ -236,19 +238,9 @@ module.exports =
     else
       event.abortKeyBinding()
 
-  _isListItem: (editor, position) ->
-    if editor and editor.getGrammar().name is 'Markdown'
-      scopeDescriptor = editor.scopeDescriptorForBufferPosition(position)
-      for scope in scopeDescriptor.scopes
-        if scope.indexOf('list') isnt -1
-          # NOTE
-          # return scope (which counts as true) which can be used to determine type of list-item
-          return scope
-    return false
-
   toggleTask: (event) ->
     {editor, position} = @_getEditorAndPosition(event)
-    listItem = @_isListItem(editor, position)
+    listItem = isListItem(editor, position)
     if listItem and listItem.indexOf('task') isnt -1
       currentLine = editor.lineTextForBufferRow(position.row)
       if listItem.indexOf('completed') isnt -1
