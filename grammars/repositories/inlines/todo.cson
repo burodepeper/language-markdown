@@ -3,6 +3,6 @@ patterns: [
   {
     # Borrowed from language-gfm, because https://github.com/atom/language-todo/pull/36 isn't coming through
     match: '(?<!\\w)@?(TODO|FIXME|CHANGED|XXX|IDEA|HACK|NOTE|REVIEW|NB|BUG|QUESTION|COMBAK|TEMP)\\b'
-    name: 'storage.type.class.${1:/downcase}'
+    name: 'storage.type.class.${1:/downcase}.md'
   }
 ]
