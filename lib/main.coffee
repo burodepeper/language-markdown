@@ -4,7 +4,7 @@ GrammarCompiler = require './GrammarCompiler'
 path = require 'path'
 fs = require 'fs'
 
-{isListItem} = require './functions'
+{isListItem, wrapText} = require './functions'
 
 module.exports =
 
@@ -184,7 +184,7 @@ module.exports =
       if text
         # Multi-line emphasis is not supported, so the command is aborted when a new-line is detected in the selection
         if text.indexOf("\n") is -1
-          editor.insertText(@_wrapSelection(text, token))
+          editor.insertText(wrapText(text, token))
         else
           event.abortKeyBinding()
       else
@@ -216,19 +216,9 @@ module.exports =
     else
       event.abortKeyBinding()
 
-  _wrapSelection: (text, token) ->
-    # unwrap selection
-    if (text.substr(0, token.length) is token) and (text.substr(-token.length) is token)
-      return text.substr(token.length, text.length - token.length * 2)
-    # wrap selection
-    else
-      return token + text + token
-
   _getEditorAndPosition: (event) ->
-    # editor = event.target.model
     editor = atom.workspace.getActiveTextEditor()
     if editor
-      # position = editor.cursors[0].marker.oldHeadBufferPosition
       positions = editor.getCursorBufferPositions()
       if positions
         position = positions[0]
