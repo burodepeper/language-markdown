@@ -1,3 +1,4 @@
+- Separate functions from main code
 - Add inline todo (from `language-todo`)
 
 ### v0.18.2
