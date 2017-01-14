@@ -1,0 +1,34 @@
+@1
+"TODO Gotta do something" {
+  text.md {
+    "TODO": storage.type.class.todo
+    " Gotta do something"
+  }
+}
+
+@2
+"TODO: Gotta do something else" {
+  text.md {
+    "TODO": storage.type.class.todo
+    ": Gotta do something else"
+  }
+}
+
+@3
+"- TODO: Todos are often in a list" {
+  text.md {
+    unordered.list.markup.md {
+      "- ": punctuation.md
+      "TODO": storage.type.class.todo
+      ": Todos are often in a list"
+    }
+  }
+}
+
+@4
+"FIXME: Some things really need to be fixed" {
+  text.md {
+    "FIXME": storage.type.class.fixme
+    ": Some things really need to be fixed"
+  }
+}
