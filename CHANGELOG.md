@@ -1,3 +1,5 @@
+- Add inline todo (from `language-todo`)
+
 ### v0.18.2
 - #160: Add math-inline to blocks-in-scopes (thanks @mangecoeur)
 - Update `less` base-scope for fenced-code blocks
