@@ -155,3 +155,4 @@ See [minimal-syntax](https://github.com/burodepeper/minimal-syntax) for a good-t
 - http://rmarkdown.rstudio.com/authoring_rcodechunks.html
 - http://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 - http://yihui.name/knitr/options/
+- https://github.com/iainc/Markdown-Content-Blocks

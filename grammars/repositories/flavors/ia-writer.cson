@@ -1,0 +1,38 @@
+key: 'ia-writer'
+patterns: [
+
+  {
+    match: '(?x)
+      ^\\s{0,3}(
+        (/)([^\'"()]*?)
+        (\\.[a-z0-9]+)
+        (\\s*?)
+        (("|\')[^\'"]*?(\\7))?
+      )$'
+    captures:
+      1: name: 'block.content.link.markup.md'
+      2: name: 'punctuation.md'
+      # 4: name: 'punctuation.md'
+      6: name: 'title.string.markup.md'
+      7: name: 'punctuation.md'
+      8: name: 'punctuation.md'
+  }
+
+  {
+    match: '(?x)
+      ^\\s{0,3}(
+        (/)([^\'"()]*?)
+        (\\.[a-z0-9]+)
+        (\\s*?)
+        ((\\()[^()]*?(\\)))?
+      )$'
+    captures:
+      1: name: 'block.content.link.markup.md'
+      2: name: 'punctuation.md'
+      # 4: name: 'punctuation.md'
+      6: name: 'title.string.markup.md'
+      7: name: 'punctuation.md'
+      8: name: 'punctuation.md'
+  }
+
+]

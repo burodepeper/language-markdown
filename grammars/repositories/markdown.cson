@@ -59,6 +59,7 @@ repository:
       # { include: '#rmarkdown' }
       { include: '#markdown-extra' }
       { include: '#pandoc' }
+      { include: '#ia-writer' }
     ]
 
   # NOTE by @burodepeper
