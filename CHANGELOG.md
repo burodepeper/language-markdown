@@ -1,3 +1,6 @@
+### v0.19.1
+- Fix #161: `functions.js` not always being loaded/required (thanks @WestFlame)
+
 ## v0.19.0
 - Add grammar for [iA Writer 4 content-blocks](https://github.com/iainc/Markdown-Content-Blocks)
 - Separate functions from main code

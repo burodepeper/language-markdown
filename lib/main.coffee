@@ -1,11 +1,12 @@
+'use babel'
+
 {CompositeDisposable, Directory} = require 'atom'
 CSON = require 'season'
 GrammarCompiler = require './GrammarCompiler'
 path = require 'path'
 fs = require 'fs'
 
-{isListItem} = require './functions'
-{wrapText} = require './functions'
+# import {isListItem, wrapText} from './functions'
 
 module.exports =
 
@@ -165,7 +166,7 @@ module.exports =
   indentListItem: (event) ->
     {editor, position} = @_getEditorAndPosition(event)
     indentListItems = atom.config.get('language-markdown.indentListItems')
-    if indentListItems and isListItem(editor, position)
+    if indentListItems and @isListItem(editor, position)
       editor.indentSelectedRows(position.row)
     else
       event.abortKeyBinding()
@@ -173,7 +174,7 @@ module.exports =
   outdentListItem: (event) ->
     {editor, position} = @_getEditorAndPosition(event)
     indentListItems = atom.config.get('language-markdown.indentListItems')
-    if indentListItems and isListItem(editor, position)
+    if indentListItems and @isListItem(editor, position)
       editor.outdentSelectedRows(position.row)
     else
       event.abortKeyBinding()
@@ -185,7 +186,7 @@ module.exports =
       if text
         # Multi-line emphasis is not supported, so the command is aborted when a new-line is detected in the selection
         if text.indexOf("\n") is -1
-          editor.insertText(wrapText(text, token))
+          editor.insertText(@wrapText(text, token))
         else
           event.abortKeyBinding()
       else
@@ -231,7 +232,7 @@ module.exports =
 
   toggleTask: (event) ->
     {editor, position} = @_getEditorAndPosition(event)
-    listItem = isListItem(editor, position)
+    listItem = @isListItem(editor, position)
     if listItem and listItem.indexOf('task') isnt -1
       currentLine = editor.lineTextForBufferRow(position.row)
       if listItem.indexOf('completed') isnt -1
@@ -249,3 +250,18 @@ module.exports =
       compiler = new GrammarCompiler()
       compiler.compile()
       return
+
+  isListItem: (editor, position) ->
+    if editor and editor.getGrammar().name is 'Markdown'
+      scopeDescriptor = editor.scopeDescriptorForBufferPosition(position)
+      for scope in scopeDescriptor.scopes
+        if scope.indexOf('list') isnt -1
+          return scope
+    return false
+
+  wrapText: (text, token) ->
+    length = token.length
+    if (text.substr(0, length) is token) and (text.substr(-length) is token)
+      return text.substr(length, text.length - length * 2)
+    else
+      return token + text + token
