@@ -4,7 +4,8 @@ GrammarCompiler = require './GrammarCompiler'
 path = require 'path'
 fs = require 'fs'
 
-{isListItem, wrapText} = require './functions'
+{isListItem} = require './functions'
+{wrapText} = require './functions'
 
 module.exports =
 

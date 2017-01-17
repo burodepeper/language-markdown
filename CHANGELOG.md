@@ -1,6 +1,8 @@
+## v0.19.0
 - Add grammar for [iA Writer 4 content-blocks](https://github.com/iainc/Markdown-Content-Blocks)
 - Separate functions from main code
 - Add inline todo (from `language-todo`)
+- Temporarily disabled YAML fenced-code-blocks (see #77, thanks @btquanto)
 
 ### v0.18.2
 - #160: Add math-inline to blocks-in-scopes (thanks @mangecoeur)

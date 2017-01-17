@@ -69,7 +69,9 @@ list: [
   { pattern:'sql' }
   { pattern:'swift' }
   { pattern:'xml', include:'text.xml' }
-  { pattern:'yaml|yml', include:'source.yaml' }
+
+  # NOTE: temporarily disabled, see issue #77 for details
+  # { pattern:'yaml|yml', include:'source.yaml' }
 
   # Fallback that detects any unsupported languages;
   # Pattern might have to accept more characters.
