@@ -23,6 +23,7 @@ list: [
   { pattern:'ass' }
   { pattern:'coffee|coffeescript|coffee-script', include:'source.coffee' }
   { pattern:'c' }
+  { pattern:'clean' }
   { pattern:'clojure' }
   { pattern:'cpp|c\\+\\+', include:'source.cpp' }
   { pattern:'cr|crystal', include:'source.crystal'}
@@ -39,6 +40,7 @@ list: [
   { pattern:'go|golang', include:'source.go' }
   { pattern:'haskell' }
   { pattern:'html', include:'text.html.basic' }
+  { pattern:'idris' }
   { pattern:'java' }
   { pattern:'javascript|js|jsx', include:'source.js' }
   { pattern:'json|har', include:'source.json' }
