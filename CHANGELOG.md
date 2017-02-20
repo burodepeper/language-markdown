@@ -1,3 +1,5 @@
+- #165: Add fenced-code support for Clean and Idris (thanks @timjs)
+
 ### v0.19.1
 - Fix #161: `functions.js` not always being loaded/required (thanks @WestFlame)
 

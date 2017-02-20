@@ -2425,6 +2425,46 @@
           ]
         },
         {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:clean))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.source.clean",
+          "patterns": [
+            {
+              "include": "source.clean"
+            }
+          ]
+        },
+        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:clojure))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
@@ -2901,6 +2941,46 @@
           "patterns": [
             {
               "include": "text.html.basic"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:idris))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.source.idris",
+          "patterns": [
+            {
+              "include": "source.idris"
             }
           ]
         },
