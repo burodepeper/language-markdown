@@ -1,6 +1,7 @@
 {
   "name": "Markdown",
   "scopeName": "text.md",
+  "limitLineLength": false,
   "fileTypes": [
     "markdown",
     "md",

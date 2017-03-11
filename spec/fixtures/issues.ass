@@ -405,3 +405,14 @@
     }
   }
 }
+
+@170
+"> This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters." {
+  text.md {
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters. This is a quote with more than 500 characters."
+    }
+  }
+}
