@@ -13,10 +13,21 @@
   }
 }
 
-@math/2
+@math/2a
 "$$"+
 "f \in \{0,1\}^*\to\{0,1\}^*"+
 "$$" {
+  text.md {
+    block.math.markup.md {
+      "$$": punctuation.md
+      "f \in \{0,1\}^*\to\{0,1\}^*"
+      "$$": punctuation.md
+    }
+  }
+}
+
+@math/2b
+"$$f \in \{0,1\}^*\to\{0,1\}^*$$" {
   text.md {
     block.math.markup.md {
       "$$": punctuation.md
