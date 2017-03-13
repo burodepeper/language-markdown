@@ -340,3 +340,328 @@
     }
   }
 }
+
+# @issue-168a
+# "~~~~{.js}"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       "{": punctuation.md
+#       ".js": language.constant.md
+#       "}": punctuation.md
+#       embedded.source.js {
+#         "let answer = 42"
+#       }
+#       "~~~~": punctuation.md
+#     }
+#     quote.markup.md {
+#       ">": punctuation.md
+#       " "
+#       "Quote"
+#     }
+#   }
+# }
+
+# @issue-168b
+# "~~~~{js}"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       "{": punctuation.md
+#       "js": language.constant.md
+#       "}": punctuation.md
+#       embedded.source.js {
+#         "let answer = 42"
+#       }
+#       "~~~~": punctuation.md
+#     }
+#     quote.markup.md {
+#       ">": punctuation.md
+#       " "
+#       "Quote"
+#     }
+#   }
+# }
+
+@issue-168c
+"~~~~js"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "js": language.constant.md
+      ""
+      embedded.source.js {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+@issue-168d
+"~~~~ js"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      " "
+      "js": language.constant.md
+      ""
+      embedded.source.js {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+
+}
+
+@issue-168e
+"~~~~{.js }"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "{": punctuation.md
+      ".js": language.constant.md
+      " "
+      "}": punctuation.md
+      embedded.source.js {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+@issue-168f
+"~~~~{js }"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "{": punctuation.md
+      "js": language.constant.md
+      " "
+      "}": punctuation.md
+      embedded.source.js {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+# @issue-168g
+# "~~~~{.unknownscript}"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       "{": punctuation.md
+#       ".unknownscript": language.constant.md
+#       "}": punctuation.md
+#       embedded.source {
+#         "let answer = 42"
+#       }
+#       "~~~~": punctuation.md
+#     }
+#     quote.markup.md {
+#       ">": punctuation.md
+#       " "
+#       "Quote"
+#     }
+#   }
+# }
+
+# @issue-168h
+# "~~~~{unknownscript}"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       "{": punctuation.md
+#       "unknownscript": language.constant.md
+#       "}": punctuation.md
+#       embedded.source {
+#         "let answer = 42"
+#       }
+#       "~~~~": punctuation.md
+#     }
+#     quote.markup.md {
+#       ">": punctuation.md
+#       " "
+#       "Quote"
+#     }
+#   }
+# }
+
+@issue-168i
+"~~~~unknownscript"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "unknownscript": language.constant.md
+      ""
+      embedded.source {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+@issue-168j
+"~~~~ unknownscript"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      " "
+      "unknownscript": language.constant.md
+      ""
+      embedded.source {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+@issue-168k
+"~~~~{.unknownscript }"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "{": punctuation.md
+      ".unknownscript": language.constant.md
+      " "
+      "}": punctuation.md
+      embedded.source {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+@issue-168l
+"~~~~{unknownscript }"+
+"let answer = 42"+
+"~~~~"+
+"> Quote" {
+  text.md {
+    fenced.code.md {
+      "~~~~": punctuation.md
+      "{": punctuation.md
+      "unknownscript": language.constant.md
+      " "
+      "}": punctuation.md
+      embedded.source {
+        "let answer = 42"
+      }
+      "~~~~": punctuation.md
+    }
+    quote.markup.md {
+      ">": punctuation.md
+      " "
+      "Quote"
+    }
+  }
+}
+
+# @issue-168m
+# "~~~~{.js"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     "~~~~{.js"
+#     "let answer = 42"
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       embedded.source {
+#         "> Quote"
+#       }
+#     }
+#   }
+# }
+
+# @issue-168n
+# "~~~~{js"+
+# "let answer = 42"+
+# "~~~~"+
+# "> Quote" {
+#   text.md {
+#     "~~~~{js"
+#     "let answer = 42"
+#     fenced.code.md {
+#       "~~~~": punctuation.md
+#       embedded.source {
+#         "> Quote"
+#       }
+#     }
+#   }
+# }
