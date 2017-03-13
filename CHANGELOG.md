@@ -1,3 +1,4 @@
+## v0.20.0
 - #165: Add fenced-code support for Clean and Idris (thanks @timjs)
 - #170: Opt out of line length limit (thanks @sbaack)
 - #171: Relax math-block grammar rules (thanks @lierdakil)
