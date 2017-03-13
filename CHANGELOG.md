@@ -1,5 +1,6 @@
 - #165: Add fenced-code support for Clean and Idris (thanks @timjs)
 - #170: Opt out of line length limit (thanks @sbaack)
+- #171: Relax math-block grammar rules (thanks @lierdakil)
 
 ### v0.19.1
 - Fix #161: `functions.js` not always being loaded/required (thanks @WestFlame)
