@@ -1410,7 +1410,7 @@
           "begin": "(?x) (```)( (\\{)(r)(?:\\s)? (?:([a-zA-Z0-9|_|-]*)(?=[\\s|,|}])\\s?)? ([^\\}]*)? (\\}) )",
           "end": "^(\\1)$",
           "name": "fenced.code.md",
-          "contentName": "embedded.source.r",
+          "contentName": "source.embedded.r",
           "patterns": [
             {
               "include": "source.r"
@@ -2298,7 +2298,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.text.html.markdown.source.gfm.apib",
+          "contentName": "text.embedded.html.markdown.source.gfm.apib",
           "patterns": [
             {
               "include": "text.html.markdown.source.gfm.apib"
@@ -2338,7 +2338,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.ass",
+          "contentName": "source.embedded.ass",
           "patterns": [
             {
               "include": "source.ass"
@@ -2378,7 +2378,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.coffee",
+          "contentName": "source.embedded.coffee",
           "patterns": [
             {
               "include": "source.coffee"
@@ -2418,7 +2418,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.c",
+          "contentName": "source.embedded.c",
           "patterns": [
             {
               "include": "source.c"
@@ -2458,7 +2458,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.clean",
+          "contentName": "source.embedded.clean",
           "patterns": [
             {
               "include": "source.clean"
@@ -2498,7 +2498,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.clojure",
+          "contentName": "source.embedded.clojure",
           "patterns": [
             {
               "include": "source.clojure"
@@ -2538,7 +2538,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.cpp",
+          "contentName": "source.embedded.cpp",
           "patterns": [
             {
               "include": "source.cpp"
@@ -2578,7 +2578,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.crystal",
+          "contentName": "source.embedded.crystal",
           "patterns": [
             {
               "include": "source.crystal"
@@ -2618,7 +2618,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.cs",
+          "contentName": "source.embedded.cs",
           "patterns": [
             {
               "include": "source.cs"
@@ -2658,7 +2658,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.css",
+          "contentName": "source.embedded.css",
           "patterns": [
             {
               "include": "source.css"
@@ -2698,7 +2698,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.diff",
+          "contentName": "source.embedded.diff",
           "patterns": [
             {
               "include": "source.diff"
@@ -2738,7 +2738,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.elixir",
+          "contentName": "source.embedded.elixir",
           "patterns": [
             {
               "include": "source.elixir"
@@ -2778,7 +2778,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.elm",
+          "contentName": "source.embedded.elm",
           "patterns": [
             {
               "include": "source.elm"
@@ -2818,7 +2818,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.erlang",
+          "contentName": "source.embedded.erlang",
           "patterns": [
             {
               "include": "source.erlang"
@@ -2858,7 +2858,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.go",
+          "contentName": "source.embedded.go",
           "patterns": [
             {
               "include": "source.go"
@@ -2898,7 +2898,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.haskell",
+          "contentName": "source.embedded.haskell",
           "patterns": [
             {
               "include": "source.haskell"
@@ -2938,7 +2938,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.text.html.basic",
+          "contentName": "text.embedded.html.basic",
           "patterns": [
             {
               "include": "text.html.basic"
@@ -2978,7 +2978,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.idris",
+          "contentName": "source.embedded.idris",
           "patterns": [
             {
               "include": "source.idris"
@@ -3018,7 +3018,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.java",
+          "contentName": "source.embedded.java",
           "patterns": [
             {
               "include": "source.java"
@@ -3058,7 +3058,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.js",
+          "contentName": "source.embedded.js",
           "patterns": [
             {
               "include": "source.js"
@@ -3098,7 +3098,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.json",
+          "contentName": "source.embedded.json",
           "patterns": [
             {
               "include": "source.json"
@@ -3138,7 +3138,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.julia",
+          "contentName": "source.embedded.julia",
           "patterns": [
             {
               "include": "source.julia"
@@ -3178,7 +3178,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.text.tex.latex",
+          "contentName": "text.embedded.tex.latex",
           "patterns": [
             {
               "include": "text.tex.latex"
@@ -3218,7 +3218,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.css.less",
+          "contentName": "source.embedded.css.less",
           "patterns": [
             {
               "include": "source.css.less"
@@ -3258,7 +3258,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.lua",
+          "contentName": "source.embedded.lua",
           "patterns": [
             {
               "include": "source.lua"
@@ -3298,7 +3298,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.text.md",
+          "contentName": "text.embedded.md",
           "patterns": [
             {
               "include": "text.md"
@@ -3338,7 +3338,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.mathematica",
+          "contentName": "source.embedded.mathematica",
           "patterns": [
             {
               "include": "source.mathematica"
@@ -3378,7 +3378,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.mermaid",
+          "contentName": "source.embedded.mermaid",
           "patterns": [
             {
               "include": "source.mermaid"
@@ -3418,7 +3418,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.text.html.markdown.source.gfm.mson",
+          "contentName": "text.embedded.html.markdown.source.gfm.mson",
           "patterns": [
             {
               "include": "text.html.markdown.source.gfm.mson"
@@ -3458,7 +3458,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.objc",
+          "contentName": "source.embedded.objc",
           "patterns": [
             {
               "include": "source.objc"
@@ -3498,7 +3498,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.python",
+          "contentName": "source.embedded.python",
           "patterns": [
             {
               "include": "source.python"
@@ -3538,7 +3538,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.r",
+          "contentName": "source.embedded.r",
           "patterns": [
             {
               "include": "source.r"
@@ -3578,7 +3578,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.ruby",
+          "contentName": "source.embedded.ruby",
           "patterns": [
             {
               "include": "source.ruby"
@@ -3618,7 +3618,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.rust",
+          "contentName": "source.embedded.rust",
           "patterns": [
             {
               "include": "source.rust"
@@ -3658,7 +3658,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.sass",
+          "contentName": "source.embedded.sass",
           "patterns": [
             {
               "include": "source.sass"
@@ -3698,7 +3698,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.css.scss",
+          "contentName": "source.embedded.css.scss",
           "patterns": [
             {
               "include": "source.css.scss"
@@ -3738,7 +3738,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.shell",
+          "contentName": "source.embedded.shell",
           "patterns": [
             {
               "include": "source.shell"
@@ -3778,7 +3778,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.sql",
+          "contentName": "source.embedded.sql",
           "patterns": [
             {
               "include": "source.sql"
@@ -3818,7 +3818,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source.swift",
+          "contentName": "source.embedded.swift",
           "patterns": [
             {
               "include": "source.swift"
@@ -3858,7 +3858,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.text.xml",
+          "contentName": "text.embedded.xml",
           "patterns": [
             {
               "include": "text.xml"
@@ -3898,7 +3898,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.source",
+          "contentName": "source.embedded",
           "patterns": [
             {
               "include": "source"
