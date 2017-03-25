@@ -2786,6 +2786,46 @@
           ]
         },
         {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:erb))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.text.html.erb",
+          "patterns": [
+            {
+              "include": "text.html.erb"
+            }
+          ]
+        },
+        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:erlang))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
@@ -3466,6 +3506,46 @@
           ]
         },
         {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:php))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "embedded.text.html.php",
+          "patterns": [
+            {
+              "include": "text.html.php"
+            }
+          ]
+        },
+        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:py|python))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
@@ -3902,6 +3982,168 @@
           "patterns": [
             {
               "include": "source"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "injections": {
+    "embedded.text.html.erb - (meta.embedded.block.erb | meta.embedded.line.erb | meta.tag | comment), meta.tag string.quoted": {
+      "patterns": [
+        {
+          "begin": "(^\\s*)(?=<%+#(?![^%]*%>))",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.comment.leading.erb"
+            }
+          },
+          "end": "(?!\\G)(\\s*$\\n)?",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.comment.trailing.erb"
+            }
+          },
+          "patterns": [
+            {
+              "include": "text.html.erb#comment"
+            }
+          ]
+        },
+        {
+          "begin": "(^\\s*)(?=<%(?![^%]*%>))",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.embedded.leading.erb"
+            }
+          },
+          "end": "(?!\\G)(\\s*$\\n)?",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.embedded.trailing.erb"
+            }
+          },
+          "patterns": [
+            {
+              "include": "text.html.erb#tags"
+            }
+          ]
+        }
+      ]
+    },
+    "embedded.text.html.php - (meta.embedded | meta.tag), L:embedded.text.html.php meta.tag, L:embedded.source.js.embedded.html": {
+      "patterns": [
+        {
+          "begin": "(^\\s*)(?=<\\?(?![^?]*\\?>))",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.embedded.leading.php"
+            }
+          },
+          "end": "(?!\\G)(\\s*$\\n)?",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.whitespace.embedded.trailing.php"
+            }
+          },
+          "patterns": [
+            {
+              "begin": "<\\?(?i:php|=)?",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.embedded.begin.php"
+                }
+              },
+              "contentName": "source.php",
+              "end": "(\\?)>",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.embedded.end.php"
+                },
+                "1": {
+                  "name": "source.php"
+                }
+              },
+              "name": "meta.embedded.block.php",
+              "patterns": [
+                {
+                  "include": "text.html.php#language"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "begin": "<\\?(?i:php|=)?(?![^?]*\\?>)",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.php"
+            }
+          },
+          "contentName": "source.php",
+          "end": "(\\G)>",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.php"
+            },
+            "1": {
+              "name": "source.php"
+            }
+          },
+          "name": "meta.embedded.block.php",
+          "patterns": [
+            {
+              "include": "text.html.php#language"
+            }
+          ]
+        },
+        {
+          "begin": "<\\?(?i:php|=)?",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.php"
+            }
+          },
+          "end": ">",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.php"
+            }
+          },
+          "name": "meta.embedded.line.php",
+          "patterns": [
+            {
+              "captures": {
+                "1": {
+                  "name": "source.php"
+                },
+                "2": {
+                  "name": "punctuation.section.embedded.end.php"
+                },
+                "3": {
+                  "name": "source.php"
+                }
+              },
+              "match": "\\G(\\s*)((\\?))(?=>)",
+              "name": "meta.special.empty-tag.php"
+            },
+            {
+              "begin": "\\G",
+              "contentName": "source.php",
+              "end": "(\\?)(?=>)",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.embedded.end.php"
+                },
+                "1": {
+                  "name": "source.php"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "text.html.php#language"
+                }
+              ]
             }
           ]
         }
