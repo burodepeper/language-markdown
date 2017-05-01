@@ -52,7 +52,12 @@ If you are interested in adding support for all `.markup` classes to your syntax
 
 ## F.A.Q.
 
-If you run into any issues, consult the [F.A.Q.](https://github.com/burodepeper/language-markdown/blob/master/FAQ.md) first. Amongst other things, this document contains information about common issues involving spell-check, autocompletion and syntax-highlighting.
+If you run into any issues, consult the [F.A.Q.](https://github.com/burodepeper/language-markdown/blob/master/FAQ.md) first. Amongst other things, this document contains information about common issues involving:
+
+- spell-check
+- autocompletion
+- syntax-highlighting
+- whitespace
 
 ## Contributing
 
