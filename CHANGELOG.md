@@ -1,3 +1,6 @@
+## v0.22.0
+- #173: Add embedded code variation support (thanks @zachflower)
+
 ## v0.21.0
 - #172: Adhere to naming convention for embedded grammars (thanks @lgeiger)
 
