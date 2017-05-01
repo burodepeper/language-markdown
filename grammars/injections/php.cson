@@ -1,0 +1,92 @@
+key: 'embedded.text.html.php - (meta.embedded | meta.tag), L:embedded.text.html.php meta.tag, L:embedded.source.js.embedded.html'
+patterns: [
+  {
+    begin: '(^\\s*)(?=<\\?(?![^?]*\\?>))'
+    beginCaptures:
+      0:
+        name: 'punctuation.whitespace.embedded.leading.php'
+    end: '(?!\\G)(\\s*$\\n)?'
+    endCaptures:
+      0:
+        name: 'punctuation.whitespace.embedded.trailing.php'
+    patterns: [
+      {
+        begin: '<\\?(?i:php|=)?'
+        beginCaptures:
+          0:
+            name: 'punctuation.section.embedded.begin.php'
+        contentName: 'source.php'
+        end: '(\\?)>'
+        endCaptures:
+          0:
+            name: 'punctuation.section.embedded.end.php'
+          1:
+            name: 'source.php'
+        name: 'meta.embedded.block.php'
+        patterns: [
+          {
+            include: 'text.html.php#language'
+          }
+        ]
+      }
+    ]
+  }
+  {
+    begin: '<\\?(?i:php|=)?(?![^?]*\\?>)'
+    beginCaptures:
+      0:
+        name: 'punctuation.section.embedded.begin.php'
+    contentName: 'source.php'
+    end: '(\\G)>'
+    endCaptures:
+      0:
+        name: 'punctuation.section.embedded.end.php'
+      1:
+        name: 'source.php'
+    name: 'meta.embedded.block.php'
+    patterns: [
+      {
+        include: 'text.html.php#language'
+      }
+    ]
+  }
+  {
+    begin: '<\\?(?i:php|=)?'
+    beginCaptures:
+      0:
+        name: 'punctuation.section.embedded.begin.php'
+    end: '>'
+    endCaptures:
+      0:
+        name: 'punctuation.section.embedded.end.php'
+    name: 'meta.embedded.line.php'
+    patterns: [
+      {
+        captures:
+          1:
+            name: 'source.php'
+          2:
+            name: 'punctuation.section.embedded.end.php'
+          3:
+            name: 'source.php'
+        match: '\\G(\\s*)((\\?))(?=>)'
+        name: 'meta.special.empty-tag.php'
+      }
+      {
+        begin: '\\G'
+        contentName: 'source.php'
+        end: '(\\?)(?=>)'
+        endCaptures:
+          0:
+            name: 'punctuation.section.embedded.end.php'
+          1:
+            name: 'source.php'
+        patterns: [
+          {
+            include: 'text.html.php#language'
+          }
+        ]
+      }
+    ]
+  }
+]

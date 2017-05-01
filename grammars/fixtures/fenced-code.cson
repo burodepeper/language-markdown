@@ -53,14 +53,7 @@ list: [
   { pattern:'mermaid' }
   { pattern:'mson', include:'text.html.markdown.source.gfm.mson' }
   { pattern:'objc|objective-c', include:'source.objc' }
-
-  # { pattern:'php' }
-  # { pattern:'php', contentName:'text.html.php' }
-  # { pattern:'php', include:'text.html.php' }
-  # { pattern:'php', include:'text.html.basic', contentName:'text.embedded.html.php' }
-  # { pattern:'php', include:'text.html.basic' }
-  # { pattern:'php', include:'text.html.php', contentName:'source.embedded.js.html' }
-
+  { pattern:'php', include:'text.html.php' }
   { pattern:'py|python', include:'source.python' }
   { pattern:'r' }
   { pattern:'ruby' }

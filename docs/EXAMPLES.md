@@ -71,6 +71,18 @@ a------
 $something = true;
 ``````
 
+``` php
+<html <?php echo "I am in an HTML tag!"; ?> />
+
+<?php
+class Hello {
+  function world() {
+    echo "Do some stuff and things in PHP...";
+  }
+}
+?>
+```
+
 ``` javascript
 var object = {
   init: function () {
@@ -92,7 +104,6 @@ def foo(x)
 end
 ~~~~~~~
 
-<!--
 ~~~ erb
 <% wrap_layout :layout do %>
   <article>
@@ -100,7 +111,6 @@ end
   </article>
 <% end %>
 ~~~
--->
 
 
 
