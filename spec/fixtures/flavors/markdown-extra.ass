@@ -276,7 +276,7 @@
         }
       }
       "}": punctuation.md
-      embedded.source.js {
+      source.embedded.js {
         "alert("Hello world");"
       }
       "~~~~~~~~~~~~~~~~~~~~~~~~~~~~": punctuation.md

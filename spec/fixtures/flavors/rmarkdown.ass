@@ -8,7 +8,7 @@
       "{": punctuation.md
       "r": language.constant.md
       "}": punctuation.md
-      "summary(cars)": embedded.source.r
+      "summary(cars)": source.embedded.r
       "```": punctuation.md
     }
   }
@@ -235,7 +235,7 @@
 #         }
 #       }
 #       "}": punctuation.md
-#       "#include <Rcpp.h>": embedded.source.r
+#       "#include <Rcpp.h>": source.embedded.r
 #       "```": punctuation.md
 #     }
 #   }

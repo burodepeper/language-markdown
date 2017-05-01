@@ -13,7 +13,7 @@ scopeName: "fenced-code.md"
 #
 # 'pattern' is required; item is ignored if 'pattern' is missing
 # If 'include' is omitted, 'include' will become 'source.'+pattern
-# If 'contentName' is omitted, 'contentName' will become 'embedded.'+pattern
+# If 'contentName' is omitted, 'contentName' will become pattern+'.embedded'+extension
 
 # NOTE
 # Keep this list alphabetized
@@ -73,6 +73,6 @@ list: [
   {
     pattern: '[a-zA-Z0-9-_]+'
     include: 'source'
-    patternName: 'embedded.source'
+    patternName: 'source.embedded'
   }
 ]

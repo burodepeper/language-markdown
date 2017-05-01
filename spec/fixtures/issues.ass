@@ -269,7 +269,7 @@
       "```": punctuation.md
       "nohighlight": language.constant.md
       ""
-      embedded.source {
+      source.embedded {
         "first block"
       }
       "```": punctuation.md
@@ -304,7 +304,7 @@
       "```": punctuation.md
       "nohighlight": language.constant.md
       ""
-      embedded.source {
+      source.embedded {
         "second block"
       }
       "```": punctuation.md
@@ -335,7 +335,7 @@
       "```": punctuation.md
       "js": language.constant.md
       ""
-      embedded.source.js {
+      source.embedded.js {
         "var test = "String";"
       }
       "```": punctuation.md
@@ -363,7 +363,7 @@
       "```": punctuation.md
       "js": language.constant.md
       ""
-      embedded.source.js {
+      source.embedded.js {
         "var sum = 12 + 34;"
       }
       "```": punctuation.md
@@ -386,7 +386,7 @@
       "```": punctuation.md
       "lua": language.constant.md
       ""
-      embedded.source.lua {
+      source.embedded.lua {
         "function(progress, start, delta)"
         "  return start + (progress * delta)"
         "end"

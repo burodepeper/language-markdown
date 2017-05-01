@@ -1,5 +1,12 @@
 # Frequently Asked Questions
 
+- [Spell-check doesn't work; how do I enable it?](#spell-check-doesnt-work-how-do-i-enable-it)
+- [Some of my Markdown elements aren't highlighted](#some-of-my-markdown-elements-arent-highlighted)
+- [Which elements of Markdown are supported?](#which-elements-of-markdown-are-supported)
+- [Autocompletion doesn't work](#autocompletion-doesnt-work)
+- [Syntax-highlighting is broken after uninstall](#syntax-highlighting-is-broken-after-uninstall)
+- [Trailing whitespace is automatically removed, but I don't want that](#trailing-whitespace-is-automatically-removed-but-i-dont-want-that)
+
 ## Spell-check doesn't work; how do I enable it?
 
 The core-package `spell-check` doesn't scan documents in the `text.md` by default. You can easily add this yourself:
@@ -51,3 +58,15 @@ The core-package `language-gfm` is automatically disabled (unless you've enabled
 2. Search for `language-gfm`
 3. Click `Enable` to re-activate it
 4. You probably want to reload Atom to make sure the change takes effect
+
+## Trailing whitespace is automatically removed, but I don't want that
+
+By default, Atom removes all trailing whitespace when a file is saved. You can disable it by setting the following flag in your `config.cson` for the `.md.text` scope. For more background, see [#115](https://github.com/burodepeper/language-markdown/issues/115).
+
+```coffee
+'*':
+  # all current config
+'.md.text':
+  whitespace:
+    removeTrailingWhitespace: false
+```
