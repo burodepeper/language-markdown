@@ -11,25 +11,32 @@ scopeName: "fenced-code.md"
 #   contentName: {string}
 # }
 #
-# 'pattern' is required; item is ignored if 'pattern' is missing
-# If 'include' is omitted, 'include' will become 'source.'+pattern
-# If 'contentName' is omitted, 'contentName' will become pattern+'.embedded'+extension
+# or (when possible) the short-hand form:
+#
+# { pattern: {string} }
+#
+# The short-hand form is only applicable when the {pattern} is a single term, like 'c' or 'css'.
+# For anything more complex, use the full pattern, or it might be ignored when the grammar is compiled.
+#
+# The short-hand form is automatically expanded according to the following rules:
+# - {include} becomes 'source.' + pattern
+# - {contentName} becomes 'source.embedded.' + pattern
 
 # NOTE
 # Keep this list alphabetized
 
 list: [
-  { pattern:'apib|apiblueprint', include:'text.html.markdown.source.gfm.apib' }
+  { pattern:'apib|apiblueprint', include:'text.html.markdown.source.gfm.apib', contentName:'source.embedded.gfm.apib' }
   { pattern:'ass' }
-  { pattern:'coffee|coffeescript|coffee-script', include:'source.coffee' }
+  { pattern:'coffee|coffeescript|coffee-script', include:'source.coffee', contentName:'source.embedded.coffee' }
   { pattern:'c' }
   { pattern:'clean' }
   { pattern:'clojure' }
-  { pattern:'cpp|c\\+\\+', include:'source.cpp' }
-  { pattern:'cr|crystal', include:'source.crystal'}
-  { pattern:'cs|csharp', include:'source.cs' }
+  { pattern:'cpp|c\\+\\+', include:'source.cpp', contentName:'source.embedded.cpp' }
+  { pattern:'cr|crystal', include:'source.crystal', contentName:'source.embedded.crystal'}
+  { pattern:'cs|csharp', include:'source.cs', contentName:'source.embedded.cs' }
   { pattern:'css' }
-  { pattern:'diff|patch|rej', include:'source.diff' }
+  { pattern:'diff|patch|rej', include:'source.diff', contentName:'source.embedded.diff' }
   { pattern:'elixir' }
   { pattern:'elm' }
 
@@ -37,33 +44,34 @@ list: [
   # { pattern:'erb', include:'source.ruby', contentName:'text.html.erb' }
 
   { pattern:'erlang' }
-  { pattern:'go|golang', include:'source.go' }
+  { pattern:'go|golang', include:'source.go', contentName:'source.embedded.go' }
   { pattern:'haskell' }
-  { pattern:'html', include:'text.html.basic' }
+  { pattern:'html', include:'text.html.basic', contentName:'source.embedded.html' }
   { pattern:'idris' }
   { pattern:'java' }
-  { pattern:'javascript|js|jsx', include:'source.js' }
-  { pattern:'json|har', include:'source.json' }
+  { pattern:'javascript|js|jsx', include:'source.js', contentName:'source.embedded.js' }
+  { pattern:'json|har', include:'source.json', contentName:'source.embedded.json' }
   { pattern:'julia' }
-  { pattern:'latex|tex', include:'text.tex.latex' }
-  { pattern:'less', include:'source.css.less' }
+  { pattern:'latex|tex', include:'text.tex.latex', contentName:'text.embedded.latex' }
+  { pattern:'less', include:'source.css.less', contentName:'source.embedded.css.less' }
   { pattern:'lua' }
-  { pattern:'markdown|mdown|md', include:'text.md' }
-  { pattern:'m|mathematica', include:'source.mathematica' }
+  { pattern:'make|makefile', include:'source.makefile', contentName:'source.embedded.makefile' }
+  { pattern:'markdown|mdown|md', include:'text.md', contentName:'text.embedded.md' }
+  { pattern:'m|mathematica', include:'source.mathematica', contentName:'source.embedded.mathematica' }
   { pattern:'mermaid' }
-  { pattern:'mson', include:'text.html.markdown.source.gfm.mson' }
-  { pattern:'objc|objective-c', include:'source.objc' }
-  { pattern:'php', include:'text.html.php' }
-  { pattern:'py|python', include:'source.python' }
+  { pattern:'mson', include:'text.html.markdown.source.gfm.mson', contentName:'source.embedded.mson' }
+  { pattern:'objc|objective-c', include:'source.objc', contentName:'source.embedded.objc' }
+  { pattern:'php', include:'text.html.php', contentName:'source.embedded.text.html.php' }
+  { pattern:'py|python', include:'source.python', contentName:'source.embedded.python' }
   { pattern:'r' }
   { pattern:'ruby' }
-  { pattern:'rust|rs', include:'source.rust' }
+  { pattern:'rust|rs', include:'source.rust', contentName:'source.embedded.rust' }
   { pattern:'sass' }
-  { pattern:'scss', include:'source.css.scss' }
-  { pattern:'sh|bash', include:'source.shell' }
+  { pattern:'scss', include:'source.css.scss', contentName:'source.embedded.css.scss' }
+  { pattern:'sh|bash', include:'source.shell', contentName:'source.embedded.shell' }
   { pattern:'sql' }
   { pattern:'swift' }
-  { pattern:'xml', include:'text.xml' }
+  { pattern:'xml', include:'text.xml', contentName:'text.embedded.xml' }
 
   # NOTE: temporarily disabled, see issue #77 for details
   # { pattern:'yaml|yml', include:'source.yaml' }
@@ -73,6 +81,6 @@ list: [
   {
     pattern: '[a-zA-Z0-9-_]+'
     include: 'source'
-    patternName: 'source.embedded'
+    contentName: 'source.embedded'
   }
 ]

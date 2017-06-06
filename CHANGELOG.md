@@ -1,3 +1,8 @@
+## v0.23.0
+- #180 - Add support for language-make (thanks @barrygu)
+- Fix bug introduced by #172 - changes were overwritten when grammar was compiled
+- Fix php fenced-code injections
+
 ## v0.22.0
 - #173: Add embedded code variation support (thanks @zachflower)
 

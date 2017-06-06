@@ -211,7 +211,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "source.md"
+          "contentName": "source.embedded"
         },
         {
           "begin": "^\\s{0,3}([~]{3,})$",
@@ -227,7 +227,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "source.md"
+          "contentName": "source.embedded"
         }
       ]
     },
@@ -2298,7 +2298,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "text.embedded.html.markdown.source.gfm.apib",
+          "contentName": "source.embedded.gfm.apib",
           "patterns": [
             {
               "include": "text.html.markdown.source.gfm.apib"
@@ -2786,46 +2786,6 @@
           ]
         },
         {
-          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:erb))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
-          "beginCaptures": {
-            "1": {
-              "name": "punctuation.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "language.constant.md"
-            },
-            "5": {
-              "name": "punctuation.md"
-            },
-            "6": {
-              "patterns": [
-                {
-                  "include": "#special-attribute-elements"
-                }
-              ]
-            },
-            "7": {
-              "name": "punctuation.md"
-            }
-          },
-          "end": "^\\s*(\\1)$",
-          "endCaptures": {
-            "1": {
-              "name": "punctuation.md"
-            }
-          },
-          "name": "fenced.code.md",
-          "contentName": "embedded.text.html.erb",
-          "patterns": [
-            {
-              "include": "text.html.erb"
-            }
-          ]
-        },
-        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:erlang))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
@@ -2978,7 +2938,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "text.embedded.html.basic",
+          "contentName": "source.embedded.html",
           "patterns": [
             {
               "include": "text.html.basic"
@@ -3218,7 +3178,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "text.embedded.tex.latex",
+          "contentName": "text.embedded.latex",
           "patterns": [
             {
               "include": "text.tex.latex"
@@ -3302,6 +3262,46 @@
           "patterns": [
             {
               "include": "source.lua"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:make|makefile))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.makefile",
+          "patterns": [
+            {
+              "include": "source.makefile"
             }
           ]
         },
@@ -3458,7 +3458,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "text.embedded.html.markdown.source.gfm.mson",
+          "contentName": "source.embedded.mson",
           "patterns": [
             {
               "include": "text.html.markdown.source.gfm.mson"
@@ -3538,7 +3538,7 @@
             }
           },
           "name": "fenced.code.md",
-          "contentName": "embedded.text.html.php",
+          "contentName": "source.embedded.text.html.php",
           "patterns": [
             {
               "include": "text.html.php"
@@ -3989,49 +3989,7 @@
     }
   },
   "injections": {
-    "embedded.text.html.erb - (meta.embedded.block.erb | meta.embedded.line.erb | meta.tag | comment), meta.tag string.quoted": {
-      "patterns": [
-        {
-          "begin": "(^\\s*)(?=<%+#(?![^%]*%>))",
-          "beginCaptures": {
-            "0": {
-              "name": "punctuation.whitespace.comment.leading.erb"
-            }
-          },
-          "end": "(?!\\G)(\\s*$\\n)?",
-          "endCaptures": {
-            "0": {
-              "name": "punctuation.whitespace.comment.trailing.erb"
-            }
-          },
-          "patterns": [
-            {
-              "include": "text.html.erb#comment"
-            }
-          ]
-        },
-        {
-          "begin": "(^\\s*)(?=<%(?![^%]*%>))",
-          "beginCaptures": {
-            "0": {
-              "name": "punctuation.whitespace.embedded.leading.erb"
-            }
-          },
-          "end": "(?!\\G)(\\s*$\\n)?",
-          "endCaptures": {
-            "0": {
-              "name": "punctuation.whitespace.embedded.trailing.erb"
-            }
-          },
-          "patterns": [
-            {
-              "include": "text.html.erb#tags"
-            }
-          ]
-        }
-      ]
-    },
-    "embedded.text.html.php - (meta.embedded | meta.tag), L:embedded.text.html.php meta.tag, L:embedded.source.js.embedded.html": {
+    "source.embedded.text.html.php - (meta.embedded | meta.tag), L:source.embedded.text.html.php meta.tag, L:embedded.source.js.embedded.html": {
       "patterns": [
         {
           "begin": "(^\\s*)(?=<\\?(?![^?]*\\?>))",

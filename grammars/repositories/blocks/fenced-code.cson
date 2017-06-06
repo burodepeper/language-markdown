@@ -9,7 +9,7 @@ patterns: [
     endCaptures:
       1: name: 'punctuation.md'
     name: 'fenced.code.md'
-    contentName: 'source.md'
+    contentName: 'source.embedded'
   }
 
   {
@@ -21,6 +21,6 @@ patterns: [
     endCaptures:
       1: name: 'punctuation.md'
     name: 'fenced.code.md'
-    contentName: 'source.md'
+    contentName: 'source.embedded'
   }
 ]

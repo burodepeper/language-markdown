@@ -369,7 +369,7 @@
   text.md {
     fenced.code.md {
       "```": punctuation.md
-      source.md {
+      source.embedded {
         "[foo]: /url"
       }
       "```": punctuation.md

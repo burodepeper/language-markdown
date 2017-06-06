@@ -1,4 +1,4 @@
-key: 'embedded.text.html.php - (meta.embedded | meta.tag), L:embedded.text.html.php meta.tag, L:embedded.source.js.embedded.html'
+key: 'source.embedded.text.html.php - (meta.embedded | meta.tag), L:source.embedded.text.html.php meta.tag, L:embedded.source.js.embedded.html'
 patterns: [
   {
     begin: '(^\\s*)(?=<\\?(?![^?]*\\?>))'
