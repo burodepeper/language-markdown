@@ -1,3 +1,4 @@
+## v0.24.0
 - Convert Coffeescript to normal Javascript
 - Multi-cursor support for selection emphasis, links and toggling tasks
 
