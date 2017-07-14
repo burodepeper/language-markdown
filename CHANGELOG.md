@@ -1,4 +1,5 @@
 - Convert Coffeescript to normal Javascript
+- Multi-cursor support for selection emphasis, links and toggling tasks
 
 ## v0.23.0
 - #180 - Add support for language-make (thanks @barrygu)
