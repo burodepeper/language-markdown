@@ -1,3 +1,6 @@
+### v0.24.1
+- Fix `!` and `@` not working when linkShortcuts was disabled (thanks @mp4096)
+
 ## v0.24.0
 - Convert Coffeescript to normal Javascript
 - Multi-cursor support for selection emphasis, links and toggling tasks
