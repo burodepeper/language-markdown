@@ -26,6 +26,38 @@
   }
 }
 
+@math/2a-1
+"\\["+
+"f \in \{0,1\}^*\to\{0,1\}^*"+
+"\\]" {
+  text.md {
+    block.math.markup.md {
+      "\\[": punctuation.definition.string.begin.latex
+      "f \in \{0,1\}^*\to\{0,1\}^*"
+      "\\]": punctuation.definition.string.end.latex
+    }
+  }
+}
+
+@math/2a-2
+"\begin{equation}"+
+"f \in \{0,1\}^*\to\{0,1\}^*"+
+"\end{equation}" {
+  text.md {
+    block.math.markup.md {
+      "\begin": support.function.be.latex
+      "{": punctuation.definition.arguments.begin.latex
+      "equation": variable.parameter.function.latex
+      "}": punctuation.definition.arguments.end.latex
+      "f \in \{0,1\}^*\to\{0,1\}^*"
+      "\end": support.function.be.latex
+      "{": punctuation.definition.arguments.begin.latex
+      "equation": variable.parameter.function.latex
+      "}": punctuation.definition.arguments.end.latex
+    }
+  }
+}
+
 @math/2b
 "$$f \in \{0,1\}^*\to\{0,1\}^*$$" {
   text.md {
@@ -33,6 +65,34 @@
       "$$": punctuation.md
       "f \in \{0,1\}^*\to\{0,1\}^*"
       "$$": punctuation.md
+    }
+  }
+}
+
+@math/2b-1
+"\\[f \in \{0,1\}^*\to\{0,1\}^*\\]" {
+  text.md {
+    block.math.markup.md {
+      "\\[": punctuation.definition.string.begin.latex
+      "f \in \{0,1\}^*\to\{0,1\}^*"
+      "\\]": punctuation.definition.string.end.latex
+    }
+  }
+}
+
+@math/2b-2
+"\begin{equation}f \in \{0,1\}^*\to\{0,1\}^*\end{equation}" {
+  text.md {
+    block.math.markup.md {
+      "\begin": support.function.be.latex
+      "{": punctuation.definition.arguments.begin.latex
+      "equation": variable.parameter.function.latex
+      "}": punctuation.definition.arguments.end.latex
+      "f \in \{0,1\}^*\to\{0,1\}^*"
+      "\end": support.function.be.latex
+      "{": punctuation.definition.arguments.begin.latex
+      "equation": variable.parameter.function.latex
+      "}": punctuation.definition.arguments.end.latex
     }
   }
 }
