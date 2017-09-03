@@ -1178,8 +1178,8 @@
         },
         {
           "name": "block.math.markup.md",
-          "begin": "(?<=^|\\s|>)\\\\\\[(?=\\s|\\\\\\w)",
-          "end": "(?<=^|\\s|\\})\\\\\\](?=\\s|</)",
+          "begin": "\\\\\\\\\\[",
+          "end": "\\\\\\\\\\]",
           "patterns": [
             {
               "include": "text.tex.latex"
