@@ -104,6 +104,28 @@
   }
 }
 
+@math/3a-1
+"An equation needs \[one more backslash\]" {
+  text.md {
+    "An equation needs "
+    "\[": escape.constant.md
+    "one more backslash"
+    "\]": escape.constant.md
+  }
+}
+
+@math/3a-2
+"An equation needs \\\[one less backslash\\\]" {
+  text.md {
+    "An equation needs "
+    "\\": escape.constant.md
+    "\[": escape.constant.md
+    "one less backslash"
+    "\\": escape.constant.md
+    "\]": escape.constant.md
+  }
+}
+
 @math/3b
 "This is a `$variable`" {
   text.md {
@@ -112,6 +134,34 @@
       code.raw.markup.md {
         '`': punctuation.md
         '$variable'
+        '`': punctuation.md
+      }
+    }
+  }
+}
+
+@math/3b-1
+"This is an `\\[inline code\\]`" {
+  text.md {
+    "This is an "
+    "`\\[not an equation\\]`" {
+      code.raw.markup.md {
+        '`': punctuation.md
+        '\\[inline code\\]'
+        '`': punctuation.md
+      }
+    }
+  }
+}
+
+@math/3b-2
+"This is an `\begin{equation} inline code`" {
+  text.md {
+    "This is an "
+    "`\\[not an equation\\]`" {
+      code.raw.markup.md {
+        '`': punctuation.md
+        '\begin{equation} inline code'
         '`': punctuation.md
       }
     }
