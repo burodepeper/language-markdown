@@ -1,3 +1,6 @@
+#### Unreleased changes
+- #191 - Add classes for vertical and horizontal lines in GitHub tables (thanks @thancock20)
+
 ### v0.24.1
 - #188 - Fix `!` and `@` not working when `linkShortcuts` was disabled (thanks @mp4096)
 
