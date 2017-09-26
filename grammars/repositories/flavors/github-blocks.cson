@@ -11,13 +11,13 @@ patterns: [
           {
             match: '(\\|)(?: ?)(:?)(-+)(:?)(?: ?)(?=\\|| |$)'
             captures:
-              1: name: 'punctuation.md'
+              1: name: 'vertical.punctuation.md'
               2: name: 'alignment.punctuation.md'
-              3: name: 'punctuation.md'
+              3: name: 'horizontal.punctuation.md'
               4: name: 'alignment.punctuation.md'
           }
         ]
-      2: name: 'punctuation.md'
+      2: name: 'vertical.punctuation.md'
   }
 
   # Table: data
@@ -25,12 +25,12 @@ patterns: [
     name: 'table.storage.md'
     match: '^(\\|)(?= )(.+)$'
     captures:
-      1: name: 'punctuation.md'
+      1: name: 'vertical.punctuation.md'
       2:
         patterns: [
           {
             match: '(?<= )\\|(?=$| )'
-            name: 'punctuation.md'
+            name: 'vertical.punctuation.md'
           }
           {
             include: '#inlines-in-blocks'

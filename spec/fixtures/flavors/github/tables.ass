@@ -2,13 +2,13 @@
 "| one | two | three |" {
   text.md {
     table.storage.md {
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " one "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " two "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " three "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
     }
   }
 }
@@ -20,11 +20,11 @@
 "| one | two | three" {
   text.md {
     table.storage.md {
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " one "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " two "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " three"
     }
   }
@@ -37,19 +37,19 @@
 "| --- | --- | --- |" {
   text.md {
     table.storage.md {
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
-      "---": punctuation.md
+      "---": horizontal.punctuation.md
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
-      "---": punctuation.md
+      "---": horizontal.punctuation.md
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
-      "---": punctuation.md
+      "---": horizontal.punctuation.md
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
     }
   }
 }
@@ -61,17 +61,17 @@
 "| --- | --- | ---" {
   text.md {
     table.storage.md {
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
-      "---": punctuation.md
+      "---": horizontal.punctuation.md
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
-      "---": punctuation.md
+      "---": horizontal.punctuation.md
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
-      "---": punctuation.md
+      "---": horizontal.punctuation.md
     }
   }
 }
@@ -80,12 +80,12 @@
 "|---|---|---" {
   text.md {
     table.storage.md {
-      "|": punctuation.md
-      "---": punctuation.md
-      "|": punctuation.md
-      "---": punctuation.md
-      "|": punctuation.md
-      "---": punctuation.md
+      "|": vertical.punctuation.md
+      "---": horizontal.punctuation.md
+      "|": vertical.punctuation.md
+      "---": horizontal.punctuation.md
+      "|": vertical.punctuation.md
+      "---": horizontal.punctuation.md
     }
   }
 }
@@ -94,19 +94,19 @@
 "|:--- |:---:| ---:|" {
   text.md {
     table.storage.md {
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       ":": alignment.punctuation.md
-      "---": punctuation.md
+      "---": horizontal.punctuation.md
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       ":": alignment.punctuation.md
-      "---": punctuation.md
+      "---": horizontal.punctuation.md
       ":": alignment.punctuation.md
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
-      "---": punctuation.md
+      "---": horizontal.punctuation.md
       ":": alignment.punctuation.md
-      "|": punctuation.md
+      "|": vertical.punctuation.md
     }
   }
 }
@@ -115,23 +115,23 @@
 "| :-- | :-: | --: |" {
   text.md {
     table.storage.md {
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
       ":": alignment.punctuation.md
-      "--": punctuation.md
+      "--": horizontal.punctuation.md
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
       ":": alignment.punctuation.md
-      "-": punctuation.md
+      "-": horizontal.punctuation.md
       ":": alignment.punctuation.md
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
-      "--": punctuation.md
+      "--": horizontal.punctuation.md
       ":": alignment.punctuation.md
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
     }
   }
 }
@@ -140,7 +140,7 @@
 "| _one_ | **two** | [three] |" {
   text.md {
     table.storage.md {
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
       "_one_" {
         emphasis.italic.markup.md {
@@ -150,7 +150,7 @@
         }
       }
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
       "**two**" {
         strong.emphasis.bold.markup.md {
@@ -160,7 +160,7 @@
         }
       }
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " "
       "[three]" {
         label.link.string.md {
@@ -170,7 +170,7 @@
         }
       }
       " "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
     }
   }
 }
@@ -179,13 +179,13 @@
 "| --- | --- | three |" {
   text.md {
     table.storage.md {
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " --- "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " --- "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " three "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
     }
   }
 }
@@ -194,13 +194,13 @@
 "| name | e-mail | address |" {
   text.md {
     table.storage.md {
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " name "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " e-mail "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
       " address "
-      "|": punctuation.md
+      "|": vertical.punctuation.md
     }
   }
 }
