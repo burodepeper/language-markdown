@@ -5,7 +5,7 @@ patterns: [
     beginCaptures:
       0:
         name: 'punctuation.whitespace.embedded.leading.php'
-    end: '(?!\\G)(\\s*$\\n)?'
+    end: '(?!\\G)(\\s*$)?'
     endCaptures:
       0:
         name: 'punctuation.whitespace.embedded.trailing.php'
