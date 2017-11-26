@@ -70,6 +70,7 @@ list: [
   { pattern:'scss', include:'source.css.scss', contentName:'source.embedded.css.scss' }
   { pattern:'sh|bash', include:'source.shell', contentName:'source.embedded.shell' }
   { pattern:'sql' }
+  { pattern:'stata' }
   { pattern:'swift' }
   { pattern:'xml', include:'text.xml', contentName:'text.embedded.xml' }
 
