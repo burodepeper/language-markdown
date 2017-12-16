@@ -66,6 +66,7 @@ list: [
   { pattern:'r' }
   { pattern:'ruby' }
   { pattern:'rust|rs', include:'source.rust', contentName:'source.embedded.rust' }
+  { pattern:'sas' }
   { pattern:'sass' }
   { pattern:'scss', include:'source.css.scss', contentName:'source.embedded.css.scss' }
   { pattern:'sh|bash', include:'source.shell', contentName:'source.embedded.shell' }
