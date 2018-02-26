@@ -13,6 +13,7 @@
     "emdee",
     "spec"
   ],
+  "firstLineMatch": "^(-{3}|#{1,6}\\s+\\w)",
   "patterns": [
     {
       "include": "#blocks"
