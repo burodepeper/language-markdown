@@ -3986,6 +3986,46 @@
           ]
         },
         {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:yaml))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.yaml",
+          "patterns": [
+            {
+              "include": "source.yaml"
+            }
+          ]
+        },
+        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:[a-zA-Z0-9-_]+))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {

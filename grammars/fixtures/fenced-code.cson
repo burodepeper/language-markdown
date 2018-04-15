@@ -73,6 +73,7 @@ list: [
   { pattern:'stata' }
   { pattern:'swift' }
   { pattern:'xml', include:'text.xml', contentName:'text.embedded.xml' }
+  { pattern:'yaml' }
 
   # NOTE: temporarily disabled, see issue #77 for details
   # { pattern:'yaml|yml', include:'source.yaml' }
