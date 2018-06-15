@@ -7,6 +7,10 @@
 - #218 - Add east-end and east-end-notebook syntax themes to README (thanks @MarcusE1W)
 - #210 - Fix multiple links with span inline attributes on a single line (thanks @tobihagemann)
 - #208 - Resolve scope selector conflict with link core package (thanks @dineshbhosale and @50Wliu)
+- #206 - Add support for SAS code blocks (thanks @kylebarron)
+- #217 - Add YAML code block syntax highlighting (thanks @kylebarron)
+- #219 - Add support for HCL code blocks (thanks @veger)
+- #215 - And setting for disabling auto-increment of ordered list items (thanks @wesleyem)
 
 ### v0.24.1
 - #188 - Fix `!` and `@` not working when `linkShortcuts` was disabled (thanks @mp4096)
