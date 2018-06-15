@@ -1,5 +1,7 @@
 #### Unreleased changes
 - #191 - Add classes for vertical and horizontal lines in GitHub tables (thanks @thancock20)
+- #193 - Match knowing that a newline character may not exist (thanks @50Wliu)
+- #202 - Add support for State fenced-code-blocks (thanks @kylebarron)
 - #220 - Add support for Kotlin fenced-code-blocks (thanks @shd101wyy)
 - #211 - Add support for language-babel fenced-code-block (thanks @remcohaszing)
 - #218 - Add east-end and east-end-notebook syntax themes to README (thanks @MarcusE1W)
