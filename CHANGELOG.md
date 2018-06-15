@@ -1,4 +1,4 @@
-#### Unreleased changes
+## v0.26.0
 - #191 - Add classes for vertical and horizontal lines in GitHub tables (thanks @thancock20)
 - #193 - Match knowing that a newline character may not exist (thanks @50Wliu)
 - #202 - Add support for State fenced-code-blocks (thanks @kylebarron)
