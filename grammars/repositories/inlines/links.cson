@@ -61,7 +61,7 @@ patterns: [
         (?:\\s*)
       )?
       (\\))
-      (\\{[[:ascii:]]*\\})?
+      (\\{[^}]*\\})?
     '
     captures:
       1: patterns: [{ include: '#link-text' }]
@@ -98,7 +98,7 @@ patterns: [
         (?:\\s*)
       )?
       (\\))
-      (\\{[[:ascii:]]*\\})?
+      (\\{[^}]*\\})?
     '
     captures:
       1: patterns: [{ include: '#link-text' }]
@@ -132,7 +132,7 @@ patterns: [
         (?:\\s*)
       )?
       (\\))
-      (\\{[[:ascii:]]*\\})?
+      (\\{[^}]*\\})?
     '
     captures:
       1: patterns: [{ include: '#link-text' }]
@@ -177,7 +177,7 @@ patterns: [
         (?:[^\\[\\]]*)
         (?:\\])
       )
-      (\\{[[:ascii:]]*\\})?
+      (\\{[^}]*\\})?
     '
     captures:
       1: patterns: [{ include: '#link-text' }]
@@ -200,7 +200,7 @@ patterns: [
         (?:[^\\[\\]]*)
         (?:\\])
       )
-      (\\{[[:ascii:]]*\\})?
+      (\\{[^}]*\\})?
     '
     captures:
       1: patterns: [{ include: '#link-text' }]
@@ -217,7 +217,7 @@ patterns: [
         (?:[^\\[\\]]*)
         (?:\\])
       )
-      (\\{[[:ascii:]]*\\})?
+      (\\{[^}]*\\})?
     '
     captures:
       1: patterns: [{ include: '#link-text' }]
@@ -272,7 +272,7 @@ patterns: [
         (?:\\])
       )
       (?!:)
-      (\\{[[:ascii:]]*\\})?
+      (\\{[^}]*\\})?
     '
     captures:
       1: patterns: [{ include: '#link-label' }]

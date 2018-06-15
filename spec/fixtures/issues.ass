@@ -416,3 +416,72 @@
     }
   }
 }
+
+@210
+"[foo](bar){:target="_blank"} hello world [foo](bar){:target="_blank"}" {
+  text.md {
+    "[foo](bar){:target="blank"}" {
+      link.markup.md {
+        "[foo]" {
+          text.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        "(bar)" {
+          "(": punctuation.md
+          destination.link.md {
+            "bar": uri.underline.link.md
+          }
+          ")": punctuation.md
+        }
+        "{:target="blank"}" {
+          special-attributes.raw.markup.md {
+            "{": punctuation.md
+            ":target="blank"" {
+              other.special.attribute.meta.md {
+                ":target": key.keyword.md
+                "=": punctuation.md
+                ""_blank"": value.string.md
+              }
+            }
+            "}": punctuation.md
+          }
+        }
+      }
+    }
+    " hello world "
+    "[foo](bar){:target="blank"}" {
+      link.markup.md {
+        "[foo]" {
+          text.link.string.md {
+            "[": punctuation.md
+            "foo"
+            "]": punctuation.md
+          }
+        }
+        "(bar)" {
+          "(": punctuation.md
+          destination.link.md {
+            "bar": uri.underline.link.md
+          }
+          ")": punctuation.md
+        }
+        "{:target="blank"}" {
+          special-attributes.raw.markup.md {
+            "{": punctuation.md
+            ":target="blank"" {
+              other.special.attribute.meta.md {
+                ":target": key.keyword.md
+                "=": punctuation.md
+                ""_blank"": value.string.md
+              }
+            }
+            "}": punctuation.md
+          }
+        }
+      }
+    }
+  }
+}
