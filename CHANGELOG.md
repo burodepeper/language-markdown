@@ -2,6 +2,7 @@
 - #191 - Add classes for vertical and horizontal lines in GitHub tables (thanks @thancock20)
 - #220 - Add support for Kotlin fenced-code-blocks (thanks @shd101wyy)
 - #211 - Add support for language-babel fenced-code-block (thanks @remcohaszing)
+- #218 - Add east-end and east-end-notebook syntax themes to README (thanks @MarcusE1W)
 
 ### v0.24.1
 - #188 - Fix `!` and `@` not working when `linkShortcuts` was disabled (thanks @mp4096)

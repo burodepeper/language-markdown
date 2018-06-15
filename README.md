@@ -47,6 +47,8 @@ By default, most syntax-themes only provide basic styling for `.markup` classes.
 - [pen-paper-coffee](https://atom.io/themes/pen-paper-coffee-syntax) (light, low-contrast)
 - [pubster-syntax](https://atom.io/themes/pubster-syntax) (dark, high-contrast)
 - [one-o-eight-syntax](https://atom.io/themes/one-o-eight-syntax) (various, medium-contrast)
+- [east-end-syntax](https://atom.io/themes/east-end-syntax) (light, medium-contrast)
+- [east-end-notebook-syntax](https://atom.io/themes/east-end-notebook-syntax) (light/lined, medium-contrast)
 
 If you are interested in adding support for all `.markup` classes to your syntax-theme, take a look at [the relevant section](https://github.com/burodepeper/language-markdown/blob/master/CONTRIBUTING.md#syntax-theme-support) in [the contribution guide](https://github.com/burodepeper/language-markdown/blob/master/CONTRIBUTING.md).
 
