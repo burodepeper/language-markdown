@@ -4,6 +4,7 @@
 - #211 - Add support for language-babel fenced-code-block (thanks @remcohaszing)
 - #218 - Add east-end and east-end-notebook syntax themes to README (thanks @MarcusE1W)
 - #210 - Fix multiple links with span inline attributes on a single line (thanks @tobihagemann)
+- #208 - Resolve scope selector conflict with link core package (thanks @dineshbhosale and @50Wliu)
 
 ### v0.24.1
 - #188 - Fix `!` and `@` not working when `linkShortcuts` was disabled (thanks @mp4096)

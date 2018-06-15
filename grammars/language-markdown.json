@@ -1750,7 +1750,7 @@
               "name": "punctuation.md"
             },
             "2": {
-              "name": "uri.underline.link.md"
+              "name": "markup.underline.link"
             },
             "3": {
               "name": "punctuation.md"
@@ -1762,7 +1762,7 @@
           "match": "(.+)",
           "captures": {
             "1": {
-              "name": "uri.underline.link.md"
+              "name": "markup.underline.link"
             }
           }
         }
@@ -2205,10 +2205,7 @@
               "name": "punctuation.md"
             },
             "2": {
-              "name": "uri.underline.markup.md"
-            },
-            "3": {
-              "name": "scheme.md"
+              "name": "markup.underline.link"
             },
             "4": {
               "name": "punctuation.md"
@@ -2223,7 +2220,7 @@
               "name": "punctuation.md"
             },
             "2": {
-              "name": "uri.underline.markup.md"
+              "name": "markup.underline.link"
             },
             "4": {
               "name": "punctuation.md"

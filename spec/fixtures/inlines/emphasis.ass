@@ -449,7 +449,7 @@
         }
         "(": punctuation.md
           destination.link.md {
-            "/url": uri.underline.link.md
+            "/url": markup.underline.link
           }
         ")": punctuation.md
       }
@@ -700,7 +700,7 @@
         }
         "(": punctuation.md
         destination.link.md {
-          "/url": uri.underline.link.md
+          "/url": markup.underline.link
         }
         ")": punctuation.md
       }
@@ -903,7 +903,7 @@
         }
         "(": punctuation.md
         destination.link.md {
-          "/url": uri.underline.link.md
+          "/url": markup.underline.link
         }
         ")": punctuation.md
       }

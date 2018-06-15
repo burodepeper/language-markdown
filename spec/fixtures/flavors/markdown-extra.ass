@@ -209,7 +209,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "http://www.url.com": uri.underline.link.md
+        "http://www.url.com": markup.underline.link
       }
       ")": punctuation.md
       "{#id .external-link target=_blank}" {
@@ -303,7 +303,7 @@
               "(/image.jpg "title")" {
                 "(": punctuation.md
                 destination.link.md {
-                  "/image.jpg": uri.underline.link.md
+                  "/image.jpg": markup.underline.link
                 }
                 " "
                 "title" {
@@ -343,7 +343,7 @@
       "(/url "title")" {
         "(": punctuation.md
         destination.link.md {
-          "/url": uri.underline.link.md
+          "/url": markup.underline.link
         }
         ' '
         title.link.md {

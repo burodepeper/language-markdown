@@ -12,7 +12,7 @@
       "(/url "title")" {
         "(": punctuation.md
         destination.link.md {
-          "/url": uri.underline.link.md
+          "/url": markup.underline.link
         }
         " "
         "title" {
@@ -60,7 +60,7 @@
 #         " "
 #         "train.jpg" {
 #           destination.link.md {
-#             "train.jpg": uri.underline.link.md
+#             "train.jpg": markup.underline.link
 #           }
 #         }
 #         " "
@@ -92,7 +92,7 @@
 #       "(/url2)" {
 #         "(": punctuation.md
 #         destination.link.md {
-#           "/url": uri.underline.link.md
+#           "/url": markup.underline.link
 #         }
 #         ")": punctuation.md
 #       }
@@ -115,7 +115,7 @@
 #       "(/url2)" {
 #         "(": punctuation.md
 #         destination.link.md {
-#           "/url": uri.underline.link.md
+#           "/url": markup.underline.link
 #         }
 #         ")": punctuation.md
 #       }
@@ -160,7 +160,7 @@
 #         " "
 #         "train.jpg" {
 #           destination.link.md {
-#             "train.jpg": uri.underline.link.md
+#             "train.jpg": markup.underline.link
 #           }
 #         }
 #         " "
@@ -214,7 +214,7 @@
 #         " "
 #         "train.jpg" {
 #           destination.link.md {
-#             "train.jpg": uri.underline.link.md
+#             "train.jpg": markup.underline.link
 #           }
 #         }
 #         " "
@@ -244,7 +244,7 @@
       "(train.jpg)" {
         "(": punctuation.md
         destination.link.md {
-          "train.jpg": uri.underline.link.md
+          "train.jpg": markup.underline.link
         }
         ")": punctuation.md
       }
@@ -267,7 +267,7 @@
       "(/path/to/train.jpg  "title"   )" {
         "(": punctuation.md
         destination.link.md {
-          "/path/to/train.jpg": uri.underline.link.md
+          "/path/to/train.jpg": markup.underline.link
         }
         "  "
         "title" {
@@ -299,7 +299,7 @@
         "(": punctuation.md
         destination.link.md {
           "<": punctuation.md
-          "url": uri.underline.link.md
+          "url": markup.underline.link
           ">": punctuation.md
         }
         ")": punctuation.md
@@ -321,7 +321,7 @@
       "(/url)" {
         "(": punctuation.md
         destination.link.md {
-          "/url": uri.underline.link.md
+          "/url": markup.underline.link
         }
         ")": punctuation.md
       }
@@ -370,7 +370,7 @@
 #         " "
 #         "/url" {
 #           destination.link.md {
-#             "/url": uri.underline.link.md
+#             "/url": markup.underline.link
 #           }
 #         }
 #         " "
@@ -428,7 +428,7 @@
 #         " "
 #         "/url" {
 #           destination.link.md {
-#             "/url": uri.underline.link.md
+#             "/url": markup.underline.link
 #           }
 #         }
 #         " "

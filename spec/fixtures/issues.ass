@@ -11,7 +11,7 @@
         }
         "(": punctuation.md
         destination.link.md {
-          "http://www.statamic.com": uri.underline.link.md
+          "http://www.statamic.com": markup.underline.link
         }
         ")": punctuation.md
       }
@@ -173,7 +173,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "https://uccu.cool3c.com/": uri.underline.link.md
+        "https://uccu.cool3c.com/": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -186,7 +186,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "https://uccu.cool3c.com/": uri.underline.link.md
+        "https://uccu.cool3c.com/": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -432,7 +432,7 @@
         "(bar)" {
           "(": punctuation.md
           destination.link.md {
-            "bar": uri.underline.link.md
+            "bar": markup.underline.link
           }
           ")": punctuation.md
         }
@@ -464,7 +464,7 @@
         "(bar)" {
           "(": punctuation.md
           destination.link.md {
-            "bar": uri.underline.link.md
+            "bar": markup.underline.link
           }
           ")": punctuation.md
         }

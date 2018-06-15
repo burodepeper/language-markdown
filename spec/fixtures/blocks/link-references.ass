@@ -16,7 +16,7 @@
         " "
         "/url" {
           destination.link.md {
-            "/url": uri.underline.link.md
+            "/url": markup.underline.link
           }
         }
         " "
@@ -94,7 +94,7 @@
           " "
           "/url" {
             destination.link.md {
-              "/url": uri.underline.link.md
+              "/url": markup.underline.link
             }
           }
         }
@@ -128,7 +128,7 @@
           " "
           "/url" {
             destination.link.md {
-              "/url": uri.underline.link.md
+              "/url": markup.underline.link
             }
           }
         }
@@ -186,7 +186,7 @@
         " "
         "url" {
           destination.link.md {
-            "url": uri.underline.link.md
+            "url": markup.underline.link
           }
         }
       }
@@ -217,7 +217,7 @@
         " "
         "/φου" {
           destination.link.md {
-            "/φου": uri.underline.link.md
+            "/φου": markup.underline.link
           }
         }
       }
@@ -249,7 +249,7 @@
         " "
         "/url" {
           destination.link.md {
-            "/url": uri.underline.link.md
+            "/url": markup.underline.link
           }
         }
       }
@@ -286,7 +286,7 @@
         " "
         "/url" {
           destination.link.md {
-            "/url": uri.underline.link.md
+            "/url": markup.underline.link
           }
         }
         " "
@@ -320,7 +320,7 @@
         " "
         "/url" {
           destination.link.md {
-            "/url": uri.underline.link.md
+            "/url": markup.underline.link
           }
         }
       }
@@ -346,7 +346,7 @@
         " "
         "/url" {
           destination.link.md {
-            "/url": uri.underline.link.md
+            "/url": markup.underline.link
           }
         }
         " "
@@ -396,7 +396,7 @@
         " "
         "/baz" {
           destination.link.md {
-            "/baz": uri.underline.link.md
+            "/baz": markup.underline.link
           }
         }
       }
@@ -446,7 +446,7 @@
         " "
         "/foo-url" {
           destination.link.md {
-            "/foo-url": uri.underline.link.md
+            "/foo-url": markup.underline.link
           }
         }
         " "
@@ -472,7 +472,7 @@
         " "
         "/bar-url" {
           destination.link.md {
-            "/bar-url": uri.underline.link.md
+            "/bar-url": markup.underline.link
           }
         }
       }
@@ -491,7 +491,7 @@
         " "
         "/baz-url" {
           destination.link.md {
-            "/baz-url": uri.underline.link.md
+            "/baz-url": markup.underline.link
           }
         }
       }
@@ -542,7 +542,7 @@
           " "
           "/url" {
             destination.link.md {
-              "/url": uri.underline.link.md
+              "/url": markup.underline.link
             }
           }
         }

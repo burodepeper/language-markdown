@@ -5,13 +5,13 @@ patterns: [
     match: '^(<)(.*)(>)$'
     captures:
       1: name: 'punctuation.md'
-      2: name: 'uri.underline.link.md'
+      2: name: 'markup.underline.link'
       3: name: 'punctuation.md'
   }
   {
     name: 'destination.link.md'
     match: '(.+)'
     captures:
-      1: name: 'uri.underline.link.md'
+      1: name: 'markup.underline.link'
   }
 ]

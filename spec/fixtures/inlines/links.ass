@@ -11,7 +11,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "/uri": uri.underline.link.md
+        "/uri": markup.underline.link
       }
       ' '
       title.link.md {
@@ -35,7 +35,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "/uri": uri.underline.link.md
+        "/uri": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -103,7 +103,7 @@
       "(": punctuation.md
       destination.link.md {
         "<": punctuation.md
-        "/my uri": uri.underline.link.md
+        "/my uri": markup.underline.link
         ">": punctuation.md
       }
       ")": punctuation.md
@@ -123,7 +123,7 @@
       "(": punctuation.md
       destination.link.md {
         "<": punctuation.md
-        "/my uri": uri.underline.link.md
+        "/my uri": markup.underline.link
         ">": punctuation.md
       }
       ' '
@@ -184,7 +184,7 @@
 #       }
 #       "(": punctuation.md
 #       destination.link.md {
-#         "(foo)and(bar)": uri.underline.link.md
+#         "(foo)and(bar)": markup.underline.link
 #       }
 #       ")": punctuation.md
 #     }
@@ -223,7 +223,7 @@
 #       }
 #       "(": punctuation.md
 #       destination.link.md {
-#         uri.underline.link.md {
+#         markup.underline.link {
 #           "foo(and"
 #           "\(": escape.constant.md
 #           "bar"
@@ -248,7 +248,7 @@
       "(": punctuation.md
       destination.link.md {
         "<": punctuation.md
-        "foo(and(bar))": uri.underline.link.md
+        "foo(and(bar))": markup.underline.link
         ">": punctuation.md
       }
       ")": punctuation.md
@@ -268,7 +268,7 @@
 #       }
 #       "(": punctuation.md
 #       destination.link.md {
-#         uri.underline.link.md {
+#         markup.underline.link {
 #           "foo"
 #           "\)": escape.constant.md
 #           "\:": escape.constant.md
@@ -290,7 +290,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "#fragment": uri.underline.link.md
+        "#fragment": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -308,7 +308,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "http://example.com#fragment": uri.underline.link.md
+        "http://example.com#fragment": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -326,7 +326,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "http://example.com?foo=bar&baz#fragment": uri.underline.link.md
+        "http://example.com?foo=bar&baz#fragment": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -344,7 +344,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "foo\bar": uri.underline.link.md
+        "foo\bar": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -362,7 +362,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "foo%20b&auml;": uri.underline.link.md
+        "foo%20b&auml;": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -380,7 +380,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        ""title"": uri.underline.link.md
+        ""title"": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -398,7 +398,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "/uri": uri.underline.link.md
+        "/uri": markup.underline.link
       }
       ' '
       title.link.md {
@@ -422,7 +422,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "/uri": uri.underline.link.md
+        "/uri": markup.underline.link
       }
       ' '
       title.link.md {
@@ -446,7 +446,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "/uri": uri.underline.link.md
+        "/uri": markup.underline.link
       }
       ' '
       title.link.md {
@@ -471,7 +471,7 @@
 #       }
 #       "(": punctuation.md
 #       destination.link.md {
-#         "/uri": uri.underline.link.md
+#         "/uri": markup.underline.link
 #       }
 #       ' '
 #       title.link.md {
@@ -503,7 +503,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "/url": uri.underline.link.md
+        "/url": markup.underline.link
       }
       ' '
       title.link.md {
@@ -550,7 +550,7 @@
 #       }
 #       "(": punctuation.md
 #       destination.link.md {
-#         "/url": uri.underline.link.md
+#         "/url": markup.underline.link
 #       }
 #       ")": punctuation.md
 #     }
@@ -584,7 +584,7 @@
 #       }
 #       "(": punctuation.md
 #       destination.link.md {
-#         "/uri": uri.underline.link.md
+#         "/uri": markup.underline.link
 #       }
 #       ")": punctuation.md
 #     }
@@ -605,7 +605,7 @@
 #       }
 #       "(": punctuation.md
 #       destination.link.md {
-#         "/uri": uri.underline.link.md
+#         "/uri": markup.underline.link
 #       }
 #       ")": punctuation.md
 #     }
@@ -640,7 +640,7 @@
 #       }
 #       "(": punctuation.md
 #       destination.link.md {
-#         "/uri": uri.underline.link.md
+#         "/uri": markup.underline.link
 #       }
 #       ")": punctuation.md
 #     }
@@ -674,7 +674,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "/uri": uri.underline.link.md
+        "/uri": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -697,7 +697,7 @@
             }
             "(": punctuation.md
             destination.link.md {
-              "moon.jpg": uri.underline.link.md
+              "moon.jpg": markup.underline.link
             }
             ")": punctuation.md
           }
@@ -707,7 +707,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "/uri": uri.underline.link.md
+        "/uri": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -729,7 +729,7 @@
 #         }
 #         "(": punctuation.md
 #         destination.link.md {
-#           "/uri": uri.underline.link.md
+#           "/uri": markup.underline.link
 #         }
 #         ")": punctuation.md
 #       }
@@ -756,7 +756,7 @@
 #             }
 #             "("
 #             destination.link.md {
-#               "/uri": uri.underline.link.md
+#               "/uri": markup.underline.link
 #             }
 #             ")"
 #           }
@@ -788,7 +788,7 @@
 #       }
 #       "(": punctuation.md
 #       destination.link.md {
-#         "/uri": uri.underline.link.md
+#         "/uri": markup.underline.link
 #       }
 #       ")": punctuation.md
 #     }
@@ -806,7 +806,7 @@
       }
       "(": punctuation.md
       destination.link.md {
-        "baz*": uri.underline.link.md
+        "baz*": markup.underline.link
       }
       ")": punctuation.md
     }
@@ -884,7 +884,7 @@
         " "
         "/url" {
           destination.link.md {
-            "/url": uri.underline.link.md
+            "/url": markup.underline.link
           }
         }
         " "
@@ -939,7 +939,7 @@
 #         " "
 #         "/uri" {
 #           destination.link.md {
-#             "/uri": uri.underline.link.md
+#             "/uri": markup.underline.link
 #           }
 #         }
 #       }
@@ -986,7 +986,7 @@
 #         " "
 #         "/uri" {
 #           destination.link.md {
-#             "/uri": uri.underline.link.md
+#             "/uri": markup.underline.link
 #           }
 #         }
 #       }
@@ -1061,7 +1061,7 @@
         " "
         "/uri" {
           destination.link.md {
-            "/uri": uri.underline.link.md
+            "/uri": markup.underline.link
           }
         }
       }
@@ -1085,7 +1085,7 @@
             }
             "(": punctuation.md
             destination.link.md {
-              "moon.jpg": uri.underline.link.md
+              "moon.jpg": markup.underline.link
             }
             ")": punctuation.md
           }
@@ -1198,7 +1198,7 @@
         " "
         "/url" {
           destination.link.md {
-            "/url": uri.underline.link.md
+            "/url": markup.underline.link
           }
         }
       }
@@ -1257,7 +1257,7 @@
         " "
         "/url" {
           destination.link.md {
-            "/url": uri.underline.link.md
+            "/url": markup.underline.link
           }
         }
       }
@@ -1303,7 +1303,7 @@
 #         " "
 #         "/uri" {
 #           destination.link.md {
-#             "/uri": uri.underline.link.md
+#             "/uri": markup.underline.link
 #           }
 #         }
 #       }
@@ -1365,7 +1365,7 @@
 #         " "
 #         "/uri" {
 #           destination.link.md {
-#             "/uri": uri.underline.link.md
+#             "/uri": markup.underline.link
 #           }
 #         }
 #       }
@@ -1398,7 +1398,7 @@
         " "
         "/uri" {
           destination.link.md {
-            "/uri": uri.underline.link.md
+            "/uri": markup.underline.link
           }
         }
       }
@@ -1460,7 +1460,7 @@
 #         " "
 #         "/url" {
 #           destination.link.md {
-#             "/url": uri.underline.link.md
+#             "/url": markup.underline.link
 #           }
 #         }
 #         " "
@@ -1517,7 +1517,7 @@
         " "
         "/url" {
           destination.link.md {
-            "/url": uri.underline.link.md
+            "/url": markup.underline.link
           }
         }
         " "
