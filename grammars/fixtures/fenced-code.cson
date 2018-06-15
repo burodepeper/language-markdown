@@ -50,6 +50,7 @@ list: [
   { pattern:'erlang' }
   { pattern:'go|golang', include:'source.go', contentName:'source.embedded.go' }
   { pattern:'haskell' }
+  { pattern:'hcl' }
   { pattern:'html', include:'text.html.basic', contentName:'source.embedded.html' }
   { pattern:'idris' }
   { pattern:'java' }
