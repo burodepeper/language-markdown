@@ -33,6 +33,7 @@ repository:
       { include: '#lists' }
       { include: '#quotes' }
       { include: '#rmarkdown' }
+      { include: '#pandoc-raw-attribute-blocks' }
       { include: '#fenced-code-blocks' }
       { include: '#fenced-code' }
       { include: '#github-blocks' }
@@ -41,6 +42,7 @@ repository:
   inlines:
     patterns: [
       { include: '#escapes' }
+      { include: '#pandoc-raw-attribute-inlines' }
       { include: '#code' }
       { include: '#entities' }
       { include: '#links' }

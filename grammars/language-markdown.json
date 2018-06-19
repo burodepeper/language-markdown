@@ -49,6 +49,9 @@
           "include": "#rmarkdown"
         },
         {
+          "include": "#pandoc-raw-attribute-blocks"
+        },
+        {
           "include": "#fenced-code-blocks"
         },
         {
@@ -66,6 +69,9 @@
       "patterns": [
         {
           "include": "#escapes"
+        },
+        {
+          "include": "#pandoc-raw-attribute-inlines"
         },
         {
           "include": "#code"
@@ -1191,6 +1197,134 @@
               "patterns": [
                 {
                   "include": "text.tex.latex"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        }
+      ]
+    },
+    "pandoc-raw-attribute-blocks": {
+      "patterns": [
+        {
+          "begin": "^\\s{0,3}([`~]{3,})\\s*\\{\\s*=(latex|beamer)\\s*\\}\\s*?$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s{0,3}(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.rawattribute.md",
+          "contentName": "source.embedded.latex",
+          "patterns": [
+            {
+              "include": "text.tex.latex"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s{0,3}([`~]{3,})\\s*\\{\\s*=(openxml|opendocument)\\s*\\}\\s*?$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s{0,3}(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.rawattribute.md",
+          "contentName": "source.embedded.xml",
+          "patterns": [
+            {
+              "include": "text.xml"
+            }
+          ]
+        },
+        {
+          "begin": "^\\s{0,3}([`~]{3,})\\s*\\{\\s*=(html(?:4|5)?)\\s*\\}\\s*?$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s{0,3}(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.rawattribute.md",
+          "contentName": "source.embedded.html",
+          "patterns": [
+            {
+              "include": "text.html.basic"
+            }
+          ]
+        }
+      ]
+    },
+    "pandoc-raw-attribute-inlines": {
+      "patterns": [
+        {
+          "match": "(?<!`)(`+)(?!`)(.+?)(?<!`)(\\1)(?!`)\\{\\s*=(latex|beamer)\\s*\\}",
+          "name": "code.raw.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "text.tex.latex"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<!`)(`+)(?!`)(.+?)(?<!`)(\\1)(?!`)\\{\\s*=(html(?:4|5)?)\\s*\\}",
+          "name": "code.raw.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "text.html.basic"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "match": "(?<!`)(`+)(?!`)(.+?)(?<!`)(\\1)(?!`)\\{\\s*=(openxml|opendocument)\\s*\\}",
+          "name": "code.raw.markup.md",
+          "captures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "text.xml"
                 }
               ]
             },
