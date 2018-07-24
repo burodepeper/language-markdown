@@ -24,7 +24,7 @@ patterns: [
 
   {
     name: 'block.math.markup.md'
-    begin: '(\\\\begin)(\\{)(equation\\*?)(\\})'
+    begin: '(\\\\begin)(\\{)((?:align|equation|multline|split|gather)\\*?)(\\})'
     end: '(\\\\end)(\\{)(\\3)(\\})'
     patterns: [{ include: 'text.tex.latex' }]
     beginCaptures:
