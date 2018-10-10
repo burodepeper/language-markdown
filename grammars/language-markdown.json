@@ -1724,6 +1724,10 @@
     "html": {
       "patterns": [
         {
+          "match": "<(?![a-zA-z0-9!/])",
+          "name": "text.md"
+        },
+        {
           "include": "text.html.basic"
         }
       ]
