@@ -79,6 +79,7 @@ list: [
   { pattern:'sql' }
   { pattern:'stata' }
   { pattern:'swift' }
+  { pattern:'ts|typescript', include:'source.ts', contentName:'source.embedded.ts' }
   { pattern:'xml', include:'text.xml', contentName:'text.embedded.xml' }
   { pattern:'yaml' }
 

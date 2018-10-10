@@ -4103,6 +4103,46 @@
           ]
         },
         {
+          "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:ts|typescript))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            },
+            "2": {
+              "name": "punctuation.md"
+            },
+            "3": {
+              "name": "language.constant.md"
+            },
+            "5": {
+              "name": "punctuation.md"
+            },
+            "6": {
+              "patterns": [
+                {
+                  "include": "#special-attribute-elements"
+                }
+              ]
+            },
+            "7": {
+              "name": "punctuation.md"
+            }
+          },
+          "end": "^\\s*(\\1)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.md"
+            }
+          },
+          "name": "fenced.code.md",
+          "contentName": "source.embedded.ts",
+          "patterns": [
+            {
+              "include": "source.ts"
+            }
+          ]
+        },
+        {
           "begin": "^\\s*([`~]{3,})\\s*(\\{?)((?:\\.?)(?:xml))(?=( |$|{))\\s*(\\{?)([^`\\{\\}]*)(\\}?)$",
           "beginCaptures": {
             "1": {
