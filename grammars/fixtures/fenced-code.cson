@@ -56,7 +56,7 @@ list: [
   { pattern:'java' }
   { pattern:'javascript|js|jsx', include:'source.js', contentName:'source.embedded.js' }
   { pattern:'json|har', include:'source.json', contentName:'source.embedded.json' }
-  { pattern:'julia' }
+  { pattern:'julia|julia-repl', include:'source.julia', contentName:'source.embedded.julia' }
   { pattern:'kotlin|kt|kts', include:'source.kotlin', contentName:'source.embedded.kotlin' }
   { pattern:'latex|tex', include:'text.tex.latex', contentName:'text.embedded.latex' }
   { pattern:'less', include:'source.css.less', contentName:'source.embedded.css.less' }
