@@ -512,3 +512,21 @@
     "- ipsum"
   }
 }
+
+@174a
+"M&M's": text.md
+
+@174b
+"M &M's": text.md
+
+@174c
+"M& M's": text.md
+
+@174dz
+"M & M's" {
+  text.md {
+    "M "
+    "&": ampersand.md
+    " M's"
+  }
+}
