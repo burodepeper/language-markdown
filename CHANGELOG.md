@@ -1,3 +1,9 @@
+## v0.27.0
+- #233 - Add typescript code blocks (thanks @kylebarron)
+- #228 - Fix whitespace issues (thanks @kylebarron)
+- b1a1da1 - Prevent matching invalid HTML-tags (thanks @kylebarron)
+- #235 - Add julia-repl to fenced code blocks (thanks @NHDaly)
+
 ## v0.26.0
 - #191 - Add classes for vertical and horizontal lines in GitHub tables (thanks @thancock20)
 - #193 - Match knowing that a newline character may not exist (thanks @50Wliu)
