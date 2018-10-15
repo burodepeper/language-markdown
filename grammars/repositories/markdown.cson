@@ -71,9 +71,9 @@ repository:
       { include: '#escapes' }
       { include: '#code' }
       { include: '#entities' }
+      { include: '#links' }
       { include: '#html' }
       { include: '#liquid' }
-      { include: '#links' }
       { include: '#emphasis' }
       { include: '#todo' }
       { include: '#references' }
@@ -89,9 +89,9 @@ repository:
       { include: '#escapes' }
       { include: '#code' }
       { include: '#entities' }
+      { include: '#links' }
       { include: '#html' }
       { include: '#liquid' }
-      { include: '#links' }
       { include: '#emphasis' }
       { include: '#todo' }
       { include: '#references' }

@@ -1,4 +1,18 @@
 key: 'html'
 patterns: [
+  # Prevents matching of invalid html-tags by considering everything that
+  # starts with a < and isn't followed by [a-zA-Z!/] as plain text.
+  #
+  # @kylebarron's solution in #178 also contains 0-9 as valid starting
+  # characters, but I've removed those since I don't think they are of much
+  # concern within the scope of Markdown. An appearance such as <3 seems more
+  # reasonable in a text than an html-tag that isn't standard.
+  #
+  # Possible downside to this approach is that the < is parsed as a separate
+  # token, polluting the tokens on a line a little.
+  {
+    match: '<(?![a-zA-Z!/])'
+    name: ''
+  }
   { include: 'text.html.basic' }
 ]

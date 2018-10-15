@@ -108,13 +108,23 @@
 }
 
 @552
-"<>": text.md
+"<>" {
+  text.md {
+    "<"
+    ">"
+  }
+}
 
 @553
 "<heck://bing.bong>": text.md
 
 @554
-"< http://foo.bar >": text.md
+"< http://foo.bar >" {
+  text.md {
+    "<"
+    " http://foo.bar >"
+  }
+}
 
 @555
 "<foo.bar.baz>": text.md
