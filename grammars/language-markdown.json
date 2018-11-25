@@ -1178,8 +1178,8 @@
         },
         {
           "name": "block.math.markup.md",
-          "begin": "\\\\\\\\\\[",
-          "end": "\\\\\\\\\\]",
+          "begin": "(?:\\\\)?\\\\\\[",
+          "end": "(?:\\\\)?\\\\\\]",
           "patterns": [
             {
               "include": "text.tex.latex"
