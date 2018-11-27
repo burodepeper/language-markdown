@@ -76,6 +76,7 @@ list: [
   { pattern:'sass' }
   { pattern:'scss', include:'source.css.scss', contentName:'source.embedded.css.scss' }
   { pattern:'sh|bash', include:'source.shell', contentName:'source.embedded.shell' }
+  { pattern:'shellsession|console', include:'text.shell-session', contentName:'text.embedded.shell-session' }
   { pattern:'sql' }
   { pattern:'stata' }
   { pattern:'swift' }

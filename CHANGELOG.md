@@ -1,3 +1,6 @@
+## Upcoming
+- #239 - Add shell-session/console code blocks (thanks @mcandre)
+
 ## v0.27.0
 - #233 - Add typescript code blocks (thanks @kylebarron)
 - #228 - Fix whitespace issues (thanks @kylebarron)
