@@ -57,3 +57,13 @@ describe 'Add new list items', ->
     editor.autoIndent = true  # is there a better way to activate this?
     editor.insertText('\n')
     expect(editor.getText()).toBe('-  item 1\n  -  item 2\n  -  ')
+
+  it 'increments the count of numbered list items', ->
+    editor.insertText('1. One')
+    editor.insertText('\n')
+    expect(editor.getText()).toBe('1. One\n2. ')
+
+  it 'reproduces the previous line\'s whitespace with numbered list items', ->
+    editor.insertText('1.   One')
+    editor.insertText('\n')
+    expect(editor.getText()).toBe('1.   One\n2.   ')
