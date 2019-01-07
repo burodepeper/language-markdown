@@ -1,3 +1,6 @@
+## v0.29.0
+- #242 - Fix "Remove empty list-items" for multiple whitespaces (thanks @hbschr)
+
 ## v0.28.0
 - #239 - Add shell-session/console code blocks (thanks @mcandre)
 - #240 - Reproduce leading whitespace of previous line when adding new list items (thanks @hbschr)
