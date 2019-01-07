@@ -67,3 +67,22 @@ describe 'Add new list items', ->
     editor.insertText('1.   One')
     editor.insertText('\n')
     expect(editor.getText()).toBe('1.   One\n2.   ')
+
+  it 'should not remove empty list items when disabled', ->
+    atom.config.set('language-markdown.removeEmptyListItems', false)
+    editor.insertText('- item')
+    editor.insertText('\n')
+    editor.insertText('\n')
+    expect(editor.getText()).toBe('- item\n- \n')
+
+  it 'should remove empty list items', ->
+    editor.insertText('- item')
+    editor.insertText('\n')
+    editor.insertText('\n')
+    expect(editor.getText()).toBe('- item\n\n')
+
+  it 'should remove empty list items with multiple whitespaces', ->
+    editor.insertText('-   item')
+    editor.insertText('\n')
+    editor.insertText('\n')
+    expect(editor.getText()).toBe('-   item\n\n')
