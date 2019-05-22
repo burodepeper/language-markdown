@@ -24,8 +24,8 @@
     "atom": "*"
   },
   "dependencies": {
-    "lib-ass": "0.0.6",
-    "season": "^5.3"
+    "lib-ass": "0.0.7",
+    "season": "^5.4.1"
   },
   "coffeelintConfig": {
     "max_line_length": {

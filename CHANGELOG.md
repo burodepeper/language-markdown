@@ -1,3 +1,7 @@
+## v0.30.0
+- #248 - Remove lodash dependency
+- Update lib-ass dependency, now uses coffeescript without a dash
+
 ## v0.29.0
 - #242 - Fix "Remove empty list-items" for multiple whitespaces (thanks @hbschr)
 
