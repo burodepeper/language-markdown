@@ -1,6 +1,10 @@
-## v0.30.0
+## v0.37.0
+- #247 - Fix curly braces in R Markdown breaking syntax
+
+## v0.36.0
 - #248 - Remove lodash dependency
 - Update lib-ass dependency, now uses coffeescript without a dash
+- Made a booboo with the version numbers
 
 ## v0.29.0
 - #242 - Fix "Remove empty list-items" for multiple whitespaces (thanks @hbschr)

@@ -1226,7 +1226,7 @@
     "rmarkdown-attributes": {
       "patterns": [
         {
-          "match": "(?<=^|,|,\\s)(eval|include|purl|collapse|echo|error|message|warning|highlight|prompt|strip\\.white|tidy|autodep|cache|cache\\.lazy|external|fig\\.showtext|sanitize)(=)(TRUE|FALSE)",
+          "match": "(?x) (?#<=^|,|,\\s) ([A-Za-z0-9\\.]+) (?:\\s?) (=) (?:\\s?) (TRUE|FALSE)",
           "name": "rmarkdown.attribute.meta.md",
           "captures": {
             "1": {
@@ -1241,25 +1241,7 @@
           }
         },
         {
-          "match": "(?<=^|,|,\\s)(echo|eval|interval|dpi|ffmpeg\\.(?:bitrate|format)|fig\\.(?:height|width|retina)|out\\.(?:height|width))(=)([0-9\\-:\\(\\)]+(cm|in|M|px)?)",
-          "name": "rmarkdown.attribute.meta.md",
-          "captures": {
-            "1": {
-              "name": "key.keyword.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "value.numeric.constant.md"
-            },
-            "4": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
-          "match": "(?<=^|,|,\\s)(child|code|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|vars)|dependson|dev.args|fig\\.(?:cap|ext|process|scap|subcap|showtext)|out\\.(?:extra|height|width)|resize\\.(?:height|width))(=)(NULL)",
+          "match": "(?x) (?#<=^|,|,\\s) ([A-Za-z0-9\\.]+) (?:\\s?) (=) (?:\\s?) ([A-Za-z0-9]+)",
           "name": "rmarkdown.attribute.meta.md",
           "captures": {
             "1": {
@@ -1274,7 +1256,7 @@
           }
         },
         {
-          "match": "(?<=^|,|,\\s)(engine)(=)((['|\"])(?:asis|asy|awk|bash|c|cat|coffee|dot|fortran|gawk|groovy|haskell|highlight|lein|mysql|node|perl|psql|python|Rcpp|Rscript|ruby|sas|scala|sed|sh|stan|stata|tikz|zsh)(\\4))",
+          "match": "(?x) (?#<=^|,|,\\s) ([A-Za-z0-9\\.]+) (?:\\s?) (=) (?:\\s?) ( ('|\") ([^\\4]*?) (\\4) )",
           "name": "rmarkdown.attribute.meta.md",
           "captures": {
             "1": {
@@ -1288,116 +1270,8 @@
             },
             "4": {
               "name": "punctuation.md"
-            },
-            "5": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
-          "match": "(?<=^|,|,\\s)(results)(=)((['|\"])(?:markup|hide|hold|asis)(\\4))",
-          "name": "rmarkdown.attribute.meta.md",
-          "captures": {
-            "1": {
-              "name": "key.keyword.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "value.string.md"
-            },
-            "4": {
-              "name": "punctuation.md"
-            },
-            "5": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
-          "match": "(?<=^|,|,\\s)(fig\\.align)(=)((['|\"])(?:default|left|right|center)(\\4))",
-          "name": "rmarkdown.attribute.meta.md",
-          "captures": {
-            "1": {
-              "name": "key.keyword.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "value.string.md"
-            },
-            "4": {
-              "name": "punctuation.md"
-            },
-            "5": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
-          "match": "(?<=^|,|,\\s)(fig\\.keep)(=)((['|\"])(?:high|all|first|last|none)(\\4))",
-          "name": "rmarkdown.attribute.meta.md",
-          "captures": {
-            "1": {
-              "name": "key.keyword.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "value.string.md"
-            },
-            "4": {
-              "name": "punctuation.md"
-            },
-            "5": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
-          "match": "(?<=^|,|,\\s)(dependson|dev|dev\\.args|eval|tidy\\.opts)(=)((?:c|list)(\\()([^\\)]*)(\\)))",
-          "name": "rmarkdown.attribute.meta.md",
-          "captures": {
-            "1": {
-              "name": "key.keyword.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "value.storage.md"
-            },
-            "4": {
-              "name": "punctuation.md"
-            },
-            "5": {
-              "name": "value.string.md"
             },
             "6": {
-              "name": "punctuation.md"
-            }
-          }
-        },
-        {
-          "match": "(?<=^|,|,\\s)(child|code|comment|ffmpeg\\.(?:bitrate|format)|opts\\.label|R\\.options|ref\\.label|cache\\.(?:comments|path|vars)|dependson|anipots|dev|dev\\.args|fig\\.(?:cap|env|ext|lp|path|pos|process|scap|subcap|show)|out\\.(?:extra|height|width))(=)(('|\")[^\\4]+?(\\4))",
-          "name": "rmarkdown.attribute.meta.md",
-          "captures": {
-            "1": {
-              "name": "key.keyword.md"
-            },
-            "2": {
-              "name": "punctuation.md"
-            },
-            "3": {
-              "name": "value.string.md"
-            },
-            "4": {
-              "name": "punctuation.md"
-            },
-            "5": {
               "name": "punctuation.md"
             }
           }
@@ -1407,7 +1281,7 @@
     "rmarkdown": {
       "patterns": [
         {
-          "begin": "(?x) (```)( (\\{)(r)(?:\\s)? (?:([a-zA-Z0-9|_|-]*)(?=[\\s|,|}])\\s?)? ([^\\}]*)? (\\}) )",
+          "begin": "(?x) (```)( \\{r\\s? (.*?) \\}$ )",
           "end": "^(\\1)$",
           "name": "fenced.code.md",
           "contentName": "source.embedded.r",
@@ -1420,24 +1294,31 @@
             "1": {
               "name": "punctuation.md"
             },
-            "3": {
-              "name": "punctuation.md"
-            },
-            "4": {
-              "name": "language.constant.md"
-            },
-            "5": {
-              "name": "label.string.md"
-            },
-            "6": {
+            "2": {
               "patterns": [
                 {
-                  "include": "#rmarkdown-attributes"
+                  "begin": "(\\{)(r)(\\s?)",
+                  "beginCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    },
+                    "2": {
+                      "name": "language.constant.md"
+                    }
+                  },
+                  "end": "(\\})$",
+                  "endCaptures": {
+                    "1": {
+                      "name": "punctuation.md"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "#rmarkdown-attributes"
+                    }
+                  ]
                 }
               ]
-            },
-            "7": {
-              "name": "punctuation.md"
             }
           },
           "endCaptures": {

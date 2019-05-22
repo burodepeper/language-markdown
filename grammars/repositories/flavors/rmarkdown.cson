@@ -2,15 +2,43 @@
 # http://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 # http://yihui.name/knitr/options/
 
+# key: 'rmarkdown'
+# patterns: [
+#   {
+#     begin: '(?x)
+#       (```)(
+#         (\\{)(r)(?:\\s)?
+#         (?:([a-zA-Z0-9|_|-]*)(?=[\\s|,|}])\\s?)?
+#         ([^\\}]*)?
+#         (\\})
+#       )
+#     '
+#     end: '^(\\1)$'
+#
+#     name: 'fenced.code.md'
+#     contentName: 'source.embedded.r'
+#     patterns: [{ include: 'source.r' }]
+#
+#     beginCaptures:
+#       1: name: 'punctuation.md'
+#       3: name: 'punctuation.md'
+#       4: name: 'language.constant.md'
+#       5: name: 'label.string.md'
+#       6: patterns: [{ include: '#rmarkdown-attributes' }]
+#       7: name: 'punctuation.md'
+#     endCaptures:
+#       1: name: 'punctuation.md'
+#   }
+# ]
+
 key: 'rmarkdown'
 patterns: [
   {
     begin: '(?x)
       (```)(
-        (\\{)(r)(?:\\s)?
-        (?:([a-zA-Z0-9|_|-]*)(?=[\\s|,|}])\\s?)?
-        ([^\\}]*)?
-        (\\})
+        \\{r\\s?
+        (.*?)
+        \\}$
       )
     '
     end: '^(\\1)$'
@@ -21,11 +49,23 @@ patterns: [
 
     beginCaptures:
       1: name: 'punctuation.md'
-      3: name: 'punctuation.md'
-      4: name: 'language.constant.md'
-      5: name: 'label.string.md'
-      6: patterns: [{ include: '#rmarkdown-attributes' }]
-      7: name: 'punctuation.md'
+      2: patterns: [
+        {
+          begin: '(\\{)(r)(\\s?)'
+          beginCaptures:
+            1: name: 'punctuation.md'
+            2: name: 'language.constant.md'
+            # 3: name: 'space.md'
+          end: '(\\})$'
+          endCaptures:
+            1: name: 'punctuation.md'
+          # patterns: [{ include: '#rmarkdown-attributes' }]
+          patterns: [{ include: '#rmarkdown-attributes' }]
+        }
+      ]
+      # 3: name: 'punctuation.md'
+      # 4: name: 'language.constant.md'
+
     endCaptures:
       1: name: 'punctuation.md'
   }

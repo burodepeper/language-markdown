@@ -530,3 +530,29 @@
     " M's"
   }
 }
+
+@247
+"```{r fig.cap="Text (\\Cref{s:pilot})."}" {
+  text.md {
+    fenced.code.md {
+      "```": punctuation.md
+      "{": punctuation.md
+      "r": language.constant.md
+      " "
+      "fig.cap="Text (\\Cref{s:pilot})."" {
+        rmarkdown.attribute.meta.md {
+          "fig.cap": key.keyword.md
+          "=": punctuation.md
+          ""Text (\\Cref{s:pilot})."" {
+            value.string.md {
+              """: punctuation.md
+              "Text (\\Cref{s:pilot})."
+              """: punctuation.md
+            }
+          }
+        }
+      }
+      "}": punctuation.md
+    }
+  }
+}

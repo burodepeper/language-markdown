@@ -8,9 +8,10 @@ path = require 'path'
 # A {fixture} is a relative path + filename (without extension).
 # fixtures = [
 #   # "blocks/fenced-code"
-#   "flavors/math"
+#   # "flavors/math"
 #   # "inlines/entities"
-#   # "issues"
+#   "issues"
+#   "flavors/rmarkdown"
 # ]
 
 # Automatically generate the {fixtures} array from the file system.
