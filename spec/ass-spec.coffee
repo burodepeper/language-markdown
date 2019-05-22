@@ -1,4 +1,3 @@
-_ = require 'lodash'
 ASS = require 'lib-ass'
 {Directory} = require 'atom'
 fs = require 'fs'
@@ -82,7 +81,7 @@ describe "Markdown grammar", ->
 
       # Cycle through the tests we've created in ASS
       # and we need to do it in a closure apparently
-      _.forEach tests, (test) ->
+      tests.forEach (test) ->
 
         unless test.isValid
           xit "should pass test: #{fixture}/#{test.id}", ->
