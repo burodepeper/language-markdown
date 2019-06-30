@@ -227,21 +227,24 @@ patterns: [
   # [ref]: /uri
   # [ref]: /uri "title"
   {
-    name: 'reference.link.markup.md'
     match: '(?x)
-      ((?:\\[)(?:[^\\[\\]]*)(?:\\]))
-      (:)
-      (?:\\s)
-      ([^ [:cntrl:]]+)
-      (?:(?:\\s)((?:")(?:.*?)(?:")))?
-      (?:(?:\\s)(\\{[[:ascii:]]*\\}))?
+      ^ \\s*
+      (
+        ((?:\\[)(?:[^\\[\\]]*)(?:\\]))
+        (:)
+        (?:\\s*)
+        ([^ [:cntrl:]]+)
+        (?:(?:\\s)((?:")(?:.*?)(?:")))?
+        (?:(?:\\s)(\\{[[:ascii:]]*\\}))?
+      )
     '
     captures:
-      1: patterns: [{ include: '#link-label' }]
-      2: name: 'punctuation.md'
-      3: patterns: [{ include: '#link-destination' }]
-      4: patterns: [{ include: '#link-title' }]
-      5: patterns: [{ include: '#special-attributes' }]
+      1: name: 'reference.link.markup.md'
+      2: patterns: [{ include: '#link-label' }]
+      3: name: 'punctuation.md'
+      4: patterns: [{ include: '#link-destination' }]
+      5: patterns: [{ include: '#link-title' }]
+      6: patterns: [{ include: '#special-attributes' }]
   }
 
   # [[interlink]]

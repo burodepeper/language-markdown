@@ -2027,34 +2027,36 @@
           }
         },
         {
-          "name": "reference.link.markup.md",
-          "match": "(?x) ((?:\\[)(?:[^\\[\\]]*)(?:\\])) (:) (?:\\s) ([^ [:cntrl:]]+) (?:(?:\\s)((?:\")(?:.*?)(?:\")))? (?:(?:\\s)(\\{[[:ascii:]]*\\}))?",
+          "match": "(?x) ^ \\s* ( ((?:\\[)(?:[^\\[\\]]*)(?:\\])) (:) (?:\\s*) ([^ [:cntrl:]]+) (?:(?:\\s)((?:\")(?:.*?)(?:\")))? (?:(?:\\s)(\\{[[:ascii:]]*\\}))? )",
           "captures": {
             "1": {
+              "name": "reference.link.markup.md"
+            },
+            "2": {
               "patterns": [
                 {
                   "include": "#link-label"
                 }
               ]
             },
-            "2": {
+            "3": {
               "name": "punctuation.md"
             },
-            "3": {
+            "4": {
               "patterns": [
                 {
                   "include": "#link-destination"
                 }
               ]
             },
-            "4": {
+            "5": {
               "patterns": [
                 {
                   "include": "#link-title"
                 }
               ]
             },
-            "5": {
+            "6": {
               "patterns": [
                 {
                   "include": "#special-attributes"
