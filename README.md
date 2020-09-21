@@ -6,6 +6,10 @@ A realistic implementation of various Markdown specifications as a flexible, dro
 [![apm](https://img.shields.io/apm/dm/language-markdown.svg)](https://atom.io/packages/language-markdown)
 [![apm](https://img.shields.io/apm/v/language-markdown.svg)](https://atom.io/packages/language-markdown)
 
+**Note**<br>
+_This package is no longer actively maintained._<br>
+Since the development of Atom seems to have slowed down, I've stopped using Atom as my primary editor, and consequently, this package. If you are interested in taking over maintenance, you can contact me via my Github profile. I intend to respond to new issues as best as I can.
+
 ## Installation
 
 1. Install `language-markdown` via either
