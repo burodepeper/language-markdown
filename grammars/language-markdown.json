@@ -1159,7 +1159,7 @@
         {
           "name": "block.math.markup.md",
           "begin": "(\\${2})",
-          "end": "(\\${2})(?:.*)",
+          "end": "(\\${2})",
           "patterns": [
             {
               "include": "text.tex.latex"
@@ -1173,6 +1173,64 @@
           "endCaptures": {
             "1": {
               "name": "punctuation.md"
+            }
+          }
+        },
+        {
+          "name": "block.math.markup.md",
+          "begin": "(?:\\\\)?\\\\\\[",
+          "end": "(?:\\\\)?\\\\\\]",
+          "patterns": [
+            {
+              "include": "text.tex.latex"
+            }
+          ],
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.latex"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.latex"
+            }
+          }
+        },
+        {
+          "name": "block.math.markup.md",
+          "begin": "(\\\\begin)(\\{)((?:align|equation|multline|split|gather)\\*?)(\\})",
+          "end": "(\\\\end)(\\{)(\\3)(\\})",
+          "patterns": [
+            {
+              "include": "text.tex.latex"
+            }
+          ],
+          "beginCaptures": {
+            "1": {
+              "name": "support.function.be.latex"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.latex"
+            },
+            "3": {
+              "name": "variable.parameter.function.latex"
+            },
+            "4": {
+              "name": "punctuation.definition.arguments.end.latex"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "support.function.be.latex"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.latex"
+            },
+            "3": {
+              "name": "variable.parameter.function.latex"
+            },
+            "4": {
+              "name": "punctuation.definition.arguments.end.latex"
             }
           }
         }

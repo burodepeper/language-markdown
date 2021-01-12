@@ -26,6 +26,38 @@
   }
 }
 
+@math/2a-1
+"\\["+
+"f \in \{0,1\}^*\to\{0,1\}^*"+
+"\\]" {
+  text.md {
+    block.math.markup.md {
+      "\\[": punctuation.definition.string.begin.latex
+      "f \in \{0,1\}^*\to\{0,1\}^*"
+      "\\]": punctuation.definition.string.end.latex
+    }
+  }
+}
+
+@math/2a-2
+"\begin{equation}"+
+"f \in \{0,1\}^*\to\{0,1\}^*"+
+"\end{equation}" {
+  text.md {
+    block.math.markup.md {
+      "\begin": support.function.be.latex
+      "{": punctuation.definition.arguments.begin.latex
+      "equation": variable.parameter.function.latex
+      "}": punctuation.definition.arguments.end.latex
+      "f \in \{0,1\}^*\to\{0,1\}^*"
+      "\end": support.function.be.latex
+      "{": punctuation.definition.arguments.begin.latex
+      "equation": variable.parameter.function.latex
+      "}": punctuation.definition.arguments.end.latex
+    }
+  }
+}
+
 @math/2b
 "$$f \in \{0,1\}^*\to\{0,1\}^*$$" {
   text.md {
@@ -37,10 +69,60 @@
   }
 }
 
+@math/2b-1
+"\\[f \in \{0,1\}^*\to\{0,1\}^*\\]" {
+  text.md {
+    block.math.markup.md {
+      "\\[": punctuation.definition.string.begin.latex
+      "f \in \{0,1\}^*\to\{0,1\}^*"
+      "\\]": punctuation.definition.string.end.latex
+    }
+  }
+}
+
+@math/2b-2
+"\begin{equation}f \in \{0,1\}^*\to\{0,1\}^*\end{equation}" {
+  text.md {
+    block.math.markup.md {
+      "\begin": support.function.be.latex
+      "{": punctuation.definition.arguments.begin.latex
+      "equation": variable.parameter.function.latex
+      "}": punctuation.definition.arguments.end.latex
+      "f \in \{0,1\}^*\to\{0,1\}^*"
+      "\end": support.function.be.latex
+      "{": punctuation.definition.arguments.begin.latex
+      "equation": variable.parameter.function.latex
+      "}": punctuation.definition.arguments.end.latex
+    }
+  }
+}
+
 @math/3a
 "This is a $variable" {
   text.md {
     "This is a $variable"
+  }
+}
+
+@math/3a-1
+"An equation needs \[one more backslash\]" {
+  text.md {
+    "An equation needs "
+    "\[": escape.constant.md
+    "one more backslash"
+    "\]": escape.constant.md
+  }
+}
+
+@math/3a-2
+"An equation needs \\\[one less backslash\\\]" {
+  text.md {
+    "An equation needs "
+    "\\": escape.constant.md
+    "\[": escape.constant.md
+    "one less backslash"
+    "\\": escape.constant.md
+    "\]": escape.constant.md
   }
 }
 
@@ -52,6 +134,34 @@
       code.raw.markup.md {
         '`': punctuation.md
         '$variable'
+        '`': punctuation.md
+      }
+    }
+  }
+}
+
+@math/3b-1
+"This is an `\\[inline code\\]`" {
+  text.md {
+    "This is an "
+    "`\\[not an equation\\]`" {
+      code.raw.markup.md {
+        '`': punctuation.md
+        '\\[inline code\\]'
+        '`': punctuation.md
+      }
+    }
+  }
+}
+
+@math/3b-2
+"This is an `\begin{equation} inline code`" {
+  text.md {
+    "This is an "
+    "`\\[not an equation\\]`" {
+      code.raw.markup.md {
+        '`': punctuation.md
+        '\begin{equation} inline code'
         '`': punctuation.md
       }
     }
