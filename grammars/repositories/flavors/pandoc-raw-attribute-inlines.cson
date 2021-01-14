@@ -1,0 +1,30 @@
+key: 'pandoc-raw-attribute-inlines'
+patterns: [
+
+  # See https://pandoc.org/MANUAL.html#generic-raw-attribute
+  {
+    match: '(?<!`)(`+)(?!`)(.+?)(?<!`)(\\1)(?!`)\\{\\s*=(latex|beamer)\\s*\\}'
+    name: 'code.raw.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+      2: patterns: [{ include: 'text.tex.latex' }]
+      3: name: 'punctuation.md'
+  }
+  {
+    match: '(?<!`)(`+)(?!`)(.+?)(?<!`)(\\1)(?!`)\\{\\s*=(html(?:4|5)?)\\s*\\}'
+    name: 'code.raw.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+      2: patterns: [{ include: 'text.html.basic' }]
+      3: name: 'punctuation.md'
+  }
+  {
+    match: '(?<!`)(`+)(?!`)(.+?)(?<!`)(\\1)(?!`)\\{\\s*=(openxml|opendocument)\\s*\\}'
+    name: 'code.raw.markup.md'
+    captures:
+      1: name: 'punctuation.md'
+      2: patterns: [{ include: 'text.xml' }]
+      3: name: 'punctuation.md'
+  }
+
+]
